@@ -12,6 +12,36 @@
 ./scripts/glm_read.sh "网页URL"
 ```
 
+### 视觉理解
+```bash
+./scripts/glm_vision.sh <命令> [参数]
+```
+
+**命令**:
+- `analyze_image` - 分析图片
+- `analyze_video` - 分析视频
+- `ocr` - OCR文本提取
+- `diagram` - 技术图分析
+- `dashboard` - 数据可视化分析
+
+**示例**:
+```bash
+# 分析图片
+./scripts/glm_vision.sh analyze_image /path/to/image.png
+
+# 分析视频
+./scripts/glm_vision.sh analyze_video /path/to/video.mp4
+
+# OCR提取
+./scripts/glm_vision.sh ocr /path/to/screenshot.png
+
+# 分析技术图
+./scripts/glm_vision.sh diagram /path/to/architecture.png
+
+# 分析数据可视化
+./scripts/glm_vision.sh dashboard /path/to/analytics.png
+```
+
 ---
 
 ## 常用场景

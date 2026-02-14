@@ -6,6 +6,7 @@
 
 ### GLM MCP工具
 - **glm_mcp_tools.md**: GLM Web Search和Web Reader MCP完整使用指南
+- **glm_vision_mcp.md**: GLM Vision MCP完整使用指南
 
 ### 技术决策
 - **technical_decisions.md**: 技术决策和架构选择（待创建）
