@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "web-search-prime": {
+      "baseUrl": "https://api.z.ai/api/mcp/web_search_prime/mcp",
+      "headers": {
+        "Authorization": "Bearer 9ba36d7227c24614ba3132fa122b389b.qcvoB6kL0dqIcM88"
+      }
+    },
+    "web-reader": {
+      "baseUrl": "https://api.z.ai/api/mcp/web_reader/mcp",
+      "headers": {
+        "Authorization": "Bearer 9ba36d7227c24614ba3132fa122b389b.qcvoB6kL0dqIcM88"
+      }
+    }
+  },
+  "imports": []
+}
