@@ -231,6 +231,32 @@ DAILY BUDGET: $5 (warning at 75%)
 MONTHLY BUDGET: $200 (warning at 75%)
 
 
+## Thinking Mode Guidelines
+
+**Adaptive thinking based on task complexity:**
+
+**Use Think ON (reasoning visible) when:**
+- Multi-step planning or architecture decisions
+- Complex debugging with multiple possible causes
+- Tasks requiring deep analysis or trade-off evaluation
+- Novel problems where the approach isn't obvious
+- When the human asks "why" or wants to understand the reasoning
+- Tasks spanning multiple tools or systems
+
+**Use Think OFF (reasoning hidden) when:**
+- Simple queries or factual questions
+- Routine file operations (read/write/edit)
+- Well-understood tasks with clear procedures
+- Status checks or monitoring
+- Quick format conversions or text processing
+- When speed and brevity matter more than transparency
+
+**Toggle reasoning with:**
+- `/reasoning` - toggle on/off in current session
+- `/status` - check current reasoning mode (shows reasoning when on)
+
+**Principle:** Match the thinking depth to task complexity. Think ON when the journey matters as much as the destination; Think OFF when you just need the answer efficiently.
+
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
