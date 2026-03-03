@@ -1,110 +1,53 @@
-# 知识库索引
+# 知识库索引更新 - 2026-03-03 16:10
 
-**最后更新**: 2026-02-14 22:56
-
-## 分类文件
-
-### GLM MCP工具
-- **glm_mcp_tools.md**: GLM Web Search和Web Reader MCP完整使用指南
-- **glm_vision_mcp.md**: GLM Vision MCP完整使用指南
-
-### 技术决策
-- **technical_decisions.md**: 技术决策和架构选择（待创建）
-
-### 问题解决方案
-- **problem_solutions.md**: 问题和解决方案（待创建）
-
-### 经验教训
-- **lessons_learned.md**: 经验教训和最佳实践（待创建）
-
-### 代码模式
-- **code_patterns.md**: 代码模式和实现方式（待创建）
-
-### 工具配置
-- **tools_config.md**: 工具和配置信息（待创建）
-
-### 工作流程
-- **workflow_processes.md**: 工作流程和开发流程（待创建）
+**本次更新时间**: 2026-03-03 16:10（heartbeat手动触发）
+**提取范围**: 08:07 - 16:07（8小时）
+**新增知识**: 4条
 
 ---
 
-## 使用说明
+## 本次新增内容
 
-在执行任务时，可以查询以下分类：
+### problem_solutions.md
+1. **Git作者信息批量修正** - 使用filter-branch重写历史
+2. **论文文档缺少精度结果** - UFO-4D案例和解决方案
 
-1. **GLM MCP工具** - 网络搜索和网页读取
-   - 搜索: `./scripts/glm_search.sh "关键词"`
-   - 读取: `./scripts/glm_read.sh "URL"`
+### technical_decisions.md
+3. **Cron任务时间调整** - 从凌晨3点改为早上7点
 
-2. **技术决策** - 架构选择、技术栈决策
-   ```bash
-   cat knowledge/technical_decisions.md | grep -A 10 "关键词"
-   ```
-
-3. **问题解决** - 错误、bug、性能问题
-   ```bash
-   cat knowledge/problem_solutions.md | grep -A 10 "错误信息"
-   ```
-
-4. **最佳实践** - 经验教训、改进建议
-   ```bash
-   cat knowledge/lessons_learned.md
-   ```
-
-5. **代码模式** - 已实现的代码模式
-   ```bash
-   cat knowledge/code_patterns.md
-   ```
-
-6. **工具配置** - 工具配置、环境设置
-   ```bash
-   cat knowledge/tools_config.md
-   ```
-
-7. **工作流程** - 开发流程、部署步骤
-   ```bash
-   cat knowledge/workflow_processes.md
-   ```
+### workflow_processes.md
+4. **完整执行Spatial AGI每日研究任务** - 8步流程详解
 
 ---
 
-## 快速查询
+## 知识库统计（更新后）
 
-### 搜索所有知识文件
-```bash
-grep -r "关键词" /home/cwh/.openclaw/workspace/knowledge/
-```
+- technical_decisions.md: 25条 (+1)
+- problem_solutions.md: 11条 (+2)
+- workflow_processes.md: 9条 (+1)
+- lessons_learned.md: 6条
+- code_patterns.md: 5条
+- tools_config.md: 4条
 
-### 查看特定分类
-```bash
-cat /home/cwh/.openclaw/workspace/knowledge/<分类文件名>.md
-```
-
-### 列出所有知识文件
-```bash
-ls -lh /home/cwh/.openclaw/workspace/knowledge/*.md
-```
+**总计**: 60条知识
 
 ---
 
-## 自动维护
+## 本次提取特点
 
-- **知识提取**: 每8小时自动执行
-- **知识清理**: 每周五凌晨自动执行
-- **归档**: 90天以上信息自动归档到`archive/`
+1. **问题解决**:
+   - arXiv搜索空结果（已在05:10提取）
+   - Git作者信息修正
+   - 论文文档完整性
 
----
+2. **技术决策**:
+   - Cron时间调整
+   - Skill多次更新（演进图、总结、NotebookLM要求）
 
-## 便捷脚本
-
-### GLM MCP工具脚本
-- `/home/cwh/.openclaw/workspace/scripts/glm_search.sh` - 网络搜索
-- `/home/cwh/.openclaw/workspace/scripts/glm_read.sh` - 网页读取
-
-### 知识库管理脚本
-- `/home/cwh/.openclaw/workspace/scripts/manage_knowledge.sh` - 知识库管理
-- `/home/cwh/.openclaw/workspace/scripts/classify_knowledge.py` - 知识分类
+3. **工作流程**:
+   - 完整的8步研究流程
+   - 质量标准明确化
 
 ---
 
-*此索引由知识库提取脚本自动生成*
+**下次提取**: ~2026-03-03 21:10（自动cron）

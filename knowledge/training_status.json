@@ -1,0 +1,11 @@
+{
+  "last_check": "2026-02-17 16:45:00",
+  "current_epoch": 12,
+  "current_batch": 920,
+  "total_batches": 1204,
+  "current_loss": 0.000011,
+  "learning_rate": 1.88e-04,
+  "total_epochs": 50,
+  "last_reported_epoch": 12,
+  "status": "in_progress"
+}
