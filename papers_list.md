@@ -56,3 +56,19 @@
 ---
 
 *最后更新: 2026-03-03*
+
+---
+
+## 2026-03-04 研究的论文（1篇）
+
+1. **AM-RADIO: Agglomerative Vision Foundation Model - Reduce All Domains Into One** - arXiv:2312.06709
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 视觉基础模型, 多教师蒸馏, 混合架构, 效率优化
+   - 文档: papers/2026-03-04_AM-RADIO_analysis.md
+   - NotebookLM: 4465a62f-5871-49d2-9f27-2b200a34c486
+   - 会议: CVPR 2024
+   - 核心贡献: 通过多教师蒸馏融合CLIP、DINOv2、SAM，实现6-10x效率提升
+
+---
+
+*最后更新: 2026-03-04*
