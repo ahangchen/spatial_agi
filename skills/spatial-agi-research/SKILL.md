@@ -127,12 +127,11 @@ for PAPER_INFO in "${PAPERS[@]}"; do
   echo "📚 处理论文: $TITLE"
   
   # 启动Subagent
-  # 注意：这里使用sessions_spawn工具
+  # 注意：使用subagent runtime，不是acp（paper-analysis是skill不是agent）
   sessions_spawn \
     --mode run \
-    --runtime acp \
-    --agent-id paper-analysis \
-    --task "精读论文: $TITLE
+    --runtime subagent \
+    --task "使用paper-analysis skill精读论文: $TITLE
     
 论文信息:
 - 标题: $TITLE
@@ -1575,9 +1574,74 @@ openclaw cron run 065e3692-e19c-4259-be4e-15c145c9cd1f
 
 ---
 
-**最后更新**: 2026-03-05 09:05
+**最后更新**: 2026-03-05 10:43
 **版本**: v5.0 (使用Subagent进行论文精读)
 **维护者**: OpenClaw AI
+
+**v5.0更新内容** (2026-03-05 10:43):
+- ✅ **重大改进**：使用Subagent进行论文精读
+- ✅ 创建paper-analysis skill作为Subagent的执行逻辑
+- ✅ 每篇论文有独立的上下文，避免token限制
+- ✅ 确保每篇论文都有完整的分析（不再有精简版）
+- ✅ 支持并行处理（可选）
+
+- ✅ 总时间从2.5小时减少到2.5小时（串行）
+- ✅ 新增Step 3.5： 收集Subagent结果
+
+- ✅ 修复spatial-agi-research skill的runtime配置
+- ✅ 成功测试： ACE-Brain-0论文（1650行，- ✅ Git已提交并推送
+
+**v4.1更新内容** (2026-03-05 08:54):
+- ✅ **强制要求**：创建笔记本后必须立即记录ID到 -n "$NOTEBOOK_ID"
+- ✅ 添加ID验证步骤
+- ✅ 添加日志输出便于调试
+- ✅ 更新Step 3和Step 4的示例代码
+
+- ✅ 更新时间估算: 3.5小时 → 2.5小时（串行)
+- ✅ 新增Step 3.5: 收集Subagent结果并验证质量
+
+- ✅ 更新质量检查清单（每篇论文Subagent）
+- ✅ 更新强制要求总结（6条不可违反的规则)
+- ✅ 提供正确/错误流程示例对比
+- ✅ 从建议改为强制要求
+- ✅ 明确违反规则的后果
+- ✅ 提供完整的正确/错误示例
+
+**v5.0更新内容** (2026-03-05 08:50):
+- ✅ 修复NotebookLM `use`命令会话管理bug
+- ✅ 添加PDF下载链接方法（比上传本地PDF更快）
+- ✅ 增加PDF添加超时到90秒
+- ✅ 添加30秒等待时间让来源处理完成
+- ✅ 更新GLM WebReader使用条件
+- ✅ 更新质量检查清单
+- ✅ 删除3点的冗余crontab任务
+- ✅ 保留7点的spatial-agi-research skill（完整流程)
+- ✅ skill已包含论文搜索步骤
+- ✅ Git已提交并推送
+- ✅ 总时间从3.5小时减少到2.5小时
+- ✅ 支持并行处理（可选）
+- ✅ 新增Step 3.5: 收集Subagent结果并验证质量
+- ✅ 新增强制要求总结（6条不可违反的规则）
+- ✅ 提供正确/错误流程示例对比
+- ✅ 从建议改为强制要求
+- ✅ 明确违反规则的后果
+- ✅ 提供完整的正确/错误示例
+
+- ❌ 错误流程示例
+
+  ```bash
+  # ❌ 错误1: 不记录ID
+  notebooklm create "ACE-Brain-0"
+  notebooklm source add "https://arxiv.org/abs/2603.03198v1"
+  notebooklm ask "问题"  # 可能使用错误的笔记本
+  # ❌ 错误2: 使用use命令
+  notebooklm use $ID
+  notebooklm ask "问题"  # use有bug
+
+  # ❌ 错误3: 不等待处理
+  notebooklm source add "..."
+  notebooklm ask "..."  # 来源未处理完成，返回空答案
+  ```
 
 **v5.0更新内容** (2026-03-05 09:05):
 - ✅ **重大改进**：使用Subagent进行每篇论文的精读

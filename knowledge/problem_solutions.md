@@ -424,3 +424,243 @@ grep -A 10 "性能指标" papers/*.md  # 验证精度结果存在
 
 **提交**: 21272be
 
+---
+
+## 2026-03-04: Gateway Token不匹配导致RPC通信失败 ✅ 已解决
+
+### 问题描述
+Gateway token配置不匹配导致RPC probe失败：
+```
+Error: RPC probe failed
+原因: gateway.remote.token ≠ gateway.auth.token
+```
+
+### 根本原因
+配置文件中：
+- `gateway.auth.token`（本地认证token）
+- `gateway.remote.token`（远程连接token）
+两者不一致，导致RPC通信被拒绝。
+
+### 解决方案
+
+**步骤1: 检查token配置**
+```bash
+cat ~/.openclaw/config.yaml | grep -A 5 "gateway:"
+```
+
+**步骤2: 统一token**
+```yaml
+gateway:
+  auth:
+    token: "your-secure-token-here"
+  remote:
+    token: "your-secure-token-here"  # 必须与auth.token相同
+```
+
+**步骤3: 重启gateway服务**
+```bash
+openclaw gateway restart
+```
+
+**步骤4: 验证RPC连接**
+```bash
+openclaw gateway status
+# 应该显示: RPC probe: ok
+```
+
+### 预防措施
+- 使用配置管理工具确保token一致
+- 定期检查gateway状态
+- 在修改token后立即重启服务
+
+**日期**: 2026-03-04 08:42
+**标签**: `#gateway` `#rpc` `#token` `#configuration`
+
+---
+
+## 2026-03-04: 投影多义性解决（SL(4) vs Sim(3)）
+
+### 问题描述
+传统SLAM系统在单目未标定场景下存在投影多义性问题：
+- Sim(3)流形只有7自由度（旋转+平移+缩放）
+- 无法处理剪切、拉伸、透视畸变
+- 导致位姿估计不准确
+
+### 根本原因
+单目相机的投影过程丢失了深度信息，产生多种可能的3D解释：
+- 相同的2D投影可能对应不同的3D场景
+- Sim(3)只能处理相似变换（旋转、平移、缩放）
+- 无法表示更一般的投影变换
+
+### 解决方案：SL(4)流形优化
+
+**核心思想**:
+- 在SL(4)李群空间上进行因子图优化
+- 使用15维单应性矩阵（4x4，自由度15）
+- 可以表示更一般的投影变换
+
+**SL(4)自由度分解**:
+1. 旋转（3自由度）
+2. 平移（3自由度）
+3. 缩放（1自由度）
+4. 剪切（6自由度）
+5. 透视畸变（2自由度）
+
+**优势**:
+- 无需相机内参
+- 无需跨帧标定
+- 可以处理各种投影畸变
+- 更鲁棒的位姿估计
+
+**实现要点**:
+```python
+# SL(4)流形优化
+# 使用15维单应性矩阵H
+H = [R | t]  # 4x4矩阵
+    [s | p]
+    
+# 其中:
+# R: 旋转矩阵（3x3）
+# t: 平移向量（3x1）
+# s: 缩放因子
+# p: 透视参数（2自由度）
+```
+
+**退化情况识别**:
+- 平面场景：检测场景深度方差
+- 纯旋转：检测平移量级
+- 长距离漂移：监控累积误差
+
+**验证**:
+- 在TUM数据集上达到最高精度
+- 位姿误差比传统方法降低20%+
+
+**日期**: 2026-03-04 09:51-10:27
+**来源**: VGGT-SLAM论文分析
+**标签**: `#slam` `#projection` `#manifold` `#uncalibrated`
+
+---
+
+## 2026-03-04: 显存溢出解决（滚动记忆机制）
+
+### 问题描述
+在长序列SLAM任务中：
+- 传统VGGT：显存随帧数指数增长
+- StreamVGGT：KV缓存无限增长导致OOM
+- CUT3R：隐式压缩导致严重漂移
+
+### 根本原因
+Transformer的自注意力机制需要存储所有历史KV缓存：
+- 显存复杂度: O(n²) 其中n是帧数
+- 长序列（>1000帧）会导致OOM
+- 简单压缩会丢失重要信息
+
+### 解决方案：滚动记忆（Rolling Memory）
+
+**核心机制**:
+
+**1. 不可变锚点**
+```python
+# 保留首帧KV缓存作为全局参考
+anchor_kv = kv_cache[0]  # 永不丢弃
+```
+
+**2. 键空间多样性代理**
+```python
+# 计算键向量的余弦相似度
+def key_diversity_proxy(keys):
+    # 不依赖注意力权重（兼容FlashAttention）
+    similarity = cosine_similarity(keys)
+    diversity = 1 - similarity.mean()
+    return diversity
+```
+
+**3. 层级自适应预算分配**
+```python
+# 根据各层特性动态分配预算
+budget_per_layer = []
+for layer_idx in range(num_layers):
+    avg_diversity = compute_diversity(layer_idx)
+    budget = allocate_budget(avg_diversity)
+    budget_per_layer.append(budget)
+```
+
+**4. 动态预算裁剪**
+```python
+# 保留Top-K个token，丢弃冗余
+def rolling_clip(kv_cache, budget):
+    importance = compute_importance(kv_cache)
+    top_k_indices = torch.topk(importance, budget)
+    return kv_cache[:, top_k_indices]
+```
+
+### 实现效果
+- 显存占用: O(1) 恒定
+- 支持无限视野: 理论上无上限
+- 漂移抑制: 比CUT3R降低50%+
+- 兼容性: 支持FlashAttention
+
+### 启发
+- 键空间多样性是token重要性的有效代理
+- 层级自适应比固定预算更高效
+- 不可变锚点是防止漂移的关键
+
+**日期**: 2026-03-04 09:51-10:27
+**来源**: InfiniteVGGT论文分析
+**标签**: `#memory-management` `#oom` `#streaming` `#kv-cache`
+
+---
+
+## 2026-03-04: 闭环验证（注意力层机制）
+
+### 问题描述
+SLAM系统在闭环检测时容易产生假阳性：
+- 错误的闭环匹配导致地图崩塌
+- 传统方法需要额外的验证步骤
+- 增加计算复杂度
+
+### 根本原因
+传统的闭环验证方法：
+- 基于特征描述子匹配（容易误匹配）
+- 基于几何验证（计算量大）
+- 缺乏内置的验证机制
+
+### 解决方案：注意力层验证
+
+**核心发现**:
+- VGGT第22层注意力具有"聚光灯效应"
+- 注意力权重精准反映图像间对应关系
+- 可以作为内置的闭环验证机制
+
+**实现方法**:
+```python
+# 提取第22层注意力权重
+attention_layer22 = model.layers[22].attention
+
+# 计算闭环候选的注意力得分
+def verify_loop_closure(frame1, frame2, attention_map):
+    # 高注意力权重 = 强对应关系
+    score = attention_map[frame1, frame2].mean()
+    return score > threshold
+```
+
+**优势**:
+- 无需额外验证模块
+- 利用模型内置能力
+- 高效且准确
+- 实时性能
+
+**验证结果**:
+- 假阳性率降低90%+
+- 位姿误差降低23%
+- 实时运行（Jetson Thor）
+
+**启发**
+- 深层注意力机制蕴含丰富的对应关系信息
+- 可以作为多任务验证的通用机制
+- Spatial AGI可以利用注意力进行关系推理
+
+**日期**: 2026-03-04 09:51-10:27
+**来源**: VGGT-SLAM 2.0论文分析
+**标签**: `#slam` `#loop-closure` `#attention` `#verification`
+

@@ -1,0 +1,10 @@
+{
+  "lastChecks": {
+    "knowledge_extract": 1772699283286,
+    "background_tasks": 1772672655000,
+    "gateway_check": 1772672400000,
+    "cron_tasks": 1772672400000,
+    "spatial_agi_alert": 1772672655000,
+    "subagent_completion": 1772677618357
+  }
+}

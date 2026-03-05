@@ -11,6 +11,8 @@
 - 职业: DJI 计算机视觉科学家
 - 性格类型: INTJ
 - 时区: 中国 (GMT+8)
+- GitHub: ahangchen (https://github.com/ahangchen)
+- 邮箱: cweihang@foxmail.com
 
 **工作风格**
 - 重视简单高效 - 用简单等效任务替换复杂任务
@@ -32,6 +34,27 @@
 ---
 
 ## 重要里程碑
+
+### 2026-03-02: Spatial AGI 每日研究系统建立
+- **创建Research Skill**: spatial-agi-research技能（完善版）
+- **首次研究**: 分析10篇最新论文，创建完整的研究文档
+- **定时任务**: 每天凌晨3点自动执行研究任务
+- **产出**:
+  - 10篇论文介绍文档
+  - 1篇深度思考文档
+  - 研究技能和自动化脚本
+  - 完整示例文档（1,542行）
+- **核心发现**:
+  - 数据策略 > 模型架构
+  - 显式表示 > 潜在学习
+  - 多模态融合 > 单一模态
+  - 效率优化 > 精度提升
+- **目录**: `/home/cwh/coding/auto_blog/spatial_agi/`
+- **完善内容**:
+  - 必须使用research-assistant技能
+  - 必须使用NotebookLM询问13+个问题（7标准+6 Spatial AGI+自由）
+  - 必须创建详细markdown文档（至少500行）
+  - 完整的NotebookLM问答记录
 
 ### 2026-02-08: SDF训练成功
 - SimpleSDFModel (198K参数) 训练完成
@@ -67,6 +90,15 @@
   - knowledge-extract: 每8小时提取知识
   - knowledge-cleanup: 每周五清理过期信息
 - 规则写入HEARTBEAT.md，执行任务时主动查询knowledge
+
+### 2026-02-24: 知识提取源改进
+- **问题**: 从memory文件提取知识，内容有限（主要是例行监控）
+- **改进**: 改为从会话上下文中提取知识
+  - 使用 sessions_list 获取近期会话
+  - 使用 sessions_history 获取对话历史
+  - 重点提取：技术决策、问题解决、代码模式等
+  - 过滤：cron任务、heartbeat、例行监控
+- **优势**: 会话上下文包含更丰富的技术讨论和问题解决过程
 
 ---
 
@@ -113,6 +145,11 @@
 - **知识库任务**:
   - knowledge-extract: 每8小时自动提取知识
   - knowledge-cleanup: 每周五清理过期信息（90天以上）
+- **Spatial AGI研究任务** (新增 2026-03-02):
+  - spatial-agi-research: 每天凌晨3点执行
+  - 自动搜索arXiv论文
+  - 生成论文介绍和深度思考
+  - 保存到 `/home/cwh/coding/auto_blog/spatial_agi/`
 
 ### Git工作流
 - 定期commit: 每完成一个小任务

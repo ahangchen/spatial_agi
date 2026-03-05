@@ -6,6 +6,8 @@
 - **What to call them:** Weihang
 - **Pronouns:** *(optional)*
 - **Timezone:** China
+- **GitHub Username:** ahangchen
+- **Email:** cweihang@foxmail.com
 - **Notes:** Working in DJI as a computer vision scientist, also INTJ personality type
 
 ## Success Metrics

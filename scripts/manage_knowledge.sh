@@ -31,16 +31,16 @@ log_error() {
 extract_knowledge() {
     log_info "Extracting knowledge from recent sessions..."
 
-    # Find recent session files (last 8 hours)
-    RECENT_SESSIONS=$(find "$SESSIONS_DIR" -name "*.json" -type f -mtime -1 2>/dev/null | head -20)
+    # Find recent session files (last 3 days)
+    RECENT_SESSIONS=$(find "$SESSIONS_DIR" -name "*.json" -type f -mtime -3 2>/dev/null | head -20)
 
     if [ -z "$RECENT_SESSIONS" ]; then
-        log_warn "No recent sessions found in the last 24 hours"
+        log_warn "No recent sessions found in the last 3 days"
         return
     fi
 
-    # Extract daily memory files
-    RECENT_MEMORY=$(find "$MEMORY_DIR" -name "*.md" -type f -mtime -1 2>/dev/null)
+    # Extract daily memory files (last 3 days)
+    RECENT_MEMORY=$(find "$MEMORY_DIR" -name "*.md" -type f -mtime -3 2>/dev/null)
 
     if [ -z "$RECENT_MEMORY" ]; then
         log_warn "No recent memory files found"
