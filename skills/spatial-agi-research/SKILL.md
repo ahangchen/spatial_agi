@@ -68,7 +68,7 @@ cat /tmp/today_papers.json
 
 ---
 
-### Step 3: 使用research-assistant技能深度分析 ✅
+### Step 3: 使用Subagent精读每篇论文 ✅
 
 **⚠️ 【质量第一原则】**
 
@@ -78,145 +78,161 @@ cat /tmp/today_papers.json
 ║                                                              ║
 ║  ✅ 每篇论文15-20分钟是正常的                              ║
 ║  ✅ 深度分析比快速完成更重要                                ║
-║  ✅ NotebookLM是首选，GLM仅用于失败情况                    ║
-║  ✅ 必须询问3个问题（不多不少）                            ║
+║  ✅ 使用Subagent避免token限制                              ║
+║  ✅ 每篇论文独立处理，互不干扰                             ║
 ║                                                              ║
-║  ❌ 不要为了省时而跳过步骤                                  ║
-║  ❌ 不要用GLM替代NotebookLM（除非真的失败）                ║
-║  ❌ 不要因为"简单"而简化分析                               ║
+║  ❌ 不要为了省时而创建精简版文档                           ║
+║  ❌ 不要因为token不足而降低质量                            ║
+║  ❌ 不要跳过NotebookLM问答环节                             ║
 ╚════════════════════════════════════════════════════════════╝
 ```
 
-**⚠️ 这一步是必须的，不是可选！**
-
-**⚠️ 【强制要求】必须记录笔记本ID**
+**⚠️ 【强制要求】必须使用Subagent**
 
 ```
 ╔════════════════════════════════════════════════════════════╗
-║  🔑 关键：创建笔记本后必须立即记录ID                       ║
+║  🔑 关键：每篇论文必须使用独立的Subagent                   ║
 ║                                                              ║
-║  ✅ 步骤1: 创建笔记本                                       ║
-║  ✅ 步骤2: 立即记录ID到变量                                 ║
-║  ✅ 步骤3: 后续所有操作都使用这个ID                         ║
+║  ✅ 原因1: 避免主session的token限制                        ║
+║  ✅ 原因2: 每篇论文有独立上下文                            ║
+║  ✅ 原因3: 可以并行处理（如果需要）                        ║
+║  ✅ 原因4: 确保每篇论文都有完整的分析                      ║
 ║                                                              ║
-║  ❌ 不要依赖`use`命令（有bug）                              ║
-║  ❌ 不要假设会自动记住当前笔记本                            ║
-║  ❌ 不要在ask时不指定ID                                     ║
+║  ❌ 不要在主session中处理论文（会token不足）               ║
+║  ❌ 不要创建精简版文档（质量不够）                         ║
 ╚════════════════════════════════════════════════════════════╝
 ```
 
-**推荐方法：使用NotebookLM CLI（成功率最高）**
+**执行方法：使用sessions_spawn启动Subagent**
+
+对于Step 2筛选出的5篇论文，每篇都启动一个独立的Subagent进行精读：
 
 ```bash
-export NOTEBOOKLM_PROXY="socks5://127.0.0.1:1080"
+# 论文列表（从Step 2获得）
+PAPERS=(
+  "ACE-Brain-0|https://arxiv.org/abs/2603.03198v1|https://arxiv.org/pdf/2603.03198v1"
+  "Utonia|https://arxiv.org/abs/2603.03283v1|https://arxiv.org/pdf/2603.03283v1"
+  "ULTRA|https://arxiv.org/abs/2603.03279v1|https://arxiv.org/pdf/2603.03279v1"
+  "LoGeR|https://arxiv.org/abs/2603.03269v1|https://arxiv.org/pdf/2603.03269v1"
+  "Tether|https://arxiv.org/abs/2603.03278v1|https://arxiv.org/pdf/2603.03278v1"
+)
 
-# ========================================
-# 步骤1: 创建笔记本并记录ID（必须！）
-# ========================================
-NOTEBOOK_ID=$(~/miniconda3/bin/conda run -n base notebooklm create "论文标题" | grep -oP 'Created notebook: \K[a-f0-9-]+')
+# 对每篇论文启动Subagent
+for PAPER_INFO in "${PAPERS[@]}"; do
+  IFS='|' read -r TITLE ARXIV_URL PDF_URL <<< "$PAPER_INFO"
+  
+  # 生成paper_id（用于文件命名）
+  PAPER_ID=$(echo "$TITLE" | sed 's/[^a-zA-Z0-9]/_/g')
+  
+  echo "📚 处理论文: $TITLE"
+  
+  # 启动Subagent
+  # 注意：这里使用sessions_spawn工具
+  sessions_spawn \
+    --mode run \
+    --runtime acp \
+    --agent-id paper-analysis \
+    --task "精读论文: $TITLE
+    
+论文信息:
+- 标题: $TITLE
+- arXiv: $ARXIV_URL
+- PDF: $PDF_URL
+- Paper ID: $PAPER_ID
 
-# ⚠️ 验证ID是否成功提取
-if [ -z "$NOTEBOOK_ID" ]; then
-  echo "❌ 错误：笔记本ID提取失败"
-  exit 1
-fi
+要求:
+1. 创建NotebookLM笔记本并记录ID
+2. 添加arXiv页面和PDF作为来源
+3. 询问3个核心问题（核心算法、与Spatial AGI关系、创新点/局限）
+4. 创建详细markdown文档（至少500行）
+5. 保存到 /home/cwh/coding/auto_blog/spatial_agi/papers/
 
-echo "✅ 笔记本创建成功"
-echo "📝 笔记本ID: $NOTEBOOK_ID"
-echo "📝 论文标题: 论文标题"
+输出格式:
+- 返回笔记本ID
+- 返回文档路径
+- 返回文档行数" \
+    --timeout 1200 \
+    --run-timeout 1200
+done
 
-# ========================================
-# 步骤2: 添加来源
-# ========================================
-
-# 2a. 添加arXiv页面（快速，必选）
-echo "📥 添加arXiv页面..."
-~/miniconda3/bin/conda run -n base notebooklm source add "https://arxiv.org/abs/2602.22745v1"
-
-# 2b. 添加PDF下载链接（推荐，比上传PDF更快）
-# ⚠️ 关键：使用PDF的URL而不是上传本地文件
-echo "📥 添加PDF（90秒超时）..."
-timeout 90 ~/miniconda3/bin/conda run -n base notebooklm source add "https://arxiv.org/pdf/2602.22745v1" || {
-  echo "⚠️ PDF添加超时，使用HTML替代"
-  ~/miniconda3/bin/conda run -n base notebooklm source add "https://arxiv.org/html/2602.22745v1"
-}
-
-# ========================================
-# 步骤3: 等待来源处理完成（重要！）
-# ========================================
-echo "⏳ 等待30秒让NotebookLM处理来源..."
-sleep 30
-echo "✅ 来源处理完成"
-
-# ========================================
-# 步骤4: 显式指定笔记本ID询问问题
-# ⚠️ 必须使用 -n "$NOTEBOOK_ID"
-# ========================================
-
-# Q1
-echo "❓ 询问问题1..."
-~/miniconda3/bin/conda run -n base notebooklm ask \
-  -n "$NOTEBOOK_ID" \
-  "问题1"
-
-# Q2
-echo "❓ 询问问题2..."
-~/miniconda3/bin/conda run -n base notebooklm ask \
-  -n "$NOTEBOOK_ID" \
-  "问题2"
-
-# Q3
-echo "❓ 询问问题3..."
-~/miniconda3/bin/conda run -n base notebooklm ask \
-  -n "$NOTEBOOK_ID" \
-  "问题3"
-
-echo "✅ 所有问题询问完成"
-echo "📝 笔记本ID: $NOTEBOOK_ID（请记录到文档中）"
+echo "✅ 所有论文精读完成"
 ```
 
-**三种来源添加方式**（按优先级排序）：
+**Subagent执行流程**（paper-analysis skill）：
 
-1. **arXiv PDF链接**（推荐，最快）
-   ```bash
-   notebooklm source add "https://arxiv.org/pdf/2602.22745v1"
-   ```
-   - ✅ 不需要下载和上传
-   - ✅ NotebookLM直接从URL读取
-   - ⚠️ 超时设置：90秒（大PDF需要更长时间）
+1. **创建NotebookLM笔记本** - 记录笔记本ID
+2. **添加来源** - arXiv页面 + PDF（90秒超时）
+3. **等待处理** - 30秒
+4. **询问3个问题** - 每个问题90秒超时
+   - Q1: 核心算法原理
+   - Q2: 与Spatial AGI的关系
+   - Q3: 创新点和局限性
+5. **创建文档** - 至少500行，包含完整问答
+6. **保存文档** - 返回文档路径和行数
 
-2. **arXiv HTML页面**（备选，可靠）
-   ```bash
-   notebooklm source add "https://arxiv.org/html/2602.22745v1"
-   ```
-   - ✅ 加载快速
-   - ✅ 不易超时
-   - ⚠️ 格式可能不如PDF完整
+**Subagent优势**：
 
-3. **本地PDF文件上传**（不推荐，慢）
-   ```bash
-   # 需要先下载PDF
-   wget https://arxiv.org/pdf/2602.22745v1 -O paper.pdf
-   notebooklm source add "file:///path/to/paper.pdf"
-   ```
-   - ❌ 需要下载
-   - ❌ 上传慢
-   - ❌ 容易超时
+1. ✅ **独立上下文** - 每篇论文有完整的token空间
+2. ✅ **并行处理** - 可以同时启动多个Subagent
+3. ✅ **质量保证** - 不会因为token不足而创建精简版
+4. ✅ **错误隔离** - 一篇论文失败不影响其他论文
 
-**⚠️ 关键改进**：
-1. ✅ 使用PDF的URL而不是上传本地文件
-2. ✅ 显式指定笔记本ID（`-n`参数）
-3. ✅ 等待30秒让来源处理完成
-4. ✅ 增加PDF添加超时到90秒
-5. ✅ 准备HTML备选方案
+**预计时间**：
+- 单篇论文: 18分钟
+- 5篇论文（串行）: 90分钟
+- 5篇论文（并行）: 20-30分钟
 
-**如果完全失败，跳到Step 4.5使用GLM WebReader MCP**
+**质量要求**：
 
-**预计时间**: 每篇论文 5-8分钟
+- ✅ 文档至少500行
+- ✅ 包含完整的NotebookLM问答记录（不总结）
+- ✅ 包含与Spatial AGI的关系分析
+- ✅ 包含个人思考和见解
+- ✅ 包含NotebookLM笔记本ID
 
 ---
 
-### Step 4: 使用NotebookLM询问问题 ✅
+### Step 3.5: 收集Subagent结果 ✅
+
+所有Subagent完成后，收集结果：
+
+```bash
+# 检查生成的文档
+ls -lh /home/cwh/coding/auto_blog/spatial_agi/papers/ | grep "$(date +%Y-%m-%d)"
+
+# 统计文档行数
+for FILE in /home/cwh/coding/auto_blog/spatial_agi/papers/$(date +%Y-%m-%d)_*.md; do
+  LINES=$(wc -l < "$FILE")
+  echo "📄 $(basename $FILE): $LINES 行"
+  
+  # 检查是否满足500行要求
+  if [ $LINES -lt 500 ]; then
+    echo "⚠️ 警告: 文档行数不足500行"
+  fi
+done
+
+# 提取所有笔记本ID（用于记录）
+grep -h "NotebookLM笔记本ID" /home/cwh/coding/auto_blog/spatial_agi/papers/$(date +%Y-%m-%d)_*.md
+```
+
+**预期输出**：
+
+```
+📄 2026-03-05_01_ACE-Brain-0.md: 523 行
+📄 2026-03-05_02_Utonia.md: 512 行
+📄 2026-03-05_03_ULTRA.md: 498 行
+📄 2026-03-05_04_LoGeR.md: 487 行
+📄 2026-03-05_05_Tether.md: 476 行
+
+笔记本ID:
+- ACE-Brain-0: faee81ec-2d12-4dc5-99b9-0de78c18877a
+- Utonia: ...
+- ULTRA: ...
+- LoGeR: ...
+- Tether: ...
+```
+
+---
 
 **⚠️ 【强制要求】必须完整执行NotebookLM流程**
 
@@ -1302,28 +1318,31 @@ git log --oneline -1
 
 ---
 
-## ⏱️ 时间估算（更新版 2026-03-05）
+## ⏱️ 时间估算（更新版 2026-03-05 09:00）
 
-| 步骤 | 时间/论文 | 5篇总计 | 备注 |
-|------|----------|---------|------|
-| 1. 搜索论文 | - | 10分钟 | 自动执行 |
-| 2. 筛选论文 | - | 10分钟 | 人工筛选 |
-| 3. 创建笔记本+添加来源 | 8分钟 | 40分钟 | 含30秒等待 |
-| 4. 询问问题（3个） | 8分钟 | 40分钟 | 含思考时间 |
-| 5. 创建文档 | 15分钟 | 75分钟 | 详细分析 |
-| 6. 更新列表 | - | 5分钟 | papers_list.md |
-| 7. 生成思考 | - | 30分钟 | 8000+字 |
-| 8. Git提交 | - | 2分钟 | 自动提交 |
-| **总计** | **~31分钟/篇** | **~3.5小时** | |
+| 步骤 | 时间 | 备注 |
+|------|------|------|
+| 1. 搜索论文 | 10分钟 | 自动执行 |
+| 2. 筛选论文 | 10分钟 | 人工筛选5篇 |
+| 3. Subagent精读（5篇） | 90分钟 | 串行18分钟/篇 |
+| 3.5. 收集结果 | 5分钟 | 检查文档质量 |
+| 4. 更新列表 | 5分钟 | papers_list.md |
+| 5. 生成思考 | 30分钟 | 8000+字 |
+| 6. Git提交 | 2分钟 | 自动提交 |
+| **总计** | **~2.5小时** | |
 
-**实际执行时间**（2026-03-05验证）：
-- NotebookLM方式：5-8分钟/篇（含等待）
-- GLM WebReader方式：3-5分钟/篇（备选）
-- 文档创建：10-15分钟/篇
-- 每日思考：30分钟（5篇综合）
+**Subagent优势**（v5.0新增）：
+- ✅ **独立上下文** - 每篇论文有完整token空间
+- ✅ **质量保证** - 不会因token不足创建精简版
+- ✅ **错误隔离** - 一篇失败不影响其他
+- ✅ **可并行** - 如果需要可同时启动多个
+
+**并行执行**（可选）：
+- 5篇论文并行: 20-30分钟
+- 总时间: ~1小时（含筛选、思考、提交）
 
 **建议**:
-- 可以在1天内完成（分上午/下午）
+- 可以在半天内完成（上午或下午）
 - 每天5篇论文（精读）
 - 重点关注最相关的论文
 - 预留30分钟缓冲时间（网络延迟）
@@ -1335,22 +1354,30 @@ git log --oneline -1
 ### 执行前
 - [ ] 代理已启动 (`socks5://127.0.0.1:1080`)
 - [ ] GitHub仓库已关联（git@github.com:ahangchen/spatial_agi.git）
-
-### 执行中
-- [ ] Step 1: 搜索5个关键词组合
-- [ ] Step 2: 筛选出5篇最有价值的论文
-- [ ] Step 3: 对每篇论文使用research-assistant
-- [ ] Step 4: 询问3个核心问题（Q1算法，Q2 Spatial AGI，Q3自由）
-- [ ] Step 5: 创建详细文档（至少100行）
-- [ ] Step 6: 更新papers_list.md
-- [ ] Step 7: 生成每日思考文档（参考前日）
-- [ ] Step 8: 执行Git自动提交脚本
 - [ ] NotebookLM CLI可用
 - [ ] 目录已创建
 
-### 执行中（每篇论文）
-- [ ] 使用research-assistant技能
+### 执行中（整体流程）
+- [ ] Step 1: 搜索5个关键词组合
+- [ ] Step 2: 筛选出5篇最有价值的论文
+- [ ] Step 3: 对每篇论文启动Subagent
+- [ ] Step 3.5: 收集Subagent结果并验证质量
+- [ ] Step 4: 更新papers_list.md
+- [ ] Step 5: 生成每日思考文档（参考前日）
+- [ ] Step 6: 执行Git自动提交脚本
+
+### 执行中（每篇论文Subagent）
+- [ ] Subagent启动成功
 - [ ] NotebookLM笔记本创建成功
+- [ ] 添加arXiv页面作为来源
+- [ ] 添加PDF或HTML作为来源
+- [ ] 等待30秒让来源处理
+- [ ] 询问Q1：核心算法原理
+- [ ] 询问Q2：与Spatial AGI的关系
+- [ ] 询问Q3：自由问题
+- [ ] 创建详细文档（至少500行）
+- [ ] 文档包含NotebookLM笔记本ID
+- [ ] 文档保存到正确目录
 - [ ] 添加至少2个来源（arXiv页面 + PDF/HTML）
 - [ ] 询问Q1（核心算法原理）
 - [ ] 询问Q2（与Spatial AGI的关系）
@@ -1548,35 +1575,38 @@ openclaw cron run 065e3692-e19c-4259-be4e-15c145c9cd1f
 
 ---
 
-**最后更新**: 2026-03-05 08:54
-**版本**: v4.1 (强制要求记录和使用笔记本ID)
+**最后更新**: 2026-03-05 09:05
+**版本**: v5.0 (使用Subagent进行论文精读)
 **维护者**: OpenClaw AI
+
+**v5.0更新内容** (2026-03-05 09:05):
+- ✅ **重大改进**：使用Subagent进行每篇论文的精读
+- ✅ 创建paper-analysis skill作为Subagent的执行逻辑
+- ✅ 每篇论文有独立的上下文，避免token限制
+- ✅ 确保每篇论文都有完整的分析（不再有精简版）
+- ✅ 支持并行处理多篇论文（可选）
+- ✅ 总时间从3.5小时减少到2.5小时（串行）
+- ✅ 新增Step 3.5：收集Subagent结果
 
 **v4.1更新内容** (2026-03-05 08:54):
 - ✅ **强制要求**：创建笔记本后必须立即记录ID到变量
 - ✅ **强制要求**：所有ask命令必须使用`-n "$NOTEBOOK_ID"`
 - ✅ 添加ID验证步骤（检查ID是否存在）
 - ✅ 添加日志输出便于调试
-- ✅ 更新Step 3和Step 4的示例代码
 
 **v4.0更新内容** (2026-03-05 08:50):
 - ✅ 修复NotebookLM `use`命令会话管理bug（使用`-n`参数）
 - ✅ 添加PDF下载链接方法（比上传本地PDF更快）
 - ✅ 增加PDF添加超时到90秒
-- ✅ 添加30秒等待时间让来源处理完成
-- ✅ 更新GLM WebReader使用条件
-- ✅ 添加常见失败模式分析
 
 **v3.0更新内容**:
 - ✅ 论文数量从10篇减少到5篇（精读 > 泛读）
 - ✅ NotebookLM问题从13+个简化为3个核心问题
-- ✅ 所有NotebookLM操作超时时间增加到60秒
-- ✅ 强调思考后再问Q3（自由问题）
 - ✅ 总时间从~7.5小时减少到~3.7小时
 
 ---
 
-## 📋 强制要求总结
+## 📋 强制要求总结（v5.0）
 
 ### ⚠️ 必须遵守的规则
 
@@ -1585,66 +1615,94 @@ openclaw cron run 065e3692-e19c-4259-be4e-15c145c9cd1f
 ║  🚨 强制要求（不可违反）                                   ║
 ╚════════════════════════════════════════════════════════════╝
 
-1. 📝 创建笔记本后必须立即记录ID
-   ✅ NOTEBOOK_ID=$(notebooklm create "标题" | grep -oP '...')
-   ✅ echo "笔记本ID: $NOTEBOOK_ID"
-   ❌ notebooklm create "标题"  # 不记录ID
+1. 🤖 必须使用Subagent进行论文精读
+   ✅ sessions_spawn --agent-id paper-analysis
+   ❌ 在主session中处理论文（会token不足）
+   ❌ 创建精简版文档（质量不够）
 
-2. 🔑 所有ask命令必须使用 -n "$NOTEBOOK_ID"
-   ✅ notebooklm ask -n "$NOTEBOOK_ID" "问题"
-   ❌ notebooklm ask "问题"  # 缺少-n参数
-   ❌ notebooklm use $ID; notebooklm ask "问题"  # use有bug
+2. 📝 每篇论文必须有独立的Subagent
+   ✅ 5篇论文 = 5个Subagent
+   ✅ 每个Subagent独立上下文
+   ❌ 多篇论文共用一个Subagent
 
-3. ⏱️ 添加来源后必须等待30秒
-   ✅ notebooklm source add "..."; sleep 30
-   ❌ notebooklm source add "..."; notebooklm ask "..."  # 立即问
+3. 📄 文档质量要求
+   ✅ 至少500行
+   ✅ 包含完整的NotebookLM问答记录
+   ✅ 包含NotebookLM笔记本ID
+   ❌ 少于500行的精简版
 
-4. 📄 优先使用PDF的URL而不是上传本地文件
-   ✅ notebooklm source add "https://arxiv.org/pdf/..."
-   ❌ wget ...; notebooklm source add "file://..."  # 上传慢
+4. ⏱️ 时间预估
+   ✅ 单篇论文: 18分钟
+   ✅ 5篇论文（串行）: 90分钟
+   ✅ 5篇论文（并行）: 20-30分钟
 
-5. 🎯 每篇论文必须询问3个问题（不多不少）
-   ✅ Q1: 核心算法原理
-   ✅ Q2: 与Spatial AGI的关系
-   ✅ Q3: 自由问题（思考后提出）
-   ❌ 只问1-2个问题
-   ❌ 问超过3个问题
-
-6. 💾 必须将笔记本ID记录到文档中
-   ✅ **NotebookLM笔记本ID**: faee81ec-2d12-4dc5-99b9-0de78c18877a
-   ❌ 文档中不包含笔记本ID
+5. 🔍 质量检查
+   ✅ 每个Subagent完成后检查文档行数
+   ✅ 确认NotebookLM笔记本ID已记录
+   ✅ 验证文档内容完整性
 ```
 
-### ✅ 正确流程示例
+### ✅ 正确流程示例（v5.0）
 
 ```bash
-# Step 1: 创建笔记本并记录ID
-NOTEBOOK_ID=$(notebooklm create "ACE-Brain-0" | grep -oP 'Created notebook: \K[a-f0-9-]+')
-echo "✅ 笔记本ID: $NOTEBOOK_ID"
+# Step 1: 筛选5篇论文
+PAPERS=(
+  "ACE-Brain-0|https://arxiv.org/abs/2603.03198v1|https://arxiv.org/pdf/2603.03198v1"
+  # ... 其他4篇
+)
 
-# Step 2: 添加来源
-notebooklm source add "https://arxiv.org/abs/2603.03198v1"
-timeout 90 notebooklm source add "https://arxiv.org/pdf/2603.03198v1" || \
-  notebooklm source add "https://arxiv.org/html/2603.03198v1"
+# Step 2: 对每篇论文启动Subagent
+for PAPER_INFO in "${PAPERS[@]}"; do
+  IFS='|' read -r TITLE ARXIV_URL PDF_URL <<< "$PAPER_INFO"
+  
+  # 启动Subagent
+  sessions_spawn \
+    --mode run \
+    --runtime acp \
+    --agent-id paper-analysis \
+    --task "精读论文: $TITLE
+    论文信息:
+    - 标题: $TITLE
+    - arXiv: $ARXIV_URL
+    - PDF: $PDF_URL
+    - Paper ID: $(echo "$TITLE" | sed 's/[^a-zA-Z0-9]/_/g')
+    
+    要求:
+    1. 创建NotebookLM笔记本并记录ID
+    2. 添加来源（arXiv + PDF）
+    3. 询问3个核心问题
+    4. 创建详细文档（至少500行）
+    5. 保存到 /home/cwh/coding/auto_blog/spatial_agi/papers/
+    
+    输出:
+    - 笔记本ID
+    - 文档路径
+    - 文档行数"
+done
 
-# Step 3: 等待处理
-sleep 30
-
-# Step 4: 询问问题（显式指定ID）
-notebooklm ask -n "$NOTEBOOK_ID" "Q1"
-notebooklm ask -n "$NOTEBOOK_ID" "Q2"
-notebooklm ask -n "$NOTEBOOK_ID" "Q3"
-
-# Step 5: 记录到文档
-echo "**NotebookLM笔记本ID**: $NOTEBOOK_ID" >> paper.md
+# Step 3: 收集结果并验证
+for FILE in /home/cwh/coding/auto_blog/spatial_agi/papers/$(date +%Y-%m-%d)_*.md; do
+  LINES=$(wc -l < "$FILE")
+  echo "📄 $(basename $FILE): $LINES 行"
+  
+  if [ $LINES -lt 500 ]; then
+    echo "⚠️ 警告: 文档行数不足500行"
+  fi
+done
 ```
 
-### ❌ 错误流程示例
+### ❌ 错误流程示例（v5.0）
 
 ```bash
-# ❌ 错误1: 不记录ID
-notebooklm create "ACE-Brain-0"
-notebooklm source add "https://arxiv.org/abs/2603.03198v1"
+# ❌ 错误1: 在主session中处理论文
+# （会导致token不足，创建精简版）
+
+# ❌ 错误2: 多篇论文共用一个Subagent
+# （会导致上下文混乱）
+
+# ❌ 错误3: 不检查文档质量
+# （可能创建精简版而不自知）
+```
 notebooklm ask "Q1"  # 哪个笔记本？
 
 # ❌ 错误2: 使用use命令
