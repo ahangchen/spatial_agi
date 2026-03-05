@@ -180,3 +180,81 @@
 ---
 
 *最后更新: 2026-03-05*
+
+---
+
+## 2026-03-06 研究的论文（精选5篇）
+
+1. **LLM-supported 3D Modeling Tool for Radio Radiance Field Reconstruction** - arXiv:2603.04368v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: LLM, 3D建模, 射频辐射场, 本地部署, 多模型协作
+   - 文档: papers/2026-03-06_LLM_3D_Modeling_RRF.md
+   - NotebookLM: 8a41092d-1864-42f4-8c55-04295a519354
+   - 核心贡献: 本地LLM驱动的3D场景建模，支持射频辐射场重建
+   - 文档行数: 751行
+
+2. **ZipMap: Linear-Time Stateful 3D Reconstruction with Test-Time Training** - arXiv:2603.04385v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D重建, 线性时间, 状态表示, 测试时训练
+   - 文档: papers/2026-03-06_ZipMap_Linear_Time_3D.md
+   - 核心贡献: 线性时间3D重建，700帧<10秒，比SOTA快20x
+   - 文档行数: 775行
+
+3. **ArtHOI: Articulated Human-Object Interaction Synthesis by 4D Reconstruction from Video Priors** - arXiv:2603.04338v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4D重建, 人机交互, 关节物体, 视频先验
+   - 文档: papers/2026-03-06_ArtHOI_4D_Reconstruction.md
+   - 核心贡献: 从视频先验合成物理合理的人机交互4D重建
+   - 文档行数: 792行
+
+4. **SimpliHuMoN: Simplifying Human Motion Prediction** - arXiv:2603.04399v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 人体运动预测, Transformer, 时空依赖, 端到端
+   - 文档: papers/2026-03-06_SimpliHuMoN_Motion_Pred.md
+   - 核心贡献: 统一的Transformer模型处理姿态、轨迹和组合预测
+   - 文档行数: 697行
+
+5. **Gaussian Mixture-Based Inverse Perception Contract for Uncertainty-Aware Robot Navigation** - arXiv:2603.04329v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 不确定性感知, 机器人导航, 高斯混合, 安全控制
+   - 文档: papers/2026-03-06_Gaussian_Mixture_Robot_Nav.md
+   - NotebookLM: 7509d4fd-0c02-4483-9a53-3bd6bdfacada
+   - 核心贡献: 高斯混合表示多模态不确定性，实现自适应安全导航
+   - 文档行数: 214行（Subagent超时，未达到500行要求）
+
+
+## 研究主题统计（2026-03-06）
+
+**核心技术**:
+- 3D/4D重建: 3篇（ZipMap, ArtHOI, LLM 3D Modeling）
+- 运动预测: 1篇（SimpliHuMoN）
+- 不确定性感知: 1篇（Gaussian Mixture）
+
+**应用领域**:
+- 机器人导航: 2篇（Gaussian Mixture, ZipMap）
+- 人机交互: 1篇（ArtHOI）
+- 无线通信: 1篇（LLM 3D Modeling）
+- 通用: 1篇（SimpliHuMoN）
+
+**方法类别**:
+- LLM驱动: 1篇
+- 前馈网络: 2篇
+- 高斯混合: 1篇
+- Transformer: 1篇
+
+**关键技术突破**:
+1. ⭐ 线性时间3D重建（ZipMap）- 比SOTA快20倍
+2. ⭐ LLM驱动的3D建模（LLM 3D Modeling）- 自然语言到3D场景
+3. ⭐ 4D人机交互重建（ArtHOI）- 物理合理的关节物体交互
+4. ⭐ 多模态不确定性表示（Gaussian Mixture）- 自适应安全导航
+5. ⭐ 统一运动预测框架（SimpliHuMoN）- 端到端Transformer
+
+**今日亮点**:
+- 🚀 **效率革命**: ZipMap实现线性时间3D重建（20x加速）
+- 🚀 **语言驱动**: LLM直接生成3D场景（无需专业工具）
+- 🚀 **4D理解**: ArtHOI从视频先验重建4D交互
+- 🚀 **不确定性感知**: Gaussian Mixture实现自适应安全控制
+
+---
+
+*最后更新: 2026-03-06 07:25*
