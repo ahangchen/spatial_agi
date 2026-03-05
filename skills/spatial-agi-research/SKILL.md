@@ -89,46 +89,81 @@ cat /tmp/today_papers.json
 
 **⚠️ 这一步是必须的，不是可选！**
 
-**对于每篇论文，执行以下命令**:
+**推荐方法：使用NotebookLM CLI（成功率最高）**
 
 ```bash
-cd ~/.openclaw/workspace/skills/research-assistant/scripts
+export NOTEBOOKLM_PROXY="socks5://127.0.0.1:1080"
 
-# 设置代理
-export PROXY_HOST=127.0.0.1
-export PROXY_PORT=1080
-export PROXY_TYPE=socks5
+# 1. 创建笔记本并记录ID
+NOTEBOOK_ID=$(~/miniconda3/bin/conda run -n base notebooklm create "论文标题" | grep -oP 'Created notebook: \K[a-f0-9-]+')
+echo "笔记本ID: $NOTEBOOK_ID"
 
-# 使用research-assistant技能
-./research_analysis.sh \
-  "<论文标题>" \
-  "<arXiv页面URL>" \
-  "<PDF URL>" \
-  "[GitHub代码仓库URL（如有）]"
+# 2. 添加arXiv页面（快速，必选）
+~/miniconda3/bin/conda run -n base notebooklm source add "https://arxiv.org/abs/2602.22745v1"
+
+# 3. 添加PDF下载链接（推荐，比上传PDF更快）
+# ⚠️ 关键：使用PDF的URL而不是上传本地文件
+timeout 90 ~/miniconda3/bin/conda run -n base notebooklm source add "https://arxiv.org/pdf/2602.22745v1" || {
+  echo "PDF添加超时，使用HTML替代"
+  ~/miniconda3/bin/conda run -n base notebooklm source add "https://arxiv.org/html/2602.22745v1"
+}
+
+# 4. 等待来源处理完成（重要！）
+echo "等待30秒让NotebookLM处理来源..."
+sleep 30
+
+# 5. 显式指定笔记本ID询问问题（避免会话管理bug）
+~/miniconda3/bin/conda run -n base notebooklm ask \
+  -n "$NOTEBOOK_ID" \
+  "问题1"
+
+~/miniconda3/bin/conda run -n base notebooklm ask \
+  -n "$NOTEBOOK_ID" \
+  "问题2"
+
+~/miniconda3/bin/conda run -n base notebooklm ask \
+  -n "$NOTEBOOK_ID" \
+  "问题3"
 ```
 
-**示例**:
-```bash
-./research_analysis.sh \
-  "SPATIALALIGN: Aligning Dynamic Spatial Relationships in Video Generation" \
-  "https://arxiv.org/abs/2602.22745v1" \
-  "https://arxiv.org/pdf/2602.22745v1" \
-  "https://github.com/xxx/spatialalign"
-```
+**三种来源添加方式**（按优先级排序）：
 
-**这会自动执行**:
-1. ✅ 创建NotebookLM笔记本
-2. ✅ 添加arXiv页面作为来源（超时1分钟）
-3. ✅ 添加PDF（如果超时，使用HTML替代，超时1分钟）
-4. ✅ 生成演示文稿（可选）
+1. **arXiv PDF链接**（推荐，最快）
+   ```bash
+   notebooklm source add "https://arxiv.org/pdf/2602.22745v1"
+   ```
+   - ✅ 不需要下载和上传
+   - ✅ NotebookLM直接从URL读取
+   - ⚠️ 超时设置：90秒（大PDF需要更长时间）
 
-**⚠️ 重要**: NotebookLM响应时间可能较长，所有相关操作的超时时间已设置为60秒（1分钟）。如果仍然超时：
-- 使用HTML版本替代PDF
-- 在网页界面手动添加来源
-- 访问: https://notebooklm.google.com
-- **🆕 如果完全失败，跳到Step 4.5使用GLM WebReader MCP**
+2. **arXiv HTML页面**（备选，可靠）
+   ```bash
+   notebooklm source add "https://arxiv.org/html/2602.22745v1"
+   ```
+   - ✅ 加载快速
+   - ✅ 不易超时
+   - ⚠️ 格式可能不如PDF完整
 
-**预计时间**: 每篇论文 3-5分钟
+3. **本地PDF文件上传**（不推荐，慢）
+   ```bash
+   # 需要先下载PDF
+   wget https://arxiv.org/pdf/2602.22745v1 -O paper.pdf
+   notebooklm source add "file:///path/to/paper.pdf"
+   ```
+   - ❌ 需要下载
+   - ❌ 上传慢
+   - ❌ 容易超时
+
+**⚠️ 关键改进**：
+1. ✅ 使用PDF的URL而不是上传本地文件
+2. ✅ 显式指定笔记本ID（`-n`参数）
+3. ✅ 等待30秒让来源处理完成
+4. ✅ 增加PDF添加超时到90秒
+5. ✅ 准备HTML备选方案
+
+**如果完全失败，跳到Step 4.5使用GLM WebReader MCP**
+
+**预计时间**: 每篇论文 5-8分钟
 
 ---
 
@@ -162,19 +197,33 @@ export PROXY_TYPE=socks5
 ✅ "为每篇论文完整执行3个问题"
 ```
 
-**⚠️ 精简为3个核心问题（每个超时1分钟）**
+**⚠️ 关键：显式指定笔记本ID**
 
-#### 问题流程
+```bash
+# ❌ 错误方法（有bug）
+notebooklm use $NOTEBOOK_ID
+notebooklm ask "问题"  # 可能使用错误的笔记本
+
+# ✅ 正确方法（推荐）
+notebooklm ask -n $NOTEBOOK_ID "问题"  # 显式指定笔记本ID
+```
+
+#### 问题流程（修正版）
 
 ```bash
 export NOTEBOOKLM_PROXY="socks5://127.0.0.1:1080"
 
+# 假设你在Step 3已经创建了笔记本并记录了ID
+# NOTEBOOK_ID="faee81ec-2d12-4dc5-99b9-0de78c18877a"
+
 # Q1: 核心算法原理（必问）
-timeout 60 ~/miniconda3/bin/conda run -n base notebooklm ask \
+timeout 90 ~/miniconda3/bin/conda run -n base notebooklm ask \
+  -n "$NOTEBOOK_ID" \
   "这篇文章的核心算法原理是什么？请详细描述：1) 核心思想和动机，2) 主要技术方法，3) 算法流程和关键步骤，4) 输入输出。"
 
 # Q2: 与Spatial AGI的关系（必问）
-timeout 60 ~/miniconda3/bin/conda run -n base notebooklm ask \
+timeout 90 ~/miniconda3/bin/conda run -n base notebooklm ask \
+  -n "$NOTEBOOK_ID" \
   "这篇文章与通用空间智能（Spatial AGI）有什么关系？请分析：1) 如何理解和表示空间，2) 如何处理空间关系，3) 对Spatial AGI有什么启发，4) 可以应用到哪些Spatial AGI场景（机器人、AR/VR等）。"
 
 # Q3: 经过思考后的自由问题（根据Q1和Q2的答案思考后提出）
@@ -189,9 +238,15 @@ sleep 30
 # - 对比分析："与其他方法（如X）相比，有什么优势和劣势？"
 # - 实际应用："如何将这个方法应用到实际场景中？需要哪些改进？"
 
-timeout 60 ~/miniconda3/bin/conda run -n base notebooklm ask \
+timeout 90 ~/miniconda3/bin/conda run -n base notebooklm ask \
+  -n "$NOTEBOOK_ID" \
   "你选择的问题"
 ```
+
+**关键改进**：
+1. ✅ 使用`-n "$NOTEBOOK_ID"`显式指定笔记本ID
+2. ✅ 增加超时到90秒（1.5分钟）
+3. ✅ 每个问题都独立指定笔记本ID
 
 **问题选择建议**（Q3）:
 
@@ -218,10 +273,11 @@ timeout 60 ~/miniconda3/bin/conda run -n base notebooklm ask \
 **⚠️ 【仅用于NotebookLM失败】这是备选方案，不是捷径！**
 
 **使用条件**（必须满足至少一条）:
-- ❌ NotebookLM连接完全失败（网络、代理、认证问题）
-- ❌ 多次重试后仍然超时（3次以上，每次60秒）
-- ❌ NotebookLM服务不可用或维护中
-- ❌ PDF/arXiv页面无法添加到NotebookLM（多次尝试失败）
+- ✅ NotebookLM连接完全失败（网络、代理、认证问题）
+- ✅ 多次重试后仍然超时（3次以上，每次90秒）
+- ✅ NotebookLM服务不可用或维护中
+- ✅ PDF/arXiv页面无法添加到NotebookLM（多次尝试失败）
+- ✅ `notebooklm ask`命令返回空答案或错误笔记本的答案
 
 **禁止使用的情况**:
 - ❌ 为了节省时间
@@ -232,10 +288,12 @@ timeout 60 ~/miniconda3/bin/conda run -n base notebooklm ask \
 **判断标准**:
 ```
 ✅ 允许使用GLM:
-  - NotebookLM连接超时 > 60秒
+  - NotebookLM连接超时 > 90秒
   - 代理配置正确但仍无法连接
   - 服务返回500/503错误
   - PDF添加失败3次以上
+  - `notebooklm ask`返回空答案
+  - `notebooklm ask`返回错误笔记本的答案
 
 ❌ 禁止使用GLM:
   - NotebookLM响应慢但能工作
@@ -248,6 +306,163 @@ timeout 60 ~/miniconda3/bin/conda run -n base notebooklm ask \
 1. 视为任务失败
 2. 需要重新执行NotebookLM流程
 3. 记录到知识库作为教训
+
+**NotebookLM常见失败模式**（2026-03-05发现）：
+1. **PDF添加超时** - 大PDF（>40MB）处理时间超过90秒
+2. **笔记本选择错误** - `use`命令会话管理bug，返回错误笔记本的答案
+3. **空答案** - `ask`命令返回空字符串（来源未处理完成）
+
+**解决方案**：
+1. ✅ 使用PDF URL而不是上传本地文件
+2. ✅ 显式指定笔记本ID（`-n`参数）
+3. ✅ 等待30秒让来源处理完成
+4. ✅ 如果仍然失败，切换到GLM WebReader
+
+---
+
+#### GLM WebReader使用方法
+
+**方法1: 使用web_fetch工具读取arXiv HTML页面**
+
+```bash
+# 1. 读取arXiv HTML页面（推荐，格式更完整）
+ARXIV_ID="2603.03198v1"
+ARXIV_HTML="https://arxiv.org/html/$ARXIV_ID"
+
+# 使用web_fetch工具
+web_fetch "$ARXIV_HTML"
+
+# 2. 基于读取的内容，手动分析论文
+# - 提取核心信息（标题、摘要、方法、实验）
+# - 思考与Spatial AGI的关系
+# - 生成分析文档
+```
+
+**方法2: 使用web_fetch工具读取arXiv摘要页面**
+
+```bash
+# arXiv摘要页面（包含基本信息）
+ARXIV_ABS="https://arxiv.org/abs/2603.03198v1"
+
+web_fetch "$ARXIV_ABS"
+```
+
+**GLM WebReader优势**：
+- ✅ 响应快速（<10秒）
+- ✅ 无需代理或代理要求更低
+- ✅ GLM-5理解能力强
+
+**GLM WebReader劣势**：
+- ❌ 无法访问PDF的完整内容（只能读取HTML）
+- ❌ 无法保存为可交互的笔记本
+- ❌ 上下文长度限制（但GLM-5支持128K）
+- ❌ **质量不如NotebookLM的深度分析**
+
+**何时使用**：
+- ✅ NotebookLM完全失败
+- ✅ 时间紧急（但已经尝试NotebookLM）
+- ✅ 快速浏览论文（非深度分析）
+
+**何时避免使用**：
+- ❌ 为了省时间
+- ❌ 想早点结束任务
+- ❌ 觉得NotebookLM太慢
+
+**质量对比**：
+
+| 维度 | NotebookLM | GLM WebReader |
+|------|-----------|---------------|
+| 深度分析 | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ |
+| 响应速度 | ⭐⭐ | ⭐⭐⭐⭐⭐ |
+| 可靠性 | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| 上下文理解 | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
+| 可交互性 | ⭐⭐⭐⭐⭐ | ⭐⭐ |
+
+**推荐策略**：
+1. **首选**: NotebookLM（深度分析）
+2. **备选**: GLM WebReader（仅在失败时）
+
+---
+
+### Step 5: 创建详细的Markdown文档 ✅
+
+**⚠️ 【必须遵循EXAMPLE模板】**
+
+参考模板: `/home/cwh/coding/auto_blog/spatial_agi/papers/EXAMPLE_full_analysis_template.md`
+
+**文档结构**（必须包含）:
+```markdown
+# 论文标题
+
+**基本信息**:
+- arXiv链接
+- PDF链接
+- GitHub代码（如有）
+- 作者列表
+- 发布日期
+- **NotebookLM笔记本ID**（如果使用）
+
+## 核心信息
+- 摘要
+- 关键贡献
+
+## 📝 NotebookLM问答记录
+
+### Q1: 核心算法原理
+**问题**: ...
+**答案**: ...
+
+### Q2: 与Spatial AGI的关系
+**问题**: ...
+**答案**: ...
+
+### Q3: 自由问题
+**问题**: ...
+**答案**: ...
+
+## 核心技术发现
+- 发现1
+- 发现2
+- 发现3
+
+## 与Spatial AGI的关系
+- 直接贡献
+- 技术启发
+- 应用场景
+
+## 个人思考
+- 最令人兴奋的发现
+- 潜在局限
+- 与昨日研究的关联
+
+## 关键数据
+- 模型参数
+- 数据集
+- 性能指标
+
+## 总结
+- 核心发现总结
+- 对Spatial AGI的意义
+
+---
+
+**文档创建时间**: YYYY-MM-DD
+**分析方法**: NotebookLM / GLM WebReader MCP（备选方案）
+```
+
+**质量要求**:
+- ✅ 至少500行
+- ✅ 包含完整的NotebookLM问答记录（不总结）
+- ✅ 包含与Spatial AGI的关系分析
+- ✅ 包含个人思考和见解
+- ✅ 包含关键数据
+
+**⚠️ 禁止简化**:
+- ❌ 不要只写几句话
+- ❌ 不要省略NotebookLM问答
+- ❌ 不要复制粘贴摘要
+
+**预计时间**: 10-15分钟
 
 ---
 
@@ -1001,24 +1216,31 @@ git log --oneline -1
 
 ---
 
-## ⏱️ 时间估算
+## ⏱️ 时间估算（更新版 2026-03-05）
 
-| 步骤 | 时间/论文 | 5篇总计 |
-|------|----------|---------|
-| 1. 搜索论文 | - | 10分钟 |
-| 2. 筛选论文 | - | 10分钟 |
-| 3. research-assistant | 5分钟 | 25分钟 |
-| 4. 询问问题（3个） | 8分钟 | 40分钟 |
-| 5. 创建文档 | 20分钟 | 100分钟 |
-| 6. 更新列表 | - | 5分钟 |
-| 7. 生成思考 | - | 30分钟 |
-| 8. Git提交 | - | 2分钟 |
-| **总计** | **~33分钟/篇** | **~3.7小时** |
+| 步骤 | 时间/论文 | 5篇总计 | 备注 |
+|------|----------|---------|------|
+| 1. 搜索论文 | - | 10分钟 | 自动执行 |
+| 2. 筛选论文 | - | 10分钟 | 人工筛选 |
+| 3. 创建笔记本+添加来源 | 8分钟 | 40分钟 | 含30秒等待 |
+| 4. 询问问题（3个） | 8分钟 | 40分钟 | 含思考时间 |
+| 5. 创建文档 | 15分钟 | 75分钟 | 详细分析 |
+| 6. 更新列表 | - | 5分钟 | papers_list.md |
+| 7. 生成思考 | - | 30分钟 | 8000+字 |
+| 8. Git提交 | - | 2分钟 | 自动提交 |
+| **总计** | **~31分钟/篇** | **~3.5小时** | |
+
+**实际执行时间**（2026-03-05验证）：
+- NotebookLM方式：5-8分钟/篇（含等待）
+- GLM WebReader方式：3-5分钟/篇（备选）
+- 文档创建：10-15分钟/篇
+- 每日思考：30分钟（5篇综合）
 
 **建议**:
 - 可以在1天内完成（分上午/下午）
 - 每天5篇论文（精读）
 - 重点关注最相关的论文
+- 预留30分钟缓冲时间（网络延迟）
 
 ---
 
@@ -1240,9 +1462,17 @@ openclaw cron run 065e3692-e19c-4259-be4e-15c145c9cd1f
 
 ---
 
-**最后更新**: 2026-03-02 09:35  
-**版本**: v3.1 (添加GLM备选方案)  
+**最后更新**: 2026-03-05 08:50
+**版本**: v4.0 (修复NotebookLM会话管理bug + PDF添加优化)
 **维护者**: OpenClaw AI
+
+**v4.0更新内容** (2026-03-05):
+- ✅ 修复NotebookLM `use`命令会话管理bug（使用`-n`参数）
+- ✅ 添加PDF下载链接方法（比上传本地PDF更快）
+- ✅ 增加PDF添加超时到90秒
+- ✅ 添加30秒等待时间让来源处理完成
+- ✅ 更新GLM WebReader使用条件
+- ✅ 添加常见失败模式分析
 
 **v3.0更新内容**:
 - ✅ 论文数量从10篇减少到5篇（精读 > 泛读）
@@ -1253,4 +1483,101 @@ openclaw cron run 065e3692-e19c-4259-be4e-15c145c9cd1f
 
 ---
 
-**记住**: 质量 > 数量。 精读5篇论文，深度理解每个核心算法和与Spatial AGI的关系，比泛读10篇更有价值！ 当NotebookLM失败时，立即切换到GLM WebReader MCP，不要浪费时间！ 当NotebookLM失败时，立即切换到GLM WebReader MCP，不要浪费时间！
+## 🔧 故障排查
+
+### NotebookLM常见问题
+
+#### 问题1: PDF添加超时
+```
+ERROR [notebooklm._core] RPC ADD_SOURCE failed after 30.445s
+Error: Request timed out calling ADD_SOURCE
+```
+
+**原因**: 大PDF（>40MB）处理时间超过默认30秒
+
+**解决方案**:
+1. ✅ 使用PDF的URL而不是上传本地文件
+2. ✅ 增加超时到90秒
+3. ✅ 使用arXiv HTML版本作为备选
+
+```bash
+# 推荐方法
+timeout 90 notebooklm source add "https://arxiv.org/pdf/2603.03198v1" || \
+  notebooklm source add "https://arxiv.org/html/2603.03198v1"
+```
+
+#### 问题2: 笔记本选择错误
+```
+# 问的是ACE-Brain-0，返回的是SLAM-Former的答案
+```
+
+**原因**: NotebookLM CLI的`use`命令会话管理有bug
+
+**解决方案**: 显式指定笔记本ID
+```bash
+# ❌ 错误方法
+notebooklm use $NOTEBOOK_ID
+notebooklm ask "问题"  # 可能使用错误的笔记本
+
+# ✅ 正确方法
+notebooklm ask -n $NOTEBOOK_ID "问题"  # 显式指定
+```
+
+#### 问题3: 返回空答案
+```
+Answer:
+
+Conversation: 6e59af6e... (turn ?)
+```
+
+**原因**: 来源未处理完成就提问
+
+**解决方案**: 添加等待时间
+```bash
+# 添加来源后等待30秒
+notebooklm source add "https://arxiv.org/abs/2603.03198v1"
+sleep 30  # 等待处理
+notebooklm ask -n $NOTEBOOK_ID "问题"
+```
+
+### 代理问题
+
+#### 问题: 代理连接失败
+```
+ERROR: Cannot connect to proxy socks5://127.0.0.1:1080
+```
+
+**解决方案**:
+1. 检查代理是否启动
+2. 验证代理配置
+3. 使用正确的环境变量
+
+```bash
+# 检查代理
+curl --socks5 127.0.0.1:1080 https://www.google.com
+
+# 设置环境变量
+export NOTEBOOKLM_PROXY="socks5://127.0.0.1:1080"
+```
+
+### GLM WebReader问题
+
+#### 问题: 何时切换到GLM WebReader?
+
+**判断标准**:
+```
+✅ 切换条件（满足任意一条）:
+  - NotebookLM连接超时 > 90秒
+  - PDF添加失败3次以上
+  - `ask`返回空答案3次以上
+  - `ask`返回错误笔记本的答案2次以上
+
+❌ 不要切换:
+  - 为了节省时间
+  - 响应慢但能工作
+  - 个人偏好
+```
+
+---
+
+**记住**: 质量 > 数量。 精读5篇论文，深度理解每个核心算法和与Spatial AGI的关系，比泛读10篇更有价值！ 当NotebookLM失败时，立即切换到GLM WebReader MCP，不要浪费时间！
