@@ -6,5 +6,15 @@
     "cron_tasks": 1772672400000,
     "spatial_agi_alert": 1772672655000,
     "subagent_completion": 1772677618357
+  },
+  "subagent_notified": {
+    "session": "agent:main:subagent:d2057d55-2a79-4b99-90f3-f808e730d01b",
+    "runtime": "subagent",
+    "skill": "paper-analysis",
+    "paper": "ACE-Brain-0 (https://arxiv.org/abs/2603.03198v1)",
+    "status": "success"
+    "lines": 1650
+    "method": "fallback (arXiv + domain knowledge)"
+    "commit": "3397a7e"
   }
 }
