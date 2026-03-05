@@ -89,41 +89,90 @@ cat /tmp/today_papers.json
 
 **⚠️ 这一步是必须的，不是可选！**
 
+**⚠️ 【强制要求】必须记录笔记本ID**
+
+```
+╔════════════════════════════════════════════════════════════╗
+║  🔑 关键：创建笔记本后必须立即记录ID                       ║
+║                                                              ║
+║  ✅ 步骤1: 创建笔记本                                       ║
+║  ✅ 步骤2: 立即记录ID到变量                                 ║
+║  ✅ 步骤3: 后续所有操作都使用这个ID                         ║
+║                                                              ║
+║  ❌ 不要依赖`use`命令（有bug）                              ║
+║  ❌ 不要假设会自动记住当前笔记本                            ║
+║  ❌ 不要在ask时不指定ID                                     ║
+╚════════════════════════════════════════════════════════════╝
+```
+
 **推荐方法：使用NotebookLM CLI（成功率最高）**
 
 ```bash
 export NOTEBOOKLM_PROXY="socks5://127.0.0.1:1080"
 
-# 1. 创建笔记本并记录ID
+# ========================================
+# 步骤1: 创建笔记本并记录ID（必须！）
+# ========================================
 NOTEBOOK_ID=$(~/miniconda3/bin/conda run -n base notebooklm create "论文标题" | grep -oP 'Created notebook: \K[a-f0-9-]+')
-echo "笔记本ID: $NOTEBOOK_ID"
 
-# 2. 添加arXiv页面（快速，必选）
+# ⚠️ 验证ID是否成功提取
+if [ -z "$NOTEBOOK_ID" ]; then
+  echo "❌ 错误：笔记本ID提取失败"
+  exit 1
+fi
+
+echo "✅ 笔记本创建成功"
+echo "📝 笔记本ID: $NOTEBOOK_ID"
+echo "📝 论文标题: 论文标题"
+
+# ========================================
+# 步骤2: 添加来源
+# ========================================
+
+# 2a. 添加arXiv页面（快速，必选）
+echo "📥 添加arXiv页面..."
 ~/miniconda3/bin/conda run -n base notebooklm source add "https://arxiv.org/abs/2602.22745v1"
 
-# 3. 添加PDF下载链接（推荐，比上传PDF更快）
+# 2b. 添加PDF下载链接（推荐，比上传PDF更快）
 # ⚠️ 关键：使用PDF的URL而不是上传本地文件
+echo "📥 添加PDF（90秒超时）..."
 timeout 90 ~/miniconda3/bin/conda run -n base notebooklm source add "https://arxiv.org/pdf/2602.22745v1" || {
-  echo "PDF添加超时，使用HTML替代"
+  echo "⚠️ PDF添加超时，使用HTML替代"
   ~/miniconda3/bin/conda run -n base notebooklm source add "https://arxiv.org/html/2602.22745v1"
 }
 
-# 4. 等待来源处理完成（重要！）
-echo "等待30秒让NotebookLM处理来源..."
+# ========================================
+# 步骤3: 等待来源处理完成（重要！）
+# ========================================
+echo "⏳ 等待30秒让NotebookLM处理来源..."
 sleep 30
+echo "✅ 来源处理完成"
 
-# 5. 显式指定笔记本ID询问问题（避免会话管理bug）
+# ========================================
+# 步骤4: 显式指定笔记本ID询问问题
+# ⚠️ 必须使用 -n "$NOTEBOOK_ID"
+# ========================================
+
+# Q1
+echo "❓ 询问问题1..."
 ~/miniconda3/bin/conda run -n base notebooklm ask \
   -n "$NOTEBOOK_ID" \
   "问题1"
 
+# Q2
+echo "❓ 询问问题2..."
 ~/miniconda3/bin/conda run -n base notebooklm ask \
   -n "$NOTEBOOK_ID" \
   "问题2"
 
+# Q3
+echo "❓ 询问问题3..."
 ~/miniconda3/bin/conda run -n base notebooklm ask \
   -n "$NOTEBOOK_ID" \
   "问题3"
+
+echo "✅ 所有问题询问完成"
+echo "📝 笔记本ID: $NOTEBOOK_ID（请记录到文档中）"
 ```
 
 **三种来源添加方式**（按优先级排序）：
@@ -171,11 +220,28 @@ sleep 30
 
 **⚠️ 【强制要求】必须完整执行NotebookLM流程**
 
+**⚠️ 【强制要求】必须使用Step 3中记录的笔记本ID**
+
+```
+╔════════════════════════════════════════════════════════════╗
+║  🔑 关键：必须使用Step 3中记录的笔记本ID                   ║
+║                                                              ║
+║  ✅ 在Step 3中创建了笔记本并记录了ID                       ║
+║  ✅ 在Step 4中必须使用这个ID                                ║
+║  ✅ 每个ask命令都必须带 -n "$NOTEBOOK_ID"                   ║
+║                                                              ║
+║  ❌ 不要使用`use`命令（有会话管理bug）                      ║
+║  ❌ 不要假设系统会记住当前笔记本                            ║
+║  ❌ 不要在ask命令中省略-n参数                               ║
+╚════════════════════════════════════════════════════════════╝
+```
+
 **执行原则**:
 1. ✅ **时间充足**: 每篇论文有充足的分析时间（15-20分钟），不要为了省时而偷懒
 2. ✅ **完整流程**: 必须为每篇论文创建NotebookLM笔记本并询问3个问题
 3. ✅ **质量优先**: 宁可多花时间，也要确保分析质量
-4. ❌ **禁止偷懒**: 不得以"快速完成"为由跳过NotebookLM直接使用GLM WebReader
+4. ✅ **显式指定ID**: 每个ask命令都必须带`-n "$NOTEBOOK_ID"`
+5. ❌ **禁止偷懒**: 不得以"快速完成"为由跳过NotebookLM直接使用GLM WebReader
 
 **何时使用GLM WebReader备选方案**:
 - ✅ NotebookLM连接完全失败（网络、代理、认证问题）
@@ -188,6 +254,8 @@ sleep 30
 ❌ "为了节省时间，我用GLM快速分析"
 ❌ "这篇论文比较简单，不需要NotebookLM"
 ❌ "已经分析了3篇，最后2篇用快速方法"
+❌ notebooklm use $NOTEBOOK_ID  # use命令有bug
+❌ notebooklm ask "问题"  # 缺少-n参数
 ```
 
 **正确示例** ✅:
@@ -195,6 +263,7 @@ sleep 30
 ✅ "NotebookLM连接失败，切换到GLM WebReader"
 ✅ "PDF添加超时3次，使用HTML替代"
 ✅ "为每篇论文完整执行3个问题"
+✅ notebooklm ask -n "$NOTEBOOK_ID" "问题"  # 显式指定ID
 ```
 
 **⚠️ 关键：显式指定笔记本ID**
@@ -205,7 +274,7 @@ notebooklm use $NOTEBOOK_ID
 notebooklm ask "问题"  # 可能使用错误的笔记本
 
 # ✅ 正确方法（推荐）
-notebooklm ask -n $NOTEBOOK_ID "问题"  # 显式指定笔记本ID
+notebooklm ask -n "$NOTEBOOK_ID" "问题"  # 显式指定笔记本ID
 ```
 
 #### 问题流程（修正版）
@@ -213,21 +282,32 @@ notebooklm ask -n $NOTEBOOK_ID "问题"  # 显式指定笔记本ID
 ```bash
 export NOTEBOOKLM_PROXY="socks5://127.0.0.1:1080"
 
-# 假设你在Step 3已经创建了笔记本并记录了ID
+# ⚠️ 必须使用Step 3中记录的笔记本ID
 # NOTEBOOK_ID="faee81ec-2d12-4dc5-99b9-0de78c18877a"
 
+# 验证ID是否存在
+if [ -z "$NOTEBOOK_ID" ]; then
+  echo "❌ 错误：笔记本ID未设置"
+  echo "请回到Step 3重新创建笔记本并记录ID"
+  exit 1
+fi
+
+echo "📝 使用笔记本ID: $NOTEBOOK_ID"
+
 # Q1: 核心算法原理（必问）
+echo "❓ 询问问题1：核心算法原理"
 timeout 90 ~/miniconda3/bin/conda run -n base notebooklm ask \
   -n "$NOTEBOOK_ID" \
   "这篇文章的核心算法原理是什么？请详细描述：1) 核心思想和动机，2) 主要技术方法，3) 算法流程和关键步骤，4) 输入输出。"
 
 # Q2: 与Spatial AGI的关系（必问）
+echo "❓ 询问问题2：与Spatial AGI的关系"
 timeout 90 ~/miniconda3/bin/conda run -n base notebooklm ask \
   -n "$NOTEBOOK_ID" \
   "这篇文章与通用空间智能（Spatial AGI）有什么关系？请分析：1) 如何理解和表示空间，2) 如何处理空间关系，3) 对Spatial AGI有什么启发，4) 可以应用到哪些Spatial AGI场景（机器人、AR/VR等）。"
 
 # Q3: 经过思考后的自由问题（根据Q1和Q2的答案思考后提出）
-# 等待思考30秒后再问
+echo "💭 思考30秒..."
 sleep 30
 
 # 示例：基于前两个问题的答案，问一个你感兴趣的问题
@@ -238,15 +318,21 @@ sleep 30
 # - 对比分析："与其他方法（如X）相比，有什么优势和劣势？"
 # - 实际应用："如何将这个方法应用到实际场景中？需要哪些改进？"
 
+echo "❓ 询问问题3：自由问题（基于Q1和Q2）"
 timeout 90 ~/miniconda3/bin/conda run -n base notebooklm ask \
   -n "$NOTEBOOK_ID" \
   "你选择的问题"
+
+echo "✅ 所有问题询问完成"
+echo "📝 记得将笔记本ID保存到文档中：$NOTEBOOK_ID"
 ```
 
 **关键改进**：
 1. ✅ 使用`-n "$NOTEBOOK_ID"`显式指定笔记本ID
-2. ✅ 增加超时到90秒（1.5分钟）
-3. ✅ 每个问题都独立指定笔记本ID
+2. ✅ 验证ID是否存在
+3. ✅ 增加超时到90秒（1.5分钟）
+4. ✅ 每个问题都独立指定笔记本ID
+5. ✅ 添加日志输出便于调试
 
 **问题选择建议**（Q3）:
 
@@ -1462,11 +1548,18 @@ openclaw cron run 065e3692-e19c-4259-be4e-15c145c9cd1f
 
 ---
 
-**最后更新**: 2026-03-05 08:50
-**版本**: v4.0 (修复NotebookLM会话管理bug + PDF添加优化)
+**最后更新**: 2026-03-05 08:54
+**版本**: v4.1 (强制要求记录和使用笔记本ID)
 **维护者**: OpenClaw AI
 
-**v4.0更新内容** (2026-03-05):
+**v4.1更新内容** (2026-03-05 08:54):
+- ✅ **强制要求**：创建笔记本后必须立即记录ID到变量
+- ✅ **强制要求**：所有ask命令必须使用`-n "$NOTEBOOK_ID"`
+- ✅ 添加ID验证步骤（检查ID是否存在）
+- ✅ 添加日志输出便于调试
+- ✅ 更新Step 3和Step 4的示例代码
+
+**v4.0更新内容** (2026-03-05 08:50):
 - ✅ 修复NotebookLM `use`命令会话管理bug（使用`-n`参数）
 - ✅ 添加PDF下载链接方法（比上传本地PDF更快）
 - ✅ 增加PDF添加超时到90秒
@@ -1480,6 +1573,89 @@ openclaw cron run 065e3692-e19c-4259-be4e-15c145c9cd1f
 - ✅ 所有NotebookLM操作超时时间增加到60秒
 - ✅ 强调思考后再问Q3（自由问题）
 - ✅ 总时间从~7.5小时减少到~3.7小时
+
+---
+
+## 📋 强制要求总结
+
+### ⚠️ 必须遵守的规则
+
+```
+╔════════════════════════════════════════════════════════════╗
+║  🚨 强制要求（不可违反）                                   ║
+╚════════════════════════════════════════════════════════════╝
+
+1. 📝 创建笔记本后必须立即记录ID
+   ✅ NOTEBOOK_ID=$(notebooklm create "标题" | grep -oP '...')
+   ✅ echo "笔记本ID: $NOTEBOOK_ID"
+   ❌ notebooklm create "标题"  # 不记录ID
+
+2. 🔑 所有ask命令必须使用 -n "$NOTEBOOK_ID"
+   ✅ notebooklm ask -n "$NOTEBOOK_ID" "问题"
+   ❌ notebooklm ask "问题"  # 缺少-n参数
+   ❌ notebooklm use $ID; notebooklm ask "问题"  # use有bug
+
+3. ⏱️ 添加来源后必须等待30秒
+   ✅ notebooklm source add "..."; sleep 30
+   ❌ notebooklm source add "..."; notebooklm ask "..."  # 立即问
+
+4. 📄 优先使用PDF的URL而不是上传本地文件
+   ✅ notebooklm source add "https://arxiv.org/pdf/..."
+   ❌ wget ...; notebooklm source add "file://..."  # 上传慢
+
+5. 🎯 每篇论文必须询问3个问题（不多不少）
+   ✅ Q1: 核心算法原理
+   ✅ Q2: 与Spatial AGI的关系
+   ✅ Q3: 自由问题（思考后提出）
+   ❌ 只问1-2个问题
+   ❌ 问超过3个问题
+
+6. 💾 必须将笔记本ID记录到文档中
+   ✅ **NotebookLM笔记本ID**: faee81ec-2d12-4dc5-99b9-0de78c18877a
+   ❌ 文档中不包含笔记本ID
+```
+
+### ✅ 正确流程示例
+
+```bash
+# Step 1: 创建笔记本并记录ID
+NOTEBOOK_ID=$(notebooklm create "ACE-Brain-0" | grep -oP 'Created notebook: \K[a-f0-9-]+')
+echo "✅ 笔记本ID: $NOTEBOOK_ID"
+
+# Step 2: 添加来源
+notebooklm source add "https://arxiv.org/abs/2603.03198v1"
+timeout 90 notebooklm source add "https://arxiv.org/pdf/2603.03198v1" || \
+  notebooklm source add "https://arxiv.org/html/2603.03198v1"
+
+# Step 3: 等待处理
+sleep 30
+
+# Step 4: 询问问题（显式指定ID）
+notebooklm ask -n "$NOTEBOOK_ID" "Q1"
+notebooklm ask -n "$NOTEBOOK_ID" "Q2"
+notebooklm ask -n "$NOTEBOOK_ID" "Q3"
+
+# Step 5: 记录到文档
+echo "**NotebookLM笔记本ID**: $NOTEBOOK_ID" >> paper.md
+```
+
+### ❌ 错误流程示例
+
+```bash
+# ❌ 错误1: 不记录ID
+notebooklm create "ACE-Brain-0"
+notebooklm source add "https://arxiv.org/abs/2603.03198v1"
+notebooklm ask "Q1"  # 哪个笔记本？
+
+# ❌ 错误2: 使用use命令
+notebooklm create "ACE-Brain-0"
+notebooklm use $ID  # use有bug
+notebooklm ask "Q1"  # 可能使用错误的笔记本
+
+# ❌ 错误3: 不等待处理
+notebooklm source add "https://arxiv.org/pdf/..."
+notebooklm ask "Q1"  # 来源还没处理完，返回空答案
+```
 
 ---
 
