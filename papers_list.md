@@ -72,3 +72,89 @@
 ---
 
 *最后更新: 2026-03-04*
+
+---
+
+## 2026-03-05 研究的论文（精选5篇）
+
+1. **ACE-Brain-0: Spatial Intelligence as a Shared Scaffold for Universal Embodiments** - arXiv:2603.03198v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 空间智能, 跨具身, SSR范式, 无数据模型合并
+   - 文档: papers/2026-03-05_01_ACE-Brain-0.md
+   - 核心贡献: 空间智能作为跨具身通用支架，24个基准SOTA
+
+2. **Utonia: Toward One Encoder for All Point Clouds** - arXiv:2603.03283v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 统一编码器, 跨领域, 点云, 自监督
+   - 文档: papers/2026-03-05_02_Utonia.md
+   - 核心贡献: 5种点云来源的统一表示，涌现行为
+
+3. **ULTRA: Unified Multimodal Control for Autonomous Humanoid Whole-Body Loco-Manipulation** - arXiv:2603.03279v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 人形机器人, 全身控制, 多模态, 自主
+   - 文档: papers/2026-03-05_03_ULTRA.md
+   - 核心贡献: 从感知到行为的端到端控制
+
+4. **LoGeR: Long-Context Geometric Reconstruction with Hybrid Memory** - arXiv:2603.03269v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 长序列重建, 混合记忆, 几何重建
+   - 文档: papers/2026-03-05_04_LoGeR.md
+   - 核心贡献: 128帧→19k帧的长序列重建
+
+5. **Tether: Autonomous Functional Play with Correspondence-Driven Trajectory Warping** - arXiv:2603.03278v1
+   - 相关性: ⭐⭐⭐
+   - 关键词: 自主学习, VLM引导, 轨迹变形
+   - 文档: papers/2026-03-05_05_Tether.md
+   - 核心贡献: 自主功能性play，1000+专家轨迹
+
+---
+
+## 研究主题统计（2026-03-05）
+
+**核心技术**:
+- 空间智能作为支架: 2篇
+- 跨领域泛化: 3篇
+- 具身应用: 3篇
+
+**应用领域**:
+- 机器人: 4篇
+- 自动驾驶: 2篇
+- 无人机: 2篇
+- AR/VR: 2篇
+
+**方法类别**:
+- 自监督学习: 2篇
+- 强化学习: 2篇
+- 多模态学习: 3篇
+- 模型合并: 1篇
+
+---
+
+## Spatial AGI 技术演进
+
+### 第一阶段（2026-03-02 ~ 2026-03-03）
+- 4D重建与时空理解
+- 视频生成与World Model
+- 表示学习
+
+### 第二阶段（2026-03-04）
+- SLAM技术演进（VGGT-SLAM系列）
+- 多教师蒸馏（AM-RADIO）
+
+### 第三阶段（2026-03-05）⭐
+- **空间智能作为通用支架**（ACE-Brain-0）
+- **跨领域统一表示**（Utonia）
+- **具身应用验证**（ULTRA）
+
+**关键突破**：
+1. ✅ 空间表示的领域无关性
+2. ✅ 跨具身泛化可行性
+3. ✅ 无数据模型合并技术
+4. ✅ 长序列时空一致性
+5. ✅ 自主学习能力
+
+**待解决问题**：
+1. ⚠️ 多模态融合（触觉、听觉）
+2. ⚠️ 动态空间推理
+3. ❌ 因果推理
+4. ❌ 世界模型
