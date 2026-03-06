@@ -258,3 +258,122 @@
 ---
 
 *最后更新: 2026-03-06 07:25*
+
+---
+
+## 2026-03-07 研究的论文（精选10篇）
+
+1. **RoboPocket: Improve Robot Policies Instantly with Your Phone** - arXiv:2603.05504v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: AR可视化, 数据收集, 在线学习, 机器人策略
+   - 文档: papers/2026-03-07_01_RoboPocket.md
+   - 核心贡献: AR驱动的无机器人策略迭代,数据效率2x提升
+   - 技术突破: AR Visual Foresight, 分钟级学习闭环
+
+2. **RealWonder: Real-Time Physical Action-Conditioned Video Generation** - arXiv:2603.05449v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 物理仿真, 视频生成, 3D重建, 实时交互
+   - 文档: papers/2026-03-07_02_RealWonder.md
+   - 核心贡献: 物理仿真桥接3D重建与视频生成,13.2 FPS实时性能
+   - 技术突破: 单图→3D重建→物理仿真→视频生成
+
+3. **FaceCam: Portrait Video Camera Control via Scale-Aware Conditioning** - arXiv:2603.05506v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 相机控制, 视频生成, scale-aware, 人像视频
+   - 文档: papers/2026-03-07_03_FaceCam.md
+   - 核心贡献: scale-aware相机表示实现精确相机控制
+
+4. **Transformer-Based Inpainting for Real-Time 3D Streaming in Sparse Multi-Camera Setups** - arXiv:2603.05507v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3D流媒体, inpainting, 多视角一致, 实时
+   - 文档: papers/2026-03-07_04_Transformer_Inpainting.md
+   - 核心贡献: 实时3D流媒体inpainting,多视角一致性保证
+
+5. **Observing and Controlling Features in Vision-Language-Action Models** - arXiv:2603.05487v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, 特征可控性, 线性干预, 可解释性
+   - 文档: papers/2026-03-07_05_VLA_Features.md
+   - 核心贡献: VLA特征线性可观测和可控,最小线性干预控制行为
+   - 技术突破: 空间智能的可解释性
+
+6. **Safe-SAGE: Social-Semantic Adaptive Guidance for Safe Engagement** - arXiv:2603.05497v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 语义安全, 多传感器融合, 自适应控制, 腿式机器人
+   - 文档: papers/2026-03-07_06_Safe-SAGE.md
+   - 核心贡献: 语义感知的安全导航,上下文相关安全边际
+
+7. **cuRoboV2: Dynamics-Aware Motion Generation with Depth-Fused Distance Fields** - arXiv:2603.05493v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 运动生成, 动力学感知, 高DoF系统, GPU优化
+   - 文档: papers/2026-03-07_07_cuRoboV2.md
+   - 核心贡献: 动力学感知的运动生成,扩展到高DoF人形机器人
+
+8. **Accelerating Text-to-Video Generation with Calibrated Sparse Attention** - arXiv:2603.05503v1
+   - 相关性: ⭐⭐⭐
+   - 关键词: 视频生成加速, 稀疏注意力, 校准
+   - 文档: papers/2026-03-07_08_CalibAtt.md
+   - 核心贡献: 校准稀疏注意力实现1.58x加速
+
+9. **POET-X: Memory-efficient LLM Training by Scaling Orthogonal Transformation** - arXiv:2603.05500v1
+   - 相关性: ⭐⭐⭐
+   - 关键词: LLM训练, 内存优化, 正交变换
+   - 文档: papers/2026-03-07_09_POET-X.md
+   - 核心贡献: 内存高效的LLM训练,单GPU训练billion参数模型
+
+10. **Reasoning Theater: Disentangling Model Beliefs from Chain-of-Thought** - arXiv:2603.05488v1
+    - 相关性: ⭐⭐⭐
+    - 关键词: CoT推理, 可解释性, 激活探测
+    - 文档: papers/2026-03-07_10_Reasoning_Theater.md
+    - 核心贡献: 区分模型真实信念与CoT输出
+
+## 研究主题统计（2026-03-07）
+
+**核心技术**:
+- 交互接口: 2篇（RoboPocket AR, FaceCam相机控制）
+- 物理仿真: 2篇（RealWonder物理, cuRoboV2动力学）
+- 可控性: 2篇（VLA特征, Safe-SAGE语义）
+- 3D重建/理解: 3篇（RealWonder, Inpainting, VLA）
+- 效率优化: 2篇（RoboPocket数据, CalibAtt计算）
+
+**应用领域**:
+- 机器人操作: 4篇（RoboPocket, VLA, cuRoboV2, Safe-SAGE）
+- 视频生成: 3篇（RealWonder, FaceCam, CalibAtt）
+- AR/VR: 2篇（RoboPocket AR, 3D Streaming）
+- 人形机器人: 2篇（cuRoboV2, Safe-SAGE）
+
+**方法类别**:
+- AR可视化: 1篇
+- 物理仿真: 2篇
+- 线性干预: 1篇
+- 多传感器融合: 1篇
+- 稀疏注意力: 1篇
+- 正交变换: 1篇
+
+**关键技术突破**:
+1. ⭐ **AR驱动数据收集**（RoboPocket）- 无机器人迭代,2x效率
+2. ⭐ **物理仿真桥接**（RealWonder）- 3D→物理→视频,13 FPS
+3. ⭐ **线性可控性**（VLA Features）- 空间智能可解释
+4. ⭐ **实时3D流媒体**（Inpainting）- 多视角一致性
+5. ⭐ **语义安全导航**（Safe-SAGE）- 上下文相关边际
+
+**今日亮点**:
+- 🚀 **交互革命**: AR可视化实现无机器人策略迭代(2x效率)
+- 🚀 **物理桥接**: 物理仿真连接3D重建与视频生成(13 FPS)
+- 🚀 **可控性**: VLA特征线性可控,空间智能可解释
+- 🚀 **实时性**: 3D流媒体实时inpainting,多视角一致
+- 🚀 **语义安全**: 上下文相关安全边际实现自适应控制
+
+**架构更新**:
+- ⭐ 新增**数据层**（Level 1）: AR驱动数据收集
+- 🔄 增强**感知层**: 物理仿真能力
+- 🔄 深化**表示层**: 线性可控性
+- 🔄 升级**交互层**: AR可视化接口
+
+**演进方向**:
+- 昨日: 效率 + 语言 + 4D + 不确定性
+- 今日: **交互 + 物理 + 可控 + 实时**
+- 明日: 因果 + 规划 + 融合（预测）
+
+---
+
+*最后更新: 2026-03-07 07:30*
