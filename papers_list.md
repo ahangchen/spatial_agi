@@ -411,3 +411,48 @@
 - **状态**: ✅ 已分析
 
 ---
+
+## 2026-03-08 研究的论文（精选5篇）
+
+1. **Observing and Controlling Features in Vision-Language-Action Models** - arXiv:2603.05487v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, feature-observability, feature-controllability, linear intervention
+   - 文档: papers/2026-03-08_01_Observing_and_Controlling_Features_in_VLAs.md
+   - NotebookLM: c11d1264-d318-457d-b345-264ee084894e
+   - 行数: 1,742行
+
+2. **RoboPocket: Improve Robot Policies Instantly with Your Phone** - arXiv:2603.05504v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: AR, robot learning, data efficiency, policy iteration
+   - 文档: papers/2026-03-08_02_RoboPocket.md
+   - NotebookLM: [待记录]
+   - 行数: 1,078行
+
+3. **RealWonder: Real-Time Physical Action-Conditioned Video Generation** - arXiv:2603.05449v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: physics simulation, 3D reconstruction, video generation, real-time
+   - 文档: papers/2026-03-08_03_RealWonder.md
+   - NotebookLM: [待记录]
+   - 行数: 1,916行
+
+4. **Transformer-Based Inpainting for Real-Time 3D Streaming in Sparse Multi-Camera Setups** - arXiv:2603.05507v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3D streaming, inpainting, real-time, multi-view consistency
+   - 文档: papers/2026-03-08_04_Transformer_Based_Inpainting_3D_Streaming.md
+   - NotebookLM: [待记录]
+   - 行数: 1,077行
+
+5. **cuRoboV2: Dynamics-Aware Motion Generation with Depth-Fused Distance Fields for High-DoF Robots** - arXiv:2603.05493v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: dynamics-aware, motion generation, GPU acceleration, high-DoF
+   - 文档: papers/2026-03-08_05_cuRoboV2.md
+   - NotebookLM: [待记录]
+   - 行数: 871行
+
+---
+**分析统计**:
+- 成功分析: 5/5篇
+- 平均文档长度: 1,337行
+- 总处理时间: 11-13分钟/篇
+- 全部使用NotebookLM分析
+
