@@ -377,3 +377,37 @@
 ---
 
 *最后更新: 2026-03-07 07:30*
+
+## 2026-03-07
+
+### 论文1: Observing and Controlling Features in Vision-Language-Action Models
+- **arXiv**: https://arxiv.org/abs/2603.05487v1
+- **相关性**: ⭐⭐⭐⭐⭐ (VLA特征可观测性和可控性)
+- **关键贡献**: 线性观测器+控制器,实时精确控制空间行为
+- **状态**: ✅ 已分析
+
+### 论文2: RealWonder - Real-Time Physical Action-Conditioned Video Generation
+- **arXiv**: https://arxiv.org/abs/2603.05449v1
+- **相关性**: ⭐⭐⭐⭐⭐ (物理仿真+视频生成)
+- **关键贡献**: 13.2 FPS实时物理交互视频生成
+- **状态**: ✅ 已分析
+
+### 论文3: Transformer-Based Inpainting for Real-Time 3D Streaming
+- **arXiv**: https://arxiv.org/abs/2603.05507v1
+- **相关性**: ⭐⭐⭐⭐ (3D流式传输)
+- **关键贡献**: 时空一致性inpainting,实时性能
+- **状态**: ✅ 已分析
+
+### 论文4: FaceCam - Portrait Video Camera Control
+- **arXiv**: https://arxiv.org/abs/2603.05506v1
+- **相关性**: ⭐⭐⭐⭐ (相机控制)
+- **关键贡献**: 尺度感知相机表示,无需3D先验
+- **状态**: ✅ 已分析
+
+### 论文5: Safe-SAGE - Social-Semantic Adaptive Guidance
+- **arXiv**: https://arxiv.org/abs/2603.05497v1
+- **相关性**: ⭐⭐⭐⭐⭐ (语义导航)
+- **关键贡献**: 语义感知安全控制,上下文相关边界
+- **状态**: ✅ 已分析
+
+---
