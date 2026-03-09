@@ -1342,6 +1342,84 @@ Spatial AGI Research Skill v3.1
 # 查看最新提交
 git log --oneline -1
 
+# 确认推送成功
+git status
+```
+
+---
+
+### Step 9: 推送到GitHub远程仓库 ✅
+
+**⚠️ 这一步是必须的，确保每日研究成果同步到GitHub！**
+
+**执行操作**:
+```bash
+# 推送到GitHub（带重试）
+cd /home/cwh/coding/auto_blog/spatial_agi
+
+MAX_RETRIES=3
+RETRY=0
+
+while [ $RETRY -lt $MAX_RETRIES ]; do
+  echo "推送尝试 $((RETRY+1))/$MAX_RETRIES..."
+  
+  if git push origin main; then
+    echo "✅ 推送成功！"
+    echo "🌐 GitHub仓库: https://github.com/ahangchen/spatial_agi"
+    exit 0
+  else
+    ((RETRY++))
+    if [ $RETRY -lt $MAX_RETRIES ]; then
+      echo "⚠️  推送失败，等待10秒后重试..."
+      sleep 10
+    fi
+  fi
+done
+
+echo "❌ 推送失败，请手动执行: git push origin main"
+exit 1
+```
+
+**推送内容**:
+- ✅ 当天论文分析文档（papers/YYYY-MM-DD_*.md）
+- ✅ 每日思考文档（daily_thinking/YYYY-MM-DD.md）
+- ✅ 论文列表更新（papers_list.md）
+- ✅ README更新（如有）
+
+**推送验证**:
+```bash
+# 方法1: 查看远程状态
+git remote -v
+git branch -vv
+
+# 方法2: 检查GitHub仓库
+# 访问: https://github.com/ahangchen/spatial_agi
+# 确认最新提交已同步
+
+# 方法3: 查看远程最新提交
+git log origin/main --oneline -1
+```
+
+**常见问题**:
+1. **推送被拒绝**: 先拉取再推送
+   ```bash
+   git pull --rebase origin main
+   git push origin main
+   ```
+
+2. **网络超时**: 使用重试机制（已包含）
+
+3. **认证失败**: 检查SSH密钥或Token
+   ```bash
+   # 测试SSH连接
+   ssh -T git@github.com
+   ```
+
+**完成标志**:
+- ✅ GitHub仓库显示最新提交
+- ✅ `git status` 显示 "Your branch is up to date with 'origin/main'"
+- ✅ 远程仓库包含当天所有文件
+
 # 查看远程仓库
 # 访问: https://github.com/ahangchen/spatial_agi
 ```
@@ -1370,7 +1448,7 @@ git log --oneline -1
 
 ---
 
-## ⏱️ 时间估算（更新版 2026-03-05 09:00）
+## ⏱️ 时间估算（更新版 2026-03-09 09:40）
 
 | 步骤 | 时间 | 备注 |
 |------|------|------|
@@ -1379,8 +1457,9 @@ git log --oneline -1
 | 3. Subagent精读（5篇） | 90分钟 | 串行18分钟/篇 |
 | 3.5. 收集结果 | 5分钟 | 检查文档质量 |
 | 4. 更新列表 | 5分钟 | papers_list.md |
-| 5. 生成思考 | 30分钟 | 8000+字 |
-| 6. Git提交 | 2分钟 | 自动提交 |
+| 5. 生成思考 | 30分钟 | 500+行 |
+| 6. Git提交 | 1分钟 | 自动提交 |
+| 7. Git推送 | 1分钟 | 推送到GitHub |
 | **总计** | **~2.5小时** | |
 
 **Subagent优势**（v5.0新增）：
@@ -1645,9 +1724,28 @@ timeout 120 notebooklm ask "问题"
    - 参考前一天：`/home/cwh/coding/auto_blog/spatial_agi/daily_thinking/$(date -d yesterday +%Y-%m-%d).md`
    - 保存到：`/home/cwh/coding/auto_blog/spatial_agi/daily_thinking/$(date +%Y-%m-%d).md`
 
-5. **Git提交**
+5. **Git提交和推送**
    ```bash
-   bash /tmp/spatial_agi_commit_after_research.sh
+   # 提交
+   cd /home/cwh/coding/auto_blog/spatial_agi
+   git add .
+   git commit -m "feat: Spatial AGI Research - $(date '+%Y-%m-%d')
+   
+   - 分析5篇论文（arXiv最新，去重）
+   - 生成论文深度分析文档
+   - 每日思考: $(test -f daily_thinking/$(date +%Y-%m-%d).md && echo '✅' || echo '❌')
+   - 更新论文列表
+   
+   Spatial AGI Research Skill v6.0"
+   
+   # ⚠️ 必须推送到GitHub
+   git push origin main
+   ```
+   
+   **验证推送成功**:
+   ```bash
+   git log --oneline -1  # 确认提交
+   git status            # 确认 "up to date with 'origin/main'"
    ```
 
 ### 参考文档
@@ -1669,9 +1767,15 @@ openclaw cron run spatial-agi-research
 
 ---
 
-**最后更新**: 2026-03-09 09:00
-**版本**: v6.0 (脚本集成到skill + 论文去重 + 思考重试)
+**最后更新**: 2026-03-09 09:40
+**版本**: v6.1 (明确Git推送步骤)
 **维护者**: OpenClaw AI
+
+**v6.1更新内容** (2026-03-09 09:40):
+- ✅ **强制要求**：明确Step 9 Git推送到GitHub
+- ✅ 更新时间估算表（添加推送步骤）
+- ✅ 更新强制要求总结（添加推送规则）
+- ✅ 更新Cron Payload（明确推送步骤）
 
 **v6.0更新内容** (2026-03-09 09:00):
 - ✅ **架构改进**：脚本集成到skill目录
@@ -1772,7 +1876,7 @@ openclaw cron run spatial-agi-research
 
 ---
 
-## 📋 强制要求总结（v5.0）
+## 📋 强制要求总结（v6.0）
 
 ### ⚠️ 必须遵守的规则
 
@@ -1782,7 +1886,7 @@ openclaw cron run spatial-agi-research
 ╚════════════════════════════════════════════════════════════╝
 
 1. 🤖 必须使用Subagent进行论文精读
-   ✅ sessions_spawn --agent-id paper-analysis
+   ✅ sessions_spawn --runtime subagent
    ❌ 在主session中处理论文（会token不足）
    ❌ 创建精简版文档（质量不够）
 
@@ -1797,15 +1901,22 @@ openclaw cron run spatial-agi-research
    ✅ 包含NotebookLM笔记本ID
    ❌ 少于500行的精简版
 
-4. ⏱️ 时间预估
+4. 📅 每日思考必须生成
+   ✅ 至少500行
+   ✅ 参考昨天的思考文档
+   ✅ 包含知识演进图
+   ❌ 跳过思考文档
+
+5. 🔀 必须推送到GitHub
+   ✅ git add . && git commit && git push
+   ✅ 确认远程仓库有最新提交
+   ❌ 只提交不推送
+   ❌ 忘记推送
+
+6. ⏱️ 时间预估
    ✅ 单篇论文: 18分钟
    ✅ 5篇论文（串行）: 90分钟
-   ✅ 5篇论文（并行）: 20-30分钟
-
-5. 🔍 质量检查
-   ✅ 每个Subagent完成后检查文档行数
-   ✅ 确认NotebookLM笔记本ID已记录
-   ✅ 验证文档内容完整性
+   ✅ 总流程: ~2.5小时
 ```
 
 ### ✅ 正确流程示例（v5.0）
