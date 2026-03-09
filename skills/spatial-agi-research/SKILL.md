@@ -7,6 +7,19 @@ description: 完整的Spatial AGI研究流程 - 从arXiv搜索到深度分析，
 
 这个技能用于系统化地研究Spatial AGI（通用空间智能）领域的最新进展。
 
+## 📁 脚本文件
+
+本技能包含以下脚本（位于 `scripts/` 目录）：
+
+| 脚本 | 用途 |
+|------|------|
+| `spatial_agi_daily_robust.sh` | 每日研究任务主脚本（去重 + 思考重试） |
+| `spatial_agi_filter_papers.py` | 论文去重脚本（排除已分析的论文） |
+| `search_arxiv.py` | arXiv论文搜索脚本 |
+| `check_spatial_agi_status.sh` | 状态检查脚本 |
+
+**脚本路径**: `~/.openclaw/workspace/skills/spatial-agi-research/scripts/`
+
 **核心特点**:
 - ✅ 每天精读5篇论文（质量 > 数量）
 - ✅ 使用NotebookLM询问3个核心问题（每个超时1分钟）
@@ -1183,12 +1196,52 @@ timeline
 
 ---
 
-**⚠️ 重要提示**:
-- 知识演进图是**强制要求**，不是可选
-- 必须使用Mermaid图表**可视化**演进过程
-- 表格要清晰对比昨天vs今天
-- 追踪昨日问题的解决状态
-- 识别新的知识缺口
+**⚠️ 【强制要求】知识演进图和延续性**
+
+```
+╔════════════════════════════════════════════════════════════╗
+║  🚨 每日思考必须包含以下内容（缺一不可）                   ║
+╚════════════════════════════════════════════════════════════╝
+
+1. ✅ 与昨日思考的联系（文档开头）
+   - 必须阅读昨天的思考文档
+   - 明确写出"昨日→今日"的延续关系
+   - 说明今天如何建立在昨天的基础上
+
+2. ✅ 核心见解演进图（Mermaid graph LR）
+   - 可视化昨天→今天的见解演进
+   - 使用颜色区分（蓝色=昨天，绿色=今天，黄色=更新）
+
+3. ✅ 技术栈演进对比表
+   - 对比昨天和今天的技术方案
+   - 标注变化类型（新增/优化/验证）
+
+4. ✅ 问题追踪表格
+   - 追踪昨日未解决问题的状态
+   - 记录今日新识别的问题
+   - 标注优先级
+
+5. ✅ 知识缺口分析（Mermaid pie）
+   - 可视化知识缺口分布
+   - 列出各类别的详细内容
+
+6. ✅ 架构演进对比
+   - 昨日架构 vs 今日架构
+   - 标注新增/更新的层次
+
+7. ✅ 下一步演进方向
+   - 明确写出"昨天→今天→明天"的路径
+   - 基于今日发现预测明日方向
+
+❌ 违规示例：
+- 缺少"与昨日思考的联系"部分
+- 缺少知识演进图（任何一个图表）
+- 独立的一天，没有延续性
+- 只总结今天，不对比昨天
+
+✅ 正确示例：
+见 2026-03-06.md（完整模板）
+```
 
 ## Spatial AGI 架构更新
 
@@ -1559,24 +1612,73 @@ timeout 120 notebooklm ask "问题"
 ### 定时任务
 
 **任务名**: `spatial-agi-research`  
-**执行时间**: 每天凌晨3点  
-**任务ID**: `065e3692-e19c-4259-be4e-15c145c9cd1f`
+**执行时间**: 每天早上7点  
+**执行方式**: Cron → Skill → Scripts
 
-**查看任务**:
-```bash
-cat ~/.openclaw/cron/jobs.json | grep -A 10 "spatial-agi-research"
+### Cron Payload（简化版）
+
+```markdown
+## Spatial AGI 每日研究任务 - 执行skill
+
+请执行 **spatial-agi-research** skill 的每日研究流程。
+
+### 执行步骤
+
+1. **运行主脚本（准备阶段）**
+   ```bash
+   bash ~/.openclaw/workspace/skills/spatial-agi-research/scripts/spatial_agi_daily_robust.sh
+   ```
+   - 搜索arXiv论文
+   - 筛选新论文（自动去重）
+   - 创建状态跟踪
+
+2. **筛选5篇新论文**
+   - 从 `/tmp/spatial_agi_papers_$(date +%Y-%m-%d).json` 筛选
+   - 确保不重复已分析的论文
+
+3. **使用Subagent精读每篇论文**
+   - 参考 SKILL.md 的 Step 3 详细流程
+   - 每篇论文独立Subagent
+   - 至少500行文档
+
+4. **生成每日思考**
+   - 参考前一天：`/home/cwh/coding/auto_blog/spatial_agi/daily_thinking/$(date -d yesterday +%Y-%m-%d).md`
+   - 保存到：`/home/cwh/coding/auto_blog/spatial_agi/daily_thinking/$(date +%Y-%m-%d).md`
+
+5. **Git提交**
+   ```bash
+   bash /tmp/spatial_agi_commit_after_research.sh
+   ```
+
+### 参考文档
+- SKILL.md: `~/.openclaw/workspace/skills/spatial-agi-research/SKILL.md`
+- 脚本目录: `~/.openclaw/workspace/skills/spatial-agi-research/scripts/`
 ```
 
-**手动触发**:
+### 查看任务
+
 ```bash
-openclaw cron run 065e3692-e19c-4259-be4e-15c145c9cd1f
+cat ~/.openclaw/cron/jobs.json | jq '.[] | select(.name == "spatial-agi-research")'
+```
+
+### 手动触发
+
+```bash
+openclaw cron run spatial-agi-research
 ```
 
 ---
 
-**最后更新**: 2026-03-05 10:43
-**版本**: v5.0 (使用Subagent进行论文精读)
+**最后更新**: 2026-03-09 09:00
+**版本**: v6.0 (脚本集成到skill + 论文去重 + 思考重试)
 **维护者**: OpenClaw AI
+
+**v6.0更新内容** (2026-03-09 09:00):
+- ✅ **架构改进**：脚本集成到skill目录
+- ✅ **论文去重**：自动排除已分析的论文
+- ✅ **思考重试**：每日思考未生成时自动重试（最多3次）
+- ✅ **状态跟踪**：完整的执行状态记录
+- ✅ **简化cron**：payload调用skill，skill调用脚本
 
 **v5.0更新内容** (2026-03-05 10:43):
 - ✅ **重大改进**：使用Subagent进行论文精读
