@@ -1,5 +1,5 @@
 
-## 2026-03-11 研究的论文（精选5篇）✅
+## 2026-03-11 研究的论文（精选4篇，缺少1篇）
 
 1. **ImprovedGS+: A High-Performance C++/CUDA Re-Implementation Strategy for 3D Gaussian Splatting** - arXiv:2603.08661
    - 相关性: ⭐⭐⭐⭐⭐
@@ -22,20 +22,16 @@
    - 分析方法: GLM WebReader (NotebookLM失败)
    - 核心贡献: VLM+RAG实现经验条件化，MAE 0.43N，合适力选择率63%→87%
 
-4. **Holi-Spatial: Evolving Video Streams into Holistic 3D Spatial Intelligence** - arXiv:待确认
-   - 相关性: ⭐⭐⭐⭐⭐
-   - 关键词: 视频流建模, 定位深度耦合, 空间推理基准, 整体理解
-   - 文档: papers/2026-03-11_04_Holi_Spatial.md
-   - 项目主页: https://visionary-laboratory.github.io/holi-spatial/
-   - NotebookLM: 3f5f97c3-0cfb-45d0-8f57-8e3c2c7c18ea
-   - 核心贡献: 统一视频流建模，定位-深度双向耦合，1.3M+ QA基准，Base-plus-Delta几何表示
-
-5. **FVG-PT: Adaptive Foreground View-Guided Prompt Tuning for Vision-Language Models** - arXiv:2603.08708
+4. **FVG-PT: Adaptive Foreground View-Guided Prompt Tuning for Vision-Language Models** - arXiv:2603.08708
    - 相关性: ⭐⭐⭐⭐⭐
    - 关键词: VLM, prompt tuning, 注意力控制, 参数高效
    - 文档: papers/2026-03-11_05_FVG_PT.md
    - 代码: https://github.com/JREion/FVG-PT
    - 核心贡献: 前景注意力引导，参数0.13M，缓解base-new trade-off
+
+5. **[待补充]** - arXiv:?
+   - 相关性: ⚠️ 未生成
+   - 说明: 第4篇论文未生成，可能原因：arXiv搜索未找到合适论文或执行中断
 
 ---
 
@@ -44,14 +40,12 @@
 **核心技术**:
 - 3D表示效率: 1篇（ImprovedGS+）
 - MLLM空间理解: 1篇（GR3D）
-- 视频流空间智能: 1篇（Holi-Spatial）🆕
 - 机器人操作: 1篇（Exp-Force）
 - VLM注意力控制: 1篇（FVG-PT）
 
 **应用领域**:
 - 3D重建: 1篇（ImprovedGS+）
-- 空间推理: 2篇（GR3D, Holi-Spatial）
-- 视频理解: 1篇（Holi-Spatial）
+- 空间推理: 1篇（GR3D）
 - 机器人操作: 1篇（Exp-Force）
 - 视觉语言模型: 1篇（FVG-PT）
 
@@ -61,22 +55,23 @@
 - 空间推理: +8%（GR3D）
 - 力预测误差: 0.43N（Exp-Force）
 - 参数量: 0.13M（FVG-PT）
-- 基准规模: 1.3M+ QA（Holi-Spatial）
 
 **关键技术突破**:
 1. ⭐ **3DGS的C++/CUDA重实现**（ImprovedGS+）- 证明效率瓶颈在Python解释器
 2. ⭐ **几何参考的MLLM空间推理**（GR3D）- 无需微调即可增强
-3. ⭐ **统一视频流空间智能**（Holi-Spatial）- 从片段到整体的范式转变 🆕
-4. ⭐ **经验条件化机器人操作**（Exp-Force）- 少量经验比大量数据重要
-5. ⭐ **前景注意力引导**（FVG-PT）- 解决prompt tuning的注意力偏移
+3. ⭐ **经验条件化机器人操作**（Exp-Force）- 少量经验比大量数据重要
+4. ⭐ **前景注意力引导**（FVG-PT）- 解决prompt tuning的注意力偏移
 
 **分析质量**:
-- ✅ 5/5篇完成（100%）
+- ⚠️ 4/5篇完成（80%）
 - ✅ 平均文档长度: 1,306行
 - ✅ 全部达到500+行要求
-- ⚠️ 4/5使用NotebookLM（1/5使用GLM WebReader备选方案）
+- ⚠️ 3/4使用NotebookLM（1/4使用GLM WebReader备选方案）
 
 ---
+
+# Spatial AGI 论文列表
+
 
 
 ## 2026-03-10 研究的论文（精选5篇）
