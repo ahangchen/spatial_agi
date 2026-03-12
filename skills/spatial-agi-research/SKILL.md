@@ -1888,8 +1888,226 @@ openclaw cron run spatial-agi-research
 
 ---
 
-**最后更新**: 2026-03-10 09:40
-**版本**: v6.2 (添加演示文稿和音频生成)
+## 🔄 Step 0: 完成度检查与补充（每日执行前必做） 🆕
+
+**⚠️ 【强制要求】每次执行前必须检查前一天任务是否完整完成**
+
+```
+╔════════════════════════════════════════════════════════════╗
+║  🔍 完成度检查流程（每天7:00执行）                         ║
+║                                                              ║
+║  1. 检查昨天的论文数量（应有5篇）                           ║
+║  2. 检查昨天的每日思考（应有200+行）                        ║
+║  3. 检查papers_list.md是否更新                              ║
+║  4. 如果不完整，先补充昨天，再执行今天                      ║
+║                                                              ║
+║  ✅ 优先级: 思考 > 论文（思考是核心产出）                   ║
+║  ✅ 补充时只生成缺失部分，不重复已完成工作                  ║
+╚════════════════════════════════════════════════════════════╝
+```
+
+### 执行脚本
+
+```bash
+# 检查昨天是否完成
+YESTERDAY=$(date -d yesterday +%Y-%m-%d)
+BLOG_DIR="/home/cwh/coding/auto_blog/spatial_agi"
+
+echo "=== 检查 $YESTERDAY 任务完成度 ==="
+
+# 1. 检查论文数量
+PAPERS_COUNT=$(ls "$BLOG_DIR"/papers/${YESTERDAY}_*.md 2>/dev/null | wc -l)
+echo "📄 论文: $PAPERS_COUNT/5"
+
+# 2. 检查每日思考
+THINKING_FILE="$BLOG_DIR/daily_thinking/${YESTERDAY}.md"
+if [ -f "$THINKING_FILE" ]; then
+    LINES=$(wc -l < "$THINKING_FILE")
+    echo "💭 思考: $LINES 行"
+    if [ $LINES -lt 200 ]; then
+        echo "⚠️  思考行数不足（$LINES < 200），需要补充"
+    fi
+else
+    echo "❌ 思考未生成"
+fi
+
+# 3. 检查papers_list.md是否更新
+if grep -q "$YESTERDAY" "$BLOG_DIR/papers_list.md" 2>/dev/null; then
+    echo "✅ papers_list.md 已更新"
+else
+    echo "⚠️  papers_list.md 未更新"
+fi
+
+# 4. 判断是否需要补充
+NEED_SUPPLEMENT="false"
+
+if [ $PAPERS_COUNT -lt 5 ]; then
+    echo "⚠️  论文数量不足，需要补充 $((5 - PAPERS_COUNT)) 篇"
+    NEED_SUPPLEMENT="true"
+fi
+
+if [ ! -f "$THINKING_FILE" ] || [ $(wc -l < "$THINKING_FILE") -lt 200 ]; then
+    echo "⚠️  每日思考需要生成/补充"
+    NEED_SUPPLEMENT="true"
+fi
+
+if [ "$NEED_SUPPLEMENT" = "true" ]; then
+    echo ""
+    echo "🔄 需要补充昨天的任务"
+    echo "   优先级: 思考 > 论文"
+    echo ""
+    echo "### 补充任务 ###"
+    echo ""
+    
+    # 生成补充任务消息
+    echo "请补充完成 $YESTERDAY 的研究任务："
+    echo ""
+    
+    # 思考生成（最高优先级）
+    if [ ! -f "$THINKING_FILE" ] || [ $(wc -l < "$THINKING_FILE" 2>/dev/null || echo 0) -lt 200 ]; then
+        echo "1. **生成每日思考**（最高优先级）"
+        echo "   - 基于已有的 $PAPERS_COUNT 篇论文生成思考"
+        echo "   - 参考前天: $(date -d '2 days ago' +%Y-%m-%d).md"
+        echo "   - 保存到: $THINKING_FILE"
+        echo "   - 要求: 至少200行，包含知识演进图"
+        echo ""
+    fi
+    
+    # 论文补充（次优先级）
+    if [ $PAPERS_COUNT -lt 5 ]; then
+        echo "2. **补充论文分析**"
+        echo "   - 缺少 $((5 - PAPERS_COUNT)) 篇"
+        echo "   - 从昨天筛选的论文中选择"
+        echo "   - 使用Subagent独立分析"
+        echo ""
+    fi
+    
+    echo "⚠️  补充完成后再开始今天的任务"
+else
+    echo "✅ 昨天任务已完整完成，开始今天的任务"
+fi
+```
+
+### 补充流程
+
+**如果发现昨天任务未完成**：
+
+1. **优先级1: 生成每日思考**
+   ```bash
+   # 即使只有1-2篇论文，也要生成思考
+   # 思考是最重要的产出
+   ```
+
+2. **优先级2: 补充论文**
+   ```bash
+   # 从昨天的论文列表中选择未分析的
+   # 每篇使用独立Subagent
+   ```
+
+3. **优先级3: 更新papers_list.md**
+   ```bash
+   # 添加昨天的论文条目
+   ```
+
+4. **完成后才开始今天的任务**
+
+---
+
+## ⏱️ 执行时间要求 🆕
+
+**⚠️ 【强制要求】Cron任务timeout必须足够长**
+
+```
+╔════════════════════════════════════════════════════════════╗
+║  ⏰ 时间预估与配置                                         ║
+║                                                              ║
+║  完整流程时间:                                              ║
+║  - Step 0 (完成度检查): 5分钟                              ║
+║  - Step 1-2 (搜索筛选): 15分钟                             ║
+║  - Step 3 (5篇论文分析): 130分钟                           ║
+║  - Step 4-5 (思考生成): 40分钟                             ║
+║  - Step 6-7 (Git提交): 5分钟                               ║
+║  - 缓冲时间: 30分钟                                        ║
+║  - **总计**: 约3.7小时                                     ║
+║                                                              ║
+║  ⚠️ Cron timeout 必须 ≥ 4小时 (14400秒)                    ║
+║  ⚠️ 建议: 5小时 (18000秒) 以应对网络延迟                   ║
+║                                                              ║
+║  当前配置: 需要检查和调整                                  ║
+╚════════════════════════════════════════════════════════════╝
+```
+
+### Cron配置要求
+
+**当前问题**：
+- Cron任务实际执行时间: 32分钟
+- 预期执行时间: 3.7小时
+- **差距**: 缩短了85%
+
+**解决方案**：
+
+1. **增加Cron timeout** (需要修改OpenClaw配置)
+   ```bash
+   # 查看当前配置
+   cat ~/.openclaw/cron/jobs.json | jq '.[] | select(.name == "spatial-agi-research")'
+   
+   # 需要添加timeout字段（如果OpenClaw支持）
+   # 或者在payload中指定
+   ```
+
+2. **执行顺序**（已调整）
+   ```
+   推荐顺序: 搜索 → 筛选 → 论文1-5 → 思考 → Git
+   
+   原因：
+   - ✅ 论文分析是核心产出，必须完成
+   - ✅ 思考基于完整的论文分析，质量更高
+   - ✅ 避免思考生成失败导致论文分析被跳过
+   ```
+
+3. **添加中断恢复机制**
+   ```bash
+   # 在脚本开头检查昨天的完成度
+   # 如果未完成，先补充昨天
+   # 然后再开始今天的任务
+   ```
+
+### 调整建议
+
+**方案1: 增加timeout（推荐）**
+```json
+{
+  "name": "spatial-agi-research",
+  "timeout": 18000,  // 5小时
+  "sessionTarget": "isolated"
+}
+```
+
+**方案2: 分拆任务（备选）**
+```
+Cron 1 (7:00): 搜索 + 筛选 + 思考生成 (1小时)
+Cron 2 (8:00): 论文分析1-3 (1.5小时)
+Cron 3 (10:00): 论文分析4-5 + Git (1小时)
+```
+
+**方案3: 异步执行（最佳）**
+```
+Cron触发 → 检查完成度 → 补充缺失 → 启动今天的任务
+                ↓
+         如果中断，下次heartbeat继续
+```
+
+---
+
+**最后更新**: 2026-03-12 08:42
+**版本**: v6.4 (调整执行顺序：论文优先)
+
+**v6.4更新内容** (2026-03-12 08:42):
+- ✅ **调整执行顺序**：论文分析 → 思考（原来是思考优先）
+- ✅ 原因：论文分析是核心产出，必须完成
+- ✅ 思考基于完整的5篇论文，质量更高
+- ✅ 避免思考生成失败导致论文分析被跳过
+- ✅ 更新cron payload中的执行顺序说明
 **维护者**: OpenClaw AI
 
 **v6.2更新内容** (2026-03-10 09:40):

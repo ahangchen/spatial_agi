@@ -1,0 +1,42 @@
+[
+  {
+    "title": "BEACON: Language-Conditioned Navigation Affordance Prediction under Occlusion",
+    "link": "https://arxiv.org/abs/2603.09961v1",
+    "pdf_url": "https://arxiv.org/pdf/2603.09961v1",
+    "published": "2026-03-10",
+    "relevance": "语言导航+遮挡推理+BEV表示",
+    "keywords": ["navigation", "VLM", "BEV", "occlusion", "affordance"]
+  },
+  {
+    "title": "ReCoSplat: Autoregressive Feed-Forward Gaussian Splatting Using Render-and-Compare",
+    "link": "https://arxiv.org/abs/2603.09968v1",
+    "pdf_url": "https://arxiv.org/pdf/2603.09968v1",
+    "published": "2026-03-10",
+    "relevance": "3D重建+Gaussian Splatting+在线推理",
+    "keywords": ["Gaussian Splatting", "3D reconstruction", "autoregressive", "online"]
+  },
+  {
+    "title": "From Semantics to Pixels: Coarse-to-Fine Masked Autoencoders for Hierarchical Visual Understanding",
+    "link": "https://arxiv.org/abs/2603.09955v1",
+    "pdf_url": "https://arxiv.org/pdf/2603.09955v1",
+    "published": "2026-03-10",
+    "relevance": "层次化视觉理解+多粒度表示",
+    "keywords": ["hierarchical", "visual understanding", "MAE", "multi-granularity"]
+  },
+  {
+    "title": "TiPToP: A Modular Open-Vocabulary Planning System for Robotic Manipulation",
+    "link": "https://arxiv.org/abs/2603.09971v1",
+    "pdf_url": "https://arxiv.org/pdf/2603.09971v1",
+    "published": "2026-03-10",
+    "relevance": "机器人操作+开放词汇规划+模块化系统",
+    "keywords": ["robotic manipulation", "planning", "TAMP", "open-vocabulary"]
+  },
+  {
+    "title": "Stepping VLMs onto the Court: Benchmarking Spatial Intelligence in Sports",
+    "link": "https://arxiv.org/abs/2603.09896v1",
+    "pdf_url": "https://arxiv.org/pdf/2603.09896v1",
+    "published": "2026-03-10",
+    "relevance": "VLM空间智能+运动场景+基准测试",
+    "keywords": ["VLM", "spatial intelligence", "benchmark", "sports"]
+  }
+]

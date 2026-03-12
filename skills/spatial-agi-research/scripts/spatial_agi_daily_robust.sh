@@ -426,17 +426,102 @@ generate_final_report() {
     log "📝 论文列表: $PAPERS_FILE"
 }
 
+# 0. 检查昨天任务完成度（新增 v6.3）
+check_yesterday_completion() {
+    log "=== 步骤0: 检查昨天任务完成度 ==="
+    
+    YESTERDAY=$(date -d yesterday +%Y-%m-%d)
+    YESTERDAY_STATE="/tmp/spatial_agi_state_$YESTERDAY.json"
+    
+    # 检查昨天的论文数量
+    YESTERDAY_PAPERS=$(ls "$BLOG_DIR"/papers/${YESTERDAY}_*.md 2>/dev/null | wc -l)
+    log "  昨天论文: $YESTERDAY_PAPERS/5"
+    
+    # 检查昨天的思考
+    YESTERDAY_THINKING="$BLOG_DIR/daily_thinking/${YESTERDAY}.md"
+    YESTERDAY_THINKING_LINES=0
+    if [ -f "$YESTERDAY_THINKING" ]; then
+        YESTERDAY_THINKING_LINES=$(wc -l < "$YESTERDAY_THINKING")
+        log "  昨天思考: $YESTERDAY_THINKING_LINES 行"
+    else
+        log "  昨天思考: ❌ 未生成"
+    fi
+    
+    # 判断是否需要补充
+    NEED_SUPPLEMENT="false"
+    SUPPLEMENT_MESSAGE=""
+    
+    if [ $YESTERDAY_PAPERS -lt 5 ]; then
+        NEED_SUPPLEMENT="true"
+        SUPPLEMENT_MESSAGE="${SUPPLEMENT_MESSAGE}⚠️  论文不足 $YESTERDAY_PAPERS/5，缺 $((5 - YESTERDAY_PAPERS)) 篇\n"
+    fi
+    
+    if [ ! -f "$YESTERDAY_THINKING" ] || [ $YESTERDAY_THINKING_LINES -lt 200 ]; then
+        NEED_SUPPLEMENT="true"
+        SUPPLEMENT_MESSAGE="${SUPPLEMENT_MESSAGE}⚠️  思考未生成或不足（$YESTERDAY_THINKING_LINES < 200行）\n"
+    fi
+    
+    if [ "$NEED_SUPPLEMENT" = "true" ]; then
+        log ""
+        log "🔄 发现昨天任务未完整完成："
+        echo "$SUPPLEMENT_MESSAGE" | tee -a "$LOG_FILE"
+        log ""
+        log "📋 补充任务（优先级: 思考 > 论文）："
+        
+        # 生成补充任务文件
+        cat > /tmp/spatial_agi_supplement_$DATE.txt << EOF
+## 补充 $YESTERDAY 任务
+
+### 需要补充的内容：
+
+$( [ ! -f "$YESTERDAY_THINKING" ] || [ $YESTERDAY_THINKING_LINES -lt 200 ] && echo "1. **生成每日思考**（最高优先级）
+   - 基于已有的 $YESTERDAY_PAPERS 篇论文
+   - 参考前天: $(date -d '2 days ago' +%Y-%m-%d).md
+   - 保存到: $YESTERDAY_THINKING
+   - 要求: 至少200行
+" || echo "✅ 思考已完整" )
+
+$( [ $YESTERDAY_PAPERS -lt 5 ] && echo "2. **补充论文分析**
+   - 缺少 $((5 - YESTERDAY_PAPERS)) 篇
+   - 使用Subagent独立分析
+   - 至少500行/篇
+" || echo "✅ 论文已完整" )
+
+### 执行顺序：
+1. 先生成思考（最重要）
+2. 再补充论文
+3. 最后更新papers_list.md
+
+补充完成后再开始今天的任务。
+EOF
+        
+        log "   补充任务已记录到: /tmp/spatial_agi_supplement_$DATE.txt"
+        log ""
+        update_state ".yesterday_incomplete" "true"
+        update_state ".yesterday_papers" $YESTERDAY_PAPERS
+        update_state ".yesterday_thinking_lines" $YESTERDAY_THINKING_LINES
+    else
+        log "✅ 昨天任务已完整完成"
+        update_state ".yesterday_incomplete" "false"
+    fi
+    
+    return 0
+}
+
 # 主执行流程
 main() {
     log "=========================================="
-    log "Spatial AGI 每日研究任务 - v6.0"
+    log "Spatial AGI 每日研究任务 - v6.3"
     log "日期: $DATE"
-    log "改进: 去重 + 思考重试"
+    log "改进: 去重 + 思考重试 + 完成度检查"
     log "=========================================="
     log ""
     
     # 初始化
     init_state
+    
+    # 检查昨天完成度（新增）
+    check_yesterday_completion
     
     # 执行步骤（每步独立，失败不中断）
     search_papers || log "⚠️  论文搜索遇到问题，但继续执行"

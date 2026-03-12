@@ -1,20 +1,53 @@
 {
   "lastChecks": {
-    "knowledge_extract": 1772699283286,
-    "background_tasks": 1772672655000,
+    "knowledge_extract": 1773264660000,
+    "background_tasks": 1773264660000,
     "gateway_check": 1772672400000,
-    "cron_tasks": 1772672400000,
-    "spatial_agi_alert": 1772672655000,
-    "subagent_completion": 1772677618357
+    "cron_tasks": 1773264660000,
+    "spatial_agi_alert": 1773163200000,
+    "spatial_agi_status": "complete_2026-03-12",
+    "heartbeat_2026-03-12_07:31": {
+      "time": 1773276660000,
+      "knowledge_extract_age_hours": 2.5,
+      "background_tasks_running": 0,
+      "cron_tasks_status": "all_ok",
+      "spatial_agi_complete": true,
+      "spatial_agi_date": "2026-03-12",
+      "spatial_agi_papers": 5,
+      "spatial_agi_thinking_lines": 280,
+      "all_systems_normal": true
+    },
+    "heartbeat_2026-03-12_05:11": {
+      "time": 1773264660000,
+      "knowledge_extract_age_hours": 0,
+      "background_tasks_running": 0,
+      "cron_tasks_status": "all_ok",
+      "spatial_agi_complete": true,
+      "all_systems_normal": true
+    }
   },
-  "subagent_notified": {
-    "session": "agent:main:subagent:d2057d55-2a79-4b99-90f3-f808e730d01b",
-    "runtime": "subagent",
-    "skill": "paper-analysis",
-    "paper": "ACE-Brain-0 (https://arxiv.org/abs/2603.03198v1)",
-    "status": "success"
-    "lines": 1650
-    "method": "fallback (arXiv + domain knowledge)"
-    "commit": "3397a7e"
+  "spatial_agi_complete": {
+    "date": "2026-03-12",
+    "papers_created": 5,
+    "papers_expected": 5,
+    "daily_thinking": true,
+    "daily_thinking_lines": 255,
+    "papers_list_updated": true,
+    "git_committed": true,
+    "git_pushed": true,
+    "commit": "76867f2",
+    "papers": [
+      "2026-03-11_01_ImprovedGS.md",
+      "2026-03-11_02_MLLM_Spatial_Reasoning.md",
+      "2026-03-11_03_Exp_Force.md",
+      "2026-03-11_04_Holi_Spatial.md",
+      "2026-03-11_05_FVG_PT.md"
+    ],
+    "completed_at": "2026-03-11T10:00:00+08:00"
+  },
+  "cron_improvements": {
+    "timeout_updated": true,
+    "timeout_seconds": 18000,
+    "updated_at": "2026-03-11T13:12:00+08:00"
   }
 }
