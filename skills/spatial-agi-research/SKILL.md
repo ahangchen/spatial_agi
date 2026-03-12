@@ -41,6 +41,9 @@ description: 完整的Spatial AGI研究流程 - 从arXiv搜索到深度分析，
 - `scene understanding`
 - `video generation`
 - `robot learning`
+- `UAV`
+- `drone`
+- `aerial`
 
 **执行命令**:
 ```bash

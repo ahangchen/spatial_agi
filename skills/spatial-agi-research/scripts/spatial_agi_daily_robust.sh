@@ -96,6 +96,9 @@ search_papers() {
         "world model video generation"
         "scene understanding neural"
         "spatial reasoning transformer"
+        "UAV"
+        "drone"
+        "aerial"
     )
     
     local success_count=0
