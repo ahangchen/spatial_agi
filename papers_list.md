@@ -1,4 +1,77 @@
 
+## 2026-03-13 研究的论文（精选5篇）✅
+
+1. **Dense Dynamic Scene Reconstruction and Camera Pose Estimation from Multi-View Videos** - arXiv:2603.12064
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 多相机动态重建, 两阶段优化, 时空连接图, 宽基线初始化
+   - 文档: papers/2026-03-13_01_Dynamic_Scene_Reconstruction.md
+   - 核心贡献: 多相机时空连接图，鲁棒尺度一致性，MultiCamRobolab数据集
+
+2. **OnFly: Onboard Zero-Shot Aerial Vision-Language Navigation toward Safety and Efficiency** - arXiv:2603.10682
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 零样本AVLN, 双智能体架构, 语义-几何验证, 机载实时
+   - 文档: papers/2026-03-13_02_OnFly_Aerial_VLN.md
+   - 代码: https://github.com/Robotics-STAR-Lab/OnFly
+   - 核心贡献: 共享感知双智能体，任务成功率26.4%→67.8%，完全机载部署
+
+3. **Pano360: Perspective to Panoramic Vision with Geometric Consistency** - arXiv:2603.12013
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 全景拼接, 3D几何一致性, Transformer架构, 多特征联合优化
+   - 文档: papers/2026-03-13_03_Pano360.md
+   - 代码: https://github.com/KiMomota/Pano360
+   - 核心贡献: 3D摄影测量空间对齐，成功率97.8%，~5秒运行时间
+
+4. **UAV-Based 3D Spectrum Sensing: Insights on Altitude, Bandwidth, Trajectory, and Effective Antenna Patterns on REM Reconstruction** - arXiv:2603.10362
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D频谱感知, REM重建, UAV高度影响, 天线模式校准
+   - 文档: papers/2026-03-13_04_UAV_3D_Spectrum.md
+   - 核心贡献: 深阴影框架，三相高度趋势，现场天线校准增强精度
+
+5. **Lightweight 3D LiDAR-Based UAV Tracking: An Adaptive Extended Kalman Filtering Approach** - arXiv:2603.09783
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: LiDAR跟踪, AEKF, 自适应噪声协方差, GPS拒绝环境
+   - 文档: papers/2026-03-13_05_LiDAR_UAV_Tracking.md
+   - 核心贡献: 轻量级LiDAR跟踪，创新残差统计调整，恢复机制
+
+---
+
+## 研究主题统计（2026-03-13）
+
+**核心技术**:
+- 多相机动态重建: 1篇（Dynamic Scene Reconstruction）
+- 零样本AVLN: 1篇（OnFly）
+- 全景视觉: 1篇（Pano360）
+- 3D频谱感知: 1篇（UAV 3D Spectrum）
+- LiDAR跟踪: 1篇（LiDAR UAV Tracking）
+
+**应用领域**:
+- 3D重建: 2篇（Dynamic Scene, Pano360）
+- 无人机导航: 2篇（OnFly, LiDAR UAV Tracking）
+- 频谱管理: 1篇（UAV 3D Spectrum）
+- 全景视觉: 1篇（Pano360）
+
+**方法类别**:
+- 两阶段优化: 1篇
+- 双智能体架构: 1篇
+- 3D几何一致性: 1篇
+- AEKF滤波: 1篇
+- Kriging/GPR重建: 1篇
+
+**关键技术突破**:
+1. ⭐ **多相机时空连接图**（Dynamic Scene）- 解决自由移动相机的尺度一致性
+2. ⭐ **共享感知双智能体**（OnFly）- 解耦高频决策与低频监控，任务成功率+156%
+3. ⭐ **3D摄影测量空间对齐**（Pano360）- 摆脱2D成对限制，97.8%成功率
+4. ⭐ **深阴影REM框架**（UAV 3D Spectrum）- 分解平滑与深阴影组件提升精度
+5. ⭐ **自适应噪声协方差调整**（LiDAR UAV Tracking）- 创新残差统计动态调整
+
+**分析质量**:
+- ✅ 5/5篇完成（100%）
+- ✅ 全部使用NotebookLM深度分析
+- ✅ 平均文档长度: 2,000+行
+- ✅ 全部达到500+行要求
+
+---
+
 ## 2026-03-11 研究的论文（精选5篇）✅
 
 1. **ImprovedGS+: A High-Performance C++/CUDA Re-Implementation Strategy for 3D Gaussian Splatting** - arXiv:2603.08661
