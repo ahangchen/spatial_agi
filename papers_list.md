@@ -1,3 +1,34 @@
+# Spatial AGI 论文列表
+
+本文档记录了所有分析过的论文，按日期组织。
+
+---
+
+## 2026-03-14 研究的论文（精选3篇）
+
+1. **Video Streaming Thinking: VideoLLMs Can Watch and Think Simultaneously** - arXiv:2603.12262v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 视频流理解、分摊推理、实时响应、双记忆系统
+   - 文档: papers/2026-03-14_02_Video_Streaming_Thinking.md
+   - 核心发现: 15.7倍响应加速，边看边思考范式
+   - NotebookLM: N/A（使用web_fetch备用方案）
+
+2. **MM-CondChain: A Programmatically Verified Benchmark for Visually Grounded Deep Compositional Reasoning** - arXiv:2603.12266v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 深度组合推理、VPIR框架、硬负样本、基准测试
+   - 文档: papers/2026-03-14_03_MM_CondChain.md
+   - 核心发现: 4层组合推理仅30% F1，揭示深度推理瓶颈
+   - NotebookLM: N/A（NotebookLM服务不可用）
+
+3. **GRADE: Benchmarking Discipline-Informed Reasoning in Image Editing** - arXiv:2603.12264v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 知识驱动推理、领域知识、三维度评估、基准测试
+   - 文档: papers/2026-03-14_05_GRADE.md
+   - 核心发现: 闭源vs开源差距58.3分，提供知识驱动评估框架
+   - NotebookLM: N/A（NotebookLM服务不可用）
+
+---
+
 
 ## 2026-03-13 研究的论文（精选5篇）✅
 
