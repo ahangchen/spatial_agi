@@ -72,9 +72,19 @@ def search_arxiv(query, max_results=20, timeout=30, max_retries=3):
             return papers
         
         except urllib.error.URLError as e:
-            print(f"尝试 {attempt + 1}/{max_retries} 失败 (URLError): {e}", file=sys.stderr)
+            error_msg = str(e)
+            is_rate_limit = '429' in error_msg or 'Too Many Requests' in error_msg
+            
+            if is_rate_limit:
+                # 限流错误：使用更长的等待时间
+                wait_time = (attempt + 1) * 20  # 20s, 40s, 60s
+                print(f"尝试 {attempt + 1}/{max_retries} 遇到限流 (429)", file=sys.stderr)
+            else:
+                # 其他错误：使用普通等待时间
+                wait_time = (attempt + 1) * 5  # 5s, 10s, 15s
+                print(f"尝试 {attempt + 1}/{max_retries} 失败 (URLError): {e}", file=sys.stderr)
+            
             if attempt < max_retries - 1:
-                wait_time = (attempt + 1) * 5  # 递增等待时间: 5s, 10s, 15s
                 print(f"等待 {wait_time} 秒后重试...", file=sys.stderr)
                 time.sleep(wait_time)
         except Exception as e:

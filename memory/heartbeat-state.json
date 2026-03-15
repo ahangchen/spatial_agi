@@ -1,53 +1,48 @@
 {
   "lastChecks": {
-    "knowledge_extract": 1773264660000,
-    "background_tasks": 1773264660000,
-    "gateway_check": 1772672400000,
-    "cron_tasks": 1773264660000,
-    "spatial_agi_alert": 1773163200000,
-    "spatial_agi_status": "complete_2026-03-12",
-    "heartbeat_2026-03-12_07:31": {
-      "time": 1773276660000,
-      "knowledge_extract_age_hours": 2.5,
-      "background_tasks_running": 0,
-      "cron_tasks_status": "all_ok",
-      "spatial_agi_complete": true,
-      "spatial_agi_date": "2026-03-12",
-      "spatial_agi_papers": 5,
-      "spatial_agi_thinking_lines": 280,
-      "all_systems_normal": true
-    },
-    "heartbeat_2026-03-12_05:11": {
-      "time": 1773264660000,
-      "knowledge_extract_age_hours": 0,
-      "background_tasks_running": 0,
-      "cron_tasks_status": "all_ok",
-      "spatial_agi_complete": true,
-      "all_systems_normal": true
-    }
+    "knowledge_extract": 1773525708000,
+    "spatial_agi_alert": 1773427966165,
+    "last_heartbeat_check": "2026-03-15T06:01:00+08:00",
+    "last_health_check": 1773541568062,
+    "last_health_check_datetime": "2026-03-15 10:26:08"
+  },
+  "health_check": {
+    "failed_tasks": [],
+    "retry_results": [],
+    "last_run_status": null
   },
   "spatial_agi_complete": {
-    "date": "2026-03-12",
-    "papers_created": 5,
+    "date": "2026-03-14",
+    "papers_created": 3,
     "papers_expected": 5,
     "daily_thinking": true,
-    "daily_thinking_lines": 255,
+    "daily_thinking_lines": 850,
     "papers_list_updated": true,
     "git_committed": true,
-    "git_pushed": true,
-    "commit": "76867f2",
+    "commit": "c756bf0",
     "papers": [
-      "2026-03-11_01_ImprovedGS.md",
-      "2026-03-11_02_MLLM_Spatial_Reasoning.md",
-      "2026-03-11_03_Exp_Force.md",
-      "2026-03-11_04_Holi_Spatial.md",
-      "2026-03-11_05_FVG_PT.md"
+      "2026-03-14_02_Video_Streaming_Thinking.md",
+      "2026-03-14_03_MM_CondChain.md",
+      "2026-03-14_05_GRADE.md"
     ],
-    "completed_at": "2026-03-11T10:00:00+08:00"
+    "completed_at": "2026-03-14T21:30:00+08:00"
   },
-  "cron_improvements": {
-    "timeout_updated": true,
-    "timeout_seconds": 18000,
-    "updated_at": "2026-03-11T13:12:00+08:00"
+  "knowledge_updated": {
+    "date": "2026-03-14",
+    "items_added": 2,
+    "topics": [
+      "arXiv API限流处理",
+      "API限流最佳实践"
+    ]
+  },
+  "afternoon_task": {
+    "scheduled": true,
+    "scheduled_at": "2026-03-14T11:26:00+08:00",
+    "trigger_time": "13:00-15:00",
+    "reason": "arXiv API限流，    等待3-4小时恢复后重试",
+    "status": "triggered",
+    "triggered_at": "2026-03-14T13:22:00+08:00",
+    "retry_count": 0,
+    "arxiv_recovered": true
   }
 }

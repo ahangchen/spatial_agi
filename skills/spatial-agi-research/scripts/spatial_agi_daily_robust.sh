@@ -98,37 +98,71 @@ search_papers() {
         "spatial reasoning transformer"
         "UAV"
         "drone"
-        "aerial"
     )
     
     local success_count=0
+    local consecutive_failures=0
+    
+    # 使用临时目录存储每次搜索的结果
+    TEMP_DIR=$(mktemp -d)
+    local search_index=0
+    
     for keyword in "${KEYWORDS[@]}"; do
         local retry=0
         while [ $retry -lt $MAX_RETRIES ]; do
             log "  搜索: $keyword (尝试 $((retry+1))/$MAX_RETRIES)"
             
-            if python3 search_arxiv.py "all:$keyword" 15 >> "$PAPERS_RAW_FILE" 2>&1; then
+            local temp_file="$TEMP_DIR/search_${search_index}.json"
+            if python3 search_arxiv.py "all:$keyword" 15 > "$temp_file" 2>> "$LOG_FILE"; then
                 ((success_count++))
+                ((search_index++))
+                consecutive_failures=0
                 break
             else
                 ((retry++))
+                ((consecutive_failures++))
                 if [ $retry -lt $MAX_RETRIES ]; then
-                    log "    ⚠️  失败，等待5秒后重试..."
-                    sleep 5
+                    # 根据连续失败次数动态调整等待时间
+                    if [ $consecutive_failures -ge 3 ]; then
+                        # 连续失败3次以上，可能是全局限流，等待更长时间
+                        local wait_time=60
+                        log "    ⚠️  检测到连续失败，等待${wait_time}秒后重试..."
+                    else
+                        local wait_time=10
+                        log "    ⚠️  失败，等待${wait_time}秒后重试..."
+                    fi
+                    sleep $wait_time
                 else
                     error_handler "search_papers" "关键词 '$keyword' 搜索失败"
                 fi
             fi
         done
-        sleep 3  # 避免API限制
+        
+        # 根据最近的成功率动态调整间隔
+        if [ $consecutive_failures -ge 2 ]; then
+            sleep 10  # 失败次数多，增加间隔
+        else
+            sleep 5   # 正常间隔
+        fi
     done
     
-    if [ $success_count -ge 4 ]; then
-        update_state ".papers_searched" "true"
-        log "✅ 论文搜索完成（$success_count/${#KEYWORDS[@]}），结果保存在: $PAPERS_RAW_FILE"
-        return 0
+    # 合并所有搜索结果为一个JSON数组
+    log "  合并搜索结果..."
+    if ls "$TEMP_DIR"/*.json 1> /dev/null 2>&1; then
+        jq -s 'add' "$TEMP_DIR"/*.json > "$PAPERS_RAW_FILE" 2>> "$LOG_FILE"
+        rm -rf "$TEMP_DIR"
+        
+        if [ $success_count -ge 4 ]; then
+            update_state ".papers_searched" "true"
+            log "✅ 论文搜索完成（$success_count/${#KEYWORDS[@]}），结果保存在: $PAPERS_RAW_FILE"
+            return 0
+        else
+            error_handler "search_papers" "搜索成功率过低 ($success_count/${#KEYWORDS[@]})"
+            return 1
+        fi
     else
-        error_handler "search_papers" "搜索成功率过低 ($success_count/${#KEYWORDS[@]})"
+        error_handler "search_papers" "没有成功的搜索结果"
+        rm -rf "$TEMP_DIR"
         return 1
     fi
 }

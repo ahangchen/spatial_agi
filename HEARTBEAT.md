@@ -84,8 +84,117 @@ cat /home/cwh/.openclaw/workspace/knowledge/index.md
 
 ---
 
+## 下午任务触发（arXiv限流恢复后）
+
+**优先级: 高**
+
+**执行时间**: 下午1:00-3:00 PM（13:00-15:00）
+
+**检查逻辑**：
+```bash
+# 当前时间
+CURRENT_HOUR=$(date +%H)
+
+# 如果在下午1-3点之间，if [ "$CURRENT_HOUR" -ge 13 ] && [ "$CURRENT_HOUR" -lt 15 ]; then
+    # 检查今天是否已完成
+    if [ ! -f "/home/cwh/coding/auto_blog/spatial_agi/papers/$(date +%Y-%m-%d)_*.md" ]; then
+        # 检查arXiv是否恢复
+        python3 ~/.openclaw/workspace/skills/spatial-agi-research/scripts/search_arxiv.py "all:spatial+all:intelligence" 1
+        # 如果恢复，执行任务
+        # bash ~/.openclaw/workspace/skills/spatial-agi-research/scripts/spatial_agi_daily_robust.sh
+    fi
+fi
+```
+
+**状态记录**:
+- 记录到 `/home/cwh/.openclaw/workspace/memory/heartbeat-state.json`
+- 字段: `afternoon_task_scheduled`
+- 字段: `afternoon_task_triggered`
+
+---
+
+## 定时任务健康检查
+
+**优先级: 高**
+
+每8小时执行一次任务健康检查：
+- 检查**过去8小时**所有定时任务（cron）和心跳任务的执行状态
+- 识别失败的任务并分析原因
+- 自动重试失败的任务
+- 给出修复建议并记录
+
+**触发方式**：
+- 在heartbeat时检查 `last_health_check` 字段
+- 如果距离上次检查超过8小时，执行健康检查脚本
+- 脚本路径: `~/.openclaw/workspace/scripts/task_health_check.sh`
+
+**执行命令**：
+```bash
+bash ~/.openclaw/workspace/scripts/task_health_check.sh
+```
+
+**检查范围**:
+1. **Cron任务**:
+   - spatial-agi-research (每天凌晨3点)
+   - knowledge-extract (每8小时)
+   - knowledge-cleanup (每周五晚12点)
+
+2. **心跳任务**:
+   - 知识库管理
+   - 长时间任务检查
+   - 下午任务触发
+
+**检查步骤**：
+1. 读取 `heartbeat-state.json` 检查任务执行状态
+2. 检查预期产出是否存在（如论文文件、知识库更新）
+3. 检查系统日志中的cron执行记录
+4. 对比预期执行时间与实际执行时间
+
+**失败重试逻辑**：
+```bash
+# 检查spatial-agi-research是否成功
+if [ ! -f "/home/cwh/coding/auto_blog/spatial_agi/papers/$(date +%Y-%m-%d)_*.md" ]; then
+    # 今天没有生成论文，重试
+    echo "检测到spatial-agi-research任务失败，正在重试..."
+    bash ~/.openclaw/workspace/skills/spatial-agi-research/scripts/spatial_agi_daily_robust.sh
+fi
+
+# 检查knowledge-extract是否成功（每8小时）
+LAST_EXTRACT=$(jq -r '.lastChecks.knowledge_extract' heartbeat-state.json)
+CURRENT_TIME=$(date +%s%3N)
+if [ $((CURRENT_TIME - LAST_EXTRACT)) -gt 28800000 ]; then
+    # 超过8小时未执行，重试
+    echo "检测到knowledge-extract任务超时，正在重试..."
+    # 执行知识提取逻辑
+fi
+```
+
+**失败原因分析**：
+- **网络问题**: arXiv API限流、连接超时
+- **资源问题**: 磁盘空间不足、内存不足
+- **依赖问题**: Python包缺失、脚本权限问题
+- **配置问题**: cron任务未正确配置、路径错误
+
+**修复建议记录**：
+- 记录到 `memory/task-health-log.md`
+- 包含：失败时间、任务名称、错误信息、修复建议、重试结果
+
+**状态记录**:
+- 记录到 `/home/cwh/.openclaw/workspace/memory/heartbeat-state.json`
+- 字段: `last_health_check` - 上次健康检查时间
+- 字段: `failed_tasks` - 失败任务列表
+- 字段: `retry_results` - 重试结果
+
+**提醒方式**：
+- 如果发现失败任务，通过qqbot发送提醒
+- 包含失败原因分析和修复建议
+
+---
+
 ## 注意事项
 
 - 优先处理紧急任务（训练错误、系统问题）
 - 知识库查询应主动进行，不要等用户询问
 - 长时间任务检查避免重复提醒
+- **下午任务只在13:00-15:00之间检查一次**
+- **健康检查每8小时执行一次，避免频繁检查**
