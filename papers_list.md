@@ -4,6 +4,57 @@
 
 ---
 
+## 2026-03-17 研究的论文（精选5篇）✅
+
+1. **PanoMMOcc: Panoramic Multimodal Semantic Occupancy Prediction for Quadruped Robot** - arXiv:2603.13108v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 四足机器人、全景感知、多模态融合、占用预测、垂直抖动补偿
+   - 文档: papers/2026-03-17_01_Panoramic_Multimodal_Semantic_Occupancy_Quadruped.md
+   - 核心发现: 首个四足机器人全景多模态占用数据集，VoxelHound框架，mIoU 23.34%（+4.16%）
+   - NotebookLM: 826d8422-67ef-48e0-9c0e-882e073757da
+
+2. **Towards Spatio-Temporal World Scene Graph Generation from Monocular Videos** - arXiv:2603.13185v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 世界场景图、物体恒存性、时空推理、3D几何标注、持久记忆
+   - 文档: papers/2026-03-17_02_Spatio_Temporal_World_Scene_Graph_Monocular.md
+   - 核心发现: 世界中心化场景图、物体恒存性建模、ActionGenome4D数据集
+   - GitHub: https://github.com/rohithpeddi/WorldSGG
+
+3. **GoalSwarm: Multi-UAV Semantic Coordination for Open-Vocabulary Object Search** - arXiv:2603.12908v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 多无人机协调、语义导航、开放词汇、去中心化架构、贝叶斯价值地图
+   - 文档: papers/2026-03-17_03_GoalSwarm_Multi_UAV_Semantic_Coordination.md
+   - 核心发现: 成功率45.0%（vs 单智能体10.0%），去中心化协调，零样本开放词汇检测
+
+4. **OnFly: Onboard Zero-Shot Aerial Vision-Language Navigation toward Safe Flight** - arXiv:2603.10682v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 空中VLN、零样本导航、机载计算、双智能体架构、安全飞行
+   - 文档: papers/2026-03-17_04_OnFly_Zero_Shot_Aerial_VLN_Safe_Flight.md
+   - 核心发现: 全机载计算、共享感知双智能体、混合关键帧记忆、语义-几何校验
+
+5. **Geometry-Guided Camera Motion Understanding in VideoLLMs** - arXiv:2603.13119v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VideoLLM、相机运动理解、几何感知、3D基础模型、结构化提示
+   - 文档: papers/2026-03-17_05_Geometry_Guided_Camera_Motion_VideoLLMs.md
+   - 核心发现: 外部3DFM几何插件、相机令牌注入、几何蒸馏
+   - NotebookLM: ddae667f-691a-43fd-8cae-63107c050b76
+
+### 研究主题统计（2026-03-17）
+
+**核心技术**:
+- 多智能体协调: 2篇（GoalSwarm, OnFly）
+- 世界模型/场景图: 1篇（WorldSGG）
+- 全景多模态感知: 1篇（PanoMMOcc）
+- 几何感知增强: 1篇（VideoLLM Camera Motion）
+
+**关键突破**:
+1. 物体恒存性（Object Permanence）作为空间智能基础
+2. 去中心化多智能体协调架构
+3. 几何感知作为VideoLLM的补完
+4. 从单机感知到群体智能的范式转变
+
+---
+
 ## 2026-03-16 研究的论文（精选5篇）✅
 
 1. **EndoCoT: Scaling Endogenous Chain-of-Thought Reasoning in Diffusion Models** - arXiv:2603.12252v1
