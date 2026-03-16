@@ -4,6 +4,80 @@
 
 ---
 
+## 2026-03-16 研究的论文（精选5篇）✅
+
+1. **EndoCoT: Scaling Endogenous Chain-of-Thought Reasoning in Diffusion Models** - arXiv:2603.12252v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 链式思维推理、扩散模型、迭代思维指导、终端思维接地
+   - 文档: papers/2026-03-16_EndoCoT_Diffusion_Reasoning.md
+   - 核心发现: 92.1%平均准确率，+8.3%提升，首个真正的CoT扩散框架
+   - NotebookLM: 67159b01-a1e9-42ea-8667-90e2b43437f7
+
+2. **EVATok: Adaptive Length Video Tokenization for Efficient Visual Autoregressive Generation** - arXiv:2603.12267v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 自适应tokenization、Proxy Reward、视频生成、效率优化
+   - 文档: papers/2026-03-16_EVATok_Adaptive_Video_Token.md
+   - 核心发现: 节省24.4%+ tokens，四阶段训练框架，效率-质量双赢
+   - NotebookLM: ffc65460-6b0c-46d7-8a11-580910c58a2e
+
+3. **DreamVideo-Omni: Omni-Motion Controlled Multi-Subject Video Customization with Latent Identity Reinforcement Learning** - arXiv:2603.12257v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 多主体视频生成、全方位运动控制、身份强化学习、潜在空间优化
+   - 文档: papers/2026-03-16_DreamVideo_Omni_Motion_Control.md
+   - 核心发现: 两阶段训练范式，5个关键技术组件，多主体空间关系建模
+   - NotebookLM: a5e9ca2e-7cb6-48b9-927c-056fbdcde9c5 (fallback方案)
+
+4. **Ψ₀: An Open Foundation Model Towards Universal Humanoid Loco-Manipulation** - arXiv:2603.12263v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 人形机器人、基础模型、分阶段训练、MM-DiT架构、实时控制
+   - 文档: papers/2026-03-16_Psi0_Humanoid_LocoManipulation.md
+   - 核心发现: 800+30小时数据超越10倍基线40%+，MM-DiT架构，RTC实时控制
+   - NotebookLM: 56b92811-83c3-416c-996c-cdb509404f5d (fallback方案)
+
+5. **Attend Before Attention: Efficient and Scalable Video Understanding** - arXiv:2603.12254v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 高效视频理解、注意力优化、可扩展架构、实时处理
+   - 文档: papers/2026-03-16_Attend_Before_Attention_Video.md
+   - 核心发现: 高效视频理解架构，可扩展设计，实时处理能力
+   - NotebookLM: 9e75fe98-4a2f-48d1-92b5-61d6fe5e4a4d
+
+---
+
+## 研究主题统计（2026-03-16）
+
+**核心技术**:
+- 链式思维推理: 1篇（EndoCoT）
+- 自适应tokenization: 1篇（EVATok）
+- 多主体视频生成: 1篇（DreamVideo-Omni）
+- 人形机器人基础模型: 1篇（Ψ₀）
+- 高效视频理解: 1篇（Attend Before Attention）
+
+**应用领域**:
+- 扩散模型推理: 1篇（EndoCoT）
+- 视频生成/理解: 3篇（EVATok, DreamVideo-Omni, Attend Before Attention）
+- 机器人操作: 1篇（Ψ₀）
+
+**方法类别**:
+- 迭代推理: 1篇（EndoCoT）
+- 自适应编码: 1篇（EVATok）
+- 两阶段训练: 2篇（DreamVideo-Omni, Ψ₀）
+- 注意力优化: 1篇（Attend Before Attention）
+
+**关键技术突破**:
+1. ⭐ **内源性链式思维推理**（EndoCoT）- 首个真正的CoT扩散框架，92.1%准确率
+2. ⭐ **Proxy Reward形式化**（EVATok）- 自适应token分配，节省24.4%+ tokens
+3. ⭐ **多主体空间关系建模**（DreamVideo-Omni）- 全方位运动控制，身份强化学习
+4. ⭐ **分阶段训练范式**（Ψ₀）- 仅用800+30小时数据，超越10倍基线40%+
+5. ⭐ **高效视频理解架构**（Attend Before Attention）- 可扩展设计，实时处理
+
+**分析质量**:
+- ✅ 5/5篇完成（100%）
+- ✅ 3篇使用NotebookLM深度分析
+- ⚠️ 2篇使用web_fetch fallback方案（NotebookLM来源添加失败）
+- ✅ 平均文档行数: 1,201行（远超500行要求）
+
+---
+
 ## 2026-03-14 研究的论文（精选3篇）
 
 1. **Video Streaming Thinking: VideoLLMs Can Watch and Think Simultaneously** - arXiv:2603.12262v1
