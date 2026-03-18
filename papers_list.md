@@ -4,6 +4,62 @@
 
 ---
 
+## 2026-03-19 研究的论文（精选5篇）✅
+
+1. **WorldCam: Interactive Autoregressive 3D Gaming Worlds with Camera Pose as a Unifying Geometric Representation** - arXiv:2603.16871v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D游戏世界、相机位姿、几何表示、长期一致性、交互式生成
+   - 文档: papers/2026-03-19_01_WorldCam.md
+   - 核心发现: 相机位姿作为统一几何表示、物理动作空间、全局位姿索引、3000分钟游戏数据
+
+2. **Demystifing Video Reasoning** - arXiv:2603.16870v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 视频推理、扩散模型、Chain-of-Steps、工作记忆、自纠正
+   - 文档: papers/2026-03-19_02_Demystifing_Video_Reasoning.md
+   - 核心发现: 推理在去噪步骤中涌现、Chain-of-Steps机制、功能特化层、训练自由集成
+
+3. **MessyKitchens: Contact-rich object-level 3D scene reconstruction** - arXiv:2603.16868v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 物体级重建、接触丰富场景、多物体解码器、物理合理性、真实数据集
+   - 文档: papers/2026-03-19_03_MessyKitchens.md
+   - 核心发现: MessyKitchens数据集、Multi-Object Decoder、非穿透约束、接触检测
+
+4. **ManiTwin: Scaling Data-Generation-Ready Digital Object Dataset to 100K** - arXiv:2603.16866v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 数字孪生、仿真就绪、3D资产生成、机器人操作、语义标注
+   - 文档: papers/2026-03-19_04_ManiTwin.md
+   - 核心发现: 单图像到仿真资产、100K数据集、物理属性、功能标注、操作建议
+
+5. **BrickSim: A Physics-Based Simulator for Manipulating Interlocking Brick Assemblies** - arXiv:2603.16853v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 物理仿真、积木组装、snap-fit力学、长期操作、实时仿真
+   - 文档: papers/2026-03-19_05_BrickSim.md
+   - 核心发现: 力学模型、凸二次规划、混合架构、100%稳定性预测、5ms求解时间
+
+### 研究主题统计（2026-03-19）
+
+**核心技术**:
+- 3D世界生成与导航: 1篇（WorldCam）
+- 视频推理机制: 1篇（Demystifing Video Reasoning）
+- 场景理解与重建: 1篇（MessyKitchens）
+- 数据生成与仿真: 2篇（ManiTwin, BrickSim）
+
+**关键突破**:
+- 相机位姿统一几何表示（WorldCam）
+- Chain-of-Steps推理机制（Demystifing Video Reasoning）
+- 接触丰富的多物体重建（MessyKitchens）
+- 100K仿真就绪数据集（ManiTwin）
+- 实时物理仿真（BrickSim）
+
+**与Spatial AGI的关系**:
+- 3D世界建模与导航能力
+- 时空推理与理解
+- 物理合理的场景理解
+- 大规模数据生成支持
+- 长期操作规划基础
+
+---
+
 ## 2026-03-17 研究的论文（精选5篇）✅
 
 1. **PanoMMOcc: Panoramic Multimodal Semantic Occupancy Prediction for Quadruped Robot** - arXiv:2603.13108v1
