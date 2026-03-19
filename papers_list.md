@@ -4,6 +4,53 @@
 
 ---
 
+## 2026-03-20 研究的论文（精选5篇）✅
+
+1. **Loc3R-VLM: Language-based Localization and 3D Reasoning with Vision-Language Models** - arXiv:2603.18002v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D VLM、语言定位、情境建模、BEV重建、相机位姿先验
+   - 文档: papers/2026-03-20_01_Loc3R-VLM.md
+   - 核心发现: 双目标学习（全局布局重建+情境建模）、CUT3R相机位姿先验、BEV辅助训练、ScanQA SOTA
+
+2. **Feeling the Space: Egomotion-Aware Video Representation for 3D Scene Understanding** - arXiv:2603.17980v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 自运动感知、IMU数据、物理接地、关键帧过滤、3D场景理解
+   - 文档: papers/2026-03-20_02_Feeling_the_Space.md
+   - 核心发现: 级联运动-视觉过滤、非对称跨模态融合、1.40×成本效益提升、绝对尺度推理
+
+3. **GMT: Goal-Conditioned Multimodal Transformer for 6-DOF Object Trajectory Synthesis** - arXiv:2603.17993v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 6-DOF轨迹生成、目标条件、多模态融合、3D场景理解、机器人操作
+   - 文档: papers/2026-03-20_03_GMT.md
+   - 核心发现: 以物体为中心的轨迹表示、分层融合（几何>语义）、CLIP跨类别迁移、超越CHOIS/GIMO
+
+4. **LoST: Level of Semantics Tokenization for 3D Shapes** - arXiv:2603.17995v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 语义tokenization、3D形状、AR生成、RIDA损失、语义检索
+   - 文档: papers/2026-03-20_04_LoST.md
+   - 核心发现: 语义LoD替代几何LoD、RIDA对齐损失、0.1%-10% token数量、短前缀即可用
+
+5. **STTS: Unified Spatio-Temporal Token Scoring for Efficient Video VLMs** - arXiv:2603.18004v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 时空token优化、视频VLM、效率提升、token修剪、端到端训练
+   - 文档: papers/2026-03-20_05_STTS.md
+   - 核心发现: 50%修剪率、62%效率提升、仅0.7%性能损失、统一ViT+LLM修剪
+
+### 研究主题统计（2026-03-20）
+
+**核心技术**:
+- VLM 3D理解: 2篇（Loc3R-VLM, Feeling the Space）
+- 3D表示与生成: 1篇（LoST）
+- 轨迹生成: 1篇（GMT）
+- 效率优化: 1篇（STTS）
+
+**关键突破**:
+- 空间接地能力（IMU + 相机位姿）
+- 语义tokenization替代几何LoD
+- 62%效率提升的时空优化
+
+---
+
 ## 2026-03-19 研究的论文（精选5篇）✅
 
 1. **WorldCam: Interactive Autoregressive 3D Gaming Worlds with Camera Pose as a Unifying Geometric Representation** - arXiv:2603.16871v1
