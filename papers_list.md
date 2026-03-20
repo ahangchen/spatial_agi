@@ -4,6 +4,55 @@
 
 ---
 
+## 2026-03-21 研究的论文（精选5篇）✅
+
+1. **Generation Models Know Space: Unleashing Implicit 3D Priors for Scene Understanding** - arXiv:2603.19235v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 视频生成模型、3D先验、VEGA-3D、潜在世界模拟器、自适应门控融合
+   - 文档: papers/2026-03-21_Generation_Models_Know_Space.md
+   - 核心发现: 视频扩散模型作为世界模拟器、中间噪声层级富含几何信息、无需3D监督、SOTA性能
+
+2. **Not All Features Are Created Equal: A Mechanistic Study of Vision-Language-Action Models** - arXiv:2603.19233v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA机制、SAE分析、视觉路径主导、空间绑定运动程序、可解释性
+   - 文档: papers/2026-03-21_Not_All_Features_Created_Equal.md
+   - 核心发现: 视觉特征占主导、语言作用依赖任务结构、专家路径vs VLM路径、Action Atlas
+
+3. **NavTrust: Benchmarking Trustworthiness for Embodied Navigation** - arXiv:2603.19229v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 具身导航、鲁棒性、corruption评估、VLN、OGN、真实机器人部署
+   - 文档: papers/2026-03-21_NavTrust.md
+   - 核心发现: 系统性corruption评估、深度corruption更严重、数据增强最有效、真实机器人验证
+
+4. **DriveTok: 3D Driving Scene Tokenization for Unified Multi-View Reconstruction and Understanding** - arXiv:2603.19219v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 多视角tokenization、3D可变形注意力、场景token、统一重建理解、自动驾驶
+   - 文档: papers/2026-03-21_DriveTok.md
+   - 核心发现: 3D可变形交叉注意力、多任务学习（RGB+深度+语义+占用）、统一场景token
+
+5. **Reconstruction Matters: Learning Geometry-Aligned BEV Representation through 3D Gaussian Splatting** - arXiv:2603.19193v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: BEV感知、3D Gaussian Splatting、显式3D重建、几何对齐、Splat2BEV
+   - 文档: papers/2026-03-21_Reconstruction_Matters_BEV.md
+   - 核心发现: 显式3D重建提升BEV质量、Gaussian Splatting高效表示、几何对齐特征、nuScenes SOTA
+
+### 研究主题统计（2026-03-21）
+
+**核心技术**:
+- 生成模型3D先验: 1篇（VEGA-3D）
+- VLA机制理解: 1篇（Not All Features）
+- 鲁棒性评估: 1篇（NavTrust）
+- 多视角tokenization: 1篇（DriveTok）
+- 显式3D重建: 1篇（Splat2BEV）
+
+**关键突破**:
+- 生成模型包含隐式3D先验（无需3D监督）
+- 视觉路径主导VLA动作生成
+- Gaussian Splatting提升BEV感知质量
+- 系统性corruption评估框架
+
+---
+
 ## 2026-03-20 研究的论文（精选5篇）✅
 
 1. **Loc3R-VLM: Language-based Localization and 3D Reasoning with Vision-Language Models** - arXiv:2603.18002v1
