@@ -1,0 +1,9 @@
+{
+  "success": true,
+  "paperFound": true,
+  "likeClicked": true,
+  "likeStateChanged": true,
+  "likeCountBefore": null,
+  "likeCountAfter": null,
+  "error": null
+}

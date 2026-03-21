@@ -301,4 +301,137 @@ Step 8: 自动Git提交
 
 ---
 
-*最后更新: 2026-03-03 13:10*
+## ClawHub 技能仓库
+
+**时间**: 2026-03-21
+**相关任务**: 技能管理和安装
+
+### 安装
+
+```bash
+npm i -g clawhub
+```
+
+### 常用命令
+
+```bash
+# 搜索技能
+clawhub search "关键词"
+
+# 安装技能
+clawhub install skill-name
+
+# 列出已安装技能
+clawhub list
+
+# 更新技能
+clawhub update skill-name
+clawhub update --all
+
+# 发布技能
+clawhub publish ./my-skill --slug my-skill --name "My Skill" --version 1.0.0
+```
+
+### 注意事项
+
+- 技能仓库地址: https://clawhub.com
+- API 限流: 120次/分钟
+- 安装后技能位于: `~/.openclaw/workspace/skills/`
+
+---
+
+## pyzhihu-cli 知乎CLI工具
+
+**时间**: 2026-03-21
+**相关任务**: 知乎文章发布
+
+### 安装配置
+
+**重要**: 必须使用 miniconda3 base 环境
+
+```bash
+# 安装到 miniconda3 base 环境
+~/miniconda3/bin/pip install pyzhihu-cli
+
+# 验证安装
+~/miniconda3/bin/zhihu --version
+# 输出: zhihu-cli, version 0.2.3
+```
+
+### 命令路径
+
+所有 zhihu 命令必须使用完整路径：
+```bash
+~/miniconda3/bin/zhihu <command>
+```
+
+或先激活环境：
+```bash
+source ~/miniconda3/bin/activate
+zhihu <command>
+```
+
+### 登录方式
+
+**方式1: Cookie 登录（推荐）**
+
+```bash
+~/miniconda3/bin/zhihu login --cookie "z_c0=...; _xsrf=...; d_c0=..."
+```
+
+获取 Cookie 步骤：
+1. 浏览器打开 zhihu.com 并登录
+2. 按 F12 → Network → 刷新页面
+3. 点任意请求 → Headers → 复制 Cookie 值
+
+**方式2: 扫码登录（不稳定）**
+
+```bash
+~/miniconda3/bin/zhihu login --qrcode
+```
+
+⚠️ 扫码登录经常超时，Cookie 登录更可靠
+
+### Cookie 文件位置
+
+```
+~/.zhihu-cli/cookies.json
+```
+
+### 常用命令
+
+```bash
+# 检查登录状态
+~/miniconda3/bin/zhihu status
+
+# 搜索
+~/miniconda3/bin/zhihu search "关键词" --json
+
+# 发布文章
+~/miniconda3/bin/zhihu article "标题" "正文" -t 话题id
+
+# 发布想法
+~/miniconda3/bin/zhihu pin "标题" -c "正文"
+
+# 查看热榜
+~/miniconda3/bin/zhihu hot --json
+```
+
+### 问题解决
+
+**问题**: 扫码登录超时
+**原因**: 二维码有效期短，网络延迟
+**解决**: 使用 Cookie 登录
+
+**问题**: cookies.json 文件不存在
+**原因**: 登录未成功
+**解决**: 检查 Cookie 格式，重新登录
+
+### 相关技能
+
+- 技能目录: `~/.openclaw/workspace/skills/pyzhihu-cli/`
+- SKILL.md 已更新，包含环境配置说明
+
+---
+
+*最后更新: 2026-03-21 20:15*

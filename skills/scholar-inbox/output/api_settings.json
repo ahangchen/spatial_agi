@@ -1,0 +1,41 @@
+{
+  "success": true,
+  "username": "伟航",
+  "user_id": 26024,
+  "first_name": "伟航",
+  "surname": "陈",
+  "user_key": "d560a5f3eaf30efe7097abbed8cc18fcb0323d05",
+  "email": "cweihang1024@gmail.com",
+  "threshold": 0.4,
+  "pdf_server": "arxiv",
+  "arxiv_mode": "pdf",
+  "unsubscribed": false,
+  "average_estimated_papers_per_day": 15,
+  "digest_flags": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "categories": [
+    "Audio and Speech",
+    "Biology",
+    "Computer Science",
+    "Computer Vision and Graphics",
+    "Economics",
+    "Language",
+    "Machine Learning",
+    "Mathematics",
+    "Physics",
+    "Robotics and Control",
+    "Statistics",
+    "Medicine",
+    "Chemistry"
+  ],
+  "user_categories": [
+    "Computer Vision and Graphics",
+    "Robotics and Control"
+  ],
+  "receive_newsletter": true
+}

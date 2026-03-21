@@ -1,0 +1,1699 @@
+{
+  "admin_proceedings_msg": "",
+  "conf_notification_text": "",
+  "current_digest_date": "2026-02-23",
+  "custom_digest_range": false,
+  "digest_df": [
+    {
+      "abbreviation": null,
+      "abstract": "Diffusion-based approaches have recently demonstrated strong performance for single-image novel view synthesis by conditioning generative models on geometry inferred from monocular depth estimation. However, in practice, the quality and consistency of the synthesized views are fundamentally limited by the reliability of the underlying depth estimates, which are often fragile under low texture, adverse weather, and occlusion-heavy real-world conditions. In this work, we show that incorporating sparse multimodal range measurements provides a simple yet effective way to overcome these limitations. We introduce a multimodal depth reconstruction framework that leverages extremely sparse range sensing data, such as automotive radar or LiDAR, to produce dense depth maps that serve as robust geometric conditioning for diffusion-based novel view synthesis. Our approach models depth in an angular domain using a localized Gaussian Process formulation, enabling computationally efficient inference while explicitly quantifying uncertainty in regions with limited observations. The reconstructed depth and uncertainty are used as a drop-in replacement for monocular depth estimators in existing diffusion-based rendering pipelines, without modifying the generative model itself. Experiments on real-world multimodal driving scenes demonstrate that replacing vision-only depth with our sparse range-based reconstruction substantially improves both geometric consistency and visual quality in single-image novel-view video generation. These results highlight the importance of reliable geometric priors for diffusion-based view synthesis and demonstrate the practical benefits of multimodal sensing even at extreme levels of sparsity.",
+      "affiliations": [
+        "Department of Electrical and Computer Engineering, University of California San Diego"
+      ],
+      "arxiv_id": "2602.17909",
+      "arxives_doi": null,
+      "authors": "Amirhosein Javadi, Chi-Shiang Gau, Konstantinos D. Polyzos, Tara Javidi",
+      "bookmarked": 0,
+      "cache_file_name": "Javadi2026ARXIV_A_Single_Image_and.pdf",
+      "category": "Computer Vision and Graphics",
+      "chemrxiv_id": null,
+      "citations": null,
+      "color": [
+        0.8234038948,
+        0.409333696,
+        0.4901396872,
+        0.3
+      ],
+      "conf_id": null,
+      "conference": null,
+      "conference_submission_type": null,
+      "conference_url": null,
+      "conference_year": null,
+      "digest_date": 1771804800000,
+      "display_venue": "ArXiv 2026 (February 20)",
+      "first_page_image": {
+        "imageUrl": "/first_pages/4592448.jpeg"
+      },
+      "github_url": null,
+      "has_ranking": true,
+      "html_link": "https://arxiv.org/html/2602.17909",
+      "inferredHighlights": [
+        {
+          "endIndex": 600,
+          "highlightClass": "primary-highlight",
+          "startIndex": 457
+        },
+        {
+          "endIndex": 858,
+          "highlightClass": "secondary-highlight",
+          "startIndex": 602
+        }
+      ],
+      "is_cached": true,
+      "is_cached_filename": "Javadi2026ARXIV_A_Single_Image_and.pdf",
+      "keywords_metadata": {
+        "color": "#fe7878",
+        "field": "Computer Science",
+        "keywords": "Multimodal Sensing,  Gaussian Processes,  Depth Estimation,  Sparse Range Measurements,  Diffusion Models",
+        "method_shortname": "Multimodal-NVS",
+        "sub_subfield": "Novel-View Synthesis",
+        "subfield": "Computer Vision"
+      },
+      "n_negative_ratings": 0,
+      "n_positive_ratings": 0,
+      "ngt_id": 4187110,
+      "paper_id": 4592448,
+      "paper_source_id": "2602.17909",
+      "pdf_download_success": true,
+      "project_link": null,
+      "project_url": null,
+      "publication_date": "2026-02-20",
+      "ranking_score": 0.9686964591,
+      "rating": null,
+      "read": false,
+      "recommended": true,
+      "semantic_scholar_id": null,
+      "shortened_authors": "Amirhosein Javadi, Chi-Shiang Gau, Konstantinos D. Polyzos, Tara Javidi",
+      "source": "arxiv",
+      "summaries": {
+        "contributions_question": "- Introduces a **multimodal depth reconstruction** module leveraging sparse radar or LiDAR measurements.\n- Proposes an efficient **localized Gaussian Process** approach for depth estimation with uncertainty quantification.\n- Demonstrates consistent improvements over image-only baselines in single-image novel-view video generation.\n- Highlights the importance of reliable geometric priors for diffusion-based view synthesis.\n- **Sparse range sensing** enables robust and temporally coherent video generation even under challenging conditions.",
+        "evaluation_question": "- On *View-of-Delft* dataset, achieves **14.69 PSNR** vs. vision-only baseline (**12.36**), **+15.4%** improvement.\n- Reduces **LPIPS** from 0.5804 to 0.4230, **+23.5%** improvement.\n- Improves **FID** from 152.62 to 71.91, **+46.0%** reduction.\n- Achieves **0.4971 SSIM** vs. vision-only baseline (**0.4561**), **+6.6%** increase.\n- Temporal LPIPS drops from 0.1117 to 0.0563, **+29.3%** improvement.",
+        "method_explanation_question": "- Processes sparse range sensing data using a **localized Gaussian Process** formulation in angular domain.\n- Reconstructs dense depth maps while explicitly modeling **uncertainty** in regions with limited observations.\n- Generates colored 3D point clouds by combining reconstructed depth with input RGB images.\n- Renders novel views along a target camera trajectory using **pinhole camera model**.\n- Conditions a diffusion model on rendered frames to synthesize temporally consistent videos.",
+        "problem_definition_question": "- Existing methods rely on **monocular depth estimation**, which is prone to errors in adverse conditions.\n- **Geometric misalignment** propagates through rendering and diffusion stages, degrading visual quality.\n- Single-image novel-view synthesis suffers from **inconsistent depth estimates** leading to temporal incoherence.\n- There is a need for **robust geometric priors** that can handle sparse and noisy inputs effectively.\n- **Sparse range sensing** offers a practical solution to improve reliability and consistency in real-world scenarios."
+      },
+      "teaser_figures": [
+        {
+          "caption": "Figure 1: Overview of the proposed multimodal single-image novel-view synthesis pipeline. Sparse range sensing measurements are first processed by the proposed GP-based depth reconstruction module to produce a dense depth map. The reconstructed depth and the input RGB image are used to form a colored 3D point cloud, which is rendered along a target camera trajectory to generate sparse novel-view conditioning frames. These rendered frames are provided as geometric conditioning to a diffusion model, which synthesizes a temporally consistent video at the target viewpoints.",
+          "figureNumber": 0,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592448.0.jpeg"
+        },
+        {
+          "caption": "Figure 2: Illustration of the proposed localized Gaussian Process depth reconstruction in the angular domain. Left: Sparse radar range measurements represented in azimuth–elevation space, with the current target viewing direction indicated. Right: Zoomed-in view around the target location, highlighting the local neighborhood used for Gaussian Process inference. Only range measurements within this localized region contribute to the depth estimation at the target direction, enabling efficient and spatially adaptive depth reconstruction from sparse observations.",
+          "figureNumber": 1,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592448.1.jpeg"
+        },
+        {
+          "caption": "Table 1: Quantitative evaluation on the View-of-Delft dataset for single-image novel-view video generation with GEN3C (Ren et al., 2025) under three depth-conditioning variants: (i) the default pipeline using the vision-only monocular depth estimator MoGe (Wang et al., 2025), (ii) the same pipeline with monocular depth replaced by our multimodal sparse range-sensor depth reconstruction module using synchronized radar measurements (approximately 0.02% pixel coverage), and (iii) the same replacement using synchronized LiDAR measurements (approximately 0.52% pixel coverage). Metrics are computed with respect to ground-truth target views (higher is better for PSNR/SSIM; lower is better for LPIPS/FID/temporal LPIPS), and the results show consistent improvements across all measures when using our reconstructed depth, emphasizing the role of reliable depth priors in diffusion-based novel-view synthesis from a single image.",
+          "figureNumber": 2,
+          "figureType": "Table",
+          "imageUrl": "/teaser_figures/4592448.2.jpeg"
+        },
+        {
+          "caption": "Table 2: Depth estimation accuracy on the View-of-Delft dataset evaluated on the first frame of each of the 26 selected segments. Our multimodal depth reconstruction uses synchronized radar measurements that cover approximately 0.02% of image pixels. Predicted depth is compared against LiDAR-derived depth at pixels where LiDAR measurements are available. Lower is better for both metrics.",
+          "figureNumber": 3,
+          "figureType": "Table",
+          "imageUrl": "/teaser_figures/4592448.3.jpeg"
+        },
+        {
+          "caption": "Figure 3: Qualitative comparison on single-image novel-view synthesis on the View-of-Delft dataset. From left to right, we show the input image, the novel view generated by GEN3C (Ren et al., 2025) using its default monocular depth estimator, MoGe (Wang et al., 2025), the novel view generated by GEN3C when replacing monocular depth with our sparse range-sensor depth reconstruction module, and the ground-truth target view. For each generated view, we report LPIPS with respect to the ground truth (lower is better). Across all examples, our depth reconstruction yields consistently lower LPIPS and improved geometric alignment, underscoring the importance of reliable geometry for diffusion-based rendering from single-view inputs",
+          "figureNumber": 4,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592448.4.jpeg"
+        }
+      ],
+      "title": "A Single Image and Multimodality Is All You Need for Novel View Synthesis",
+      "total_likes": 1,
+      "total_read": 57,
+      "url": "https://arxiv.org/pdf/2602.17909",
+      "url_for_twitter": "https://twitter.com/intent/tweet?text=Check+out+this+paper%3A+https%3A%2F%2Farxiv.org%2Fabs%2F2602.17909.%0AShared+by%3A&url=https%3A%2F%2Fwww.scholar-inbox.com",
+      "user_paper_collections": null
+    },
+    {
+      "abbreviation": null,
+      "abstract": "3D scene reconstruction and rendering are core tasks in computer vision, with applications spanning industrial monitoring, robotics, and autonomous driving. Recent advances in 3D Gaussian Splatting (GS) and its variants have achieved impressive rendering fidelity while maintaining high computational and memory efficiency. However, conventional vision-based GS pipelines typically rely on a sufficient number of camera views to initialize the Gaussian primitives and train their parameters, typically incurring additional processing cost during initialization while falling short in conditions where visual cues are unreliable, such as adverse weather, low illumination, or partial occlusions. To cope with these challenges, and motivated by the robustness of radio-frequency (RF) signals to weather, lighting, and occlusions, we introduce a multimodal framework that integrates RF sensing, such as automotive radar, with GS-based rendering as a more efficient and robust alternative to vision-only GS rendering. The proposed approach enables efficient depth prediction from only sparse RF-based depth measurements, yielding a high-quality 3D point cloud for initializing Gaussian functions across diverse GS architectures. Numerical tests demonstrate the merits of judiciously incorporating RF sensing into GS pipelines, achieving high-fidelity 3D scene rendering driven by RF-informed structural accuracy.",
+      "affiliations": [
+        "NVIDIA",
+        "Department of Electrical and Computer Engineering, University of California San Diego"
+      ],
+      "arxiv_id": "2602.17124",
+      "arxives_doi": null,
+      "authors": "Chi-Shiang Gau, Konstantinos D. Polyzos, Athanasios Bacharis, Saketh Madhuvarasu, Tara Javidi",
+      "bookmarked": 0,
+      "cache_file_name": "Gau2026ARXIV_3D_Scene_Rendering_with.pdf",
+      "category": "Computer Vision and Graphics",
+      "chemrxiv_id": null,
+      "citations": null,
+      "color": [
+        0.8234038948,
+        0.409333696,
+        0.4901396872,
+        0.3
+      ],
+      "conf_id": null,
+      "conference": null,
+      "conference_submission_type": null,
+      "conference_url": null,
+      "conference_year": null,
+      "digest_date": 1771804800000,
+      "display_venue": "ArXiv 2026 (February 19)",
+      "first_page_image": {
+        "imageUrl": "/first_pages/4591804.jpeg"
+      },
+      "github_url": "https://github.com/graphdeco-inria/gaussian-splatting",
+      "has_ranking": true,
+      "html_link": "https://arxiv.org/html/2602.17124",
+      "inferredHighlights": [
+        {
+          "endIndex": 1012,
+          "highlightClass": "primary-highlight",
+          "startIndex": 695
+        }
+      ],
+      "is_cached": true,
+      "is_cached_filename": "Gau2026ARXIV_3D_Scene_Rendering_with.pdf",
+      "keywords_metadata": {
+        "color": "#fe7878",
+        "field": "Computer Science",
+        "keywords": "Multimodal Sensing,  Gaussian Splatting,  RF Sensing,  Depth Prediction,  3D Point Cloud Prediction",
+        "method_shortname": "Multimodal GS",
+        "sub_subfield": "3D Scene Rendering",
+        "subfield": "Computer Vision"
+      },
+      "n_negative_ratings": 0,
+      "n_positive_ratings": 0,
+      "ngt_id": 4186466,
+      "paper_id": 4591804,
+      "paper_source_id": "2602.17124",
+      "pdf_download_success": true,
+      "project_link": null,
+      "project_url": null,
+      "publication_date": "2026-02-19",
+      "ranking_score": 0.9417263193,
+      "rating": null,
+      "read": false,
+      "recommended": true,
+      "semantic_scholar_id": null,
+      "shortened_authors": "Chi-Shiang Gau, Konstantinos D. Polyzos, Athanasios Bacharis, Saketh Madhuvarasu, Tara Javidi",
+      "source": "arxiv",
+      "summaries": {
+        "contributions_question": "- Introduces **multimodal Gaussian splatting** for 3D scene rendering, integrating RF sensing with vision-based methods.\n- Develops a **localized GP framework** for efficient depth prediction from sparse RF measurements.\n- Demonstrates the effectiveness of combining **RF and vision sensing** in improving 3D reconstruction accuracy.\n- Reduces computational complexity and enhances robustness under adverse conditions such as poor visibility.\n- Provides a **novel approach** to address limitations of vision-only GS pipelines in challenging environments.",
+        "evaluation_question": "- On *View-of-Delft dataset*, achieves **0.4727 LPIPS**, **0.4628 SSIM**, and **15.032 PSNR** vs. conventional vision-only 3DGS.\n- Improves rendering performance by **+1.7%** in LPIPS, **+0.0468** in SSIM, and **+1.7** in PSNR over baseline methods.\n- Localized GP-based depth prediction reduces runtime to **0.81 s** compared to **9.39 s** for conventional GP-based methods.",
+        "method_explanation_question": "- Processes sparse RF depth measurements using a **localized Gaussian Process (GP)** framework to predict depth maps.\n- Constructs a **3D point cloud (PC)** from RF-derived depth estimates, serving as input for Gaussian Splatting (GS) initialization.\n- Optimizes GS parameters using **L1 and D-SSIM loss functions** through standard training procedures.\n- Generates high-quality 3D scenes by combining **RF-assisted PC** with vision-based rendering techniques.\n- Utilizes **RBF kernel** with optimized lengthscale hyperparameters for region-specific depth prediction.",
+        "problem_definition_question": "- Conventional vision-only GS pipelines struggle with **adverse conditions** like poor visibility, low illumination, and occlusions.\n- Existing methods often require **multiple camera views** for accurate 3D reconstruction, increasing preprocessing time and computational cost.\n- There is a need for **robust, efficient alternatives** that maintain performance under challenging environmental conditions.\n- Current approaches lack **integration of complementary sensing modalities** such as RF signals for reliable depth estimation.\n- The paper addresses the gap by proposing a **multimodal framework** that combines RF and vision data for enhanced 3D rendering."
+      },
+      "teaser_figures": [
+        {
+          "caption": "TABLE I: Running time comparison for depth map reconstruction",
+          "figureNumber": 5,
+          "figureType": "Table",
+          "imageUrl": "/teaser_figures/4591804.5.jpeg"
+        },
+        {
+          "caption": "ground-TABLE II: LPIPS, SSIM and PSNR values for all competing methods in a certain scene of the View-of-Delft datset.",
+          "figureNumber": 6,
+          "figureType": "Table",
+          "imageUrl": "/teaser_figures/4591804.6.jpeg"
+        },
+        {
+          "caption": "Fig. 1: Initial depth map from a single radar transmission consisting of sparse depth measurements/observations.",
+          "figureNumber": 0,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4591804.0.jpeg"
+        },
+        {
+          "caption": "Fig. 2: Comparison of (a) the conventional ‘global’ GP depth predictor and (b) the proposed localized GP predictor, shown alongside (c) the ground-truth depth map obtained from five radar transmissions.",
+          "figureNumber": 1,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4591804.1.jpeg"
+        },
+        {
+          "caption": "Fig. 3: Depth variance at different angles using the conventional GP-based depth predictor.",
+          "figureNumber": 2,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4591804.2.jpeg"
+        },
+        {
+          "caption": "Fig. 4: Depth variance at different angles using the proposed localized GP-based depth predictor.",
+          "figureNumber": 3,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4591804.3.jpeg"
+        },
+        {
+          "caption": "Fig. 5: Visual comparison of the proposed multimodal GS with the conventional vision-only 3DGS on two indicative test (novel) viewpoints. It is evident that the rendered images produced by the proposed multimodal GS approach exhibit substantially improved quality compared to the conventional unimodal 3DGS baseline.",
+          "figureNumber": 4,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4591804.4.jpeg"
+        }
+      ],
+      "title": "3D Scene Rendering with Multimodal Gaussian Splatting",
+      "total_likes": 2,
+      "total_read": 31,
+      "url": "https://arxiv.org/pdf/2602.17124",
+      "url_for_twitter": "https://twitter.com/intent/tweet?text=Check+out+this+paper%3A+https%3A%2F%2Farxiv.org%2Fabs%2F2602.17124.%0AShared+by%3A&url=https%3A%2F%2Fwww.scholar-inbox.com",
+      "user_paper_collections": null
+    },
+    {
+      "abbreviation": null,
+      "abstract": "Event cameras in motion tend to detect object boundaries or texture edges, which produce lines of brightness changes, especially in man-made environments. While lines can constitute a robust intermediate representation that is consistently observed, the sparse nature of lines may lead to drastic deterioration with minor estimation errors. Only a few previous works, often accompanied by additional sensors, utilize lines to compensate for the severe domain discrepancies of event sensors along with unpredictable noise characteristics. We propose a method that can stably extract tracks of varying appearances of lines using a clever algorithmic process that observes multiple representations from various time slices of events, compensating for potential adversaries within the event data. We then propose geometric cost functions that can refine the 3D line maps and camera poses, eliminating projective distortions and depth ambiguities. The 3D line maps are highly compact and can be equipped with our proposed cost function, which can be adapted for any observations that can detect and extract line structures or projections of them, including 3D point cloud maps or image observations. We demonstrate that our formulation is powerful enough to exhibit a significant performance boost in event-based mapping and pose refinement across diverse datasets, and can be flexibly applied to multimodal scenarios. Our results confirm that the proposed line-based formulation is a robust and effective approach for the practical deployment of event-based perceptual modules. Project page: <a href='https://gwangtak.github.io/roel/' target='_blank'>https://gwangtak.github.io/roel/</a>",
+      "affiliations": [
+        "Dept. of Electrical and Computer Engineering, Seoul National University",
+        "Dept. of Future Automotive Mobility, Seoul National University",
+        "Dept. of Mechanical Engineering, Seoul National University"
+      ],
+      "arxiv_id": "2602.18258",
+      "arxives_doi": null,
+      "authors": "Gwangtak Bae, Jaeho Shin, Seunggu Kang, Junho Kim, Ayoung Kim, Young Min Kim",
+      "bookmarked": 0,
+      "cache_file_name": "Bae2026ARXIV_RoEL_Robust_Event_based.pdf",
+      "category": "Robotics and Control",
+      "chemrxiv_id": null,
+      "citations": null,
+      "color": [
+        0.8234038948,
+        0.409333696,
+        0.4901396872,
+        0.3
+      ],
+      "conf_id": null,
+      "conference": null,
+      "conference_submission_type": null,
+      "conference_url": null,
+      "conference_year": null,
+      "digest_date": 1771804800000,
+      "display_venue": "ArXiv 2026 (February 20)",
+      "first_page_image": {
+        "imageUrl": "/first_pages/4592878.jpeg"
+      },
+      "github_url": null,
+      "has_ranking": true,
+      "html_link": "https://arxiv.org/html/2602.18258",
+      "inferredHighlights": [
+        {
+          "endIndex": 791,
+          "highlightClass": "primary-highlight",
+          "startIndex": 538
+        }
+      ],
+      "is_cached": true,
+      "is_cached_filename": "Bae2026ARXIV_RoEL_Robust_Event_based.pdf",
+      "keywords_metadata": {
+        "color": "#fe7878",
+        "field": "Computer Science",
+        "keywords": "Event-based 3D Line Reconstruction,  Grassmann Distance,  Multi-modal Localization,  Cross-modal Applications",
+        "method_shortname": "RoEL",
+        "sub_subfield": "Event-based Vision",
+        "subfield": "Computer Vision"
+      },
+      "n_negative_ratings": 0,
+      "n_positive_ratings": 0,
+      "ngt_id": 4187540,
+      "paper_id": 4592878,
+      "paper_source_id": "2602.18258",
+      "pdf_download_success": true,
+      "project_link": "https://gwangtak.github.io/roel/",
+      "project_url": "https://gwangtak.github.io/roel/",
+      "publication_date": "2026-02-20",
+      "ranking_score": 0.9275711048,
+      "rating": null,
+      "read": false,
+      "recommended": true,
+      "semantic_scholar_id": null,
+      "shortened_authors": "Gwangtak Bae, Jaeho Shin, Seunggu Kang, Junho Kim, Ayoung Kim, Young Min Kim",
+      "source": "arxiv",
+      "summaries": {
+        "contributions_question": "- Introduces **RoEL**, a novel method for robust 3D line reconstruction from event cameras.\n- Proposes **multi-window, multi-representation line detection** to enhance line extraction accuracy.\n- Develops **Grassmann distance-based cost functions** for geometrically consistent 3D line maps.\n- Enables **cross-modal applications** such as registration and localization with 3D point clouds.\n- **Robust correspondence search** and event association ensure reliable 3D line reconstruction in noisy environments.",
+        "evaluation_question": "- Demonstrates superior performance on synthetic and real-world datasets compared to existing methods.\n- Achieves **high-quality 3D line maps** that enable accurate cross-modal applications.\n- Validated on diverse datasets, including newly constructed synthetic data and real-world scenarios.\n- Outperforms prior works in terms of **noise resilience** and **geometric consistency**.",
+        "method_explanation_question": "- Processes raw events and camera poses to extract 2D line segments using **multi-window, multi-representation techniques**.\n- Applies **detection-guided space-time plane fitting** to refine 2D lines and associate inlier events.\n- Performs **local and global line matching** to establish consistent correspondences across time.\n- Optimizes 3D line maps and camera poses using **Grassmann distance-based cost functions**.\n- Triangulates 2D lines into 3D segments and trims endpoints for final **robust 3D line reconstruction**.",
+        "problem_definition_question": "- Event cameras suffer from **noise sensitivity** and **inconsistent event data** due to sparse and asynchronous outputs.\n- **Direct methods** are prone to degradation in noisy environments due to equal treatment of all events.\n- Existing **indirect methods** rely on additional sensors or features, limiting their applicability.\n- **Cross-modal applications** require robust mid-level representations for tasks like registration and localization.\n- There is a need for **event-specific techniques** that can handle the unique challenges of event-based data without sacrificing accuracy."
+      },
+      "teaser_figures": [
+        {
+          "caption": "Fig. 1: We present RoEL, an event-based 3D line reconstruction pipeline that achieves noise-robust reconstruction by leveraging line correspondences. Our 3D line maps not only provide efficient representations for edge-capturing event cameras, but also enable cross-modal applications such as registration and localization.",
+          "figureNumber": 0,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592878.0.jpeg"
+        },
+        {
+          "caption": "Fig. 2: Method overview. Our 3D line mapping pipeline, RoEL, consists of two stages: correspondence search and 3D line reconstruction. The first stage takes events and camera poses as input. Through line detection, plane fitting, and matching processes that take into account the characteristics of event data, it finds line correspondences and identifies the events supporting each line. In the second stage, our method triangulates 2D lines to generate initial 3D lines. We further optimize 3D lines with multi-view observations using cost functions defined in 3D space based on the Grassmann distance. Finally, our method outputs 3D line segments that effectively represent the scene.",
+          "figureNumber": 1,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592878.1.jpeg"
+        },
+        {
+          "caption": "Fig. 3: Detection-guided space-time plane fitting. Through plane fitting for each line, raw events are distilled into inlier events, and noisy initial lines are refined. In the center box, the black line depicts an initial line which is used for candidate events selection for plane fitting, the red plane indicates the fitted plane, the red line represents the refined line, and the green dots denote all inlier events. Each line is associated with its corresponding events, and the inaccurate 2D lines are refined, as highlighted in the orange circle.",
+          "figureNumber": 2,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592878.2.jpeg"
+        },
+        {
+          "caption": "Fig. 4: Difference from reprojection error. The two columns illustrate the same error-calculation scenario consisting of 3D line estimates and a 2D observation. In this scenario, different 3D line estimates project to the same 2D location, leading to identical reprojection errors. Our Grassmann-based cost evaluates geometric consistency directly in 3D.",
+          "figureNumber": 3,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592878.3.jpeg"
+        },
+        {
+          "caption": "Fig. 5: Two different cost functions defined for 2D line observations and 2D event observations. The geodesic distance on the Grassmann manifold serve as the basis for cost functions. The left figure illustrates the cost function defined between a 2D line and a 3D line. We use the plane-to-line Grassmann distance between the red plane, which is back-projected from the 2D line, and the blue 3D line. The right figure shows the cost function defined between an event and a 3D line. We use the plane-to-line Grassmann distance between the green line back-projected from the event and the blue plane connecting the 3D line and the camera center.",
+          "figureNumber": 4,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592878.4.jpeg"
+        },
+        {
+          "caption": "TABLE I: Key parameters used in our pipeline.",
+          "figureNumber": 5,
+          "figureType": "Table",
+          "imageUrl": "/teaser_figures/4592878.5.jpeg"
+        },
+        {
+          "caption": "TABLE II: Summary of datasets and experimental settings.",
+          "figureNumber": 6,
+          "figureType": "Table",
+          "imageUrl": "/teaser_figures/4592878.6.jpeg"
+        }
+      ],
+      "title": "RoEL: Robust Event-based 3D Line Reconstruction",
+      "total_likes": 4,
+      "total_read": 27,
+      "url": "https://arxiv.org/pdf/2602.18258",
+      "url_for_twitter": "https://twitter.com/intent/tweet?text=Check+out+this+paper%3A+https%3A%2F%2Farxiv.org%2Fabs%2F2602.18258.%0AShared+by%3A&url=https%3A%2F%2Fwww.scholar-inbox.com",
+      "user_paper_collections": null
+    },
+    {
+      "abbreviation": null,
+      "abstract": "High-quality image acquisition in real-world environments remains challenging due to complex illumination variations and inherent limitations of camera imaging pipelines. These issues are exacerbated in multi-view capture, where differences in lighting, sensor responses, and image signal processor (ISP) configurations introduce photometric and chromatic inconsistencies that violate the assumptions of photometric consistency underlying modern 3D novel view synthesis (NVS) methods, including Neural Radiance Fields (NeRF) and 3D Gaussian Splatting (3DGS), leading to degraded reconstruction and rendering quality. We propose Luminance-GS++, a 3DGS-based framework for robust NVS under diverse illumination conditions. Our method combines a globally view-adaptive lightness adjustment with a local pixel-wise residual refinement for precise color correction. We further design unsupervised objectives that jointly enforce lightness correction and multi-view geometric and photometric consistency. Extensive experiments demonstrate state-of-the-art performance across challenging scenarios, including low-light, overexposure, and complex luminance and chromatic variations. Unlike prior approaches that modify the underlying representation, our method preserves the explicit 3DGS formulation, improving reconstruction fidelity while maintaining real-time rendering efficiency.",
+      "affiliations": [
+        "University of Tokyo",
+        "Tohoku University",
+        "University of California at Merced and Google DeepMind",
+        "University of Tokyo and RIKEN AIP"
+      ],
+      "arxiv_id": "2602.18322",
+      "arxives_doi": null,
+      "authors": "Ziteng Cui, Shuhong Liu, Xiaoyu Dong, Xuangeng Chu, Lin Gu, Ming-Hsuan Yang, Tatsuya Harada",
+      "bookmarked": 0,
+      "cache_file_name": "Cui2026ARXIV_Unifying_Color_and_Lightness.pdf",
+      "category": "Computer Vision and Graphics",
+      "chemrxiv_id": null,
+      "citations": null,
+      "color": [
+        0.8234038948,
+        0.409333696,
+        0.4901396872,
+        0.3
+      ],
+      "conf_id": null,
+      "conference": null,
+      "conference_submission_type": null,
+      "conference_url": null,
+      "conference_year": null,
+      "digest_date": 1771804800000,
+      "display_venue": "ArXiv 2026 (February 20)",
+      "first_page_image": {
+        "imageUrl": "/first_pages/4592921.jpeg"
+      },
+      "github_url": null,
+      "has_ranking": true,
+      "html_link": "https://arxiv.org/html/2602.18322",
+      "inferredHighlights": [
+        {
+          "endIndex": 719,
+          "highlightClass": "primary-highlight",
+          "startIndex": 617
+        }
+      ],
+      "is_cached": true,
+      "is_cached_filename": "Cui2026ARXIV_Unifying_Color_and_Lightness.pdf",
+      "keywords_metadata": {
+        "color": "#fe7878",
+        "field": "Computer Science",
+        "keywords": "Novel View Synthesis (NVS),  3D Gaussian Splatting (3DGS),  Lightness Correction,  Color Correction,  Illumination Variation,  Radiometric Consistency",
+        "method_shortname": "Luminance-GS++",
+        "sub_subfield": "Novel View Synthesis",
+        "subfield": "Computational Photography"
+      },
+      "n_negative_ratings": 0,
+      "n_positive_ratings": 0,
+      "ngt_id": 4187583,
+      "paper_id": 4592921,
+      "paper_source_id": "2602.18322",
+      "pdf_download_success": true,
+      "project_link": null,
+      "project_url": null,
+      "publication_date": "2026-02-20",
+      "ranking_score": 0.9011927408,
+      "rating": null,
+      "read": false,
+      "recommended": true,
+      "semantic_scholar_id": null,
+      "shortened_authors": "Ziteng Cui, Shuhong Liu, Xiaoyu Dong, Xuangeng Chu, Lin Gu, Ming-Hsuan Yang, Tatsuya Harada",
+      "source": "arxiv",
+      "summaries": {
+        "contributions_question": "- Introduces **Luminance-GS++**, a framework that improves the robustness of novel view synthesis (NVS) under lightness and color degradations.\n- Designs unsupervised objectives for multi-view lightness and color correction that preserve radiometric consistency, enabling Luminance-GS++ to generalize across diverse degradation scenarios while maintaining stable 3D reconstruction.\n- Performs extensive evaluations on benchmark datasets under challenging real-world illumination and synthetic lighting variations.\n- **Extensive experimental results** demonstrate consistent improvements over state-of-the-art 3D NVS methods.",
+        "evaluation_question": "- On *LOM dataset*, achieves **24.75 PSNR** vs. Luminance-GS (**18.09 PSNR**), **+6.66**.\n- On *Mip-NeRF360 dataset*, achieves **20.74 PSNR** vs. Aleth-NeRF (**20.22 PSNR**), **+0.52**.\n- On *varying exposure inputs*, achieves **19.54 PSNR** vs. Gaussian-DK (**15.95 PSNR**), **+3.59**.\n- On *color degradation scenarios*, achieves **14.45 PSNR** vs. Aleth-NeRF (**15.23 PSNR**), **-0.78**.",
+        "method_explanation_question": "- Processes multi-view images using a **3D Gaussian Splatting** framework with explicit scene representation based on learnable anisotropic 3D Gaussians.\n- Applies **global adjustment** with per-view color matrix mapping and view-adaptive curve adjustments to normalize illumination.\n- Introduces **local refinement** via a pixel-wise residual map to correct spatially varying color and illumination discrepancies.\n- Optimizes end-to-end with a mixed reconstruction objective combining **SSIM loss** and **L1 loss** for high-fidelity multi-view reconstruction.",
+        "problem_definition_question": "- Existing 3D Gaussian Splatting methods struggle with **illumination and color variations**, leading to degraded reconstruction fidelity and unstable rendering.\n- **Lightness and color distortions** caused by environmental factors limit the applicability of real-world multi-view capture.\n- Current approaches are constrained by the lighting conditions observed during training, restricting adaptation to novel illumination scenarios during rendering.\n- **Radiometric inconsistency** between views causes artifacts like floaters and ghosting, undermining the reliability of surface alignment."
+      },
+      "teaser_figures": [
+        {
+          "caption": "Fig. 1. (a) An overview of Luminance-GS++ , designed to address multi-view images affected by real-world illumination and color degradations via joint global and local adjustments, enabling robust 3DGS reconstruction. (b) Performance comparison between Luminance-GS++ and state-of-the-art methods [28], [34], [36], [37] under diverse illumination and color conditions.",
+          "figureNumber": 0,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592921.0.jpeg"
+        },
+        {
+          "caption": "Fig. 3. A low-light “chair” scene from the LOM dataset [28]. Our global adjustment enhances overall illumination, while our local refinement improves fine details and the quality of pseudo label C out .",
+          "figureNumber": 1,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592921.1.jpeg"
+        },
+        {
+          "caption": "Fig. 2. Progression from 3DGS [6] to Luminance-GS [36] and Luminance-GS++, highlighting joint optimization of input images and 3DGS attributes through global adjustment and local refinement. Multi-view rendering examples illustrate the resulting improvements.",
+          "figureNumber": 2,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592921.2.jpeg"
+        },
+        {
+          "caption": "Fig. 4. An overview of the Luminance-GS++ pipeline . Up : Joint optimization of 3D Gaussians with dual color attributes c i and c outi to render input images C in and pseudo-enhanced outputs C out . Down : Pseudo-enhancement is achieved through global adjustment (view-adaptive color matrix mapping and curve adjustment; stages (I)–(III)) followed by local refinement using a pixel-wise residual map.",
+          "figureNumber": 3,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592921.3.jpeg"
+        },
+        {
+          "caption": "Fig. 5. An illustration of our spatial consistency loss function L spa , and comparisons with the spatial consistency loss in Aleth-NeRF [28].",
+          "figureNumber": 4,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592921.4.jpeg"
+        },
+        {
+          "caption": "Fig. 6. (a) Per-view color matrix mapping with learnable transformation M k . (b) Architecture of the view-adaptive curve generator, which predicts curve bias L bk from input image C ink and camera pose. (c) Structure of the view-adaptive parameter generator.",
+          "figureNumber": 5,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592921.5.jpeg"
+        },
+        {
+          "caption": "TABLE IE XPERIMENTAL RESULTS (PSNR ↑ , SSIM ↑ , LPIPS ↓ ) ON THE LOW - LIGHT SUBSET OF LOM DATASET [28]. W E COMPARE WITH VARIOUS ENHANCEMENT METHODS [14]–[16], [103], [104] AND N E RF-AND 3DGS-BASED METHODS [28], [29], [74]. R ED DENOTES THE BEST RESULT , WHILE YELLOW DENOTES THE SECOND - BEST .",
+          "figureNumber": 6,
+          "figureType": "Table",
+          "imageUrl": "/teaser_figures/4592921.6.jpeg"
+        }
+      ],
+      "title": "Unifying Color and Lightness Correction with View-Adaptive Curve Adjustment for Robust 3D Novel View Synthesis",
+      "total_likes": 0,
+      "total_read": 30,
+      "url": "https://arxiv.org/pdf/2602.18322",
+      "url_for_twitter": "https://twitter.com/intent/tweet?text=Check+out+this+paper%3A+https%3A%2F%2Farxiv.org%2Fabs%2F2602.18322.%0AShared+by%3A&url=https%3A%2F%2Fwww.scholar-inbox.com",
+      "user_paper_collections": null
+    },
+    {
+      "abbreviation": null,
+      "abstract": "Dense Bird's Eye View (BEV) semantic maps are central to autonomous driving, yet current multi-camera methods depend on costly, inconsistently annotated BEV ground truth. We address this limitation with a two-phase training strategy for fine-grained road marking segmentation that removes full supervision during pretraining and halves the amount of training data during fine-tuning while still outperforming the comparable supervised baseline model. During the self-supervised pretraining, BEVFormer predictions are differentiably reprojected into the image plane and trained against multi-view semantic pseudo-labels generated by the widely used semantic segmentation model Mask2Former. A temporal loss encourages consistency across frames. The subsequent supervised fine-tuning phase requires only 50% of the dataset and significantly less training time. With our method, the fine-tuning benefits from rich priors learned during pretraining boosting the performance and BEV segmentation quality (up to +2.5pp mIoU over the fully supervised baseline) on nuScenes. It simultaneously halves the usage of annotation data and reduces total training time by up to two thirds. The results demonstrate that differentiable reprojection plus camera perspective pseudo labels yields transferable BEV features and a scalable path toward reduced-label autonomous perception.",
+      "affiliations": [
+        "University of Wuppertal",
+        "APTIV"
+      ],
+      "arxiv_id": "2602.18066",
+      "arxives_doi": null,
+      "authors": "Daniel Busch, Christian Bohn, Thomas Kurbiel, Klaus Friedrichs, Richard Meyes, Tobias Meisen",
+      "bookmarked": 0,
+      "cache_file_name": "Busch2026ARXIV_Faster_Training_Fewer_Labels.pdf",
+      "category": "Computer Vision and Graphics",
+      "chemrxiv_id": null,
+      "citations": null,
+      "color": [
+        0.8234038948,
+        0.409333696,
+        0.4901396872,
+        0.3
+      ],
+      "conf_id": null,
+      "conference": null,
+      "conference_submission_type": null,
+      "conference_url": null,
+      "conference_year": null,
+      "digest_date": 1771804800000,
+      "display_venue": "ArXiv 2026 (February 20)",
+      "first_page_image": {
+        "imageUrl": "/first_pages/4592614.jpeg"
+      },
+      "github_url": null,
+      "has_ranking": true,
+      "html_link": "https://arxiv.org/html/2602.18066",
+      "inferredHighlights": [
+        {
+          "endIndex": 449,
+          "highlightClass": "primary-highlight",
+          "startIndex": 171
+        }
+      ],
+      "is_cached": true,
+      "is_cached_filename": "Busch2026ARXIV_Faster_Training_Fewer_Labels.pdf",
+      "keywords_metadata": {
+        "color": "#fe7878",
+        "field": "Computer Science",
+        "keywords": "BEV Segmentation,  Temporal Consistency,  Differentiable Rendering,  Self-Supervised Learning,  Pseudo Ground Truth",
+        "method_shortname": "BEVFormer",
+        "sub_subfield": "Autonomous Driving",
+        "subfield": "Artificial Intelligence"
+      },
+      "n_negative_ratings": 0,
+      "n_positive_ratings": 1,
+      "ngt_id": 4187276,
+      "paper_id": 4592614,
+      "paper_source_id": "2602.18066",
+      "pdf_download_success": true,
+      "project_link": null,
+      "project_url": null,
+      "publication_date": "2026-02-20",
+      "ranking_score": 0.8439027379,
+      "rating": 1,
+      "read": true,
+      "recommended": true,
+      "semantic_scholar_id": null,
+      "shortened_authors": "Daniel Busch, Christian Bohn, Thomas Kurbiel, Klaus Friedrichs, Richard Meyes, Tobias Meisen",
+      "source": "arxiv",
+      "summaries": {
+        "contributions_question": "- Introduces **self-supervised pretraining** for BEV segmentation without BEV ground truth.\n- Develops a **differentiable rendering pipeline** to reproject BEV maps into camera perspective for supervision.\n- Implements a **temporal consistency loss** to enforce frame-wise consistency and improve robustness.\n- Proposes a **two-phase training strategy** combining self-supervised pretraining and supervised fine-tuning.\n- **Reduces BEV annotation requirements by half** while improving performance by +2.2pp mIoU on nuScenes.\n- **Shortens training time by up to two-thirds** with minimal label dependency.",
+        "evaluation_question": "- On *nuScenes*, achieves **23.5 pp mIoU60** vs. supervised baseline (**22.3 pp**), **+1.2 pp** improvement.\n- Improves **road boundary IoU** by +2.4pp, **lane divider IoU** by +1.9pp, and **crosswalk IoU** by +4.5pp.\n- With **22 epochs pretraining**, the model outperforms all other pretraining lengths in most metrics.\n- At **27 epochs pretraining**, the model achieves **26.5 pp mIoU60** but shows slight degradation in some classes.\n- The **shortest pretraining (3 epochs)** still outperforms the supervised baseline by +1.4pp mIoU60.\n- The **temporal loss** provides marginal gains in crosswalk and lane divider classes but less impact on road boundaries.",
+        "method_explanation_question": "- Processes multi-camera inputs using the **BEVFormer** architecture with temporal and spatial attention mechanisms.\n- **Reprojects predicted BEV maps** into camera perspective using a differentiable rendering module.\n- **Supervises predictions** with pseudo-ground truth generated from Mask2Former for semantic segmentation.\n- **Applies a temporal consistency loss** to ensure stable predictions across consecutive frames.\n- **Fine-tunes on nuScenes ground truth** to align with real-world annotations and optimize final performance.",
+        "problem_definition_question": "- Existing methods rely heavily on **dense BEV ground truth**, which is costly and inconsistent across datasets.\n- **Over-smoothing** occurs in dynamic scenes due to limited temporal context in BEV representations.\n- **Limited scalability** and generalization to new environments hinder practical deployment.\n- **Occlusion handling** remains a challenge without explicit temporal modeling.\n- **High annotation costs** and poor generalization limit the applicability of BEV-based perception systems."
+      },
+      "teaser_figures": [
+        {
+          "caption": "Fig. 1: BEVFormer architecture [1] with the self-supervised pretraining. Left: Camera input. Center: the BEVFormer with its transformer module containing Temporal Self-Attention into History BEV and spatial Cross-Attention. Right: Output of the BEVFormer. Bottom right the differentiable reprojection and rendering. Bottom center and left 2D Reconstruction loss comparing the six reconstructed predctions Pred cp with the camera perspective pseudo ground truth GT cp .",
+          "figureNumber": 0,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592614.0.jpeg"
+        },
+        {
+          "caption": "Fig. 2: Ground truth comparison for pseudo ground truth (a) and NuScenes ground truth (b) in front view (left) and BEV (right). For comparison the pseudo ground truth is projected to BEV using nuScenes lidar data. (road boundary; lanes; crosswalk).",
+          "figureNumber": 1,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592614.1.jpeg"
+        },
+        {
+          "caption": "TABLE I: The different Intersection over Unions (IoUs) for our methods: Self-superv. pretrain: supervision with camera perspective pseudo ground truth, temp: Temporal loss mechanism included, ours( x ep pretrain): two phase training with x epochs pretraining and fine-tuning on the halved dataset. mIoU20: 20 m consideration range (1 / 3), mIoU40: 40 m consideration range (2 / 3), mIoU60: full range of 60 m . ↑ : higher values are better. best results , second best results.",
+          "figureNumber": 2,
+          "figureType": "Table",
+          "imageUrl": "/teaser_figures/4592614.2.jpeg"
+        },
+        {
+          "caption": "Fig. 4: Relation between road distance in m and image portion in %. The different colors represent equally long distances each covering one quarter of the total predicted distance.",
+          "figureNumber": 3,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592614.3.jpeg"
+        },
+        {
+          "caption": "Fig. 5: Results of our self-supervised pretraining (pretrain), the temporal loss mechanism (temp) and our two phase strategy including temporal loss pretraining and supervised fine-tuning (ours( x epochs pretraining)). road boundary; lanes; crosswalk.",
+          "figureNumber": 4,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592614.4.jpeg"
+        },
+        {
+          "caption": "Fig. 6: mIoU progress evaluated on nuScenes ground truth for the supervised baseline, self-supervised pretraining, and our two phase training with different pretraining lengths including the temporal loss.",
+          "figureNumber": 5,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592614.5.jpeg"
+        }
+      ],
+      "title": "Faster Training, Fewer Labels: Self-Supervised Pretraining for Fine-Grained BEV Segmentation",
+      "total_likes": 5,
+      "total_read": 24,
+      "url": "https://arxiv.org/pdf/2602.18066",
+      "url_for_twitter": "https://twitter.com/intent/tweet?text=Check+out+this+paper%3A+https%3A%2F%2Farxiv.org%2Fabs%2F2602.18066.%0AShared+by%3A&url=https%3A%2F%2Fwww.scholar-inbox.com",
+      "user_paper_collections": null
+    },
+    {
+      "abbreviation": null,
+      "abstract": "We investigate the utility of meta-optical encoders for generalizable image compression by leveraging their intrinsic shift-invariant point spread functions (PSFs). Compared with purely digital approaches, such optical encoders offer parallel and energy-efficient compression, enabling early data reduction prior to electronic processing and transmission, which is particularly attractive for resource-constrained and compact imaging systems. Although the operations realizable by a single passive optical layer remain fundamentally constrained, we systematically study several PSF encoding strategies combined with a total-variation (TV) digital reconstruction backend. Specifically, under identical compression ratios, we compare spatial binning, multi-channel random, and multi-channel orthogonal PSF based designs. Our results show that, at the same compression ratios, spatial binning achieves the highest reconstruction quality among all encoding strategies; however, it exhibits limited robustness to noise compared with multi-channel methods.",
+      "affiliations": [
+        "Department of Physics, University of Washington",
+        "Electrical & Computer Engineering Department, University of Washington"
+      ],
+      "arxiv_id": "2602.18032",
+      "arxives_doi": null,
+      "authors": "Yubo Zhang, Rui Chen, Zhihao Zhou, Arka Majumdar",
+      "bookmarked": 0,
+      "cache_file_name": "Zhang2026ARXIV_Convolutional_Optical_Encoders_for.pdf",
+      "category": "Physics",
+      "chemrxiv_id": null,
+      "citations": null,
+      "color": [
+        0.939725924,
+        0.9085001416,
+        0.8906734446,
+        0.3
+      ],
+      "conf_id": null,
+      "conference": null,
+      "conference_submission_type": null,
+      "conference_url": null,
+      "conference_year": null,
+      "digest_date": 1771804800000,
+      "display_venue": "ArXiv 2026 (February 20)",
+      "first_page_image": {
+        "imageUrl": "/first_pages/4592684.jpeg"
+      },
+      "github_url": null,
+      "has_ranking": true,
+      "html_link": "https://arxiv.org/html/2602.18032",
+      "inferredHighlights": [
+        {
+          "endIndex": 669,
+          "highlightClass": "primary-highlight",
+          "startIndex": 443
+        }
+      ],
+      "is_cached": true,
+      "is_cached_filename": "Zhang2026ARXIV_Convolutional_Optical_Encoders_for.pdf",
+      "keywords_metadata": {
+        "color": "#fe7878",
+        "field": "Computer Science",
+        "keywords": "Optical Compression,  Convolutional Encoders,  Total-Variation Regularization,  Multi-Channel PSFs,  Spatial Binning",
+        "method_shortname": "Convolutional Optical Encoders",
+        "sub_subfield": "Optical Imaging",
+        "subfield": "Image Processing"
+      },
+      "n_negative_ratings": 0,
+      "n_positive_ratings": 0,
+      "ngt_id": 4187346,
+      "paper_id": 4592684,
+      "paper_source_id": "2602.18032",
+      "pdf_download_success": true,
+      "project_link": null,
+      "project_url": null,
+      "publication_date": "2026-02-20",
+      "ranking_score": 0.5169571776,
+      "rating": null,
+      "read": false,
+      "recommended": true,
+      "semantic_scholar_id": null,
+      "shortened_authors": "Yubo Zhang, Rui Chen, Zhihao Zhou, Arka Majumdar",
+      "source": "arxiv",
+      "summaries": {
+        "contributions_question": "- Introduces **convolutional optical encoders** for generalizable image compression.\n- Demonstrates **superior reconstruction quality** using spatial binning under identical compression ratios.\n- Highlights the **trade-off between frequency preservation and noise robustness** in multi-channel strategies.\n- Reveals the **critical role of optical kernels** in determining reconstruction fidelity.\n- Provides **comprehensive insights** into the design space of convolutional meta-optical encoders.",
+        "evaluation_question": "- On *Celeba* and *Arimp4*, achieves **highest VIF** with spatial binning under same compression ratios.\n- Multi-channel strategies show **better noise resilience** at lower signal-to-noise ratios.\n- Orthogonal kernels exhibit **lower VIF** than spatial binning due to high-frequency kernel inclusion.\n- TV regularization parameter tuning reveals **optimal performance at λ = 10⁻¹**.\n- At higher λ values, **over-smoothing** leads to degraded VIF across all strategies.",
+        "method_explanation_question": "- Applies **convolutional optical encoding** using meta-optics to compress images prior to digital processing.\n- Implements **total-variation (TV) regularization** for digital reconstruction of compressed measurements.\n- Utilizes **multi-channel PSF designs** including spatial binning, random, and orthogonal kernels.\n- Employs **linear regression** with TV regularization to reconstruct original images from compressed data.\n- Varies **kernel sizes and spatial binning ratios** to explore compression efficiency and quality trade-offs.",
+        "problem_definition_question": "- Current optical compression methods suffer from **limited robustness to noise** and poor frequency preservation.\n- Existing approaches often fail to balance **frequency preservation and noise resilience** effectively.\n- There is a need for **generalizable optical encoders** that maintain high fidelity under varying compression conditions.\n- Designing **efficient and robust compression systems** remains a critical challenge in compact imaging applications.\n- Optical kernels impose **fundamental limitations** on reconstruction quality and noise handling capabilities."
+      },
+      "teaser_figures": [
+        {
+          "caption": "Fig. 1. Schematic of our workingflow for image compression,",
+          "figureNumber": 0,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592684.0.jpeg"
+        },
+        {
+          "caption": "Fig. 2. Reconstruction VIF (Visual Information Fidelity) vs Compression Ratio on Arimp4 (up) and Celeba (down) dataset with different kernel design strategies.",
+          "figureNumber": 1,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592684.1.jpeg"
+        },
+        {
+          "caption": "Fig. 3. Reconstruction VIF on TV regularization hyperparameter λ ranging from 10 − 7 to 10 3 . Larger values of λ impose a stronger prior favoring piecewise-smooth images with smoother backgrounds. All results in this sweep are obtained on the Arimp4 dataset.",
+          "figureNumber": 2,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592684.2.jpeg"
+        },
+        {
+          "caption": "Fig. 4. Comparison of reconstruction quality across varying SNRs between 4 strategies. The left column shows PSNR and its corresponding dB-scale loss, while the right column shows VIF and its corresponding dB-scale loss.",
+          "figureNumber": 3,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592684.3.jpeg"
+        }
+      ],
+      "title": "Convolutional Optical Encoders for Generalizable Image Compression",
+      "total_likes": 0,
+      "total_read": 2,
+      "url": "https://arxiv.org/pdf/2602.18032",
+      "url_for_twitter": "https://twitter.com/intent/tweet?text=Check+out+this+paper%3A+https%3A%2F%2Farxiv.org%2Fabs%2F2602.18032.%0AShared+by%3A&url=https%3A%2F%2Fwww.scholar-inbox.com",
+      "user_paper_collections": null
+    },
+    {
+      "abbreviation": null,
+      "abstract": "In recent years, significant advances in computer vision have also propelled progress in remote sensing. Concurrently, the use of drones has expanded, with many organizations incorporating them into their operations. Most drones are equipped by default with RGB cameras, which are both robust and among the easiest sensors to use and interpret. The body of literature on optical remote sensing is vast, encompassing diverse tasks, capabilities, and methodologies. Each task or methodology could warrant a dedicated survey. This work provides a comprehensive overview of the capabilities of the field, while also presenting key information, such as datasets and insights. It aims to serve as a guide for researchers entering the field, offering high-level insights and helping them focus on areas most relevant to their interests. To the best of our knowledge, no existing survey addresses this holistic perspective.",
+      "affiliations": [
+        "Department of Informatics and Telematics, Harokopio University of Athens",
+        "Archimedes, Athena Research Center",
+        "Computer Science Department, University of Crete",
+        "CentraleSupelec, University Paris Saclay",
+        "Department of Topography, National Technical University of Athens"
+      ],
+      "arxiv_id": "2602.17397",
+      "arxives_doi": null,
+      "authors": "Panagiotis Koletsis, Vasilis Efthymiou, Maria Vakalopoulou, Nikos Komodakis, Anastasios Doulamis, Georgios Th. Papadopoulos",
+      "bookmarked": 0,
+      "cache_file_name": "Koletsis2026ARXIV_A_High_Level_Survey.pdf",
+      "category": "Computer Vision and Graphics",
+      "chemrxiv_id": null,
+      "citations": null,
+      "color": [
+        0.8098334089,
+        0.8740255761,
+        0.9938610569,
+        0.3
+      ],
+      "conf_id": null,
+      "conference": null,
+      "conference_submission_type": null,
+      "conference_url": null,
+      "conference_year": null,
+      "digest_date": 1771804800000,
+      "display_venue": "ArXiv 2026 (February 19)",
+      "first_page_image": {
+        "imageUrl": "/first_pages/4592010.jpeg"
+      },
+      "github_url": null,
+      "has_ranking": true,
+      "html_link": "https://arxiv.org/html/2602.17397",
+      "inferredHighlights": [
+        {
+          "endIndex": 669,
+          "highlightClass": "primary-highlight",
+          "startIndex": 523
+        },
+        {
+          "endIndex": 828,
+          "highlightClass": "secondary-highlight",
+          "startIndex": 671
+        }
+      ],
+      "is_cached": true,
+      "is_cached_filename": "Koletsis2026ARXIV_A_High_Level_Survey.pdf",
+      "keywords_metadata": {
+        "color": "#fe7878",
+        "field": "Computer Science",
+        "keywords": "Optical Remote Sensing (ORS),  RGB Imagery,  Satellite Imagery,  Drone Imagery,  Foundation Models,  Transformer,  CNN,  Vision-Language Tasks,  Object Detection,  Segmentation,  Change Detection",
+        "method_shortname": "TRIFFID",
+        "sub_subfield": "Optical Remote Sensing",
+        "subfield": "Artificial Intelligence"
+      },
+      "n_negative_ratings": 0,
+      "n_positive_ratings": 0,
+      "ngt_id": 4186672,
+      "paper_id": 4592010,
+      "paper_source_id": "2602.17397",
+      "pdf_download_success": true,
+      "project_link": null,
+      "project_url": null,
+      "publication_date": "2026-02-19",
+      "ranking_score": 0.4690589071,
+      "rating": null,
+      "read": false,
+      "recommended": true,
+      "semantic_scholar_id": null,
+      "shortened_authors": "Panagiotis Koletsis, Vasilis Efthymiou, Maria Vakalopoulou, Nikos Komodakis, Anastasios Doulamis, Georgios Th. Papadopoulos",
+      "source": "arxiv",
+      "summaries": {
+        "contributions_question": "- Provides a **comprehensive survey** of RGB-based optical remote sensing tasks, datasets, and trends.\n- Highlights the emergence of **foundation models** as a unifying framework across diverse ORS tasks.\n- Offers **modality-centric insights** for researchers focusing on RGB imagery, emphasizing interpretability.\n- Identifies key **open research areas** such as multi-modal learning and efficient diffusion models.\n- **Systematically categorizes** main ORS tasks, aiding in targeted research and application development.",
+        "evaluation_question": "- Reports **state-of-the-art performance** on benchmark datasets like NWPU-RESISC45 and DOTA v1.\n- Demonstrates **superior accuracy** compared to traditional methods like MGSNet and SCViT.\n- Highlights **improved efficiency** through hybrid architectures combining CNNs and Transformers.\n- Quantifies **performance gains** from ablation studies on specific components like attention mechanisms.\n- Validates **robustness** across different domains including construction, nature, and urban environments.",
+        "method_explanation_question": "- Processes input images using **CNN-based feature extractors** for local pattern recognition.\n- Applies **transformer modules** for global context modeling and cross-modal alignment.\n- Fuses features via **hybrid architectures** to balance efficiency and representational power.\n- Optimizes with **cross-entropy loss** and standard minibatch training protocols.\n- Generates final outputs via **task-specific heads** for classification, detection, or segmentation.",
+        "problem_definition_question": "- Traditional ORS methods suffer from **over-smoothing** and poor scalability in complex scenes.\n- **Limited generalization** across diverse domains and environmental conditions.\n- **Inefficient computation** due to reliance on single-modality approaches.\n- **Insufficient adaptability** to dynamic or changing environments.\n- **Lack of robustness** in handling occlusions and low-resolution inputs."
+      },
+      "teaser_figures": [
+        {
+          "caption": "Fig. 1. Main tasks in optical remote sensing.",
+          "figureNumber": 0,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592010.0.jpeg"
+        },
+        {
+          "caption": "TABLE I D ATASETS FOR ORS T ASKS . SR ES : S PATIAL R ESOLUTION OF THE IMAGE IN METERS . #E XPR : NUMBER OF MATCHING EXPRESSIONS TO THE IMAGES . Y: Y EAR OF PUBLICATION . HMO: H UMAN -M ADE O BJECTS . ‘-’: D EFINES THAT THIS INFORMATION WAS NOT PROVIDED IN THE PAPER .",
+          "figureNumber": 1,
+          "figureType": "Table",
+          "imageUrl": "/teaser_figures/4592010.1.jpeg"
+        },
+        {
+          "caption": "TABLE II P ER TASK STATE - OF - THE - ART PERFORMANCE THE MOST POPULAR",
+          "figureNumber": 2,
+          "figureType": "Table",
+          "imageUrl": "/teaser_figures/4592010.2.jpeg"
+        }
+      ],
+      "title": "A High-Level Survey of Optical Remote Sensing",
+      "total_likes": 0,
+      "total_read": 3,
+      "url": "https://arxiv.org/pdf/2602.17397",
+      "url_for_twitter": "https://twitter.com/intent/tweet?text=Check+out+this+paper%3A+https%3A%2F%2Farxiv.org%2Fabs%2F2602.17397.%0AShared+by%3A&url=https%3A%2F%2Fwww.scholar-inbox.com",
+      "user_paper_collections": null
+    },
+    {
+      "abbreviation": null,
+      "abstract": "Accurate state estimation and multi-modal perception are prerequisites for autonomous legged robots in complex, large-scale environments. To date, no large-scale public legged-robot dataset captures the real-world conditions needed to develop and benchmark algorithms for legged-robot state estimation, perception, and navigation. To address this, we introduce the GrandTour dataset, a multi-modal legged-robotics dataset collected across challenging outdoor and indoor environments, featuring an ANYbotics ANYmal-D quadruped equipped with the \\boxi multi-modal sensor payload. GrandTour spans a broad range of environments and operational scenarios across distinct test sites, ranging from alpine scenery and forests to demolished buildings and urban areas, and covers a wide variation in scale, complexity, illumination, and weather conditions. The dataset provides time-synchronized sensor data from spinning LiDARs, multiple RGB cameras with complementary characteristics, proprioceptive sensors, and stereo depth cameras. Moreover, it includes high-precision ground-truth trajectories from satellite-based RTK-GNSS and a Leica Geosystems total station. This dataset supports research in SLAM, high-precision state estimation, and multi-modal learning, enabling rigorous evaluation and development of new approaches to sensor fusion in legged robotic systems. With its extensive scope, GrandTour represents the largest open-access legged-robotics dataset to date. The dataset is available at <a href='https://grand-tour.leggedrobotics.com' target='_blank'>https://grand-tour.leggedrobotics.com</a>, on HuggingFace (ROS-independent), and in ROS formats, along with tools and demo resources.",
+      "affiliations": [
+        "Stanford University",
+        "ETH Zurich",
+        "UC Berkeley",
+        "Oxford University"
+      ],
+      "arxiv_id": "2602.18164",
+      "arxives_doi": null,
+      "authors": "Jonas Frey, Turcan Tuna, Frank Fu, Katharine Patterson, Tianao Xu, Maurice Fallon, Cesar Cadena, Marco Hutter",
+      "bookmarked": 0,
+      "cache_file_name": "Frey2026ARXIV_GrandTour_A_Legged_Robotics.pdf",
+      "category": "Robotics and Control",
+      "chemrxiv_id": null,
+      "citations": null,
+      "color": [
+        0.7812842935,
+        0.8540283953,
+        0.9989779355,
+        0.3
+      ],
+      "conf_id": null,
+      "conference": null,
+      "conference_submission_type": null,
+      "conference_url": null,
+      "conference_year": null,
+      "digest_date": 1771804800000,
+      "display_venue": "ArXiv 2026 (February 20)",
+      "first_page_image": {
+        "imageUrl": "/first_pages/4592732.jpeg"
+      },
+      "github_url": "https://github.com/leggedrobotics/grand_tour_box",
+      "has_ranking": true,
+      "html_link": "https://arxiv.org/html/2602.18164",
+      "inferredHighlights": [
+        {
+          "endIndex": 576,
+          "highlightClass": "primary-highlight",
+          "startIndex": 331
+        }
+      ],
+      "is_cached": true,
+      "is_cached_filename": "Frey2026ARXIV_GrandTour_A_Legged_Robotics.pdf",
+      "keywords_metadata": {
+        "color": "#fe7878",
+        "field": "Computer Science",
+        "keywords": "Legged Robotics,  Multi-Sensor Dataset,  State Estimation,  Multi-Modal Perception,  Sensor Fusion,  Autonomy",
+        "method_shortname": "GrandTour",
+        "sub_subfield": "Legged Robotics",
+        "subfield": "Robotics"
+      },
+      "n_negative_ratings": 0,
+      "n_positive_ratings": 0,
+      "ngt_id": 4187394,
+      "paper_id": 4592732,
+      "paper_source_id": "2602.18164",
+      "pdf_download_success": true,
+      "project_link": "https://grand-tour.leggedrobotics.com",
+      "project_url": "https://grand-tour.leggedrobotics.com",
+      "publication_date": "2026-02-20",
+      "ranking_score": 0.4622949017,
+      "rating": null,
+      "read": false,
+      "recommended": true,
+      "semantic_scholar_id": null,
+      "shortened_authors": "Jonas Frey, Turcan Tuna, Frank Fu, Katharine Patterson, Tianao Xu, Maurice Fallon, Cesar Cadena, Marco Hutter",
+      "source": "arxiv",
+      "summaries": {
+        "contributions_question": "- Introduces **GrandTour**, the largest open-access legged-robotics dataset to date, capturing diverse environments and sensor modalities.\n- Provides **high-precision ground-truth trajectories** from RTK-GNSS and total station for robust state estimation and SLAM.\n- Enables **multi-modal perception research** with synchronized data from LiDARs, RGB cameras, depth sensors, IMUs, and proprioception.\n- Supports **sensor fusion frameworks** and **self-supervised learning** for improved real-world navigation and autonomy.\n- **Facilitates closed-loop autonomy** by linking perception, state estimation, and control in dynamic environments.",
+        "evaluation_question": "- Used in **sensor fusion frameworks** (Nubert et al., 2025) and **continuous-time state estimation** (Cao et al., 2025).\n- **Improves sim-to-real transfer** (Roth et al., 2025) and enables **real-to-sim transfer** of large-scale environments (Escontrela et al., 2025).\n- **Enhances physical parameter learning** (Chen et al., 2024a) and supports **foundation models for navigation** (Inglin et al., 2026).\n- **Benchmarks vision-language models** (Windecker et al., 2025) for scene understanding and **self-supervised representation learning** (Patel et al., 2026).",
+        "method_explanation_question": "- Captures **multi-modal sensor data** from LiDARs, RGB cameras, depth sensors, IMUs, and proprioceptive sensors on a quadruped robot.\n- **Synchronizes and calibrates** sensor data using high-precision GNSS/INS and time-stamping protocols.\n- **Processes sensor inputs** through a combination of visual-inertial, LiDAR-inertial, and LiDAR-only odometry pipelines.\n- **Generates intermediate outputs** such as legged-inertial odometry, deskewed point clouds, terrain maps, and occupancy maps.\n- **Supports real-time localization** and **autonomous navigation** through integration with ROS-based systems and custom tooling.",
+        "problem_definition_question": "- Legged robots face **challenges in state estimation** due to locomotion-induced disturbances like intermittent contacts and rapid orientation changes.\n- **Multi-modal sensing is critical** for robust perception in unstructured environments with poor illumination and occlusions.\n- **Existing datasets lack comprehensive coverage** of legged-specific challenges like proprioception, exteroception coupling, and terrain variability.\n- **Sensor fusion remains non-trivial** due to differing noise profiles, latency, and failure modes across modalities.\n- **Autonomy requires tight feedback loops** between perception, planning, and control, which are difficult to simulate or evaluate without real-world data."
+      },
+      "teaser_figures": [
+        {
+          "caption": "Figure 1. GrandTour dataset preview. Top: views of ANYmal traversing diverse environments during GrandTour, inset summarizes sensor suite and dataset scale (49 missions, > 10km , > 5h ). Bottom: aerial imagery alongside on-board RGB views from a subset of the cameras for six missions of GrandTour (ETH-1, PIL-1, EIG-1, SPX-2, HEAP-1, ARC-2). The path color indicates the frequency with which the robot is at that location.",
+          "figureNumber": 0,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592732.0.jpeg"
+        },
+        {
+          "caption": "Table 1. Comparison of related datasets. Each row lists dataset name, platform abbreviation(s) , environment types, diversity of scenarios, and sensor coverage. Platform abbreviations: A = Aerial, W = Wheeled, L = Legged, C = Car, H = Handheld, U = UGV. The dashed horizontal divider separates datasets that include legged platforms (below) from those that do not (above).",
+          "figureNumber": 1,
+          "figureType": "Table",
+          "imageUrl": "/teaser_figures/4592732.1.jpeg"
+        },
+        {
+          "caption": "Figure 2. Sensor placement visualization of the entire GrandTour sensor suite. A) Shows the spatial relationships of the sensors on the Boxi payload, and B) shows the sensors of the ANYmal base platform components. Each colored axis represents a sensor or joint frame. For brevity, repeated sensors are not shown (e.g., 6 × Intel RealSense D435i depth cameras).",
+          "figureNumber": 2,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592732.2.jpeg"
+        },
+        {
+          "caption": "Figure 3. System architecture and sensor interfaces of the combined Boxi–ANYmal platform. All compute units (Jetson AGX Orin, Intel NUC, Raspberry Pi) are connected to the UbiSwitch Ethernet device, and the sensors are connected to their respective compute platforms via various interfaces, such as USB 3.1, GMSL2, RJ45, and I²C.",
+          "figureNumber": 3,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592732.3.jpeg"
+        },
+        {
+          "caption": "Table 2. Specifications and settings of all the sensors available in the GrandTour data set are provided. GS=GlobalShutter, RS=RollingShutter, SW=Software, HW=Hardware.",
+          "figureNumber": 4,
+          "figureType": "Table",
+          "imageUrl": "/teaser_figures/4592732.4.jpeg"
+        },
+        {
+          "caption": "Figure 4. Top-down projection of range observations around the robot in GrandTour (scale bar: 3m ), illustrating the complementary coverage of the sensor suite. A) Combined view with color-coding: Hesai LiDAR (red), Livox LiDAR (blue), VLP16 (green), and ANYmal-Depth cameras (yellow). B)–D) For clarity, the sensor(s) of interest are shown in color while all other measurements are shown in gray. B) Hesai LiDAR. C) Livox LiDAR. D) ANYmal-mounted sensors: VLP16 and ANYmal-Depth .",
+          "figureNumber": 5,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592732.5.jpeg"
+        }
+      ],
+      "title": "GrandTour: A Legged Robotics Dataset in the Wild for Multi-Modal Perception and State Estimation",
+      "total_likes": 1,
+      "total_read": 10,
+      "url": "https://arxiv.org/pdf/2602.18164",
+      "url_for_twitter": "https://twitter.com/intent/tweet?text=Check+out+this+paper%3A+https%3A%2F%2Farxiv.org%2Fabs%2F2602.18164.%0AShared+by%3A&url=https%3A%2F%2Fwww.scholar-inbox.com",
+      "user_paper_collections": null
+    },
+    {
+      "abbreviation": null,
+      "abstract": "Recent advances in automated vehicles have focused on improving perception performance under adverse weather conditions; however, research on physical hardware solutions remains limited, despite their importance for perception critical applications such as vehicle platooning. Existing approaches, such as hydrophilic or hydrophobic lenses and sprays, provide only partial mitigation, while industrial protection systems imply high cost and they do not enable scalability for automotive deployment.   To address these limitations, this paper presents a cost-effective hardware solution for rainy conditions, designed to be compatible with multiple cameras simultaneously.   Beyond its technical contribution, the proposed solution supports sustainability goals in transportation systems. By enabling compatibility with existing camera-based sensing platforms, the system extends the operational reliability of automated vehicles without requiring additional high-cost sensors or hardware replacements. This approach reduces resource consumption, supports modular upgrades, and promotes more cost-efficient deployment of automated vehicle technologies, particularly in challenging weather conditions where system failures would otherwise lead to inefficiencies and increased emissions. The proposed system was able to increase pedestrian detection accuracy of a Deep Learning model from 8.3% to 41.6%.",
+      "affiliations": [
+        "Department of Computer Science, Johannes Kepler University Linz"
+      ],
+      "arxiv_id": "2602.17472",
+      "arxives_doi": null,
+      "authors": "Mohamed Sabry, Joseba Gorospe, Cristina Olaverri-Monreal",
+      "bookmarked": 0,
+      "cache_file_name": "Sabry2026ARXIV_A_Cost_Effective_and.pdf",
+      "category": "Robotics and Control",
+      "chemrxiv_id": null,
+      "citations": null,
+      "color": [
+        0.7651284162,
+        0.8414351379,
+        0.9996122952,
+        0.3
+      ],
+      "conf_id": null,
+      "conference": null,
+      "conference_submission_type": null,
+      "conference_url": null,
+      "conference_year": null,
+      "digest_date": 1771804800000,
+      "display_venue": "ArXiv 2026 (February 19)",
+      "first_page_image": {
+        "imageUrl": "/first_pages/4592023.jpeg"
+      },
+      "github_url": null,
+      "has_ranking": true,
+      "html_link": "https://arxiv.org/html/2602.17472",
+      "inferredHighlights": [
+        {
+          "endIndex": 670,
+          "highlightClass": "primary-highlight",
+          "startIndex": 501
+        }
+      ],
+      "is_cached": true,
+      "is_cached_filename": "Sabry2026ARXIV_A_Cost_Effective_and.pdf",
+      "keywords_metadata": {
+        "color": "#fe7878",
+        "field": "Computer Science",
+        "keywords": "Automated Vehicles,  Rain Mitigation,  Air Pressure System,  Climate Resilience,  Intelligent Transportation Systems",
+        "method_shortname": "APS",
+        "sub_subfield": "Automotive Systems",
+        "subfield": "Artificial Intelligence"
+      },
+      "n_negative_ratings": 0,
+      "n_positive_ratings": 0,
+      "ngt_id": 4186685,
+      "paper_id": 4592023,
+      "paper_source_id": "2602.17472",
+      "pdf_download_success": true,
+      "project_link": null,
+      "project_url": null,
+      "publication_date": "2026-02-19",
+      "ranking_score": 0.4584800446,
+      "rating": null,
+      "read": false,
+      "recommended": true,
+      "semantic_scholar_id": null,
+      "shortened_authors": "Mohamed Sabry, Joseba Gorospe, Cristina Olaverri-Monreal",
+      "source": "arxiv",
+      "summaries": {
+        "contributions_question": "- Introduces **Air Pressure System (APS)**, a cost-effective and climate-resilient solution for rain effect reduction on automated vehicle cameras.\n- Supports **modular upgrades** and **scalability**, enhancing operational reliability without additional high-cost sensors.\n- Demonstrates **improved pedestrian detection accuracy** from 8.3% to 41.6% under rainy conditions.\n- Promotes **sustainability goals** by reducing resource consumption and enabling compatibility with existing camera-based sensing platforms.\n- **Enables climate-resilient deployment** for automated vehicles and Intelligent Transportation Systems (ITS).",
+        "evaluation_question": "- Achieves **41.6%** pedestrian detection accuracy in rainy conditions, surpassing **8.3%** without APS.\n- Improves detection performance significantly under adverse weather, demonstrating **effective rain mitigation**.\n- Quantitative results show a **+33.3% improvement** in detection rates with the proposed system compared to baseline.",
+        "method_explanation_question": "- Deploys an **Air Pressure System (APS)** to generate an air curtain that disrupts water droplets on camera lenses.\n- Utilizes **weather-resilient tubing** and **custom-fabricated nozzles** to direct airflow at an obtuse angle onto camera lenses.\n- Connects to the vehicle's **onboard power inverter** for continuous operation and integrates with multiple sensors simultaneously.\n- Employs **standardized components** for ease of installation and modular scalability across different sensor configurations.",
+        "problem_definition_question": "- Current solutions for rain-effect mitigation are either **costly**, **inefficient**, or **limited in scalability** for automotive applications.\n- Sensor degradation under adverse weather leads to **reduced perception reliability**, increasing risks of accidents and inefficiencies.\n- **Lack of sustainable, scalable solutions** hinders the deployment of automated vehicles in challenging weather conditions.\n- There is a critical need for **climate-resilient hardware** that can be seamlessly integrated into existing vehicle systems."
+      },
+      "teaser_figures": [
+        {
+          "caption": "TABLE I: Quantitative results across 10 seconds Weather Condition Detection %",
+          "figureNumber": 0,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592023.0.jpeg"
+        },
+        {
+          "caption": "Fig. 1: The figure illustrates the connectivity of the proposed Air Pressure System (APS) with the JKU-ITS research vehicle and the associated sensors to be cleaned. Fig. 2: The figure illustrates the APS system mounted on the JKU ITS research vehicle.",
+          "figureNumber": 1,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592023.1.jpeg"
+        },
+        {
+          "caption": "Fig. 3: The figure illustrates the results from using the proposed APS system. The figure shows there consecutive frames taken from a Basler camera with Yolov4-tiny used as a Deep learning model to test the effect of the system. (a) shows the results from a clean camera lens. (b) shows the results in rain without the proposed system. (c) shows the results while raining and using the proposed APS.",
+          "figureNumber": 2,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592023.2.jpeg"
+        }
+      ],
+      "title": "A Cost-Effective and Climate-Resilient Air Pressure System for Rain Effect Reduction on Automated Vehicle Cameras",
+      "total_likes": 0,
+      "total_read": 1,
+      "url": "https://arxiv.org/pdf/2602.17472",
+      "url_for_twitter": "https://twitter.com/intent/tweet?text=Check+out+this+paper%3A+https%3A%2F%2Farxiv.org%2Fabs%2F2602.17472.%0AShared+by%3A&url=https%3A%2F%2Fwww.scholar-inbox.com",
+      "user_paper_collections": null
+    },
+    {
+      "abbreviation": null,
+      "abstract": "Monocular depth and pose estimation play an important role in the development of colonoscopy-assisted navigation, as they enable improved screening by reducing blind spots, minimizing the risk of missed or recurrent lesions, and lowering the likelihood of incomplete examinations. However, this task remains challenging due to the presence of texture-less surfaces, complex illumination patterns, deformation, and a lack of in-vivo datasets with reliable ground truth. In this paper, we propose **PRISM** (Pose-Refinement with Intrinsic Shading and edge Maps), a self-supervised learning framework that leverages anatomical and illumination priors to guide geometric learning. Our approach uniquely incorporates edge detection and luminance decoupling for structural guidance. Specifically, edge maps are derived using a learning-based edge detector (e.g., DexiNed or HED) trained to capture thin and high-frequency boundaries, while luminance decoupling is obtained through an intrinsic decomposition module that separates shading and reflectance, enabling the model to exploit shading cues for depth estimation. Experimental results on multiple real and synthetic datasets demonstrate state-of-the-art performance. We further conduct a thorough ablation study on training data selection to establish best practices for pose and depth estimation in colonoscopy. This analysis yields two practical insights: (1) self-supervised training on real-world data outperforms supervised training on realistic phantom data, underscoring the superiority of domain realism over ground truth availability; and (2) video frame rate is an extremely important factor for model performance, where dataset-specific video frame sampling is necessary for generating high quality training data.",
+      "affiliations": [
+        "UCL Hawkes Institute, Department of Computer Science, University College London"
+      ],
+      "arxiv_id": "2602.17785",
+      "arxives_doi": null,
+      "authors": "Xinwei Ju, Rema Daher, Danail Stoyanov, Sophia Bano, Francisco Vasconcelos",
+      "bookmarked": 0,
+      "cache_file_name": "Ju2026ARXIV_Multi_Modal_Monocular_Endoscopic.pdf",
+      "category": "Computer Vision and Graphics",
+      "chemrxiv_id": null,
+      "citations": null,
+      "color": [
+        0.7586660653,
+        0.8363978349,
+        0.9998660391,
+        0.3
+      ],
+      "conf_id": null,
+      "conference": null,
+      "conference_submission_type": null,
+      "conference_url": null,
+      "conference_year": null,
+      "digest_date": 1771804800000,
+      "display_venue": "ArXiv 2026 (February 19)",
+      "first_page_image": {
+        "imageUrl": "/first_pages/4592394.jpeg"
+      },
+      "github_url": null,
+      "has_ranking": true,
+      "html_link": "https://arxiv.org/html/2602.17785",
+      "inferredHighlights": [
+        {
+          "endIndex": 675,
+          "highlightClass": "primary-highlight",
+          "startIndex": 469
+        }
+      ],
+      "is_cached": true,
+      "is_cached_filename": "Ju2026ARXIV_Multi_Modal_Monocular_Endoscopic.pdf",
+      "keywords_metadata": {
+        "color": "#fe7878",
+        "field": "Computer Science",
+        "keywords": "Endoscopic Navigation,  Self-Supervised Learning,  Luminance Decomposition,  Edge Detection,  Colonoscopy,  PRISM",
+        "method_shortname": "PRISM",
+        "sub_subfield": "Medical Imaging",
+        "subfield": "Computer Vision"
+      },
+      "n_negative_ratings": 0,
+      "n_positive_ratings": 0,
+      "ngt_id": 4187056,
+      "paper_id": 4592394,
+      "paper_source_id": "2602.17785",
+      "pdf_download_success": true,
+      "project_link": null,
+      "project_url": null,
+      "publication_date": "2026-02-19",
+      "ranking_score": 0.4563376587,
+      "rating": null,
+      "read": false,
+      "recommended": true,
+      "semantic_scholar_id": null,
+      "shortened_authors": "Xinwei Ju, Rema Daher, Danail Stoyanov, Sophia Bano, Francisco Vasconcelos",
+      "source": "arxiv",
+      "summaries": {
+        "contributions_question": "- Introduces **PRISM**, a self-supervised framework that integrates **luminance and edge cues** for depth and pose estimation.\n- Designs a **stage-wise training strategy** where edge maps serve as supervisory signals through an edge similarity loss.\n- Provides a systematic analysis of training domain, temporal sampling, and weak supervision, offering new insights into depth and pose learning in endoscopy.\n- Demonstrates improved robustness to illumination reflections and sharper depth contrast around fold edges on real data.\n- **Enhanced structural guidance** via edge and luminance maps leads to more stable pose estimation and accurate depth reconstruction.",
+        "evaluation_question": "- On *C3VD*, achieves **6.1246 RMSE** vs. Monodepth2 (**6.3138**) and SHADeS (**7.1065**).\n- On *EndoMapper*, outperforms baselines with **sharper edges** around colon folds and correct lumen localization.\n- Ablation studies show **DLPE configuration** yields the best performance across multiple metrics.\n- Quantitative results indicate **better generalization** on real-world data despite lacking ground truth.\n- Qualitative comparisons highlight **superior edge definition** and reduced light artifacts compared to other methods.",
+        "method_explanation_question": "- Processes RGB frames and extracts **luminance maps** using a model trained on SegCol dataset.\n- Detects **edge maps** via EdgeNet, a DexiNed-based architecture trained on real colonoscopy data.\n- Estimates depth and pose using **DepthNet and PoseNet**, incorporating luminance and edge features for structural guidance.\n- Optimizes with **photometric reprojection and smoothness losses** to enforce geometric consistency.\n- Refines pose estimates with an **edge-aware loss** to ensure structural alignment across views.",
+        "problem_definition_question": "- Existing models struggle with **illumination variations** and **texture-less surfaces** in endoscopic scenes.\n- Prior approaches lack **structural priors** and fail to distinguish between lighting effects and true geometry.\n- There is a need for **robust depth and pose estimation** that can generalize to real-world endoscopy without ground truth.\n- Current methods are vulnerable to **specular highlights** and **occlusions**, leading to inaccurate predictions.\n- **Domain shift** between synthetic and real data further complicates model training and evaluation."
+      },
+      "teaser_figures": [
+        {
+          "caption": "Figure 1: An overview of our proposed self-supervised monocular depth estimation framework. Our key contribution is to explicitly guide the DepthNet with priors from two parallel branches: a LumNet, inspired by IID-SfMLearner, to extract an illumination-aware luminance map ( L t ), and an EdgeNet, based on DexiNed, to extract a high-fidelity structural edge map ( E t ). The inputs to the DepthNet are the concatenation of the raw image I t , the luminance map L t , and the edge map E t .",
+          "figureNumber": 0,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592394.0.jpeg"
+        },
+        {
+          "caption": "Table 1: Quantitative comparison of depth estimation on the C3VD test set for models trained with Hyper-Kvasir. Best results are in bold , second best are underlined.",
+          "figureNumber": 1,
+          "figureType": "Table",
+          "imageUrl": "/teaser_figures/4592394.1.jpeg"
+        },
+        {
+          "caption": "Figure 2: Qualitative evaluation of generalization on real-world endoscopic video frames with challenging improvements boxed in red.",
+          "figureNumber": 2,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592394.2.jpeg"
+        },
+        {
+          "caption": "Figure 3: Qualitative comparison of estimated camera trajectories across four models on three representative sequences from the C3VD dataset. Each 3D plot shows the predicted path color-coded by temporal order.",
+          "figureNumber": 3,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592394.3.jpeg"
+        },
+        {
+          "caption": "Table 2: Quantitative comparison of depth estimation with models trained on Hyper-Kvasir and tested on the C3VD test set. Best results are in bold and second best results are in underlined.",
+          "figureNumber": 4,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592394.4.jpeg"
+        },
+        {
+          "caption": "Figure 4: Qualitative comparison of ablation variants on four subsequences from the EndoMapper dataset. Each row shows a sample frame and the corresponding predicted depth maps from different prior configurations.",
+          "figureNumber": 5,
+          "figureType": "Table",
+          "imageUrl": "/teaser_figures/4592394.5.jpeg"
+        }
+      ],
+      "title": "Multi-Modal Monocular Endoscopic Depth and Pose Estimation with Edge-Guided Self-Supervision",
+      "total_likes": 0,
+      "total_read": 3,
+      "url": "https://arxiv.org/pdf/2602.17785",
+      "url_for_twitter": "https://twitter.com/intent/tweet?text=Check+out+this+paper%3A+https%3A%2F%2Farxiv.org%2Fabs%2F2602.17785.%0AShared+by%3A&url=https%3A%2F%2Fwww.scholar-inbox.com",
+      "user_paper_collections": null
+    },
+    {
+      "abbreviation": null,
+      "abstract": "Real-time reconstruction of deformable surgical scenes is vital for advancing robotic surgery, improving surgeon guidance, and enabling automation. Recent methods achieve dense reconstructions from da Vinci robotic surgery videos, with Gaussian Splatting (GS) offering real-time performance via graphics acceleration. However, reconstruction quality in occluded regions remains limited, and depth accuracy has not been fully assessed, as benchmarks like EndoNeRF and StereoMIS lack 3D ground truth. We propose Diff2DGS, a novel two-stage framework for reliable 3D reconstruction of occluded surgical scenes. In the first stage, a diffusion-based video module with temporal priors inpaints tissue occluded by instruments with high spatial-temporal consistency. In the second stage, we adapt 2D Gaussian Splatting (2DGS) with a Learnable Deformation Model (LDM) to capture dynamic tissue deformation and anatomical geometry. We also extend evaluation beyond prior image-quality metrics by performing quantitative depth accuracy analysis on the SCARED dataset. Diff2DGS outperforms state-of-the-art approaches in both appearance and geometry, reaching 38.02 dB PSNR on EndoNeRF and 34.40 dB on StereoMIS. Furthermore, our experiments demonstrate that optimizing for image quality alone does not necessarily translate into optimal 3D reconstruction accuracy. To address this, we further optimize the depth quality of the reconstructed 3D results, ensuring more faithful geometry in addition to high-fidelity appearance.",
+      "affiliations": [
+        "Stanford University",
+        "University of Toronto",
+        "Massachusetts Institute of Technology"
+      ],
+      "arxiv_id": "2602.18314",
+      "arxives_doi": null,
+      "authors": "Tianyi Song, Danail Stoyanov, Evangelos Mazomenos, Francisco Vasconcelos",
+      "bookmarked": 0,
+      "cache_file_name": "Song2026ARXIV_Diff2DGS_Reliable_Reconstruction_of.pdf",
+      "category": "Computer Vision and Graphics",
+      "chemrxiv_id": null,
+      "citations": null,
+      "color": [
+        0.559828881,
+        0.6119826451,
+        0.8809823917,
+        0.3
+      ],
+      "conf_id": null,
+      "conference": null,
+      "conference_submission_type": null,
+      "conference_url": null,
+      "conference_year": null,
+      "digest_date": 1771804800000,
+      "display_venue": "ArXiv 2026 (February 20)",
+      "first_page_image": {
+        "imageUrl": "/first_pages/4592983.jpeg"
+      },
+      "github_url": null,
+      "has_ranking": true,
+      "html_link": "https://arxiv.org/html/2602.18314",
+      "inferredHighlights": [
+        {
+          "endIndex": 606,
+          "highlightClass": "primary-highlight",
+          "startIndex": 499
+        }
+      ],
+      "is_cached": true,
+      "is_cached_filename": "Song2026ARXIV_Diff2DGS_Reliable_Reconstruction_of.pdf",
+      "keywords_metadata": {
+        "color": "#fe7878",
+        "field": "Computer Science",
+        "keywords": "Surgical Scene Reconstruction,  2D Gaussian Splatting,  Learnable Deformation Model,  Adaptive Depth Loss,  EndoNeRF,  StereoMIS",
+        "method_shortname": "Diff2DGS",
+        "sub_subfield": "Medical Imaging",
+        "subfield": "Computer Vision"
+      },
+      "n_negative_ratings": 0,
+      "n_positive_ratings": 0,
+      "ngt_id": 4187645,
+      "paper_id": 4592983,
+      "paper_source_id": "2602.18314",
+      "pdf_download_success": true,
+      "project_link": null,
+      "project_url": null,
+      "publication_date": "2026-02-20",
+      "ranking_score": 0.4063877128,
+      "rating": null,
+      "read": false,
+      "recommended": true,
+      "semantic_scholar_id": null,
+      "shortened_authors": "Tianyi Song, Danail Stoyanov, Evangelos Mazomenos, Francisco Vasconcelos",
+      "source": "arxiv",
+      "summaries": {
+        "contributions_question": "- Introduces **Diff2DGS**, a novel two-stage framework for reliable 3D reconstruction of occluded surgical scenes.\n- Extends 2D Gaussian representation to deformable tissue reconstruction with a **Learnable Deformation Model (LDM)**.\n- Proposes an **adaptive depth loss** that dynamically adjusts depth weighting during training for improved geometric accuracy.\n- Validates superior performance on *EndoNeRF* and *StereoMIS* datasets, achieving **38.02 dB PSNR** and **34.40 dB PSNR** respectively.\n- **Balances depth accuracy and image quality** effectively, addressing limitations in prior methods.",
+        "evaluation_question": "- On *EndoNeRF*, achieves **38.02 dB PSNR**, surpassing EndoNeRF-Cutting (**35.84 dB**) and EndoNeRF-Pulling (**35.43 dB**).\n- On *StereoMIS*, reaches **34.40 dB PSNR**, outperforming StereoMIS-P2 (**28.87 dB**) and StereoMIS-P3 (**28.33 dB**).\n- Ablation studies show the **Learnable Deformation Model (LDM)** contributes **+1.7%** improvement in PSNR.\n- Achieves **PSNR of 30.53 dB** and **RMSE of 8.21 mm** on *SCARED* dataset, significantly outperforming Deform3DGS, EndoGaussian, and SurgicalGS.",
+        "method_explanation_question": "- Uses a diffusion model to remove surgical instruments and inpaint them with underlying tissue using temporal priors.\n- Applies **2D Gaussian Splatting (2DGS)** with a **Learnable Deformation Model (LDM)** to capture dynamic tissue deformation and anatomical geometry.\n- Optimizes depth information through an adaptive depth loss strategy to enhance geometric accuracy.\n- Generates color images and depth maps from the camera's perspective through rasterization and refinement.\n- Combines inpainting with 2DGS to achieve high-fidelity 3D reconstructions of occluded regions.",
+        "problem_definition_question": "- Existing methods struggle with **occlusion artifacts** in surgical scene reconstruction, leading to inaccurate depth estimations.\n- **Temporal consistency** is often neglected, causing degradation when camera viewpoints change.\n- Prior approaches lack **dynamic deformation modeling**, resulting in poor performance on highly deformable tissues.\n- **Real-time intraoperative reconstruction** remains challenging due to computational inefficiencies.\n- There is a need for **robust, efficient frameworks** that balance both appearance and geometric accuracy in complex surgical environments."
+      },
+      "teaser_figures": [
+        {
+          "caption": "Fig. 1. Traditional endoscopic scene reconstruction methods often focus solely on image quality from the camera viewpoint, neglecting the depth accuracy of the reconstruction results. Consequently, when the camera view-point changes, reconstruction accuracy degrades significantly. We present Diff2DGS, a framework that effectively balances depth information and image quality, achieving high-quality 3D reconstruction while more effectively eliminating artifacts in occluded regions and providing more accurate depth estimation.",
+          "figureNumber": 0,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592983.0.jpeg"
+        },
+        {
+          "caption": "Fig. 2. Our reliable surgical scene reconstruction framework, Diff2DGS, consists of Surgical Instrument Inpainting, Point Cloud Initialization, Deformation Modeling, and 2D Gaussian Splatting.",
+          "figureNumber": 1,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592983.1.jpeg"
+        },
+        {
+          "caption": "TABLE I C OMPARISON BETWEEN D IFF 2DGS AND E XISTING M ETHODS ON E NDO N E RF.",
+          "figureNumber": 2,
+          "figureType": "Table",
+          "imageUrl": "/teaser_figures/4592983.2.jpeg"
+        },
+        {
+          "caption": "TABLE II C OMPARISON BETWEEN D IFF 2DGS AND E XISTING M ETHODS ON S TEREO MIS.",
+          "figureNumber": 3,
+          "figureType": "Table",
+          "imageUrl": "/teaser_figures/4592983.3.jpeg"
+        },
+        {
+          "caption": "Fig. 3. Visualization of the 3D reconstruction results.",
+          "figureNumber": 4,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592983.4.jpeg"
+        },
+        {
+          "caption": "Fig. 4. Depth Quality Visualization on SCARED Dataset",
+          "figureNumber": 5,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592983.5.jpeg"
+        },
+        {
+          "caption": "TABLE III Q UANTITATIVE COMPARISON OF DIFFERENT METHODS ON SCARED DATASET .",
+          "figureNumber": 6,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592983.6.jpeg"
+        },
+        {
+          "caption": "Fig. 5. Visual comparison on SCARED dataset TABLE IV A BLATION EXPERIMENT ON S TEREO MIS DATASET",
+          "figureNumber": 7,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592983.7.jpeg"
+        },
+        {
+          "caption": "TABLE V E RROR ANALYSIS OF RAFT ON SCARED DATASET .",
+          "figureNumber": 8,
+          "figureType": "Table",
+          "imageUrl": "/teaser_figures/4592983.8.jpeg"
+        }
+      ],
+      "title": "Diff2DGS: Reliable Reconstruction of Occluded Surgical Scenes via 2D Gaussian Splatting",
+      "total_likes": 1,
+      "total_read": 10,
+      "url": "https://arxiv.org/pdf/2602.18314",
+      "url_for_twitter": "https://twitter.com/intent/tweet?text=Check+out+this+paper%3A+https%3A%2F%2Farxiv.org%2Fabs%2F2602.18314.%0AShared+by%3A&url=https%3A%2F%2Fwww.scholar-inbox.com",
+      "user_paper_collections": null
+    },
+    {
+      "abbreviation": null,
+      "abstract": "Humans can infer the three-dimensional structure of objects from two-dimensional visual inputs. Modeling this ability has been a longstanding goal for the science and engineering of visual intelligence, yet decades of computational methods have fallen short of human performance. Here we develop a modeling framework that predicts human 3D shape inferences for arbitrary objects, directly from experimental stimuli. We achieve this with a novel class of neural networks trained using a visual-spatial objective over naturalistic sensory data; given a set of images taken from different locations within a natural scene, these models learn to predict spatial information related to these images, such as camera location and visual depth, without relying on any object-related inductive biases. Notably, these visual-spatial signals are analogous to sensory cues readily available to humans. We design a zero-shot evaluation approach to determine the performance of these `multi-view' models on a well established 3D perception task, then compare model and human behavior. Our modeling framework is the first to match human accuracy on 3D shape inferences, even without task-specific training or fine-tuning. Remarkably, independent readouts of model responses predict fine-grained measures of human behavior, including error patterns and reaction times, revealing a natural correspondence between model dynamics and human perception. Taken together, our findings indicate that human-level 3D perception can emerge from a simple, scalable learning objective over naturalistic visual-spatial data. All code, human behavioral data, and experimental stimuli needed to reproduce our findings can be found on our project page.",
+      "affiliations": [
+        "University of California, Berkeley"
+      ],
+      "arxiv_id": "2602.17650",
+      "arxives_doi": null,
+      "authors": "Tyler Bonnen, Jitendra Malik, Angjoo Kanazawa",
+      "bookmarked": 0,
+      "cache_file_name": "Bonnen2026ARXIV_Human_level_3D_shape.pdf",
+      "category": "Computer Vision and Graphics",
+      "chemrxiv_id": null,
+      "citations": null,
+      "color": [
+        0.5515975584,
+        0.5997020726,
+        0.8701990156,
+        0.3
+      ],
+      "conf_id": null,
+      "conference": null,
+      "conference_submission_type": null,
+      "conference_url": null,
+      "conference_year": null,
+      "digest_date": 1771804800000,
+      "display_venue": "ArXiv 2026 (February 19)",
+      "first_page_image": {
+        "imageUrl": "/first_pages/4592290.jpeg"
+      },
+      "github_url": "https://github.com",
+      "has_ranking": true,
+      "html_link": "https://arxiv.org/html/2602.17650",
+      "inferredHighlights": [
+        {
+          "endIndex": 414,
+          "highlightClass": "secondary-highlight",
+          "startIndex": 280
+        },
+        {
+          "endIndex": 791,
+          "highlightClass": "primary-highlight",
+          "startIndex": 416
+        }
+      ],
+      "is_cached": true,
+      "is_cached_filename": "Bonnen2026ARXIV_Human_level_3D_shape.pdf",
+      "keywords_metadata": {
+        "color": "#fe7878",
+        "field": "Computer Science",
+        "keywords": "Multi-View Learning,  Zero-Shot Evaluation,  Human-Level Perception,  3D Shape Inference,  Transformer Architecture",
+        "method_shortname": "Multi-View Learning",
+        "sub_subfield": "Computer Vision",
+        "subfield": "Artificial Intelligence"
+      },
+      "n_negative_ratings": 0,
+      "n_positive_ratings": 0,
+      "ngt_id": 4186952,
+      "paper_id": 4592290,
+      "paper_source_id": "2602.17650",
+      "pdf_download_success": true,
+      "project_link": null,
+      "project_url": null,
+      "publication_date": "2026-02-19",
+      "ranking_score": 0.4041661451,
+      "rating": null,
+      "read": false,
+      "recommended": true,
+      "semantic_scholar_id": null,
+      "shortened_authors": "Tyler Bonnen, Jitendra Malik, Angjoo Kanazawa",
+      "source": "arxiv",
+      "summaries": {
+        "contributions_question": "- Introduces **multi-view learning** to achieve human-level 3D shape perception without task-specific training.\n- Develops **zero-shot evaluation** to align model behavior with human perception patterns.\n- Demonstrates **human-level accuracy** on 3D shape inference tasks across diverse object types.\n- Reveals a natural correspondence between **model dynamics and human perception**.\n- **Emergent alignment** between multi-view models and human perceptual processes.",
+        "evaluation_question": "- Achieves **83.0%** normalized accuracy on 3D shape tasks, matching human performance (**78.9%**) and outperforming single-view models (**28.5%**).\n- **Model confidence correlates with human accuracy** (Pearson r = 0.830, p < 0.001), indicating aligned perceptual difficulty assessment.\n- **Solution layer depth predicts human reaction time** (β = 30.91 ms/layer, F (1, 17) = 29.38, p = 4.59e-05), showing temporal alignment between model processing and human decision-making.",
+        "method_explanation_question": "- Processes **multi-view image inputs** to infer spatial relationships and camera positions via a transformer architecture.\n- **Cross-image attention mechanisms** extract feature correspondences across different viewpoints.\n- **Uncertainty estimation** is integrated into the training objective to reflect aleatoric uncertainty in depth predictions.\n- Trains on **naturalistic scene data** without object-specific biases, enabling generalizable 3D perception.\n- Evaluates model behavior through **zero-shot tasks** to assess alignment with human perceptual processes.",
+        "problem_definition_question": "- Current vision models struggle with **3D shape inference** due to reliance on task-specific training or geometric priors.\n- **Over-smoothing and limited generalization** hinder performance on novel, abstract objects.\n- **Lack of naturalistic visual-spatial learning** limits models' ability to handle real-world perceptual challenges.\n- **Need for scalable, domain-general learning** that mirrors human perceptual development.\n- **Insufficient alignment between model dynamics and human perception** impedes formal evaluation of cognitive theories."
+      },
+      "teaser_figures": [
+        {
+          "caption": "Figure 1: Schematic of multi-view model training approach and 3D perceptual testing protocol. We evaluate a novel class of multi-view transformers (VGGT-1B, J. Wang et al., 2025), which is trained on large-scale, multi-view, naturalistic scene data. During training, VGGT receives sets of images depicting the same scene from different viewpoints (top left) and must learn to predict the relative depth, camera position, and aleatoric uncertainty associated with these images (bottom left). These multi-modal signals are analogous to information that is available to humans through stereo vision and proprioception. Notably, VGGT uses a general transformer architecture with no hand-coded geometric priors: any understanding of 3D structure emerges from learning the predictive relationship between images and these multi-modal cues. To evaluate these multi-view transformers alongside human observers on a 3D perception task, we use a standard experimental design from the cognitive sciences: a concurrent visual discrimination (‘oddity’) task. This design requires zero-shot visual inference about object shape: given two images of an object from different viewpoints (A and A ′ ), and another image of a different object (B), the task is to determine which image contains the non-matching object (e.g., right). We evaluate humans and models on diverse object types, including real-world objects (e.g., chairs, tables) as well as procedurally generated abstract shapes (i.e., ‘nonsense’ objects). it was",
+          "figureNumber": 0,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592290.0.jpeg"
+        },
+        {
+          "caption": "Figure 2: Evaluation approach used to estimate model performance on each trial. We develop a series of zero-shot evaluation metrics to determine the behavior of multi-view models on human 3D perceptual tasks. To estimate accuracy we leverage the model’s internal estimate of aleatoric uncertainty (top): we encode all pairwise combinations of images on a trial, extract model uncertainty estimates for each pair, average, then select the oddity to be the object with the lowest paired confidence scores. We compare this model-selected non-match with the ground truth, resulting in a single binary (correct/incorrect) outcome. Next, we compute the margin between matching/non-matching objects to determine the model’s confidence for this decision ( ∆ top right). We visualize the norm of model responses across several layers, going from early to final layers (left to right). Note that the activation patterns for matching (AA ′ ) objects is visibly distinct from those of the non-matching (AB/BA ′ ) objects in the final layers. When conducting a similarity analysis across all layers (bottom), for each encoded pair of images, we find that the features of matching objects (AA ′ ) become more correlated (orange, bottom), while non-matching objects (AB/BA ′ ) become less correlated (black/purple, bottom). We describe the earliest layer where the non-matching object can be identified as the model ‘solution layer’.",
+          "figureNumber": 1,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592290.1.jpeg"
+        },
+        {
+          "caption": "Figure 3: Multi-view models match human 3D perception accuracy, error patterns, and reaction times.",
+          "figureNumber": 2,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592290.2.jpeg"
+        },
+        {
+          "caption": "Figure 4: Investigating between-image activations reveals location-based object correspondence. How does this multi-view model represent the similarity or difference between objects? To address this question we provide a qualitative visualization of the information present in intermediate model layers. For an example trial (e.g., abstract image in the top half; chair in the bottom half), we encoded image pairs A, A ′ and A, B separately, then extract the cross-image block of the attention matrix. Here we manually select keypoints in the reference image, A (different color dots on A, far left), and identify the corresponding patch token in the target images A ′ and B. We then retrieve the attention distribution over all the target patch tokens. In intermediate model layers (e.g., here we visual attention from layer 15) we find that different query locations from the reference image A elicit distinct attention patterns across points and across target images A ′ and B. Concretely, it appears that each query location on A elicits a pattern of attention in A ′ that correspondence to the same location on the object, albeit a different location in xyz coordinates. This qualitative analysis indicates that the model can represent the object-object similarity via the correspondence between spatial locations on each object.",
+          "figureNumber": 3,
+          "figureType": "Figure",
+          "imageUrl": "/teaser_figures/4592290.3.jpeg"
+        }
+      ],
+      "title": "Human-level 3D shape perception emerges from multi-view learning",
+      "total_likes": 1,
+      "total_read": 42,
+      "url": "https://arxiv.org/pdf/2602.17650",
+      "url_for_twitter": "https://twitter.com/intent/tweet?text=Check+out+this+paper%3A+https%3A%2F%2Farxiv.org%2Fabs%2F2602.17650.%0AShared+by%3A&url=https%3A%2F%2Fwww.scholar-inbox.com",
+      "user_paper_collections": null
+    }
+  ],
+  "digest_papers": 12,
+  "display_next_date": false,
+  "empty_digest": false,
+  "first_paper_id_below_decision_boundary": 4592010,
+  "from_date": "Mon, 23 Feb 2026 00:00:00 GMT",
+  "has_more_papers_in_digest": false,
+  "next_date": "2026-02-24",
+  "no_weekdays_selected": false,
+  "pdf_viewer_url": null,
+  "prev_date": "2026-02-20",
+  "read_paper_ids": [
+    4592614
+  ],
+  "seen_welcome_tutorial": true,
+  "success": true,
+  "to_date": "Mon, 23 Feb 2026 00:00:00 GMT",
+  "total_papers": "1778",
+  "trending": [
+    {
+      "abstract": "State-of-the-art Vision-Language-Action (VLA) models excel at semantic generalization but struggle to generalize to unseen physical motions in novel environments. We introduce DreamZero, a World Action Model (WAM) built upon a pretrained video diffusion backbone. Unlike VLAs, WAMs learn physical dynamics by predicting future world states and actions, using video as a dense representation of how the world evolves. By jointly modeling video and action, DreamZero learns diverse skills effectively from heterogeneous robot data without relying on repetitive demonstrations. This results in over 2x improvement in generalization to new tasks and environments compared to state-of-the-art VLAs in real robot experiments. Crucially, through model and system optimizations, we enable a 14B autoregressive video diffusion model to perform real-time closed-loop control at 7Hz. Finally, we demonstrate two forms of cross-embodiment transfer: video-only demonstrations from other robots or humans yield a relative improvement of over 42% on unseen task performance with just 10-20 minutes of data. More surprisingly, DreamZero enables few-shot embodiment adaptation, transferring to a new embodiment with only 30 minutes of play data while retaining zero-shot generalization.",
+      "author": "Ye et al.",
+      "authors": "Seonghyeon Ye, Yunhao Ge, Kaiyuan Zheng, Shenyuan Gao, Sihyun Yu, George Kurian, Suneel Indupuru, You Liang Tan, Chuning Zhu, Jiannan Xiang, Ayaan Malik, Kyungmin Lee, William Liang, Nadun Ranawaka, Jiasheng Gu, Yinzhen Xu, Guanzhi Wang, Fengyuan Hu, Avnish Narayan, Johan Bjorck, Jing Wang, Gwanghyun Kim, Dantong Niu, Ruijie Zheng, Yuqi Xie, Jimmy Wu, Qi Wang, Ryan Julian, Danfei Xu, Yilun Du, Yevgen Chebotar, Scott Reed, Jan Kautz, Yuke Zhu, Linxi \"Jim\" Fan, Joel Jang",
+      "cache_file_name": "Ye2026ARXIV_World_Action_Models_are.pdf",
+      "color": [
+        0.53788342,
+        0.5792307796,
+        0.8522098918,
+        0.3
+      ],
+      "days_trending": 4,
+      "digest_date": 1771459200000,
+      "has_ranking": true,
+      "is_cached": true,
+      "is_cached_filename": "Ye2026ARXIV_World_Action_Models_are.pdf",
+      "n_negative_ratings": 0,
+      "n_positive_ratings": 0,
+      "ngt_id": 4184277,
+      "paper_id": 4589615,
+      "pdf_download_success": true,
+      "publication_date": 1771344242000,
+      "ranking_score": 0.0966818282,
+      "rating": null,
+      "read": false,
+      "short_title": "World Action Models are Zero-shot Policies",
+      "source": "arxiv",
+      "title": "World Action Models are Zero-shot Policies",
+      "total_dislikes": 4,
+      "total_likes": 47,
+      "total_read": 243,
+      "url": "https://arxiv.org/pdf/2602.15922"
+    },
+    {
+      "abstract": "We introduce the Sphere Encoder, an efficient generative framework capable of producing images in a single forward pass and competing with many-step diffusion models using fewer than five steps. Our approach works by learning an encoder that maps natural images uniformly onto a spherical latent space, and a decoder that maps random latent vectors back to the image space. Trained solely through image reconstruction losses, the model generates an image by simply decoding a random point on the sphere. Our architecture naturally supports conditional generation, and looping the encoder/decoder a few times can further enhance image quality. Across several datasets, the sphere encoder approach yields performance competitive with state of the art diffusions, but with a small fraction of the inference cost. Project page is available at https://sphere-encoder.github.io .",
+      "author": "Yue et al.",
+      "authors": "Kaiyu Yue, Menglin Jia, Ji Hou, Tom Goldstein",
+      "cache_file_name": "Yue2026ARXIV_Image_Generation_with_a.pdf",
+      "color": [
+        0.8481028073,
+        0.4840126117,
+        0.5079976582,
+        0.3
+      ],
+      "days_trending": 6,
+      "digest_date": 1771286400000,
+      "has_ranking": true,
+      "is_cached": true,
+      "is_cached_filename": "Yue2026ARXIV_Image_Generation_with_a.pdf",
+      "n_negative_ratings": 0,
+      "n_positive_ratings": 1,
+      "ngt_id": 4183072,
+      "paper_id": 4588410,
+      "pdf_download_success": true,
+      "publication_date": 1771271997000,
+      "ranking_score": 0.7347290621,
+      "rating": 1,
+      "read": true,
+      "short_title": "Image Generation with a Sphere Encoder",
+      "source": "arxiv",
+      "title": "Image Generation with a Sphere Encoder",
+      "total_dislikes": 9,
+      "total_likes": 45,
+      "total_read": 193,
+      "url": "https://arxiv.org/pdf/2602.15030"
+    },
+    {
+      "abstract": "Reconstructing and tracking dynamic 3D scenes remains a fundamental challenge in computer vision. Existing approaches often decouple geometry from motion: multi-view reconstruction methods assume static scenes, while dynamic tracking frameworks rely on explicit camera pose estimation or separate motion models. We propose Flow4R, a unified framework that treats camera-space scene flow as the central representation linking 3D structure, object motion, and camera motion. Flow4R predicts a minimal per-pixel property set-3D point position, scene flow, pose weight, and confidence-from two-view inputs using a Vision Transformer. This flow-centric formulation allows local geometry and bidirectional motion to be inferred symmetrically with a shared decoder in a single forward pass, without requiring explicit pose regressors or bundle adjustment. Trained jointly on static and dynamic datasets, Flow4R achieves state-of-the-art performance on 4D reconstruction and tracking tasks, demonstrating the effectiveness of the flow-central representation for spatiotemporal scene understanding.",
+      "author": "Qian et al.",
+      "authors": "Shenhan Qian, Ganlin Zhang, Shangzhe Wu, Daniel Cremers",
+      "cache_file_name": "Qian2026ARXIV_Flow4R_Unifying_4D_Reconstruction.pdf",
+      "color": [
+        0.8234038948,
+        0.409333696,
+        0.4901396872,
+        0.3
+      ],
+      "days_trending": 6,
+      "digest_date": 1771286400000,
+      "has_ranking": true,
+      "is_cached": true,
+      "is_cached_filename": "Qian2026ARXIV_Flow4R_Unifying_4D_Reconstruction.pdf",
+      "n_negative_ratings": 0,
+      "n_positive_ratings": 1,
+      "ngt_id": 4182093,
+      "paper_id": 4587431,
+      "pdf_download_success": true,
+      "publication_date": 1771142288000,
+      "ranking_score": 0.8304471774,
+      "rating": 1,
+      "read": true,
+      "short_title": "Flow4R: Unifying 4D Reconstruction and Tracking with Scene Flow",
+      "source": "arxiv",
+      "title": "Flow4R: Unifying 4D Reconstruction and Tracking with Scene Flow",
+      "total_dislikes": 8,
+      "total_likes": 50,
+      "total_read": 182,
+      "url": "https://arxiv.org/pdf/2602.14021"
+    },
+    {
+      "abstract": "We introduce SAM 3D Body (3DB), a promptable model for single-image full-body 3D human mesh recovery (HMR) that demonstrates state-of-the-art performance, with strong generalization and consistent accuracy in diverse in-the-wild conditions. 3DB estimates the human pose of the body, feet, and hands. It is the first model to use a new parametric mesh representation, Momentum Human Rig (MHR), which decouples skeletal structure and surface shape. 3DB employs an encoder-decoder architecture and supports auxiliary prompts, including 2D keypoints and masks, enabling user-guided inference similar to the SAM family of models. We derive high-quality annotations from a multi-stage annotation pipeline that uses various combinations of manual keypoint annotation, differentiable optimization, multi-view geometry, and dense keypoint detection. Our data engine efficiently selects and processes data to ensure data diversity, collecting unusual poses and rare imaging conditions. We present a new evaluation dataset organized by pose and appearance categories, enabling nuanced analysis of model behavior. Our experiments demonstrate superior generalization and substantial improvements over prior methods in both qualitative user preference studies and traditional quantitative analysis. Both 3DB and MHR are open-source.",
+      "author": "Yang et al.",
+      "authors": "Xitong Yang, Devansh Kukreja, Don Pinkus, Anushka Sagar, Taosha Fan, Jinhyung Park, Soyong Shin, Jinkun Cao, Jiawei Liu, Nicolas Ugrinovic, Matt Feiszli, Jitendra Malik, Piotr Dollar, Kris Kitani",
+      "cache_file_name": "Yang2026ARXIV_SAM_3D_Body_Robust.pdf",
+      "color": [
+        0.53788342,
+        0.5792307796,
+        0.8522098918,
+        0.3
+      ],
+      "days_trending": 4,
+      "digest_date": 1771459200000,
+      "has_ranking": true,
+      "is_cached": true,
+      "is_cached_filename": "Yang2026ARXIV_SAM_3D_Body_Robust.pdf",
+      "n_negative_ratings": 0,
+      "n_positive_ratings": 0,
+      "ngt_id": 4184374,
+      "paper_id": 4589712,
+      "pdf_download_success": true,
+      "publication_date": 1771363597000,
+      "ranking_score": 0.0823038464,
+      "rating": null,
+      "read": false,
+      "short_title": "SAM 3D Body: Robust Full-Body Human Mesh Recovery",
+      "source": "arxiv",
+      "title": "SAM 3D Body: Robust Full-Body Human Mesh Recovery",
+      "total_dislikes": 4,
+      "total_likes": 27,
+      "total_read": 155,
+      "url": "https://arxiv.org/pdf/2602.15989"
+    },
+    {
+      "abstract": "3D Gaussian Splatting (3DGS) has enabled high-fidelity virtualization with fast rendering and optimization for novel view synthesis. On the other hand, triangle mesh models still remain a popular choice for surface reconstruction but suffer from slow or heavy optimization in traditional mesh-based differentiable renderers. To address this problem, we propose a new lightweight differentiable mesh renderer leveraging the efficient rasterization process of 3DGS, named Gaussian Mesh Renderer (GMR), which tightly integrates the Gaussian and mesh representations. Each Gaussian primitive is analytically derived from the corresponding mesh triangle, preserving structural fidelity and enabling the gradient flow. Compared to the traditional mesh renderers, our method achieves smoother gradients, which especially contributes to better optimization using smaller batch sizes with limited memory. Our implementation is available in the public GitHub repository at https://github.com/huntorochi/Gaussian-Mesh-Renderer.",
+      "author": "Liu et al.",
+      "authors": "Xinpeng Liu, Fumio Okura",
+      "cache_file_name": "Liu2026ARXIV_Gaussian_Mesh_Renderer_for.pdf",
+      "color": [
+        0.53788342,
+        0.5792307796,
+        0.8522098918,
+        0.3
+      ],
+      "days_trending": 6,
+      "digest_date": 1771286400000,
+      "has_ranking": true,
+      "is_cached": true,
+      "is_cached_filename": "Liu2026ARXIV_Gaussian_Mesh_Renderer_for.pdf",
+      "n_negative_ratings": 0,
+      "n_positive_ratings": 0,
+      "ngt_id": 4182533,
+      "paper_id": 4587871,
+      "pdf_download_success": true,
+      "publication_date": 1771226142000,
+      "ranking_score": 0.2263096781,
+      "rating": null,
+      "read": false,
+      "short_title": "Gaussian Mesh Renderer for Lightweight Differentiable Rendering",
+      "source": "arxiv",
+      "title": "Gaussian Mesh Renderer for Lightweight Differentiable Rendering",
+      "total_dislikes": 9,
+      "total_likes": 7,
+      "total_read": 132,
+      "url": "https://arxiv.org/pdf/2602.14493"
+    },
+    {
+      "abstract": "Camera virtualization -- an emerging solution to novel view synthesis -- holds transformative potential for visual entertainment, live performances, and sports broadcasting by enabling the generation of photorealistic images from novel viewpoints using images from a limited set of calibrated multiple static physical cameras. Despite recent advances, achieving spatially and temporally coherent and photorealistic rendering of dynamic scenes with efficient time-archival capabilities, particularly in fast-paced sports and stage performances, remains challenging for existing approaches. Recent methods based on 3D Gaussian Splatting (3DGS) for dynamic scenes could offer real-time view-synthesis results. Yet, they are hindered by their dependence on accurate 3D point clouds from the structure-from-motion method and their inability to handle large, non-rigid, rapid motions of different subjects (e.g., flips, jumps, articulations, sudden player-to-player transitions). Moreover, independent motions of multiple subjects can break the Gaussian-tracking assumptions commonly used in 4DGS, ST-GS, and other dynamic splatting variants. This paper advocates reconsidering a neural volume rendering formulation for camera virtualization and efficient time-archival capabilities, making it useful for sports broadcasting and related applications. By modeling a dynamic scene as rigid transformations across multiple synchronized camera views at a given time, our method performs neural representation learning, providing enhanced visual rendering quality at test time. A key contribution of our approach is its support for time-archival, i.e., users can revisit any past temporal instance of a dynamic scene and can perform novel view synthesis, enabling retrospective rendering for replay, analysis, and archival of live events, a functionality absent in existing neural rendering approaches and novel view synthesis...",
+      "author": "Zhang et al.",
+      "authors": "Yunxiao Zhang, William Stone, Suryansh Kumar",
+      "cache_file_name": "Zhang2026ARXIV_Time_Archival_Camera_Virtualization.pdf",
+      "color": [
+        0.939725924,
+        0.9085001416,
+        0.8906734446,
+        0.3
+      ],
+      "days_trending": 5,
+      "digest_date": 1771372800000,
+      "has_ranking": true,
+      "is_cached": true,
+      "is_cached_filename": "Zhang2026ARXIV_Time_Archival_Camera_Virtualization.pdf",
+      "n_negative_ratings": 0,
+      "n_positive_ratings": 0,
+      "ngt_id": 4183473,
+      "paper_id": 4588716,
+      "pdf_download_success": true,
+      "publication_date": 1771277991000,
+      "ranking_score": 0.5165414592,
+      "rating": null,
+      "read": false,
+      "short_title": "Time-Archival Camera Virtualization for Sports and Visual Performances",
+      "source": "arxiv",
+      "title": "Time-Archival Camera Virtualization for Sports and Visual Performances",
+      "total_dislikes": 11,
+      "total_likes": 5,
+      "total_read": 94,
+      "url": "https://arxiv.org/pdf/2602.15181"
+    },
+    {
+      "abstract": "The ability to manipulate tools significantly expands the set of tasks a robot can perform. Yet, tool manipulation represents a challenging class of dexterity, requiring grasping thin objects, in-hand object rotations, and forceful interactions. Since collecting teleoperation data for these behaviors is challenging, sim-to-real reinforcement learning (RL) is a promising alternative. However, prior approaches typically require substantial engineering effort to model objects and tune reward functions for each task. In this work, we propose SimToolReal, taking a step towards generalizing sim-to-real RL policies for tool manipulation. Instead of focusing on a single object and task, we procedurally generate a large variety of tool-like object primitives in simulation and train a single RL policy with the universal goal of manipulating each object to random goal poses. This approach enables SimToolReal to perform general dexterous tool manipulation at test-time without any object or task-specific training. We demonstrate that SimToolReal outperforms prior retargeting and fixed-grasp methods by 37% while matching the performance of specialist RL policies trained on specific target objects and tasks. Finally, we show that SimToolReal generalizes across a diverse set of everyday tools, achieving strong zero-shot performance over 120 real-world rollouts spanning 24 tasks, 12 object instances, and 6 tool categories.",
+      "author": "Kedia et al.",
+      "authors": "Kushal Kedia, Tyler Ga Wei Lum, Jeannette Bohg, C. Karen Liu",
+      "cache_file_name": "Kedia2026ARXIV_SimToolReal_An_Object_Centric.pdf",
+      "color": [
+        0.53788342,
+        0.5792307796,
+        0.8522098918,
+        0.3
+      ],
+      "days_trending": 3,
+      "digest_date": 1771545600000,
+      "has_ranking": true,
+      "is_cached": true,
+      "is_cached_filename": "Kedia2026ARXIV_SimToolReal_An_Object_Centric.pdf",
+      "n_negative_ratings": 0,
+      "n_positive_ratings": 0,
+      "ngt_id": 4186053,
+      "paper_id": 4591183,
+      "pdf_download_success": true,
+      "publication_date": 1771450959000,
+      "ranking_score": 0.0113265815,
+      "rating": null,
+      "read": false,
+      "short_title": "SimToolReal: An Object-Centric Policy for Zero-Shot Dexterous Tool Manipulation",
+      "source": "arxiv",
+      "title": "SimToolReal: An Object-Centric Policy for Zero-Shot Dexterous Tool Manipulation",
+      "total_dislikes": 1,
+      "total_likes": 9,
+      "total_read": 92,
+      "url": "https://arxiv.org/pdf/2602.16863"
+    },
+    {
+      "abstract": "Text-to-video generation is expensive, so only a few samples are typically produced per prompt. In this low-sample regime, maximizing the value of each batch requires high cross-video diversity. Recent methods improve diversity for image generation, but for videos they often degrade within-video temporal consistency and require costly backpropagation through a video decoder. We propose a joint-sampling framework for flow-matching video generators that improves batch diversity while preserving temporal consistency. Our approach applies diversity-driven updates and then removes only the components that would decrease a temporal-consistency objective. To avoid image-space gradients, we compute both objectives with lightweight latent-space models, avoiding video decoding and decoder backpropagation. Experiments on a state-of-the-art text-to-video flow-matching model show diversity comparable to strong joint-sampling baselines while substantially improving temporal consistency and color naturalness. Code will be released.",
+      "author": "Liu et al.",
+      "authors": "Xinshuang Liu, Runfa Blark Li, Truong Nguyen",
+      "cache_file_name": "Liu2026ARXIV_Consistency_Preserving_Diverse_Video.pdf",
+      "color": [
+        0.53788342,
+        0.5792307796,
+        0.8522098918,
+        0.3
+      ],
+      "days_trending": 5,
+      "digest_date": 1771372800000,
+      "has_ranking": true,
+      "is_cached": true,
+      "is_cached_filename": "Liu2026ARXIV_Consistency_Preserving_Diverse_Video.pdf",
+      "n_negative_ratings": 0,
+      "n_positive_ratings": 0,
+      "ngt_id": 4183630,
+      "paper_id": 4588873,
+      "pdf_download_success": true,
+      "publication_date": 1771294340000,
+      "ranking_score": 0.1279075416,
+      "rating": null,
+      "read": false,
+      "short_title": "Consistency-Preserving Diverse Video Generation",
+      "source": "arxiv",
+      "title": "Consistency-Preserving Diverse Video Generation",
+      "total_dislikes": 8,
+      "total_likes": 6,
+      "total_read": 85,
+      "url": "https://arxiv.org/pdf/2602.15287"
+    }
+  ],
+  "use_scholar_inbox_pdf_server": false,
+  "username": "伟航 陈"
+}

@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "collections": [
+    {
+      "id": 110842,
+      "name": "Bookmarks",
+      "permission": "owner",
+      "selected": false,
+      "uuid": "58f9b62c-92c3-47d9-9867-04c9d9cae238",
+      "color": "#969696"
+    },
+    {
+      "id": 60856,
+      "name": "depth",
+      "permission": "owner",
+      "selected": false,
+      "uuid": "2bb9628b-b2d8-4cfa-a09e-d7470a4d69a2",
+      "color": "#b99aff"
+    },
+    {
+      "id": 60859,
+      "name": "fisheye",
+      "permission": "owner",
+      "selected": false,
+      "uuid": "5512a5a6-5a82-4683-a9f8-121a0550a6df",
+      "color": "#2da2bb"
+    },
+    {
+      "id": 41448,
+      "name": "gs",
+      "permission": "owner",
+      "selected": false,
+      "uuid": "bca14038-f176-4d1a-a1f4-1147be198fa1",
+      "color": "#4986e7"
+    },
+    {
+      "id": 60857,
+      "name": "isp",
+      "permission": "owner",
+      "selected": false,
+      "uuid": "9a7ce704-fa23-4064-96f7-129e8c080576",
+      "color": "#f691b2"
+    },
+    {
+      "id": 147995,
+      "name": "Last Visited Papers",
+      "permission": "viewer",
+      "selected": false,
+      "uuid": "b192b404-9774-40e4-8a6e-f1d26c98f257",
+      "color": "#969696"
+    },
+    {
+      "id": 42325,
+      "name": "occ",
+      "permission": "owner",
+      "selected": false,
+      "uuid": "0ccd5387-714f-410b-99ec-22a1dce1e8e4",
+      "color": "#16a765"
+    },
+    {
+      "id": 60847,
+      "name": "raw",
+      "permission": "owner",
+      "selected": false,
+      "uuid": "2153c72c-f9ca-4bd1-8496-24dc57b9f26e",
+      "color": "#ff7537"
+    }
+  ]
+}

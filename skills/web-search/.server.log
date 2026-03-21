@@ -1,0 +1,112 @@
+
+[Bridge Server] Started on http://127.0.0.1:8923
+[Bridge Server] Health check: http://127.0.0.1:8923/api/health
+
+[API] GET /api/health
+[API] POST /api/browser/launch
+[Browser] Launching Chrome at: /usr/bin/google-chrome
+[Browser] CDP port: 9222
+[Browser] User data dir: /tmp/chrome-cdp-1771684447968
+[Browser] Headless: false
+[Browser] Flags: --no-first-run --no-default-browser-check --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-renderer-backgrounding
+[Browser] Chrome started with PID: 448847
+[Browser stderr] DevTools listening on ws://127.0.0.1:9222/devtools/browser/2a6f3ef4-6950-4fcf-891b-5f0986659b84
+[Browser] CDP ready after 2 attempts (513ms)
+[Browser] CDP ready on port 9222
+[API] POST /api/browser/connect
+[Playwright] Connecting to CDP on port 9222
+[Playwright] CDP WebSocket URL: ws://127.0.0.1:9222/devtools/browser/2a6f3ef4-6950-4fcf-891b-5f0986659b84
+[Playwright] Connected to browser
+[Playwright] Using existing context
+[Playwright] Connection established: bf027119-5947-40f9-8565-cfcdf054568c
+[API] POST /api/search
+[Search] Trying engine: google
+[Google] Searching for: "NavDreamer github code repository" (max 5 results)
+[Playwright] Using existing page: chrome://new-tab-page/
+[Google] Navigating to: https://www.google.com/search?q=NavDreamer%20github%20code%20repository&hl=en
+[Google] Search failed: page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.google.com/search?q=NavDreamer%20github%20code%20repository&hl=en", waiting until "domcontentloaded"
+
+    at GoogleSearch.search (/home/cwh/ubuntu18/home/ubuntu/coding/LobsterAI/SKILLs/web-search/dist/server/search/google.js:24:24)
+    at async BridgeServer.searchWithFallback (/home/cwh/ubuntu18/home/ubuntu/coding/LobsterAI/SKILLs/web-search/dist/server/index.js:387:28)
+    at async BridgeServer.handleSearch (/home/cwh/ubuntu18/home/ubuntu/coding/LobsterAI/SKILLs/web-search/dist/server/index.js:353:29) {
+  name: 'TimeoutError'
+}
+[Search] Engine failed (google): Google search failed: page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.google.com/search?q=NavDreamer%20github%20code%20repository&hl=en", waiting until "domcontentloaded"
+
+[Search] Trying engine: bing
+[Bing] Searching for: "NavDreamer github code repository" (max 5 results)
+[Playwright] Using existing page: chrome://new-tab-page/
+[Bing] Navigating to: https://www.bing.com/search?q=NavDreamer%20github%20code%20repository
+[Bing] Page loaded: https://cn.bing.com/search?q=NavDreamer%20github%20code%20repository
+[Browser stderr] [448893:448893:0221/223424.471122:ERROR:gpu/command_buffer/service/context_group.cc:130] ContextResult::kFatalFailure: WebGL1 blocklisted
+[Browser stderr] [448893:448893:0221/223425.064421:ERROR:gpu/command_buffer/service/context_group.cc:130] ContextResult::kFatalFailure: WebGL1 blocklisted
+[Bing] Search results found
+[Bing] Extracted 5 results in 1992ms
+[API] GET /api/health
+[API] POST /api/page/text
+[Playwright] Using existing page: https://cn.bing.com/search?q=NavDreamer%20github%20code%20repository&rdr=1&rdrig=24E2C1104995410AA140BB965E874F62
+[Operations] Getting text content
+[Operations] Text content retrieved (42406 chars)
+[API] POST /api/search
+[Search] Trying engine: google
+[Google] Searching for: "NavDreamer Xijie Huang 3D navigation video model github" (max 10 results)
+[Playwright] Using existing page: https://cn.bing.com/search?q=NavDreamer%20github%20code%20repository&rdr=1&rdrig=24E2C1104995410AA140BB965E874F62
+[Google] Navigating to: https://www.google.com/search?q=NavDreamer%20Xijie%20Huang%203D%20navigation%20video%20model%20github&hl=en
+[Google] Search failed: page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.google.com/search?q=NavDreamer%20Xijie%20Huang%203D%20navigation%20video%20model%20github&hl=en", waiting until "domcontentloaded"
+
+    at GoogleSearch.search (/home/cwh/ubuntu18/home/ubuntu/coding/LobsterAI/SKILLs/web-search/dist/server/search/google.js:24:24)
+    at async BridgeServer.searchWithFallback (/home/cwh/ubuntu18/home/ubuntu/coding/LobsterAI/SKILLs/web-search/dist/server/index.js:387:28)
+    at async BridgeServer.handleSearch (/home/cwh/ubuntu18/home/ubuntu/coding/LobsterAI/SKILLs/web-search/dist/server/index.js:353:29) {
+  name: 'TimeoutError'
+}
+[Search] Engine failed (google): Google search failed: page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.google.com/search?q=NavDreamer%20Xijie%20Huang%203D%20navigation%20video%20model%20github&hl=en", waiting until "domcontentloaded"
+
+[Search] Trying engine: bing
+[Bing] Searching for: "NavDreamer Xijie Huang 3D navigation video model github" (max 10 results)
+[Playwright] Using existing page: https://cn.bing.com/search?q=NavDreamer%20github%20code%20repository&rdr=1&rdrig=24E2C1104995410AA140BB965E874F62
+[Bing] Navigating to: https://www.bing.com/search?q=NavDreamer%20Xijie%20Huang%203D%20navigation%20video%20model%20github
+[Bing] Page loaded: https://cn.bing.com/search?q=NavDreamer%20Xijie%20Huang%203D%20navigation%20video%20model%20github
+[Browser stderr] [448893:448893:0221/223559.147364:ERROR:gpu/command_buffer/service/context_group.cc:130] ContextResult::kFatalFailure: WebGL1 blocklisted
+[Bing] Search results found
+[Bing] Extracted 10 results in 875ms
+[Browser stderr] [448893:448893:0221/223559.658965:ERROR:gpu/command_buffer/service/context_group.cc:130] ContextResult::kFatalFailure: WebGL1 blocklisted
+[Browser stderr] Warning: ../src/intel/vulkan/anv_physical_device.c:2562: Unable to open device /dev/dri/renderD128: Permission denied (VK_ERROR_INCOMPATIBLE_DRIVER)
+[Browser stderr] Warning: ../src/intel/vulkan_hasvk/anv_device.c:1595: Unable to open device /dev/dri/renderD128: Permission denied (VK_ERROR_INCOMPATIBLE_DRIVER)
+[Browser stderr] Warning: maxDynamicUniformBuffersPerPipelineLayout artificially reduced from 500000 to 16 to fit dynamic offset allocation limit.
+Warning: maxDynamicStorageBuffersPerPipelineLayout artificially reduced from 500000 to 16 to fit dynamic offset allocation limit.
+[Browser stderr] Warning: ../src/intel/vulkan/anv_physical_device.c:2562: Unable to open device /dev/dri/renderD128: Permission denied (VK_ERROR_INCOMPATIBLE_DRIVER)
+[Browser stderr] Warning: ../src/intel/vulkan_hasvk/anv_device.c:1595: Unable to open device /dev/dri/renderD128: Permission denied (VK_ERROR_INCOMPATIBLE_DRIVER)
+[Browser stderr] Warning: maxDynamicUniformBuffersPerPipelineLayout artificially reduced from 500000 to 16 to fit dynamic offset allocation limit.
+Warning: maxDynamicStorageBuffersPerPipelineLayout artificially reduced from 500000 to 16 to fit dynamic offset allocation limit.
+[Browser stderr] [448847:448847:0221/224815.723473:ERROR:components/webapps/browser/web_contents/web_app_url_loader.cc:180] Error loading https://mail.google.com/chat/download?usp=chrome_preinstall_update page took too long to load.
+
+[Bridge Server] Shutting down...
+[Playwright] Disconnecting all connections (1)
+[Playwright] Disconnecting connection: bf027119-5947-40f9-8565-cfcdf054568c
+[Playwright] Browser connection closed: bf027119-5947-40f9-8565-cfcdf054568c
+[Browser] Closing browser (PID: 448847)
+[Browser] Force killing browser (PID: 448847)
+[Browser] Browser closed
+[Bridge Server] Shutdown complete
+
+
+[Bridge Server] Started on http://127.0.0.1:8923
+[Bridge Server] Health check: http://127.0.0.1:8923/api/health
+
+
+[Bridge Server] Shutting down...
+[Playwright] Disconnecting all connections (0)
+[Bridge Server] Shutdown complete
+
+
+[Bridge Server] Started on http://127.0.0.1:8923
+[Bridge Server] Health check: http://127.0.0.1:8923/api/health
+

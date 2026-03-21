@@ -1,48 +1,36 @@
 {
   "lastChecks": {
-    "knowledge_extract": 1773525708000,
+    "knowledge_extract": 1774099980000,
     "spatial_agi_alert": 1773427966165,
-    "last_heartbeat_check": "2026-03-15T06:01:00+08:00",
-    "last_health_check": 1773541568062,
-    "last_health_check_datetime": "2026-03-15 10:26:08"
-  },
-  "health_check": {
-    "failed_tasks": [],
-    "retry_results": [],
-    "last_run_status": null
-  },
-  "spatial_agi_complete": {
-    "date": "2026-03-14",
-    "papers_created": 3,
-    "papers_expected": 5,
-    "daily_thinking": true,
-    "daily_thinking_lines": 850,
-    "papers_list_updated": true,
-    "git_committed": true,
-    "commit": "c756bf0",
-    "papers": [
-      "2026-03-14_02_Video_Streaming_Thinking.md",
-      "2026-03-14_03_MM_CondChain.md",
-      "2026-03-14_05_GRADE.md"
-    ],
-    "completed_at": "2026-03-14T21:30:00+08:00"
+    "last_heartbeat_check": "2026-03-22T00:18:00+08:00",
+    "last_health_check": 1774112881868,
+    "last_health_check_datetime": "2026-03-22 00:18:01"
   },
   "knowledge_updated": {
-    "date": "2026-03-14",
-    "items_added": 2,
+    "date": "2026-03-21",
+    "items_added": 3,
     "topics": [
-      "arXiv API限流处理",
-      "API限流最佳实践"
+      "宝宝购物清单知识库",
+      "ClawHub安装和pyzhihu-cli配置（miniconda3 base环境）",
+      "QQ Bot图片发送（qqimg标签）"
     ]
   },
-  "afternoon_task": {
-    "scheduled": true,
-    "scheduled_at": "2026-03-14T11:26:00+08:00",
-    "trigger_time": "13:00-15:00",
-    "reason": "arXiv API限流，    等待3-4小时恢复后重试",
-    "status": "triggered",
-    "triggered_at": "2026-03-14T13:22:00+08:00",
-    "retry_count": 0,
-    "arxiv_recovered": true
+  "health_check": {
+    "last_check_hour": 0,
+    "failed_tasks": [],
+    "retry_results": [],
+    "last_run_status": "2026-03-21 16:33 - 所有定时任务健康，5篇论文已完成",
+    "retry_required": false,
+    "success_date": "2026-03-21"
+  },
+  "spatial_agi_complete": {
+    "date": "2026-03-18",
+    "papers_created": 5,
+    "papers_expected": 5,
+    "daily_thinking": true,
+    "daily_thinking_lines": 444,
+    "git_committed": true,
+    "git_pushed": true,
+    "completed_at": "2026-03-18T12:26:00+08:00"
   }
 }

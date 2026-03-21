@@ -1,0 +1,92 @@
+[
+  {
+    "admin_only": false,
+    "created_date": "2022-03-08",
+    "description": "Turn on to show trending bar.",
+    "display_name": "Show Trending Bar",
+    "icon": "show_trending",
+    "is_toggled": true,
+    "toggle_id": 0,
+    "toggle_name": "show_trending_bar"
+  },
+  {
+    "admin_only": false,
+    "created_date": "2024-03-06",
+    "description": "Turn on to show \"Share on Social Media\" button for each paper.",
+    "display_name": "Show \"Share on Social Media\" button (desktop)",
+    "icon": "social_media_share",
+    "is_toggled": false,
+    "toggle_id": 1,
+    "toggle_name": "show_social_media_share"
+  },
+  {
+    "admin_only": false,
+    "created_date": "2024-03-06",
+    "description": "Turn on to show \"Bibtex\" button for each paper.",
+    "display_name": "Show \"Bibtex\" button (desktop)",
+    "icon": "library_add",
+    "is_toggled": false,
+    "toggle_id": 2,
+    "toggle_name": "show_bibtex"
+  },
+  {
+    "admin_only": false,
+    "created_date": "2024-03-06",
+    "description": "Turn on to show \"Share on Social Media\" button for each paper.",
+    "display_name": "Show \"Share on Social Media\" button (mobile)",
+    "icon": "social_media_share",
+    "is_toggled": false,
+    "toggle_id": 3,
+    "toggle_name": "mobile_show_social_media_share"
+  },
+  {
+    "admin_only": false,
+    "created_date": "2024-03-06",
+    "description": "Turn on to show \"Bibtex\" button for each paper.",
+    "display_name": "Show \"Bibtex\" button (mobile)",
+    "icon": "library_add",
+    "is_toggled": false,
+    "toggle_id": 4,
+    "toggle_name": "mobile_show_bibtex"
+  },
+  {
+    "admin_only": false,
+    "created_date": "2024-04-26",
+    "description": "Turn on to show \"Bookmarked\" button for each paper.",
+    "display_name": "Show \"Bookmarked\" button (desktop)",
+    "icon": "bookmark_add",
+    "is_toggled": true,
+    "toggle_id": 5,
+    "toggle_name": "show_bookmark"
+  },
+  {
+    "admin_only": false,
+    "created_date": "2024-04-26",
+    "description": "Turn on to show \"Bookmarked\" button for each paper.",
+    "display_name": "Show \"Bookmarked\" button (mobile)",
+    "icon": "bookmark_add",
+    "is_toggled": false,
+    "toggle_id": 6,
+    "toggle_name": "mobile_show_bookmark"
+  },
+  {
+    "admin_only": false,
+    "created_date": "2025-02-10",
+    "description": "Turn on to show \"HTML\" button for each paper.",
+    "display_name": "Show \"HTML\" button (desktop)",
+    "icon": "html_add",
+    "is_toggled": true,
+    "toggle_id": 7,
+    "toggle_name": "show_html"
+  },
+  {
+    "admin_only": false,
+    "created_date": "2025-02-11",
+    "description": "Turn on to show \"HTML\" button for each paper.",
+    "display_name": "Show \"HTML\" button (mobile)",
+    "icon": "html_add",
+    "is_toggled": false,
+    "toggle_id": 8,
+    "toggle_name": "mobile_show_html"
+  }
+]

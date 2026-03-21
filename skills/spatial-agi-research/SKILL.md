@@ -1,11 +1,27 @@
 ---
 name: spatial-agi-research
 description: 完整的Spatial AGI研究流程 - 从arXiv搜索到深度分析，每天精读5篇论文，使用research-assistant技能和NotebookLM（3个核心问题），生成论文文档和每日思考
+version: 6.8
+last_updated: 2026-03-16
+critical_note: Git推送必须使用main分支，不是master分支
 ---
 
 # Spatial AGI Research Skill - 完整流程
 
 这个技能用于系统化地研究Spatial AGI（通用空间智能）领域的最新进展。
+
+## ⚠️ 【强制要求】Git分支规范
+
+```
+╔════════════════════════════════════════════════════════════╗
+║  🚨 Git推送必须使用 main 分支，不是 master 分支！            ║
+║                                                              ║
+║  ✅ 正确: git push origin main                              ║
+║  ❌ 错误: git push origin master                            ║
+║                                                              ║
+║  如果发现推送到错误分支，请手动在GitHub上处理               ║
+╚════════════════════════════════════════════════════════════╝
+```
 
 ## 📁 脚本文件
 
@@ -314,62 +330,228 @@ notebooklm ask "问题"  # 可能使用错误的笔记本
 notebooklm ask -n "$NOTEBOOK_ID" "问题"  # 显式指定笔记本ID
 ```
 
-#### 问题流程（修正版）
+#### 问题流程（修正版 v1.1）
+
+**⚠️ 【强制要求】必须先添加来源并等待处理完成，然后才问问题！**
 
 ```bash
 export NOTEBOOKLM_PROXY="socks5://127.0.0.1:1080"
 
-# ⚠️ 必须使用Step 3中记录的笔记本ID
-# NOTEBOOK_ID="faee81ec-2d12-4dc5-99b9-0de78c18877a"
+# ━━━ Step 1: 创建笔记本并记录ID ━━━
+NOTEBOOK_ID=$(~/miniconda3/bin/conda run -n base notebooklm create "$PAPER_TITLE" | grep -oP 'Created notebook: \K[a-f0-9-]+')
 
 # 验证ID是否存在
 if [ -z "$NOTEBOOK_ID" ]; then
   echo "❌ 错误：笔记本ID未设置"
-  echo "请回到Step 3重新创建笔记本并记录ID"
   exit 1
 fi
 
-echo "📝 使用笔记本ID: $NOTEBOOK_ID"
+echo "✅ 笔记本创建成功"
+echo "📝 笔记本ID: $NOTEBOOK_ID"
 
-# Q1: 核心算法原理（必问）
-echo "❓ 询问问题1：核心算法原理"
-timeout 90 ~/miniconda3/bin/conda run -n base notebooklm ask \
+# ━━━ Step 2: 添加来源并等待处理完成 ━━━
+echo "📥 添加arXiv页面（网站形式）..."
+~/miniconda3/bin/conda run -n base notebooklm source add -n "$NOTEBOOK_ID" --type url "$ARXIV_URL"
+
+# ⚠️ 【强制】添加PDF链接（以网站形式，不是PDF文件）
+echo "📥 添加PDF链接（网站来源形式，90秒超时）..."
+if timeout 90 ~/miniconda3/bin/conda run -n base notebooklm source add -n "$NOTEBOOK_ID" --type url "$PDF_URL"; then
+  echo "✅ PDF链接添加成功（网站形式）"
+else
+  echo "⚠️ PDF链接添加失败，使用arXiv HTML版本替代"
+  HTML_URL=$(echo "$ARXIV_URL" | sed 's|/abs/|/html/|')
+  ~/miniconda3/bin/conda run -n base notebooklm source add -n "$NOTEBOOK_ID" --type url "$HTML_URL"
+  echo "✅ HTML版本添加成功（网站形式）"
+fi
+
+# ⚠️ 【关键】等待来源处理完成并验证
+echo "⏳ 等待NotebookLM处理来源（最多5分钟）..."
+MAX_WAIT=300  # 5分钟
+WAIT_INTERVAL=15
+ELAPSED=0
+SOURCES_READY=false
+
+while [ $ELAPSED -lt $MAX_WAIT ]; do
+  # 检查来源状态
+  SOURCE_STATUS=$(~/miniconda3/bin/conda run -n base notebooklm source list -n "$NOTEBOOK_ID" 2>&1)
+  
+  if echo "$SOURCE_STATUS" | grep -qiE "processing|pending|uploading"; then
+    echo "⏳ 来源还在处理中... (${ELAPSED}s)"
+    sleep $WAIT_INTERVAL
+    ELAPSED=$((ELAPSED + WAIT_INTERVAL))
+  else
+    # ⚠️ 【关键验证】检查来源数量和内容
+    echo "🔍 验证来源状态..."
+    
+    # 提取来源数量
+    SOURCE_COUNT=$(echo "$SOURCE_STATUS" | grep -c "http" || echo "0")
+    
+    if [ "$SOURCE_COUNT" -ge 2 ]; then
+      echo "✅ 检测到 $SOURCE_COUNT 个来源"
+      
+      # 检查是否包含PDF链接
+      if echo "$SOURCE_STATUS" | grep -qi "pdf\|arxiv.org/pdf"; then
+        echo "✅ 确认包含PDF链接"
+        SOURCES_READY=true
+        break
+      else
+        echo "⚠️ 来源不包含PDF链接，继续等待..."
+      fi
+    else
+      echo "⚠️ 来源数量不足（当前: $SOURCE_COUNT，需要: 2），继续等待..."
+    fi
+    
+    # 尝试测试问题验证
+    if [ $ELAPSED -ge 120 ]; then
+      echo "🔍 验证来源就绪状态..."
+      TEST_ANSWER=$(timeout 30 ~/miniconda3/bin/conda run -n base notebooklm ask \
+        -n "$NOTEBOOK_ID" \
+        "这篇论文的标题是什么？" 2>&1)
+      
+      if [ -n "$TEST_ANSWER" ] && ! echo "$TEST_ANSWER" | grep -qi "error\|empty"; then
+        echo "✅ 来源已就绪！"
+        SOURCES_READY=true
+        break
+      fi
+    fi
+    
+    sleep $WAIT_INTERVAL
+    ELAPSED=$((ELAPSED + WAIT_INTERVAL))
+  fi
+done
+
+# ⚠️ 【强制检查】最终验证来源状态
+if [ "$SOURCES_READY" = false ]; then
+  echo ""
+  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  echo "❌ 来源添加失败或未就绪"
+  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  echo ""
+  echo "📊 最终来源状态："
+  ~/miniconda3/bin/conda run -n base notebooklm source list -n "$NOTEBOOK_ID" 2>&1
+  echo ""
+  echo "⚠️ NotebookLM无法正常添加来源，切换到web_fetch方案"
+  echo "📝 将使用web_fetch获取论文内容进行手动分析"
+  echo ""
+  
+  # 标记需要fallback并退出NotebookLM流程
+  NEED_FALLBACK=true
+else
+  echo "✅ 来源处理完成 (总等待: ${ELAPSED}s)"
+  
+  # 最终确认来源列表
+  echo ""
+  echo "📋 最终来源列表："
+  ~/miniconda3/bin/conda run -n base notebooklm source list -n "$NOTEBOOK_ID" 2>&1
+  echo ""
+fi
+
+# ━━━ Step 3: 询问3个核心问题 ━━━
+
+# ⚠️ 【强制检查】如果来源添加失败，跳过此步骤
+if [ "$NEED_FALLBACK" = true ]; then
+  echo "⚠️ 跳过NotebookLM问答（来源未就绪），使用fallback方案"
+  # 跳转到fallback处理
+else
+  # 验证来源是否就绪
+  echo "🔍 验证来源就绪状态..."
+  if [ -z "$NOTEBOOK_ID" ]; then
+    echo "❌ 错误：笔记本ID未设置"
+    NEED_FALLBACK=true
+  else
+    # 再次确认来源数量
+    SOURCE_COUNT=$(~/miniconda3/bin/conda run -n base notebooklm source list -n "$NOTEBOOK_ID" 2>&1 | grep -c "http" || echo "0")
+    if [ "$SOURCE_COUNT" -lt 2 ]; then
+      echo "❌ 错误：来源数量不足（$SOURCE_COUNT < 2），无法进行问答"
+      NEED_FALLBACK=true
+    else
+      echo "✅ 来源验证通过，开始正式提问"
+      
+      # Q1: 核心算法原理（必问）
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "❓ 问题1：核心算法原理"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+Q1_ANSWER=$(timeout 90 ~/miniconda3/bin/conda run -n base notebooklm ask \
   -n "$NOTEBOOK_ID" \
-  "这篇文章的核心算法原理是什么？请详细描述：1) 核心思想和动机，2) 主要技术方法，3) 算法流程和关键步骤，4) 输入输出。"
+  "这篇文章的核心算法原理是什么？请详细描述：1) 核心思想和动机，2) 主要技术方法，3) 算法流程和关键步骤，4) 输入输出。")
+
+# 检查答案是否为空
+if [ -z "$Q1_ANSWER" ]; then
+  echo "⚠️ 警告：Q1答案为空，等待30秒后重试..."
+  sleep 30
+  Q1_ANSWER=$(timeout 90 ~/miniconda3/bin/conda run -n base notebooklm ask \
+    -n "$NOTEBOOK_ID" \
+    "这篇文章的核心算法原理是什么？请详细描述：1) 核心思想和动机，2) 主要技术方法，3) 算法流程和关键步骤，4) 输入输出。")
+fi
+
+echo "✅ Q1完成"
 
 # Q2: 与Spatial AGI的关系（必问）
-echo "❓ 询问问题2：与Spatial AGI的关系"
-timeout 90 ~/miniconda3/bin/conda run -n base notebooklm ask \
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "❓ 问题2：与Spatial AGI的关系"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+Q2_ANSWER=$(timeout 90 ~/miniconda3/bin/conda run -n base notebooklm ask \
   -n "$NOTEBOOK_ID" \
-  "这篇文章与通用空间智能（Spatial AGI）有什么关系？请分析：1) 如何理解和表示空间，2) 如何处理空间关系，3) 对Spatial AGI有什么启发，4) 可以应用到哪些Spatial AGI场景（机器人、AR/VR等）。"
+  "这篇文章与通用空间智能（Spatial AGI）有什么关系？请分析：1) 如何理解和表示空间，2) 如何处理空间关系，3) 对Spatial AGI有什么启发，4) 可以应用到哪些Spatial AGI场景（机器人、AR/VR等）。")
 
-# Q3: 经过思考后的自由问题（根据Q1和Q2的答案思考后提出）
+# 检查答案是否为空
+if [ -z "$Q2_ANSWER" ]; then
+  echo "⚠️ 警告：Q2答案为空，等待30秒后重试..."
+  sleep 30
+  Q2_ANSWER=$(timeout 90 ~/miniconda3/bin/conda run -n base notebooklm ask \
+    -n "$NOTEBOOK_ID" \
+    "这篇文章与通用空间智能（Spatial AGI）有什么关系？请分析：1) 如何理解和表示空间，2) 如何处理空间关系，3) 对Spatial AGI有什么启发，4) 可以应用到哪些Spatial AGI场景（机器人、AR/VR等）。")
+fi
+
+echo "✅ Q2完成"
+
+# Q3: 经过思考后的自由问题
 echo "💭 思考30秒..."
 sleep 30
 
-# 示例：基于前两个问题的答案，问一个你感兴趣的问题
-# 可能的问题方向：
-# - 技术细节："X方法的具体实现细节是什么？"
-# - 实验结果："最令人惊讶的实验结果是什么？为什么？"
-# - 局限性："这个方法的主要局限性是什么？如何改进？"
-# - 对比分析："与其他方法（如X）相比，有什么优势和劣势？"
-# - 实际应用："如何将这个方法应用到实际场景中？需要哪些改进？"
-
-echo "❓ 询问问题3：自由问题（基于Q1和Q2）"
-timeout 90 ~/miniconda3/bin/conda run -n base notebooklm ask \
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "❓ 问题3：自由问题（基于Q1和Q2）"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+Q3_ANSWER=$(timeout 90 ~/miniconda3/bin/conda run -n base notebooklm ask \
   -n "$NOTEBOOK_ID" \
-  "你选择的问题"
+  "基于前面的分析，这个方法的主要创新点和局限性是什么？与其他相关工作相比有什么优势和劣势？")
 
-echo "✅ 所有问题询问完成"
+# 检查答案是否为空
+if [ -z "$Q3_ANSWER" ]; then
+  echo "⚠️ 警告：Q3答案为空，等待30秒后重试..."
+  sleep 30
+  Q3_ANSWER=$(timeout 90 ~/miniconda3/bin/conda run -n base notebooklm ask \
+    -n "$NOTEBOOK_ID" \
+    "基于前面的分析，这个方法的主要创新点和局限性是什么？与其他相关工作相比有什么优势和劣势？")
+fi
+
+echo "✅ Q3完成"
 echo "📝 记得将笔记本ID保存到文档中：$NOTEBOOK_ID"
 ```
 
-**关键改进**：
-1. ✅ 使用`-n "$NOTEBOOK_ID"`显式指定笔记本ID
-2. ✅ 验证ID是否存在
-3. ✅ 增加超时到90秒（1.5分钟）
-4. ✅ 每个问题都独立指定笔记本ID
-5. ✅ 添加日志输出便于调试
+**关键改进（v1.1）**：
+1. ✅ **添加来源处理步骤**（Step 2）
+2. ✅ **等待来源处理完成**（2-5分钟，循环检查）
+3. ✅ **测试问题验证就绪状态**
+4. ✅ **空答案检测和重试机制**
+5. ✅ **显式指定笔记本ID**（`-n "$NOTEBOOK_ID"`）
+6. ✅ **详细的日志输出**
+
+**执行顺序（必须严格遵守）**：
+```
+Step 1: 创建笔记本 → 记录ID
+   ↓
+Step 2: 添加来源 → 等待处理完成（关键！）
+   ├─ 添加arXiv + PDF
+   ├─ 循环检查状态（每15秒）
+   ├─ 测试问题验证
+   └─ ✅ 确认就绪
+   ↓
+Step 3: 询问3个问题
+   ├─ Q1 → 检查空答案 → 重试
+   ├─ Q2 → 检查空答案 → 重试
+   └─ Q3 → 检查空答案 → 重试
+```
 
 **问题选择建议**（Q3）:
 
@@ -2267,8 +2449,56 @@ Cron触发 → 检查完成度 → 补充缺失 → 启动今天的任务
 
 ---
 
-**最后更新**: 2026-03-12 08:42
-**版本**: v6.4 (调整执行顺序：论文优先)
+**最后更新**: 2026-03-16 10:05
+**版本**: v6.8 (强制使用main分支 + 来源验证)
+
+**v6.8更新内容** (2026-03-16 10:05):
+- ✅ **强制使用main分支**: Git推送必须推送到main，不是master
+- ✅ **明确分支规范**: 在skill开头添加醒目的警告框
+- ✅ **错误修复**: 如果推送到master，立即删除并重新推送到main
+- ✅ **验证步骤**: 推送后确认分支是origin/main，不是origin/master
+- ✅ **Cron任务验证**: 确保定时任务使用正确的分支
+
+**v6.7更新内容** (2026-03-16 09:40):
+- ✅ **强制验证来源数量**: 必须有≥2个来源才能开始问答
+- ✅ **验证PDF链接**: 确认来源包含PDF链接
+- ✅ **来源状态检查**: 明确显示来源列表和状态
+- ✅ **Fallback机制**: 来源添加失败时自动切换到web_fetch方案
+- ✅ **防止假成功**: 避免NotebookLM笔记本无来源却继续问答
+- ✅ **详细日志**: 每个验证步骤都有清晰的状态输出
+
+**v6.6更新内容** (2026-03-16 09:25):
+- ✅ **强制使用--type url**: PDF链接必须以网站形式添加，不是PDF文件
+- ✅ **明确source type**: notebooklm source add --type url "$PDF_URL"
+- ✅ **避免文件上传**: 不上传本地PDF，使用URL访问
+- ✅ **Fallback方案**: PDF URL失败时使用HTML版本（也是网站形式）
+- ✅ **原因说明**: NotebookLM处理网站来源更可靠，PDF文件可能超时或失败
+- ✅ **文档更新**: 创建notebooklm-source-requirements.md详细说明
+
+**v6.5更新内容** (2026-03-16 09:22):
+- ✅ **强制等待来源处理完成**：问问题前必须确认PDF处理完成
+- ✅ **添加来源处理验证**：循环检查状态（每15秒，最多5分钟）
+- ✅ **测试问题验证机制**：2分钟后用测试问题验证就绪状态
+- ✅ **空答案检测和重试**：每个问题检测空答案，自动重试
+- ✅ **详细的日志输出**：清晰的进度显示和错误提示
+- ✅ **更新预计时间**：20-25分钟/篇（含来源等待2-5分钟）
+- ✅ **关键改进**：避免在来源未处理完成时提问（导致空答案）
+
+**执行顺序（必须严格遵守）**：
+```
+Step 1: 创建笔记本 → 记录ID
+   ↓
+Step 2: 添加来源 → 等待处理完成（2-5分钟）✨ 新增
+   ├─ 添加arXiv + PDF
+   ├─ 循环检查状态（每15秒）
+   ├─ 测试问题验证（2分钟后）
+   └─ ✅ 确认就绪
+   ↓
+Step 3: 询问3个问题
+   ├─ Q1 → 检查空答案 → 重试
+   ├─ Q2 → 检查空答案 → 重试
+   └─ Q3 → 检查空答案 → 重试
+```
 
 **v6.4更新内容** (2026-03-12 08:42):
 - ✅ **调整执行顺序**：论文分析 → 思考（原来是思考优先）
@@ -2276,6 +2506,7 @@ Cron触发 → 检查完成度 → 补充缺失 → 启动今天的任务
 - ✅ 思考基于完整的5篇论文，质量更高
 - ✅ 避免思考生成失败导致论文分析被跳过
 - ✅ 更新cron payload中的执行顺序说明
+
 **维护者**: OpenClaw AI
 
 **v6.2更新内容** (2026-03-10 09:40):

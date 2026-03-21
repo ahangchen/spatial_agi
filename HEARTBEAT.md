@@ -1,45 +1,5 @@
 # HEARTBEAT.md - Heartbeat Checklist
 
-## 知识库管理
-
-**优先级: 高**
-
-每8小时执行一次知识提取：
-- 从**过去8小时**的会话上下文中提取知识（避免重复分析）
-- 重点识别：技术决策、问题解决方案、代码模式、最佳实践、经验教训
-- 分类存储到 `knowledge/` 目录
-- 更新知识索引
-
-**数据源**:
-- 主要来源：用户直接对话的会话历史
-- 过滤：忽略cron任务、heartbeat、例行监控
-- 范围：仅分析过去8小时的会话
-
-**相关cron任务**: `knowledge-extract`
-
----
-
-## 知识库查询规则
-
-在执行任何任务时，如果遇到以下情况，应该查询knowledge目录：
-
-1. **技术决策** - 涉及架构选择、技术栈决策
-2. **问题解决** - 遇到错误、bug或性能问题
-3. **最佳实践** - 需要参考过往经验和教训
-4. **代码模式** - 查找已实现的代码模式
-5. **工具配置** - 需要重新配置或设置工具
-
-**查询方式**:
-```bash
-# 查询特定分类
-grep -r "关键词" /home/cwh/.openclaw/workspace/knowledge/
-
-# 查看索引
-cat /home/cwh/.openclaw/workspace/knowledge/index.md
-```
-
----
-
 ## 长时间任务检查
 
 **优先级: 高**
@@ -84,48 +44,22 @@ cat /home/cwh/.openclaw/workspace/knowledge/index.md
 
 ---
 
-## 下午任务触发（arXiv限流恢复后）
-
-**优先级: 高**
-
-**执行时间**: 下午1:00-3:00 PM（13:00-15:00）
-
-**检查逻辑**：
-```bash
-# 当前时间
-CURRENT_HOUR=$(date +%H)
-
-# 如果在下午1-3点之间，if [ "$CURRENT_HOUR" -ge 13 ] && [ "$CURRENT_HOUR" -lt 15 ]; then
-    # 检查今天是否已完成
-    if [ ! -f "/home/cwh/coding/auto_blog/spatial_agi/papers/$(date +%Y-%m-%d)_*.md" ]; then
-        # 检查arXiv是否恢复
-        python3 ~/.openclaw/workspace/skills/spatial-agi-research/scripts/search_arxiv.py "all:spatial+all:intelligence" 1
-        # 如果恢复，执行任务
-        # bash ~/.openclaw/workspace/skills/spatial-agi-research/scripts/spatial_agi_daily_robust.sh
-    fi
-fi
-```
-
-**状态记录**:
-- 记录到 `/home/cwh/.openclaw/workspace/memory/heartbeat-state.json`
-- 字段: `afternoon_task_scheduled`
-- 字段: `afternoon_task_triggered`
-
----
-
 ## 定时任务健康检查
 
 **优先级: 高**
 
-每8小时执行一次任务健康检查：
+每天3次，固定时间执行任务健康检查（0点、8点、16点）：
 - 检查**过去8小时**所有定时任务（cron）和心跳任务的执行状态
-- 识别失败的任务并分析原因
-- 自动重试失败的任务
+- 识别失败的任务并记录到状态文件
+- **不直接重试**，由AI Agent执行完整skill流程
 - 给出修复建议并记录
 
+**触发时间**: 00:00、08:00、16:00
+
 **触发方式**：
-- 在heartbeat时检查 `last_health_check` 字段
-- 如果距离上次检查超过8小时，执行健康检查脚本
+- 在heartbeat时检查当前小时是否在触发时间窗口（±30分钟）
+- 检查该时间点是否已执行过（避免重复）
+- 如果满足条件，执行健康检查脚本
 - 脚本路径: `~/.openclaw/workspace/scripts/task_health_check.sh`
 
 **执行命令**：
@@ -134,40 +68,46 @@ bash ~/.openclaw/workspace/scripts/task_health_check.sh
 ```
 
 **检查范围**:
-1. **Cron任务**:
-   - spatial-agi-research (每天凌晨3点)
-   - knowledge-extract (每8小时)
-   - knowledge-cleanup (每周五晚12点)
+1. **Cron定时任务**（系统自动执行）:
+   - spatial-agi-research (每天早上7点)
+2. **心跳任务**（heartbeat触发执行）:
+   - 长时间任务检查（每次heartbeat）
 
-2. **心跳任务**:
-   - 知识库管理
-   - 长时间任务检查
-   - 下午任务触发
+**失败重试流程**（重要改进）：
 
-**检查步骤**：
-1. 读取 `heartbeat-state.json` 检查任务执行状态
-2. 检查预期产出是否存在（如论文文件、知识库更新）
-3. 检查系统日志中的cron执行记录
-4. 对比预期执行时间与实际执行时间
+健康检查脚本只负责**检测和记录失败**，不直接重试脚本（因为脚本不会启动subagent）。
 
-**失败重试逻辑**：
+**AI Agent重试逻辑**（在每次heartbeat时执行）：
+
 ```bash
-# 检查spatial-agi-research是否成功
-if [ ! -f "/home/cwh/coding/auto_blog/spatial_agi/papers/$(date +%Y-%m-%d)_*.md" ]; then
-    # 今天没有生成论文，重试
-    echo "检测到spatial-agi-research任务失败，正在重试..."
-    bash ~/.openclaw/workspace/skills/spatial-agi-research/scripts/spatial_agi_daily_robust.sh
-fi
+# 1. 读取状态文件
+STATE_FILE="/home/cwh/.openclaw/workspace/memory/heartbeat-state.json"
+RETRY_REQUIRED=$(jq -r '.health_check.retry_required // false' "$STATE_FILE" 2>/dev/null)
+FAILED_TASKS=$(jq -r '.health_check.failed_tasks[]' "$STATE_FILE" 2>/dev/null)
 
-# 检查knowledge-extract是否成功（每8小时）
-LAST_EXTRACT=$(jq -r '.lastChecks.knowledge_extract' heartbeat-state.json)
-CURRENT_TIME=$(date +%s%3N)
-if [ $((CURRENT_TIME - LAST_EXTRACT)) -gt 28800000 ]; then
-    # 超过8小时未执行，重试
-    echo "检测到knowledge-extract任务超时，正在重试..."
-    # 执行知识提取逻辑
+# 2. 如果需要重试
+if [ "$RETRY_REQUIRED" = "true" ] && [ -n "$FAILED_TASKS" ]; then
+    echo "🔄 检测到失败任务，需要重试: $FAILED_TASKS"
+    
+    # 3. 执行完整的skill流程（包括启动subagent）
+    # 对于spatial-agi-research任务：
+    # - 读取SKILL.md了解完整流程
+    # - 执行论文搜索和筛选
+    # - 启动subagent分析每篇论文
+    # - 生成每日思考
+    # - Git提交
+    
+    echo "执行 spatial-agi-research skill 完整流程..."
+    # AI Agent会自动执行完整的skill流程
+    
+    # 4. 重试完成后清除状态
+    jq '.health_check.retry_required = false | .health_check.failed_tasks = []' "$STATE_FILE" > "$STATE_FILE.tmp" && mv "$STATE_FILE.tmp" "$STATE_FILE"
 fi
 ```
+
+**为什么要这样设计**：
+1. ❌ **脚本重试** = 只执行准备工作，不会启动subagent
+2. ✅ **AI Agent重试** = 执行完整skill流程，包括启动subagent分析论文
 
 **失败原因分析**：
 - **网络问题**: arXiv API限流、连接超时
@@ -177,13 +117,13 @@ fi
 
 **修复建议记录**：
 - 记录到 `memory/task-health-log.md`
-- 包含：失败时间、任务名称、错误信息、修复建议、重试结果
+- 包含：失败时间、任务名称、错误信息、修复建议
 
 **状态记录**:
 - 记录到 `/home/cwh/.openclaw/workspace/memory/heartbeat-state.json`
-- 字段: `last_health_check` - 上次健康检查时间
-- 字段: `failed_tasks` - 失败任务列表
-- 字段: `retry_results` - 重试结果
+- 字段: `health_check.retry_required` - 是否需要重试
+- 字段: `health_check.failed_tasks` - 失败任务列表
+- 字段: `health_check.last_check_hour` - 上次检查时间点
 
 **提醒方式**：
 - 如果发现失败任务，通过qqbot发送提醒
@@ -196,5 +136,4 @@ fi
 - 优先处理紧急任务（训练错误、系统问题）
 - 知识库查询应主动进行，不要等用户询问
 - 长时间任务检查避免重复提醒
-- **下午任务只在13:00-15:00之间检查一次**
-- **健康检查每8小时执行一次，避免频繁检查**
+- **健康检查在0点、8点、16点执行，避免频繁检查**

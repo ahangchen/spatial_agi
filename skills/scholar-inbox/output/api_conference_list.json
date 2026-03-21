@@ -1,0 +1,109 @@
+{
+  "conferences": [
+    {
+      "conference_id": 1,
+      "conference_url": "cvpr/2023",
+      "end_date": "22-06-2023",
+      "full_title": "The IEEE/CVF Conference on Computer Vision and Pattern Recognition 2023",
+      "short_title": "CVPR 2023",
+      "start_date": "18-06-2023"
+    },
+    {
+      "conference_id": 2,
+      "conference_url": "iclr/2024",
+      "end_date": "2024-05-11",
+      "full_title": "The Twelfth International Conference on Learning Representations",
+      "short_title": "ICLR 2024",
+      "start_date": "2024-05-07"
+    },
+    {
+      "conference_id": 3,
+      "conference_url": "cvpr/2024",
+      "end_date": "2024-06-21",
+      "full_title": "The IEEE/CVF Conference on Computer Vision and Pattern Recognition 2024",
+      "short_title": "CVPR 2024",
+      "start_date": "2024-06-17"
+    },
+    {
+      "conference_id": 4,
+      "conference_url": "icml/2024",
+      "end_date": "2024-07-25",
+      "full_title": "The Forty-first International Conference on Machine Learning",
+      "short_title": "ICML 2024",
+      "start_date": "2024-07-23"
+    },
+    {
+      "conference_id": 5,
+      "conference_url": "eccv/2024",
+      "end_date": "2024-09-04",
+      "full_title": "The 18th European Conference on Computer Vision ECCV 2024",
+      "short_title": "ECCV 2024",
+      "start_date": "2024-09-01"
+    },
+    {
+      "conference_id": 6,
+      "conference_url": "neurips/2024",
+      "end_date": "2024-12-13",
+      "full_title": "The Thirty-Eighth Annual Conference on Neural Information Processing Systems",
+      "short_title": "NeurIPS 2024",
+      "start_date": "2024-12-11"
+    },
+    {
+      "conference_id": 7,
+      "conference_url": "iclr/2025",
+      "end_date": "2025-04-26",
+      "full_title": "The Thirteenth International Conference on Learning Representations",
+      "short_title": "ICLR 2025",
+      "start_date": "2025-04-23"
+    },
+    {
+      "conference_id": 8,
+      "conference_url": "cvpr/2025",
+      "end_date": "2025-06-16",
+      "full_title": "The IEEE/CVF Conference on Computer Vision and Pattern Recognition 2025",
+      "short_title": "CVPR 2025",
+      "start_date": "2025-06-13"
+    },
+    {
+      "conference_id": 9,
+      "conference_url": "icml/2025",
+      "end_date": "2025-07-17",
+      "full_title": "Forty-Second International Conference on Machine Learning",
+      "short_title": "ICML 2025",
+      "start_date": "2025-07-15"
+    },
+    {
+      "conference_id": 10,
+      "conference_url": "acl/2025",
+      "end_date": "2025-07-30",
+      "full_title": "The 63rd Annual Meeting of the Association for Computational Linguistics",
+      "short_title": "ACL 2025",
+      "start_date": "2025-07-28"
+    },
+    {
+      "conference_id": 11,
+      "conference_url": "iccv/2025",
+      "end_date": "2025-10-23",
+      "full_title": "International Conference on Computer Vision 2025",
+      "short_title": "ICCV 2025",
+      "start_date": "2025-10-21"
+    },
+    {
+      "conference_id": 12,
+      "conference_url": "neurips/2025",
+      "end_date": "2025-12-05",
+      "full_title": "The Thirty-Ninth Annual Conference on Neural Information Processing Systems",
+      "short_title": "NeurIPS 2025",
+      "start_date": "2025-12-03"
+    },
+    {
+      "conference_id": 13,
+      "conference_url": "aaai/2026",
+      "end_date": "2026-01-27",
+      "full_title": "The 40th Annual AAAI Conference on Artificial Intelligence",
+      "short_title": "AAAI 2026",
+      "start_date": "2026-01-20"
+    }
+  ],
+  "success": true
+}
