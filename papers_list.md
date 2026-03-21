@@ -4,6 +4,52 @@
 
 ---
 
+## 2026-03-22 研究的论文（精选5篇）✅
+
+1. **Matryoshka Gaussian Splatting: Scalable 3D Scene Representation with Continuous Level-of-Detail** - arXiv:2603.19234v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Gaussian Splatting、连续LoD、随机预算训练、资源自适应、嵌套式表示
+   - 文档: papers/2026-03-22_01_Matryoshka_Gaussian_Splatting.md
+   - 核心发现: 俄罗斯套娃式高斯表示、任意前缀可渲染、全容量质量无损、双路优化
+
+2. **GSMem: 3D Gaussian Splatting as Persistent Spatial Memory for Embodied AI** - arXiv:2603.19137v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 具身智能、空间记忆、3D高斯泼溅、事后可重观察、空间回忆
+   - 文档: papers/2026-03-22_02_GSMem.md
+   - 核心发现: 持久空间记忆、任意视角渲染、VLM零样本推理、解决信息遗漏问题
+
+3. **DreamPartGen: Semantically Grounded Part-Level 3D Generation via Collaborative Latent Denoising** - arXiv:2603.19216v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 部件级3D生成、语义基础、协同去噪、双路潜变量、关系语义
+   - 文档: papers/2026-03-22_03_DreamPartGen.md
+   - 核心发现: DPLs+RSLs双路表示、几何-外观-语义三位一体、语言驱动生成、部件间关系建模
+
+4. **MonoArt: Progressive Structural Reasoning for Monocular Articulated 3D Reconstruction** - arXiv:2603.19231v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 单目重建、铰接物体、渐进式推理、结构化推理、双查询解码
+   - 文档: papers/2026-03-22_04_MonoArt.md
+   - 核心发现: 几何→部件→运动的渐进推理、双查询运动解码器、无需多视图/外部先验
+
+5. **SAMA: Factorized Semantic Anchoring and Motion Alignment for Instruction-Guided Video Editing** - arXiv:2603.19228v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 视频编辑、语义锚定、运动对齐、因子化学习、语义-运动解耦
+   - 文档: papers/2026-03-22_05_SAMA.md
+   - 核心发现: 语义锚定+运动对齐分解、稀疏锚点帧、无外部先验依赖、运动中心自监督
+
+### 研究主题统计（2026-03-22）
+
+**核心技术**:
+- 3D高斯泼溅: 2篇（MGS、GSMem）
+- 部件级3D理解: 2篇（DreamPartGen、MonoArt）
+- 语义-运动解耦: 1篇（SAMA）
+
+**关键突破**:
+- 3DGS成为Spatial AGI核心表示（连续LoD + 空间记忆）
+- 部件级理解是空间智能的关键能力
+- 层次化表示 + 解耦学习 + 语义基础 = Spatial AGI技术三角
+
+---
+
 ## 2026-03-21 研究的论文（精选5篇）✅
 
 1. **Generation Models Know Space: Unleashing Implicit 3D Priors for Scene Understanding** - arXiv:2603.19235v1
