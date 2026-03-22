@@ -2,9 +2,9 @@
   "lastChecks": {
     "knowledge_extract": 1774099980000,
     "spatial_agi_alert": 1773427966165,
-    "last_heartbeat_check": "2026-03-22T00:51:00+08:00",
-    "last_health_check": 1774112881868,
-    "last_health_check_datetime": "2026-03-22 00:18:01"
+    "last_heartbeat_check": "2026-03-22T11:08:00+08:00",
+    "last_health_check": 1774138128174,
+    "last_health_check_datetime": "2026-03-22 08:08:48"
   },
   "knowledge_updated": {
     "date": "2026-03-21",
@@ -16,12 +16,12 @@
     ]
   },
   "health_check": {
-    "last_check_hour": 0,
+    "last_check_hour": 8,
     "failed_tasks": [],
     "retry_results": [],
-    "last_run_status": "2026-03-21 16:33 - 所有定时任务健康，5篇论文已完成",
+    "last_run_status": "2026-03-22 08:08 - 所有定时任务健康，5篇论文已完成",
     "retry_required": false,
-    "success_date": "2026-03-21"
+    "success_date": "2026-03-22"
   },
   "spatial_agi_complete": {
     "date": "2026-03-18",

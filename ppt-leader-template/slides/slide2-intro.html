@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #FFFFFF;
+  font-family: Arial, sans-serif;
+  display: flex;
+}
+.sidebar {
+  width: 8pt;
+  background: #722F37;
+}
+.content {
+  flex: 1;
+  padding: 50pt 60pt;
+}
+.title-wrapper {
+  border-bottom: 3pt solid #D4AF37;
+  padding-bottom: 15pt;
+  margin-bottom: 40pt;
+}
+h2 {
+  font-size: 42pt;
+  color: #722F37;
+  margin: 0;
+  font-weight: bold;
+}
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25pt;
+  margin-top: 30pt;
+}
+.info-item {
+  padding: 20pt;
+  background: #F8F8F8;
+  border-left: 4pt solid #722F37;
+}
+.label {
+  font-size: 14pt;
+  color: #666666;
+  margin: 0 0 8pt 0;
+  font-weight: bold;
+}
+.value {
+  font-size: 18pt;
+  color: #2C2C2C;
+  margin: 0;
+}
+</style>
+</head>
+<body>
+<div class="sidebar"></div>
+<div class="content">
+  <div class="title-wrapper">
+    <h2>个人介绍</h2>
+  </div>
+  <div class="intro-grid">
+    <div class="info-item">
+      <p class="label">姓名</p>
+      <p class="value">[姓名]</p>
+    </div>
+    <div class="info-item">
+      <p class="label">现任职位</p>
+      <p class="value">[当前职位]</p>
+    </div>
+    <div class="info-item">
+      <p class="label">工作年限</p>
+      <p class="value">[X]年</p>
+    </div>
+    <div class="info-item">
+      <p class="label">专业领域</p>
+      <p class="value">[专业方向]</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

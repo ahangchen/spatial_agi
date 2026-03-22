@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #FFFFFF;
+  font-family: Arial, sans-serif;
+  display: flex;
+}
+.sidebar {
+  width: 8pt;
+  background: #722F37;
+}
+.content {
+  flex: 1;
+  padding: 35pt 50pt;
+}
+.title-wrapper {
+  border-bottom: 3pt solid #D4AF37;
+  padding-bottom: 10pt;
+  margin-bottom: 20pt;
+}
+h2 {
+  font-size: 36pt;
+  color: #722F37;
+  margin: 0;
+  font-weight: bold;
+}
+.plan-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18pt;
+  margin-top: 20pt;
+}
+.plan-card {
+  padding: 18pt;
+  background: #F8F8F8;
+  border-top: 3pt solid #722F37;
+}
+.plan-phase {
+  font-size: 14pt;
+  color: #D4AF37;
+  font-weight: bold;
+  margin: 0 0 8pt 0;
+}
+.plan-title {
+  font-size: 17pt;
+  color: #722F37;
+  font-weight: bold;
+  margin: 0 0 8pt 0;
+}
+.plan-desc {
+  font-size: 12pt;
+  color: #666666;
+  line-height: 1.4;
+  margin: 0;
+}
+</style>
+</head>
+<body>
+<div class="sidebar"></div>
+<div class="content">
+  <div class="title-wrapper">
+    <h2>工作规划</h2>
+  </div>
+  <div class="plan-grid">
+    <div class="plan-card">
+      <p class="plan-phase">短期目标（1-3个月）</p>
+      <p class="plan-title">[目标标题]</p>
+      <p class="plan-desc">[具体计划和行动步骤]</p>
+    </div>
+    <div class="plan-card">
+      <p class="plan-phase">中期目标（3-6个月）</p>
+      <p class="plan-title">[目标标题]</p>
+      <p class="plan-desc">[具体计划和行动步骤]</p>
+    </div>
+    <div class="plan-card">
+      <p class="plan-phase">长期目标（6-12个月）</p>
+      <p class="plan-title">[目标标题]</p>
+      <p class="plan-desc">[具体计划和行动步骤]</p>
+    </div>
+    <div class="plan-card">
+      <p class="plan-phase">团队建设</p>
+      <p class="plan-title">[目标标题]</p>
+      <p class="plan-desc">[团队发展和培养计划]</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

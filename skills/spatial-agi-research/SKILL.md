@@ -1,8 +1,8 @@
 ---
 name: spatial-agi-research
 description: 完整的Spatial AGI研究流程 - 从arXiv搜索到深度分析，每天精读5篇论文，使用research-assistant技能和NotebookLM（3个核心问题），生成论文文档和每日思考
-version: 6.8
-last_updated: 2026-03-16
+version: 6.9
+last_updated: 2026-03-22
 critical_note: Git推送必须使用main分支，不是master分支
 ---
 
@@ -1756,6 +1756,68 @@ cat /home/cwh/coding/auto_blog/spatial_agi/daily_thinking/2026-03-09.md
 
 ---
 
+### Step 7.5: 验证思考文档质量 🆕
+
+**⚠️ 【强制要求】生成思考后必须验证质量！**
+
+```
+╔════════════════════════════════════════════════════════════╗
+║  🔍 强制验证：生成后必须执行验证脚本                       ║
+║                                                              ║
+║  ✅ 验证通过 → 继续Git提交                                  ║
+║  ❌ 验证失败 → 重新生成，补充缺失部分                      ║
+║                                                              ║
+║  🚨 如果验证失败3次，强制停止任务并报告错误               ║
+╚════════════════════════════════════════════════════════════╝
+```
+
+**执行验证脚本**:
+
+```bash
+# 验证今天的思考文档
+bash ~/.openclaw/workspace/skills/spatial-agi-research/scripts/validate_thinking.sh
+
+# 如果验证失败，查看详细错误
+bash ~/.openclaw/workspace/skills/spatial-agi-research/scripts/validate_thinking.sh $(date +%Y-%m-%d)
+```
+
+**验证内容**（11项检查）:
+
+1. ✅ 文档存在性
+2. ✅ 文档行数（≥800行）
+3. ✅ 包含"与昨日思考的联系"
+4. ✅ 包含核心见解演进图（graph LR）
+5. ✅ 包含技术栈演进对比表
+6. ✅ 包含知识缺口分析（pie图）
+7. ✅ 包含10层架构思维导图（mindmap）
+8. ✅ 包含主线技术路径（≥4个阶段）
+9. ✅ 包含待探索议题（≥9个）
+10. ✅ 包含本质思考（3个子问题）
+11. ✅ Mermaid图表总数（≥3个）
+
+**如果验证失败**:
+
+```bash
+# 查看具体哪些检查失败
+# 脚本会输出详细的错误信息
+
+# 根据错误信息，重新生成缺失部分
+# 例如：如果缺少"10层架构思维导图"
+# 则手动补充该部分到文档中
+
+# 再次验证，直到通过
+bash ~/.openclaw/workspace/skills/spatial-agi-research/scripts/validate_thinking.sh
+```
+
+**强制要求**:
+- ✅ 验证必须通过才能继续Git提交
+- ✅ 最多重试3次
+- ❌ 如果3次都失败，停止任务并报告错误到群
+
+**预计时间**: 1-2分钟（验证 + 可能的补充）
+
+---
+
 ### Step 8: 自动提交到GitHub ✅
 
 **⚠️ 这一步是必须的，确保每日研究成果及时同步！**
@@ -2195,7 +2257,38 @@ timeout 120 notebooklm ask "问题"
    - 参考前一天：`/home/cwh/coding/auto_blog/spatial_agi/daily_thinking/$(date -d yesterday +%Y-%m-%d).md`
    - 保存到：`/home/cwh/coding/auto_blog/spatial_agi/daily_thinking/$(date +%Y-%m-%d).md`
 
-5. **Git提交和推送**
+5. **验证思考文档质量** 🆕
+   ```bash
+   # 验证今天的思考文档
+   bash ~/.openclaw/workspace/skills/spatial-agi-research/scripts/validate_thinking.sh
+   
+   # 如果验证失败，补充缺失内容并重试（最多3次）
+   if [ $? -ne 0 ]; then
+       echo "❌ 验证失败，需要补充内容"
+       RETRY=0
+       while [ $RETRY -lt 3 ]; do
+           echo "重试 $((RETRY+1))/3..."
+           sleep 30
+           
+           # 根据验证失败的具体原因补充内容
+           # （这里可以添加自动补充逻辑）
+           
+           if bash ~/.openclaw/workspace/skills/spatial-agi-research/scripts/validate_thinking.sh; then
+               echo "✅ 验证通过"
+               break
+           fi
+           ((RETRY++))
+       done
+       
+       if [ $RETRY -eq 3 ]; then
+           echo "❌ 验证失败3次，停止任务"
+           # 发送错误报告到群
+           exit 1
+       fi
+   fi
+   ```
+
+6. **Git提交和推送**
    ```bash
    # 提交
    cd /home/cwh/coding/auto_blog/spatial_agi
@@ -2207,7 +2300,7 @@ timeout 120 notebooklm ask "问题"
    - 每日思考: $(test -f daily_thinking/$(date +%Y-%m-%d).md && echo '✅' || echo '❌')
    - 更新论文列表
    
-   Spatial AGI Research Skill v6.0"
+   Spatial AGI Research Skill v6.9"
    
    # ⚠️ 必须推送到GitHub
    git push origin main
@@ -2449,8 +2542,23 @@ Cron触发 → 检查完成度 → 补充缺失 → 启动今天的任务
 
 ---
 
-**最后更新**: 2026-03-16 10:05
-**版本**: v6.8 (强制使用main分支 + 来源验证)
+**最后更新**: 2026-03-22 11:50
+**版本**: v6.9 (强制验证思考文档质量)
+
+**v6.9更新内容** (2026-03-22 11:50):
+- ✅ **新增Step 7.5**: 验证思考文档质量（强制步骤）
+- ✅ **11项质量检查**: 文档存在性、行数、必需章节、Mermaid图表等
+- ✅ **验证脚本**: validate_thinking.sh自动检查文档质量
+- ✅ **强制验证**: 验证通过才能继续Git提交
+- ✅ **最多3次重试**: 验证失败后允许补充和重试
+- ✅ **防止偷懒**: 自动检测缺少思维导图、与昨日联系、架构分析等
+- ✅ **质量门控**: 在每个关键步骤后验证质量
+- ✅ **早期发现**: 避免到最后才发现文档不完整
+
+**问题解决**: 
+- 解决了今天早上思考文档偷懒的问题（缺少思维导图和与昨天的联系）
+- 通过11项检查确保文档质量
+- 强制验证机制防止AI在token压力下偷懒
 
 **v6.8更新内容** (2026-03-16 10:05):
 - ✅ **强制使用main分支**: Git推送必须推送到main，不是master
