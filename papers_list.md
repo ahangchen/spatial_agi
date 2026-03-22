@@ -582,4 +582,60 @@
 
 ---
 
-*最后更新: 2026-03-10 07:25*
+## 2026-03-23 研究的论文（精选5篇）✅
+
+1. **Under One Sun: Multi-Object Generative Perception of Materials and Illumination** - arXiv:2603.19226v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 生成式感知、逆渲染、材料-光照解耦、多物体一致性、物理感知
+   - 文档: papers/2026-03-23_01_Under_One_Sun.md
+   - 核心发现: 共享光照约束、级联架构解耦、轴向注意力跨物体通信、材质纹理分离
+
+2. **Bridging Semantic and Kinematic Conditions with Diffusion-based Discrete Motion Tokenizer** - arXiv:2603.19227v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 运动生成、离散token、语义-运动学桥接、扩散模型、机器人控制
+   - 文档: papers/2026-03-23_02_Bridging_Semantic_Kinematic.md
+   - 核心发现: 三阶段框架（感知-规划-控制）、扩散解码器恢复细节、单层token高效表示
+
+3. **EffectErase: Joint Video Object Removal and Insertion for High-Quality Effect Erasing** - arXiv:2603.19224v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 视频对象移除、效应消除、逆向辅助任务、任务感知引导、一致性学习
+   - 文档: papers/2026-03-23_03_EffectErase.md
+   - 核心发现: VOR数据集（60K视频对）、插入-移除互补学习、效应区域定位
+
+4. **Rethinking Vector Field Learning for Generative Segmentation** - arXiv:2603.19218v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 向量场学习、生成分割、场景理解、空间推理
+   - 文档: papers/2026-03-23_04_Rethinking_Vector_Field.md
+   - 核心发现: 向量场生成范式、空间结构建模、生成式分割方法
+
+5. **LVOmniBench: Pioneering Long Audio-Video Understanding Evaluation for Omnimodal LLMs** - arXiv:2603.19217v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 长视频理解、全模态LLM、评估基准、时空推理、多模态融合
+   - 文档: papers/2026-03-23_05_LVOmniBench.md
+   - 核心发现: 长时全模态理解新问题、高质量评估基准、揭示当前模型局限
+
+### 研究主题统计（2026-03-23）
+
+**核心技术**:
+- 材质光照解耦: 1篇（Under One Sun）
+- 运动生成: 1篇（Bridging Semantic Kinematic）
+- 视频对象移除: 1篇（EffectErase）
+- 向量场学习: 1篇（Rethinking Vector Field）
+- 长视频理解: 1篇（LVOmniBench）
+
+**关键突破**:
+- 多物体一致性理解（共享光照约束）
+- 语义-运动学桥接（三阶段框架）
+- 效应感知场景理解（插入-移除互补）
+- 生成式分割新范式（向量场）
+- 长时全模态理解（新基准）
+
+**分析质量**:
+- ✅ 5/5篇完成（100%）
+- ✅ 平均文档长度: 1,518行
+- ✅ 全部达到500+行要求
+- ✅ EffectErase特别详细（2587行）
+
+---
+
+*最后更新: 2026-03-23 07:15*
