@@ -4,6 +4,60 @@
 
 ---
 
+## 2026-03-25 研究的论文（精选5篇）✅
+
+1. **UniMotion: A Unified Framework for Motion-Text-Vision Understanding and Generation** - arXiv:2603.22282v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 三模态统一、连续运动表示、CMA-VAE、DPA、LRA、Any-to-Any生成
+   - 文档: papers/2026-03-25_01_UniMotion.md
+   - NotebookLM: e7a05e04-0118-4b95-b127-1f39e290ec07
+   - 核心发现: 运动作为一等公民连续模态、269维运动向量、7项全能任务、连续表示优于离散Tokenization
+
+2. **ThinkJEPA: Empowering Latent World Models with Large Vision-Language Reasoning Model** - arXiv:2603.22281v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLM引导世界模型、双时间路径、层次化金字塔表示、FiLM注入、长程预测
+   - 文档: papers/2026-03-25_02_ThinkJEPA.md
+   - NotebookLM: 0639e74a-a582-4de3-b09a-9cbdf1c95d37
+   - 核心发现: 密集JEPA+VLM思考者双分支、语义引导抑制误差累积、3D手部轨迹预测SOTA
+
+3. **DualCoT-VLA: Visual-Linguistic Chain of Thought via Parallel Reasoning for Vision-Language-Action Models** - arXiv:2603.22280v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 并行CoT、视觉-语言双流、毫秒级推理、O(1)复杂度、Flow-Matching
+   - 文档: papers/2026-03-25_03_DualCoT-VLA.md
+   - NotebookLM: a725193a-cf05-475e-bfee-c1a96184860e
+   - 核心发现: 推理延迟从3178ms降至83ms、并行查询Token、几何蒸馏+步骤监督
+
+4. **The Dual Mechanisms of Spatial Reasoning in Vision-Language Models** - arXiv:2603.22278v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLM空间推理、双机制、视觉编码器主导、全局分布表征、方向增强
+   - 文档: papers/2026-03-25_04_Dual_Mechanisms_Spatial_Reasoning.md
+   - NotebookLM: 0a2b3c5f-a125-40b8-9d60-10a204f95a32
+   - 核心发现: 视觉派生机制主导、LM底座备份、空间信息全局分布、无需微调的改进
+
+5. **3D-Layout-R1: Structured Reasoning for Language-Instructed Spatial Editing** - arXiv:2603.22279v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 场景图推理、结构化CoT、GRPO强化学习、几何奖励、空间编辑
+   - 文档: papers/2026-03-25_05_3D_Layout_R1.md
+   - NotebookLM: 38450943-4085-4a1e-be15-0dcf21c1c508
+   - 核心发现: Chain-of-graph-edits、IoU提升15%、场景图作为迭代画布、几何反馈驱动
+
+### 研究主题统计（2026-03-25）
+
+**核心技术**:
+- 多模态统一: 1篇（UniMotion）
+- 世界模型: 1篇（ThinkJEPA）
+- 并行推理: 1篇（DualCoT-VLA）
+- 机制理解: 1篇（Dual Mechanisms）
+- 空间编辑: 1篇（3D-Layout-R1）
+
+**关键突破**:
+- 连续表示范式：运动作为一等公民，优于离散Tokenization
+- 并行推理革命：O(N)→O(1)，毫秒级实时响应
+- 视觉编码器主导：VLM空间能力的真正来源
+- 结构化推理：图编辑链优于自由文本CoT
+
+---
+
 ## 2026-03-22 研究的论文（精选5篇）✅
 
 1. **Matryoshka Gaussian Splatting: Scalable 3D Scene Representation with Continuous Level-of-Detail** - arXiv:2603.19234v1
