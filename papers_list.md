@@ -4,6 +4,59 @@
 
 ---
 
+## 2026-03-26 研究的论文（精选5篇）✅
+
+1. **UniFunc3D: Unified Active Spatial-Temporal Grounding for 3D Functionality Segmentation** - arXiv:2603.23478v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D功能分割、主动时空接地、统一MLLM、从粗到精、视觉掩码验证
+   - 文档: papers/2026-03-26_01_UniFunc3D.md
+   - NotebookLM: 42114d2c-0ed9-459c-b311-83c5e1702de6
+   - 核心发现: 训练-free框架、主动巡视视频、59.9% mIoU提升、闭环推理验证
+
+2. **VTAM: Video-Tactile-Action Models for Complex Physical Interaction Beyond VLAs** - arXiv:2603.23481v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 视触觉动作模型、世界模型、触觉正则化、接触密集型任务、物理交互
+   - 文档: papers/2026-03-26_02_VTAM.md
+   - NotebookLM: 398eac5e-09ba-4123-9955-4e48ebfd37ca
+   - 核心发现: 触觉作为世界模型内在组成、变形感知虚拟力、90%成功率、80%超越pi 0.5
+
+3. **3DCity-LLM: Empowering Multi-modality Large Language Models for 3D City-scale Perception and Understanding** - arXiv:2603.23447v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D城市理解、120万样本数据集、从粗到细编码、空间推理、城市智能
+   - 文档: papers/2026-03-26_03_3DCity_LLM.md
+   - 分析方法: 基于HTML版本深度分析
+   - 核心发现: 3分支并行编码、7类任务分类、BLEU-4提升8.40、城市规模理解突破
+
+4. **OccAny: Generalized Unconstrained Urban 3D Occupancy** - arXiv:2603.23502v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 无约束3D occupancy、零样本泛化、语义强制策略、几何补全、城市场景
+   - 文档: papers/2026-03-26_04_OccAny.md
+   - NotebookLM: f4fbcca9-6cdf-4796-8b33-1f876b9b22b2
+   - 核心发现: 无需传感器标定、SAM2特征约束、新视角渲染、几何-语义耦合
+
+5. **Foveated Diffusion: Efficient Spatially Adaptive Image and Video Generation** - arXiv:2603.23491v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 空间自适应生成、中央凹机制、混合分辨率Token、效率优化、眼动跟踪
+   - 文档: papers/2026-03-26_05_Foveated_Diffusion.md
+   - 核心发现: 非均匀Token分配、感知质量无损、大幅降低计算量、人眼视觉机制启发
+
+### 研究主题统计（2026-03-26）
+
+**核心技术**:
+- 3D场景理解: 3篇（UniFunc3D, 3DCity-LLM, OccAny）
+- 多模态融合: 2篇（VTAM, Foveated Diffusion）
+- 空间智能: 4篇（UniFunc3D, 3DCity-LLM, OccAny, Foveated Diffusion）
+- 具身智能: 2篇（UniFunc3D, VTAM）
+
+**关键突破**:
+- 主动时空接地：MLLM主动巡视视频，消除视觉盲区
+- 触觉世界模型：触觉作为预测性框架内在组成，实现精确力控制
+- 城市规模理解：120万样本数据集，7类任务系统分类
+- 无约束occupancy：零样本泛化到任意传感器配置
+- 空间自适应生成：中央凹启发机制，大幅提升生成效率
+
+---
+
 ## 2026-03-25 研究的论文（精选6篇）✅
 
 1. **UniMotion: A Unified Framework for Motion-Text-Vision Understanding and Generation** - arXiv:2603.22282v1
