@@ -4,7 +4,7 @@
 
 ---
 
-## 2026-03-25 研究的论文（精选5篇）✅
+## 2026-03-25 研究的论文（精选6篇）✅
 
 1. **UniMotion: A Unified Framework for Motion-Text-Vision Understanding and Generation** - arXiv:2603.22282v1
    - 相关性: ⭐⭐⭐⭐⭐
@@ -41,17 +41,26 @@
    - NotebookLM: 38450943-4085-4a1e-be15-0dcf21c1c508
    - 核心发现: Chain-of-graph-edits、IoU提升15%、场景图作为迭代画布、几何反馈驱动
 
+6. **LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels** - arXiv:2603.19312v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 极简世界模型、SIGReg正则化、反崩溃保证、端到端训练、物理涌现
+   - 文档: papers/2026-03-25_06_leworldmodel_stable_jepa.md
+   - 分析方法: GLM WebReader深度精读
+   - 核心发现: 仅2项损失稳定训练、48倍规划加速、物理直觉涌现、15M参数单GPU训练
+
 ### 研究主题统计（2026-03-25）
 
 **核心技术**:
 - 多模态统一: 1篇（UniMotion）
-- 世界模型: 1篇（ThinkJEPA）
+- 世界模型: 2篇（ThinkJEPA, LeWorldModel）
 - 并行推理: 1篇（DualCoT-VLA）
 - 机制理解: 1篇（Dual Mechanisms）
 - 空间编辑: 1篇（3D-Layout-R1）
 
 **关键突破**:
 - 连续表示范式：运动作为一等公民，优于离散Tokenization
+- 双路径世界模型：密集JEPA+VLM思考者，长程稳定预测
+- 极简世界模型：2项损失实现稳定训练，48倍加速
 - 并行推理革命：O(N)→O(1)，毫秒级实时响应
 - 视觉编码器主导：VLM空间能力的真正来源
 - 结构化推理：图编辑链优于自由文本CoT
