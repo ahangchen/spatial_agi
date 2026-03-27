@@ -4,6 +4,72 @@
 
 ---
 
+## 2026-03-27 研究的论文（精选5篇）✅
+
+1. **DreamerAD: Efficient Reinforcement Learning via Latent World Model for Autonomous Driving** - arXiv:2603.24587v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 潜在世界模型、强化学习、自动驾驶、视频扩散、密集奖励
+   - 文档: papers/2026-03-27_01_DreamerAD.md
+   - 核心发现: 80倍加速、潜在空间RL训练、自回归密集奖励模型、高斯词汇采样约束
+
+2. **Latent-WAM: Latent World Action Modeling for End-to-End Autonomous Driving** - arXiv:2603.24581v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 端到端自动驾驶、空间感知压缩、动态潜在世界、几何知识蒸馏
+   - 文档: papers/2026-03-27_latent_wam.md
+   - 核心发现: 89.3 EPDMS新SOTA、SCWE空间感知压缩、DLWM动态世界建模、104M参数超越基线3.2分
+
+3. **LightSplat: Fast and Memory-Efficient Open-Vocabulary 3D Scene Understanding in Five Seconds** - arXiv:2603.24146v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D高斯泼溅、开放词汇理解、索引-特征映射、无训练框架
+   - 文档: papers/2026-03-27_03_lightsplat.md
+   - 核心发现: 50-400倍速度提升、64倍内存降低、5秒特征蒸馏、2字节索引替代高维特征
+
+4. **GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents** - arXiv:2603.24329v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 多模态LLM、3D虚拟代理、Self-Other-World分解、密集决策、多视频理解
+   - 文档: papers/2026-03-27_04_gameplayqa_benchmark.md
+   - 核心发现: 1.22标签/秒高密度标注、三方实体分解、2.4K诊断性QA、结构化干扰项分类
+
+5. **Chameleon: Episodic Memory for Long-Horizon Robotic Manipulation** - arXiv:2603.24576v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 情景记忆、长时程操作、感知混淆、目标导向检索、几何基础去歧义
+   - 文档: papers/2026-03-27_05_chameleon_episodic_memory.md
+   - 核心发现: 感知混淆解决方案、模式分离+模式完成、HoloHead可微分检索、跨任务零样本泛化
+
+### 研究主题统计（2026-03-27）
+
+**核心技术**:
+- 潜在世界模型: 2篇（DreamerAD, Latent-WAM）
+- 3D场景理解: 1篇（LightSplat）
+- 具身智能评估: 1篇（GameplayQA）
+- 长时程记忆: 1篇（Chameleon）
+
+**关键突破**:
+- **80倍RL加速**（DreamerAD）：在潜在空间训练，100步扩散→1步
+- **空间感知压缩**（Latent-WAM）：从几何基础模型蒸馏，16个场景令牌替代数千patch
+- **极致效率**（LightSplat）：2字节索引替代512维特征，5秒完成特征蒸馏
+- **三方分解**（GameplayQA）：Self-Other-World系统化具身感知评估
+- **情景记忆**（Chameleon）：生物学启发的模式分离+模式完成，解决感知混淆
+
+**应用领域**:
+- 自动驾驶: 2篇（DreamerAD, Latent-WAM）
+- 机器人操作: 2篇（GameplayQA, Chameleon）
+- 3D理解: 1篇（LightSplat）
+
+**方法创新**:
+- 潜在空间训练: 2篇
+- 索引化表示: 1篇
+- 分解式评估: 1篇
+- 生物学启发: 1篇
+
+**性能指标**:
+- 速度提升: 50-400x（LightSplat）
+- 内存降低: 64x（LightSplat）
+- 准确率: 89.3 EPDMS（Latent-WAM）
+- 标注密度: 1.22 labels/秒（GameplayQA）
+
+---
+
 ## 2026-03-26 研究的论文（精选5篇）✅
 
 1. **UniFunc3D: Unified Active Spatial-Temporal Grounding for 3D Functionality Segmentation** - arXiv:2603.23478v1
