@@ -882,4 +882,95 @@
 
 ---
 
-*最后更新: 2026-03-24 07:20*
+## 2026-03-28 研究的论文（7篇）✅
+
+### 3D Gaussian Splatting（3篇）
+
+1. **LGTM: Less Gaussians, Texture More: 4K Feed-Forward Textured Splatting** - arXiv:2603.25745v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4K分辨率、几何-纹理解耦、纹理化高斯、前馈网络、实时渲染
+   - 文档: papers/2026-03-28_01_lgtm.md
+   - 核心发现: 几何-纹理解耦实现64×像素提升仅1.47×时间、紧凑高斯+纹理基元、前馈4K NVS无优化
+
+2. **ViewSplat: View-Adaptive Dynamic Gaussian Splatting for Feed-Forward Synthesis** - arXiv:2603.25265v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 视图自适应、动态高斯、Hypernetwork、残差学习、实时渲染
+   - 文档: papers/2026-03-28_02_viewsplat.md
+   - 核心发现: MLP预测视图依赖残差更新、PSNR 26.798、154 FPS实时、动态基元适配
+
+3. **AirSplat: Alignment and Rating for Robust Feed-Forward 3D Gaussian Splatting** - arXiv:2603.25129v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 无姿态NVS、SCPA自洽对齐、ROM不透明度匹配、3DVFMs、零样本泛化
+   - 文档: papers/2026-03-28_03_airsplat.md
+   - 核心发现: 零样本PSNR +3.11dB、像素对齐监督、评分过滤退化基元、无姿态重建
+
+### 自动驾驶与个性化（2篇）
+
+4. **Vega: Learning to Drive with Natural Language Instructions** - arXiv:2603.25741v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 指令驾驶、混合自回归-扩散、MoT架构、世界建模、NAVSIM SOTA
+   - 文档: papers/2026-03-28_vega_instructional_driving.md
+   - 核心发现: NAVSIM v2 EPDMS 89.4第一、指令-动作-图像一致性约束、未来图像预测+2.7 PDMS
+
+5. **Drive My Way: Preference Alignment of VLA Model for Personalized Driving** - arXiv:2603.25740v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 个性化VLA、用户嵌入、风格感知奖励、残差解码器、自然语言指令
+   - 文档: papers/2026-03-28_02_drive_my_way.md
+   - 核心发现: 激进指令效率+18.77%、用户嵌入编码偏好、PDD数据集（30驾驶员）、零样本泛化
+
+### 记忆与知识系统（2篇）
+
+6. **WriteBack-RAG: Training the Knowledge Base through Evidence Distillation and Write-Back Enrichment** - arXiv:2603.25737v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 知识库训练、证据蒸馏、回写增强、跨方法迁移、RAG优化
+   - 文档: papers/2026-03-28_03_writeback_rag.md
+   - 核心发现: 平均+2.14%性能提升、成功检索→证据蒸馏→回写增强、跨方法知识单元迁移
+
+7. **PackForcing: Short Video Training Suffices for Long Video Sampling and Long Context Inference** - arXiv:2603.25730v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 长视频生成、三分区KV缓存、双分支压缩、动态上下文选择、自回归扩散
+   - 文档: papers/2026-03-28_04_PackForcing_Short_Video_Training_Long_Video.md
+   - 核心发现: Sink锚点防止语义漂移、约32倍压缩Mid tokens、KV缓存约束4GB、24倍时间泛化（5秒→120秒）
+
+### 研究主题统计（2026-03-28）
+
+**核心技术**:
+- 3D Gaussian Splatting: 3篇（LGTM, ViewSplat, AirSplat）
+- 自动驾驶: 2篇（Vega, Drive My Way）
+- 记忆/知识系统: 2篇（WriteBack-RAG, PackForcing）
+
+**关键突破**:
+
+**3DGS方向**:
+- **4K纹理化解耦**（LGTM）：几何-纹理解耦，64×像素提升仅1.47×时间
+- **视图自适应动态**（ViewSplat）：Hypernetwork预测残差，154 FPS实时渲染
+- **无姿态鲁棒重建**（AirSplat）：SCPA自洽对齐 + ROM评分过滤，零样本+3.11dB
+
+**自动驾驶方向**:
+- **指令驱动范式**（Vega）：混合自回归-扩散 + 世界建模，NAVSIM v2第一
+- **个性化对齐**（Drive My Way）：用户嵌入 + 风格感知奖励，效率+18.77%
+
+**记忆系统方向**:
+- **知识库可训练**（WriteBack-RAG）：证据蒸馏 + 回写增强，跨方法+2.14%
+- **三分区KV缓存**（PackForcing）：Sink/Mid/Recent分区，24倍时间泛化
+
+**对Spatial AGI的启发**:
+- **表示层**：几何-纹理解耦（LGTM）→ 视图自适应（ViewSplat）→ 无姿态鲁棒（AirSplat）
+- **个性化层**：用户嵌入编码偏好，自然语言作为空间交互接口
+- **记忆层**：三分区架构（Sink长期/Mid情节/Recent工作）+ 知识库可训练
+- **泛化性**：短期经验可泛化到长期任务（24倍时间泛化）
+
+**应用领域**:
+- 3D重建与渲染: 3篇
+- 自动驾驶: 2篇
+- RAG系统: 1篇
+- 长视频生成: 1篇
+
+**方法创新**:
+- 解耦表示: 2篇（几何-纹理、静态-动态）
+- 自适应机制: 2篇（视图自适应、个性化适配）
+- 训练-free/高效: 3篇（无姿态、无优化、短训练长泛化）
+
+---
+
+*最后更新: 2026-03-28 07:23*
