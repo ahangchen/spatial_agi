@@ -973,4 +973,68 @@
 
 ---
 
-*最后更新: 2026-03-28 07:23*
+## 2026-03-29 研究的论文（精选5篇）✅
+
+1. **LGTM: Less Gaussians, Texture More: 4K Feed-Forward Textured Splatting** - arXiv:2603.25745v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4K分辨率、几何-纹理解耦、纹理化高斯、前馈网络、实时渲染
+   - 文档: papers/2026-03-29_01_lgtm_less_gaussians_texture_more.md
+   - 核心发现: 几何-纹理解耦实现64×像素提升仅1.47×时间开销、紧凑高斯+纹理基元、首个前馈4K NVS无per-scene优化
+
+2. **AirVLA: π, But Make It Fly: Physics-Guided Transfer of VLA Models to Aerial Manipulation** - arXiv:2603.25038v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 物理引导迁移、负载感知引导、Payload-Aware Guidance、空中操作、VLA迁移
+   - 文档: papers/2026-03-29_02_airvla_aerial_manipulation.md
+   - 核心发现: Payload-Aware Guidance在flow-matching采样中注入物理约束、负载置信度补偿下垂、零样本从固定基座迁移到飞行平台
+
+3. **GaussFusion: Improving 3D Reconstruction in the Wild with A Geometry-Informed Video Generator** - arXiv:2603.25053v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 几何引导视频生成、GP-Buffer、伪影修复、跨范式泛化、16 FPS实时推理
+   - 文档: papers/2026-03-29_03_GaussFusion.md
+   - 核心发现: GP-Buffer编码深度/法线/透明度/协方差、Geometry Adapter注入几何特征、同时处理优化based和前馈重建管线
+
+4. **PhotoAgent: A Robotic Photographer with Spatial and Aesthetic Understanding** - arXiv:2603.22796v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS世界模型、心智模拟、锚点假设、视觉反思、美学推理
+   - 文档: papers/2026-03-29_04_photoagent.md
+   - 核心发现: LMM CoT将主观美学转化为几何约束、3DGS视觉反思实现心智模拟、迭代优化替代物理试错
+
+5. **SNOW: Spatio-Temporal Scene Understanding with World Knowledge for Open-World Embodied Reasoning** - arXiv:2512.16461v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4D场景理解、STEP编码、训练无关框架、可查询4DSG、VLM语义
+   - 文档: papers/2026-03-29_05_SNOW_4D_Scene_Understanding.md
+   - 核心发现: 训练无关框架、STEP多模态token编码、HDBSCAN聚类+SAM2分割、可查询4D场景图
+
+### 研究主题统计（2026-03-29）
+
+**核心技术**:
+- 3DGS表示: 2篇（LGTM, GaussFusion）
+- 具身智能: 2篇（AirVLA, PhotoAgent）
+- 4D场景理解: 1篇（SNOW）
+
+**关键突破**:
+- **几何-纹理解耦**（LGTM）：64×像素提升仅1.47×时间，4K前馈无优化
+- **物理引导迁移**（AirVLA）：Payload-Aware Guidance补偿负载下垂，VLA零样本迁移到飞行平台
+- **几何引导生成**（GaussFusion）：GP-Buffer提供深度/法线/透明度/协方差条件，跨范式泛化
+- **心智模拟**（PhotoAgent）：3DGS世界模型实现视觉反思，LMM美学转几何约束
+- **统一4D理解**（SNOW）：STEP编码多模态token，训练无关构建可查询4D场景图
+
+**应用领域**:
+- 3D重建与渲染: 2篇（LGTM, GaussFusion）
+- 机器人操作: 2篇（AirVLA, PhotoAgent）
+- 场景理解: 1篇（SNOW）
+
+**方法创新**:
+- 解耦表示: 2篇（几何-纹理、语义-几何）
+- 物理引导: 1篇（Payload-Aware Guidance）
+- 世界模型: 2篇（3DGS心智模拟、4D场景图）
+
+**对Spatial AGI的启发**:
+- **表示层**：几何-纹理解耦（LGTM）实现高效4K表示，几何引导（GaussFusion）修复伪影
+- **迁移层**：VLA物理引导迁移（AirVLA）扩展具身能力到飞行平台
+- **推理层**：3DGS心智模拟（PhotoAgent）将美学意图转化为几何控制
+- **理解层**：统一4D场景图（SNOW）集成VLM语义与时空几何
+
+---
+
+*最后更新: 2026-03-29 10:50*
