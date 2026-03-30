@@ -4,6 +4,75 @@
 
 ---
 
+## 2026-03-31 研究的论文（精选5篇）✅
+
+1. **3DGSNav: Enhancing VLM Reasoning for Object Navigation via 3D Gaussian Splatting** - arXiv:2602.12159v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Gaussian Splatting, VLM, 零样本导航, 主动感知, CoT推理
+   - 文档: papers/2026-03-31_3DGSNav.md
+   - 核心发现: 3DGS作为持久记忆、自由视点优化、主动视点重验证、四足机器人实机验证
+
+2. **From Human Cognition to Neural Activations: Probing Spatial Reasoning in LLMs** - arXiv:2603.26323v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 机制可解释性、空间推理原语、线性探测、稀疏自编码器、因果干预
+   - 文档: papers/2026-03-31_LLM_Spatial_Reasoning_Mechanisms.md
+   - 核心发现: 中间层空间信息峰值、末层表示急剧下降、跨任务表示碎片化、机制退化现象
+
+3. **HiSpatial: Taming Hierarchical 3D Spatial Understanding in VLMs** - arXiv:2603.25411v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 层次化空间理解、RGB-D VLM、5M图像训练、2B QA对、CVPR 2026
+   - 文档: papers/2026-03-31_HiSpatial.md
+   - 核心发现: 四层空间智能框架、度量尺度点云输入、超越GPT-5/Gemini-2.5-pro、层次依赖验证
+
+4. **VGGRPO: World-Consistent Video Generation with 4D Latent Reward** - arXiv:2603.26599v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 视频生成、世界一致性、潜空间奖励、4D几何、GRPO
+   - 文档: papers/2026-03-31_VGGRPO.md
+   - 核心发现: Latent Geometry Model、避免RGB解码开销、动态场景支持、3x训练加速
+
+5. **VideoWeaver: Multimodal Multi-View Video-to-Video Transfer** - arXiv:2603.25420v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 多视角V2V、4D点云、Pi3、具身AI数据增强、自回归视角生成
+   - 文档: papers/2026-03-31_VideoWeaver.md
+   - 核心发现: 共享4D潜空间、MoE多模态融合、分解4D注意力、自回归视角扩展
+
+### 研究主题统计（2026-03-31）
+
+**核心技术**:
+- 3D Gaussian Splatting: 1篇（3DGSNav）
+- 机制可解释性: 1篇（LLM Spatial Reasoning）
+- 层次化空间理解: 1篇（HiSpatial）
+- 世界一致性生成: 1篇（VGGRPO）
+- 多视角V2V: 1篇（VideoWeaver）
+
+**关键突破**:
+- **3DGS导航记忆**（3DGSNav）：主动感知构建3DGS表示，自由视点渲染增强VLM推理
+- **空间表示分析**（LLM Mechanisms）：中间层R²=0.37，末层急剧下降，碎片化表示
+- **层次化训练**（HiSpatial）：Level 0-3框架，2B QA对，超越GPT-5
+- **潜空间几何**（VGGRPO）：无RGB解码，动态场景支持，3x加速
+- **4D一致生成**（VideoWeaver）：Pi3点云统一潜空间，自回归视角生成
+
+**应用领域**:
+- 机器人导航: 1篇（3DGSNav）
+- LLM分析: 1篇（LLM Mechanisms）
+- VLM训练: 1篇（HiSpatial）
+- 视频生成: 2篇（VGGRPO, VideoWeaver）
+
+**方法创新**:
+- 持久3D记忆: 1篇
+- 线性探测+SAE: 1篇
+- 层次化数据: 1篇
+- 潜空间奖励: 1篇
+- 4D共享潜空间: 1篇
+
+**核心洞察**:
+- **3D表示 > 2D抽象**：保持几何连续性，避免语义离散化
+- **层次依赖**：低层任务是高层能力的基石
+- **机制退化**：相似行为可源于不同内部路径
+- **潜空间训练**：避免RGB解码，提升效率
+
+---
+
 ## 2026-03-27 研究的论文（精选5篇）✅
 
 1. **DreamerAD: Efficient Reinforcement Learning via Latent World Model for Autonomous Driving** - arXiv:2603.24587v1
