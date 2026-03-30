@@ -1037,4 +1037,77 @@
 
 ---
 
-*最后更新: 2026-03-29 10:50*
+## 2026-03-30 研究的论文（精选5篇）✅
+
+1. **Kinema4D: Kinematic 4D World Modeling for Spatiotemporal Embodied Simulation** - arXiv:2603.16669
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4D世界建模、运动学控制、点图表示、Robo4D-200k、embodiment-agnostic
+   - 文档: papers/2026-03-30_01_Kinema4D.md
+   - 核心发现: 运动学控制+生成建模解耦架构、4D点图作为控制表示、201,426 episode数据集、零-shot OOD评估
+
+2. **ST-VLA: Enabling 4D-Aware Spatiotemporal Understanding for General Robot Manipulation** - arXiv:2603.13788
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4D感知VLA、统一3D-4D表示、平滑空间掩码、ST-Human数据集、零样本泛化
+   - 文档: papers/2026-03-30_02_ST_VLA.md
+   - 核心发现: 统一3D-4D中间表示𝒵、锚定深度+相对偏移3D提升、300k人类episodes、零样本+44.6%
+
+3. **Holi-Spatial: Evolving Video Streams into Holistic 3D Spatial Intelligence** - arXiv:2603.07660
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 自动化数据管道、3DGS优化、开放词汇标注、VLM Agent验证、Holi-Spatial-4M
+   - 文档: papers/2026-03-30_03_Holi_Spatial.md
+   - 核心发现: 完全自动化空间标注、4M+高质量标注、三级置信度过滤、深度F1=0.89、3D检测AP50=70.05
+
+4. **Thinking in Dynamics: How Multimodal Large Language Models Perceive, Track, and Reason Dynamics in Physical 4D World** - arXiv:2603.12746
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Dyn-Bench基准、4D动态推理、ST-TCM时空文本化、时空不一致性、Mask-Guided Fusion
+   - 文档: papers/2026-03-30_04_Thinking_in_Dynamics.md
+   - 核心发现: 1,000动态视频+7,000 VQA、ST-TCM提升8-15%、时空不一致性根本问题、Motion+Spatial关键组合
+
+5. **3DGSNav: Enhancing Vision-Language Model Reasoning for Object Navigation via Active 3D Gaussian Splatting** - arXiv:2603.XXXXX
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS持久化内存、主动感知、VLM空间推理、零样本目标导航、增量式场景构建
+   - 文档: papers/2026-03-30_05_3DGSNav.md
+   - 核心发现: 3DGS作为VLM内存、信息增益最大化主动感知、模块化集成架构、开放词汇导航
+
+### 研究主题统计（2026-03-30）
+
+**核心技术**:
+- 4D时空建模: 3篇（Kinema4D, ST-VLA, Thinking in Dynamics）
+- 空间数据/基准: 2篇（Holi-Spatial, Thinking in Dynamics）
+- 3DGS应用: 2篇（Holi-Spatial, 3DGSNav）
+- VLA系统: 2篇（ST-VLA, 3DGSNav）
+
+**关键突破**:
+- **4D世界建模**（Kinema4D）：运动学确定性+生成式灵活性的解耦设计，4D点图作为统一表示
+- **4D感知VLA**（ST-VLA）：统一3D-4D中间表示𝒵，零样本+44.6%成功率提升
+- **自动化数据飞轮**（Holi-Spatial）：完全自动化标注超越人工质量，4M+标注开启数据飞轮
+- **4D动态评测**（Thinking in Dynamics）：Dyn-Bench定义4D推理标准，ST-TCM结构化提示+8-15%
+- **3DGS内存导航**（3DGSNav）：3DGS作为VLM持久化内存，主动感知提升零样本导航
+
+**应用领域**:
+- 机器人操控: 2篇（Kinema4D, ST-VLA）
+- 场景理解/重建: 2篇（Holi-Spatial, 3DGSNav）
+- 评测基准: 1篇（Thinking in Dynamics）
+
+**方法创新**:
+- 解耦设计: 2篇（确定性控制vs生成响应、语义vs执行）
+- 数据自动化: 1篇（VLM Agent验证）
+- 结构化提示: 1篇（ST-TCM时空文本化）
+- 主动感知: 2篇（信息增益最大化、视角选择）
+
+**对Spatial AGI的启发**:
+- **表示层**：4D点图（Kinema4D）+ 3D-4D统一表示（ST-VLA）→ 时空一致的基础
+- **数据层**：自动化管道（Holi-Spatial）开启数据飞轮 → 持续扩展训练数据
+- **评测层**：Dyn-Bench（Thinking in Dynamics）定义4D推理标准 → 明确技术瓶颈
+- **应用层**：3DGS内存（3DGSNav）→ 高效空间存储与查询，主动感知增强决策
+
+**性能指标**:
+- 数据规模: 201,426 episode（Kinema4D）, 300k episodes（ST-VLA）, 4M+标注（Holi-Spatial）
+- 零样本提升: +44.6%（ST-VLA）, +30.3%真实世界（ST-VLA）
+- 深度质量: F1=0.89（Holi-Spatial）
+- 3D检测: AP50=70.05（Holi-Spatial）
+- 4D推理: ST-TCM +8-15%（Thinking in Dynamics）
+
+---
+
+*最后更新: 2026-03-30 09:30*
