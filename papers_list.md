@@ -1243,3 +1243,59 @@
 ---
 
 *最后更新: 2026-04-01 10:11*
+
+## 2026-04-02 研究的论文（精选5篇）
+
+1. **SOLE-R1: Video-Language Reasoning as the Sole Reward for On-Robot Reinforcement Learning** - arXiv:2603.28730
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, 强化学习, 视频语言推理, 奖励建模, 机器人
+   - 文档: papers/2026-04-02_01_SOLE-R1_Video-Language_Reasoning_Reward.md
+   - 核心发现: 用视频语言推理作为唯一的奖励信号训练机器人策略，无需手动设计奖励函数
+
+2. **SonoWorld: From One Image to a 3D Audio-Visual Scene** - arXiv:2603.28757
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3D场景生成, 空间声场, 多模态, 单图重建
+   - 文档: papers/2026-04-02_02_SonoWorld.md
+   - 核心发现: 从单张图像生成可导航的3D场景+空间声场，扩展空间智能到听觉维度
+
+3. **DIAL: Decoupling Intent and Action via Latent World Modeling for End-to-End VLA** - arXiv:2603.29844
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, 世界模型, 潜在意图, System-1/System-2, 具身AI
+   - 文档: papers/2026-04-02_03_DIAL_Latent_World_Modeling_VLA.md
+   - 核心发现: 通过潜在视觉前瞻作为结构瓶颈，实现VLM从被动编码器到主动决策者的转变
+
+4. **Extend3D: Town-Scale 3D Generation** - arXiv:2603.29387
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3D场景生成, 潜在空间扩展, under-noising, 无训练pipeline
+   - 文档: papers/2026-04-02_04_Extend3D_Town_Scale_3D_Generation.md
+   - 核心发现: 将物体级3D生成模型扩展到城镇级场景，under-noising将遮挡视为噪声进行3D补全
+
+5. **SceneTeract: Agentic Functional Affordances and VLM Grounding in 3D Scenes** - arXiv:2603.29798
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 功能可供性, VLM评估, 空间验证, 具身AI, 几何推理
+   - 文档: papers/2026-04-02_05_SceneTeract_Functional_Affordances_VLM.md
+   - 核心发现: 揭示VLM语义信心与物理可行性的系统性不匹配，验证驱动的方法将几何约束蒸馏到推理模型
+
+### 今日主题：VLM空间智能的边界与桥梁
+
+**核心观察**:
+- **VLM的角色正在分化**：从被动编码器（FocusVLA 4/1）→ 主动决策者（DIAL 4/2），但需要外部约束
+- **世界建模作为统一框架**：潜在世界建模（DIAL）和功能验证引擎（SceneTeract）分别从生成和评估两端使用世界模型
+- **3D场景生成的扩展趋势**：从物体级（Trellis）→ 城镇级（Extend3D），但功能验证仍是瓶颈
+- **多模态空间智能**：视觉+语言（DIAL）→ 视觉+语言+听觉（SonoWorld），空间智能正在超越纯视觉
+
+**对Spatial AGI的启发**:
+- **决策层**：潜在意图瓶颈（DIAL）确保VLM的空间决策被严格约束
+- **评估层**：功能可供性验证（SceneTeract）揭示了VLM空间推理的系统性缺陷
+- **生成层**：under-noising（Extend3D）提供了一种利用生成先验进行空间补全的新范式
+- **感知层**：视频语言推理奖励（SOLE-R1）展示了多模态信号作为训练信号的潜力
+- **表示层**：潜在空间扩展（Extend3D）启示层次化空间表示的设计
+
+**应用领域**:
+- 具身AI系统: 3篇（DIAL, SOLE-R1, SceneTeract）
+- 3D场景理解/生成: 2篇（Extend3D, SonoWorld）
+- VLM空间推理: 3篇（DIAL, SceneTeract, SOLE-R1）
+
+---
+
+*最后更新: 2026-04-02*
