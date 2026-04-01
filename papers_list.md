@@ -1179,4 +1179,67 @@
 
 ---
 
-*最后更新: 2026-03-30 09:30*
+## 2026-04-01 研究的论文（精选5篇）✅
+
+1. **Geometry-aware Similarity Metrics for Neural Representations on Riemannian and Statistical Manifolds** - arXiv:2603.28764v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 黎曼几何, Pullback度量, 谱比率, 表示相似性, 内在几何
+   - 文档: papers/2026-04-01_01_geometry_aware_similarity_metrics.md
+   - 核心发现: MSA框架通过比较内在几何（非外在嵌入）区分rich/lazy学习、跨架构动态比较、扩散模型Fisher信息几何分析；谱比率d_SR∈[0,1]有界距离函数
+
+2. **On-the-fly Repulsion in the Contextual Space for Rich Diversity in Diffusion Transformers** - arXiv:2603.28762
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: DiT上下文空间, 即时排斥, Vendi Score, 扩散模型多样性, SIGGRAPH 2026
+   - 文档: papers/2026-04-01_02_contextual_repulsion_diffusion_transformers.md
+   - 核心发现: 发现DiT MM-Attention中的"上下文空间"作为语义-空间解耦的黄金干预点；即时排斥无需反向传播、零额外内存、兼容Turbo蒸馏模型
+
+3. **SonoWorld: From One Image to a 3D Audio-Visual Scene** - arXiv:2603.28757
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D音视频场景, Ambisonics空间声场, VLM语义锚定, training-free, CVPR 2026
+   - 文档: papers/2026-04-01_03_SonoWorld_From_One_Image_to_a_3D_Audio_Visual_Scene.md
+   - 核心发现: 首个Image2AVScene任务；异构声源建模（点/面/环境）；可微分Ambisonics渲染器<1ms延迟；SonoScene360数据集，DOA误差降低47%
+
+4. **FocusVLA: Focused Visual Utilization for Vision-Language-Action Models** - arXiv:2603.28740v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA模型, 模态级联注意力, 焦点注意力, 视觉利用效率, 具身智能
+   - 文档: papers/2026-04-01_04_FocusVLA.md
+   - 核心发现: "利用>编码"范式转移——0.5B参数超越7B模型；结构捷径消除；Patch级TopK+Channel级门控双层焦点；LIBERO均分98.7%，空间任务99.6%，收敛加速5x
+
+5. **ToLL: Topological Layout Learning with Structural Multi-view Augmentation for 3D Scene Graph Pretraining** - arXiv:2603.28178v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D场景图, 拓扑布局恢复, 几何捷径, 信息瓶颈, 结构化多视图增强
+   - 文档: papers/2026-04-01_05_ToLL_Topological_Layout_Learning.md
+   - 核心发现: 发现并解决3DSG预训练中的"几何捷径"问题；单锚点信息瓶颈强制拓扑推理；拓扑扰动优于几何变换；零样本三元组A@50: 38.64
+
+### 研究主题统计（2026-04-01）
+
+**核心技术**:
+- 黎曼几何表示分析: 1篇（Geometry-aware Metrics）
+- 扩散模型生成多样性: 1篇（Contextual Repulsion）
+- 多模态空间生成: 1篇（SonoWorld）
+- VLA视觉利用: 1篇（FocusVLA）
+- 3D场景图预训练: 1篇（ToLL）
+
+**关键突破**:
+- **内在几何分析**（Geometry-aware Metrics）：首个基于黎曼几何的表示相似性度量，区分rich/lazy学习
+- **上下文空间发现**（Contextual Repulsion）：DiT内部语义-空间解耦的黄金干预点
+- **3D音视频联合生成**（SonoWorld）：从单张图像生成可导航3D场景+空间声场
+- **"利用>编码"范式**（FocusVLA）：0.5B超越7B，视觉利用效率是VLA核心瓶颈
+- **拓扑驱动空间推理**（ToLL）：信息瓶颈消除几何捷径，强制模型从关系学习空间
+
+**对Spatial AGI的启发**:
+- **分析层**：内在几何（论文1）提供空间表示评估的理论工具
+- **生成层**：上下文空间排斥（论文2）启示多层次空间表示的设计
+- **感知层**：多模态空间理解（论文3）扩展空间智能到听觉维度
+- **利用层**：聚焦注意力（论文4）证明空间信息利用与编码同等重要
+- **推理层**：拓扑推理（论文5）从关系出发推导几何，类人空间认知范式
+
+**应用领域**:
+- 空间表示分析: 1篇
+- 图像生成: 1篇
+- 3D场景理解: 2篇（SonoWorld, ToLL）
+- 具身智能: 2篇（FocusVLA, ToLL）
+
+---
+
+*最后更新: 2026-04-01 10:11*
