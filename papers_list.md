@@ -1299,3 +1299,30 @@
 ---
 
 *最后更新: 2026-04-02*
+
+## 2026-04-03 研究的论文（精选5篇）
+
+1. **EgoSim: Egocentric World Simulator for Embodied Interaction Generation** - arXiv:2604.01001
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 世界模型, 自我中心视觉, 具身交互, 3D场景更新, 跨具身迁移
+   - 文档: papers/2026-04-03_EgoSim_Egocentric_World_Simulator.md
+
+2. **Think, Act, Build: Agentic Framework with VLMs for Zero-Shot 3D Visual Grounding** - arXiv:2604.00528
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D视觉定位, Agent框架, VLM, 语义几何协同, 多视角重建
+   - 文档: papers/2026-04-03_TAB_Agent_3D_Visual_Grounding.md
+
+3. **Coko-SLAM: Compact Keyframe-Optimized Multi-Agent Gaussian Splatting SLAM** - arXiv:2604.00804
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 多Agent SLAM, 3DGS, 高斯压缩, 闭环检测, 带宽优化
+   - 文档: papers/2026-04-03_CokoSLAM_Multi_Agent_GS_Slam.md
+
+4. **DLWM: Dual Latent World Models for Holistic Gaussian-centric Pre-training** - arXiv:2604.00969
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 自动驾驶, Gaussian-centric, 世界模型, 预训练, CVPR2026
+   - 文档: papers/2026-04-03_DLWM_Dual_Latent_World_Models.md
+
+5. **Octree Diffusion for Semantic Scene Generation and Completion** - arXiv:2509.16483
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 八叉树扩散, 场景生成, 语义补全, 跨域泛化, ICRA2026
+   - 文档: papers/2026-04-03_Octree_Diffusion_Semantic_Scene.md
