@@ -1326,3 +1326,30 @@
    - 相关性: ⭐⭐⭐⭐
    - 关键词: 八叉树扩散, 场景生成, 语义补全, 跨域泛化, ICRA2026
    - 文档: papers/2026-04-03_Octree_Diffusion_Semantic_Scene.md
+
+## 2026-04-04 研究的论文（精选5篇）
+
+1. **A3R: Agentic Affordance Reasoning via Cross-Dimensional Evidence in 3D Gaussian Scenes** - arXiv:2604.01882
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Affordance reasoning, 3D Gaussian Splatting, Active perception, POMDP, GRPO
+   - 文档: papers/2026-04-04_01_A3R_Agentic_Affordance_Reasoning.md
+
+2. **LivingWorld: Interactive 4D World Generation with Environmental Dynamics** - arXiv:2604.01641
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4D world generation, Eulerian motion field, Gaussian splatting, hash-based motion field, bidirectional propagation
+   - 文档: papers/2026-04-04_02_LivingWorld_4D_World_Generation.md
+
+3. **World Action Verifier: Self-Improving World Models via Forward-Inverse Asymmetry** - arXiv:2604.01985
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World models, Self-improvement, Forward-inverse asymmetry, Inverse dynamics, Active exploration
+   - 文档: papers/2026-04-04_03_WAV_World_Action_Verifier.md
+
+4. **Generative World Renderer** - arXiv:2604.02329
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: G-buffer dataset, AAA game data, inverse rendering, forward rendering, VLM evaluation
+   - 文档: papers/2026-04-04_04_Generative_World_Renderer.md
+
+5. **Omni123: Exploring 3D Native Foundation Models with Limited 3D Data by Unifying Text to 2D and 3D Generation** - arXiv:2604.02289
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3D foundation model, unified tokenization, interleaved training, cross-modal consistency, autoregressive
+   - 文档: papers/2026-04-04_05_Omni123_3D_Foundation_Model.md
