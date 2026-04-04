@@ -1353,3 +1353,35 @@
    - 相关性: ⭐⭐⭐⭐
    - 关键词: 3D foundation model, unified tokenization, interleaved training, cross-modal consistency, autoregressive
    - 文档: papers/2026-04-04_05_Omni123_3D_Foundation_Model.md
+
+## 2026-04-05 研究的论文（精选5篇）
+
+1. **GEMM-GS: Accelerating 3D Gaussian Splatting on Tensor Cores with GEMM-Compatible Blending** - arXiv:2604.02120
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3DGS, Tensor Core, GEMM, 实时渲染, 硬件加速
+   - 文档: papers/2026-04-05_1_GEMM-GS.md
+   - 核心发现: 将3DGS blending阶段指数运算等价变换为GEMM，利用闲置Tensor Core加速；tile内相对坐标6维向量点积；blending占渲染70%时间的瓶颈被突破
+
+2. **ProDiG: Progressive Diffusion-Guided Gaussian Splatting for Aerial to Ground Reconstruction** - arXiv:2604.02003
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 扩散模型, 3DGS, 航空到地面重建, 跨视角修复, LoD
+   - 文档: papers/2026-04-05_2_ProDiG.md
+   - 核心发现: aeroFix扩散修复模型（极线约束因果注意力）+ 距离自适应高斯LoD + 渐进式扩散引导，解决航空到地面视角鸿沟
+
+3. **Omni123: Exploring 3D Native Foundation Models with Limited 3D Data by Unifying Text to 2D and 3D Generation** - arXiv:2604.02289
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D基础模型, 统一token化, 交错训练, 跨模态一致性, 自回归生成
+   - 文档: papers/2026-04-05_3_Omni123.md
+   - 核心发现: 统一自回归框架整合text/image/3D生成，X-to-X交错训练利用2D数据作为3D几何先验，2B模型超越7B基线
+
+4. **Resonance4D: Frequency-Domain Motion Supervision for Preset-Free Physical Parameter Learning in 4D Dynamic Physical Scene Simulation** - arXiv:2604.01994
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4D物理模拟, 频域监督, 全参数优化, MPM, 动态场景
+   - 文档: papers/2026-04-05_4_Resonance4D.md
+   - 核心发现: 空间SSIM+频域FFT轻量双域监督替代大型在线模型，同时优化6种物理参数（含密度），GPU内存从>35GB降至~20GB
+
+5. **ActionParty: Multi-Subject Action Binding in Generative Video Games** - arXiv:2604.02330
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 世界模型, 多智能体, 动作绑定, 视频扩散, 交互式生成
+   - 文档: papers/2026-04-05_5_ActionParty.md
+   - 核心发现: Subject State Tokens实现多主体动作绑定，交叉注意力掩码+RoPE空间偏置嵌入游戏引擎范式，首次在视频世界模型中实现可靠多主体控制
