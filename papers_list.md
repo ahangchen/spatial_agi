@@ -1385,3 +1385,35 @@
    - 关键词: 世界模型, 多智能体, 动作绑定, 视频扩散, 交互式生成
    - 文档: papers/2026-04-05_5_ActionParty.md
    - 核心发现: Subject State Tokens实现多主体动作绑定，交叉注意力掩码+RoPE空间偏置嵌入游戏引擎范式，首次在视频世界模型中实现可靠多主体控制
+
+## 2026-04-07 研究的论文（精选5篇）
+
+1. **EgoSim: Egocentric World Simulator for Embodied Interaction Generation** - arXiv:2604.01001
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 世界模拟器, 自我中心视角, 闭环模拟, 3D场景更新, 具身交互
+   - 文档: papers/2026-04-07_01_EgoSim_Egocentric_World_Simulator.md
+   - 核心发现: 闭环自我中心世界模拟器，通过状态-动作-观测循环持续更新3D场景状态，生成空间一致的交互视频
+
+2. **Boosting VLA Finetuning with Feasible Action Neighborhood Prior** - arXiv:2604.01570
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA微调, 动作可行邻域, 策略分布, 泛化能力, 机器人学习
+   - 文档: papers/2026-04-07_02_FAN_VLA_Finetuning.md
+   - 核心发现: FAN先验约束动作分布形态，宽分布对应更强泛化能力，窄分布对应过拟合
+
+3. **MetaNav: Efficient Vision-Language Navigation via Metacognitive Reasoning** - arXiv:2604.02318
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 视觉语言导航, 元认知推理, 高效导航, LLM规划, 机器人导航
+   - 文档: papers/2026-04-07_03_MetaNav_Metacognitive_VLN.md
+   - 核心发现: 元认知推理机制让导航智能体自主判断何时停止探索，提升VLN效率
+
+4. **ViT-Explainer: An Interactive Walkthrough of the Vision Transformer Pipeline** - arXiv:2604.02182
+   - 相关性: ⭐⭐⭐
+   - 关键词: ViT, 可解释性, 交互式可视化, Transformer, 教育
+   - 文档: papers/2026-04-07_04_vit_explainer.md
+   - 核心发现: ViT流程的交互式可视化解释工具，辅助理解Vision Transformer工作原理
+
+5. **Lifting Unlabeled Internet-level Data for 3D Scene Understanding** - arXiv:2604.01907
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D场景理解, 互联网数据, 自监督学习, 场景重建, CVPR 2026
+   - 文档: papers/2026-04-07_05_Lifting_Unlabeled_Internet_Data_for_3D_Scene_Understanding.md
+   - 核心发现: 利用互联网级无标注数据进行3D场景理解，大幅降低对标注数据的依赖
