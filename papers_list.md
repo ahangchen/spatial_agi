@@ -1417,3 +1417,30 @@
    - 关键词: 3D场景理解, 互联网数据, 自监督学习, 场景重建, CVPR 2026
    - 文档: papers/2026-04-07_05_Lifting_Unlabeled_Internet_Data_for_3D_Scene_Understanding.md
    - 核心发现: 利用互联网级无标注数据进行3D场景理解，大幅降低对标注数据的依赖
+
+## 2026-04-08 研究的论文（精选5篇）
+
+1. **Veo-Act: How Far Can Frontier Video Models Advance Generalizable Robot Manipulation?** - arXiv:2604.04502
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 视频生成模型, 机器人操作, Veo-3, 分层规划, VLA
+   - 文档: papers/2026-04-08_01_Veo_Act_Frontier_Video_Robot_Manipulation.md
+
+2. **DriveVA: Video Action Models are Zero-Shot Drivers** - arXiv:2604.04198
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 世界模型, 自动驾驶, 视频生成, DiT, 零shot泛化
+   - 文档: papers/2026-04-08_02_DriveVA_Video_Action_Zero_Shot_Driving.md
+
+3. **TreeGaussian: Tree-Guided Cascaded Contrastive Learning for Hierarchical 3D Gaussian Scene Segmentation** - arXiv:2604.03309
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS, 层次化语义, 对象树, 对比学习, 场景理解
+   - 文档: papers/2026-04-08_03_TreeGaussian_Hierarchical_3DGS_Segmentation.md
+
+4. **Embodied-R1: Reinforced Embodied Reasoning for General Robotic Manipulation** - arXiv:2508.13998
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 具身推理, Pointing, RFT, VLM, ICLR 2026
+   - 文档: papers/2026-04-08_04_Embodied_R1_Reinforced_Reasoning_Manipulation.md
+
+5. **Steerable Vision-Language-Action Policies for Embodied Reasoning and Hierarchical Control** - arXiv:2602.13193
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, 多层级指令, 具身推理, 分层控制, VLM
+   - 文档: papers/2026-04-08_05_Steerable_VLA_Embodied_Reasoning.md
