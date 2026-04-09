@@ -1444,3 +1444,135 @@
    - 相关性: ⭐⭐⭐⭐⭐
    - 关键词: VLA, 多层级指令, 具身推理, 分层控制, VLM
    - 文档: papers/2026-04-08_05_Steerable_VLA_Embodied_Reasoning.md
+
+---
+
+## 2026-04-09 研究的论文（精选5篇）✅
+
+1. **Cybo-Waiter: A Physical Agentic Framework for Humanoid Whole-Body Locomotion-Manipulation** - arXiv:2603.10675v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLM任务程序、条件级空间诊断、全身协调、多物体3D地面、谓词验证
+   - 文档: papers/2026-04-09_01_Cybo-Waiter.pdf
+   - 核心发现: VLM计划→可验证JSON任务程序、条件级空间诊断、全身协调突破、谓词条件验证
+
+2. **See, Act, Adapt: Active Perception for Unsupervised Cross-Domain Visual Adaptation via Personalized VLM-Guided Agent** - arXiv:2602.23806v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 范式转移、无监督领域自适应、VLM姿态控制器、规则探索、无监督RL优化
+   - 文档: papers/2026-04-09_02_See_Act_Adapt.pdf
+   - 核心发现: 调整部署而非模型、无监督领域自适应、VLM姿态控制、条件级空间诊断
+
+3. **RoboSolver: A Multi-Agent Large Language Model Framework for Solving Robotic Arm Problems** - arXiv:2602.14438v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 多智能体框架、LLM+VLM集成、端到端自动化、仿真环境、运动学计算
+   - 文档: papers/2026-04-09_03_RoboSolver.pdf
+   - 核心发现: 多智能体协同、LLM+VLM集成、端到端自动化、仿真环境执行
+
+4. **ABot-M0: VLA Foundation Model for Robotic Manipulation with Action Manifold Learning** - arXiv:2602.11236v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 一脑多形、动作流形假说、统一预训练、大规模数据集、模块化感知
+   - 文档: papers/2026-04-09_04_ABot_M0.pdf
+   - 核心发现: 一脑多形范式、动作流形学习、600万轨迹数据集、统一预训练
+
+5. **SpatiaLab: Can Vision-Language Models Perform Spatial Reasoning in the Wild?** - arXiv:2602.03916v2
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 真实世界空间推理基准、6大类别30子类、1400问答对、VLM与人类差距
+   - 文档: papers/2026-04-09_05_SpatiaLab.pdf
+   - 核心发现: 真实世界空间推理基准、6大类30子类、VLM与人类差距（54.93% vs 87.57%）
+
+### 研究主题统计（2026-04-09）
+
+**核心技术**:
+- VLM任务程序: 1篇（Cybo-Waiter）
+- 范式转移: 1篇（See, Act, Adapt）
+- 多智能体系统: 1篇（RoboSolver）
+- VLA基础模型: 1篇（ABot-M0）
+- 空间推理基准: 1篇（SpatiaLab）
+
+**关键突破**:
+- **VLM任务程序**: 谓词条件验证、条件级空间诊断、全身协调
+- **范式转移**: 从调整模型到调整部署、无监督领域自适应
+- **多智能体协同**: LLM+VLM集成、端到端自动化
+- **动作流形**: 一脑多形范式、低维流形表示、600万轨迹
+- **真实世界基准**: 1400问答对、6大类30子类、VLM差距揭示
+
+**对Spatial AGI的启发**:
+- **任务验证**: VLM计划→可验证任务程序的桥梁
+- **领域自适应**: 无监督方法降低部署成本
+- **多智能体**: 空间问题分解和协同处理
+- **统一表示**: 跨平台任务的一脑多形范式
+- **基准建立**: 真实世界空间推理评估框架
+
+**应用领域**:
+- 机器人操作: 3篇（Cybo-Waiter, RoboSolver, ABot-M0）
+- 领域自适应: 1篇（See, Act, Adapt）
+- VLM评估: 1篇（SpatiaLab）
+
+---
+
+*最后更新: 2026-04-09*
+
+## 2026-04-10 研究的论文（精选5篇）
+
+1. **Splatblox: Traversability-Aware Gaussian Splatting for Outdoor Robot Navigation** - arXiv:2511.18525
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Gaussian Splatting, 机器人导航, 可通行性, ESDF, LiDAR融合
+   - 文档: papers/2026-04-10_01_Splatblox_Traversability_Aware_Gaussian_Splatting_Navigation.md
+   - 核心贡献: 首个实时3DGS户外导航系统，融合语义和几何的ESDF
+   - 性能: 成功率+50%, 冻结-40%, 支持100米长程导航
+
+2. **Toward Memory-Aided World Models: Benchmarking via Spatial Consistency** - arXiv:2505.22976
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 世界模型, 空间一致性, 记忆模块, Minecraft, 基准
+   - 文档: papers/2026-04-10_02_Memory_Aided_World_Models_Spatial_Consistency.md
+   - 核心贡献: LoopNav数据集(250h环状导航) + 空间一致性基准
+   - 发现: 当前世界模型空间一致性远不理想
+
+3. **Differentiable SpaTiaL: Symbolic Learning and Reasoning with Geometric Temporal Logic** - arXiv:2604.02643
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 可微分, 时空逻辑, 符号推理, 操作任务, 轨迹优化
+   - 文档: papers/2026-04-10_03_Differentiable_SpaTiaL_Geometric_Temporal_Logic.md
+   - 核心贡献: 首个端到端可微分时空逻辑工具箱
+   - 能力: 轨迹优化 + 从示范学习空间规范
+
+4. **A1: A Fully Transparent Open-Source VLA Model** - arXiv:2604.05672
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: VLA, 开源, 自适应推理, 截断Flow Matching, 多机器人
+   - 文档: papers/2026-04-10_04_A1_Transparent_Open_Source_VLA.md
+   - 核心贡献: 预算感知自适应推理 + 层间截断Flow Matching
+   - 性能: RoboChallenge 29.00% > π0 28.33%, 延迟-72%
+
+5. **KITE: Keyframe-Indexed Tokenized Evidence for VLM-Based Robot Failure Analysis** - arXiv:2604.07034
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: VLM, 失败分析, BEV, 关键帧, 结构化token
+   - 文档: papers/2026-04-10_05_KITE_VLM_Robot_Failure_Analysis.md
+   - 核心贡献: 无需训练的VLM失败分析前端
+   - 能力: 检测/识别/定位/解释/纠正五合一
+
+### 今日主题
+
+**研究主题**: 空间表示与推理的基础设施层 — 3DGS导航、世界模型记忆、可微分逻辑、高效VLA、失败诊断
+
+**关键词**:
+- **3DGS空间表示**: 可通行性感知、语义-几何融合、实时户外导航
+- **空间一致性**: 世界模型记忆、环状导航基准、课程学习
+- **可微分符号推理**: 时空逻辑、平滑SAT、端到端优化
+- **高效VLA**: 自适应推理、截断去噪、开源透明
+- **空间压缩**: BEV接口、关键帧token、失败分析
+
+**对Spatial AGI的启发**:
+- **3DGS作为空间记忆**: 不仅渲染，还支持导航决策
+- **空间一致性是基础**: 世界模型需要空间记忆才能可靠
+- **符号-连续统一**: 形式化空间推理可微分化
+- **效率驱动部署**: 自适应计算使Spatial AGI实时可行
+- **空间压缩范式**: 通过结构化表示弥补VLM的3D理解不足
+
+**应用领域**:
+- 3DGS导航: 1篇（Splatblox）
+- 世界模型基准: 1篇（Memory-Aided World Models）
+- 可微分逻辑: 1篇（Differentiable SpaTiaL）
+- VLA框架: 1篇（A1）
+- 机器人诊断: 1篇（KITE）
+
+---
+
+*最后更新: 2026-04-10*
