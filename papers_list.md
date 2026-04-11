@@ -88,3 +88,36 @@
 
 *Generated: 2026-04-11*
 *Next Update: 2026-04-12*
+
+## 2026-04-12 研究的论文（精选5篇）
+
+1. **BLaDA: Bridging Language to Functional Dexterous Actions within 3DGS Fields** - arXiv:2604.08410v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Gaussian Splatting, Dexterous Manipulation, Language-Grounded Actions, Embodied AI
+   - 文档: papers/2026-04-12_01_BLaDA_Bridging_Language_to_Functional_Dexterous_Actions_within_3DGS_Fields.md
+   - NotebookLM: [pending]
+
+2. **DP-DeGauss: Dynamic Probabilistic Gaussian Decomposition for Egocentric 4D Scene Reconstruction** - arXiv:2604.07986v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4D Reconstruction, Dynamic Gaussian Splatting, Egocentric Video, Probabilistic Modeling
+   - 文档: papers/2026-04-12_02_DP-DeGauss.md
+   - NotebookLM: [pending]
+
+3. **Scal3R: Scalable Test-Time Training for Large-Scale 3D Reconstruction** - arXiv:2604.08542v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Large-Scale 3D Reconstruction, Test-Time Training, Scalability, Multi-View Stereo
+   - 文档: papers/2026-04-12_03_Scal3R.md
+   - NotebookLM: [pending]
+
+4. **Phantom: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics** - arXiv:2604.08503v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Physics Simulation, Video Generation, Physical Dynamics, World Model
+   - 文档: papers/2026-04-12_04_Phantom_Physics_Infused_Video_Generation.md
+   - NotebookLM: [pending]
+
+5. **SelfEvo: Self-Improving 4D Perception via Self-Distillation** - arXiv:2604.08532v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 4D Perception, Self-Distillation, Self-Supervised Learning, Monocular Depth Estimation
+   - 文档: papers/2026-04-12_05_SelfEvo_Self-Improving_4D_Perception.md
+   - NotebookLM: [pending]
+
