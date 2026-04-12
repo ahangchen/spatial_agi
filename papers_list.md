@@ -124,32 +124,32 @@
 
 ## 2026-04-13 研究的论文（精选5篇）
 
-1. **RDSplat: Robust Watermarking for 3D Gaussian Splatting Against 2D and 3D Diffusion Editing** - arXiv:2512.06774
-   - 相关性: ⭐⭐⭐
-   - 关键词: 3DGS Watermarking, Frequency Analysis, Diffusion Robustness, IP Protection
-   - 文档: papers/2026-04-13_01_RDSplat_Robust_Watermarking_3DGS.md
-   - NotebookLM: [pending]
-
-2. **WorldMAP: Bootstrapping Vision-Language Navigation Trajectory Prediction with Generative World Models** - arXiv:2604.07957
-   - 相关性: ⭐⭐⭐⭐⭐
-   - 关键词: World Model Supervision, VLN Trajectory Prediction, Teacher-Student, Semantic-Spatial Memory
-   - 文档: papers/2026-04-13_02_WorldMAP_Bootstrapping_VLN_Trajectory_Prediction.md
-   - NotebookLM: [pending]
-
-3. **Vision-Language Navigation for Aerial Robots: Towards the Era of Large Language Models (Survey)** - arXiv:2604.07705
-   - 相关性: ⭐⭐⭐⭐⭐
-   - 关键词: Aerial VLN, LLM/VLM Navigation, 3D Spatial Understanding, UAV, Survey
-   - 文档: papers/2026-04-13_03_Aerial_VLN_Survey_Towards_LLM_Era.md
-   - NotebookLM: [pending]
-
-4. **How Far Are Large Multimodal Models from Human-Level Spatial Action?** - arXiv:2604.07973
-   - 相关性: ⭐⭐⭐⭐⭐
-   - 关键词: LMM Spatial Reasoning, Embodied Navigation Benchmark, Decision Bifurcation, 3D Urban Navigation
-   - 文档: papers/2026-04-13_04_LMM_Spatial_Action_Benchmark_Urban_Airspace.md
-   - NotebookLM: [pending]
-
-5. **MotionScape: A Large-Scale Real-World Highly Dynamic UAV Video Dataset for World Models** - arXiv:2604.07991
+1. **DP-DeGauss: Dynamic Probabilistic Gaussian Decomposition for Egocentric 4D Scene Reconstruction** - arXiv:2604.07986
    - 相关性: ⭐⭐⭐⭐
-   - 关键词: UAV World Model Dataset, 6-DoF Motion, Semantic-Geometric Alignment, Video Generation
-   - 文档: papers/2026-04-13_05_MotionScape_UAV_World_Model_Dataset.md
+   - 关键词: 4D Reconstruction, Egocentric Video, Gaussian Decomposition, Dynamic Scene
+   - 文档: papers/2026-04-13_01_DP_DeGauss.md
+   - NotebookLM: [pending]
+
+2. **ViVa: A Video-Generative Value Model for Robot Reinforcement Learning** - arXiv:2604.08168
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Video Generation, Value Model, Robot RL, World Model, Reward Shaping
+   - 文档: papers/2026-04-13_02_viva_video_generative_value_model.md
+   - NotebookLM: [pending]
+
+3. **LAMP: Lift Image-Editing as General 3D Priors for Open-world Manipulation** - arXiv:2604.08475
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Image Editing, 3D Priors, Open-world Manipulation, Zero-shot Generalization
+   - 文档: papers/2026-04-13_03_LAMP_Lift_Image_Editing_as_General_3D_Priors.md
+   - NotebookLM: [pending]
+
+4. **HEX: Humanoid-Aligned Experts for Cross-Embodiment Whole-Body Manipulation** - arXiv:2604.07993
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Humanoid, Cross-Embodiment, Whole-Body Manipulation, Locomotion, Policy Transfer
+   - 文档: papers/2026-04-13_04_HEX_Humanoid_Aligned_Experts_for_Cross_Embodiment_Whole_Body_Manipulation.md
+   - NotebookLM: [pending]
+
+5. **SurfelSplat: Learning Efficient and Generalizable Gaussian Surfel Representations for Sparse-View Surface Reconstruction** - arXiv:2604.08370
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Gaussian Surfel, Sparse-View Reconstruction, Surface Reconstruction, 3DGS
+   - 文档: papers/2026-04-13_05_SurfelSplat.md
    - NotebookLM: [pending]
