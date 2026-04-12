@@ -121,3 +121,35 @@
    - 文档: papers/2026-04-12_05_SelfEvo_Self-Improving_4D_Perception.md
    - NotebookLM: [pending]
 
+
+## 2026-04-13 研究的论文（精选5篇）
+
+1. **RDSplat: Robust Watermarking for 3D Gaussian Splatting Against 2D and 3D Diffusion Editing** - arXiv:2512.06774
+   - 相关性: ⭐⭐⭐
+   - 关键词: 3DGS Watermarking, Frequency Analysis, Diffusion Robustness, IP Protection
+   - 文档: papers/2026-04-13_01_RDSplat_Robust_Watermarking_3DGS.md
+   - NotebookLM: [pending]
+
+2. **WorldMAP: Bootstrapping Vision-Language Navigation Trajectory Prediction with Generative World Models** - arXiv:2604.07957
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Model Supervision, VLN Trajectory Prediction, Teacher-Student, Semantic-Spatial Memory
+   - 文档: papers/2026-04-13_02_WorldMAP_Bootstrapping_VLN_Trajectory_Prediction.md
+   - NotebookLM: [pending]
+
+3. **Vision-Language Navigation for Aerial Robots: Towards the Era of Large Language Models (Survey)** - arXiv:2604.07705
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Aerial VLN, LLM/VLM Navigation, 3D Spatial Understanding, UAV, Survey
+   - 文档: papers/2026-04-13_03_Aerial_VLN_Survey_Towards_LLM_Era.md
+   - NotebookLM: [pending]
+
+4. **How Far Are Large Multimodal Models from Human-Level Spatial Action?** - arXiv:2604.07973
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: LMM Spatial Reasoning, Embodied Navigation Benchmark, Decision Bifurcation, 3D Urban Navigation
+   - 文档: papers/2026-04-13_04_LMM_Spatial_Action_Benchmark_Urban_Airspace.md
+   - NotebookLM: [pending]
+
+5. **MotionScape: A Large-Scale Real-World Highly Dynamic UAV Video Dataset for World Models** - arXiv:2604.07991
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: UAV World Model Dataset, 6-DoF Motion, Semantic-Geometric Alignment, Video Generation
+   - 文档: papers/2026-04-13_05_MotionScape_UAV_World_Model_Dataset.md
+   - NotebookLM: [pending]
