@@ -186,3 +186,35 @@
    - 关键词: 3D Environment Synthesis, Embodied AI, Evaluation Benchmark, Tool Augmentation
    - 文档: papers/2026-04-14_05_LEGO_Eval.md
    - NotebookLM: [pending]
+
+## 2026-04-15 研究的论文（精选5篇）
+
+1. **ZING-3D: Zero-shot Incremental 3D Scene Graphs via Vision-Language Models** - arXiv:2510.21069v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Scene Graph, Vision-Language Models, Zero-shot Learning, Incremental Mapping, Spatial Understanding
+   - 文档: papers/2026-04-15_01_ZING_3D.md
+   - NotebookLM: [pending]
+
+2. **SpaceDrive: Infusing Spatial Awareness into VLM-based Autonomous Driving** - arXiv:2512.10719v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Autonomous Driving, Spatial Awareness, VLM, 3D Coordinate Prediction, Spatial Reasoning
+   - 文档: papers/2026-04-15_02_SpaceDrive.md
+   - NotebookLM: [pending]
+
+3. **3DGS-LM: Faster Gaussian-Splatting Optimization with Levenberg-Marquardt** - arXiv:2504.xxxxx
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3D Gaussian Splatting, Levenberg-Marquardt, Second-order Optimization, Large-scale Reconstruction
+   - 文档: papers/2026-04-15_03_3DGS_LM.md
+   - NotebookLM: [pending]
+
+4. **B²-DiffuRL: Training Diffusion Models with Reinforcement Learning Against Sparse Rewards** - arXiv:2503.11240v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Diffusion Policy, Reinforcement Learning, Robot Manipulation, Sparse Rewards, Spatial Action Generation
+   - 文档: papers/2026-04-15_04_Robo_Platform.md
+   - NotebookLM: [pending]
+
+5. **SpatialVLM: Endowing Vision-Language Models with Spatial Reasoning Capabilities** - arXiv:2401.12168
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Spatial Reasoning, VLM, Internet-scale Training, 3D Understanding, Spatial Intelligence Benchmark
+   - 文档: papers/2026-04-15_05_SpatialVLM.md
+   - NotebookLM: [pending]
