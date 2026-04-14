@@ -153,3 +153,36 @@
    - 关键词: Gaussian Surfel, Sparse-View Reconstruction, Surface Reconstruction, 3DGS
    - 文档: papers/2026-04-13_05_SurfelSplat.md
    - NotebookLM: [pending]
+
+
+## 2026-04-14 研究的论文（精选5篇）
+
+1. **Generative 3D Gaussian Splatting for Arbitrary-Resolution Atmospheric Downscaling and Forecasting** - arXiv:2604.07928v2
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Gaussian Splatting, Atmospheric Downscaling, Generative Modeling, Weather Forecasting
+   - 文档: papers/2026-04-14_01_Generative_3DGS_Atmospheric_Downscaling.md
+   - NotebookLM: [pending]
+
+2. **APEX: A Decoupled Memory-based Explorer for Asynchronous Aerial Object Goal Navigation** - arXiv:2602.00551
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Aerial Navigation, Object Goal Navigation, Decoupled Memory, Embodied AI
+   - 文档: papers/2026-04-14_02_APEX_Decoupled_Memory_Aerial_ObjectNav.md
+   - NotebookLM: [pending]
+
+3. **ReconPhys: Reconstruct Appearance and Physical Attributes from Single Video** - arXiv:2604.07882v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Physical Reconstruction, Video Understanding, Material Properties, Physics Recovery
+   - 文档: papers/2026-04-14_03_ReconPhys.md
+   - NotebookLM: [pending]
+
+4. **Geo3DVQA: Evaluating Vision-Language Models for 3D Geospatial Reasoning from Aerial Imagery** - arXiv:2512.07276v2
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Geospatial Reasoning, Aerial Imagery, VLM Evaluation, 3D Understanding, Benchmark
+   - 文档: papers/2026-04-14_04_Geo3DVQA.md
+   - NotebookLM: [pending]
+
+5. **LEGO-Eval: Towards Fine-Grained Evaluation on Synthesizing 3D Embodied Environments with Tool Augmentation** - arXiv:2511.03001v2
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3D Environment Synthesis, Embodied AI, Evaluation Benchmark, Tool Augmentation
+   - 文档: papers/2026-04-14_05_LEGO_Eval.md
+   - NotebookLM: [pending]
