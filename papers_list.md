@@ -218,3 +218,35 @@
    - 关键词: Spatial Reasoning, VLM, Internet-scale Training, 3D Understanding, Spatial Intelligence Benchmark
    - 文档: papers/2026-04-15_05_SpatialVLM.md
    - NotebookLM: [pending]
+
+## 2026-04-16 研究的论文（精选5篇）
+
+1. **Genie Sim PanoRecon: Fast Immersive Scene Generation from Single-View Panorama** - arXiv:2604.07105v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Panorama Reconstruction, 3D Gaussian Splatting, Scene Generation, Single-view 3D, Immersive Rendering
+   - 文档: papers/2026-04-16_01_Genie_Sim_PanoRecon.md
+   - NotebookLM: [pending]
+
+2. **AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors** - arXiv:2604.07053v2
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Gaussian Splatting, Feed-Forward, Geometric Priors, Multi-view Reconstruction, Spatial Understanding
+   - 文档: papers/2026-04-16_02_AnchorSplat.md
+   - NotebookLM: [pending]
+
+3. **SFGS: Structure-Aware Fine-Grained Gaussian Splatting for Expressive Avatar Reconstruction** - arXiv:2604.09324v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3D Gaussian Splatting, Avatar Reconstruction, Structure-Aware, Fine-Grained, Human Digitization
+   - 文档: papers/2026-04-16_03_SFGS.md
+   - NotebookLM: [pending]
+
+4. **Scene-Agnostic Object-Centric Representation Learning for 3D Gaussian Splatting** - arXiv:2604.09045v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Object-Centric Learning, 3D Gaussian Splatting, Scene-Agnostic, Compositional Representation, Slot Attention
+   - 文档: papers/2026-04-16_04_Scene_Agnostic_OCL_3DGS.md
+   - NotebookLM: [pending]
+
+5. **SIC3D: Style Image Conditioned Text-to-3D Gaussian Splatting Generation** - arXiv:2604.08760v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Text-to-3D, Style Conditioning, Gaussian Splatting, 3D Generation, Style Transfer
+   - 文档: papers/2026-04-16_05_SIC3D.md
+   - NotebookLM: [pending]
