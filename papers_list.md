@@ -250,3 +250,29 @@
    - 关键词: Text-to-3D, Style Conditioning, Gaussian Splatting, 3D Generation, Style Transfer
    - 文档: papers/2026-04-16_05_SIC3D.md
    - NotebookLM: [pending]
+
+## 2026-04-17 研究的论文（4篇）
+
+1. **AudioGS: Spectrogram-Based Audio Gaussian Splatting for Sound Field Reconstruction** - arXiv:2604.08967
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Spatial Audio, 3D Gaussian Splatting, Novel-View Acoustic Synthesis, Sound Field Reconstruction
+   - 文档: papers/2026-04-17_01_AudioGS_Spectrogram-Based_Audio_Gaussian_Splatting.md
+   - NotebookLM: [pending]
+
+2. **GEAR: GEometry-motion Alternating Refinement for Articulated Object Modeling with Gaussian Splatting** - arXiv:2604.07728
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Articulated Object, 3D Gaussian Splatting, Joint Estimation, Part Segmentation, Geometry-Motion Coupling
+   - 文档: papers/2026-04-17_03_GEAR_GEometry_motion_Alternating_Refinement.md
+   - NotebookLM: [pending]
+
+3. **Details Matter: Indoor Open-vocabulary 3D Instance Segmentation with Superpoints** - arXiv:2507.23134
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Open-vocabulary 3D Segmentation, Instance Segmentation, Superpoints, Indoor Understanding, Spatial Perception
+   - 文档: papers/2026-04-17_04_Details_Matter_Indoor_Open-vocabulary_3D_Instance_Segmentation_with_Superpoints.md
+   - NotebookLM: [pending]
+
+4. **MASS: Mesh-inellipse Aligned Deformable Surfel Splatting for Hand Reconstruction and Rendering** - arXiv:2604.08943v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Hand Reconstruction, Gaussian Splatting, Surfel Splatting, Monocular Video, Egocentric Vision
+   - 文档: papers/2026-04-17_MASS_Hand_Reconstruction.md
+   - NotebookLM: [pending]
