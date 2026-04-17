@@ -276,3 +276,23 @@
    - 关键词: Hand Reconstruction, Gaussian Splatting, Surfel Splatting, Monocular Video, Egocentric Vision
    - 文档: papers/2026-04-17_MASS_Hand_Reconstruction.md
    - NotebookLM: [pending]
+
+## 2026-04-18 研究的论文（3篇）
+
+1. **From Blobs to Spokes: High-Fidelity Surface Reconstruction via Oriented Gaussians** - arXiv:2604.07337
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Surface Reconstruction, Oriented Gaussians, 3D Gaussian Splatting, Mesh Extraction, Geometry
+   - 文档: papers/2026-04-18_01_From_Blobs_to_Spokes.md
+   - NotebookLM: [pending]
+
+2. **DOC-GS: Dual-Domain Observation and Calibration for Reliable Sparse-View Gaussian Splatting** - arXiv:2604.06739v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Sparse-View Reconstruction, Gaussian Splatting, Calibration, Dual-Domain, Few-shot Novel View Synthesis
+   - 文档: papers/2026-04-18_02_DOC-GS_Dual-Domain_Observation_Calibration_Sparse-View_Gaussian_Splatting.md
+   - NotebookLM: [pending]
+
+3. **Grounded World Model for Semantically Generalizable Planning** - arXiv:2604.11751
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Model, Grounded Planning, Semantic Generalization, Spatial Reasoning, Embodied AI
+   - 文档: papers/2026-04-18_04_grounded_world_model.md
+   - NotebookLM: [pending]
