@@ -296,3 +296,11 @@
    - 关键词: World Model, Grounded Planning, Semantic Generalization, Spatial Reasoning, Embodied AI
    - 文档: papers/2026-04-18_04_grounded_world_model.md
    - NotebookLM: [pending]
+
+## 2026-04-20
+
+1. **GlobalSplat**: Efficient Feed-Forward 3D Gaussian Splatting via Global Scene Tokens - [arxiv](https://arxiv.org/abs/2604.15284) | [分析](papers/2026-04-20_01_GlobalSplat_Efficient_Feed-Forward_3DGS_via_Global_Scene_Tokens.md) | Score: 10 | 16K高斯=4MB场景，78ms推理，场景中心范式转变
+2. **Rein3D**: Reinforced 3D Indoor Scene Generation with Panoramic Video Diffusion - [arxiv](https://arxiv.org/abs/2604.10578) | [分析](papers/2026-04-20_02_Rein3D_Reinforced_3D_Indoor_Scene_Generation_Panoramic_Video_Diffusion.md) | Score: 10 | Restore-and-Refine范式，PanoV2V-15K数据集
+3. **WARPED**: Wrist-Aligned Rendering for Robot Policy Learning - [arxiv](https://arxiv.org/abs/2604.10809) | [分析](papers/2026-04-20_03_WARPED_Wrist_Aligned_Rendering_Robot_Policy_Learning.md) | Score: 10 | 3DGS跨具身视角转换，5-8x数据效率
+4. **StarVLA-α**: Reducing Complexity in VLA Systems - [arxiv](https://arxiv.org/abs/2604.11757) | [分析](papers/2026-04-20_04_StarVLA-α_Reducing_Complexity_in_VLA_Systems.md) | Score: 9 | VLM+MLP=SOTA，简单就够的实证
+5. **DM0**: An Embodied-Native VLA Model towards Physical AI - [arxiv](https://arxiv.org/abs/2602.14974) | [分析](papers/2026-04-20_05_DM0_Embodied_Native_VLA_Model_Physical_AI.md) | Score: 10 | 空间CoT推理，Embodied-Native范式
