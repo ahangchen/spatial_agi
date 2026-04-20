@@ -304,3 +304,38 @@
 3. **WARPED**: Wrist-Aligned Rendering for Robot Policy Learning - [arxiv](https://arxiv.org/abs/2604.10809) | [分析](papers/2026-04-20_03_WARPED_Wrist_Aligned_Rendering_Robot_Policy_Learning.md) | Score: 10 | 3DGS跨具身视角转换，5-8x数据效率
 4. **StarVLA-α**: Reducing Complexity in VLA Systems - [arxiv](https://arxiv.org/abs/2604.11757) | [分析](papers/2026-04-20_04_StarVLA-α_Reducing_Complexity_in_VLA_Systems.md) | Score: 9 | VLM+MLP=SOTA，简单就够的实证
 5. **DM0**: An Embodied-Native VLA Model towards Physical AI - [arxiv](https://arxiv.org/abs/2602.14974) | [分析](papers/2026-04-20_05_DM0_Embodied_Native_VLA_Model_Physical_AI.md) | Score: 10 | 空间CoT推理，Embodied-Native范式
+
+## 2026-04-21
+
+1. **SpatialEvo**: Self-Evolving Spatial Intelligence via Deterministic Geometric Environments | [分析](papers/2026-04-21_01_SpatialEvo_Self-Evolving_Spatial_Intelligence.md) | Score: 10 | 确定性几何环境+自演化，空间推理训练新范式
+2. **SpaceMind**: Modular Self-Evolving VLM Agent for On-orbit Servicing - [arxiv](https://arxiv.org/abs/2604.14399) | [分析](papers/2026-04-21_02_SpaceMind_Modular_Self-Evolving_VLM_Agent_On-orbit.md) | Score: 10 | MCP协议标准化，Skill Self-Evolution，零代码Sim-to-Real
+3. **HiVLA**: Visual-Grounded-Centric Hierarchical Embodied Manipulation | [分析](papers/2026-04-21_03_HiVLA_Visual-Grounded-Centric_Hierarchical_Manipulation.md) | Score: 10 | 视觉为中心的层级化VLA，解决推理vs控制权衡
+4. **SpatialStack**: Layered Geometry-Language Fusion for 3D VLM Spatial Reasoning (CVPR 2026) - [项目](https://spatial-stack.github.io/) | [分析](papers/2026-04-21_04_SpatialStack_Layered_Geometry-Language_Fusion_3D_VLM.md) | Score: 10 | 分层几何-语言融合，解决VLM的3D空间推理缺陷
+5. **AIM**: Intent-Aware Unified World Action Modeling with Spatial Value Maps - [arxiv](https://arxiv.org/abs/2604.11135) | [分析](papers/2026-04-21_05_AIM_Intent-Aware_World_Action_Spatial_Value_Maps.md) | Score: 10 | 空间价值图，意图感知，RoboTwin 94%
+
+## 2026-04-21 研究的论文（精选5篇）
+
+1. **SpatialEvo: Self-Evolving Spatial Intelligence via Deterministic Geometric Environments** - arXiv:2604.14144
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Spatial Intelligence, Self-Evolving, Geometric Reasoning, VLM
+   - 文档: papers/2026-04-21_01_SpatialEvo_Self-Evolving_Spatial_Intelligence.md
+
+2. **SpaceMind: A Modular and Self-Evolving Embodied VLM Agent Framework for Autonomous On-orbit Servicing** - arXiv:2604.14399
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Embodied Agent, VLM, On-orbit Servicing, Self-Evolving
+   - 文档: papers/2026-04-21_02_SpaceMind_Modular_Self-Evolving_VLM_Agent_On-orbit.md
+
+3. **HiVLA: A Visual-Grounded-Centric Hierarchical Embodied Manipulation System** - arXiv:2604.14125
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, Hierarchical Manipulation, Visual Grounding, Embodied AI
+   - 文档: papers/2026-04-21_03_HiVLA_Visual-Grounded-Centric_Hierarchical_Manipulation.md
+
+4. **SpatialStack: Layered Geometry-Language Fusion for 3D VLM Spatial Reasoning** - arXiv:2603.27437 (CVPR 2026)
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D VLM, Geometry-Language Fusion, Spatial Reasoning, CVPR 2026
+   - 文档: papers/2026-04-21_04_SpatialStack_Layered_Geometry-Language_Fusion_3D_VLM.md
+
+5. **AIM: Intent-Aware Unified World Action Modeling with Spatial Value Maps** - arXiv:2604.11135
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: World Model, Spatial Value Maps, Intent-Aware, Action Modeling
+   - 文档: papers/2026-04-21_05_AIM_Intent-Aware_World_Action_Spatial_Value_Maps.md
