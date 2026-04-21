@@ -339,3 +339,30 @@
    - 相关性: ⭐⭐⭐⭐
    - 关键词: World Model, Spatial Value Maps, Intent-Aware, Action Modeling
    - 文档: papers/2026-04-21_05_AIM_Intent-Aware_World_Action_Spatial_Value_Maps.md
+
+## 2026-04-22 研究的论文（精选5篇）
+
+1. **ManipArena: Comprehensive Real-world Evaluation of Reasoning-Oriented Generalist Robot Manipulation** - arXiv:2603.28545
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA评估, 真实世界基准, 推理导向操作, Real-to-Sim
+   - 文档: papers/2026-04-22_01_ManipArena_Real-world_Evaluation_Reasoning_Oriented_Robot_Manipulation.md
+
+2. **Habitat-GS: A High-Fidelity Navigation Simulator with Dynamic Gaussian Splatting** - arXiv:2604.12626
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS仿真器, 导航, Gaussian Avatar, Habitat生态
+   - 文档: papers/2026-04-22_02_Habitat-GS_High-Fidelity_Navigation_Simulator_Dynamic_3DGS.md
+
+3. **PokeGym: A Visually-Driven Long-Horizon Benchmark for Vision-Language Models** - arXiv:2604.08340
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLM基准, 空间推理, 死锁恢复, 元认知分化
+   - 文档: papers/2026-04-22_03_PokeGym_Visually-Driven_Long-Horizon_VLM_Benchmark.md
+
+4. **Robotic Manipulation is Vision-to-Geometry Mapping (VGA)** - arXiv:2604.12908
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 视觉-几何映射, 3D世界模型, VGGT骨干, 原生3D表示
+   - 文档: papers/2026-04-22_04_VGA_Vision-Geometry-Action_Native_3D_Manipulation.md
+
+5. **AssemLM: Spatial Reasoning Multimodal LLMs for Robotic Assembly** - arXiv:2604.08983
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 6D姿态推理, 点云编码, 装配基准, 多模态融合
+   - 文档: papers/2026-04-22_05_AssemLM_Spatial_Reasoning_MLLM_Robotic_Assembly.md
