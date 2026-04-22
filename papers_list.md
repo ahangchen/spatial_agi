@@ -366,3 +366,30 @@
    - 相关性: ⭐⭐⭐⭐⭐
    - 关键词: 6D姿态推理, 点云编码, 装配基准, 多模态融合
    - 文档: papers/2026-04-22_05_AssemLM_Spatial_Reasoning_MLLM_Robotic_Assembly.md
+
+## 2026-04-23 研究的论文（精选5篇）
+
+1. **MultiWorld: Scalable Multi-Agent Multi-View Video World Models** - arXiv:2604.18564
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 多智能体世界模型, 多视角视频生成, 可扩展仿真, ECCV 2026
+   - 文档: papers/2026-04-23_01_MultiWorld_Scalable_Multi-Agent_Multi-View_Video_World_Models.md
+
+2. **Unmasking the Illusion of Embodied Reasoning in Vision-Language-Action Models** - arXiv:2604.18000
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA推理评估, 具身推理, 视觉-语言-动作模型, 基准测试
+   - 文档: papers/2026-04-23_02_Unmasking_Illusion_Embodied_Reasoning_VLA.md
+
+3. **EmbodiedLGR: Integrating Lightweight Graph Representation and Retrieval for Semantic-Spatial Memory in Robotic Agents** - arXiv:2604.18271
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 语义空间记忆, 轻量图表示, 检索增强, 机器人导航
+   - 文档: papers/2026-04-23_03_EmbodiedLGR_Lightweight_Graph_Semantic_Spatial_Memory.md
+
+4. **Robotic Manipulation is Vision-to-Geometry Mapping (f(v)→G): Vision-Geometry Backbones over Language and Video Models** - arXiv:2604.12908
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 视觉-几何映射, VGGT骨干, 原生3D表示, 空间智能
+   - 文档: papers/2026-04-23_04_Robotic_Manipulation_Vision_to_Geometry_Mapping.md
+
+5. **CityRAG: Stepping Into a City via Spatially-Grounded Video Generation** - arXiv:2604.19741
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 空间感知视频生成, 城市仿真, RAG增强, 3D城市
+   - 文档: papers/2026-04-23_05_CityRAG_Spatially_Grounded_Video_Generation.md
