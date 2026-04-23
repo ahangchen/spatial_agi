@@ -393,3 +393,37 @@
    - 相关性: ⭐⭐⭐⭐
    - 关键词: 空间感知视频生成, 城市仿真, RAG增强, 3D城市
    - 文档: papers/2026-04-23_05_CityRAG_Spatially_Grounded_Video_Generation.md
+
+---
+
+## 2026-04-24
+
+1. **E3VS-Bench: A Benchmark for Viewpoint-Dependent Active Perception in 3D Gaussian Splatting Scenes** - arXiv:2604.17969
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 主动感知, 3DGS基准, 5-DoF视角控制, 具身QA, 空间推理
+   - 文档: papers/2026-04-24_E3VS-Bench.md
+   - 核心洞察: 99个3DGS场景+2014个episode的5-DoF视觉搜索基准，揭示VLM在主动感知和视角规划方面与人类差距巨大
+
+2. **PokeVLA: Empowering Pocket-Sized Vision-Language-Action Model with Comprehensive World Knowledge Guidance** - arXiv:2604.20834
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, 世界知识, 空间接地, 具身操控, 轻量模型
+   - 文档: papers/2026-04-24_PokeVLA.md
+   - 核心洞察: 两阶段训练将空间认知作为操控基础，2.4M多模态数据覆盖grounding/affordance/reasoning
+
+3. **Mask World Model: Predicting What Matters for Robust Robot Policy Learning** - arXiv:2604.19683
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 世界模型, Mask预测, 几何瓶颈, 扩散策略, 泛化
+   - 文档: papers/2026-04-24_MaskWorldModel.md
+   - 核心洞察: 用语义mask代替RGB预测作为信息瓶颈，强制模型学习物理动态本质，大幅超越RGB世界模型
+
+4. **Cortex 2.0: Grounding World Models in Real-World Industrial Deployment** - arXiv:2604.20246
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 世界模型, 工业机器人, 规划式VLA, 长视野, 真实部署
+   - 文档: papers/2026-04-24_Cortex2.md
+   - 核心洞察: 从反应式控制到规划-行动，在视觉潜在空间生成候选轨迹并评分，Google DeepMind工业级验证
+
+5. **UniT: Toward a Unified Physical Language for Human-to-Humanoid Policy Learning and World Modeling** - arXiv:2604.19734
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 人型机器人, 跨身体迁移, 统一物理语言, 世界模型, 零样本
+   - 文档: papers/2026-04-24_UniT.md
+   - 核心洞察: 三分支交叉重建将人类和人型机器人桥接到共享离散潜在空间，实现零样本策略迁移
