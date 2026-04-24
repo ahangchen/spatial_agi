@@ -427,3 +427,15 @@
    - 关键词: 人型机器人, 跨身体迁移, 统一物理语言, 世界模型, 零样本
    - 文档: papers/2026-04-24_UniT.md
    - 核心洞察: 三分支交叉重建将人类和人型机器人桥接到共享离散潜在空间，实现零样本策略迁移
+
+## 2026-04-25
+
+| # | 论文 | 关键词 | 相关度 | arXiv |
+|---|------|--------|--------|-------|
+| 01 | Hi-WM: Human-in-the-World-Model for Scalable Robot Post-Training | world-model, human-in-the-loop, robot post-training | 95 | [2604.21741](https://arxiv.org/abs/2604.21741) |
+| 02 | ResVLA: From Noise to Intent - Anchoring Generative VLA Policies with Residual Bridges | VLA, residual bridge, spectral analysis | 90 | [2604.21391](https://arxiv.org/abs/2604.21391) |
+| 03 | Exploring Spatial Intelligence from a Generative Perspective | spatial-intelligence, generative-model, 3D generation | 98 | [2604.20570](https://arxiv.org/abs/2604.20570) |
+| 04 | Reinforcing 3D Understanding in Point-VLMs via Geometric Reward Credit Assignment | Point-VLM, geometric hallucination, GRCA | 92 | [2604.21160](https://arxiv.org/abs/2604.21160) |
+| 05 | DualSplat: Robust 3DGS via Pseudo-Mask Bootstrapping from Reconstruction Failures | 3DGS, robust reconstruction, transient suppression | 85 | [2604.21631](https://arxiv.org/abs/2604.21631) |
+
+**今日主题**: World Model作为交互式后训练基底 (Hi-WM) · VLA动作的频谱解耦 (ResVLA) · 从生成视角定义空间智能 (Paper 3) · 几何幻觉的信用分配解决方案 (GRCA) · 从重建失败中学习的3DGS (DualSplat)
