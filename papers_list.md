@@ -439,3 +439,17 @@
 | 05 | DualSplat: Robust 3DGS via Pseudo-Mask Bootstrapping from Reconstruction Failures | 3DGS, robust reconstruction, transient suppression | 85 | [2604.21631](https://arxiv.org/abs/2604.21631) |
 
 **今日主题**: World Model作为交互式后训练基底 (Hi-WM) · VLA动作的频谱解耦 (ResVLA) · 从生成视角定义空间智能 (Paper 3) · 几何幻觉的信用分配解决方案 (GRCA) · 从重建失败中学习的3DGS (DualSplat)
+
+## 2026-04-26
+
+| # | 论文 | 关键词 | 相关度 | arXiv |
+|---|------|--------|--------|-------|
+| 01 | WorldMark: A Unified Benchmark Suite for Interactive Video World Models | world-model benchmark, interactive video, spatial consistency, egocentric vs allocentric | 92 | [2604.21686](https://arxiv.org/abs/2604.21686) |
+| 02 | FluSplat: Sparse-View 3D Editing without Test-Time Optimization | 3DGS editing, cross-view consistency, feed-forward, image-domain editing | 80 | [2604.20038](https://arxiv.org/abs/2604.20038) |
+| 03 | EmbodiedMidtrain: Bridging VLMs and VLA Models via Mid-training | VLA mid-training, spatial reasoning, data curation, VLM→VLA bridge | 95 | [2604.20012](https://arxiv.org/abs/2604.20012) |
+| 04 | Explore Like Humans: Autonomous Exploration with Online SG-Memo Construction | embodied exploration, scene graph memory, spatial affordance, navigation | 90 | [2604.19034](https://arxiv.org/abs/2604.19034) |
+| 05 | XEmbodied: A Foundation Model with Enhanced Geometric and Physical Cues | embodied foundation model, 3D geometric cues, physical reasoning, VLM | 93 | [2604.18484](https://arxiv.org/abs/2604.18484) |
+
+**今日主题**: 视频世界模型统一评测基准 (WorldMark) · 前馈式3DGS编辑 (FluSplat) · VLM到VLA的中间训练桥梁 (EmbodiedMidtrain) · 类人场景图记忆探索 (Explore Like Humans) · 增强几何物理感知的具身基础模型 (XEmbodied)
+
+**核心发现**: EmbodiedMidtrain揭示了空间推理任务是VLA性能最强预测因子；WorldMark发现视觉质量与世界一致性基本不相关，第三人称视角是当前世界模型的灾难性弱点；XEmbodied提出2D token自主关注相关3D信息的"动态寻址"机制。
