@@ -453,3 +453,17 @@
 **今日主题**: 视频世界模型统一评测基准 (WorldMark) · 前馈式3DGS编辑 (FluSplat) · VLM到VLA的中间训练桥梁 (EmbodiedMidtrain) · 类人场景图记忆探索 (Explore Like Humans) · 增强几何物理感知的具身基础模型 (XEmbodied)
 
 **核心发现**: EmbodiedMidtrain揭示了空间推理任务是VLA性能最强预测因子；WorldMark发现视觉质量与世界一致性基本不相关，第三人称视角是当前世界模型的灾难性弱点；XEmbodied提出2D token自主关注相关3D信息的"动态寻址"机制。
+
+## 2026-04-27
+
+| # | 论文 | 关键词 | 相关度 | arXiv |
+|---|------|--------|--------|-------|
+| 01 | VistaBot: View-Robust Robot Manipulation via Spatiotemporal-Aware View Synthesis | view-robust manipulation, view normalization, 4D geometry, video diffusion, ICRA 2026 | 92 | [2604.21914](https://arxiv.org/abs/2604.21914) |
+| 02 | Long-Horizon Manipulation via Trace-Conditioned VLA Planning (LoHo-Manip) | long-horizon manipulation, trace-conditioned, VLA planning, hierarchical | 88 | [2604.21924](https://arxiv.org/abs/2604.21924) |
+| 03 | Seeing Without Eyes: 4D Human–Scene Understanding from Wearable IMUs | 4D understanding, IMU, human-scene interaction, wearable sensing | 82 | [2604.21926](https://arxiv.org/abs/2604.21926) |
+| 04 | Vista4D: Video Reshooting with 4D Point Clouds | 4D point cloud, video reshooting, dynamic scene, novel view synthesis | 85 | [2604.21915](https://arxiv.org/abs/2604.21915) |
+| 05 | LAGS: Low-Altitude Gaussian Splatting with Groupwise Heterogeneous Graph Learning | 3DGS, low-altitude, graph learning, drone, aerial reconstruction | 78 | [2604.16910](https://arxiv.org/abs/2604.16910) |
+
+**今日主题**: 视角鲁棒的闭环操作 (VistaBot) · 轨迹条件长时域VLA规划 (LoHo-Manip) · IMU驱动的4D人-场景理解 (Seeing Without Eyes) · 4D点云视频重拍 (Vista4D) · 低空3DGS重建 (LAGS)
+
+**核心发现**: VistaBot通过"几何先验+生成补全"的视角归一化策略，在45°视角变化下仍保持高成功率，解决了端到端策略的视角脆弱性问题；LoHo-Manip通过轨迹条件分解实现长时域操作规划；Seeing Without Eyes仅用穿戴IMU实现4D人体-场景联合理解，开辟了无视觉传感器的空间感知新路径。
