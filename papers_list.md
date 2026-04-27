@@ -467,3 +467,35 @@
 **今日主题**: 视角鲁棒的闭环操作 (VistaBot) · 轨迹条件长时域VLA规划 (LoHo-Manip) · IMU驱动的4D人-场景理解 (Seeing Without Eyes) · 4D点云视频重拍 (Vista4D) · 低空3DGS重建 (LAGS)
 
 **核心发现**: VistaBot通过"几何先验+生成补全"的视角归一化策略，在45°视角变化下仍保持高成功率，解决了端到端策略的视角脆弱性问题；LoHo-Manip通过轨迹条件分解实现长时域操作规划；Seeing Without Eyes仅用穿戴IMU实现4D人体-场景联合理解，开辟了无视觉传感器的空间感知新路径。
+
+## 2026-04-28 研究的论文（精选5篇）
+
+1. **NeRF vs 3DGS Geometric Accuracy** - arXiv:2604.18205
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: NeRF, 3DGS, 几何精度, 机器人, 基准评估
+   - 文档: papers/2026-04-28_01_NeRF_vs_3DGS_Geometric_Accuracy.md
+   - 核心发现: SVRaster几何精度全面超越3DGS，挑战"3DGS最佳"叙事
+
+2. **GRCA: Geometric Reward Credit Assignment** - arXiv:2604.21160
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Point-VLM, 几何幻觉, 奖励路由, 空间推理, 强化学习
+   - 文档: papers/2026-04-28_02_GRCA_Geometric_Reward_Credit_Assignment.md
+   - 核心发现: 几何幻觉根源是奖励错位而非表示不足，3D KPA 0.64→0.93
+
+3. **Flow4DGS-SLAM** - arXiv:2604.22339
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4DGS, 动态SLAM, 光流, 类别无关运动分割
+   - 文档: papers/2026-04-28_03_Flow4DGS_SLAM.md
+   - 核心发现: 光流引导混合4DGS实现高效动态场景SLAM
+
+4. **GazeVLA: Learning Human Intention** - arXiv:2604.22615
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, 注视, 意图预测, 人类数据, 具身AI
+   - 文档: papers/2026-04-28_04_GazeVLA.md
+   - 核心发现: 注视/意图作为人类-机器人具身鸿沟的桥梁表示
+
+5. **NRGS: Neural Regularization for 3D Semantic GS** - arXiv:2604.22439
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3DGS, 语义分割, 神经正则化, 开放词汇
+   - 文档: papers/2026-04-28_05_NRGS.md
+   - 核心发现: 几何属性可正则化语义，方差加权自适应学习
