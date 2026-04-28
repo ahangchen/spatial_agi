@@ -1,6 +1,45 @@
 # Spatial AGI Research Papers - Daily Analysis
 
-## Today's Analysis (2026-04-11)
+## Today's Analysis (2026-04-29)
+
+### 01_ReVSI_Rebuilding_Visual_Spatial_Intelligence_Evaluation.md
+**Title**: ReVSI: Rebuilding Visual Spatial Intelligence Evaluation for Accurate Assessment of VLM 3D Reasoning
+**Date**: 2026-04-29
+**arXiv**: 2604.24300
+**Relevance**: ⭐⭐⭐⭐⭐
+**Keywords**: Visual Spatial Intelligence, VLM Evaluation, 3D Reasoning, Benchmark
+
+### 02_OpenSpatial_Principled_Data_Engine_Spatial_Intelligence.md
+**Title**: OpenSpatial: A Principled Data Engine for Empowering Spatial Intelligence
+**Date**: 2026-04-29
+**arXiv**: 2604.07296
+**Relevance**: ⭐⭐⭐⭐⭐
+**Keywords**: Spatial Intelligence, Data Engine, Benchmark, Open-Source
+
+### 03_Holi-Spatial_Evolving_Video_Holistic_3D_Spatial_Intelligence.md
+**Title**: Holi-Spatial: Evolving Video Streams into Holistic 3D Spatial Intelligence
+**Date**: 2026-04-29
+**arXiv**: 2603.07660
+**Relevance**: ⭐⭐⭐⭐⭐
+**Keywords**: 3D Spatial Intelligence, Video Understanding, Holistic Perception
+
+### 04_GSI-Bench_Generative_Spatial_Intelligence.md
+**Title**: GSI-Bench: Exploring Spatial Intelligence from a Generative Perspective
+**Date**: 2026-04-29
+**arXiv**: 2604.20570
+**Relevance**: ⭐⭐⭐⭐
+**Keywords**: Generative Spatial Intelligence, Benchmark, Spatial Reasoning
+
+### 05_XVR_Learning_Multi-View_Spatial_Reasoning_Cross-View.md
+**Title**: XVR: Learning Multi-View Spatial Reasoning from Cross-View Relations
+**Date**: 2026-04-29
+**arXiv**: 2603.27967
+**Relevance**: ⭐⭐⭐⭐
+**Keywords**: Multi-View Reasoning, Cross-View Relations, Spatial Understanding
+
+---
+
+## 2026-04-11
 
 ### 01_Faithful_GRPO_Spatial_Reasoning_VLMs.md
 **Title**: Faithful GRPO: Improving Visual Spatial Reasoning in Multimodal Language Models via Constrained Policy Optimization
