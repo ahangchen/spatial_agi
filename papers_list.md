@@ -499,3 +499,35 @@
    - 关键词: 3DGS, 语义分割, 神经正则化, 开放词汇
    - 文档: papers/2026-04-28_05_NRGS.md
    - 核心发现: 几何属性可正则化语义，方差加权自适应学习
+
+## 2026-04-29 研究的论文（精选5篇）
+
+1. **ReVSI: Rebuilding Visual Spatial Intelligence Evaluation** - arXiv:2604.24300
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 空间智能评估, 基准重建, 帧预算控制, VLM诊断
+   - 文档: papers/2026-04-29_01_ReVSI_Rebuilding_Visual_Spatial_Intelligence_Evaluation.md
+   - 核心发现: 现有空间评估基准存在系统性无效，重新标注381场景+帧预算控制揭示隐藏失败模式
+
+2. **OpenSpatial: A Principled Data Engine for Spatial Intelligence** - arXiv:2604.07296
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 数据引擎, 3D BBox, 空间测量, 多视角一致性, 开源
+   - 文档: papers/2026-04-29_02_OpenSpatial_Principled_Data_Engine_Spatial_Intelligence.md
+   - 核心发现: 3D BBox为统一原语，五层任务体系(SM/SR/CP/MC/SAR)，3M样本，19%相对提升
+
+3. **Holi-Spatial: Evolving Video Streams into Holistic 3D Spatial Intelligence** - arXiv:2603.07660
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS, 自动标注, 视频到3D, 空间QA, 大规模数据
+   - 文档: papers/2026-04-29_03_Holi-Spatial_Evolving_Video_Holistic_3D_Spatial_Intelligence.md
+   - 核心发现: 视频→3DGS→空间标注全自动pipeline，4M数据集，12K场景320K 3D BBox
+
+4. **GSI-Bench: Exploring Spatial Intelligence from a Generative Perspective** - arXiv:2604.20570
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 生成式空间智能, 空间编辑, 理解-生成互促进, CVPR 2026
+   - 文档: papers/2026-04-29_04_GSI-Bench_Generative_Spatial_Intelligence.md
+   - 核心发现: 首次定义生成式空间智能(GSI)，生成训练可增强空间理解——首个清晰证据
+
+5. **XVR: Learning Multi-View Spatial Reasoning from Cross-View Relations** - arXiv:2603.27967
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 跨视角推理, VLA增强, 机器人操作, 多视图, CVPR 2026
+   - 文档: papers/2026-04-29_05_XVR_Learning_Multi-View_Spatial_Reasoning_Cross-View.md
+   - 核心发现: 跨视角空间推理训练可迁移到VLA操作，100K VQA来自18K场景+70K轨迹
