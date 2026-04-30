@@ -528,8 +528,46 @@
 
 ## Analysis Quality Metrics
 - **Average Relevance**: High (4.3/5)
-- **Paper Count**: 25 (completed)
+- **Paper Count**: 30 (completed)
 
 ---
 
 *最后更新时间: 2026-04-30*
+
+---
+
+## 2026-05-01 研究的论文（精选5篇）
+
+1. **X-WAM: Unified 4D World Action Modeling from Video Priors with Asynchronous Denoising** - arXiv:2604.26694
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4D World Model, Action Modeling, Video Generation, Asynchronous Denoising
+   - 文档: papers/2026-05-01_01_X-WAM_Unified_4D_World_Action_Modeling.md
+   - NotebookLM: [notebook_id]
+
+2. **STARRY: Spatial-Temporal Action-Centric World Modeling for Robotic Manipulation** - arXiv:2604.26848
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Model, Robotic Manipulation, Geometry-Aware Attention, Action Generation
+   - 文档: papers/2026-05-01_02_STARRY_Spatial_Temporal_Action_Centric_World_Modeling.md
+   - NotebookLM: [notebook_id]
+
+3. **GaussianFlow SLAM: Monocular Gaussian Splatting SLAM Guided by GaussianFlow** - arXiv:2604.15612
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Gaussian Splatting, SLAM, Monocular, 3D Reconstruction, Spatial Perception
+   - 文档: papers/2026-05-01_03_GaussianFlow_SLAM.md
+   - NotebookLM: [notebook_id]
+
+4. **AmaraSpatial-10K: A Spatially and Semantically Aligned 3D Dataset for Spatial Computing and Embodied AI** - arXiv:2604.23018
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Dataset, Spatial Computing, Embodied AI, Semantic Alignment
+   - 文档: papers/2026-05-01_04_AmaraSpatial_10K.md
+   - NotebookLM: [notebook_id]
+
+5. **KinDER: A Physical Reasoning Benchmark for Robot Learning and Planning** - arXiv:2604.25788
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Physical Reasoning, Benchmark, Robot Learning, Planning, RSS 2026
+   - 文档: papers/2026-05-01_05_KinDER_Physical_Reasoning_Benchmark.md
+   - NotebookLM: [notebook_id]
+
+---
+
+*最后更新时间: 2026-05-01*
