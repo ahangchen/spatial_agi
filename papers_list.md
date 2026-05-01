@@ -1,5 +1,47 @@
 # Spatial AGI Research Papers - Daily Analysis
 
+## 2026-05-02
+
+### 01_GSDrive_3DGS_Driving_Policy_Reinforcement.md
+**Title**: GSDrive: Reinforcing Driving Policies by Multi-mode Trajectory Probing with 3DGS Environment
+**Date**: 2026-04-30
+**arXiv**: 2604.28111
+**Relevance**: ⭐⭐⭐⭐⭐
+**Keywords**: 3DGS, RL, Autonomous Driving, Trajectory Probing, Flow Matching, Spatial Simulation
+**Summary**: 利用3DGS环境进行多模态轨迹探测，通过未来轨迹的物理仿真获得密集奖励信号增强驾驶策略
+
+### 02_LaST-R1_Latent_Reasoning_VLA.md
+**Title**: LaST-R1: Reinforcing Action via Adaptive Physical Latent Reasoning for VLA Models
+**Date**: 2026-04-30
+**arXiv**: 2604.28192
+**Relevance**: ⭐⭐⭐⭐⭐
+**Keywords**: VLA, Latent CoT, RL, Physical Reasoning, LIBERO, Spatial Intelligence
+**Summary**: 潜在空间物理推理与动作生成联合优化的VLA框架，LIBERO上99.8%成功率
+
+### 03_MotuBrain_World_Action_Model.md
+**Title**: MotuBrain: An Advanced World Action Model for Robot Control
+**Date**: 2026-04-30
+**arXiv**: 2604.27792
+**Relevance**: ⭐⭐⭐⭐⭐
+**Keywords**: World Model, Action Model, UniDiffuser, Mixture-of-Transformers, Robot Control
+**Summary**: 统一多模态生成模型联合建模视频和动作，支持策略学习、世界建模等多种推理模式
+
+### 04_Semantic_Foam_Spatial_Semantic_Decomposition.md
+**Title**: Semantic Foam: Unifying Spatial and Semantic Scene Decomposition
+**Date**: 2026-04-29
+**arXiv**: 2604.26262
+**Relevance**: ⭐⭐⭐⭐
+**Keywords**: 3DGS, Semantic Segmentation, Voronoi, Scene Understanding, CVPR 2026 Highlight
+**Summary**: 基于Voronoi网格的空间-语义统一场景分解，超越点级3DGS语义方法
+
+### 05_3D_Generation_Embodied_AI_Survey.md
+**Title**: 3D Generation for Embodied AI and Robotic Simulation: A Survey
+**Date**: 2026-04-29
+**arXiv**: 2604.26509
+**Relevance**: ⭐⭐⭐⭐
+**Keywords**: 3D Generation, Embodied AI, Sim2Real, Survey, Simulation
+**Summary**: 首个3D生成在Embodied AI中应用的系统综述，从视觉真实感转向交互就绪
+
 ## 2026-04-30
 
 ### 01_Recursive Multi-Agent Systems.md
