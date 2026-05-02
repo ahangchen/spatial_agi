@@ -613,3 +613,34 @@
 ---
 
 *最后更新时间: 2026-05-01*
+
+## 2026-05-03 研究的论文（精选5篇）
+
+1. **UniSplat: Learning 3D Representations for Spatial Intelligence from Unposed Multi-View Images** - arXiv:2604.10573
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D表示学习, 空间智能, 高斯泼溅, 自监督, 无位姿
+   - 文档: papers/2026-05-03_01_UniSplat_Learning_3D_Representations_Spatial_Intelligence.md
+   - 会议: CVPR 2026
+
+2. **BiSplat-WRF: Planar Gaussian Splatting with Bilinear Spatial Transformer for Wireless Radiance Field Reconstruction** - arXiv:2604.25945
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3DGS, 无线辐射场, 电磁建模, 双线性空间变换器, 跨域
+   - 文档: papers/2026-05-03_02_BiSplat-WRF_Planar_Gaussian_Splatting_Wireless.md
+   - 会议: IEEE ICC 2026 Workshop
+
+3. **GSI-Bench: Exploring Spatial Intelligence from a Generative Perspective** - arXiv:2604.20570
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 生成式空间智能, 基准评估, 多模态模型, 空间推理, 图像编辑
+   - 文档: papers/2026-05-03_03_GSI-Bench_Exploring_Spatial_Intelligence_Generative.md
+   - 会议: CVPR 2026
+
+4. **Embodied Navigation Bench: How Far Are LMMs from Human-Level Spatial Action in Urban Airspace** - arXiv:2604.07973
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 空间行动, 城市导航, 3D导航, LMM评估, 具身AI, 无人机
+   - 文档: papers/2026-05-03_04_Embodied_Navigation_Bench_Urban_Airspace.md
+
+5. **Bringing a Personal Point of View: Evaluating Dynamic 3DGS for Egocentric Scene Reconstruction** - arXiv:2604.23803
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 自我中心, 3DGS评估, 动态场景重建, ego-exo, 场景理解
+   - 文档: papers/2026-05-03_05_Egocentric_Dynamic_3DGS_Reconstruction.md
+   - 会议: EgoVis Workshop at CVPR 2026
