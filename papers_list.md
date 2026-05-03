@@ -644,3 +644,35 @@
    - 关键词: 自我中心, 3DGS评估, 动态场景重建, ego-exo, 场景理解
    - 文档: papers/2026-05-03_05_Egocentric_Dynamic_3DGS_Reconstruction.md
    - 会议: EgoVis Workshop at CVPR 2026
+
+## 2026-05-04 研究的论文（精选5篇）
+
+1. **STARRY: Spatial-Temporal Action-Centric World Modeling for Robotic Manipulation** - arXiv:2604.26848
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: world model, spatial-temporal, manipulation, VLA, GASAM, geometry-aware
+   - 文档: papers/2026-05-04_01_STARRY_Spatial_Temporal_World_Model_Manipulation.md
+   - 核心发现: GASAM几何感知选择性注意力调制，时空-动作联合去噪，RoboTwin 2.0达93.82%/93.30%
+
+2. **ExoActor: Exocentric Video Generation as Generalizable Interactive Humanoid Control** - arXiv:待确认
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: video generation, humanoid, robot control, exocentric, embodied
+   - 文档: papers/2026-05-04_02_ExoActor_Exocentric_Video_Humanoid_Control.md
+   - 核心发现: 利用外中心视频生成模型实现人形机器人控制，视频到动作的桥接
+
+3. **PRTS: A Primitive Reasoning and Tasking System via Contrastive Representations** - arXiv:待确认
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: VLA, reasoning, task decomposition, contrastive, primitive
+   - 文档: papers/2026-05-04_03_PRTS_Primitive_Reasoning_Tasking_System.md
+   - 核心发现: 对比表征学习用于VLA原语推理和任务分解，任务进度感知
+
+4. **RADIO-ViPE: Online Tightly Coupled Multi-Modal Fusion for Open-Vocabulary Semantic SLAM** - arXiv:2604.26067
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: SLAM, semantic, multi-modal, foundation model, dynamic, open-vocabulary
+   - 文档: papers/2026-05-04_04_RADIO_ViPE_Semantic_SLAM_Dynamic.md
+   - 核心发现: 无标定单目RGB在线语义SLAM，几何-语义紧耦合因子图优化
+
+5. **Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System** - arXiv:待确认
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: VLA, dual-system, asynchronous, learning equilibrium, coarse-to-fine
+   - 文档: papers/2026-05-04_05_Libra_VLA_Learning_Equilibrium_Dual_System.md
+   - 核心发现: 异步粗到细双系统架构实现VLA学习均衡
