@@ -676,3 +676,37 @@
    - 关键词: VLA, dual-system, asynchronous, learning equilibrium, coarse-to-fine
    - 文档: papers/2026-05-04_05_Libra_VLA_Learning_Equilibrium_Dual_System.md
    - 核心发现: 异步粗到细双系统架构实现VLA学习均衡
+
+---
+
+## 2026-05-06 研究的论文（精选5篇）
+
+1. **MolmoAct2: Action Reasoning Models for Real-world Deployment** - arXiv:2605.02881
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, Spatial Reasoning, Flow Matching, Action Tokenization, Bimanual, Open-source
+   - 文档: papers/2026-05-06_01_MolmoAct2_Open_VLA_Deployment.md
+   - 核心发现: 完全开源VLA，Molmo2-ER空间推理骨干+flow-matching动作专家+自适应深度推理，超越π0.5
+
+2. **Embody4D: A Generalist 4D World Model for Embodied AI** - arXiv:2605.01799
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4D World Model, Novel View Synthesis, Flow Matching, Multi-view, Compositional Data
+   - 文档: papers/2026-05-06_02_Embody4D_4D_World_Model.md
+   - 核心发现: 单目到4D的世界模型，组合式数据合成+置信度噪声注入+交互感知注意力
+
+3. **Multi-Scale Gaussian-Language Map for Zero-shot Embodied Navigation and Reasoning (GLMap)** - arXiv:2605.01736
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS, Semantic Map, Zero-shot Navigation, VLM, Multi-scale Semantics
+   - 文档: papers/2026-05-06_03_GLMap_Gaussian_Language_Map.md
+   - 核心发现: CVPR2026，3DGS+多尺度语义+VLM双模态接口，零样本embodied导航
+
+4. **Anticipation-VLA: Solving Long-Horizon Embodied Tasks via Anticipation-based Subgoal Generation** - arXiv:2605.01772
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: VLA, Long-horizon, Subgoal Generation, Hierarchical, Adaptive Planning
+   - 文档: papers/2026-05-06_04_Anticipation_VLA_Subgoal.md
+   - 核心发现: 自适应递归子目标生成，分层VLA架构解决长时序累积误差
+
+5. **SpatialGrammar: A Domain-Specific Language for LLM-Based 3D Indoor Scene Generation** - arXiv:2604.27555
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: DSL, 3D Scene Generation, LLM, BEV, Spatial Reasoning, Indoor
+   - 文档: papers/2026-05-06_05_SpatialGrammar_DSL_3D_Scene.md
+   - 核心发现: 空间DSL+编译器反馈闭环+104M小模型竞争大LLM
