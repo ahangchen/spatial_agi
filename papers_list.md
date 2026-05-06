@@ -710,3 +710,35 @@
    - 关键词: DSL, 3D Scene Generation, LLM, BEV, Spatial Reasoning, Indoor
    - 文档: papers/2026-05-06_05_SpatialGrammar_DSL_3D_Scene.md
    - 核心发现: 空间DSL+编译器反馈闭环+104M小模型竞争大LLM
+
+## 2026-05-07 研究的论文（精选5篇）
+
+1. **RL Token: Bootstrapping Online RL with Vision-Language-Action Models** - arXiv:2604.23073
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, Online RL, Bootstrapping, Token-level Policy, π (Physical Intelligence)
+   - 文档: papers/2026-05-07_01_RL_Token_Bootstrapping_Online_RL_with_VLA.md
+   - 核心发现: 用RL token引导VLA模型在线强化学习，实现策略自举
+
+2. **M²-VLA: Boosting VLMs for Generalizable Manipulation via Layer Mixture and Meta-Skills** - arXiv:2604.24182
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, Layer Mixture, Meta-Skills, Generalizable Manipulation, Zero-shot
+   - 文档: papers/2026-05-07_02_M2-VLA.md
+   - 核心发现: 无需微调VLM，通过层混合和元技能实现通用机器人操作
+
+3. **Emotion-Conditioned Short-Horizon Human Pose Forecasting with a Lightweight Predictive World Model** - arXiv:2604.23532
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Human Pose Forecasting, Emotion Conditioning, World Model, Multimodal Fusion
+   - 文档: papers/2026-05-07_03_Emotion-Conditioned_Short-Horizon_Human_Pose_Forecasting.md
+   - 核心发现: 情感嵌入作为姿态预测条件信号，轻量级预测世界模型
+
+4. **GS-Playground: A High-Throughput Photorealistic Simulator for Vision-Informed Robot Learning** - arXiv:2604.25459
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS, Simulation, Robot Learning, Real2Sim, RSS 2026
+   - 文档: papers/2026-05-07_04_GS-Playground.md
+   - 核心发现: 并行物理引擎+批量3DGS渲染+自动Real2Sim流水线
+
+5. **FreeTimeGS++: Secrets of Dynamic Gaussian Splatting and Their Principles** - arXiv:2605.03337
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 4D Gaussian Splatting, Dynamic Scene, Systematic Analysis, Rendering
+   - 文档: papers/2026-05-07_05_FreeTimeGS++.md
+   - 核心发现: 系统解构4DGS框架，发现5个隐藏关键因素并改进
