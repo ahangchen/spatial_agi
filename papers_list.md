@@ -742,3 +742,67 @@
    - 关键词: 4D Gaussian Splatting, Dynamic Scene, Systematic Analysis, Rendering
    - 文档: papers/2026-05-07_05_FreeTimeGS++.md
    - 核心发现: 系统解构4DGS框架，发现5个隐藏关键因素并改进
+
+## 2026-05-08 研究的论文（精选5篇）
+
+1. **GSDrive: Reinforcing Driving Policies by Multi-mode Trajectory Probing with 3D Gaussian Splatting Environment** - arXiv:?
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS, Reinforcement Learning, Autonomous Driving, Trajectory Probing
+   - 文档: papers/2026-05-08_01_GSDrive.md
+   - 核心发现: 3DGS环境+多模态轨迹探测实现驾驶策略强化学习
+
+2. **A Principled Approach for Creating High-fidelity Synthetic Demonstrations for Imitation Learning** - arXiv:?
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS, Synthetic Data, Imitation Learning, Robot Manipulation
+   - 文档: papers/2026-05-08_02_Synthetic_Demonstrations.md
+   - 核心发现: 基于原则的3DGS高保真合成模仿学习演示数据生成方法
+
+3. **RoboVerse: Towards a Unified Platform, Dataset and Benchmark for Scalable and Generalizable Robot Learning** - arXiv:?
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Robot Learning, Unified Platform, Benchmark, Sim2Real
+   - 文档: papers/2026-05-08_03_RoboVerse.md
+   - 核心发现: 统一机器人学习平台+数据集+基准，5种机器人+16任务+45场景
+
+4. **From Concept to Capability: Evaluating 3D Gaussian Splatting for Synthetic Scene Editing in Autonomous Driving** - arXiv:2605.01995
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS, Safety Evaluation, Autonomous Driving, ISO Standard, Fidelity Assessment
+   - 文档: papers/2026-05-08_04_From_Concept_to_Capability.md
+   - 核心发现: 首个面向工业安全的3DGS保真度评估框架，基于ISO标准定义Pass/Fail准则
+
+5. **Ground4D: Spatially-Grounded Feedforward 4D Reconstruction for Unstructured Off-Road Scenes** - arXiv:2605.04435
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Feedforward 4DGS, Off-Road, Voxel-Grounded, Temporal Aggregation, Zero-shot
+   - 文档: papers/2026-05-08_05_Ground4D.md
+   - 核心发现: Voxel-Grounded Temporal Aggregation解决越野前馈4D重建，+1.48dB PSNR
+
+## 2026-05-09 研究的论文（精选5篇）
+
+1. **TriRelVLA: A Tri-Relational Compositional Structure for Generalizable Embodied Manipulation** - arXiv:2605.05714
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, Tri-Relational, Generalization, Embodied Manipulation
+   - 文档: papers/2026-05-09_01_TriRelVLA.md
+   - 核心发现: 三元关系结构（Robot-Object-Goal）提升VLA操作泛化
+
+2. **Multi-Scale Gaussian-Language Map for Zero-shot Embodied Navigation and Reasoning (GLMap)** - arXiv:2605.01736
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS, Semantic Map, Zero-shot, Navigation, Gaussian Estimator
+   - 文档: papers/2026-05-09_02_GLMap.md
+   - 核心发现: 多尺度高斯-语言地图统一显式几何+多尺度语义+大模型原生接口
+
+3. **Reconstruction or Semantics? What Makes a Latent Space Useful for Robotic World Models** - arXiv:2605.06388
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Model, Latent Space, Semantic vs Reconstruction, Diffusion
+   - 文档: papers/2026-05-09_03_Reconstruction_or_Semantics.md
+   - 核心发现: 语义潜空间在策略性能上全面优于重建潜空间，视觉保真度≠世界模型质量
+
+4. **Toward Visually Realistic Simulation: VISER Benchmark** - arXiv:2605.06311
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Simulation, Visual Realism, PBR, Sim2Real, VLA Evaluation
+   - 文档: papers/2026-05-09_04_VISER.md
+   - 核心发现: Specular highlights和contact shadows是VLA空间理解的关键视觉因素
+
+5. **Decompose and Recompose: Reasoning New Skills from Existing Abilities** - arXiv:2605.01448
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Cross-Task Generalization, Skill Decomposition, ICL, Atomic Skills
+   - 文档: papers/2026-05-09_05_Decompose_and_Recompose.md
+   - 核心发现: 原子技能-动作对齐将跨任务迁移从轨迹模仿提升到技能推理
