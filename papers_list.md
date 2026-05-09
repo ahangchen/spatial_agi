@@ -806,3 +806,37 @@
    - 关键词: Cross-Task Generalization, Skill Decomposition, ICL, Atomic Skills
    - 文档: papers/2026-05-09_05_Decompose_and_Recompose.md
    - 核心发现: 原子技能-动作对齐将跨任务迁移从轨迹模仿提升到技能推理
+
+---
+
+## 2026-05-10
+
+1. **OA-WAM: Object-Addressable World Action Model for Robust Robot Manipulation** - arXiv:2605.06481
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Action Model, Object Addressability, Slot-based, Robust Manipulation
+   - 文档: papers/2026-05-10_01_OA-WAM.md
+   - 核心发现: Object Addressability概念——通过addr-only key投影+per-layer reset实现架构级对象身份解耦，几何扰动下swap-binding cosine 0.87 vs ≤0.09
+
+2. **EA-WM: Event-Aware Generative World Model with Structured Kinematic-to-Visual Action Fields** - arXiv:2605.06192
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Video World Model, Kinematic-to-Visual Action Fields, Event-Aware, Diffusion
+   - 文档: papers/2026-05-10_02_EA-WM.md
+   - 核心发现: KVAFs将运动学信号投影到视觉域，EDLS事件驱动注意力聚焦交互状态变化，解决动作-视频域不对齐
+
+3. **OpenGaFF: Open-Vocabulary Gaussian Feature Field with Codebook Attention** - arXiv:2605.06088
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS, Open-Vocabulary, Gaussian Feature Field, Codebook, Semantic Mapping
+   - 文档: papers/2026-05-10_03_OpenGaFF.md
+   - 核心发现: Gaussian Feature Field将语义建模为几何+外观的连续函数，结构化码本实现对象级语义一致性
+
+4. **VLA-GSE: Boosting Parameter-Efficient Fine-Tuning in VLA with Generalized and Specialized Experts** - arXiv:2605.06175
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: VLA, PEFT, SVD, MoE, Generalized/Specialized Experts
+   - 文档: papers/2026-05-10_04_VLA-GSE.md
+   - 核心发现: SVD谱分解初始化通用专家+路由专业专家，2.51%参数更新超过FFT 6.3%，保留VLM知识
+
+5. **FUS3DMaps: Scalable and Accurate Open-Vocabulary Semantic Mapping by 3D Fusion of Voxel- and Instance-Level Layers** - arXiv:2605.03669
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Semantic Mapping, Open-Vocabulary, Dual-Layer Fusion, Scalable, Sliding Window
+   - 文档: papers/2026-05-10_05_FUS3DMaps.md
+   - 核心发现: 首个跨层3D语义融合——稠密层+实例层互补增强，滑动窗口实现多层建筑级可扩展建图
