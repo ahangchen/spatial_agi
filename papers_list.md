@@ -840,3 +840,38 @@
    - 关键词: Semantic Mapping, Open-Vocabulary, Dual-Layer Fusion, Scalable, Sliding Window
    - 文档: papers/2026-05-10_05_FUS3DMaps.md
    - 核心发现: 首个跨层3D语义融合——稠密层+实例层互补增强，滑动窗口实现多层建筑级可扩展建图
+
+---
+
+## 2026-05-11 — 主题：空间智能的物理化转型
+
+1. **PhysForge: Generating Physics-Grounded 3D Assets for Interactive Virtual World** - arXiv:2605.05163
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Generation, Physics-Grounded, VLM Planning, Diffusion, KineVoxel, PhysDB
+   - 会议: ICML 2026
+   - 文档: papers/2026-05-11_01_PhysForge.md
+   - 核心发现: 功能驱动的3D资产生成范式——VLM规划物理蓝图+Diffusion实现，物理属性反哺结构规划
+
+2. **RoboAlign-R1: Distilled Multimodal Reward Alignment for Robot Video World Models** - arXiv:2605.03821
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Model, Reward Alignment, Teacher-Student Distillation, GRPO, Sliding Window
+   - 文档: papers/2026-05-11_02_RoboAlign_R1.md
+   - 核心发现: 8B教师蒸馏为98M学生奖励模型，六维评估+GRPO后训练提升10.1%，SWR缓解长时域漂移
+
+3. **3DSS: 3D Surface Splatting for Inverse Rendering** - arXiv:2605.05876
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Differentiable Rendering, Surface Splatting, Inverse Rendering, EWA, BRDF
+   - 文档: papers/2026-05-11_03_3DSS.md
+   - 核心发现: 首个可微表面splatting逆向渲染器——区间合并表面分离+EWA覆盖度不透明度，保留表面语义
+
+4. **When to Trust Imagination: Adaptive Action Execution for World Action Models** - 2026-05-07
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: World Action Model, Adaptive Execution, Uncertainty, Imagination vs Reality
+   - 文档: papers/2026-05-11_04_When_to_Trust_Imagination.md
+   - 核心发现: 世界模型想象的自适应信任机制——动态切换想象执行和实际执行，不确定性感知的空间推理
+
+5. **DexSim2Real: Foundation Model-Guided Sim-to-Real Transfer for Generalizable Dexterous Manipulation** - 2026-05-03
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Sim-to-Real, Dexterous Manipulation, Foundation Model, Domain Adaptation
+   - 文档: papers/2026-05-11_05_DexSim2Real.md
+   - 核心发现: 基础模型引导sim-to-real迁移——仿真学习空间交互+基础模型知识桥接到真实世界
