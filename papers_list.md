@@ -875,3 +875,36 @@
    - 关键词: Sim-to-Real, Dexterous Manipulation, Foundation Model, Domain Adaptation
    - 文档: papers/2026-05-11_05_DexSim2Real.md
    - 核心发现: 基础模型引导sim-to-real迁移——仿真学习空间交互+基础模型知识桥接到真实世界
+
+## 2026-05-12 研究的论文（精选5篇）
+
+1. **NoiseGate: Learning Per-Latent Timestep Schedules as Information Gating in World Action Models** - arXiv:2605.07794
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Action Model, Information Gating, Diffusion Forcing, GRPO, Noise-as-Masking
+   - 文档: papers/2026-05-12_01_NoiseGate.md
+   - 核心发现: 将逐帧时间步调度重构为可学习的信息门控策略，噪声水平在共享注意力中充当可靠性门
+
+2. **Proxy3D: Efficient 3D Representations for Vision-Language Models via Semantic Clustering and Alignment** - arXiv:2605.08064
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLM, 3D Representation, Semantic Clustering, Spatial Intelligence, CVPR 2026
+   - 会议: CVPR 2026
+   - 文档: papers/2026-05-12_02_Proxy3D.md
+   - 核心发现: 语义感知聚类生成紧凑3D代理表示，仅需视频帧即可实现高质量3D空间推理
+
+3. **SplatWeaver: Learning to Allocate Gaussian Primitives for Generalizable Novel View Synthesis** - arXiv:2605.07287
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3DGS, MoE, Adaptive Allocation, High-Frequency Prior, Generalizable NVS
+   - 文档: papers/2026-05-12_03_SplatWeaver.md
+   - 核心发现: Cardinality Gaussian Experts实现自适应原语分配，用更少原语达到更好渲染质量
+
+4. **Mind the Gap: Geometrically Accurate Generative Reconstruction from Disjoint Views (GLADOS)** - arXiv:2605.07550
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Disjoint Views, Generative Reconstruction, Zero Overlap, Distributed Robotics
+   - 文档: papers/2026-05-12_04_Mind_the_Gap_GLADOS.md
+   - 核心发现: 开创不相交视角3D重建新范式，生成式桥接连接无重叠观测
+
+5. **PathPainter: Transferring the Generalization Ability of Image Generation Models to Embodied Navigation** - arXiv:2605.07496
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: BEV, Navigation, Image Generation, Cross-view Localization, UAV
+   - 文档: papers/2026-05-12_05_PathPainter.md
+   - 核心发现: 图像生成模型世界理解能力迁移到具身导航，160米UAV户外长距离导航验证
