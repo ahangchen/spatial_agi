@@ -908,3 +908,35 @@
    - 关键词: BEV, Navigation, Image Generation, Cross-view Localization, UAV
    - 文档: papers/2026-05-12_05_PathPainter.md
    - 核心发现: 图像生成模型世界理解能力迁移到具身导航，160米UAV户外长距离导航验证
+
+## 2026-05-13 研究的论文（精选5篇）
+
+1. **VEGA: Visual Encoder Grounding Alignment for Spatially-Aware VLA Models** - arXiv:2605.10485
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, 空间接地, FiT3D, DINOv2, 视觉编码器对齐
+   - 文档: papers/2026-05-13_01_VEGA.md
+   - 亮点: 在视觉编码器输出层直接对齐3D感知特征，零推理开销，RoboTwin SOTA
+
+2. **ALAM: Algebraically Consistent Latent Transitions for VLA Models** - arXiv:2605.10819
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 潜在动作模型, 代数约束, flow-matching, 视频预训练
+   - 文档: papers/2026-05-13_02_ALAM.md
+   - 亮点: 组合+反转一致性构建结构化转移空间，MetaWorld 47.9%→85.0%
+
+3. **Distilling 3D Spatial Reasoning into Lightweight VLM with CoT** - arXiv:2605.09719
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 知识蒸馏, 3D空间推理, Hidden CoT, VGGT, 轻量化
+   - 文档: papers/2026-05-13_03_Distilling_3D_Spatial_Reasoning.md
+   - 亮点: Hidden CoT潜在推理，8.7x推理加速，保留54-72%空间推理能力
+
+4. **SABER: Scalable Action-Based Embodied Dataset for VLA Adaptation** - arXiv:2605.09613
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 零售机器人, 数据集, 自然采集, 多视角, 动作表示
+   - 文档: papers/2026-05-13_04_SABER.md
+   - 亮点: 100+小时自然店内采集，44.8K样本，GR00T N1.6上2.19x提升
+
+5. **E3VS-Bench: Viewpoint-Dependent Active Perception in 3DGS Scenes** - arXiv:2604.17969
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS, 主动感知, 5-DoF, 基准测试, 视角依赖
+   - 文档: papers/2026-05-13_05_E3VS_Bench.md
+   - 亮点: 首个5-DoF主动空间感知基准，99个3DGS场景，2014个episode
