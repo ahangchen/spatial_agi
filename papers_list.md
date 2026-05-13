@@ -940,3 +940,39 @@
    - 关键词: 3DGS, 主动感知, 5-DoF, 基准测试, 视角依赖
    - 文档: papers/2026-05-13_05_E3VS_Bench.md
    - 亮点: 首个5-DoF主动空间感知基准，99个3DGS场景，2014个episode
+
+## 2026-05-14 研究的论文（精选5篇）
+
+1. **Uncovering and Shaping the Latent Representation of 3D Scene Topology in VLMs** - arXiv:2605.07148
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLM, 3D拓扑, 认知地图, Dirichlet能量, 线性提取
+   - 文档: papers/2026-05-14_01_VLM_Latent_Topology.md
+   - 亮点: 首次严格证明VLM内部存在3D场景拓扑表征，通过跨场景线性提取和Dirichlet能量正则化分离和塑形空间表征，500步微调提升拓扑理解12.1%
+
+2. **ViSRA: A Video-based Spatial Reasoning Agent for Multi-modal LLMs** - arXiv:2605.10106
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: ViSRA, 推理时增强, Agent框架, 认知地图悖论, VSI-Bench
+   - 文档: papers/2026-05-14_02_ViSRA.md
+   - 亮点: 首个推理时空间推理Agent框架，四角色设计（plan-execute-reflect），发现认知地图注入反而降低性能，在已有和未见过任务上分别提升15.6%和28.9%
+
+3. **PD-4DGS: Progressive Decomposition of 4D Gaussian Splatting** - arXiv:2605.11427
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: PD-4DGS, 分层变形分解, DASH/HLS, 首帧延迟, 码流压缩
+   - 文档: papers/2026-05-14_03_PD-4DGS.md
+   - 亮点: 首个4DGS渐进压缩框架，HDD分解变形网络为三层可传输层，首帧延迟从73-930s降到~1.7s，码流减少>60%
+
+4. **Loc3R-VLM: Language-based Localization and 3D Reasoning** - arXiv:2603.18002
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Loc3R-VLM, 全局布局重建, 情境建模, 位姿先验, 认知地图
+   - 文档: papers/2026-05-14_04_Loc3R-VLM.md
+   - 亮点: 双重空间表征框架（全局布局+情境建模），利用3D基础模型提供轻量位姿先验，从单目视频实现语言定位SOTA
+
+5. **R³L: Reasoning 3D Layouts from Relative Spatial Relations** - arXiv:2605.06758
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: R³L, 多跳推理, 不变性分解, 一致性想象, 参考系变换
+   - 文档: papers/2026-05-14_05_R3L.md
+   - 亮点: 首个针对多跳相对空间推理的系统框架，发现参考系变换错误累积是核心问题，通过不变性分解打断关系链消除语义/度量漂移
+
+---
+
+*最后更新时间: 2026-05-14*
