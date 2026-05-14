@@ -976,3 +976,39 @@
 ---
 
 *最后更新时间: 2026-05-14*
+
+## 2026-05-15 研究的论文（精选5篇）
+
+1. **MAGS-SLAM: Monocular Multi-Agent Gaussian Splatting SLAM** - arXiv:2605.10760
+   - 相关性: ★★★★★
+   - 关键词: 3DGS, Multi-Agent SLAM, RGB-only, Sim(3), Collaborative Reconstruction
+   - 文档: papers/2026-05-15_mags-slam.md
+   - 亮点: 首个纯RGB多智能体3DGS SLAM，渲染质量超越需要深度传感器的方法
+
+2. **Forecast-GS: Predictive 3D Representation for Language-Guided Manipulation** - arXiv:2605.11144
+   - 相关性: ★★★★☆
+   - 关键词: 3DGS, Robotic Manipulation, Language Grounding, Predictive Representation
+   - 文档: papers/2026-05-15_forecast-gs.md
+   - 亮点: 将3D高斯从场景表示升级为预测性操作工具，实现"先想象后执行"的空间推理
+
+3. **Embodied Multi-Agent Coordination by Aligning World Models Through Dialogue** - arXiv:2605.12920
+   - 相关性: ★★★★★
+   - 关键词: Multi-Agent, World Models, LLM Planning, Dialogue, Hallucination
+   - 文档: papers/2026-05-15_world-model-alignment.md
+   - 亮点: 揭示LLM多智能体协作中60-69%的幻觉率导致世界模型对齐失败的关键瓶颈
+
+4. **Real2Sim: Physics-driven Gaussian Splatting for Autonomous Driving** - arXiv:2605.13591
+   - 相关性: ★★★★☆
+   - 关键词: 4DGS, Autonomous Driving, MPM Physics, Simulation, Waymo
+   - 文档: papers/2026-05-15_real2sim.md
+   - 亮点: 将4D高斯与MPM物理求解器结合，首次从真实驾驶数据生成物理可信碰撞场景
+
+5. **RotVLA: Rotational Latent Action for VLA Model** - arXiv:2605.13403
+   - 相关性: ★★★★☆
+   - 关键词: VLA, SO(n), Latent Action, Flow Matching, Cross-Embodiment
+   - 文档: papers/2026-05-15_rotvla.md
+   - 亮点: 用SO(n)旋转群替代离散VQ-VAE，1.7B参数在LIBERO上达到98.2%
+
+---
+
+*最后更新时间: 2026-05-15*
