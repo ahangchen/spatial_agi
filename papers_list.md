@@ -1,5 +1,39 @@
 # Spatial AGI Research Papers - Daily Analysis
 
+## 2026-05-16 研究的论文（精选5篇）
+
+1. **PG-3DGS: Optimizing 3D Gaussian Splatting to Satisfy Physics Objectives** - arXiv:2605.11266
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS, Differentiable Physics, Physical Objectives, Teapot Pouring, Aerodynamic Lift
+   - 文档: papers/2026-05-16_01_PG-3DGS.md
+   - 亮点: 首个将可微物理模拟集成到3DGS生成，从"视觉重建"到"功能生成"的范式转移，真实3D打印测试证明升力提升
+
+2. **Evo-Depth: A Lightweight Depth-Enhanced Vision-Language-Action Model** - arXiv:2605.14950
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, 隐式深度编码, 无传感器空间理解, 轻量级设计, 0.9B参数
+   - 文档: papers/2026-05-16_02_Evo-Depth.md
+   - 亮点: 无需额外深度传感器，从RGB高效提取紧凑深度特征，多仿真基准全部领先
+
+3. **Exploring Bottlenecks in VLM-LLM Navigation: 3D Scene Understanding Impact** - arXiv:2605.14801
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLM-LLM导航, 感知饱和, 成功率先验上界, 双层系统, 核心词汇优先
+   - 文档: papers/2026-05-16_03_VLM-LLM-Navigation.md
+   - 亮点: 首次量化3D场景理解对VLN性能的实际影响，发现感知饱和现象，指导空间智能的效率优化
+
+4. **From Reaction to Anticipation: Proactive Failure Recovery through Agentic Task Graph** - arXiv:2605.11951
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: AgentChord, 预编译恢复分支, 低延迟监控, 编排器（Composer/Arranger/Conductor）
+   - 文档: papers/2026-05-16_04_AgentChord.md
+   - 亮点: 从反应式到主动式的范式转移，预先规划恢复路径，RSS 2026
+
+5. **PointGS: Semantic-Consistent Unsupervised 3D Point Cloud Segmentation** - arXiv:2605.11520
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS中间表示, 无监督分割, SAM, 对比学习, 多视角融合
+   - 文档: papers/2026-05-16_05_PointGS.md
+   - 亮点: 3D Gaussian Splatting作为统一中间表示解决离散-连续域差距，ScanNet-V2 +0.9% mIoU, S3DIS +2.8% mIoU
+
+---
+
 ## 2026-05-02
 
 ### 01_GSDrive_3DGS_Driving_Policy_Reinforcement.md
@@ -1012,3 +1046,39 @@
 ---
 
 *最后更新时间: 2026-05-15*
+
+## 2026-05-16 研究的论文（精选5篇）
+
+1. **GTA-VLA: Guide, Think, Act - Interactive Embodied Reasoning in VLA Models** - arXiv:2605.13632
+   - 相关性: ★★★★★
+   - 关键词: VLA, Interactive Reasoning, Spatial CoT, Embodied Manipulation, Human-in-the-Loop
+   - 文档: papers/2026-05-16_01_GTA-VLA_Interactive_Embodied_Reasoning.md
+   - 亮点: 提出Guide-Think-Act三阶段交互式VLA框架，显式空间定位是具身控制核心瓶颈，SimplerEnv 81.2% SOTA
+
+2. **3D-Belief: Embodied Belief Inference via Generative 3D World Modeling** - arXiv:2605.11367
+   - 相关性: ★★★★★
+   - 关键词: 3D World Model, Belief Inference, Embodied AI, Generative Model, Spatial Understanding
+   - 文档: papers/2026-05-16_02_3D-Belief_Embodied_Belief_Inference_Generative_3D_World.md
+   - 亮点: 通过生成式3D世界建模实现具身信念推理，为Spatial AGI提供清晰的世界模型框架
+
+3. **PG-3DGS: Optimizing 3D Gaussian Splatting to Satisfy Physics Objectives** - arXiv:2605.11266
+   - 相关性: ★★★★☆
+   - 关键词: 3DGS, Physics Simulation, Differentiable Physics, Functional Topology
+   - 文档: papers/2026-05-16_03_PG-3DGS.md
+   - 亮点: 将物理目标函数融入3D高斯优化，揭示空间智能需理解功能拓扑（物体内部连通性）
+
+4. **Evo-Depth: A Lightweight Depth-Enhanced Vision-Language-Action Model** - arXiv:2605.14950
+   - 相关性: ★★★★☆
+   - 关键词: VLA, Depth Estimation, Lightweight, Embodied Manipulation, Implicit Depth
+   - 文档: papers/2026-05-16_04_Evo-Depth.md
+   - 亮点: 紧凑隐式深度特征即可显著提升操作性能，空间表示不需要完美只需"足够好"
+
+5. **PointGS: Semantic-Consistent Unsupervised 3D Point Cloud Segmentation with 3DGS** - arXiv:2605.11520
+   - 相关性: ★★★★☆
+   - 关键词: 3DGS, Point Cloud Segmentation, Unsupervised, Semantic Consistency
+   - 文档: papers/2026-05-16_05_PointGS.md
+   - 亮点: CVPR 2026，结合3D高斯与点云实现无监督语义一致分割
+
+---
+
+*最后更新时间: 2026-05-16*
