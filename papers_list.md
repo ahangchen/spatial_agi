@@ -1079,6 +1079,38 @@
    - 文档: papers/2026-05-16_05_PointGS.md
    - 亮点: CVPR 2026，结合3D高斯与点云实现无监督语义一致分割
 
+## 2026-05-17 研究的论文（精选5篇）
+
+1. **OnlinePG: Online Open-Vocabulary Panoptic Mapping with 3D Gaussian Splatting** - arXiv:2603.18510
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Gaussian Splatting, Panoptic Mapping, Open-Vocabulary, Semantic Segmentation, Online
+   - 文档: papers/2026-05-17_01_OnlinePG.md
+   - 亮点: 在线开放词汇全景映射，分层3D表示融合高斯几何+语义+实例身份，直接服务于Spatial AGI的空间语义理解需求
+
+2. **PanoEnv: Exploring 3D Spatial Intelligence in Panoramic Environments with Reinforcement Learning** - arXiv:2602.21992
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Spatial Reasoning, VLM, Reinforcement Learning, Panoramic, GRPO, VQA Benchmark
+   - 文档: papers/2026-05-17_02_PanoEnv.md
+   - 亮点: 首个精确3D标注的大规模全景空间推理VQA基准，基于GRPO的3D-aware RL后训练框架，从2D感知到3D推理的范式突破
+
+3. **HiSpatial: Taming Hierarchical 3D Spatial Understanding in Vision-Language Models** - arXiv:2603.25411
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Hierarchical Spatial Understanding, VLM, Spatial Reasoning, Benchmark, CV-Bench
+   - 文档: papers/2026-05-17_03_HiSpatial.md
+   - 亮点: 超越GPT-5和Gemini-2.5-Pro，分层3D空间理解框架，CV-Bench 96.64%
+
+4. **World Action Models: The Next Frontier in Embodied AI** - arXiv:2605.12090
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Model, Action Model, Embodied AI, VLM, Tree Search, RL
+   - 文档: papers/2026-05-17_04_World_Action_Models.md
+   - 亮点: 统一世界模型与动作模型，结合VLM语义干预和树搜索评分，具身智能前沿方向
+
+5. **AdaptSplat: Adapting Vision Foundation Models for Feed-Forward 3D Gaussian Splatting** - arXiv:2605.10239
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3D Gaussian Splatting, Vision Foundation Model, Feed-Forward, Novel View Synthesis
+   - 文档: papers/2026-05-17_05_AdaptSplat.md
+   - 亮点: 适配视觉基础模型到前馈3DGS，实现精确空间几何表征
+
 ---
 
-*最后更新时间: 2026-05-16*
+*最后更新时间: 2026-05-17*
