@@ -1114,3 +1114,41 @@
 ---
 
 *最后更新时间: 2026-05-17*
+
+---
+
+## 2026-05-18 研究的论文（精选5篇）
+
+1. **Denoising-GS: Gaussian Splatting with Spatial-aware Denoising** - arXiv:2605.14880
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Gaussian Splatting, Denoising, Spatial Optimization, Uncertainty, NVS
+   - 文档: papers/2026-05-18_01_Denoising-GS.md
+   - 亮点: 将3DGS优化重新定义为去噪过程，动量偏置探索+空间梯度去噪+不确定性剪枝，SOTA
+
+2. **Embodied Multi-Agent Coordination by Aligning World Models Through Dialogue** - arXiv:2605.12920
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Multi-Agent, World Model Alignment, Dialogue, Embodied AI, PARTNR
+   - 文档: papers/2026-05-18_02_World_Model_Alignment_Dialogue.md
+   - 亮点: 首次提出世界模型对齐度量框架，揭示对话降低冲突但不提高成功率的反直觉发现
+
+3. **3D Primitives are a Spatial Language for VLMs** - arXiv:2605.12586
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Spatial Reasoning, VLM, 3D Primitives, Code Generation, Self-Supervised
+   - 文档: papers/2026-05-18_03_3D_Primitives_Spatial_Language.md
+   - 亮点: 揭示VLM空间悖论——能精确重建3D场景但无法回答简单空间问题，Code-CoT+自监督微调
+
+4. **ROSBag MCP Server: Analyzing Robot Data with LLMs for Agentic Embodied AI Applications** - arXiv:2511.03497
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: MCP, ROS, Agentic AI, Embodied AI, Tool Calling, LLM
+   - 文档: papers/2026-05-18_04_ROSBag_MCP_Server.md
+   - 亮点: MCP协议+Embodied AI交叉，8个LLM/VLM工具调用能力对比，Kimi K2和Claude Sonnet 4领先
+
+5. **VidSplat: Gaussian Splatting Reconstruction with Geometry-Guided Video Diffusion Priors** - arXiv:2605.11424
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Gaussian Splatting, Video Diffusion, Sparse-View, SIGGRAPH 2026
+   - 文档: papers/2026-05-18_05_VidSplat.md
+   - 亮点: SIGGRAPH 2026，视频扩散先验+3DGS迭代重建，支持单图输入
+
+---
+
+*最后更新时间: 2026-05-18*
