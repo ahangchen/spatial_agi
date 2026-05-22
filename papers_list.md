@@ -1152,3 +1152,35 @@
 ---
 
 *最后更新时间: 2026-05-18*
+
+## 2026-05-22 研究的论文（精选5篇）
+
+1. **GeoWorld-VLM** - arXiv:2605.16713
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Model, VLM, Spatial Reasoning, Knowledge Distillation, Geometry
+   - 文档: papers/2026-05-22_01_GeoWorld-VLM.md
+   - 核心发现: 从冻结的camera-conditioned世界模型向VLM视觉通路蒸馏几何知识，保持LLM冻结
+
+2. **OrbiSim** - arXiv:2605.16395
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Differentiable Physics, World Model, Embodied Intelligence, Simulation
+   - 文档: papers/2026-05-22_02_OrbiSim.md
+   - 核心发现: 将世界模型重新定义为完全可微分的物理引擎，端到端仿真循环可微分
+
+3. **BioProVLA-Agent** - arXiv:2605.07306
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: VLA, Embodied Agent, Protocol-Driven, Laboratory Automation, Closed-Loop
+   - 文档: papers/2026-05-22_03_BioProVLA-Agent.md
+   - 核心发现: 三Agent系统（协议解析+视觉验证+VLA执行）实现实验室闭环自动化
+
+4. **ArchSIBench** - arXiv:2605.20837
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Spatial Intelligence, Benchmark, Architectural, VLM Evaluation
+   - 文档: papers/2026-05-22_04_ArchSIBench.md
+   - 核心发现: 从建筑学视角评估VLM空间智能，五维度17子任务，揭示高级空间认知差距
+
+5. **ESI-Bench** - arXiv:2605.18746
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Embodied Spatial Intelligence, Active Exploration, Perception-Action Loop, Benchmark
+   - 文档: papers/2026-05-22_05_ESI-Bench.md
+   - 核心发现: 主动探索优于被动观测，失败源于动作盲区而非感知不足，模型缺乏元认知能力
