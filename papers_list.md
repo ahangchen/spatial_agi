@@ -1184,3 +1184,35 @@
    - 关键词: Embodied Spatial Intelligence, Active Exploration, Perception-Action Loop, Benchmark
    - 文档: papers/2026-05-22_05_ESI-Bench.md
    - 核心发现: 主动探索优于被动观测，失败源于动作盲区而非感知不足，模型缺乏元认知能力
+
+## 2026-05-23 研究的论文（精选5篇）
+
+1. **Exploring Bottlenecks in VLM-LLM Navigation** - arXiv:2605.14801
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLN, Zero-Shot Navigation, 3D Scene Understanding, Perception Saturation
+   - 文档: papers/2026-05-23_01_Exploring_Bottlenecks_VLM-LLM_Navigation.md
+   - 核心发现: 感知饱和效应——3D感知精度超过阈值后对VLN成功率边际贡献急剧下降；20个导航相关类别足以支持室内导航
+
+2. **GaussianDream: A Feed-Forward 3D Gaussian World Model for Robotic Manipulation** - arXiv:2605.20752
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Gaussian Splatting, World Model, VLA, Robotic Manipulation, Dense Supervision
+   - 文档: papers/2026-05-23_02_GaussianDream_Feed_Forward_3D_Gaussian_World_Model.md
+   - 核心发现: 前馈式3D高斯世界模型插件，训练时用3D高斯重建作密集监督，推理时仅保留紧凑prefix条件化动作生成
+
+3. **3D Primitives are a Spatial Language for VLMs** - arXiv:2605.12586
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Spatial Reasoning, 3D Primitives, VLM, Scene Reconstruction, Spatial Paradox
+   - 文档: papers/2026-05-23_03_3D_Primitives_are_a_Spatial_Language_for_VLMs.md
+   - 核心发现: VLM空间悖论——能生成精确3D重建代码却在简单空间问答中失败，是任务路由问题而非能力缺失
+
+4. **EvoScene-VLA: Evolving Scene Beliefs Inside the Action Decoder** - arXiv:2605.21862
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, Scene Belief, Flow Matching, Chunked Control, Embodied AI
+   - 文档: papers/2026-05-23_04_EvoScene-VLA.md
+   - 核心发现: 动作解码器内循环更新场景先验，联合flow-matching去噪动作和场景token，两级几何锚点确保3D结构编码
+
+5. **Do VLMs Understand 3D Scenes or Just Catalogue Objects? (LLaVA³)** - arXiv:2511.16454
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Scene Understanding, Object-Centric, NeRF, VLM, Cubism-Inspired
+   - 文档: papers/2026-05-23_05_Do_VLMs_Understand_3D_Scenes_or_Just_Catalogue_Objects.md
+   - 核心发现: VLM不理解3D是信息格式问题而非能力不足，物体中心全方位视觉描述让冻结VLM媲美专用3D模型
