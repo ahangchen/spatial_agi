@@ -1216,3 +1216,37 @@
    - 关键词: 3D Scene Understanding, Object-Centric, NeRF, VLM, Cubism-Inspired
    - 文档: papers/2026-05-23_05_Do_VLMs_Understand_3D_Scenes_or_Just_Catalogue_Objects.md
    - 核心发现: VLM不理解3D是信息格式问题而非能力不足，物体中心全方位视觉描述让冻结VLM媲美专用3D模型
+
+---
+
+## 2026-05-24
+
+1. **SOMA: Spatial Memory for Out-of-Vision Manipulation in VLA** - arXiv:2605.22283
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, Spatial Memory, Embodied AI, Manipulation, Out-of-Vision, 3D Understanding
+   - 文档: papers/2026-05-24_01_SOMA_Spatial_Memory_OOV_Manipulation_VLA.md
+   - 核心发现: 持久化空间记忆让VLA超越视野限制操作，多视角扫描构建3D-语义记忆，动态更新维持全局一致性，行为质变：更快定位、更少搜索、接近一次性抓取
+
+2. **LVDrive: Latent Visual Representation Enhanced VLA Autonomous Driving** - arXiv:2605.22089
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, World Model, Autonomous Driving, Latent Representation, Scene Understanding
+   - 文档: papers/2026-05-24_02_LVDrive_Latent_Visual_VLA_Driving.md
+   - 核心发现: 潜空间未来场景预测优于像素级世界模型，两阶段轨迹解码（粗→精）利用未来语义特征，Bench2Drive SOTA (DS 80.71, SR 58.26%)
+
+3. **ForeSplat: Optimization-Aware Foresight for Feed-Forward 3DGS** - arXiv:2605.22020
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Gaussian Splatting, Novel View Synthesis, Meta-Learning, 3D Reconstruction
+   - 文档: papers/2026-05-24_03_ForeSplat_Optimization_Aware_3DGS.md
+   - 核心发现: MetaGrad元学习让3DGS初始化更适合快速优化，零步质量略低但优化后显著超越vanilla，跨骨干通用，为边缘设备3D重建开辟道路
+
+4. **GA-VLN: Geometry-Aware BEV Representation for Efficient VLN** - arXiv:2605.22036
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Vision-Language Navigation, BEV, Spatial Reasoning, 3D Grounded Representation, VGGT
+   - 文档: papers/2026-05-24_04_GA-VLN_Geometry_Aware_BEV_VLN.md
+   - 核心发现: 显式深度投影+隐式VGGT先验的BEV表示，token减少87%且性能提升，无需DAgger即达R2R-CE SOTA (SR 61%)，真实机器人零样本成功部署
+
+5. **Flat-Pack Bench: Evaluating Spatio-Temporal Understanding in LVLMs** - arXiv:2605.21625
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Spatial-Temporal Understanding, VLM Benchmark, Spatial Reasoning, Assembly, Tracking
+   - 文档: papers/2026-05-24_05_Flat_Pack_Bench_Spatio_Temporal_VLM.md
+   - 核心发现: 家具组装基准揭示VLM时空理解严重不足（GPT-5仅38% vs 人类94%），物体定位(37%)和时空推理(32%)是主要错误源，SAM2追踪IoU仅0.28
