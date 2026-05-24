@@ -1250,3 +1250,11 @@
    - 关键词: Spatial-Temporal Understanding, VLM Benchmark, Spatial Reasoning, Assembly, Tracking
    - 文档: papers/2026-05-24_05_Flat_Pack_Bench_Spatio_Temporal_VLM.md
    - 核心发现: 家具组装基准揭示VLM时空理解严重不足（GPT-5仅38% vs 人类94%），物体定位(37%)和时空推理(32%)是主要错误源，SAM2追踪IoU仅0.28
+
+## 2026-05-25
+
+1. **PanoWorld** (2605.17916) - 全屋全景空间世界模型，3DGS作为渐进空间记忆，Room-aware LRM [3D生成/世界模型]
+2. **RoboFlow4D** (2605.17522) - 端到端轻量4D流世界模型，慢快协作架构，实时机器人操作 [操作/世界模型]
+3. **Robo-Cortex** (2605.18729) - 自进化具身导航agent，双粒度认知记忆，自主知识归纳 [导航/自我进化]
+4. **GEM** (2605.17682) - 连续4D高斯世界模型，非自回归任意时间查询，占据预测+运动规划 [自动驾驶/4D高斯]
+5. **Seeing Together** (2605.18431) - 多机器人协作空间推理基准CoopSR，114K QA，SP-CoR框架 [多智能体/空间推理]
