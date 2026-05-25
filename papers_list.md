@@ -1,5 +1,37 @@
 # Spatial AGI Research Papers - Daily Analysis
 
+## 2026-05-26 研究的论文（精选5篇）
+
+1. **GEM-4D: Geometry-Enhanced Video World Models for Robot Manipulation** - arXiv:2605.22882
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Video World Model, 4D Geometry Distillation, Robot Manipulation, Inverse Dynamics, Correspondence
+   - 文档: papers/2026-05-26_01_GEM-4D_Geometry_Enhanced_Video_World_Models.md
+   - 亮点: 将4D几何基础模型表征蒸馏到视频世界模型，实现几何一致的视频生成，真实世界操作61%→81%
+
+2. **SWEET: Sparse World Modeling with Image Editing for Embodied Task Execution** - arXiv:2605.19319
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Sparse World Model, Image Editing, Keyframe Planning, Embodied Task, FLUX-Kontext
+   - 文档: papers/2026-05-26_02_SWEET_Sparse_World_Modeling_Embodied.md
+   - 亮点: 首次系统性比较图像编辑vs视频生成用于机器人规划，发现图像编辑更高效可靠
+
+3. **GesVLA: Gesture-Aware Vision-Language-Action Model with Embedded Representations** - arXiv:2605.22812
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, Gesture, Dual-VLM, Spatial Ambiguity, Human-Robot Interaction
+   - 文档: papers/2026-05-26_03_GesVLA_Gesture_Aware_VLA.md
+   - 亮点: 将手势作为VLA一等模态，双VLM架构解耦意图推理和动作生成
+
+4. **AffordVLA: Injecting Affordance Representations into VLA via Implicit Feature Alignment** - arXiv:2605.17517
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, Affordance, Implicit Feature Alignment, Zero-shot Teacher, Manipulation
+   - 文档: papers/2026-05-26_04_AffordVLA_Affordance_VLA.md
+   - 亮点: 通过隐式特征对齐将可供性知识内化到VLA视觉表征，零推理开销
+
+5. **Distilling 3D Spatial Reasoning into a Lightweight VLM with CoT** - arXiv:2605.09719
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Knowledge Distillation, 3D Spatial Reasoning, Hidden CoT, Lightweight VLM, VGGT
+   - 文档: papers/2026-05-26_05_Distilling_3D_Spatial_Reasoning_Lightweight_VLM.md
+   - 亮点: 首次在蒸馏3D VLM中引入Hidden CoT，7B→2.29B实现8.7x推理加速
+
 ## 2026-05-16 研究的论文（精选5篇）
 
 1. **PG-3DGS: Optimizing 3D Gaussian Splatting to Satisfy Physics Objectives** - arXiv:2605.11266
