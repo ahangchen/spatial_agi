@@ -1323,6 +1323,38 @@
    - 文档: papers/2026-06-19_05_S-Agent.md
    - 亮点: 时空证据累积范式；Scene Memory+Agent Memory双记忆系统；S-Agent-8B用8B参数匹配GPT-5.4和Gemini 3的空间推理能力
 
+## 2026-06-20 研究的论文（精选5篇）
+
+1. **VLM3: Vision Language Models Are Native 3D Learners** - arXiv:2605.30561
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLM, 3D Understanding, Depth Estimation, Focal Length Unification, Text-based Pixel Reference, Data Scaling
+   - 文档: papers/2026-06-20_01_VLM3_Native_3D_Learners.md
+   - 亮点: 范式转变——标准VLM无需架构修改即天生是3D学习者；焦距统一+文本像素引用+数据缩放三要素足矣；纯文本next-token预测达SOTA深度估计(Si_wf Δ=0.84→0.9)；4B模型+好数据>8B模型
+
+2. **WorldOlympiad: Can Your World Model Survive a Triathlon?** - arXiv:2606.11129
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Model Benchmark, Physical Faithfulness, Geometric Consistency, Interaction Fidelity, Geometry-Simulation Gap
+   - 文档: papers/2026-06-20_02_WorldOlympiad_Triathlon_Benchmark.md
+   - 亮点: 首个跨域"铁人三项"世界模型评测基准（物理/几何/交互）；量化Geometry-Simulation Gap——最强模型3D一致性仅~42%；MLLM-as-judge自动化评测达ρ=0.95人类对齐；揭示纯视频生成路线的空间理解瓶颈
+
+3. **Occ-VLM: Occupancy Grounded Vision Language Model for Indoor Scene Understanding** - arXiv:2606.19776
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D VLM, Occupancy Prediction, 2D-3D Bridging, Occ Adapter, Indoor Scene Understanding, RGB-only
+   - 文档: papers/2026-06-20_03_Occ-VLM_Occupancy_Grounded_VLM.md
+   - 亮点: 仅用RGB+单个2D编码器实现3D VLM；Occ Adapter(161M参数)实现双向2D-3D增强；占用预测SOTA同时3D VQA和密集描述具竞争力；证明2D预训练语义可显著增强3D几何感知
+
+4. **Ouroboros-Spatial: Closing the Data-Model Loop for Spatial Reasoning** - arXiv:2606.11719
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Self-evolving Framework, Spatial Reasoning, Data Efficiency, Confidence-based Difficulty, VSI-Bench SOTA
+   - 文档: papers/2026-06-20_04_Ouroboros_Spatial_Data_Model_Loop.md
+   - 亮点: 自进化数据-模型闭环，模型同时出题和解题；仅25.6k样本(比现有方法少10-100倍)达VSI-Bench SOTA(62.7/63.3)；代码执行保证ground truth可靠性；冻结Proposer的上下文反馈实现零开销难度估计
+
+5. **MemoryWAM: Efficient World Action Modeling with Persistent Memory** - arXiv:2606.20562
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: World Action Model, Persistent Memory, Hybrid Memory, Gist Token, Robot Manipulation, Event Boundary
+   - 文档: papers/2026-06-20_05_MemoryWAM_Persistent_World_Action.md
+   - 亮点: 认知科学启发的混合记忆（短期窗口+事件边界锚点+gist压缩token）；KV cache压缩15倍同时性能反超全历史(83.0% vs 78.2%)；解决WAM记忆-效率权衡；6B参数双分支MoT架构
+
 ---
 
-*最后更新时间: 2026-06-19*
+*最后更新时间: 2026-06-20*
