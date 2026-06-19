@@ -1,0 +1,2870 @@
+{
+  "date": "2026-06-19",
+  "total_papers": 237,
+  "queries": [
+    "gaussian_splatting_scene",
+    "world_model_robot",
+    "embodied_AI_VLM",
+    "spatial_intelligence_3D",
+    "VLM_3D_understanding"
+  ],
+  "papers": [
+    {
+      "title": "AssemLM: A Spatial Reasoning Multimodal Large Language Model for Robotic Assembly",
+      "authors": [],
+      "abstract": "Spatial reasoning is a fundamental capability for embodied intelligence, especially for fine-grained manipulation tasks such as robotic assembly. Recent methods based on vision-language models (VLMs) largely rely on coarse 2D perception and struggle to perform accurate reasoning over complex 3D geometry. To address this limitation, we propose AssemLM, a spatial multimodal large language model for robotic assembly that integrates assembly manuals, point clouds, and textual instructions to predict",
+      "submitted": "",
+      "date": "2026-04",
+      "arxiv_id": "2604.08983",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 49
+    },
+    {
+      "title": "Occ-VLM: Occupancy Grounded Vision Language Model for Indoor Scene Understanding",
+      "authors": [],
+      "abstract": "Recently, vision-language models (VLMs) have made significant progress in 3D scene understanding, driving advances in applications such as embodied intelligence and robotic vision. However, existing approaches typically either rely directly on explicit 3D inputs (e.g., point clouds or RGB-D sequences), or introduce an additional 3D geometry encoder to derive 3D-aware visual tokens from 2D images. Such designs structurally decouple 3D geometric perception from the rich 2D semantics learned via vi",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.19776",
+      "source_queries": [
+        "spatial_intelligence_3D",
+        "VLM_3D_understanding"
+      ],
+      "relevance": 46
+    },
+    {
+      "title": "3DVLA: Enhancing Vision-Language-Action Models via 3D Spatial and Instance Understanding",
+      "authors": [],
+      "abstract": "Vision-Language-Action models have achieved remarkable progress in robotic manipulation, yet they suffer from a critical limitation: a lack of 3D scene understanding. This deficiency manifests as three intertwined challenges: weak extraction of 3D spatial positions without enforcing multi-view consistency, inadequate 3D instance understanding, and fragile reasoning under occlusion. Although mature 3D perception methods exist, their direct integration into VLA pipelines is hindered by architectur",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.29416",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 45
+    },
+    {
+      "title": "Exploring Bottlenecks in VLM-LLM Navigation: How 3D Scene Understanding Capability Impacts Zero-Shot VLN",
+      "authors": [],
+      "abstract": "Zero-shot vision-and-language navigation (VLN) has gained significant attention due to its minimal data collection costs and inherent generalization. This paradigm is typically driven by the integration of pre-trained Vision-Language Models (VLMs) and Large Language Models (LLMs), where VLMs construct 3D scene graphs while LLMs handle high-level reasoning and decision-making. However, a critical bottleneck exists in this system: current 3D perception models prioritize pixel-level accuracy, direc",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.14801",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 45
+    },
+    {
+      "title": "ArchSIBench: Benchmarking the Architectural Spatial Intelligence of Vision-Language Models",
+      "authors": [],
+      "abstract": "Architectural spatial intelligence, the ability to recognize and infer architectural space, is fundamental to tasks such as robot navigation, embodied interaction, and 3D scene understanding and generation. Although extensive research has evaluated the basic spatial skills of Vision-Language Models (VLMs) such as relative orientation, distance comparison, and object counting, these tasks cover only the most elementary levels of spatial cognition and largely overlook higher-level cognition of arc",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.20837",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 42
+    },
+    {
+      "title": "AffordanceVLA: A Vision-Language-Action Model Empowering Action Generation through Affordance-Aware Understanding",
+      "authors": [],
+      "abstract": "Vision-Language-Action (VLA) models leverage the rich world knowledge of pretrained vision-language models (VLMs) to enable instruction-following robotic manipulation. However, the structural mismatch between VLM semantic spaces and embodied control policies often hinders the learning of precise perception--action mappings. To address this challenge, we propose \\textbf{AffordanceVLA}, a unified framework that introduces structured affordance forecasting as a task-oriented intermediate representa",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.06155",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 41
+    },
+    {
+      "title": "3D Scene Graphs: Open Challenges and Future Directions",
+      "authors": [],
+      "abstract": "3D Scene Graphs (3DSGs) have emerged as a powerful representation for spatial AI by combining geometric grounding with semantic and relational abstractions of the environment. Their expressiveness has made them relevant to a broad range of problems in robotics and computer vision, including manipulation, navigation, task planning, scene understanding, and many others. However, the field remains fragmented: different communities adopt distinct formulations, construction pipelines, and evaluation ",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.19383",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 38
+    },
+    {
+      "title": "Dive into the Scene: Breaking the Perceptual Bottleneck in Vision-Language Decision Making via Focus Plan Generation",
+      "authors": [],
+      "abstract": "In embodied vision-language decision making tasks such as robotic manipulation and navigation, Vision-Language and Vision-Language-Action Models (VLMs &amp; VLAs) are powerful tools with different benefits: VLMs are better at long-term planning, while VLAs are better at reactive control. However, their performance is limited by the same perceptual bottleneck: visual hallucinations arise due to the models&#39; inability to distinguish task-relevant objects from distractors. In principle, accurate",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.04046",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 38
+    },
+    {
+      "title": "OneCanvas: 3D Scene Understanding via Panoramic Reprojection",
+      "authors": [],
+      "abstract": "Existing approaches to 3D scene understanding in Vision-Language Models (VLMs) either rely on complex, model-specific geometry encoders or large training budgets in pursuit of spatial reasoning. Instead, OneCanvas aggregates patch features from all views onto a single equirectangular panoramic canvas. Namely, each patch is unprojected to a 3D world coordinate using its depth and camera pose, then placed on the canvas at the continuous longitude and latitude of that point as seen from the canvas ",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.19253",
+      "source_queries": [
+        "world_model_robot",
+        "embodied_AI_VLM",
+        "spatial_intelligence_3D",
+        "VLM_3D_understanding"
+      ],
+      "relevance": 37
+    },
+    {
+      "title": "Learning Multi-View Spatial Reasoning from Cross-View Relations",
+      "authors": [],
+      "abstract": "Vision-language models (VLMs) have achieved impressive results on single-view vision tasks, but lack the multi-view spatial reasoning capabilities essential for embodied AI systems to understand 3D environments and manipulate objects across different viewpoints. In this work, we introduce Cross-View Relations (XVR), a large-scale dataset designed to teach VLMs spatial reasoning across multiple views. XVR comprises 100K vision-question-answer samples derived from 18K diverse 3D scenes and 70K rob",
+      "submitted": "",
+      "date": "",
+      "arxiv_id": "2603.27967",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 37
+    },
+    {
+      "title": "GN0: Toward a Unified Paradigm for Generation, Evaluation, and Policy Learning in Visual-Language Navigation",
+      "authors": [],
+      "abstract": "Embodied navigation connects intelligent agents with the physical world and is fundamental for general robotic intelligence. Limited availability and quality of navigation data have constrained Vision-and-Language Navigation (VLN) systems&#39; generalization and long-horizon capabilities. To address this, we curate diverse 3D scenes and develop an automated pipeline for large-scale navigation data, resulting in the GN-Matrix dataset. Building on a 3D Gaussian Splatting (3DGS) engine, we introduc",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.03682",
+      "source_queries": [
+        "gaussian_splatting_scene",
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 36
+    },
+    {
+      "title": "MosaicThinker: On-Device Visual Spatial Reasoning for Embodied AI via Iterative Construction of Space Representation",
+      "authors": [],
+      "abstract": "When embodied AI is expanding from traditional object detection and recognition to more advanced tasks of robot manipulation and actuation planning, visual spatial reasoning from the video inputs is necessary to perceive the spatial relationships of objects and guide device actions. However, existing visual language models (VLMs) have very weak capabilities in spatial reasoning due to the lack of knowledge about 3D spatial information, especially when the reasoning task involve complex spatial r",
+      "submitted": "",
+      "date": "",
+      "arxiv_id": "2602.07082",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 36
+    },
+    {
+      "title": "GEAR-VLA: Learning Geometry-Aware Action Representations for Generalizable Robotic Manipulation",
+      "authors": [],
+      "abstract": "Vision-Language-Action (VLA) models achieve strong benchmark performance but still struggle in real-world deployment with unseen objects, background shifts, and different robot embodiments. We argue that this stems from the lack of a unified geometry-aware manipulation representation, leaving existing VLAs vulnerable to low-level trajectory supervision, misaligned 3D features, and embodiment differences. To address this, we propose GEAR-VLA, a VLA framework for learning unified geometry-aware ac",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.08530",
+      "source_queries": [
+        "spatial_intelligence_3D",
+        "VLM_3D_understanding"
+      ],
+      "relevance": 36
+    },
+    {
+      "title": "LongSpace: Exploring Long-Horizon Spatial Memory from Perception to Recall in Video",
+      "authors": [],
+      "abstract": "Multimodal Large Language Models (MLLMs) have advanced image and video understanding and can increasingly handle longer visual inputs. Long-horizon tasks such as autonomous driving and robotic navigation require more than recognizing the current view, as models must remember and retrieve previously observed spatial layouts, routes, viewpoint changes, and object states. To evaluate this capability, we introduce LongSpace-Bench, a room-tour video benchmark for long-horizon spatial memory, covering",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.05677",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 36
+    },
+    {
+      "title": "Bridging the 2D-3D Gap: A Hierarchical Semantic-Geometric Map for Vision Language Navigation",
+      "authors": [],
+      "abstract": "Vision-Language Navigation (VLN) enables embodied agents to reach target locations in unseen environments by following language instructions. Despite recent progress with vision-language models (VLMs), a critical semantic-geometric gap remains: while VLMs excel at language and 2D visual understanding, they struggle with 3D spatial reasoning and fail to capture the causal dynamics between actions and spatial transitions, resulting in unreliable navigation, particularly in zero-shot settings. To b",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.00095",
+      "source_queries": [
+        "spatial_intelligence_3D",
+        "VLM_3D_understanding"
+      ],
+      "relevance": 36
+    },
+    {
+      "title": "HOG-Layout: Hierarchical 3D Scene Generation, Optimization and Editing via Vision-Language Models",
+      "authors": [],
+      "abstract": "3D layout generation and editing play a crucial role in Embodied AI and immersive VR interaction. However, manual creation requires tedious labor, while data-driven generation often lacks diversity. The emergence of large models introduces new possibilities for 3D scene synthesis. We present HOG-Layout that enables text-driven hierarchical scene generation, optimization and real-time scene editing with large language models (LLMs) and vision-language models (VLMs). HOG-Layout improves scene sema",
+      "submitted": "",
+      "date": "2026-04",
+      "arxiv_id": "2604.10772",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 35
+    },
+    {
+      "title": "CAPruner: Conceptual-Adjacent Scene Graph Pruner for Enhancing 3D Spatial Reasoning of Large Language Models",
+      "authors": [],
+      "abstract": "Large language models (LLMs) have recently been applied to 3D vision-language (3D-VL) tasks, which require spatial reasoning to identify target objects relative to anchors. Scene graphs are commonly employed to represent such relations, but reasoning over complete graphs incurs high token costs and computational inefficiencies, motivating the need for pruning. Existing pruning methods primarily rely on spatial proximity and often remove task-relevant relations, thereby undermining reliable spati",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.07529",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 35
+    },
+    {
+      "title": "SleepWalk: A Three-Tier Benchmark for Stress-Testing Instruction-Guided Vision-Language Navigation",
+      "authors": [],
+      "abstract": "Vision-Language Models (VLMs) have advanced rapidly in multimodal perception and language understanding, yet it remains unclear whether they can reliably ground language into spatially coherent, plausibly executable actions in 3D digital environments. We introduce SleepWalk, a benchmark for evaluating instruction-grounded trajectory prediction in single-scene 3D worlds generated from textual scene descriptions and filtered for navigability. Unlike prior navigation benchmarks centered on long-ran",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.10376",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 35
+    },
+    {
+      "title": "Does VLA Even Know the Basics? Measuring Commonsense and World Knowledge Retention in Vision-Language-Action Models",
+      "authors": [],
+      "abstract": "Embodied Vision-Language-Action (VLA) models are typically obtained by fine-tuning powerful pretrained VLMs on robotics data, yet it is unclear how much commonsense and factual knowledge they retain after adaptation. Failures on knowledge-sensitive tasks are ambiguous, conflating missing knowledge with poor generalization of low-level control. We introduce Act2Answer, a lightweight protocol that adapts VLM knowledge benchmarks to VLA evaluation by requiring agents to answer through action. Each ",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.19297",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 34
+    },
+    {
+      "title": "Stream3D-VLM: Online 3D Spatial Understanding with Incremental Geometry Priors",
+      "authors": [],
+      "abstract": "Despite advances in 3D scene understanding, existing 3D Large Multimodal Models operate in offline settings, requiring complete scene observations or predefined video clips. In this paper, we present an online 3D vision-language model that enables real-time spatial understanding from streaming video. Our approach adopts an autoregressive streaming control modeling based on the LLM&#39;s next-token prediction objective to learn when to respond, and employs a lightweight Visual-Spatial Feature Int",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.06891",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 34
+    },
+    {
+      "title": "Consistent Yet Wrong: Evidence Insensitivity in Spatial Vision-Language Models",
+      "authors": [],
+      "abstract": "Spatial reasoning is fundamental to robotics, autonomy, and embodied AI, yet modern vision-language models (VLMs) remain unreliable on metric distance queries. A common assumption is that consistent predictions across viewpoints reflect geometric grounding. We test this assumption and find the opposite: leading VLMs often produce view-invariant and consistent answers even when those answers are incorrect, indicating weak coupling between predictions and viewpoint-specific visual evidence.\n  We i",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.02742",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 33
+    },
+    {
+      "title": "SpatialStack: Layered Geometry-Language Fusion for 3D VLM Spatial Reasoning",
+      "authors": [],
+      "abstract": "Large vision-language models (VLMs) still struggle with reliable 3D spatial reasoning, a core capability for embodied and physical AI systems. This limitation arises from their inability to capture fine-grained 3D geometry and spatial relationships. While recent efforts have introduced multi-view geometry transformers into VLMs, they typically fuse only the deep-layer features from vision and geometry encoders, discarding rich hierarchical signals and creating a fundamental bottleneck for spatia",
+      "submitted": "",
+      "date": "",
+      "arxiv_id": "2603.27437",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 33
+    },
+    {
+      "title": "Semantic Misalignment in Vision-Language Models under Perceptual Degradation",
+      "authors": [],
+      "abstract": "Vision-Language Models (VLMs) are increasingly deployed in autonomous driving and embodied AI systems, where reliable perception is critical for safe semantic reasoning and decision-making. While recent VLMs demonstrate strong performance on multimodal benchmarks, their robustness to realistic perception degradation remains poorly understood. In this work, we systematically study semantic misalignment in VLMs under controlled degradation of upstream visual perception, using semantic segmentation",
+      "submitted": "",
+      "date": "",
+      "arxiv_id": "2601.08355",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 33
+    },
+    {
+      "title": "Proxy3D: Efficient 3D Representations for Vision-Language Models via Semantic Clustering and Alignment",
+      "authors": [],
+      "abstract": "Spatial intelligence in vision-language models (VLMs) attracts research interest with the practical demand to reason in the 3D world.Despite promising results, most existing methods follow the conventional 2D pipeline in VLMs and use pixel-aligned representations for the vision modality. However, correspondence-based models with implicit 3D scene understanding often fail to achieve spatial consistency, and representation-based models with 3D geometric priors lack efficiency in vision sequence se",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.08064",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 33
+    },
+    {
+      "title": "MAG-3D: Multi-Agent Grounded Reasoning for 3D Understanding",
+      "authors": [],
+      "abstract": "Vision-language models (VLMs) have achieved strong performance in multimodal understanding and reasoning, yet grounded reasoning in 3D scenes remains underexplored. Effective 3D reasoning hinges on accurate grounding: to answer open-ended queries, a model must first identify query-relevant objects and regions in a complex scene, and then reason about their spatial and geometric relationships. Recent approaches have demonstrated strong potential for grounded 3D reasoning. However, they often rely",
+      "submitted": "",
+      "date": "2026-04",
+      "arxiv_id": "2604.09167",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 33
+    },
+    {
+      "title": "NextMotionQA: Benchmarking and Judging Human Motion Understanding with Vision-Language Models",
+      "authors": [],
+      "abstract": "Reliable evaluation of human motion understanding is fundamental to advancing embodied AI, robotics, and animation. However, existing benchmarks suffer from coarse semantic granularity, undifferentiated difficulty, limited annotation quality, and pervasive answer ambiguity, leaving them unable to diagnose where current models fail. To bridge this gap, we introduce NextMotionQA, a comprehensive benchmark that leverages vision-language models (VLMs) for semi-automated, expert-verified dataset. Nex",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.04773",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 32
+    },
+    {
+      "title": "Mind to Hand: Purposeful Robotic Control via Embodied Reasoning",
+      "authors": [],
+      "abstract": "Humans act with context and intention, with reasoning playing a central role. While internet-scale data has enabled broad reasoning capabilities in AI systems, grounding these abilities in physical action remains a major challenge. We introduce Lumo-1, a generalist vision-language-action (VLA) model that unifies robot reasoning (&#34;mind&#34;) with robot action (&#34;hand&#34;). Our approach builds upon the general multi-modal reasoning capabilities of pre-trained vision-language models (VLMs),",
+      "submitted": "",
+      "date": "",
+      "arxiv_id": "2512.08580",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 32
+    },
+    {
+      "title": "SpatialAct: Probing Spatial Reasoning-to-Action Capabilities of VLM Agents in 3D Scenes",
+      "authors": [],
+      "abstract": "Humans can effortlessly perceive spatial layouts, form cognitive representations, reason about spatial relations, and translate such reasoning into actions in everyday 3D environments. Although recent vision-language models (VLMs) have shown promising performance on observation-conditioned spatial perception and reasoning tasks, it remains unclear whether they can build coherent spatial understanding, act upon it, and refine their actions through multi-turn feedback. To study this problem, we in",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.31148",
+      "source_queries": [
+        "spatial_intelligence_3D",
+        "VLM_3D_understanding"
+      ],
+      "relevance": 32
+    },
+    {
+      "title": "Uncertainty Quantification for Flow-Based Vision-Language-Action Models",
+      "authors": [],
+      "abstract": "Vision-language-action models (VLAs) combine vision-language backbones with expressive generative action heads trained via flow matching on large-scale robotic datasets. Despite their strong empirical performance in robotic manipulation, VLAs lack mechanisms to quantify confidence in their predictions and to detect when their actions may be unreliable. This presents a critical limitation for real-world deployment in non-stationary environments, where models inevitably encounter scenarios outside",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.18043",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 31
+    },
+    {
+      "title": "Beyond 3D VQAs: Injecting 3D Spatial Priors into Vision-Language Models for Enhanced Geometric Reasoning",
+      "authors": [],
+      "abstract": "Vision-Language Models (VLMs) often struggle with robust 3D spatial reasoning. Prevailing methods that rely on fine-tuning with 3D visual question-answering (VQA) datasets may overfit dataset-specific biases, while integrating specialized 3D visual encoders is often inflexible and cumbersome. In this paper, we argue that genuine spatial understanding should emerge from learning fundamental geometric priors, not only from high-level VQA supervision. We propose GASP (Geometric-Aware Spatial Priors",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.30231",
+      "source_queries": [
+        "spatial_intelligence_3D",
+        "VLM_3D_understanding"
+      ],
+      "relevance": 31
+    },
+    {
+      "title": "Zero-Shot 3D Question Answering via Hierarchical View-to-Token Transportation",
+      "authors": [],
+      "abstract": "Recently, zero-shot 3D scene understanding via 2D Vision-Language Models (VLMs) has gained increasing research interest due to their promising spatial reasoning capabilities. Typically, multiple 2D views are sampled from a 3D point cloud and fed into pre-trained VLMs to answer a given question. This paradigm highlights the critical role of input context quality and raises the challenge of retaining as many task-relevant 3D details as possible under a limited input budget. We propose \\texttt{KeyV",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.03100",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 31
+    },
+    {
+      "title": "Membership Inference Attacks on Vision-Language-Action Models",
+      "authors": [],
+      "abstract": "Membership inference attacks (MIAs) have been extensively studied in large language models (LLMs) and vision-language models (VLMs), yet their implications for vision-language-action (VLA) models remain largely unexplored. VLA models differ from standard LLMs and VLMs in several important ways: they are often fine-tuned for many epochs on relatively small embodied datasets, operate over constrained and structured action spaces, and expose action outputs that can be observed as executable behavio",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.07088",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 30
+    },
+    {
+      "title": "GaLa: Hypergraph-Guided Visual Language Models for Procedural Planning",
+      "authors": [],
+      "abstract": "Implicit spatial relations and deep semantic structures encoded in object attributes are crucial for procedural planning in embodied AI systems. However, existing approaches often over rely on the reasoning capabilities of vision language models (VLMs) themselves, while overlooking the rich structured semantic information that can be mined from multimodal inputs. As a result, models struggle to effectively understand functional spatial relationships in complex scenes. To fully exploit implicit s",
+      "submitted": "",
+      "date": "2026-04",
+      "arxiv_id": "2604.17241",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 30
+    },
+    {
+      "title": "Advances and Innovations in the Multi-Agent Robotic System (MARS) Challenge",
+      "authors": [],
+      "abstract": "Recent advancements in multimodal large language models and vision-languageaction models have significantly driven progress in Embodied AI. As the field transitions toward more complex task scenarios, multi-agent system frameworks are becoming essential for achieving scalable, efficient, and collaborative solutions. This shift is fueled by three primary factors: increasing agent capabilities, enhancing system efficiency through task delegation, and enabling advanced human-agent interactions. To ",
+      "submitted": "",
+      "date": "",
+      "arxiv_id": "2601.18733",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 30
+    },
+    {
+      "title": "CityCube: Benchmarking Cross-view Spatial Reasoning on Vision-Language Models in Urban Environments",
+      "authors": [],
+      "abstract": "Cross-view spatial reasoning is essential for embodied AI, underpinning spatial understanding, mental simulation and planning in complex environments. Existing benchmarks primarily emphasize indoor or street settings, overlooking the unique challenges of open-ended urban spaces characterized by rich semantics, complex geometries, and view variations. To address this, we introduce CityCube, a systematic benchmark designed to probe cross-view reasoning capabilities of current VLMs in urban setting",
+      "submitted": "",
+      "date": "",
+      "arxiv_id": "2601.14339",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 30
+    },
+    {
+      "title": "SPARK: Sim-ready Part-level Articulated Reconstruction with VLM Knowledge",
+      "authors": [],
+      "abstract": "Articulated 3D objects are critical for embodied AI, robotics, and interactive scene understanding, yet creating simulation-ready assets remains labor-intensive and requires expert modeling of part hierarchies and motion structures. We introduce SPARK, a framework for reconstructing physically consistent, kinematic part-level articulated objects from a single RGB image. Given an input image, we first leverage VLMs to extract coarse URDF parameters and generate part-level reference images. We the",
+      "submitted": "",
+      "date": "",
+      "arxiv_id": "2512.01629",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 30
+    },
+    {
+      "title": "Reasmory: 3D Reconstruction as Explicit Memory for VLMs Spatial Reasoning",
+      "authors": [],
+      "abstract": "Vision-Language Models (VLMs) exhibit emerging spatial reasoning capabilities, yet they remain unreliable on tasks requiring precise spatial understanding, such as viewpoint reasoning, directional comparison, and distance estimation. In multi-view images and monocular videos, relevant spatial cues are often sparse and distributed across redundant observations, making them difficult to organize and exploit. Reconstruction-based Vision Foundation Models (VFMs) offer a natural way to aggregate such",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.00963",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 30
+    },
+    {
+      "title": "Embodied3DBench: Benchmarking Low-Level Embodied Spatial Intelligence of Vision Language Models",
+      "authors": [],
+      "abstract": "Are current Vision Language Models (VLMs) ready to comprehend and reason about complex embodied interactions in 3D environments? We introduce Embodied3DBench, a robot-centric benchmark targeting low-level spatial intelligence in embodied 3D environments. To systematically evaluate these foundational perceptual capabilities, the benchmark includes 6 task categories divided into two core groups: Spatial Structural Understanding (Grounding, Spatial Relation Prediction, and Multi-view Correspondence",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.29074",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 30
+    },
+    {
+      "title": "Do Vision-Language Models Understand 3D Scenes or Just Catalogue Objects?",
+      "authors": [],
+      "abstract": "Vision-language models reliably name objects in a scene, but do they represent the 3D layout those objects inhabit? We introduce a 3,034-sample human-curated benchmark targeting three components of spatial understanding: depth-ordered occlusion (probed via three independent counterfactual operationalisations), optical-geometry inference over visible reflections, and volumetric rearrangement planning. Six frontier and open-weight VLMs, scored by trained annotators on 18,204 responses with no LLM-",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.20448",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 30
+    },
+    {
+      "title": "ManiSplat: Manipulation Trajectory Synthesis from Monocular Video via Decoupled 3D Gaussian Splatting",
+      "authors": [],
+      "abstract": "Reconstructing dynamic and interactive 3D scenes from real-world observations remains a fundamental challenge in computer vision and robotics. While recent advances in 3D Gaussian Splatting have enabled high-fidelity static reconstruction, extending it to interactive environments with articulated robots and manipulable objects remains difficult due to complex contact interactions and abrupt pose changes. To address these challenges, we introduce ManiSplat, a unified framework that reconstructs c",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.10645",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 29
+    },
+    {
+      "title": "Co-VLA: Coordination-Aware Structured Action Modeling for Dual-Arm Vision-Language-Action Systems",
+      "authors": [],
+      "abstract": "Vision-language-action (VLA) models show strong capabilities in single and dual-arm robotic manipulation. Prior works show coordinated bimanual behaviors can emerge from end-to-end learning, leveraging large vision-language backbones with continuous action prediction. However, as bimanual tasks become tightly coupled and execution constraints become critical, implicit coordination alone is insufficient to ensure reliable, interpretable, and stable behavior.\n  In this work, we propose Co-VLA, a c",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.20285",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 29
+    },
+    {
+      "title": "MuseVLA: An Adaptive Multimodal Sensing Vision-Language-Action Model for Robotic Manipulation",
+      "authors": [],
+      "abstract": "Humans naturally leverage diverse sensing modalities to interact with the physical world, while most Vision-Language-Action (VLA) models for robotics rely solely on RGB observations. This limits their ability to perceive physical properties that are difficult or impossible to infer from RGB cameras, such as temperature, sound, or radar response. We present MuseVLA, an adaptive multimodal sensing VLA model that integrates novel sensors as on-demand tools for robotic manipulation. Given a task ins",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.17598",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 29
+    },
+    {
+      "title": "RoboJailBench: Benchmarking Adversarial Attacks and Defenses in Embodied Robotic Agents",
+      "authors": [],
+      "abstract": "Recent advances in Vision-Language Models (VLMs) facilitate a new class of embodied AI systems, where these models are integrated into physical platforms, e.g. robots and autonomous vehicles, to interpret visual scenes and execute natural language commands in diverse environments. Previous research has introduced jailbreak attacks and defenses for embodied AI. Their evaluations, however, rely on ad-hoc datasets, limited metrics, and emphasize attack success while neglecting the trade-off between",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.19328",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 29
+    },
+    {
+      "title": "Distilling 3D Spatial Reasoning into a Lightweight Vision-Language Model with CoT",
+      "authors": [],
+      "abstract": "Large-scale 3D vision-language models (VLMs) like LLaVA-3D offer strong spatial reasoning but are difficult to deploy due to high computational costs. We propose a knowledge distillation framework that transfers spatial reasoning from a 7B teacher to a 2.29B student model. Our approach achieves 8.7x lower inference latency and a 3x reduction in model size while retaining 54-72% of the teacher&#39;s performance. The framework utilizes VGGT as the vision encoder and a multi-task distillation pipel",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.09719",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 29
+    },
+    {
+      "title": "Uncovering and Shaping the Latent Representation of 3D Scene Topology in Vision-Language Models",
+      "authors": [],
+      "abstract": "Decades of cognitive science establish that humans navigate environments by forming cognitive maps, defined as allocentric and topology-preserving representations of 3D space. While modern Vision-Language Models (VLMs) demonstrate emergent spatial reasoning from 2D egocentric inputs, it remains unclear whether they construct an analogous 3D internal representation. In this paper, we demonstrate that current VLMs do possess a latent topological map of 3D scenes, but it is heavily overshadowed by ",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.07148",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 29
+    },
+    {
+      "title": "Reinforcing 3D Understanding in Point-VLMs via Geometric Reward Credit Assignment",
+      "authors": [],
+      "abstract": "Point-Vision-Language Models promise to empower embodied agents with executable spatial reasoning, yet they frequently succumb to geometric hallucination where predicted 3D structures contradict the observed 2D reality. We identify a key cause of this failure not as a representation bottleneck but as a structural misalignment in reinforcement learning, where sparse geometric tokens are drowned out by noisy and broadcasted sequence-level rewards. To resolve this causal dilution, we propose Geomet",
+      "submitted": "",
+      "date": "2026-04",
+      "arxiv_id": "2604.21160",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 29
+    },
+    {
+      "title": "UniDriveVLA: Unifying Understanding, Perception, and Action Planning for Autonomous Driving",
+      "authors": [],
+      "abstract": "Vision-Language-Action (VLA) models have recently emerged in autonomous driving, with the promise of leveraging rich world knowledge to improve the cognitive capabilities of driving systems. However, adapting such models for driving tasks currently faces a critical dilemma between spatial perception and semantic reasoning. Consequently, existing VLA systems are forced into suboptimal compromises: directly adopting 2D Vision-Language Models yields limited spatial perception, whereas enhancing the",
+      "submitted": "",
+      "date": "2026-04",
+      "arxiv_id": "2604.02190",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 29
+    },
+    {
+      "title": "ACE-Ego-0: Unifying Egocentric Human and Robotic Data for VLA Pretraining",
+      "authors": [],
+      "abstract": "Vision-Language-Action (VLA) models benefit from large-scale and diverse embodied data, yet scaling robot trajectory collection is costly and labor-intensive. Recent advances show that large-scale egocentric human videos provide complementary real-world supervision in pretraining. However, joint training on human and robot data remains challenging due to divergences in action spaces, embodiment structures, temporal dynamics, and supervision quality. We introduce ACE-EGO-0, a unified VLA pretrain",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.17200",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 28
+    },
+    {
+      "title": "SceneTeract: Agentic Functional Affordances and VLM Grounding in 3D Scenes",
+      "authors": [],
+      "abstract": "Embodied AI depends on interactive 3D environments that support meaningful activities for diverse users, yet assessing their functional affordances remains a core challenge. We introduce SceneTeract, a framework that verifies 3D scene functionality under agent-specific constraints. Our core contribution is a grounded verification engine that couples high-level semantic reasoning with low-level geometric checks. SceneTeract decomposes complex activities into sequences of atomic actions and valida",
+      "submitted": "",
+      "date": "",
+      "arxiv_id": "2603.29798",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 28
+    },
+    {
+      "title": "Towards Cross-View Point Correspondence in Vision-Language Models",
+      "authors": [],
+      "abstract": "Cross-view correspondence is a fundamental capability for spatial understanding and embodied AI. However, it is still far from being realized in Vision-Language Models (VLMs), especially in achieving precise point-level correspondence, which is crucial for precise affordance interaction. So we propose the Cross-View Point Correspondence (CVPC) task and CrossPoint-Bench, a comprehensive benchmark with hierarchical design, inspired by the human cognitive process of &#34;perceive&#34;, &#34;reason&",
+      "submitted": "",
+      "date": "",
+      "arxiv_id": "2512.04686",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 28
+    },
+    {
+      "title": "Value-Guided Iterative Refinement and the DIQ-H Benchmark for Evaluating VLM Robustness",
+      "authors": [],
+      "abstract": "Vision-Language Models (VLMs) are essential for embodied AI and safety-critical applications, such as robotics and autonomous systems. However, existing benchmarks primarily focus on static or curated visual inputs, neglecting the challenges posed by adversarial conditions, value misalignment, and error propagation in continuous deployment. Current benchmarks either overlook the impact of real-world perturbations, or fail to account for the cumulative effect of inconsistent reasoning over time. ",
+      "submitted": "",
+      "date": "",
+      "arxiv_id": "2512.03992",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 28
+    },
+    {
+      "title": "SpatialClaw: Rethinking Action Interface for Agentic Spatial Reasoning",
+      "authors": [],
+      "abstract": "Spatial reasoning, the ability to determine where objects are, how they relate, and how they move in 3D, remains a fundamental challenge for vision-language models (VLMs). Tool-augmented agents attempt to address this by augmenting VLMs with specialist perception modules, yet their effectiveness is bounded by the action interface through which those tools are invoked. In this work, we study how the design of this interface shapes the agent&#39;s capacity for open-ended spatial reasoning. Existin",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.13673",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 28
+    },
+    {
+      "title": "MASER: Modality-Adaptive Specialist Routing for Embodied 3D Spatial Intelligence",
+      "authors": [],
+      "abstract": "In 3D environments, Embodied Agents answer spatially relevant questions through reasoning from a mixture of modalities including natural language, RGB images, point clouds, depth maps and camera poses. Existing Vision-Language models (VLMs) are fine-tuned over a single modality. This completely ignores the question semantics which may favor a different modality than the finetuned modality. To address this, we propose MASER (Modality-Adaptive SpEcialist Routing), a lightweight framework that trai",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.02463",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 28
+    },
+    {
+      "title": "Why Far Looks Up: Probing Spatial Representation in Vision-Language Models",
+      "authors": [],
+      "abstract": "Vision-language models (VLMs) achieve strong performance on spatial reasoning benchmarks, yet it remains unclear whether this reflects structured 3D understanding or reliance on statistical shortcuts in natural images. We introduce a representation-level analysis framework that constructs minimal contrastive pairs to measure how spatial axes are organized and disentangled within VLM embeddings. Our analysis across multiple model families reveals a consistent vertical-distance entanglement: model",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.30161",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 28
+    },
+    {
+      "title": "Text-Guided 6D Object Pose Rearrangement via Closed-Loop VLM Agents",
+      "authors": [],
+      "abstract": "Vision-Language Models (VLMs) exhibit strong visual reasoning capabilities, yet they still struggle with 3D understanding. In particular, VLMs often fail to infer a text-consistent goal 6D pose of a target object in a 3D scene. However, we find that with some inference-time techniques and iterative reasoning, VLMs can achieve dramatic performance gains. Concretely, given a 3D scene represented by an RGB-D image (or a compositional scene of 3D meshes) and a text instruction specifying a desired s",
+      "submitted": "",
+      "date": "2026-04",
+      "arxiv_id": "2604.09781",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 28
+    },
+    {
+      "title": "Finetuning Vision-Language-Action Models Requires Fewer Layers Than You Think",
+      "authors": [],
+      "abstract": "Vision-Language-Action (VLA) models pre-trained on massive video-robot datasets have revolutionized robotic manipulation, yet their multi-billion parameter architectures impose prohibitive computational burdens during downstream fine-tuning and real-time inference. In this work, we reveal a highly non-trivial architectural characteristic of these continuous control foundation policies (e.g., pi_0, GR00T-N1.5): despite being trained on diverse physical trajectories, they exhibit severe layer-wise",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.20246",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 27
+    },
+    {
+      "title": "Motion-Focused Latent Action Enables Cross-Embodiment VLA Training from Human EgoVideos",
+      "authors": [],
+      "abstract": "Training generalist Vision-Language-Action(VLA) models typically requires massive, diverse robotic datasets with high-fidelity action annotations. While egocentric human manipulation videos are abundant and capture significant environmental diversity, the absence of action labels makes them difficult to use in conventional training paradigms. To address this, we propose a latent-action-based framework designed to extract general action priors from unlabeled human videos. The architecture feature",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.18955",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 27
+    },
+    {
+      "title": "Learning Geometric Representations from Videos for Spatial Intelligent Multimodal Large Language Models",
+      "authors": [],
+      "abstract": "Multimodal Large Language Models (MLLMs) excel at 2D semantic understanding but lack intrinsic 3D awareness, resulting in representations that fail to maintain geometric and spatial consistency across video frames. Given the scarcity of large-scale 3D data, we present GeoVR, a novel framework that learns geometric representations using purely 2D video sequences. This approach effectively restructures the semantic latent space within MLLMs to unlock spatial intelligence. Rather than employing sup",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.05833",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 27
+    },
+    {
+      "title": "AwareVLN: Reasoning with Self-awareness for Vision-Language Navigation",
+      "authors": [],
+      "abstract": "Vision-and-Language Navigation (VLN) requires an agent to ground language instructions to its own movement within a visual environment. While state-of-the-art methods leverage the reasoning capabilities of Vision-Language Models (VLMs) for end-to-end action prediction, they often lack an explicit and explainable understanding of the relationships between the agent, the instruction, and the scene. Conversely, explicitly building a scene map for heuristic planning is intuitively appealing but reli",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.22816",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 27
+    },
+    {
+      "title": "SpatialForge: Bootstrapping 3D-Aware Spatial Reasoning from Open-World 2D Images",
+      "authors": [],
+      "abstract": "Recent advancements in Large Vision-Language Models (VLMs) have demonstrated exceptional semantic understanding, yet these models consistently struggle with spatial reasoning, often failing at fundamental geometric tasks such as depth ordering and precise coordinate grounding. Recent efforts introduce spatial supervision from scene-centric datasets (e.g., multi-view scans or indoor video), but are constrained by the limited number of underlying scenes. As a result, the scale and diversity of suc",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.11462",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 27
+    },
+    {
+      "title": "LEGS: Fine-Tuning Teleop-Free VLAs for Humanoid Loco-manipulation in an Embodied Gaussian Splatting World",
+      "authors": [],
+      "abstract": "Training vision-language-action (VLA) policies for humanoid loco-manipulation is constrained by the high cost and complexity of collecting human teleoperation demonstrations. VLA policies fine-tuned in simulators have, until now, failed to transfer effectively in humanoid loco-manipulation tasks. We present LEGS (Loco-manipulation via Embodied Gaussian Splatting), a hybrid simulator that composites a mesh foreground (robot, objects, props) over a photorealistic 3D Gaussian Splatting (3DGS) backg",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.01458",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 26
+    },
+    {
+      "title": "Object-Centric Residual RL for Zero-Shot Sim-to-Real VLA Enhancement",
+      "authors": [],
+      "abstract": "Vision-Language-Action (VLA) models can generalize across diverse manipulation tasks, but their imitation-learning-based policies remain brittle in precise physical interactions due to compounding execution errors; Can a reinforcement learning policy trained purely in simulation improve the robustness of real-world VLAs zero-shot? Residual RL, which learns a corrective policy on top of a frozen VLA, offers a natural framework, but existing approaches face a fundamental sim-to-real dilemma: privi",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.18953",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 26
+    },
+    {
+      "title": "EgoCS-400K: An Egocentric Gameplay Dataset for World Models",
+      "authors": [],
+      "abstract": "The shift from video generation to interactive world modeling places new demands on data: beyond captioned videos, world models require temporally aligned video-action-language trajectories grounded in the actions, camera motion, states, and events that drive future scene changes. However, such data is difficult to obtain at scale. Web video datasets offer broad visual coverage but lack executable actions and reliable states; robotic datasets provide action and state supervision but are costly a",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.18180",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 26
+    },
+    {
+      "title": "GIST: Multimodal Knowledge Extraction and Spatial Grounding via Intelligent Semantic Topology",
+      "authors": [],
+      "abstract": "Navigating complex, densely packed environments like retail stores, warehouses, and hospitals poses a significant spatial grounding challenge for humans and embodied AI. In these spaces, dense visual features quickly become stale given the quasi-static nature of items, and long-tail semantic distributions challenge traditional computer vision. While Vision-Language Models (VLMs) help assistive systems navigate semantically-rich spaces, they still struggle with spatial grounding in cluttered envi",
+      "submitted": "",
+      "date": "2026-04",
+      "arxiv_id": "2604.15495",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 26
+    },
+    {
+      "title": "DM0: An Embodied-Native Vision-Language-Action Model towards Physical AI",
+      "authors": [],
+      "abstract": "Moving beyond the traditional paradigm of adapting internet-pretrained models to physical tasks, we present DM0, an Embodied-Native Vision-Language-Action (VLA) framework designed for Physical AI. Unlike approaches that treat physical grounding as a fine-tuning afterthought, DM0 unifies embodied manipulation and navigation by learning from heterogeneous data sources from the onset. Our methodology follows a comprehensive three-stage pipeline: Pretraining, Mid-Training, and Post-Training. First, ",
+      "submitted": "",
+      "date": "",
+      "arxiv_id": "2602.14974",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 26
+    },
+    {
+      "title": "xModel-KD: Cross-modal Knowledge Distillation for 3D Scene Perception using LiDAR",
+      "authors": [],
+      "abstract": "Point cloud segmentation is a fundamental task in 3D scene understanding. Its progress is constrained by the high cost and time required for dense 3D annotations, making labeled samples difficult to obtain. Beyond annotation scarcity, different sensing modalities face inherent limitations. 2D images provide rich texture and appearance cues, yet they lack explicit depth and geometric structure. In contrast, 3D point clouds capture accurate spatial geometry but are sparse and contain no texture in",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.30111",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 26
+    },
+    {
+      "title": "CaMo: Camera Motion Grounded Evaluation and Training for Vision-Language Models",
+      "authors": [],
+      "abstract": "Vision-Language Models (VLMs) achieve strong performance on spatial question answering benchmarks, yet it remains unclear whether such gains reflect genuine spatial intelligence. We show that existing spatial VLMs lack basic camera motion understanding, a key component of spatial cognition. We propose the Spatial Narrative Score (SNS), an evaluation framework that requires VLMs to generate explicit spatial narratives capturing both scene semantics and camera motion, followed by reasoning with a ",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.20165",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 26
+    },
+    {
+      "title": "SPATIOROUTE: Dynamic Prompt Routing for Zero-Shot Spatial Reasoning",
+      "authors": [],
+      "abstract": "Spatial question answering over egocentric video is a challenging task that requires Vision-Language Models (VLMs) to reason about 3D object positions, scene affordances, and directional relationships, particularly in the zero-shot setting where no task-specific fine-tuning is available. We introduce SpatioRoute, a dynamic prompt generation approach that routes each incoming question to a semantically tailored prompt template -- without any additional training, fine-tuning, or 3D sensor input. S",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.18209",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 26
+    },
+    {
+      "title": "ReSiReg: Towards Spatially Consistent Semantics in Language-Conditioned Robotic Tasks",
+      "authors": [],
+      "abstract": "Vision-Language Models (VLMs) enable robots to follow open-language instructions. However, dense VLM embeddings have shown to be noisy and lack spatial consistency. This is problematic for robotic applications, which require simultaneous reasoning over semantics and 3D space. We examine spatial structure across recent VLMs and propose ReSiReg, a feature reconstruction method that uses spatially consistent VLM intermediates to improve dense language-grounded retrieval. ReSiReg clusters intermedia",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.19088",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 25
+    },
+    {
+      "title": "RoboStressBench: Benchmarking VLM Robustness to Physical Visual Stress in Embodied Scenes",
+      "authors": [],
+      "abstract": "Vision-Language Models (VLMs) have shown strong visual understanding and are increasingly deployed in embodied AI systems, where reliable perception under real conditions is essential. However, existing benchmarks assess VLMs using clean images or isolated perturbations rather than stresses caused by physical scene formation. This design has two limitations: it covers only a narrow subset of everyday visual stresses, and some perturbations rarely appear in realistic embodied scenes. This gap rai",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.00828",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 25
+    },
+    {
+      "title": "From Perception to Action: An Interactive Benchmark for Vision Reasoning",
+      "authors": [],
+      "abstract": "Understanding the physical structure is essential for real-world applications such as embodied agents, interactive design, and long-horizon manipulation. Yet, prevailing Vision-Language Model (VLM) evaluations still center on structure-agnostic, single-turn setups (e.g., VQA), which fail to assess agents&#39; ability to reason about how geometry, contact, and support relations jointly constrain what actions are possible in a dynamic environment. To address this gap, we introduce the Causal Hiera",
+      "submitted": "",
+      "date": "",
+      "arxiv_id": "2602.21015",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 25
+    },
+    {
+      "title": "The Spatial Blindspot of Vision-Language Models",
+      "authors": [],
+      "abstract": "Vision-language models (VLMs) have advanced rapidly, but their ability to capture spatial relationships remains a blindspot. Current VLMs are typically built with contrastive language-image pretraining (CLIP) style image encoders. The training recipe often flattens images into 1D patch sequences, discarding the 2D structure necessary for spatial reasoning. We argue that this lack of spatial awareness is a missing dimension in VLM design and a bottleneck for applications requiring spatial groundi",
+      "submitted": "",
+      "date": "",
+      "arxiv_id": "2601.09954",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 25
+    },
+    {
+      "title": "S-Agent: Spatial Tool-Use Elicits Reasoning for Spatial Intelligence",
+      "authors": [],
+      "abstract": "Real-world spatial intelligence requires reasoning over a continuous and evolving 3D world, yet existing VLMs and tool-augmented agents largely remain tied to static, stateless inference from isolated visual observations. We introduce \\textbf{\\textsc{S-Agent}}, a spatial tool-use agentic paradigm for understanding and reasoning over continuous multi-view images and videos. By formulating spatial reasoning as spatio-temporal evidence accumulation rather than isolated frame-level prediction, \\text",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.20515",
+      "source_queries": [
+        "spatial_intelligence_3D",
+        "VLM_3D_understanding"
+      ],
+      "relevance": 25
+    },
+    {
+      "title": "Ouroboros-Spatial: Closing the Data-Model Loop for Spatial Reasoning",
+      "authors": [],
+      "abstract": "Spatial reasoning remains a persistent challenge for multimodal large language models (MLLMs). Existing approaches largely rely on large-scale, statically curated datasets, where all training samples are treated uniformly regardless of the model&#39;s evolving capabilities. This static paradigm is inherently data-inefficient: training capacity is often spent on samples that are either trivial or overly difficult for the model at its current stage. To address this limitation, we propose Ouroboros",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.11719",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 25
+    },
+    {
+      "title": "Unlocking Dense Metric Depth Estimation in VLMs",
+      "authors": [],
+      "abstract": "Vision-Language Models (VLMs) excel at 2D tasks such as grounding and captioning, yet remain limited in 3D understanding. A key limitation is their text-only supervision paradigm, which under-constrains fine-grained visual perception and prevents the recovery of dense geometry. Prior methods either distill geometry from external vision models, introducing error accumulation, or enable direct prediction with inefficient per-pixel query or coarse token-level outputs. In this paper, we propose Dept",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.15876",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 25
+    },
+    {
+      "title": "3D Primitives are a Spatial Language for VLMs",
+      "authors": [],
+      "abstract": "Vision-language models (VLMs) exhibit a striking paradox: they can generate executable code that reconstructs a 3D scene from geometric primitives with correct object counts, classes, and approximate positions, yet the same models fail at simpler spatial questions on the same image. We show that 3D geometric primitives (cubes, spheres, cylinders, expressed in executable code) serve as a powerful intermediate representation for spatial understanding, and exploit this through three contributions. ",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.12586",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 25
+    },
+    {
+      "title": "DREAM-Chunk: Reactive Action Chunking with Latent World Model",
+      "authors": [],
+      "abstract": "Action chunking has become a common interface for vision-language-action (VLA) models, enabling low-frequency policy inference to drive high-frequency robot execution. However, once an action chunk is committed, its open-loop execution can be brittle under stochastic dynamics, hardware execution errors, and partial observability. We propose DREAM-Chunk, a test-time scaling method that augments chunking-based policies with a lightweight latent world model, without requiring additional policy fine",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.18589",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 24
+    },
+    {
+      "title": "PAIWorld: A 3D-Consistent World Foundation Model for Robotic Manipulation",
+      "authors": [],
+      "abstract": "World foundation models (WFMs) are powerful simulators, yet they predominantly operate in a single-view setting and lack the multi-view 3D consistency required for robotic manipulation. While robotic systems rely on multiple cameras (egocentric, eye-to-hand, and wrist-mounted) for policy learning, current multi-view world models simply concatenate view tokens without explicit geometric reasoning. This causes cross-view object drift, depth inconsistency, and texture misalignment. We trace these f",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.18375",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 24
+    },
+    {
+      "title": "MotionAnymesh: Physics-Grounded Articulation for Simulation-Ready Digital Twins",
+      "authors": [],
+      "abstract": "Converting static 3D meshes into interactable articulated assets is crucial for embodied AI and robotic simulation. However, existing zero-shot pipelines struggle with complex assets due to a critical lack of physical grounding. Specifically, ungrounded Vision-Language Models (VLMs) frequently suffer from kinematic hallucinations, while unconstrained joint estimation inevitably leads to catastrophic mesh inter-penetration during physical simulation. To bridge this gap, we propose MotionAnymesh, ",
+      "submitted": "",
+      "date": "",
+      "arxiv_id": "2603.12936",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 24
+    },
+    {
+      "title": "ImageWAM: Do World Action Models Really Need Video Generation, or Just Image Editing?",
+      "authors": [],
+      "abstract": "World Action Models (WAMs) commonly rely on video generation to bridge visual world modeling and robot control. However, video-based WAMs face three coupled limitations: dense multi-frame future tokens make inference costly, full video prediction spends capacity on action-irrelevant temporal and appearance details, and long-horizon future imagination may introduce errors that mislead action prediction. These issues raise a simple question: Does world action model really need video generation? We",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.19531",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 23
+    },
+    {
+      "title": "DiffusionVS: A Generative Framework for Robust Visual Servoing Based on Diffusion Policy",
+      "authors": [],
+      "abstract": "Visual servoing is a fundamental technique in robotic manipulation and navigation. Regression-based visual servoing frequently experiences trajectory jitter as a result of noise-sensitive single-step mappings and the accumulation of errors during distribution shifts. In contrast, Diffusion Policy maintains temporal consistency by predicting action sequences and improves robustness through implicit data augmentation.\n  This paper presents a novel diffusion-based servoing method. Based on Diffusio",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.19397",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 23
+    },
+    {
+      "title": "VEGA: Learning Navigation VLAs from In-the-Wild Egocentric Video with Geometric Trajectory Supervision",
+      "authors": [],
+      "abstract": "We introduce VEGA, an approach for training navigation VisionLanguage-Action (VLA) models from unlabeled egocentric navigation videos. Internet-scale egocentric videos provide a scalable source of navigation-relevant visual observations, capturing cluttered scenes, close-range obstacles, and natural human motion through real-world spaces. However, these videos are not directly usable for policy learning because they do not provide obstacle-aware trajectories conditioned on explicit navigation go",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.18426",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 23
+    },
+    {
+      "title": "When Robots Do the Chores: A Benchmark and Agent for Long-Horizon Household Task Execution",
+      "authors": [],
+      "abstract": "Long-horizon household tasks demand robust high-level planning and sustained reasoning capabilities, which are largely overlooked by existing embodied AI benchmarks that emphasize short-horizon navigation or manipulation and rely on fixed task categories. We introduce LongAct, a benchmark designed to evaluate planning-level autonomy in long-horizon household tasks specified through free-form instructions. By abstracting away embodiment-specific low-level control, LongAct isolates high-level cogn",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.14504",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 23
+    },
+    {
+      "title": "VirtualEnv: A Platform for Embodied AI Research",
+      "authors": [],
+      "abstract": "As large language models (LLMs) continue to improve in reasoning and decision-making, there is a growing need for realistic and interactive environments where their abilities can be rigorously evaluated. We present VirtualEnv, a next-generation simulation platform built on Unreal Engine 5 that enables fine-grained benchmarking of LLMs in embodied and interactive scenarios. VirtualEnv supports rich agent-environment interactions, including object manipulation, navigation, and adaptive multi-agent",
+      "submitted": "",
+      "date": "",
+      "arxiv_id": "2601.07553",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 23
+    },
+    {
+      "title": "SpatialSV: Internalizing Interpretable 3D Spatial Awareness in MLLMs via Task-Oriented Visual Supervision",
+      "authors": [],
+      "abstract": "Unlocking the spatial intelligence of multimodal large language model (MLLMs) is crucial for understanding and interacting with the 3D world. Prevailing approaches typically inject spatial priors via external tools, which impose significant inference overhead, or rely on latent feature distillation, which remains uninterpretable and lacks fine-grained geometric constraints. To address these issues, we propose SpatialSV, a framework designed to internalize robust 3D spatial awareness within MLLMs",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.19915",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 23
+    },
+    {
+      "title": "Seeing Isn&#39;t Knowing: Do VLMs Know When Not to Answer Spatial Questions (and Why)?",
+      "authors": [],
+      "abstract": "Spatial reasoning is a fundamental capability for vision-language models (VLMs) deployed in real-world environments. However, visual observations are inherently limited representations of a 3D world: occlusion can render objects invisible, and perspective can make geometric properties misleading. Despite this, existing spatial reasoning benchmarks typically assume that observations are sufficient and reliable, focusing on whether models produce correct answers rather than whether they recognize ",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.30557",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 23
+    },
+    {
+      "title": "PokeGym: A Visually-Driven Long-Horizon Benchmark for Vision-Language Models",
+      "authors": [],
+      "abstract": "While Vision-Language Models (VLMs) have achieved remarkable progress in static visual understanding, their deployment in complex 3D embodied environments remains severely limited. Existing benchmarks suffer from four critical deficiencies: (1) passive perception tasks circumvent interactive dynamics; (2) simplified 2D environments fail to assess depth perception; (3) privileged state leakage bypasses genuine visual processing; and (4) human evaluation is prohibitively expensive and unscalable. ",
+      "submitted": "",
+      "date": "2026-04",
+      "arxiv_id": "2604.08340",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 23
+    },
+    {
+      "title": "MoonSplat: Monocular Online Gaussian Splatting with Sim(3) Global Optimization",
+      "authors": [],
+      "abstract": "Online 3D reconstruction from monocular image sequences is a challenging and ongoing research topic. 3D Gaussian Splatting (3DGS), leveraging its high-quality real-time rendering capability, empowers online 3D reconstruction to represent dense scenes with enhanced expressiveness, and thus holds great promise for a wide range of applications such as robotics and AR/VR. However, existing online 3DGS methods still suffer from some key challenges: fragile camera pose estimation due to the lack of gl",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.17935",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 22
+    },
+    {
+      "title": "ABot-Earth 0.5: Generative 3D Earth Model",
+      "authors": [],
+      "abstract": "We present ABot-Earth 0.5, a generative 3D framework designed to synthesize vast, seamless 3D environments from ubiquitous, geospatially referenced satellite imagery. To achieve this, we propose a novel generative model formulated directly with the 3D Gaussian Splatting (3DGS) representation. The model is trained on a diverse corpus of existing real-world urban reconstructions, learning to generate realistic geometry and textures. At inference, it synthesizes novel 3D scenes conditioned solely o",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.09967",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 22
+    },
+    {
+      "title": "Learning Action-Conditional and Object-Centric Gaussian Splatting World Models for Rigid Objects",
+      "authors": [],
+      "abstract": "World models enable intelligent agents to predict the consequences of their actions on the environment. In this paper, we propose Multi Rigid Object Gaussian World Model (MRO-GWM), a novel model that learns action-conditional dynamics of rigid objects in 3D. By representing the scene by object-centric Gaussians, we can represent arbitrary object shapes and multi-object scenes. We develop a novel spatio-temporal transformer architecture that predicts future rigid body motion from a history of obj",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.01950",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 22
+    },
+    {
+      "title": "FlowMaps: Modeling Long-Term Multimodal Object Dynamics with Flow Matching",
+      "authors": [],
+      "abstract": "Joint spatial and temporal understanding of 3D scenes is a crucial requirement for robots deployed in everyday household environments. Such agents must not only comprehend and navigate spatial layouts, but also reason about how these spaces evolve over time. In particular, humans interact with objects daily, causing them to change position throughout the environment and making it difficult for robots to reliably associate current observations with previously seen objects. However, these interact",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.20209",
+      "source_queries": [
+        "world_model_robot",
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 22
+    },
+    {
+      "title": "Invertible Neural Network Adapter for One-Step Flow Matching in Robot Manipulation",
+      "authors": [],
+      "abstract": "This paper presents an invertible neural network adapter for general robotic manipulation, designed to generate precise high-dimensional actions conditioned on multimodal observations, including visual, linguistic, and proprioceptive inputs, through a one-step denoising process. Built upon a flow-matching formulation, the proposed adapter effectively constrains the action generation trajectory within an invertible latent space, thereby enabling efficient and high-quality dexterous action synthes",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.19194",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 22
+    },
+    {
+      "title": "TactSpace: Learning a Physics-enriched Shared Latent Space for Tactile Sim-to-Real Transfer",
+      "authors": [],
+      "abstract": "Tactile sensing provides direct measurements of contact interactions that are essential for robotic manipulation. However, current simulators lack the fidelity to faithfully model the complex deformation and transduction mechanics of tactile sensors, severely hindering sim-to-real transfer in robot learning pipelines. To address this challenge, we propose a multi-modal representation learning framework that aligns heterogeneous tactile modalities within a shared latent space, eliminating the nee",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.18959",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 22
+    },
+    {
+      "title": "PRISM: A Multi-View Multi-Capability Retail Video Dataset for Embodied Vision-Language Models",
+      "authors": [],
+      "abstract": "A critical gap exists between the general-purpose visual understanding of state-of-the-art physical AI models and the specialized perceptual demands of structured real-world deployment environments. We present PRISM, a 270K-sample multi-view video supervised fine-tuning (SFT) corpus for embodied vision-language-models (VLMs) in real-world retail environments. PRISM is motivated by a simple observation - physical AI systems fail not because of poor visual recognition, but because they do not unde",
+      "submitted": "",
+      "date": "",
+      "arxiv_id": "2603.29281",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 22
+    },
+    {
+      "title": "SimWorld-Robotics: Synthesizing Photorealistic and Dynamic Urban Environments for Multimodal Robot Navigation and Collaboration",
+      "authors": [],
+      "abstract": "Recent advances in foundation models have shown promising results in developing generalist robotics that can perform diverse tasks in open-ended scenarios given multimodal inputs. However, current work has been mainly focused on indoor, household scenarios. In this work, we present SimWorld-Robotics~(SWR), a simulation platform for embodied AI in large-scale, photorealistic urban environments. Built on Unreal Engine 5, SWR procedurally generates unlimited photorealistic urban scenes populated wi",
+      "submitted": "",
+      "date": "",
+      "arxiv_id": "2512.10046",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 22
+    },
+    {
+      "title": "See-and-Reach: Precise Vision-Language Navigation for UAVs within the Field of View",
+      "authors": [],
+      "abstract": "UAV Vision-Language Navigation (UAV-VLN) is typically formulated as a holistic search-and-reach problem, where long-range target discovery and final target approach are optimized and evaluated jointly. This formulation makes it difficult to assess a critical capability of aerial embodied agents, namely whether a UAV can accurately ground a visible target and translate vision-language evidence into precise 3D motion once the target enters its field of view. To address this limitation, we introduc",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.20045",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 22
+    },
+    {
+      "title": "Reinforcing Dual-Path Reasoning in Spatial Vision Language Models",
+      "authors": [],
+      "abstract": "Spatial VLMs have made substantial progress in geometric perception, yet complex spatial reasoning requiring multi-step inference over depth, distance, and scene relations remains challenging. Moreover, different spatial queries call for fundamentally different strategies: some are best addressed through purely linguistic, step-by-step deduction, while others require explicit 3D grounding before quantitative inference. We present Dual-Path Spatial Reasoning via Reinforcement Learning for Spatial",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.17539",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 22
+    },
+    {
+      "title": "VisionFoundry: Teaching VLMs Visual Perception with Synthetic Images",
+      "authors": [],
+      "abstract": "Vision-language models (VLMs) still struggle with visual perception tasks such as spatial understanding and viewpoint recognition. One plausible contributing factor is that natural image datasets provide limited supervision for low-level visual skills. This motivates a practical question: can targeted synthetic supervision, generated from only a task keyword such as Depth Order, address these weaknesses? To investigate this question, we introduce VisionFoundry, a task-aware synthetic data genera",
+      "submitted": "",
+      "date": "2026-04",
+      "arxiv_id": "2604.09531",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 22
+    },
+    {
+      "title": "EgoDyn-Bench: Evaluating Ego-Motion Understanding in Vision-Centric Foundation Models for Autonomous Driving",
+      "authors": [],
+      "abstract": "While Vision-Language Models (VLMs) have advanced highlevel reasoning in autonomous driving, their ability to ground this reasoning in the underlying physics of ego-motion remains poorly understood. We introduce EgoDyn-Bench, a diagnostic benchmark for evaluating the semantic ego-motion understanding of vision-centric foundation models. By mapping continuous vehicle kinematics to discrete motion concepts via a deterministic oracle, we decouple a model&#39;s internal physical logic from its visua",
+      "submitted": "",
+      "date": "2026-04",
+      "arxiv_id": "2604.22851",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 21
+    },
+    {
+      "title": "PROSE: Training-Free Egocentric Scene Registration with Vision-Language Models",
+      "authors": [],
+      "abstract": "Registering two captures of the same indoor space taken at different times underpins persistent spatial memory for robots and AR systems, yet the realistic version of this task is egocentric and its most scalable form is RGB-only. Head-mounted cameras yield blurry, fast-moving, partially overlapping views from which dense geometry is hard to recover. Classical registration leans on exactly the clean point clouds this setting lacks, while learned scene-graph methods require a pre-built or annotat",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.16569",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 21
+    },
+    {
+      "title": "Eyes on VLM: Benchmarking Gaze Following and Social Gaze Prediction in Vision Language Models",
+      "authors": [],
+      "abstract": "Vision-language models (VLMs) have rapidly evolved into general-purpose multimodal reasoners with strong zero-shot generalization. In this context, VLMs could greatly benefit the analysis of human gaze and attention, a central task in human behavior understanding that requires reasoning about the physical scene as well as the activity, interactions, and social context. However, the extent to which VLMs can reliably understand human gaze and related attentional behaviors remains largely unexplore",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.19859",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 21
+    },
+    {
+      "title": "PolyMerge: Compressing 3D Gaussian Splats with Polytope Coverings for Provably Safe Resource-Constrained Navigation",
+      "authors": [],
+      "abstract": "Obstacle avoidance is essential for safe navigation and motion planning. Recent radiance field reconstruction methods enable object detection and modeling with high fidelity, but remain too memory- and compute-intensive for on-board perception-based path planning. To address these limitations, we propose PolyMerge to convert a large, photorealistic 3D Gaussian Splatting (3DGS) model of a scene into a lightweight representation of convex polytopes whose union provably over-approximates all obstac",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.16232",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 20
+    },
+    {
+      "title": "UnsOcc: 3D Semantic Occupancy Prediction in Unstructured Scene via Rendering Fusion",
+      "authors": [],
+      "abstract": "Unstructured scenes present unique challenges for autonomous driving, as irregular obstacles and sparse scene layouts undermine the effectiveness of traditional perception methods such as 3D object detection. 3D semantic occupancy prediction has emerged as a prominent focus due to its ability to provide dense spatial representations by assigning semantic labels to individual voxels in 3D space. However, directly applying 3D semantic occupancy prediction to unstructured scenes remains challenging",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.03581",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 20
+    },
+    {
+      "title": "BEAST3D: Animal behavioral analysis and neural encoding from multi-view video via Gaussian splatting",
+      "authors": [],
+      "abstract": "Multi-view video recordings are increasingly used to capture the 3D movements of animals in experimental settings, yet extracting rich 3D representations from these recordings remains challenging. Supervised pose estimation requires extensive manual annotation, while general-purpose 3D reconstruction models trained on generic scene datasets fail on the specialized imagery and sparse-view setting of laboratory experiments. We address these limitations with BEAST3D, a self-supervised pretraining f",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.02937",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 20
+    },
+    {
+      "title": "MemoryWAM: Efficient World Action Modeling with Persistent Memory",
+      "authors": [],
+      "abstract": "Robust robotic manipulation in the real world requires not only an understanding of the current observation, but also memory and dynamics modeling. World action models (WAMs) possess these capabilities by jointly modeling visual foresight and actions conditioned on both current and historical observations, making them a promising paradigm for robotic manipulation. However, existing WAMs face a fundamental trade-off: methods with efficient inference typically condition only on a bounded window of",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.20562",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 20
+    },
+    {
+      "title": "HumanScale: Egocentric Human Video Can Outperform Real-Robot Data for Embodied Pretraining",
+      "authors": [],
+      "abstract": "Embodied foundation models are expected to benefit from data scaling like large language models, but face a much tighter data bottleneck. Teleoperated real-robot trajectories remain the dominant pretraining source due to their precise action supervision and embodiment alignment, yet their scalability is limited by high collection cost, acquisition difficulty, and low behavioral and environmental diversity. These limitations have sparked interest in egocentric human video as a scalable, substanti",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.20521",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 20
+    },
+    {
+      "title": "Frequency-Aware Flow Matching for Continuous and Consistent Robotic Action Generation",
+      "authors": [],
+      "abstract": "Flow matching has emerged as a standard paradigm for robotic manipulation owing to its strong expressive power for modelling complex, multimodal action distributions, alongside similar approaches like diffusion policy. However, existing methods rely on discretized action chunks, making them brittle to demonstrations collected at heterogeneous control frequencies and prone to temporally inconsistent actions that degrade control stability. In this paper, we propose Frequency-Aware Flow Matching (F",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.20135",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 20
+    },
+    {
+      "title": "Mem-World: Memory-Augmented Action-Conditioned World Models for Persistent Robot Manipulation",
+      "authors": [],
+      "abstract": "Action-conditioned world models have emerged as a promising paradigm for robot learning, offering a scalable alternative to costly real-world experimentation by generating action-consistent video rollouts. However, persistent world modeling remains challenging in manipulation: frequent end-effector occlusions and rapid wrist-camera motion make the current observation insufficient for predicting future views, causing models to forget or hallucinate scene details seen in earlier frames. Existing m",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.18960",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 20
+    },
+    {
+      "title": "Qwen-RobotNav Technical Report: A Scalable Navigation Model Designed for an Agentic Navigation System",
+      "authors": [],
+      "abstract": "Agentic navigation systems require a base navigation model whose observation strategy can be externally reconfigured at inference time, because instruction following, object search, target tracking, and autonomous driving share the same perception-planning backbone yet demand fundamentally different strategies for consuming the visual stream. We present Qwen-RobotNav, a scalable navigation model built on Qwen-RobotNav that addresses it through a parameterised interface with two complementary dim",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.18112",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 20
+    },
+    {
+      "title": "Rule-VLN: Bridging Perception and Compliance via Semantic Reasoning and Geometric Rectification",
+      "authors": [],
+      "abstract": "As embodied AI transitions to real-world deployment, the success of the Vision-and-Language Navigation (VLN) task tends to evolve from mere reachability to social compliance. However, current agents suffer from a &#34;goal-driven trap&#34;, prioritizing physical geometry (&#34;can I go?&#34;) over semantic rules (&#34;may I go?&#34;), frequently overlooking subtle regulatory constraints. To bridge this gap, we establish Rule-VLN, the first large-scale urban benchmark for rule-compliant navigatio",
+      "submitted": "",
+      "date": "2026-04",
+      "arxiv_id": "2604.16993",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 20
+    },
+    {
+      "title": "DeepIPCv3: Event-Aware Multi-Modal Sensor Fusion for Sudden Pedestrian Crossing Avoidance",
+      "authors": [],
+      "abstract": "Current end-to-end autonomous driving systems predominantly rely on frame-based sensors, which suffer from inherent perception latency and motion blur during highly dynamic encounters, specifically sudden pedestrian crossings. To address this critical safety vulnerability, we propose DeepIPCv3, a novel multi-modal autonomous navigation framework that synergizes the dense 3D spatial geometry of LiDAR point clouds with the microsecond-level asynchronous event streams of a Dynamic Vision Sensor (DV",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.01277",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 20
+    },
+    {
+      "title": "TPS-Drive: Task-Guided Representation Purification for VLM-based Autonomous Driving",
+      "authors": [],
+      "abstract": "Vision-Language Models (VLMs) provide a promising foundation for autonomous driving planning, yet bridging semantic reasoning and precise 3D spatial forecasting remains a critical challenge. Existing representation strategies generally follow two paths: text-aligned methods flatten continuous spatial states into symbols, which compromises geometric structure and induces &#34;spatial hallucinations&#34;; dense visual methods preserve spatial topology but overwhelm standard tokenizers with redunda",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.27038",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 20
+    },
+    {
+      "title": "Do multimodal models imagine electric sheep?",
+      "authors": [],
+      "abstract": "Yes. We find that large multimodal models develop mental imagery when solving spatial puzzles, and they do imagine sheep when solving sheep puzzles. We fine-tune a Qwen3.5 VLM to solve twelve diverse visual reasoning tasks -- including tangram, jigsaw, sokoban, 3D mental rotation, and rush hour -- that require understanding geometry, spatial relationships, and the consequences of actions. By supervising the model to predict the open-loop sequence of actions to solve a puzzle from an initial stat",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.09693",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 20
+    },
+    {
+      "title": "MVM-IOD: An Industrial Object-Centric Benchmark Dataset for the Evaluation of 3D Reconstruction Methods",
+      "authors": [],
+      "abstract": "3D object reconstruction, and camera pose estimation in industrial applications are challenging tasks, as errors are costly while the computation time is often limited. The complexity of typical industrial objects further complicates these tasks. Most of the existing datasets in this context do not depict realistic industrial scenarios. Therefore, we introduce the Machine Vision Metrology Industrial Object Dataset (MVM-IOD). Images of typical industrial objects are captured systematically, by mo",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.16638",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 19
+    },
+    {
+      "title": "RealityBridge: Bridging Editable 3D Gaussian Splatting Driving Simulations and Real-World Videos",
+      "authors": [],
+      "abstract": "Long-tail hazardous scenarios are essential for safety-oriented autonomous driving, yet they are difficult to collect and reproduce at scale. Editable 3D Gaussian Splatting (3DGS) simulation offers a promising alternative by reconstructing real driving scenes and supporting controllable scene editing. However, edited 3DGS-rendered videos still suffer from a significant Sim-to-Real gap, including rendering artifacts, degraded foreground assets, inconsistent illumination, and temporal flickering. ",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.16278",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 19
+    },
+    {
+      "title": "MLP Splatting: Object-Centric Neural Fields",
+      "authors": [],
+      "abstract": "3D representations are fundamental to scene rendering, understanding, and interaction. Recent approaches, such as 3D Gaussian Splatting and Neural Radiance Fields, achieve impressive photorealistic novel-view synthesis, but lack the ability to easily decompose scene elements into a few primitives, requiring additional segmentation or grouping for object-level manipulation. We present MLP-Splatting, a method that enables scene decomposition via a few expressive light-field primitives while provid",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.03877",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 19
+    },
+    {
+      "title": "EffiNav: Fusing Depth and Vision-Language for Efficient Object Goal Navigation",
+      "authors": [],
+      "abstract": "To locate a target object while exploring the unknown environment is a fundamental capability for autonomous agents, with applications ranging from search-and-rescue to field robots. A simplified version of such task is Object Goal Navigation (ObjNav). In ObjNav, successful arrival at the target object provides a basic measure of performance; however, the efficiency of the navigation trajectory is equally important, as it indicates how intelligently the agent explores and how much time remains f",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.18634",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 19
+    },
+    {
+      "title": "VL2Spike: Spike-driven Distillation from VLMs for Low-Power Visual Perception in Embodied AI",
+      "authors": [],
+      "abstract": "Spiking neural networks (SNNs) are brain-inspired, event-driven models that compute with sparse spikes, which enables highly efficient visual perception in resource-constrained embodied AI models. The emergence of Spiking-Transformer models with spike self-attention has substantially improved the learning capacity of pure SNNs. Although SNNs are energy efficient, their performance is still limited by the spike-based architecture and optimization challenges, as standard gradient descent rules can",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.15898",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 19
+    },
+    {
+      "title": "BioProVLA-Agent: An Affordable, Protocol-Driven, Vision-Enhanced VLA-Enabled Embodied Multi-Agent System with Closed-Loop-Capable Reasoning for Biological Laboratory Manipulation",
+      "authors": [],
+      "abstract": "Biological laboratory automation can reduce repetitive manual work and improve reproducibility, but reliable embodied execution in wet-lab environments remains challenging. Protocols are often unstructured, labware is frequently transparent or reflective, and multi-step procedures require state-aware execution beyond one-shot instruction following. Existing robotic systems often rely on costly hardware, fixed workflows, dedicated instruments, or robotics-oriented interfaces. Here, we introduce B",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.07306",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 19
+    },
+    {
+      "title": "CoEnv: Driving Embodied Multi-Agent Collaboration via Compositional Environment",
+      "authors": [],
+      "abstract": "Multi-agent embodied systems hold promise for complex collaborative manipulation, yet face critical challenges in spatial coordination, temporal reasoning, and shared workspace awareness. Inspired by human collaboration where cognitive planning occurs separately from physical execution, we introduce the concept of compositional environment -- a synergistic integration of real-world and simulation components that enables multiple robotic agents to perceive intentions and operate within a unified ",
+      "submitted": "",
+      "date": "2026-04",
+      "arxiv_id": "2604.05484",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 19
+    },
+    {
+      "title": "KitchenTwin: Semantically and Geometrically Grounded 3D Kitchen Digital Twins",
+      "authors": [],
+      "abstract": "Embodied AI training and evaluation require object-centric digital twin environments with accurate metric geometry and semantic grounding. Recent transformer-based feedforward reconstruction methods can efficiently predict global point clouds from sparse monocular videos, yet these geometries suffer from inherent scale ambiguity and inconsistent coordinate conventions. This mismatch prevents the reliable fusion of these dimensionless point cloud predictions with locally reconstructed object mesh",
+      "submitted": "",
+      "date": "",
+      "arxiv_id": "2603.24684",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 19
+    },
+    {
+      "title": "APEX: A Decoupled Memory-based Explorer for Asynchronous Aerial Object Goal Navigation",
+      "authors": [],
+      "abstract": "Aerial Object Goal Navigation, a challenging frontier in Embodied AI, requires an Unmanned Aerial Vehicle (UAV) agent to autonomously explore, reason, and identify a specific target using only visual perception and language description. However, existing methods struggle with the memorization of complex spatial representations in aerial environments, reliable and interpretable action decision-making, and inefficient exploration and information gathering. To address these challenges, we introduce",
+      "submitted": "",
+      "date": "",
+      "arxiv_id": "2602.00551",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 19
+    },
+    {
+      "title": "VLM3: Vision Language Models Are Native 3D Learners",
+      "authors": [],
+      "abstract": "Vision Language Models (VLMs) enable a unified model to solve various vision tasks through prompting. They have shown promising performance in semantic understanding. However, 3D understanding still largely relies on expert vision models with complex task-specific designs. The key argument this work wants to make is that VLMs are native 3D learners. Our in-depth large scale study shows that 1) focal length unification, 2) text-based pixel reference and 3) data mixture and scaling, are all you ne",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.30561",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 19
+    },
+    {
+      "title": "GS-NFS: Bandwidth-adaptive Streaming of Dynamic Gaussian Splats and Point Clouds",
+      "authors": [],
+      "abstract": "Dynamic 3D Gaussian Splatting (3DGS) holds great promise as a 3D video streaming technology since it can represent complex 3D scenes with high fidelity. In this approach, every frame in a 3D video represents the environment as a collection of Gaussians with position and other attributes such as scale, rotation, opacity, and color. Frames capture fine details, permit views from any arbitrary perspective, but are an order of magnitude, or more, larger than 2D video frames. A line of recent work ha",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.05650",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 18
+    },
+    {
+      "title": "3D-DLP: Self-Supervised 3D Object-Centric Scene Representation Learning",
+      "authors": [],
+      "abstract": "We introduce 3D-DLP, a self-supervised object-centric representation learning model that decomposes scene-level RGB-D or voxel observations into a set of 3D latent particles. Building on the Deep Latent Particles (DLP) framework, each particle encodes disentangled attributes, including 3D keypoint position, bounding box dimensions, and appearance features, and represents a distinct entity in the scene. The model learns interpretable per-particle segmentation maps through an end-to-end self-super",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.19451",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 18
+    },
+    {
+      "title": "Playful Agentic Robot Learning",
+      "authors": [],
+      "abstract": "Current agentic robot systems can write executable Code-as-Policy programs, observe feedback, and revise behavior across multiple attempts, but they remain largely task-driven: reusable skills are acquired only after explicit instructions. We study Playful Agentic Robot Learning, where an embodied coding agent uses self-directed play as a continual skill-learning stage before downstream tasks arrive. We introduce RATs, Robotics Agent Teams designed for play-time skill acquisition. During play, R",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.19419",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 18
+    },
+    {
+      "title": "Contrastive Action-Image Pre-training for Visuomotor Control",
+      "authors": [],
+      "abstract": "Existing vision encoders for robotics face a fundamental bottleneck: robotic datasets lack the scale necessary for large-scale pre-training. Prior work circumvents this data scarcity by turning to internet-scale image and language data or egocentric human video. While these models show promise, neither paradigm learns from paired vision and action data, which downstream visuomotor control policies require. However, robot trajectories, the most direct source of this paired signal, are not availab",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.17256",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 18
+    },
+    {
+      "title": "Multiple Consistent 2D-3D Mappings for Robust Zero-Shot 3D Visual Grounding",
+      "authors": [],
+      "abstract": "Zero-shot 3D Visual Grounding (3DVG) is a critical capability for open-world embodied AI. However, existing methods are fundamentally bottlenecked by the poor quality of open-vocabulary 3D proposals, suffering from inaccurate categories and imprecise geometries, as well as the spatial redundancy of exhaustive multi-view reasoning. To address these challenges, we propose MCM-VG, a novel framework that achieves robust zero-shot 3DVG by explicitly establishing Multiple Consistent 2D-3D Mappings. In",
+      "submitted": "",
+      "date": "2026-04",
+      "arxiv_id": "2604.26261",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 18
+    },
+    {
+      "title": "E3VS-Bench: A Benchmark for Viewpoint-Dependent Active Perception in 3D Gaussian Splatting Scenes",
+      "authors": [],
+      "abstract": "Visual search in 3D environments requires embodied agents to actively explore their surroundings and acquire task-relevant evidence. However, existing visual search and embodied AI benchmarks, including EQA, typically rely on static observations or constrained egocentric motion, and thus do not explicitly evaluate fine-grained viewpoint-dependent phenomena that arise under unrestricted 5-DoF viewpoint control in real-world 3D environments, such as visibility changes caused by vertical viewpoint ",
+      "submitted": "",
+      "date": "2026-04",
+      "arxiv_id": "2604.17969",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 18
+    },
+    {
+      "title": "MaP-AVR: A Meta-Action Planner for Agents Leveraging Vision Language Models and Retrieval-Augmented Generation",
+      "authors": [],
+      "abstract": "Embodied robotic AI systems designed to manage complex daily tasks rely on a task planner to understand and decompose high-level tasks. While most research focuses on enhancing the task-understanding abilities of LLMs/VLMs through fine-tuning or chain-of-thought prompting, this paper argues that defining the planned skill set is equally crucial. To handle the complexity of daily environments, the skill set should possess a high degree of generalization ability. Empirically, more abstract express",
+      "submitted": "",
+      "date": "",
+      "arxiv_id": "2512.19453",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 18
+    },
+    {
+      "title": "MetaWorld: Scaling Multi-Agent Video World Model from Single-view Video Data",
+      "authors": [],
+      "abstract": "Video world models are a foundational generative technology for embodied AI and the Metaverse, yet existing approaches are inherently limited to a single agent observing from a single perspective. Extending these models to multi-agent settings introduces two critical challenges: data scarcity (coordinated multi-view recordings are prohibitively expensive to collect for general open-domain scenarios) and world state alignment (independently generated video streams cannot ensure that shared physic",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.02753",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 18
+    },
+    {
+      "title": "Distilling Neuro-Symbolic Programs into 3D Multi-modal LLMs",
+      "authors": [],
+      "abstract": "Current 3D spatial reasoning methods face a fundamental trade-off: neuro-symbolic 3D (NS3D) concept learners achieve interpretable reasoning through compositional programs but are constrained to closed-set concept vocabularies and simple programs; end-to-end 3D multi-modal LLMs (3D MLLMs) could handle complex natural language and open-vocabulary concepts but suffer from black-box reasoning without explicit spatial verification. We introduce APEIRIA, a neuro-symbolic 3D MLLM to bridge two paradig",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.01215",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 18
+    },
+    {
+      "title": "Feature-Optimized Vision for Adaptive 3D Scene Reconstruction",
+      "authors": [],
+      "abstract": "Three-dimensional scene reconstruction depends on local image evidence that is both visually discriminative and geometrically useful. Fixed feature thresholds and uniform feature budgets are easy to deploy, but they can waste computation on repeated texture, low-parallax regions, or unstable points. This paper proposes an adaptive feature-optimized vision front end for 3D reconstruction. The method scores candidate features by texture, repeatability, distinctiveness, expected triangulation angle",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.31534",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 18
+    },
+    {
+      "title": "Grounded 3D-Aware Spatial Vision-Language Modeling",
+      "authors": [],
+      "abstract": "We present GR3D, a spatial vision language model equipped with three complementary grounding capabilities--explicit 2D grounding, implicit 2D grounding, and monocular 3D grounding--within a single framework. GR3D introduces an implicit grounding mechanism that identifies entity mentions during generation and inserts the corresponding region tokens into the text stream, allowing the model to reference visual evidence on the fly when producing spatial chain-of-thought responses. In parallel, a reg",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.30307",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 18
+    },
+    {
+      "title": "Med-StepBench: A Hierarchical Reasoning Framework for Evaluating Hallucinations in Medical Vision-Language Models",
+      "authors": [],
+      "abstract": "Large vision-language models (VLMs) demonstrate strong performance in medical image understanding, but frequently generate clinically plausible yet incorrect statements, raising significant safety concerns. Existing medical hallucination benchmarks primarily focus on 2D imaging with one-shot diagnostic questions, offering limited insight into whether predictions are grounded in correct localization and abnormality identification, allowing critical reasoning errors to remain hidden behind seeming",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.10002",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 18
+    },
+    {
+      "title": "Intrinsic 4D Gaussian Segmentation from Scene Cues",
+      "authors": [],
+      "abstract": "Dynamic 4D Gaussian Splatting reconstructs deforming scenes with high fidelity and is increasingly adopted as a representation for dynamic 3D scenes. Putting such a scene to use, for editing, manipulation or motion analysis, first requires segmenting it: grouping the Gaussian primitives into coherent objects. Current pipelines obtain this grouping by importing 2D masks from foundation models such as SAM and lifting or distilling them into the Gaussian representation. In dynamic scenes these mask",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.18623",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 17
+    },
+    {
+      "title": "Recent Advances and Trends in Learning-based 3D Representations",
+      "authors": [],
+      "abstract": "The selection of an appropriate 3D representation is a fundamental design decision that dictates the efficiency, quality, and capabilities of modern computer vision and graphics pipelines for tasks such as 3D reconstruction, novel-view synthesis and rendering, shape and motion analysis, recognition, and generation. While traditional representations (\\eg meshes, point clouds, and volumetric grids) remain standard outputs of 3D sensors (\\eg LiDAR and 3D scanners) and are widely used in downstream ",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.04871",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 17
+    },
+    {
+      "title": "Vision-Reasoning-Guided Occlusion Removal from Light Fields",
+      "authors": [],
+      "abstract": "Occlusion-robust scene recovery remains a major challenge in computational imaging, particularly in natural environments where dense foreground vegetation severely limits visibility. We propose a vision-reasoning-guided light field occlusion removal framework that combines the visibility recovery capability of light field integration (LFI) with the semantic reasoning capacity of vision-language models (VLMs). Multi-view observations are first integrated via LFI to suppress foreground occlusions ",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.19985",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 17
+    },
+    {
+      "title": "SurgVista: Long-Horizon Surgical World Modeling with Plausible Instrument-Tissue Dynamics",
+      "authors": [],
+      "abstract": "Scaling robot policy learning for autonomous surgery is challenging, as expert demonstrations are expensive and in vivo exploration poses substantial safety risks. Surgical world models address this by generating realistic, action-conditioned future frames from an initial observation, but existing methods exhibit two persistent failure modes: spatial interaction incoherence, where visible instrument contact fails to induce spatially consistent tissue deformation, and temporal fidelity collapse, ",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.19889",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 17
+    },
+    {
+      "title": "ROBOSHACKLES: A Safety Dataset for Human-Injury Prevention in Embodied Foundation Models",
+      "authors": [],
+      "abstract": "Embodied Foundation Models (EFMs) integrate multimodal understanding, future-state reasoning, and executable robot actions. Yet their safety alignment for human-injury prevention remains underexplored, primarily because real-world data of robots harming humans or creating hazardous household situations cannot be safely or ethically collected. To address this challenge, we propose a safety-critical data construction pipeline for human-injury prevention in EFMs.Starting from real DROID observation",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.18632",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 17
+    },
+    {
+      "title": "SC3-Eval: Evaluating Robot Foundation Models via Self-Consistent Video Generation",
+      "authors": [],
+      "abstract": "Evaluating generalist robot manipulation policies in the real world is expensive, slow, and difficult to scale. Action-conditioned video world models offer a scalable alternative by simulating policy rollouts. Autoregressive rollouts accumulate compounding errors, observations across multiple camera views must remain mutually consistent, and the evaluator must generalize to policies whose behaviors lie outside the training distribution. We address these challenges with SC3-Eval, a self-consisten",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.18610",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 17
+    },
+    {
+      "title": "IntentionNav: A Benchmark for Intent-Driven Object Navigation from Implicit Human Instruction",
+      "authors": [],
+      "abstract": "Existing object navigation benchmarks usually tell an embodied agent which object category to find, such as microwave or chair. Human-facing embodied AI is often asked something less direct: &#34;I need something to warm this food&#34; or &#34;the room feels stuffy.&#34; The agent must infer the object that can satisfy the need, find a scene-grounded instance, and decide whether the goal has been reached. We study this setting as intent-driven object navigation and introduce IntentionNav, a diag",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.23187",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 17
+    },
+    {
+      "title": "ParkingTransformer: LLM-Enhanced End-to-End Trajectory Planning for Autonomous Parking",
+      "authors": [],
+      "abstract": "End-to-end autonomous parking has emerged as a critical task within the realm of autonomous driving. However, existing methods suffer from black-box characteristics, lacking high-level semantic understanding and interpretability, which impedes the realization of seamless long-distance autonomous parking from the road to the target spot. To address these limitations, we propose ParkingTransformer, a novel framework that leverages multi-view perception and the scene understanding capability of Lar",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.17082",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 17
+    },
+    {
+      "title": "Reason, Then Re-reason: Cross-view Revisiting Improves Spatial Reasoning",
+      "authors": [],
+      "abstract": "Spatial reasoning from egocentric videos is inherently challenging because the observable evidence is constrained by the camera trajectory. Existing methods rely on single-turn inference, forcing models to resolve geometric ambiguity through semantic priors rather than verifiable evidence. We argue that spatial reasoning should be revisitable: conclusions formed under limited evidence should remain open to revision when complementary viewpoints become available. Building on this insight, we prop",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.11683",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 17
+    },
+    {
+      "title": "EgoMotion: Hierarchical Reasoning and Diffusion for Egocentric Vision-Language Motion Generation",
+      "authors": [],
+      "abstract": "Faithfully modeling human behavior in dynamic environments is a foundational challenge for embodied intelligence. While conditional motion synthesis has achieved significant advances, egocentric motion generation remains largely underexplored due to the inherent complexity of first-person perception. In this work, we investigate Egocentric Vision-Language (Ego-VL) motion generation. This task requires synthesizing 3D human motion conditioned jointly on first-person visual observations and natura",
+      "submitted": "",
+      "date": "2026-04",
+      "arxiv_id": "2604.19105",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 17
+    },
+    {
+      "title": "One Demo is Worth a Thousand Trajectories: Action-View Augmentation for Visuomotor Policies",
+      "authors": [],
+      "abstract": "Visuomotor policies for manipulation have demonstrated remarkable potential in modeling complex robotic behaviors, yet minor alterations in the robot&#39;s initial configuration and unseen obstacles easily lead to out-of-distribution observations. Without extensive data collection effort, these result in catastrophic execution failures. In this work, we introduce an effective data augmentation framework that generates visually realistic fisheye image sequences and corresponding physically feasib",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.19586",
+      "source_queries": [
+        "gaussian_splatting_scene",
+        "world_model_robot"
+      ],
+      "relevance": 16
+    },
+    {
+      "title": "Splaxel: Efficient Distributed Training of 3D Gaussian Splatting for Large-scale Scene Reconstruction via Pixel-level Communication",
+      "authors": [],
+      "abstract": "3D Gaussian Splatting (3DGS) enables high-fidelity and real-time 3D scene reconstruction, but scaling training to large-scale scenes requires optimizing hundreds of millions of Gaussians across multiple GPUs. Existing distributed approaches either partition scenes into isolated regions, causing global inconsistency, or rely on global Gaussian-level exchanges, which lead to substantial growth in inter-GPU communication and quickly dominate iteration time.\n  We propose Splaxel, a communication-eff",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.18588",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 16
+    },
+    {
+      "title": "Gaussian Light Field Splatting: A Physical Prior-Driven Vision Transformer for Unsupervised Low-Light Image Enhancement",
+      "authors": [],
+      "abstract": "Existing unsupervised low-light image enhancement methods often encounter local exposure imbalance and color distortion under complex non-uniform illumination. In addition, most Vision Transformers lack an explicit mechanism for modeling the physical priors of illumination degradation. To address these limitations, we propose GLFS, a Gaussian light field splatting-based Vision Transformer that integrates continuous physical illumination modeling from Gaussian splatting into the Transformer archi",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.17985",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 16
+    },
+    {
+      "title": "MooMIns -- Monocular 3D Reconstruction and Object Pose Estimation from Multiple Instances",
+      "authors": [],
+      "abstract": "Simultaneous 3D reconstruction and 6D object pose estimation from a single monocular image is an inherently ill-posed problem. In industrial settings, however, multiple instances of an object are often randomly arranged in bins, implicitly providing several views of the same object within a single image. We show that this implicit multi-view geometry can be exploited to simultaneously reconstruct the object in 3D and estimate the 6D pose of each visible object instance. We present MooMIns, a new",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.14389",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 16
+    },
+    {
+      "title": "GT: Voxel-Gaussian Splatting Visual Geometry Grounded Transformer",
+      "authors": [],
+      "abstract": "Gaussian splatting has shown strong potential for 3D reconstruction and novel view synthesis. However, most existing methods require accurate camera parameters and per-scene optimization, while feed-forward methods with pixel-aligned Gaussian primitives often suffer from artifacts and non-uniform primitives. In this paper, we propose $\\text{VG}^2$GT, a Voxel-Gaussian Splatting Visual Geometry-Grounded Transformer. $\\text{VG}^2$GT leverages a frozen pretrained visual foundation model (VFM), incor",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.01573",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 16
+    },
+    {
+      "title": "Beyond Static Gaussians: An Empirical Investigation of Architectural Paradigms for Dynamic 3D Scene Reconstruction",
+      "authors": [],
+      "abstract": "Dynamic scene reconstruction via 3D Gaussian Splatting (3DGS) has emerged as a compelling approach for representing evolving environments, yet understanding trade-offs between methodologies remains crucial. This paper presents a comprehensive analysis of dynamic 3DGS methods, categorizing them into two paradigms: structure-guided methods employing auxiliary representations (deformation fields, canonical spaces, grids) to model temporal changes, and gaussian-centric methods encoding dynamics dire",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.00452",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 16
+    },
+    {
+      "title": "SCAN-Planner: Spatial Collision-Aware Local Planning for Route-Guided Long-Range Quadruped Navigation",
+      "authors": [],
+      "abstract": "Quadruped robots are increasingly expected to navigate through narrow passages, cluttered indoor scenes, and large-scale 3D unstructured environments. Existing local planners commonly approximate the robot using isotropic geometric inflation or rely on planar and elevation-map representations, leading to conservative motion in tight spaces and limited reasoning about overhanging structures. This letter presents SCAN-Planner, a spatial collision-aware local planning framework for long-range quadr",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.19555",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 16
+    },
+    {
+      "title": "Visual Distraction Undermines Moral Reasoning in Vision-Language Models",
+      "authors": [],
+      "abstract": "Moral reasoning is fundamental to safe Artificial Intelligence (AI), yet ensuring its consistency across modalities becomes critical as AI systems evolve from text-based assistants to embodied agents. Current safety techniques demonstrate success in textual contexts, but concerns remain about generalization to visual inputs. Existing moral evaluation benchmarks rely on textonly formats and lack systematic control over variables that influence moral decision-making. Here we show that visual input",
+      "submitted": "",
+      "date": "",
+      "arxiv_id": "2603.16445",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 16
+    },
+    {
+      "title": "EgoPressDiff: Multimodal Video Diffusion for Egocentric UV-Domain Hand-Pressure Estimation",
+      "authors": [],
+      "abstract": "Estimating hand-surface contact pressure from an egocentric view is crucial for AR/VR devices, robotic imitation, and ergonomic analysis. Existing methods often discretize pressure signal and process frames independently, leading to quantization errors and temporal inconsistencies. We present \\emph{EgoPressDiff}, a conditional video diffusion framework that generates UV-pressure maps from visual input. The core of our approach is a multi-modal conditioning strategy, introducing a PoseNet and a V",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.06872",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 16
+    },
+    {
+      "title": "Agentic Large Language Models for Automated Structural Analysis of 3D Frame Systems",
+      "authors": [],
+      "abstract": "Large language models (LLMs) have emerged as powerful foundation models with strong reasoning capabilities across domains. Beyond reactive text generation, agentic LLMs enable autonomous workflow execution through modular task decomposition and coordinated tool use. In structural engineering, recent efforts have developed agentic LLMs for automated analysis of plane frames. However, their extension to 3D frames remains underexplored due to challenges in irregular geometric representation, topolo",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.06525",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 16
+    },
+    {
+      "title": "ETCHR: Editing To Clarify and Harness Reasoning",
+      "authors": [],
+      "abstract": "Multimodal Large Language Models have advanced visual reasoning, yet a purely textual chain of thought remains a bottleneck for questions that require fine-grained focus or view transformations. The &#39;&#39;think with images&#39;&#39; paradigm narrows this gap, but existing approaches are either constrained by fixed predefined toolkits or produce noisy intermediate images from unified multimodal methods. We pursue a third option: using a dedicated image editing model and decouple it with an un",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.23897",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 16
+    },
+    {
+      "title": "Task-Aware Bimanual Affordance Prediction via VLM-Guided Semantic-Geometric Reasoning",
+      "authors": [],
+      "abstract": "Bimanual manipulation requires reasoning about where to interact with an object and which arm should perform each action, a joint affordance localization and arm allocation problem that geometry-only planners cannot resolve without semantic understanding of task intent. Existing approaches either treat affordance prediction as coarse part segmentation or rely on geometric heuristics for arm assignment, failing to jointly reason about task-relevant contact regions and arm allocation. We reframe b",
+      "submitted": "",
+      "date": "2026-04",
+      "arxiv_id": "2604.08726",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 16
+    },
+    {
+      "title": "Leveraging NeRF-Rendered Images for 3D Gaussian Splatting",
+      "authors": [],
+      "abstract": "Neural radiance field (NeRF) and 3D Gaussian splatting (3DGS) are two mainstream approaches for novel view synthesis. They often show complementary performance, i.e., 3DGS demonstrating faster rendering speed and NeRF demonstrating higher rendering quality. Motivated by this, we propose leveraging NeRF-rendered images for 3DGS. Specifically, we target street scenes and utilize a pre-trained street-specific NeRF method to produce training images for a target 3DGS method. In our 3DGS training, NeR",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.09034",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 15
+    },
+    {
+      "title": "PersistGS: Differentiable Physics for Object Permanence in 4D Gaussian Splatting",
+      "authors": [],
+      "abstract": "Dynamic 3D Gaussian Splatting (3DGS) methods reconstruct time-varying scenes from synchronized multi-camera video using photometric supervision. When a moving object becomes fully occluded from all training cameras, this supervision vanishes: the Gaussians representing it receive no gradient signal and degrade. Existing approaches to incomplete observations in neural reconstruction rely on learned generative priors that prioritize visual plausibility over physical correctness.\n  We propose $\\tex",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.03479",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 15
+    },
+    {
+      "title": "Slow Brain, Fast Planner: Latency-Resilient VLM-Augmented Urban Navigation",
+      "authors": [],
+      "abstract": "Learning-based planners for sidewalk navigation can generate diverse candidate trajectories in real time, yet their scoring functions often fail to select the best trajectory in challenging situations, outputting trajectories that make the mobile robot drive onto grass, toward pedestrians, or in the wrong direction, even when better candidates exist in the same set. We call this the trajectory scoring gap: in real-world sidewalk navigation, the gap between an anchor-based planner&#39;s top choic",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.20458",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 15
+    },
+    {
+      "title": "Efficiently Linking Real Scenes with Synthetic Data Generation for AI-based Cognitive Robotics and Computer Vision Applications",
+      "authors": [],
+      "abstract": "AI vision models are a driving factor for the potential use case scenarios of cognitive robotics within in the industry and household applications. A large array of methods from semantic environment analysis towards 6D and grasping pose estimation have been proposed based on the latest AI achievements. However, such advancements require further strong and efficient methods w.r.t. training data and AI-architectures, which are capable in synergy to tackle current challenges, precision limits, and ",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.20272",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 15
+    },
+    {
+      "title": "VISTA: Scale-Aware Visual Navigation via Action History Conditioning",
+      "authors": [],
+      "abstract": "Vision Navigation Foundation Models (VNMs) promise end-to-end learned navigation policies capable of zero-shot deployment across diverse embodiments and environments. To maintain generality, many vision-based navigation models predict normalized actions. However, this normalization introduces a critical deployment vulnerability: applying different scaling factors to the same normalized trajectory alters its physical geometry, which degrades navigation performance and increases collision risks. W",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.17294",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 15
+    },
+    {
+      "title": "The Art of Interrogation: Consistency Amplifies Factuality in Spatial Reasoning",
+      "authors": [],
+      "abstract": "Current Large Reasoning Models (LRMs) exhibit remarkable general capabilities but significantly underperform in spatial reasoning tasks. Existing approaches treat this gap as a knowledge deficit, relying on supervised fine-tuning (SFT) to ingest labeled spatial data from external vision sources or synthetic engines. In contrast, we argue that for many tasks, spatial reasoning capabilities are already present in pre-trained LRMs but require alignment through logical coherence under geometric 2D a",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.11918",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 15
+    },
+    {
+      "title": "SceneConductor: 3D Scene Generation from a Single Image with Multi-Agent Orchestration",
+      "authors": [],
+      "abstract": "Generating complete 3D scenes from a single image requires inferring globally consistent geometry, object relationships, and environmental context from inherently ambiguous visual evidence. Despite recent progress in joint layout-and-mesh generation, existing methods often rely on holistic or weakly decomposed pipelines that entangle many factors at once and demand extensive scene-level supervision, limiting their generalization to complex real-world environments. We propose a multi-agent orches",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.08402",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 15
+    },
+    {
+      "title": "Native3D: End-to-End 3D Scene Generation via Unified Mesh-Texture Modeling and Semantic Alignment",
+      "authors": [],
+      "abstract": "This paper presents Native3D, the first end-to-end 3D scene generation framework that completely bypasses 2D intermediate representations. Traditional approaches typically require adapting 3D representations to the 2D domain to leverage pre-trained diffusion models, which inevitably introduces domain adaptation issues including geometric structural distortion and texture detail degradation. To address these limitations, we design a unified mesh-texture joint representation that simultaneously mo",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.07117",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 15
+    },
+    {
+      "title": "WorldCoder-Bench: Benchmarking Physically Grounded 3D World Synthesis",
+      "authors": [],
+      "abstract": "Large language models (LLMs) are increasingly asked not only to write static interfaces, but to construct executable interactive worlds from natural language. Browser-native 3D, commonly built with Three.js, is a natural next frontier: generated programs must integrate assets, obey spatial and physical constraints, and keep user-facing controls synchronized with hidden runtime state. Existing web-generation benchmarks and evaluators, however, largely observe only pixels or DOM nodes, while the m",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.01869",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 15
+    },
+    {
+      "title": "Where to Look: Can Foundation Models Reach a Target Viewpoint Through Active Exploration?",
+      "authors": [],
+      "abstract": "Humans can reproduce the viewpoint specified by a target image through active head and body motion, yet spatial intelligence in foundation models has largely been studied as passive understanding of pre-collected observations. We introduce Target Viewpoint Reproduction (TVR) -- an active task where an agent adjusts its viewpoint in a 3D environment until its observation matches a given target image -- and TVRBench, an indoor-simulation benchmark spanning scene scale and target-view visual richne",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.01247",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 15
+    },
+    {
+      "title": "SkyShield: Occupancy as a Safety Interface for Low-Altitude UAV Autonomy",
+      "authors": [],
+      "abstract": "For low-altitude Unmanned Aerial Vehicle (UAV) autonomy, 3D spatial understanding is not merely a perception objective, but the safety interface between human instructions and physical flight. In human-scale urban airspace below 20 meters, thin geometry, occlusions, vegetation, and urban clutter define whether an aerial agent can safely enter the space ahead. However, existing UAV datasets mainly provide 2D annotations or 3D boxes, while driving-oriented occupancy benchmarks assume stable ground",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.00747",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 15
+    },
+    {
+      "title": "TAIHRI: Task-Aware 3D Human Keypoints Localization for Close-Range Human-Robot Interaction",
+      "authors": [],
+      "abstract": "Accurate 3D human keypoints localization is a critical technology enabling robots to achieve natural and safe physical interaction with users. Conventional 3D human keypoints estimation methods primarily focus on the whole-body reconstruction quality relative to the root joint. However, in practical human-robot interaction (HRI) scenarios, robots are more concerned with the precise metric-scale spatial localization of task-relevant body parts under the egocentric camera 3D coordinate. We propose",
+      "submitted": "",
+      "date": "2026-04",
+      "arxiv_id": "2604.08921",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 15
+    },
+    {
+      "title": "Geometry-Preserving in 3D Gaussian Splatting for LiDAR-Camera Extrinsic Calibration",
+      "authors": [],
+      "abstract": "Accurate LiDAR-camera calibration is essential for robust multi-modal perception. Targetless approaches avoid manual setup but remain limited by the scarcity of discriminative cross-modal features. Recent methods address this by reconstructing the scene within a differentiable model, enabling extrinsic optimization through dense photometric supervision. Among these, 3D Gaussian Splatting (3DGS) has been widely adopted as a geometric proxy that bridges LiDAR and camera within a single differentia",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.20103",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 14
+    },
+    {
+      "title": "Local-GS: Accelerating 3D Gaussian Splatting via Tile-Local Warp Coherence",
+      "authors": [],
+      "abstract": "3D Gaussian Splatting (3DGS) has significantly advanced real-time novel view synthesis by representing scenes as dense collections of anisotropic 3D Gaussian primitives. However, the irregular spatial distribution of Gaussians often leads to poor GPU utilization, as warp divergence and redundant computation degrade rendering performance. To address this, we present Local-GS, a warp-coherent rendering paradigm that, organizes Gaussian primitives with respect to SIMT (Single Instruction, Multiple ",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.16566",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 14
+    },
+    {
+      "title": "RPC-GS: Gaussian Splatting with native RPC Rendering for Satellite Imagery",
+      "authors": [],
+      "abstract": "We present RPC-GS, the first Gaussian Splatting framework for satellite imagery that operates natively with Rational Polynomial Camera (RPC) models. The RPC model is the de facto standard for representing the complex imaging geometry of modern pushbroom satellite sensors. To simplify rendering, prior satellite Gaussian Splatting methods replace the RPC model with perspective or affine camera approximations, leading to geometric errors during reconstruction. RPC-GS avoids these approximations by ",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.06690",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 14
+    },
+    {
+      "title": "FreeStreamGS: Online Feed-forward 3D Gaussian Splatting from Unposed Streaming Inputs",
+      "authors": [],
+      "abstract": "Feed-forward 3D Gaussian Splatting (3DGS) allows efficient and high-fidelity novel view synthesis (NVS) from an offline recorded image sequence. However, achieving online NVS from streaming and unposed image inputs remains challenging. Although online feed-forward geometric estimation methods have been proposed for streaming depth and point cloud recovery, they cannot be adapted to NVS due to severe rendering artifacts. This is because NVS demands stricter multi-view consistency in Gaussian scal",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.03254",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 14
+    },
+    {
+      "title": "Fast Human Attention Prediction for Fixation-guided Active Perception in Autonomous Navigation",
+      "authors": [],
+      "abstract": "Human visual attention relies on structured scanpaths to efficiently process scenes, yet instilling this behavior into robot autonomy is in its infancy and hindered by the high,computational costs of existing predictive models. To address this, we introduce GazeLNN, a computationally lightweight,scanpath prediction model that leverages Liquid Neural Networks as its recurrent engine and employs MobileNetV3 for feature extraction. Operating auto-regressively, the architecture predicts sequential f",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.20491",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 14
+    },
+    {
+      "title": "SRL: Combining SLIP Model and Reinforcement Learning for Agile Robotic Jumping",
+      "authors": [],
+      "abstract": "Robotic jumping is pivotal in applications such as search and rescue and logistics, where crossing obstacles and enhancing mobility efficiency are critical. The Spring-Loaded Inverted Pendulum (SLIP) model leverages simplified spring-mass dynamics that naturally encode biologically plausible hopping motions, yet its performance degrades on irregular terrain due to idealized assumptions regarding contact and joint dynamics. Meanwhile, Reinforcement Learning (RL) can adapt to diverse and complex e",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.18625",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 14
+    },
+    {
+      "title": "Human Universal Grasping",
+      "authors": [],
+      "abstract": "Humans can grasp objects effortlessly, whereas multi-fingered robots are far from this level of generality. We argue that the most natural source of robot grasping data is from humans, who pick up thousands of objects every day. We present HUG, a flow-matching model that generates diverse human grasps for any user-specified object in a single RGB-D image captured from a stereo camera. Using smart glasses, we first collect 1M-HUGs, an egocentric dataset of human grasps spanning 1M frames (27.8 hr",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.17054",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 14
+    },
+    {
+      "title": "HomeWorld: A Unified Floorplan-to-Furnished Framework for Generating Controllable, Densely Interactive Whole-Home Scenes",
+      "authors": [],
+      "abstract": "Indoor scene generation is crucial for robot simulation and modern interior design. However, complex layouts together with scarce 3D scene data make learning-based generation challenging. Existing methods often rely on hand-crafted rules or focus on isolated sub-tasks (e.g., floorplan synthesis or single-room furnishing), producing whole-home scenes that lack global coherence, realism, and simulation readiness. To mitigate these limitations, we propose a unified hierarchical framework that decom",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.06390",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 14
+    },
+    {
+      "title": "A Semantic Observer Layer for Autonomous Vehicles: Pre-Deployment Feasibility Study of VLMs for Low-Latency Anomaly Detection",
+      "authors": [],
+      "abstract": "Semantic anomalies-context-dependent hazards that pixel-level detectors cannot reason about-pose a critical safety risk in autonomous driving. We propose a \\emph{semantic observer layer}: a quantized vision-language model (VLM) running at 1--2\\,Hz alongside the primary AV control loop, monitoring for semantic edge cases, and triggering fail-safe handoffs when detected. Using Nvidia Cosmos-Reason1-7B with NVFP4 quantization and FlashAttention2, we achieve ~500 ms inference a ~50x speedup over the",
+      "submitted": "",
+      "date": "",
+      "arxiv_id": "2603.28888",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 14
+    },
+    {
+      "title": "EqGINO: Equivariant Geometry-Informed Fourier Neural Operators for 3D PDEs",
+      "authors": [],
+      "abstract": "Deep learning surrogates for 3D Partial Differential Equations (PDEs) often fail to generalize across geometric transformations because they depend heavily on specific coordinate systems. While equivariant networks offer a solution, they typically rely on local operations in the spatial domain, making the global receptive field, which is essential for PDE dynamics, computationally expensive. Conversely, Fourier Neural Operators (FNOs) efficiently capture global interactions, yet establishing 3D ",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.03260",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 14
+    },
+    {
+      "title": "Real2SAM2Real: Generative 3D Caches as Complementary Context for Video Diffusion",
+      "authors": [],
+      "abstract": "While Video Diffusion Models (VDMs) excel at synthesizing high-fidelity videos, enabling precise camera and scene control remains challenging. Existing methods predominantly rely on implicit diffusion priors to generate unobserved regions, inevitably leading to structural collapse during high-dynamic movements or complex occlusions. To address this challenge, we propose Real2SAM2Real, a framework that leverages 3D lifting models (e.g., SAM3D) to extract an explicitly editable 3D cache, serving a",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.00299",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 14
+    },
+    {
+      "title": "CADBench: A Multimodal Benchmark for AI-Assisted CAD Program Generation",
+      "authors": [],
+      "abstract": "Recovering editable CAD programs from images or 3D observations is central to AI-assisted design, but progress is difficult to measure because existing evaluations are fragmented across datasets, modalities, and metrics. We introduce CADBench, a unified benchmark for multimodal CAD program generation. CADBench contains 18,000 evaluation samples spanning six benchmark families derived from DeepCAD, Fusion 360, ABC, MCB, and Objaverse; five input modalities including clean meshes, noisy meshes, si",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.10873",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 14
+    },
+    {
+      "title": "Information Coordination as a Bridge: A Neuro-Symbolic Architecture for Reliable Autonomous Driving Scene Understanding",
+      "authors": [],
+      "abstract": "Reliable autonomous driving requires scene understanding that is semantically consistent across heterogeneous sensors and verifiable at the reasoning stage. However, many recent LLM-driven driving systems attach the language model as a post-processor and force it to reason over redundant or conflicting perception outputs, which can amplify hallucinated entities and unsafe conclusions. This paper proposes InfoCoordiBridge, a BEV-centric neuro-symbolic architecture that inserts an explicit coordin",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.04475",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 14
+    },
+    {
+      "title": "QuadVerse: An Integrated Framework Aligning Visual-Physical Reality for Quadruped Simulation",
+      "authors": [],
+      "abstract": "Simulation is central to robot learning, yet the sim-to-real gap remains a major bottleneck. Existing approaches often tackle visual or dynamic gaps separately, overlooking how these individual mismatches accumulate and propagate throughout the robot&#39;s state evolution. In this paper, we introduce QuadVerse, an integrated framework that uses reconstructed scenes as a calibration substrate for aligning visual perception, physical interaction, and actuator dynamics. From captured RGB videos, we",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.07118",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 13
+    },
+    {
+      "title": "Unpaired RGB-Thermal Gaussian-Splatting Using Visual Geometric Transformers",
+      "authors": [],
+      "abstract": "Multi-modal novel view synthesis (NVS) combining RGB and thermal imagery enables precise 3D scene reconstruction with visual and thermal information. However, existing methods typically rely on precisely calibrated RGB-thermal image pairs or stereo setups, limiting scalability and practical deployment. To address this, we introduce a framework for unpaired RGB-thermal NVS that leverages VGGT, a 3D feed-forward transformer architecture, to independently estimate camera poses for each modality. Th",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.05491",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 13
+    },
+    {
+      "title": "DeblurNVS: Geometric Latent Diffusion for Novel View Synthesis from Sparse Motion-Blurred Images",
+      "authors": [],
+      "abstract": "Novel view synthesis (NVS) is a fundamental problem in computer vision and graphics. Recent advances in neural radiance fields (NeRF), 3D Gaussian Splatting (3DGS), and generative view synthesis have substantially improved its quality. Yet most methods still rely on clean observations, where image structures and cross-view geometric cues are well preserved. Motion blur breaks this assumption by corrupting local details and weakening multi-view correspondences. Such blur commonly arises from came",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.01315",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 13
+    },
+    {
+      "title": "SWAP: Symmetric Equivariant World-Model for Agile Robot Parkour",
+      "authors": [],
+      "abstract": "While latent world models enable the proactive predictions required for extreme parkour, their purely data-driven nature forces them to redundantly encode left-right symmetric interactions as independent patterns. This inflates the learning burden and hinders the capture of geometric regularities, restricting the latent space&#39;s efficiency for downstream policies. To address this, we propose SWAP, an end-to-end equivariant symmetric world model. This framework embeds symmetry directly into bo",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.19928",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 13
+    },
+    {
+      "title": "VOiLA: Vectorized Online Planning with Learned Diffusion Model for POMDP Agents",
+      "authors": [],
+      "abstract": "Planning under uncertainty is an essential capability for autonomous robots. The Partially Observable Markov Decision Process (POMDP) provides a powerful framework for such a capability. Although POMDP-based planning has advanced significantly, its application to real-world problems is often limited by the difficulty of obtaining faithful POMDP models. We present Vectorized Online planning wIth Learned diffusion model for POMDP Agents (VOiLA), a framework that learns task-agnostic POMDP models f",
+      "submitted": "to the 2026 International Symposium of Robotics Research (ISRR)",
+      "date": "2026-06",
+      "arxiv_id": "2606.19729",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 13
+    },
+    {
+      "title": "Fail-RAG : A Retrieval Augmented Generation Informed Framework for Robot Failure Identification",
+      "authors": [],
+      "abstract": "Industry automation is witnessing an evolution in robotics driven by both technological breakthroughs and societal changes: progress towards generalist robots, embodied and physical artificial intelligence (AI), and increasing labor shortage in manufacturing.An intelligent autonomous robot needs to not only act according to planned motions but also react to any unexpected events. In this study, we focus on such unexpected events in warehouses where robots are used for material handling. Specific",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.19598",
+      "source_queries": [
+        "world_model_robot",
+        "embodied_AI_VLM"
+      ],
+      "relevance": 13
+    },
+    {
+      "title": "Guide Me Out: A Framework to Benchmark VLM Operators Communication in Crisis Scenarios",
+      "authors": [],
+      "abstract": "Effective crisis response requires spatially grounded communication that bridges linguistic guidance of civilians with the physical environment, accounting for structural bottlenecks, evolving threats, and agent-specific contexts. Yet, current NLP research in crisis communication remains mainly limited to static, text-only classification settings, overlooking the critical communicative role of AI operators in dynamic, embodied scenarios. We address this gap with a novel benchmarking framework fo",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.09428",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 13
+    },
+    {
+      "title": "PhysForge: Generating Physics-Grounded 3D Assets for Interactive Virtual World",
+      "authors": [],
+      "abstract": "Synthesizing physics-grounded 3D assets is a critical bottleneck for interactive virtual worlds and embodied AI. Existing methods predominantly focus on static geometry, overlooking the functional properties essential for interaction. We propose that interactive asset generation must be rooted in functional logic and hierarchical physics. To bridge this gap, we introduce PhysForge, a decoupled two-stage framework supported by PhysDB, a large-scale dataset of 150,000 assets with four-tier physica",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.05163",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 13
+    },
+    {
+      "title": "PSCT-Net: Geometry-Aware Pediatric Skull CT Reconstruction via Differentiable Back-Projection and Attention-Guided Refinement",
+      "authors": [],
+      "abstract": "Computed Tomography (CT) is essential for diagnosing pediatric craniofacial abnormalities, yet poses radiation risks to developing anatomies. Reconstructing 3D CT from sparse bi-planar X-rays offers a low-dose alternative but is severely ill-posed. Existing methods employ geometry-agnostic feature lifting, naively projecting 2D features into 3D without explicit spatial modeling, causing depth ambiguity and degraded osseous boundaries. We present PSCT-Net, a geometry-aware framework with differen",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.19867",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 13
+    },
+    {
+      "title": "Planning with the Views",
+      "authors": [],
+      "abstract": "Can VLMs predict how each camera move changes the view, and plan many such moves ahead? We call this capability view planning, requiring (1)understanding how a single action transforms the view, and (2)composing many such transformations across multi-turn plans to identify a target view. We probe both abilities in our proposed ViewSuite, a 3D point-cloud environment on real ScanNet scenes. Across 13 frontier VLMs, a critical planning gap emerges: they possess basic view-action knowledge but fail",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.29563",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 13
+    },
+    {
+      "title": "MMD-SLAM: Structure-Enhanced Multi-Meta Gaussian Distribution-Guided Visual SLAM",
+      "authors": [],
+      "abstract": "3D Gaussian Splatting (3DGS) has significantly boosted novel view synthesis and high-fidelity scene reconstruction, expanding the potential of 3DGS-based Visual Simultaneous Localization and Mapping (SLAM) methods. However, most existing systems fail to fully exploit the underlying structural information, which limits rendering quality and often leads to inconsistent maps. To address these limitations, we propose MMD-SLAM, a structure-enhanced Visual SLAM framework that leverages the Atlanta Wor",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.19874",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 12
+    },
+    {
+      "title": "Scene-Adaptive Nonlinear Tone Curves for Pseudo Ground-Truth Generation in Low-Light 3D Gaussian Splatting",
+      "authors": [],
+      "abstract": "Low-light novel view synthesis is challenging because dark multi-view images contain noise, weak structural detail, and compressed dynamic range. Recent 3D Gaussian Splatting (3DGS) methods address these challenges by generating pseudo ground-truth (pseudo-GT) images as supervision targets when paired normal-light references are unavailable. Existing pseudo-GT methods apply a uniform linear gain to all pixels, which clips bright regions while providing insufficient enhancement in dark regions, l",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.11841",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 12
+    },
+    {
+      "title": "Geometry Gaussians: Decoupling Appearance and Geometry in Gaussian Splatting",
+      "authors": [],
+      "abstract": "After the success of 3D Gaussian Splatting (3DGS) for novel view synthesis, many works have explored how to also use it for geometric surface representation. However, extracting accurate geometric information directly from 3DGS remains challenging and can often reduce the appearance rendering quality. In this work, we show that 3DGS in its default form is inheritedly unsuited to represent texture and geometry at the same time, by training with complete ground-truth texture and geometry informati",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.05124",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 12
+    },
+    {
+      "title": "Directed Distance Fields for Constant-Time Ray Queries on Gaussian Splatting",
+      "authors": [],
+      "abstract": "3D Gaussian Splatting (3DGS) renders new views of a scene in real time. Like every rasterizer, it answers only primary rays, the rays from the camera through the image. It cannot trace the secondary rays that shadows, ambient occlusion, and global illumination need. We turn a trained 3DGS scene into a ray oracle by distilling a Directed Distance Function (DDF). The DDF is a small neural field. It takes a ray, given by an origin and a direction, and returns the distance to the first surface and w",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.00817",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 12
+    },
+    {
+      "title": "Dual-Agent Framework for Cross-Model Verified Translation of Natural-Language Protocols into Robotic Laboratory Platform",
+      "authors": [],
+      "abstract": "Biological experiment protocols are written in natural language, whereas automation systems rely on predefined control commands, creating a semantic gap that limits autonomous execution. Microplate-based automatic experiments are particularly challenging due to the need to simultaneously control well mapping, sample-reagent combinations, replicate placement, and parallel dispensing. This study proposes an agent-based protocol translation framework that converts natural-language microplate-based ",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.20120",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 12
+    },
+    {
+      "title": "Efficient Neural Network Model Selection for Few-Class Application Datasets",
+      "authors": [],
+      "abstract": "While much effort has focused on developing and benchmarking high-performance neural networks, less attention has been given to how dataset properties, known to practitioners, can guide efficient model selection. Neural models are typically evaluated on datasets with thousands of classes, yet many real-world applications involve fewer than ten. To address this understudied but common setting, we develop a measure of classification difficulty based on data-side properties and show how it enables ",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.19712",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 12
+    },
+    {
+      "title": "AI Supply Chain Galaxy: 3D Visual Analytics for License Compliance",
+      "authors": [],
+      "abstract": "The rapid proliferation of machine learning model reuse has transformed the AI ecosystem into a highly interconnected supply chain. Traditional compliance tools and static reports struggle to navigate these massive, multi-hop dependency networks. To address this, we present AI Supply Chain Galaxy (AISCG), an interactive 3D visual analytics system for model provenance and compliance auditing. AISCG maps models into a 3D spatial layout, integrating explicit structural dependencies with a rule-base",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.16292",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 12
+    },
+    {
+      "title": "Controllable Lung Nodule Synthesis via Histogram-Regularized Latent Diffusion Models",
+      "authors": [],
+      "abstract": "While automated diagnosis systems have achieved remarkable success in computed tomography (CT)-based lung cancer screening, their development remains limited by the scarcity of diverse, annotated pulmonary nodule datasets. Diffusion-based generative models offer a promising strategy for data synthesis; however, many existing conditional approaches primarily optimize spatial reconstruction losses, which encourage voxel-wise similarity but may inadequately constrain lesion-level intensity distribu",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.30631",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 12
+    },
+    {
+      "title": "SplatlessDF: Continuous Distance Field Mapping with Non-Splatting Gaussians",
+      "authors": [],
+      "abstract": "Recent Gaussian splatting (GS) methods have shown that scenes can be represented efficiently with optimisable Gaussians for high-quality reconstruction and rendering. In this paper, building on this principle, we introduce SplatlessDF, a continuous distance field (DF) mapping framework that uses anisotropic Gaussian elements from a spatial rather than photometric perspective. SplatlessDF directly parameterises the Gaussians and optimises to recover a differentiable DF, enabling distances and gra",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.13990",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 11
+    },
+    {
+      "title": "A Scalable PyTorch Abstraction for Multi-GPU Gaussian Splatting",
+      "authors": [],
+      "abstract": "Gaussian splatting methods have become increasingly popular for neural reconstruction of the real world. However, they are often limited in scale and resolution due to compute and memory constraints. We present a multi-GPU Gaussian splatting approach that scales reconstruction to higher resolutions and larger scenes while abstracting away the code complexity typically associated with distributing a model. To accomplish this, we propose a PyTorch backend that distributes the Gaussian parameters a",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.11390",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 11
+    },
+    {
+      "title": "Liquid Neural Networks as a Drop-in Continuous-Time Deformation Field for Dynamic 3D Gaussian Splatting",
+      "authors": [],
+      "abstract": "Deformable 3D Gaussian Splatting (D-3DGS) re-constructs dynamic scenes from monocular video by deforming a canonical set of 3D Gaussians through a positional-encoded MLP of frame time t. Although fitted to a continuous variable, the MLP couples no two values of t in its architecture and effectively predicts discrete per-frame offsets, leaving temporal smoothness to emerge only as a byproduct of optimisation. We redesign the deformation field as a stack of Closed-form Continuous-time (CfC) cells,",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.07670",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 11
+    },
+    {
+      "title": "ZipSplat: Fewer Gaussians, Better Splats",
+      "authors": [],
+      "abstract": "Feed-forward 3D Gaussian Splatting methods reconstruct a scene from posed or pose-free images in a single forward pass, yet current approaches predict one Gaussian per input pixel, tying the representation budget to camera resolution rather than scene complexity. A flat wall and a richly textured object thus produce equally many Gaussians despite very different geometric needs. We propose ZipSplat, a token-based feed-forward model that decouples Gaussian placement from the pixel grid. A multi-vi",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.05102",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 11
+    },
+    {
+      "title": "SparseStreet: Sparse Gaussian Splatting for Real-Time Street Scene Simulation",
+      "authors": [],
+      "abstract": "While 3D Gaussian Splatting has shown promising results in street scene reconstruction, existing methods require massive numbers of Gaussian primitives to capture fine details, leading to prohibitive storage costs and slow rendering speeds. We observe that dynamic objects (e.g., vehicles and pedestrians) demand high-fidelity representations to maintain temporal consistency, while static background regions often contain substantial redundancy. Motivated by this, we propose SparseStreet, a general",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.03909",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 11
+    },
+    {
+      "title": "Characterizing Detectability in 3DGS Poisoning: A Stage-wise Benchmark",
+      "authors": [],
+      "abstract": "3D Gaussian Splatting (3DGS) has rapidly emerged as a leading representation for real-time novel view synthesis, but recent work shows it is vulnerable to diverse poisoning attacks, including illusory object injection, computation cost amplification, and post hoc model watermarking. Despite this expanding threat surface, existing studies focus mainly on attack success, while defense and detection remain underexplored. From a detection perspective, a key challenge and opportunity arise from the m",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.03499",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 11
+    },
+    {
+      "title": "KC-3DGS: Kurtosis-Constrained Gaussian Splatting for High-Fidelity View Synthesis",
+      "authors": [],
+      "abstract": "3D Gaussian Splatting (3DGS) enables real-time novel view synthesis by representing scenes as collections of anisotropic Gaussians optimized via differentiable rasterization. However, standard pixel-space losses (L1, SSIM) constrain only aggregate reconstruction error, permitting the optimization to redistribute error across frequency scales. This leads to oversmoothing and structural artifacts, particularly in sparse-view settings where supervision is limited. We propose KC-3DGS, which augments",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.03120",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 11
+    },
+    {
+      "title": "Fast and Lightweight Novel View Synthesis with Differentiable Multiplane Image",
+      "authors": [],
+      "abstract": "Recently, novel view synthesis has witnessed remarkable progress, with mainstream methods such as Neural Radiance Fields (NeRF) and 3D Gaussian Splatting (3DGS) delivering impressive results. However, these approaches often struggle to balance rendering speed and model size, and their optimization-based training can be highly time-consuming. Furthermore, they typically rely on dense observations, often failing to produce satisfactory results under sparse-view conditions. Although feed-forward re",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.02068",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 11
+    },
+    {
+      "title": "Recover, Discover, Plan: Learning Skills and Concepts from Robot Failures",
+      "authors": [],
+      "abstract": "Intelligent robots should not only recover from failures, but also acquire the abstract knowledge needed to avoid them in the future. While reinforcement learning (RL) can learn reactive recovery behaviors, training a separate policy for every distinct failure mode is highly inefficient. We introduce Recovery-Driven Synthesis of Relational Concepts (ReSYNC), the first approach that progressively discovers and refines state abstractions (relational predicates) from failure-recovery experience to ",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.18328",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 11
+    },
+    {
+      "title": "RACAS: Controlling Diverse Robots With a Single Agentic System",
+      "authors": [],
+      "abstract": "Many robotic platforms expose an API through which external software can command their actuators and read their sensors. However, transitioning from these low-level interfaces to high-level autonomous behaviour requires a complicated pipeline, whose components demand distinct areas of expertise. Existing approaches to bridging this gap either require retraining for every new embodiment or have only been validated across structurally similar platforms. We introduce RACAS (Robot-Agnostic Control v",
+      "submitted": "",
+      "date": "",
+      "arxiv_id": "2603.05621",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 11
+    },
+    {
+      "title": "3D Instruction Ambiguity Detection",
+      "authors": [],
+      "abstract": "In safety-critical domains, linguistic ambiguity can have severe consequences; a vague command like &#34;Pass me the vial&#34; in a surgical setting could lead to catastrophic errors. Yet, most embodied AI research overlooks this, assuming instructions are clear and focusing on execution rather than confirmation. To address this critical safety gap, we are the first to define 3D Instruction Ambiguity Detection, a fundamental new task where a model must determine if a command has a single, unambi",
+      "submitted": "",
+      "date": "",
+      "arxiv_id": "2601.05991",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 11
+    },
+    {
+      "title": "SimWorld: An Open-ended Realistic Simulator for Autonomous Agents in Physical and Social Worlds",
+      "authors": [],
+      "abstract": "While LLM/VLM-powered AI agents have advanced rapidly in math, coding, and computer use, their applications in complex physical and social environments remain challenging. Building agents that can survive and thrive in the real world (for example, by autonomously earning income or running a business) requires massive-scale interaction, reasoning, training, and evaluation across diverse embodied scenarios. However, existing world simulators for such development fall short: they often rely on limi",
+      "submitted": "",
+      "date": "",
+      "arxiv_id": "2512.01078",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 11
+    },
+    {
+      "title": "Diversity Over Frequency: Rethinking Tool Use in Visual Chain-of-Thought Agents",
+      "authors": [],
+      "abstract": "Visual agents employ external visual tools within visual chains of thought to incorporate fine-grained evidence. While prior work has mainly studied these tools in visual search tasks, their role in more complex visual reasoning remains underexplored. In this paper, we move beyond simple visual search tasks to investigate more challenging tasks, including 3D spatial reasoning and medical visual question answering, where agents must integrate tool-acquired local evidence with the global context. ",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.00096",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 11
+    },
+    {
+      "title": "NewtPhys: Do Foundation Models Understand Newtonian Physics?",
+      "authors": [],
+      "abstract": "Previous work has evaluated physics reasoning in foundation models using synthetic or semi-synthetic scenes and visual question-answering tasks. However, these benchmarks emphasize high-level events and lack the visual fidelity required to assess true low-level Newtonian understanding. We introduce NewtPhys, a 4D physically annotated dataset built from multiview images of real-world scenes with physics-grounded simulations. The dataset provides dense, fine-grained annotations across timesteps --",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.03986",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 11
+    },
+    {
+      "title": "PointQ-Bench: Benchmarking Diagnostic and Interpretable Point Cloud Quality Assessment",
+      "authors": [],
+      "abstract": "Point cloud quality plays a critical role in 3D acquisition, reconstruction, rendering, and perception, yet existing point cloud quality assessment (PCQA) research remains largely centered on scalar score prediction. In practical inspection scenarios, quality assessment often involves identifying defects, characterizing dominant issue types, assessing downstream usability, and providing evidence-supported descriptions, which are not explicitly evaluated by current benchmarks. We introduce PointQ",
+      "submitted": "",
+      "date": "2026-05",
+      "arxiv_id": "2605.28241",
+      "source_queries": [
+        "VLM_3D_understanding"
+      ],
+      "relevance": 11
+    },
+    {
+      "title": "TerraTransfer: Learning End-to-End Driving Policies Without Expert Demonstrations",
+      "authors": [],
+      "abstract": "End-to-end autonomous driving has achieved state-of-the-art performance on benchmarks and real-world deployments. Its standard training recipe, however, is expensive across all stages: collecting and labeling millions of driving frames is costly, and closed-loop RL on images is bottlenecked by the per-step cost of photorealistic rendering plus a forward pass through a large vision backbone. Self-play in vectorized simulators changes the economics: millions of rollout steps per second, and a stat",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.17386",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 10
+    },
+    {
+      "title": "Wild3R: Feed-Forward 3D Gaussian Splatting from Unconstrained Sparse Photo Collection",
+      "authors": [],
+      "abstract": "Feed-forward 3D Gaussian Splatting (3DGS) removes the need for time-consuming per-scene optimization required by traditional 3DGS. However, existing feed-forward approaches struggle with real-world photo collections that include diverse lighting conditions and transient objects. In this paper, we present Wild3R, a feed-forward approach for unconstrained sparse photo collections. The main bottleneck is the lack of training data that provides multiple viewpoints, a variety of illuminations, and tr",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.11894",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 10
+    },
+    {
+      "title": "MolmoMotion: Forecasting Point Trajectories in 3D with Language Instruction",
+      "authors": [],
+      "abstract": "Motion forecasting is central to visual intelligence: agents must anticipate how objects will move in order to plan actions, reason about physical interactions, and synthesize realistic futures. We argue that 3D points in world coordinates provide a general representation that is class-agnostic, view-stable, compact, and directly useful for downstream tasks. We formalize the task of goal-conditioned 3D point motion forecasting: given a short visual history, a set of 3D query points on an object ",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.18558",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 10
+    },
+    {
+      "title": "Beyond Failure Recovery: An Engagement-Aware Human-in-the-loop Framework for Robotic Systems",
+      "authors": [],
+      "abstract": "Conventional human-in-the-loop approaches typically involve users only when a robot encounters failure or uncertainty, treating humans primarily as tools for improving robot performance. However, in many human-centered robotics settings, interaction should support engagement by keeping users involved in decision-making rather than limiting them to failure-driven interventions. This is particularly compelling in physical caregiving, where mobility limitations can reduce users&#39; ability to inte",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.18189",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 10
+    },
+    {
+      "title": "Uncertainty Quality of VGGT: An Analysis on the DTU Benchmark Dataset",
+      "authors": [],
+      "abstract": "Visual Geometry Grounded Transformer (VGGT) has already attracted a great deal of attention in a short period of time, not least due to the Best Paper Award at CVPR-2025. Similar to DUSt3R and MASt3R, VGGT aims to bring about a paradigm shift by replacing established methods like bundle adjustment and feature matching with a simple, unified, feed-forward neural network that predicts camera poses, depth maps, and dense 3D structure directly from multiple images of a scene in a few seconds. A key ",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.16479",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 10
+    },
+    {
+      "title": "Eyes All Around: Design and Analysis of 360-Degree LiDAR Perception Using Equivariant Feature Learning in Unstructured Traffic",
+      "authors": [],
+      "abstract": "Perception in dense, unstructured urban traffic remains a major challenge for autonomous driving because of the wide variety of road users, frequent occlusions, irregular motion patterns, and the lack of standardized road layouts. Although recent LiDAR based 3D object detectors have shown strong performance in structured driving scenarios, most are developed and evaluated for limited field of view settings, and their behavior under full surround 360-degree sensing is still not well understood. T",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.07626",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 10
+    },
+    {
+      "title": "LIT-GS: LiDAR-Inertial-Thermal Gaussian Splatting for Illumination-Robust Mapping",
+      "authors": [],
+      "abstract": "Gaussian Splatting has enabled real-time neural rendering, yet existing LiDAR-inertial-visual (LIV) Gaussian mapping pipelines remain fragile under illumination changes and texture-deficient scenes due to their reliance on RGB photometric cues. We present LIT-GS, a LiDAR-inertial-thermal Gaussian Splatting framework that injects LiDAR-derived plane geometry as an explicit constraint in both pose/structure refinement and Gaussian optimization. Specifically, we exploit LIV visual map points as con",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.20424",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 9
+    },
+    {
+      "title": "RFDT-Channel: RGB-LiDAR-Based RF Digital Twin Scene Construction for 28 GHz Indoor Ray-Tracing Channel Simulation",
+      "authors": [],
+      "abstract": "Real-scene indoor millimeter-wave simulation requires efficient modeling of radio frequency (RF)-computable geometry and electromagnetic material properties. To address the low efficiency of manual scene modeling, the limited RF adaptability of visually reconstructed meshes, and the lack of material binding in 28 GHz ray-tracing simulation, RFDT-Channel is developed as an RF digital twin scene construction workflow based on red-green-blue (RGB) images and light detection and ranging (LiDAR) poin",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.01261",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 9
+    },
+    {
+      "title": "Mobile Pedipulation for Object Sliding via Hierarchical Control on a Wheeled Bipedal Robot",
+      "authors": [],
+      "abstract": "In this letter, we present a hierarchical control framework that enables wheeled bipedal robots to perform planar object sliding tasks with their wheeled legs. The proposed approach formulates a nonlinear model predictive controller (NMPC) based on a reduced-order three rigid bodies (TRB) dynamical model that explicitly accounts for the hip roll degree of freedom and multiple wheel-environment contact modes, which is essential for lateral stepping and pedipulation tasks. Within this framework, t",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.19233",
+      "source_queries": [
+        "world_model_robot"
+      ],
+      "relevance": 9
+    },
+    {
+      "title": "Automated 3D Kinematic Monitoring for Circadian Activity and Anomaly Detection in Juvenile Fish",
+      "authors": [],
+      "abstract": "Precision aquaculture faces a &#34;phenotyping bottleneck&#34; in tracking high-resolution behavioral traits, as conventional methods cannot quantify instantaneous three-dimensional (3D) physical exertion. To address this, we present a high-throughput 3D behavioral phenotyping framework integrating deep learning object detection with binocular stereo vision for real-time monitoring of juvenile tilapia in high-density environments. The system automates non-contact body length estimation and recon",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.14749",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 9
+    },
+    {
+      "title": "Hybrid Robustness Verification for Spatio-Temporal Neural Networks",
+      "authors": [],
+      "abstract": "With AI increasingly deployed in safety-critical systems, providing formal robustness guarantees for the underlying models is essential. Existing verification methods either rely on overly conservative approximations or incur prohibitive computational costs. For example, the use of lp-norm perturbations in video settings encodes the belief that the adversary can inject noise in every video frame. In practice, adversarial perturbations exhibit structured spatial and temporal correlations, constra",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.09746",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 9
+    },
+    {
+      "title": "Multi-planar 2D-U-Net Segmentation of 3D-CT Abdominal Organs augmented by Spatial Occurrence Maps",
+      "authors": [],
+      "abstract": "This work proposes a lightweight 2D-U-Net-based framework for segmenting five abdominal organs in large field-of-view 3D CT scans. The method combines coarse-to-fine segmentation, predictions from multiple anatomical planes, and additional fuzzy 3D spatial maps that provide anatomical location cues to improve segmentation accuracy. We combine multi-planar 2D-U-Net models augmented by a spatial occurrence map. The approach involves two main stages. First, the abdominal volume of interest region i",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.07717",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 9
+    },
+    {
+      "title": "GSPan: A Continuous Gaussian Primitive Representation for Arbitrary-Scale Pansharpening",
+      "authors": [],
+      "abstract": "Pansharpening aims to generate high-resolution multispectral (HRMS) images by fusing low-resolution multispectral (LRMS) and panchromatic (PAN) observations. Most existing deep learning methods treat pansharpening as fixed-grid prediction, which limits scale adaptation. To address this, we propose GSPan, a framework that introduces 2D Gaussian Splatting (GS) into pansharpening. Instead of directly predicting pixels, GSPan represents band-wise residual details as continuous and learnable 2D Gauss",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.17722",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 8
+    },
+    {
+      "title": "Renderable Partial Representations for Dynamic Gaussian Splatting under Incomplete Delivery",
+      "authors": [],
+      "abstract": "Dynamic Gaussian compression is normally optimized for complete files or complete progressive prefixes, but interactive rendering encounters partial representations: some spatiotemporal regions are present, others missing, and late refinements cannot affect the displayed frame. We study dynamic Gaussian representations whose incomplete delivery states remain directly renderable and whose degradation is optimized in image space. Gaussian primitives are organized into independently addressable spa",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.17212",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 7
+    },
+    {
+      "title": "TIDES: Time-Derivative Event Simulation via Deformable Reconstruction",
+      "authors": [],
+      "abstract": "Event cameras emit asynchronous events in response to environmental appearance changes. The scarcity of real-world event datasets makes simulation essential. However, most simulators infer event timestamps from frame sequences, forcing many threshold crossings to share a small set of discrete times; a failure mode we term timestamp batching that worsens under fast motion and occlusion.\n  We present TIDES, a continuous-time event simulator built on dynamic Gaussian splatting. Because TIDES operat",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.02058",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 7
+    },
+    {
+      "title": "Contactless 3D Human Body Measurement Using Depth Cameras for Smart Health Monitoring",
+      "authors": [],
+      "abstract": "Contactless body measurement technologies are becoming increasingly significant for smart health monitoring, digital health applications, and remote patient assessment. Traditional anthropometric measurements typically necessitate physical contact and trained personnel, which may constrain scalability in remote healthcare settings. In this study, we introduce a depth camera-based framework for estimating human body measurements utilizing 3D point cloud data. An Orbbec Astra 2 depth camera was em",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.11578",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 7
+    },
+    {
+      "title": "3D Spherical Fluid Antennas for Spatially Reconfigurable Communications",
+      "authors": [],
+      "abstract": "As sixth-generation (6G) wireless systems evolve toward higher frequency bands, large-scale antenna arrays, and intelligent interaction with the wireless environment, conventional fixed-position antennas (FPAs) are increasingly constrained by limited spatial degrees of freedom and insufficient hardware-level adaptability. Fluid antenna systems (FAS) provide new physical-layer flexibility by dynamically reconfiguring antenna ports, geometries, and radiation characteristics. However, existing stud",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.05589",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 7
+    },
+    {
+      "title": "SymTRELLIS: Symmetry-Enforced Voxel Latents for 3D Generation",
+      "authors": [],
+      "abstract": "Single-view 3D generative models have achieved impressive visual quality, yet they are not designed to satisfy structural or functional requirements, and in practice, often fall short. Symmetry is one such requirement: violations, even subtle ones, on symmetry can render a model physically unusable. We present SymTRELLIS, a method that enforces arbitrary finite point group symmetries (rotational, reflectional, and polyhedral) during the flow-based 3D generation of TRELLIS.2, without retraining t",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.04108",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 7
+    },
+    {
+      "title": "MaterialClusterGS: Palette-Based Material Decomposition and Physically-Based Relighting with 2D Gaussian Splatting",
+      "authors": [],
+      "abstract": "We present MaterialClusterGS, a palette-based material decomposition framework for 2D Gaussian Splatting that enables physically based relighting and material editing. Existing Gaussian inverse rendering methods typically assign independent BRDF parameters to individual primitives. While flexible, this local fitting strategy makes material recovery highly under-constrained: shadows, indirect illumination, geometric errors, and visibility residuals can be absorbed into thousands of slightly diffe",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.09018",
+      "source_queries": [
+        "gaussian_splatting_scene"
+      ],
+      "relevance": 6
+    },
+    {
+      "title": "Three-Dimensional Retinal Microvasculature Restoration in OCT Angiography",
+      "authors": [],
+      "abstract": "Optical coherence tomographic angiography (OCTA) is a powerful technique for imaging retinal microvasculature. However, acquiring reliable quantification of retinal blood flow and areas of retinal nonperfusion is challenging because of imaging artifacts. Existing methods primarily focus on noise suppression, projection artifact removal, or signal enhancement to improve the image quality of OCTA in cross-sectional or two-dimensional (2D) en face projections, while neglecting the intrinsic three-d",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.05375",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 6
+    },
+    {
+      "title": "ArtiCAD: Articulated CAD Assembly Design via Multi-Agent Code Generation",
+      "authors": [],
+      "abstract": "Parametric Computer-Aided Design (CAD) of articulated assemblies is essential for product development, yet generating these multi-part, movable models from high-level descriptions remains unexplored. To address this, we propose ArtiCAD, the first training-free multi-agent system capable of generating editable, articulated CAD assemblies directly from text or images. Our system divides this complex task among four specialized agents: Design, Generation, Assembly, and Review. One of our key insigh",
+      "submitted": "",
+      "date": "2026-04",
+      "arxiv_id": "2604.10992",
+      "source_queries": [
+        "embodied_AI_VLM"
+      ],
+      "relevance": 4
+    },
+    {
+      "title": "Efficient Transformer-Based Localized Patch Sampling for Choroid Plexus Segmentation in Multiple Sclerosis",
+      "authors": [],
+      "abstract": "Background: The lateral ventricle choroid plexus (LVCP) is gaining recognition as a key imaging biomarker for multiple sclerosis (MS) related to physical disability and neuroinflammation. Yet, manual segmentation of the LVCP is highly tedious, restricting its use in broad clinical trials and longitudinal assessments. This research aims to develop a SwinUNETR-driven pipeline that leverages targeted intra- and peri-ventricular small patch sampling to automatically segment the LVCP in MS from both ",
+      "submitted": "",
+      "date": "2026-06",
+      "arxiv_id": "2606.03566",
+      "source_queries": [
+        "spatial_intelligence_3D"
+      ],
+      "relevance": 4
+    }
+  ]
+}

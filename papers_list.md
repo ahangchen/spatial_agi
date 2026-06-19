@@ -1290,3 +1290,39 @@
 3. **Robo-Cortex** (2605.18729) - 自进化具身导航agent，双粒度认知记忆，自主知识归纳 [导航/自我进化]
 4. **GEM** (2605.17682) - 连续4D高斯世界模型，非自回归任意时间查询，占据预测+运动规划 [自动驾驶/4D高斯]
 5. **Seeing Together** (2605.18431) - 多机器人协作空间推理基准CoopSR，114K QA，SP-CoR框架 [多智能体/空间推理]
+
+## 2026-06-19 研究的论文（精选5篇）
+
+1. **3DVLA: Enhancing Vision-Language-Action Models via 3D Spatial and Instance Understanding** - arXiv:2605.29416
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, 3D Spatial Understanding, Instance Understanding, Plug-and-Play, Self-Supervised Predictor, Multi-View Fusion
+   - 文档: papers/2026-06-19_01_3DVLA.md
+   - 亮点: Plug-and-play 3D注入框架，无需额外标注；废弃的masked predictor重新用于遮挡补全；无体素化多视图融合+Continuous 3D RoPE
+
+2. **GN0: Toward a Unified Paradigm for Generation, Evaluation, and Policy Learning in VLN** - arXiv:2606.03682
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLN, 3DGS, BEV, DAgger, RL, Navigation Foundation Model, Unified Framework
+   - 文档: papers/2026-06-19_02_GN0.md
+   - 亮点: 统一数据生成+仿真评估+策略训练闭环；首个BEV-based导航基准GN-Bench；DAgger→RL打破专家分布狭窄瓶颈
+
+3. **SpatialAct: Probing Spatial Reasoning-to-Action Capabilities of VLM Agents** - arXiv:2605.31148
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Spatial Reasoning, Action-Conditioned, Multi-turn, Benchmark, Reasoning-to-Action Gap
+   - 文档: papers/2026-06-19_03_SpatialAct.md
+   - 亮点: 揭示reasoning-to-action gap——VLM单步推理可用但多轮交互中空间状态跟踪严重不足；五项基础能力诊断定位失败根因
+
+4. **Reasmory: 3D Reconstruction as Explicit Memory for VLMs Spatial Reasoning** - arXiv:2606.00963
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Reconstruction, Explicit Memory, DSL, Structured Program Execution, Spatial Reasoning
+   - 文档: papers/2026-06-19_04_Reasmory.md
+   - 亮点: 3D重建作为显式空间记忆；轻量DSL约束空间查询；结构化程序执行>自由工具调用，超越GPT-5-mini和Gemini-3-flash 6-18%
+
+5. **S-Agent: Spatial Tool-Use Elicits Reasoning for Spatial Intelligence** - arXiv:2606.20515
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Spatial Intelligence, Agent, Evidence Accumulation, Scene Memory, S-300K, NTU
+   - 文档: papers/2026-06-19_05_S-Agent.md
+   - 亮点: 时空证据累积范式；Scene Memory+Agent Memory双记忆系统；S-Agent-8B用8B参数匹配GPT-5.4和Gemini 3的空间推理能力
+
+---
+
+*最后更新时间: 2026-06-19*
