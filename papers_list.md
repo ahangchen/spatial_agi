@@ -1358,3 +1358,32 @@
 ---
 
 *最后更新时间: 2026-06-20*
+
+## 2026-06-21 研究的论文（精选5篇）
+
+1. **FlowMaps: Modeling Long-Term Multimodal Object Dynamics with Flow Matching** - arXiv:2606.20209
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Flow Matching, Object Dynamics, 3D Scene, Robot Navigation
+   - 文档: papers/2026-06-21_01_FlowMaps_Long_Term_Object_Dynamics.md
+
+2. **OneCanvas: 3D Scene Understanding via Panoramic Reprojection** - arXiv:2606.19253
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLM, 3D Scene Understanding, Panoramic, Spatial Reasoning
+   - 文档: papers/2026-06-21_02_OneCanvas_Panoramic_Reprojection.md
+
+3. **ImageWAM: Do World Action Models Really Need Video Generation, or Just Image Editing?** - arXiv:2606.19531
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Action Model, Image Editing, Robot Manipulation, VLA
+   - 文档: papers/2026-06-21_03_ImageWAM_Image_Editing_WAM.md
+
+4. **LongSpace: Exploring Long-Horizon Spatial Memory from Perception to Recall in Video** - arXiv:2606.05677
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Spatial Memory, Long-Horizon Video, Benchmark, Geometry
+   - 文档: papers/2026-06-21_04_LongSpace_Long_Horizon_Spatial_Memory.md
+
+5. **SpatialSV: Internalizing Interpretable 3D Spatial Awareness in MLLMs via Task-Oriented Visual Supervision** - arXiv:2606.19915
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Spatial Awareness, MLLM, 3D Understanding, Interpretability, IJCAI 2026
+   - 文档: papers/2026-06-21_05_SpatialSV_3D_Spatial_Awareness_MLLMs.md
+
+*最后更新时间: 2026-06-21*
