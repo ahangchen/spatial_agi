@@ -1386,4 +1386,36 @@
    - 关键词: Spatial Awareness, MLLM, 3D Understanding, Interpretability, IJCAI 2026
    - 文档: papers/2026-06-21_05_SpatialSV_3D_Spatial_Awareness_MLLMs.md
 
+## 2026-06-21 研究的论文（第二批，精选5篇）
+
+1. **GEAR-VLA: Learning Geometry-Aware Action Representations for Generalizable Robotic Manipulation** - arXiv:2606.08530
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, Geometry-Aware, 3D Fusion, Cross-Embodiment, Flow Matching
+   - 文档: papers/2026-06-21_06_GEAR-VLA_Geometry_Aware_Action.md
+   - 亮点: 粗到细动作学习 + 零初始化3D融合 + Embodiment Canonicalization，LIBERO 98.7%，跨具身零样本81%
+
+2. **Embodied3DBench: Benchmarking Low-Level Embodied Spatial Intelligence of Vision Language Models** - arXiv:2605.29074
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Benchmark, Embodied Spatial Intelligence, VLM, 3D Interaction, VA-CoT
+   - 文档: papers/2026-06-21_07_Embodied3DBench_Spatial_Intelligence_Benchmark.md
+   - 亮点: 首个低级具身空间智能基准，6大任务揭示VLM在3D交互中的系统性缺陷
+
+3. **Reason, Then Re-reason: Cross-view Revisiting Improves Spatial Reasoning** - arXiv:2606.11683
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Spatial Reasoning, Cross-view, VGGT 3D Reconstruction, ICML 2026, VSI-Bench
+   - 文档: papers/2026-06-21_08_Reason_Re-reason_Cross_View_Spatial.md
+   - 亮点: 两阶段假设-验证范式，Qwen3-VL-4B+ReRe超越GPT-4o，+8.5分提升
+
+4. **Mem-World: Memory-Augmented Action-Conditioned World Models for Persistent Robot Manipulation** - arXiv:2606.18960
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: World Model, Memory Augmentation, Surfel, Robot Manipulation, 4D Memory
+   - 文档: papers/2026-06-21_09_Mem-World_Memory_World_Model.md
+   - 亮点: 4D腕部视角surfel记忆，动作→FK→相机位姿→渲染→检索链条，r=0.97时序感知
+
+5. **SpatialClaw: Rethinking Action Interface for Agentic Spatial Reasoning** - arXiv:2606.13673
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Action Interface, Agentic Spatial Reasoning, Code-as-Action, NVIDIA Research
+   - 文档: papers/2026-06-21_10_SpatialClaw_Action_Interface_Spatial.md
+   - 亮点: 代码即动作接口范式，20个基准平均59.9%（+11.2pp），接口设计而非工具数量是关键瓶颈
+
 *最后更新时间: 2026-06-21*
