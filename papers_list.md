@@ -1418,4 +1418,36 @@
    - 文档: papers/2026-06-21_10_SpatialClaw_Action_Interface_Spatial.md
    - 亮点: 代码即动作接口范式，20个基准平均59.9%（+11.2pp），接口设计而非工具数量是关键瓶颈
 
-*最后更新时间: 2026-06-21*
+## 2026-06-22 研究的论文（精选5篇）
+
+1. **μ₀: A Scalable 3D Interaction-Trace World Model** - arXiv:2606.13769
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Interaction Traces, World Model, Cross-Embodiment, TraceExtract, B-spline, Flow Matching
+   - 文档: papers/2026-06-22_01_mu0_3d_interaction_trace_world_model.md
+   - 亮点: 用3D交互轨迹作为紧凑、embodiment-agnostic的运动接口，无需动作标签即可预训练world model，trace-conditioned policies达到π₀级别性能
+
+2. **PAIWorld: A 3D-Consistent World Foundation Model for Robotic Manipulation** - arXiv:2606.18375
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Multi-view World Model, 3D Consistency, Geometry-Aware Cross-View Attention, Geo-RoPE, 3D-REPA, WorldArena
+   - 文档: papers/2026-06-22_02_paiworld_3d_consistent_world_foundation_model.md
+   - 亮点: 诊断多视图世界模型两个根本缺陷（缺通信+缺几何先验），三组件方案实现超加性效果，WorldArena排名第1
+
+3. **Embodied-R1.5: Evolving Physical Intelligence via Embodied Foundation Models** - arXiv:2606.11324
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Embodied Foundation Model, PGC Closed-Loop, 15B Tokens, Multi-task RL, Affordance Grounding, Open-Source
+   - 文档: papers/2026-06-22_03_embodied_r1_5_physical_intelligence.md
+   - 亮点: 8B参数在16/24个具身VLM基准达SOTA，PGC闭环框架实现自主纠错，推理能力可迁移至VLA
+
+4. **GASP: Injecting 3D Spatial Priors into VLMs for Enhanced Geometric Reasoning** - arXiv:2605.30231
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Geometric Priors, Correspondence, Depth Consistency, VLM Transformer Layers, VSI-Bench, CVPR 2026
+   - 文档: papers/2026-06-22_04_gasp_3d_spatial_priors_vlm.md
+   - 亮点: 将correspondence和depth先验直接注入LLM所有transformer层，无需3D VQA数据即在VSI-Bench提升29%
+
+5. **Stream3D-VLM: Online 3D Spatial Understanding with Incremental Geometry Priors** - arXiv:2606.06891
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Streaming 3D VLM, Incremental Geometry Priors, VSFI, GAVC, Online Spatial Understanding, 1M QA
+   - 文档: papers/2026-06-22_05_stream3d_vlm_online_3d_understanding.md
+   - 亮点: 首个在线流式3D VLM，增量注入几何先验实现实时空间理解，涵盖29个任务1M+ QA对
+
+*最后更新时间: 2026-06-22*
