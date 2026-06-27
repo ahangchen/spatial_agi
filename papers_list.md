@@ -1450,4 +1450,36 @@
    - 文档: papers/2026-06-22_05_stream3d_vlm_online_3d_understanding.md
    - 亮点: 首个在线流式3D VLM，增量注入几何先验实现实时空间理解，涵盖29个任务1M+ QA对
 
-*最后更新时间: 2026-06-22*
+## 2026-06-27 研究的论文（精选5篇）
+
+1. **HoloAgent-0: A Unified Embodied Agent Framework with 3D Spatial Memory** - arXiv:2606.23565
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Embodied Agent, 3D Spatial Memory, AgentOS, Closed-Loop Execution, Horizon Robotics
+   - 文档: papers/2026-06-27_01_HoloAgent-0_Unified_Embodied_Agent.md
+   - 亮点: 三层耦合架构（AgentOS + 3D空间记忆 + 技能执行），将LLM数字agent执行循环扩展到物理机器人，真实硬件全栈部署验证
+
+2. **Pocket-SLAM: Rendering-Area-Aware Pruning for Memory-Efficient 3DGS-SLAM** - arXiv:2606.24796
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3DGS-SLAM, Memory Efficiency, Rendering-Area-Aware Pruning, Tile-Level Budget, ICRA 2026
+   - 文档: papers/2026-06-27_02_Pocket-SLAM_Memory_Efficient_3DGS_SLAM.md
+   - 亮点: 渲染面积感知剪枝+瓦片级预算机制，EuRoC和KITTI上60%+内存削减+2倍FPS提升
+
+3. **NavWM: A Unified Navigation World Model for Foresight-Driven Planning** - arXiv:2606.24101
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Model, Visual Navigation, Foresight Planning, Multimodal Trajectory Prediction, ECCV 2026
+   - 文档: papers/2026-06-27_03_NavWM_Navigation_World_Model.md
+   - 亮点: 统一导航世界模型，Latent World Tokens + 锚点多模态轨迹预测，导航成功率66%→72%，零样本44%
+
+4. **World Action Models Enable Continual Imitation Learning with Recurrent Generative Replays (ReGen)** - arXiv:2606.27374
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Continual Imitation Learning, World Action Model, Generative Replay, Catastrophic Forgetting
+   - 文档: papers/2026-06-27_04_WAM_Continual_Imitation_Learning.md
+   - 亮点: 首个用WAM自身生成能力实现持续学习的方法，ReGen将灾难性遗忘降低50%，无需存储旧任务真实数据
+
+5. **dVLA-RL: Reinforcement Learning over Denoising Trajectories for Discrete Diffusion VLA Models** - arXiv:2606.23623
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Discrete Diffusion VLA, Reinforcement Learning, Denoising Trajectory, Policy Optimization
+   - 文档: papers/2026-06-27_05_dVLA-RL_Discrete_Diffusion_VLA.md
+   - 亮点: 首次将RL应用于离散扩散VLA模型，沿去噪轨迹定义MDP并优化，揭示RL训练的运动分布偏差现象
+
+*最后更新时间: 2026-06-27*
