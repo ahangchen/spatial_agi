@@ -1,5 +1,39 @@
 # Spatial AGI Research Papers - Daily Analysis
 
+## 2026-06-29 研究的论文（精选5篇）
+
+1. **AirGroundBench: Probing Spatial Intelligence in Multimodal Large Models under Heterogeneous Multi-View Embodied Collaboration** - arXiv:2606.28049
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Air-Ground Collaboration, Heterogeneous Multi-View, Spatial Intelligence Benchmark, VLN, Cross-View Alignment
+   - 文档: papers/2026-06-29_AirGroundBench.md
+   - 亮点: 首个系统性空地协同空间智能基准，揭示跨视角几何一致性是MLLM核心瓶颈，四维渐进能力分类法（感知→对齐→推理→决策）
+
+2. **GEAR-VLA: Learning Geometry-Aware Action Representations for Generalizable Robotic Manipulation** - arXiv:2606.08530
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, Geometry-Aware, Action Representation, Embodiment Canonicalization, Zero-init 3D Injection, Flow Matching
+   - 文档: papers/2026-06-29_GEAR-VLA.md
+   - 亮点: 零初始化3D几何融合+本体规范化+梯度解耦DiT动作专家，212物体6360次抓取90.1%成功率，跨本体迁移81%
+
+3. **Perceptual 3D Simulation With Physical World Modeling (P3Sim)** - arXiv:2606.27575
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Physical World Model, Probabilistic Graphical Model, Pointer-Value Autoregressive, Geometrizer, Persistent Scene Memory
+   - 文档: papers/2026-06-29_Perceptual3DSim.md
+   - 亮点: CVPR 2026，将场景理解建模为概率图模型推理，指针机制实现随机访问解码，统一NVS/操控/动态预测
+
+4. **S-Agent: Spatial Tool-Use Elicits Reasoning for Spatial Intelligence** - arXiv:2606.20515
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Spatial Intelligence, Agent, Evidence Accumulation, Scene Memory, S-300K, NTU
+   - 文档: papers/2026-06-29_SAgent.md
+   - 亮点: 时空证据累积范式，Scene Memory+Agent Memory双记忆系统，S-Agent-8B用8B参数匹配GPT-5.4和Gemini 3的空间推理能力
+
+5. **SpatialUAV: Benchmarking Spatial Intelligence for Low-Altitude UAV Perception, Collaboration, and Motion** - arXiv:2606.27876
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: UAV Benchmark, Spatial Intelligence, Aerial-Aerial Collaboration, Aerial-Ground Collaboration, Motion Understanding
+   - 文档: papers/2026-06-29_SpatialUAV.md
+   - 亮点: 首个系统性低空UAV空间智能基准，4331实例14任务5维度，18个VLM评测揭示跨视角关联和几何推理瓶颈
+
+---
+
 ## 2026-05-26 研究的论文（精选5篇）
 
 1. **GEM-4D: Geometry-Enhanced Video World Models for Robot Manipulation** - arXiv:2605.22882
