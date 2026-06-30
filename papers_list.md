@@ -1517,3 +1517,39 @@
    - 亮点: 首次将RL应用于离散扩散VLA模型，沿去噪轨迹定义MDP并优化，揭示RL训练的运动分布偏差现象
 
 *最后更新时间: 2026-06-27*
+
+---
+
+## 2026-07-01 研究的论文（精选5篇）
+
+1. **VLK: Learning Humanoid Loco-Manipulation from Synthetic Interactions in Reconstructed Scenes** - arXiv:2606.30645
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Vision-Language-Kinematics, Humanoid, 3DGS, Synthetic Data, Sim-to-Real, Loco-Manipulation
+   - 文档: papers/2026-07-01_01_VLK_Humanoid_LocoManipulation_Synthetic_Interactions.md
+   - 亮点: 3DGS重建场景+合成数据训练人形机器人导航和搬运，48000轨迹全自动生成，无需真实演示，Amazon FAR+UC Berkeley+Stanford
+
+2. **CubifyGS: Object-Centric 3D Gaussian Splatting for Lifelong Dynamic Scene Maintenance** - arXiv:2606.28720
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS, Object-Centric, Lifelong Mapping, Dynamic Scene, Robotics, IROS 2026
+   - 文档: papers/2026-07-01_02_CubifyGS_Object_Centric_Lifelong.md
+   - 亮点: 物体级3DGS分解用于长期动态场景维护，刚体重排仅需更新变换矩阵
+
+3. **PhysisForcing: Physics Reinforced World Simulator for Robotic Manipulation** - arXiv:2606.2xxxx
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Simulator, Physics, Video Generation, Robotic Manipulation, NVIDIA, PKU
+   - 文档: papers/2026-07-01_03_PhysisForcing_Physics_World_Simulator.md
+   - 亮点: 物理强化视频世界模拟器，为视频生成注入物理约束，北大+NVIDIA合作，开源
+
+4. **CRISP: From Hallucination to Grounding — Diagnosing Visual Spatial Intelligence** - arXiv:2606.26535
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Spatial Reasoning, VLM Evaluation, Structural Diagnosis, Language Priors, ECCV 2026
+   - 文档: papers/2026-07-01_04_CRISP_Diagnosing_Spatial_Intelligence.md
+   - 亮点: 结构化诊断范式区分VLM的语言先验与真正空间推理，ECCV 2026接收
+
+5. **Training Vision-Language-Action Models with Dense Embodied Chain-of-Thought Supervision** - arXiv:2606.2xxxx
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: VLA, Chain-of-Thought, Cross-Embodiment, Dense Supervision, Embodied AI
+   - 文档: papers/2026-07-01_05_Dense_Embodied_CoT_VLA.md
+   - 亮点: 密集Embodied CoT监督桥接不同具身形态，显式推理步骤提升VLA跨具身迁移能力
+
+*最后更新时间: 2026-07-01*
