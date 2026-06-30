@@ -1534,7 +1534,7 @@
    - 文档: papers/2026-07-01_02_CubifyGS_Object_Centric_Lifelong.md
    - 亮点: 物体级3DGS分解用于长期动态场景维护，刚体重排仅需更新变换矩阵
 
-3. **PhysisForcing: Physics Reinforced World Simulator for Robotic Manipulation** - arXiv:2606.2xxxx
+3. **PhysisForcing: Physics Reinforced World Simulator for Robotic Manipulation** - arXiv:2606.28128
    - 相关性: ⭐⭐⭐⭐⭐
    - 关键词: World Simulator, Physics, Video Generation, Robotic Manipulation, NVIDIA, PKU
    - 文档: papers/2026-07-01_03_PhysisForcing_Physics_World_Simulator.md
@@ -1546,7 +1546,7 @@
    - 文档: papers/2026-07-01_04_CRISP_Diagnosing_Spatial_Intelligence.md
    - 亮点: 结构化诊断范式区分VLM的语言先验与真正空间推理，ECCV 2026接收
 
-5. **Training Vision-Language-Action Models with Dense Embodied Chain-of-Thought Supervision** - arXiv:2606.2xxxx
+5. **Training Vision-Language-Action Models with Dense Embodied Chain-of-Thought Supervision** - arXiv:2606.30552
    - 相关性: ⭐⭐⭐⭐
    - 关键词: VLA, Chain-of-Thought, Cross-Embodiment, Dense Supervision, Embodied AI
    - 文档: papers/2026-07-01_05_Dense_Embodied_CoT_VLA.md
