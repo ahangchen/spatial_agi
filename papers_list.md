@@ -1587,3 +1587,37 @@
    - 亮点: 触觉思维链+粗到细预测的统一触觉理解框架，预测+反应双频控制器，HIT+Daimon Robotics
 
 *最后更新时间: 2026-07-02*
+
+## 2026-07-03 研究的论文（精选5篇）
+
+1. **RoboAtlas: Contextual Active SLAM** - arXiv:2606.26046
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Active SLAM, Semantic Mapping, Contextual Bandit, VLM Navigation, MERL
+   - 文档: papers/2026-07-03_01_RoboAtlas_Contextual_Active_SLAM.md
+   - 亮点: 上下文赌博机自适应探索策略，Scene Dictionary可扩展推理，7B+好地图>GPT-4o无地图，GOAT-Bench SOTA 90.6%
+
+2. **OmniView-Space: Reinforcing Spatial Reasoning via Multi-Perspective Spatial Mapping** - arXiv:2607.00881
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Spatial Reasoning, Ego-Frame Alignment, BEV Cognitive Map, MPSM, GRPO, 厦大+腾讯
+   - 文档: papers/2026-07-03_02_OmniView_Space_Spatial_Reasoning.md
+   - 亮点: 识别参考系不匹配为核心瓶颈，MPSM查询对齐的BEV认知地图+文本空间图，工具→蒸馏→内化三阶段路径
+
+3. **MASER: Modality-Adaptive Specialist Routing for Embodied 3D Spatial Intelligence** - arXiv:2606.02463
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Modality Routing, DoRA Adapters, Open3D-VQA, CVPR Workshop 2026
+   - 文档: papers/2026-07-03_03_MASER_Modality_Adaptive_Routing.md
+   - 亮点: 首次实证问题语义预测最佳模态，点云仅51.5%最优，轻量MLP路由器~100K参数
+
+4. **3D HAMSTER: Bridging Planning and Control in Hierarchical VLA via 3D Trajectory Guidance** - arXiv:2606.31329
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Hierarchical VLA, 3D Trajectory, Depth Encoder, Graffiti Effect, KAIST
+   - 文档: papers/2026-07-03_04_3D_HAMSTER_Hierarchical_VLA.md
+   - 亮点: 解决2D-3D表示不匹配的"涂鸦效应"，深度编码器+重建损失让VLM输出度量可靠3D轨迹，开源
+
+5. **Structured 4D Latent Predictive Model for Robot Planning** - arXiv:2607.01166
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4D Prediction, Structured Latent, Sparse Voxel, World Model, ICML 2026
+   - 文档: papers/2026-07-03_05_Structured_4D_Latent_Predictive.md
+   - 亮点: 3D原生世界模型，稀疏体素latent预测场景演化，可解码为3DGS/点云，粗到细两步生成
+
+*最后更新时间: 2026-07-03*
