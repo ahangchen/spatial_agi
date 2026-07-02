@@ -1553,3 +1553,37 @@
    - 亮点: 密集Embodied CoT监督桥接不同具身形态，显式推理步骤提升VLA跨具身迁移能力
 
 *最后更新时间: 2026-07-01*
+
+## 2026-07-02 研究的论文（精选5篇）
+
+1. **Dive into the Scene: Breaking the Perceptual Bottleneck in Vision-Language Decision Making via Focus Plan Generation** - arXiv:2606.04046
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: SceneDiver, Focus Plan, Scene Graph, VLM Hallucination, Embodied AI, ICML 2026
+   - 文档: papers/2026-07-02_01_SceneDiver_Focus_Plan_VLM.md
+   - 亮点: 粗到细焦点计划生成解决VLM视觉幻觉，场景图引导的Agent式视觉探索，浙大ICML 2026
+
+2. **AeroVerse-SatAgent: UAV-Satellite Collaborative Spatial Reasoning Inspired by the Dual Visual Pathway Theory** - arXiv:2606.31467
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: UAV-Satellite, Spatial Reasoning, Dual Visual Pathway, BEV, Cognitive Science
+   - 文档: papers/2026-07-02_02_AeroVerse_SatAgent_UAV_Satellite.md
+   - 亮点: 认知科学双通路启发UAV-卫星协作空间推理，130K数据集强制跨视角推理，中科院
+
+3. **ViPSim: Collaborating Visual and Parameter Spaces for Consistent Long-Horizon Embodied World Models** - arXiv:2606.28804
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Embodied World Model, Visual-Parameter Dual Space, Plücker Embedding, Long-Horizon, Video Diffusion
+   - 文档: papers/2026-07-02_03_ViPSim_Visual_Parameter_Embedded_World_Model.md
+   - 亮点: 视觉+参数双空间协同解决EWM表示鸿沟，Plücker嵌入+四重grounding，可变形物体涌现能力
+
+4. **Shell-Supervised Gaussian Splatting for Urban Real-to-Sim Reconstruction** - arXiv:2606.30014
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3DGS, Urban Reconstruction, Real-to-Sim, Facade Shell, Geometric Supervision
+   - 文档: papers/2026-07-02_04_Shell_Supervised_GS_Urban_Real2Sim.md
+   - 亮点: 外立面壳体作为轻量几何监督改善3DGS城市重建，掩码门控损失保留外观+正则化几何
+
+5. **UniTacVLA: Unified Tactile Understanding and Prediction in Vision Language Action Models** - arXiv:2606.31723
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Tactile VLA, Tactile Chain-of-Thought, Contact-Rich Manipulation, Dual-Frequency Control
+   - 文档: papers/2026-07-02_05_UniTacVLA_Tactile_VLA.md
+   - 亮点: 触觉思维链+粗到细预测的统一触觉理解框架，预测+反应双频控制器，HIT+Daimon Robotics
+
+*最后更新时间: 2026-07-02*
