@@ -1620,4 +1620,36 @@
    - 文档: papers/2026-07-03_05_Structured_4D_Latent_Predictive.md
    - 亮点: 3D原生世界模型，稀疏体素latent预测场景演化，可解码为3DGS/点云，粗到细两步生成
 
-*最后更新时间: 2026-07-03*
+## 2026-07-04 研究的论文（精选5篇）
+
+1. **L2D2-GS: Learning to Densify for Feedforward Dynamic Gaussian Scene Reconstruction** - arXiv:2606.29374
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS, Dynamic Scene, Self-supervised Densification, Geometric Reparameterization, PKU+Xiaomi
+   - 文档: papers/2026-07-04_01_L2D2_GS_Dynamic_Gaussian_Reconstruction.md
+   - 亮点: 将前馈重建重构为迭代优化+学习致密化，自监督reward解决credit assignment，几何重参数化防止早期退化
+
+2. **SpaceEra++: A Unified Framework Towards 3D Spatial Reasoning in Video** - arXiv:2607.02300
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Spatial Reasoning, Video Understanding, VLM, Unified Framework, HIT+Pengcheng Lab
+   - 文档: papers/2026-07-04_02_SpaceEra++_3D_Spatial_Reasoning_Video.md
+   - 亮点: 统一框架将3D空间推理能力注入视频VLM，支持机器人导航和embodied交互
+
+3. **PhysMani: Physics-principled 3D World Model for Dynamic Object Manipulation** - arXiv:2607.01938
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS World Model, Divergence-free Velocity, Dynamic Manipulation, ECCV 2026, vLAR
+   - 文档: papers/2026-07-04_03_PhysMani_Physics_3D_World_Model.md
+   - 亮点: 物理原理驱动3D高斯世界模型，无散度速度场保证物理一致性，200ms/帧在线优化，PhysMani-Bench 16个动态操作任务
+
+4. **RoboWorld: Fast and Reliable Neural Simulators for Generalist Robot Policy Evaluation** - arXiv:2607.01060
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Video World Model, Step Forcing, Robot Policy Evaluation, KAIST, ICML 2026
+   - 文档: papers/2026-07-04_04_RoboWorld_Neural_Simulators.md
+   - 亮点: Step Forcing解决自回归train-test gap，0-5 rubric连续评分+多视角分离评估，Pearson r=0.989与真实世界排名
+
+5. **FastBridge: Closing the Model-Based Realization Gap in Safety Filters on 3DGS for Fast Quadrotor Flight** - arXiv:2607.01200
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS, Safety Filter, Collision Cone CBF, Backup CBF, Quadrotor
+   - 文档: papers/2026-07-04_05_FastBridge_3DGS_Safety_Quadrotor.md
+   - 亮点: 全非线性四旋翼动力学的collision cone ECBF，backup CBF保证QP可行性，47% jerk减少+2.25×速度提升
+
+*最后更新时间: 2026-07-04*
