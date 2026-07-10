@@ -1653,3 +1653,73 @@
    - 亮点: 全非线性四旋翼动力学的collision cone ECBF，backup CBF保证QP可行性，47% jerk减少+2.25×速度提升
 
 *最后更新时间: 2026-07-04*
+
+---
+
+## 2026-07-10 研究的论文（精选5篇）
+
+1. **DSWAM: A Dual-System World Action Foundation Model for Fine-Grained Robot Manipulation** - arXiv:2607.04927
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Action Model, Dual-System, Video Co-training, TensorRT, DeMaVLA, Midea Group+Tongji
+   - 文档: papers/2026-07-10_01_DSWAM_Dual_System_WAM.md
+   - 亮点: System 1(WAM执行器)+System 2(可选VLM规划器)双系统解耦，训练时视频协同训练+推理时直接动作预测，DeMaVLA匹配条件下96.3%成功率(+3.8%)
+
+2. **WSA₁: A 3D-Centric World-Spatial-Action Model for Generalizable Robot Control** - arXiv:2607.03941
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D-Centric, World-Spatial-Action, Bidirectional Causal Attention, MoT, Tongji University
+   - 文档: papers/2026-07-10_02_WSA1_3D_World_Spatial_Action.md
+   - 亮点: 范式级创新——统一3D世界建模+3D约束2D视觉思考+3D逆动力学，双向因果注意力实现世界-动作互约束，仅6K小时数据(1K真实)达93% SR
+
+3. **GeoGS-SLAM: Geometry-Only Gaussian Splatting for Dense Monocular SLAM** - arXiv:2607.07452
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS, Geometry-Only, SLAM, Sim(3) Map Update, Beihang University
+   - 文档: papers/2026-07-10_03_GeoGS_SLAM_Geometry_Only.md
+   - 亮点: 仅保留几何参数减少82%参数量，28K高斯(vs 198K)更好几何质量，无颜色渲染训练框架，统一Sim(3)回环更新避免地图撕裂
+
+4. **EAGOR: Embodied Reasoning in Omni-Direction** - arXiv:2607.06165
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Omni-directional, Spherical Harmonics, Recursive Bayesian, Directional Reasoning, NTU
+   - 文档: papers/2026-07-10_04_EAGOR_Omni_directional_Reasoning.md
+   - 亮点: 球面谐波信念场(SH-BF)在球面上做递归贝叶斯方向估计，免训练框架(VLM+SH解耦)，HOS +34.4%/OSR-Bench +45.6%
+
+5. **TouchWorld: A Predictive and Reactive Tactile Foundation Model for Dexterous Manipulation** - arXiv:2607.07287
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Tactile, Predictive World Model, Multi-timescale, Residual Correction, HIT Shenzhen+PHANES AI
+   - 文档: papers/2026-07-10_05_TouchWorld_Tactile_Foundation.md
+   - 亮点: 触觉双重角色(预测+反应)，三级多时间尺度架构(语义/动作/触觉)，残差纠正范式，Clean 65.0%/干扰 53.7%成功率
+
+*最后更新时间: 2026-07-10*
+
+## 2026-07-11 研究的论文（精选5篇）
+
+1. **RynnWorld-4D: 4D Embodied World Models for Robotic Manipulation** - arXiv:2607.06559
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4D World Model, RGB-DF, Diffusion, Tri-branch, Inverse Dynamics, DAMO Academy/Alibaba
+   - 文档: papers/2026-07-11_01_RynnWorld_4D_4D_Embodied_World_Models_for_Robotic_Manipulati.md
+   - 亮点: RGB-DF投影4D表示(同步生成RGB+Depth+Flow), 三分支Transformer+跨模态注意力, 254.4M帧Rynn4DDataset, 逆动力学头单次推理高频闭环控制
+
+2. **CamVLA: From Fixed to Free Cameras - Calibration-Free View-Robust VLA** - arXiv:2607.05396
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: View-Robust VLA, Calibration-Free, Camera-Centric Action, Hand-Eye Matrix, NTU+Alibaba
+   - 文档: papers/2026-07-11_02_From_Fixed_to_Free_Cameras_Calibration_Free_View_Robust_Visi.md
+   - 亮点: 首个无标定视角鲁棒VLA——策略自己推断相机位姿, 相机中心动作+6-DoF手眼矩阵解耦, 自由向量变换数学正确性, 仅需单张RGB
+
+3. **MultiUAV-Plat: LLM-Oriented Multi-UAV Collaborative Task Planning** - arXiv:2606.31073
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Multi-UAV, LLM Agent, Benchmark, RESTful API, Hidden Validation, NUDT
+   - 文档: papers/2026-07-11_03_MultiUAV_Plat_An_LLM_Oriented_Platform_Benchmark_and_Framewo.md
+   - 亮点: 首个LLM-agent导向多UAV协作平台, 75个任务/1500个NL任务/9396个验证检查, Agent4Drone 57.9% vs ReAct 30.6%(+27.3pp), 隐藏任务验证
+
+4. **AugSplat: Radiance Field-Informed Gaussian Splatting for Sparse-View** - arXiv:2606.31556
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3DGS, Sparse-View, NeRF Ensemble, View Augmentation, Uncertainty, Google+ETH Zurich
+   - 文档: papers/2026-07-11_04_AugSplat_Radiance_Field_Informed_Gaussian_Splatting_for_Spar.md
+   - 亮点: NeRF作为数据生成器(非最终表示), 集成方差→不确定性加权监督, Staged/Dual两种策略, 保持3DGS实时推理
+
+5. **See-and-Reach: Precise VLN for UAVs (3DG-VLN)** - arXiv:2606.20045
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: UAV-VLN-FOV, Dynamic 3D Direction, High-Resolution Dual-View, Waypoint Prediction, SDU+UTS
+   - 文档: papers/2026-07-11_05_See_and_Reach_Precise_Vision_Language_Navigation_for_UAVs_wi.md
+   - 亮点: 首次隔离"看到即到达"阶段+10米严格标准, 动态在线3D方向更新解决累积漂移, 高分辨率双视角(前视+下视), 2717条轨迹专用基准
+
+*最后更新时间: 2026-07-11*
