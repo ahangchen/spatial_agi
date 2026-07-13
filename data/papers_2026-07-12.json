@@ -1,0 +1,741 @@
+{
+  "papers": [
+    {
+      "title": "Geometry and Gradient-based Partitioning for Panoramic Outdoor Reconstruction",
+      "summary": "Scaling 3D Gaussian Splatting (3DGS) to large outdoor scenes is costly in both data acquisition and computation. Adopting panoramic images with equirectangular projection (ERP) can reduce capture effort via their full $360^{\\circ}$ field of view, yet the resulting omnipresent visibility invalidates existing partitioning strategies that rely on local camera frustums, causing block-wise optimization to degenerate into global training. Thus, we propose PanoLOG, a two-stage coarse-to-fine framework ",
+      "arxiv_url": "http://arxiv.org/abs/2607.08769v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08769v1",
+      "authors": [
+        "Weijian Chen",
+        "Weibo Yao",
+        "Yuhang Zhang",
+        "Xiaolin Tang",
+        "Guo Wang"
+      ],
+      "published": "2026-07-09",
+      "score": 17,
+      "query": "gaussian splatting"
+    },
+    {
+      "title": "WCog-VLA: A Dual-Level World-Cognitive Vision-Language-Action Model for End-to-End Autonomous Driving",
+      "summary": "Vision-Language-Action (VLA) models have advanced end-to-end autonomous driving. However, existing methods either lack comprehensive world cognition or suffer from fragmented world foresight, inherently confining these models to reactive driving. To address this limitation, we propose WCog-VLA, a novel dual-level World-Cognitive VLA framework that successfully bridges semantic world forecasting with generative world evolution to achieve proactive autonomous driving. At the semantic level, WCog-V",
+      "arxiv_url": "http://arxiv.org/abs/2607.08375v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08375v1",
+      "authors": [
+        "Xuerun Yan",
+        "Zhexi Lian",
+        "Nuoheng Zhang",
+        "Shiyu Fang",
+        "Haoran Wang"
+      ],
+      "published": "2026-07-09",
+      "score": 17,
+      "query": "VLM 3D understanding"
+    },
+    {
+      "title": "Track2Map: Online Deformable SLAM with Motion-Aware Pose Optimization in Robotic Surgery",
+      "summary": "Gaussian splatting is the current state-of-the-art for dense, deformable 3D anatomy reconstruction in robot-assisted minimally invasive surgery (RAMIS); however, most pipelines are offline and depend on accurate camera trajectory priors (often from robotic kinematics), limiting applicability when priors are missing or noisy. To address these limitations, we propose Track2Map, an online 3D Gaussian Splatting pipeline that jointly optimizes camera trajectory and 3D deformable scene representation ",
+      "arxiv_url": "http://arxiv.org/abs/2607.08408v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08408v1",
+      "authors": [
+        "Tianyi Song",
+        "Sierra Bonilla",
+        "Xinwei Ju",
+        "Evangelos Mazomenos",
+        "Danail Stoyanov"
+      ],
+      "published": "2026-07-09",
+      "score": 16,
+      "query": "gaussian splatting"
+    },
+    {
+      "title": "Harness VLA: Steering Frozen VLAs into Reliable Manipulation Primitives via Memory-Guided Agents",
+      "summary": "Language-conditioned manipulation requires both precise contact-rich control and robust reasoning over language, scenes, and long horizons. End-to-end Vision-Language-Action (VLA) models provide strong local visuomotor skills, but they are trained on in-distribution task trajectories and often fail under deployment perturbations such as semantic retargeting, goal re-binding, spatial-layout shifts, and unstable local contacts. LLM coding agents provide complementary semantic and compositional rea",
+      "arxiv_url": "http://arxiv.org/abs/2607.08448v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08448v1",
+      "authors": [
+        "Yixian Zhang",
+        "Huanming Zhang",
+        "Feng Gao",
+        "Xiao Li",
+        "Zhihao Liu"
+      ],
+      "published": "2026-07-09",
+      "score": 16,
+      "query": "3D scene understanding VLM"
+    },
+    {
+      "title": "On the Design of Mixture-of-Experts for Dynamic Gaussian Splatting",
+      "summary": "Dynamic scene reconstruction remains challenging due to the heterogeneous and spatially varying nature of real-world motion. Although recent 3D Gaussian Splatting methods have introduced diverse deformation formulations for dynamic novel view synthesis, each method typically relies on a single deformation model within its representation, which limits robustness across diverse dynamic scenarios. In this work, we study a fundamental problem-multi-deformation modeling for dynamic 3D Gaussian repres",
+      "arxiv_url": "http://arxiv.org/abs/2607.08250v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08250v1",
+      "authors": [
+        "In-Hwan Jin",
+        "Hyeongju Mun",
+        "Joonsoo Kim",
+        "Kugjin Yun",
+        "Kyeongbo Kong"
+      ],
+      "published": "2026-07-09",
+      "score": 15,
+      "query": "gaussian splatting"
+    },
+    {
+      "title": "FSD-VLN: Fast-Slow Dual-System Modeling for Aerial Long-Horizon Vision-Language Navigation",
+      "summary": "Vision-Language Navigation (VLN) enables UAV autonomous navigation in unknown environments by mapping language instructions to real-time visual inputs. Compared with GPS-dependent or pre-programmed navigation, VLN supports intuitive human-machine interaction and stronger environmental adaptability, requiring tight integration of high-level semantic reasoning and low-latency flight control.Existing methods suffer from structural misalignment between global multimodal understanding and sequential ",
+      "arxiv_url": "http://arxiv.org/abs/2607.08359v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08359v1",
+      "authors": [
+        "Xueke Zhu",
+        "Qingyan Meng",
+        "Liutao Yu",
+        "Wei Zhang",
+        "Zhengyu Ma"
+      ],
+      "published": "2026-07-09",
+      "score": 13,
+      "query": "VLM 3D understanding"
+    },
+    {
+      "title": "FabriVLA: A Lightweight Vision-Language-Action Model for Precise Multi-Task Manipulation",
+      "summary": "We present FabriVLA, a lightweight Vision-Language-Action model for Precise Multi-Task Manipulation. FabriVLA combines an InternVL3.5 vision-language backbone with a flow-matching action head featuring gated self-attention across action tokens and shallow VLM layer fusion for enriched spatial context. The model is trained via single stage joint optimization from a pretrained VLM and randomly initialized action head. On the Meta-World MT50 benchmark spanning 50 diverse manipulation tasks, FabriVL",
+      "arxiv_url": "http://arxiv.org/abs/2607.08575v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08575v1",
+      "authors": [
+        "Shiyuan Yang",
+        "Borong Zhang",
+        "Jizheng Zhang",
+        "Zhijia Tao",
+        "Junfei Guo"
+      ],
+      "published": "2026-07-09",
+      "score": 12,
+      "query": "embodied AI VLM"
+    },
+    {
+      "title": "Beyond Backpropagation: Monte Carlo Method Can Train Deep Neural Networks",
+      "summary": "Backpropagation (BP) dominates deep learning training, but its reliance on gradients brings inherent troubles -- vanishing and exploding gradients. The pursuit of gradient-free methods has long been a goal in the field of artificial intelligence. This paper shows that indeed the simplest Monte Carlo algorithm implemented on a single GPU -- randomly mutate a parameter, keep it if the loss decreases, otherwise retry -- can practically train deep networks. This gradient-free method does not even ne",
+      "arxiv_url": "http://arxiv.org/abs/2607.08406v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08406v1",
+      "authors": [
+        "Hong Zhao"
+      ],
+      "published": "2026-07-09",
+      "score": 10,
+      "query": "gaussian splatting"
+    },
+    {
+      "title": "HoloTetSphere: Unified TetSphere Mesh Reconstruction for Physical Simulations",
+      "summary": "Standard pipelines for physics-ready 3D reconstruction rely on a decoupled two-stage paradigm: extracting surface geometry followed by an error-prone tetrahedralization process. While recent Lagrangian methods like TetSphere Splatting attempt to bypass this by directly optimizing volumetric primitives, their homeomorphic constraints prevent topology-adaptive optimization. Consequently, they produce disjoint tetrahedra rather than a single connected mesh, rendering the structures unsuitable for f",
+      "arxiv_url": "http://arxiv.org/abs/2607.08398v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08398v1",
+      "authors": [
+        "YaQiao Dai",
+        "Renjiao Yi",
+        "Zhirui Gao",
+        "Wei Chen",
+        "Kai Xu"
+      ],
+      "published": "2026-07-09",
+      "score": 10,
+      "query": "gaussian splatting"
+    },
+    {
+      "title": "Wat3R: Underwater 3D Geometry Learning without Annotations",
+      "summary": "Estimating 3D geometry in underwater environments presents unique challenges due to light attenuation, scattering, and the absence of large-scale, high-quality 3D annotations. Pioneering methods rely on massive dense annotations that are impractical in underwater settings. In this paper, we propose Wat3R, a cross-domain semi-supervised learning framework designed to adapt feed-forward 3D reconstruction models from air to underwater scenes. Uniquely, our method eliminates the need for any annotat",
+      "arxiv_url": "http://arxiv.org/abs/2607.08772v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08772v1",
+      "authors": [
+        "Jiangwei Ren",
+        "Xingyu Jiang",
+        "Zijie Song",
+        "Wei Xu",
+        "Hongkai Lin"
+      ],
+      "published": "2026-07-09",
+      "score": 10,
+      "query": "world model robot"
+    },
+    {
+      "title": "DexVerse: A Modular Benchmark for Multi-Task, Multi-Embodiment Dexterous Manipulation",
+      "summary": "Building general-purpose dexterous manipulation policies requires benchmarks that go beyond isolated tasks to systematically evaluate policies across diverse interaction modes, sensory conditions, and robot embodiments. However, existing benchmarks remain limited in task and data diversity, embodiment coverage, or controllable visual variation, hindering studies of cross-task and cross-embodiment generalization. We present DexVerse, a large-scale and modular benchmark for dexterous manipulation.",
+      "arxiv_url": "http://arxiv.org/abs/2607.08751v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08751v1",
+      "authors": [
+        "Yunchao Yao",
+        "Zhuxiu Xu",
+        "Tianqi Zhang",
+        "Zixian Liu",
+        "Sikai Li"
+      ],
+      "published": "2026-07-09",
+      "score": 10,
+      "query": "world model robot"
+    },
+    {
+      "title": "When Structured Sparse Autoencoders Learn Consistent Concepts Across Modalities",
+      "summary": "Sparse autoencoders (SAEs) have emerged as a promising technique for mechanistic interpretability by learning a set of sparse latent features in large models, each of which encodes a distinct concept. However, in vision-language models (VLMs), vanilla SAEs struggle to learn modality-consistent concepts, with concepts often exhibiting fragmented coverage (i.e., disjoint regions) in the visual modality. To address this challenge, we propose a Structured Sparse AutoEncoder ($S^2AE$) that enforces c",
+      "arxiv_url": "http://arxiv.org/abs/2607.08605v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08605v1",
+      "authors": [
+        "Weiduo Liao",
+        "Yunqiao Yang",
+        "Ying Wei"
+      ],
+      "published": "2026-07-09",
+      "score": 10,
+      "query": "embodied AI VLM"
+    },
+    {
+      "title": "Write-Protected Discrete Bottlenecks for Language-Grounded World Models: A Structural Limitation and Sufficient Fix",
+      "summary": "How should language interface with a world model's discrete symbol system? The dominant paradigm -- end-to-end injection of LLM/VLM features into robot world models (RT-2, Octo, PaLM-E) -- implicitly assumes that language gradients can directly shape physical symbol representations. We ask whether this assumption is safe, find that it is not, and characterize the minimal architectural constraint that prevents the failure. Any language gradient entering a Gumbel-softmax-based discrete symbol bott",
+      "arxiv_url": "http://arxiv.org/abs/2607.08312v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08312v1",
+      "authors": [
+        "Jiayi Fang"
+      ],
+      "published": "2026-07-09",
+      "score": 10,
+      "query": "embodied AI VLM"
+    },
+    {
+      "title": "On Exploring Input Resolution Scaling For Anytime LiDAR Object Detection",
+      "summary": "Making tradeoffs between execution latency and result utility (i.e., anytime computing) for adapting to dynamic operational requirements has been shown to enhance the performance of cyber-physical systems. In this work, we focus on enabling anytime computing for deep neural networks (DNNs) that process LiDAR point clouds for 3D object detection. We propose a novel method that enables multi-resolution inference for models that process point clouds as pillars or voxels, allowing the input to be dy",
+      "arxiv_url": "http://arxiv.org/abs/2607.08391v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08391v1",
+      "authors": [
+        "Ahmet Soyyigit",
+        "Shuochao Yao",
+        "Heechul Yun"
+      ],
+      "published": "2026-07-09",
+      "score": 10,
+      "query": "VLM 3D understanding"
+    },
+    {
+      "title": "CARLA-GS: Decoupling Representation, Reasoning, and Physics Simulation for Autonomous Driving Corner-Case Synthesis",
+      "summary": "Safety evaluation for autonomous driving is dominated by rare, safety-critical interactions, motivating simulators that can deliberately synthesize corner cases with photorealistic observations. Corner-case generation is inherently a multi-source problem spanning visual representation, scene reasoning, and vehicle trajectory generation and control. Prior knowledge- and model-based approaches typically focus on scene or trajectory components in isolation, while diffusion-based methods attempt end",
+      "arxiv_url": "http://arxiv.org/abs/2607.07601v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.07601v1",
+      "authors": [
+        "Kaicong Huang",
+        "Meng Ma",
+        "Ruimin Ke"
+      ],
+      "published": "2026-07-08",
+      "score": 9,
+      "query": "gaussian splatting"
+    },
+    {
+      "title": "OpenCoF: Learning to Reason Through Video Generation",
+      "summary": "Reasoning has become a core capability for large models, especially when reliable decisions require understanding logical consequences. Recent video generation models offer a reasoning path distinct from previous Chain-of-Thought (CoT): reasoning can unfold through temporally connected frames, known as Chain-of-Frame (CoF) reasoning. However, existing video generators are primarily trained on general video corpora, still lacking diverse supervision and dedicated designs for CoF reasoning. To add",
+      "arxiv_url": "http://arxiv.org/abs/2607.08763v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08763v1",
+      "authors": [
+        "Xinyan Chen",
+        "Ziyu Guo",
+        "Renrui Zhang",
+        "Dongzhi Jiang",
+        "Hongsheng Li"
+      ],
+      "published": "2026-07-09",
+      "score": 9,
+      "query": "world model robot"
+    },
+    {
+      "title": "AUTOPILOT VQA: Benchmarking Vision-Language Models for Incident-Centric Dashcam Understanding",
+      "summary": "Recent advances in Vision-Language Models, Large Language Models, and Multimodal Large Language Models have improved autonomous driving tasks such as scene understanding, decision making, trajectory prediction, and visual question answering. However, evaluating whether these models can reliably reason about safety-critical incidents remains challenging. To address this gap, we present AUTOPILOT-VQA, an incident-centric visual question answering benchmark for dashcam video understanding. The data",
+      "arxiv_url": "http://arxiv.org/abs/2607.08745v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08745v1",
+      "authors": [
+        "Siddharth Damodharan",
+        "Radhika Gupta",
+        "Ali Alshami",
+        "Ryan Rabinowitz",
+        "Jugal Kalita"
+      ],
+      "published": "2026-07-09",
+      "score": 9,
+      "query": "world model robot"
+    },
+    {
+      "title": "Optimization and Deep Learning based Resource Allocation for UAV-Aided Wireless Communication with Rotatable Antenna Array",
+      "summary": "Multi-antenna unmanned aerial vehicle (UAV)-aided communication presents a promising solution to increase the system capacity and improve the quality of service (QoS) of the future wireless networks. In this paper, we equip a UAV platform with a rotatable antenna array (RAA), which can be rotated flexibly in three-dimensional (3D) space via an onboard gimbal, enabling additional spatial degrees of freedom (DoFs) for improving multiuser signal transmission and interference management. Compared wi",
+      "arxiv_url": "http://arxiv.org/abs/2607.08420v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08420v1",
+      "authors": [
+        "Fengcheng Pei",
+        "Lin Xiang",
+        "Anja Klein",
+        "Robert Schober"
+      ],
+      "published": "2026-07-09",
+      "score": 9,
+      "query": "VLM 3D understanding"
+    },
+    {
+      "title": "Native Video-Action Pretraining for Generalizable Robot Control",
+      "summary": "The advent of video-action models offers a promising path for robot control. Nevertheless, we argue that repurposing video generative models designed for digital content creation is inherently inadequate for physical environments. To bridge this gap, we present LingBot-VA 2.0, a video-action foundation model built from the ground up for embodiment. Four core design principles showcase its evolution from LingBot-VA. (1) Departing from traditional reconstruction-focused VAEs, we introduce a semant",
+      "arxiv_url": "http://arxiv.org/abs/2607.08639v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08639v1",
+      "authors": [
+        "Qihang Zhang",
+        "Lin Li",
+        "Luyao Zhang",
+        "Shuai Yang",
+        "Yiming Luo"
+      ],
+      "published": "2026-07-09",
+      "score": 8,
+      "query": "embodied AI VLM"
+    },
+    {
+      "title": "Do Egocentric Video-Language Models Capture Both Hand- and Object-Centric Cues?",
+      "summary": "Hand-object interaction (HOI) recognition requires capturing both hand manipulations and object transformations. However, existing video-language models often fall into shortcuts by relying on spurious correlations among hands, objects, or environmental context, rather than reasoning from the appearance and dynamics of hands and objects themselves. To address this limitation, we propose a new learning paradigm that combines (i) hand-object masked training, which enables robust reasoning from par",
+      "arxiv_url": "http://arxiv.org/abs/2607.08514v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08514v1",
+      "authors": [
+        "Masatoshi Tateno",
+        "Alexandros Stergiou",
+        "Risa Shinoda",
+        "Yoichi Sato",
+        "Dima Damen"
+      ],
+      "published": "2026-07-09",
+      "score": 8,
+      "query": "VLM 3D understanding"
+    },
+    {
+      "title": "Stochastic dynamics of particles in correlated fields",
+      "summary": "The effective dynamics of a colloidal particle immersed in a complex medium at equilibrium is usually described in terms of a linear overdamped Langevin equation, possibly with memory. However, numerical simulations and experiments have shown that this linear model fails, suggesting that the effective dynamics of the probe is actually nonlinear. Focusing on the case in which the medium is described by a fluctuating and correlated Gaussian field, linearly coupled to the colloid, we derive this ef",
+      "arxiv_url": "http://arxiv.org/abs/2607.08627v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08627v1",
+      "authors": [
+        "Andrea Gambassi"
+      ],
+      "published": "2026-07-09",
+      "score": 7,
+      "query": "gaussian splatting"
+    },
+    {
+      "title": "GRE-Diff: Gaussian Room Embeddings for Structured Layout Diffusion",
+      "summary": "Designing functional and aesthetically coherent floor plans requires exploring a vast space of possible room arrangements, a task that quickly becomes overwhelming for human designers. In this paper, we propose GRE-Diff, a controllable and interactive diffusion-based framework that automates the creation and editing of apartment floor plans under user-specified constraints. By combining AI-generated suggestions with real-time, human-in-the-loop editing, the system enables users to specify room t",
+      "arxiv_url": "http://arxiv.org/abs/2607.08086v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08086v1",
+      "authors": [
+        "Jing Wang",
+        "Haoran Xiong",
+        "Zihao Yan",
+        "Minglun Gong",
+        "Hui Huang"
+      ],
+      "published": "2026-07-09",
+      "score": 7,
+      "query": "gaussian splatting"
+    },
+    {
+      "title": "Bayesian spatial modelling framework for assessing residential flood risk in property insurance",
+      "summary": "Spatial heterogeneity in insurance risk modelling is often represented using coarse areal structures, which can obscure fine-scale patterns critical for accurate risk assessment. This study introduces a point-referenced Bayesian framework to model claim occurrence and severity at the policyholder level, avoiding reliance on predefined geographic aggregation. Drawing on a large French insurance portfolio combined with high-resolution environmental variables, rainfall records, and institutional ha",
+      "arxiv_url": "http://arxiv.org/abs/2607.07609v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.07609v1",
+      "authors": [
+        "Mulah Moriah",
+        "Franck Vermet",
+        "Pierre Ailliot",
+        "Philippe Naveau",
+        "Juliette Legrand"
+      ],
+      "published": "2026-07-08",
+      "score": 7,
+      "query": "gaussian splatting"
+    },
+    {
+      "title": "Universal Central Limit Theorem for non-exchangeable interacting diffusions",
+      "summary": "We study non-exchangeable interacting diffusions with pairwise interaction strengths encoded by a sequence of matrices. Under suitable structural and denseness conditions on these matrices, we prove a universal Central Limit Theorem for the global fluctuation field. As the number of particles $n$ becomes large, it converges in distribution to the unique solution of a stochastic partial differential equation (SPDE), the same Gaussian limit as in the exchangeable mean field case. The result applie",
+      "arxiv_url": "http://arxiv.org/abs/2607.07598v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.07598v1",
+      "authors": [
+        "Mykhaylo Shkolnikov",
+        "Lane Chun Yeung"
+      ],
+      "published": "2026-07-08",
+      "score": 7,
+      "query": "gaussian splatting"
+    },
+    {
+      "title": "Latent Memory Palace: Reasoning for Control as Autoregressive Variational Inference",
+      "summary": "Human decision-making is highly flexible -- some actions are taken immediately; others require longer deliberation. Language models have exhibited a similar capacity for adaptive \"reasoning.\" However, transferring this capability to continuous control policies has been challenging, as directly reasoning in language space may lack the granularity for spatial understanding and precise motions. In this work, we show that reasoning for control policies can emerge by organizing information in an auto",
+      "arxiv_url": "http://arxiv.org/abs/2607.08724v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08724v1",
+      "authors": [
+        "Chuning Zhu",
+        "Eva Xu",
+        "Jose Barreiros",
+        "Krishnan Srinivasan",
+        "Paarth Shah"
+      ],
+      "published": "2026-07-09",
+      "score": 7,
+      "query": "world model robot"
+    },
+    {
+      "title": "Towards Mechanistically Understanding Why Memorized Knowledge Fails to Generalize in Large Language Model Finetuning",
+      "summary": "Fine-tuning LLMs to inject new knowledge faces a critical challenge: LLMs can quickly memorize new facts, yet fail to use them for downstream reasoning tasks. We formalize this failure as the \\textit{\\textbf{Knowing--Using Gap}}, characterized by an accuracy gap and a temporal lag between memorization and generalization. To understand this phenomenon, we fine-tune LLMs with unseen knowledge and monitor the spatial permeation dynamics of the knowledge internally using a novel intervention techniq",
+      "arxiv_url": "http://arxiv.org/abs/2607.08393v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08393v1",
+      "authors": [
+        "Lu Dai",
+        "Ziyang Rao",
+        "Yili Wang",
+        "Hanqing Wang",
+        "Hao Liu"
+      ],
+      "published": "2026-07-09",
+      "score": 7,
+      "query": "VLM 3D understanding"
+    },
+    {
+      "title": "Multimodal 3D LUT Generation via StatLUT with Statistical Features for Photorealistic Style Transfer",
+      "summary": "Photorealistic Style Transfer (PST) aims to transfer the color and tonal style of a reference to a content image while strictly preserving its structural integrity. However, existing deep learning-based methods inherently suffer from semantic entanglement caused by pre-trained image encoders, leading to unnatural spatial distortions. Moreover, current pixel-level mapping paradigms often ignore color gamut topology, resulting in color banding, while also lacking the multimodal capability for intu",
+      "arxiv_url": "http://arxiv.org/abs/2607.08227v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08227v1",
+      "authors": [
+        "Yifan Wang",
+        "Zhixiang Hao",
+        "Yu Wang",
+        "Congchao Zhu"
+      ],
+      "published": "2026-07-09",
+      "score": 7,
+      "query": "3D Gaussian Splatting SLAM"
+    },
+    {
+      "title": "Quantum and Classical Potts Criticality in Driven-Dissipative Bosonic Lattices",
+      "summary": "The emergence of equilibrium universality from intrinsically nonequilibrium dynamics is a fundamental open problem. Bose-Hubbard lattices realized in photonic and circuit-QED platforms provide a versatile setting to engineer nonlinear interactions, dissipation, and multiphoton processes. Here we investigate a Bose-Hubbard lattice subject to three-photon parametric driving, whose nonequilibrium steady state spontaneously breaks a $\\mathbb Z_3$ symmetry and realizes the criticality of the three-st",
+      "arxiv_url": "http://arxiv.org/abs/2607.08425v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08425v1",
+      "authors": [
+        "Jacopo Tosca",
+        "Zejian Li",
+        "Cristiano Ciuti"
+      ],
+      "published": "2026-07-09",
+      "score": 6,
+      "query": "gaussian splatting"
+    },
+    {
+      "title": "ARDY: Autoregressive Diffusion with Hybrid Representation for Interactive Human Motion Generation",
+      "summary": "Generating realistic 3D human motions in real-time within interactive applications is key for animation, simulation, and humanoid robotics. While recent offline motion generation approaches offer precise control via text and kinematic constraints, they lack the inference speed required for interactive settings. Conversely, existing online methods enable real-time synthesis but often sacrifice controllability or struggle with complex text semantics and long-horizon goals due to limited context wi",
+      "arxiv_url": "http://arxiv.org/abs/2607.08741v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08741v1",
+      "authors": [
+        "Kaifeng Zhao",
+        "Mathis Petrovich",
+        "Haotian Zhang",
+        "Tingwu Wang",
+        "Siyu Tang"
+      ],
+      "published": "2026-07-09",
+      "score": 6,
+      "query": "world model robot"
+    },
+    {
+      "title": "LTM: Large-scale Terrain Model for Wildfire-prone Landscapes",
+      "summary": "Accurate 3D terrain maps are essential for emergency response when assessing wildfire hazards. However, wildfire-prone regions often span vast areas where conventional reconstruction methods underperform. Airborne LiDAR systems provide high-resolution terrain data, but they are expensive and infrequently updated. Image-based methods offer a lower-cost alternative, but struggle due to sparse visual features and limited image overlap. We propose a multi-modal reconstruction framework leveraging ou",
+      "arxiv_url": "http://arxiv.org/abs/2607.08711v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08711v1",
+      "authors": [
+        "Xiao Fu",
+        "Yue Hu",
+        "Meida Chen",
+        "Peter Anthony Beerel",
+        "Barath Raghavan"
+      ],
+      "published": "2026-07-09",
+      "score": 6,
+      "query": "world model robot"
+    },
+    {
+      "title": "OmniFood-Bench: Evaluating VLMs for Nutrient Reasoning and Personalized Health Advice",
+      "summary": "The rapid integration of Large Vision-Language Models (VLMs) into critical infrastructure promises to revolutionize personalized healthcare and dietary management. However, in the domain of food systems, autonomous agents face a unique and persistent challenge: the \"Systemic Information Asymmetry\" between visual appearance and intrinsic nutritional composition. Existing benchmarks primarily focus on coarse-grained classification tasks, such as food category recognition, which fail to evaluate th",
+      "arxiv_url": "http://arxiv.org/abs/2607.08423v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08423v1",
+      "authors": [
+        "Qian Jiang",
+        "Zhecheng Shi",
+        "Jingpu Yang",
+        "Zirui Song",
+        "Miao Fang"
+      ],
+      "published": "2026-07-09",
+      "score": 6,
+      "query": "embodied AI VLM"
+    },
+    {
+      "title": "The complexities of patient-centred conversational artificial intelligence",
+      "summary": "Consumer-facing health chatbots powered by large language models (LLMs) are increasingly used for symptom assessment. However, chatbot development and evaluation often rely on cooperative, articulate, simulated patients. We analysed 2,053 real patient-chatbot conversations and found that communication patterns and expression of emotions vary widely across users. We developed a patient simulator that separately models clinical content, emotional state, conversational strategy, and communication s",
+      "arxiv_url": "http://arxiv.org/abs/2607.08625v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08625v1",
+      "authors": [
+        "João Matos",
+        "Olivia Buege",
+        "Donny Cheung",
+        "Gary S. Collins",
+        "Paula Dhiman"
+      ],
+      "published": "2026-07-09",
+      "score": 6,
+      "query": "spatial intelligence 3D"
+    },
+    {
+      "title": "ImputeViz: A Visual Analytics Dashboard for Diagnosing Missing Data and Comparing Imputation Methods",
+      "summary": "Missing data is a persistent obstacle in scientific, social science, and public health research, often biasing analyses and placing accountability on analysts for how they handle missing values. We introduce ImputeViz, an integrated visual analytics dashboard that supports diagnosing missingness, configuring imputation models, and evaluating results. The system brings together widely used methods, including MICE, Random Forest, XGBoost, and kNN, within an interactive environment that makes missi",
+      "arxiv_url": "http://arxiv.org/abs/2607.08579v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08579v1",
+      "authors": [
+        "Aitik Dandapat",
+        "Lalith Punepalle Raveendrareddy",
+        "Mithilesh Kumar Singh",
+        "Klaus Mueller"
+      ],
+      "published": "2026-07-09",
+      "score": 6,
+      "query": "spatial intelligence 3D"
+    },
+    {
+      "title": "Low-Rank Matrix Recovery via Heavy-Tailed Quadratic Sampling",
+      "summary": "The problem of recovering an (approximately) low-rank Hermitian matrix $\\pmb{M}_0 \\in \\mathbb{C}^{n \\times n}$ of rank $r$ from quadratic sampling matrices of the form $\\{\\pmb{a}_k \\pmb{a}_k^*\\}_{k=1}^m$ arises in a variety of applications, including phase retrieval. To obtain rigorous recovery guarantees, the sampling vectors $\\{\\pmb{a}_k\\}_{k=1}^m$ are typically modeled probabilistically. However, most existing theoretical results rely on Gaussian or sub-Gaussian assumptions, which may not acc",
+      "arxiv_url": "http://arxiv.org/abs/2607.08671v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08671v1",
+      "authors": [
+        "Gao Huang",
+        "Song Li"
+      ],
+      "published": "2026-07-09",
+      "score": 5,
+      "query": "gaussian splatting"
+    },
+    {
+      "title": "Beyond ΛCDM with the SKA Observatory -- II: Unveiling the Secrets of the Early Universe",
+      "summary": "The origins of the universe remain one of the biggest mysteries in modern cosmology. While the Planck satellite has provided a wealth of information about the early universe, there is still much to be discovered. The Square Kilometre Array Observatory (SKAO) offers a unique opportunity to probe the universe's infancy, going beyond the current limitations of our knowledge. By measuring the power spectrum of biased tracers of the dark matter distribution on the largest cosmological scales and expl",
+      "arxiv_url": "http://arxiv.org/abs/2607.08593v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08593v1",
+      "authors": [
+        "José Fonseca",
+        "Benedict Bahr-Kalus",
+        "Mario Ballardini",
+        "Matilde Barberi-Squarotti",
+        "Steven Cunnington"
+      ],
+      "published": "2026-07-09",
+      "score": 5,
+      "query": "gaussian splatting"
+    },
+    {
+      "title": "Tracking the boundary between absolute/convective instability using adjoint equations",
+      "summary": "Determining absolute/convective instability boundaries conventionally requires repeated saddle searches in the complex-wavenumber plane and a subsequent scan of the physical parameter space to locate zero absolute growth. Such nested calculations become costly and sensitive to modal branch association for large non-normal eigenvalue problems. This work develops a direct continuation method for neutral stationary-saddle boundaries of frequency-affine generalised eigenvalue problems. The zero-grou",
+      "arxiv_url": "http://arxiv.org/abs/2607.08305v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08305v1",
+      "authors": [
+        "Yue Xiao",
+        "Hui Li",
+        "Zijing Ding"
+      ],
+      "published": "2026-07-09",
+      "score": 5,
+      "query": "gaussian splatting"
+    },
+    {
+      "title": "FourierQK: Spectral Preprocessing of Query-Key Projections Improves Transformer Attention",
+      "summary": "FFT-based spectral preprocessing of learned query-key (Q/K) projections substantially improves transformer attention on character-level language modelling. On TinyShakespeare: a fixed random spectral filter achieves val=1.031 (Delta=+0.443); a single learned frequency at paragraph scale achieves val=0.608 (Delta=+0.867); and four learned frequencies spanning paragraph to word scale achieve val=0.309 (Delta=+1.166), a 79% reduction over standard dot-product attention. The single-frequency result ",
+      "arxiv_url": "http://arxiv.org/abs/2607.07478v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.07478v1",
+      "authors": [
+        "Athanasios Zeris"
+      ],
+      "published": "2026-07-08",
+      "score": 5,
+      "query": "gaussian splatting"
+    },
+    {
+      "title": "UniClawBench: A Universal Benchmark for Proactive Agents on Real-World Tasks",
+      "summary": "The rapid development of large language models and multimodal large language models has accelerated the emergence of proactive agents capable of operating everyday tools and assisting users in real-world environments. However, existing benchmarks struggle to evaluate such agents effectively, as they often rely on sandboxed environments and single-turn evaluation paradigms. Moreover, their scenario-based task taxonomies mix multiple model capabilities within the same task category, making it diff",
+      "arxiv_url": "http://arxiv.org/abs/2607.08768v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08768v1",
+      "authors": [
+        "Zhekai Chen",
+        "Chengqi Duan",
+        "Kaiyue Sun",
+        "Bohao Li",
+        "Yuqing Wang"
+      ],
+      "published": "2026-07-09",
+      "score": 5,
+      "query": "world model robot"
+    },
+    {
+      "title": "Force convergence in Monte Carlo Lyman-alpha radiative transfer",
+      "summary": "Monte Carlo radiative transfer (MCRT) is widely used to model Lyman-alpha (Lya) resonant-line transport, but convergence is difficult to assess in optically thick media where photons undergo many scatterings before escape. This is especially important for internal quantities such as radiative acceleration and the force multiplier, which depend on momentum deposition throughout the gas rather than only on emergent spectra. We study the convergence of Lya MCRT momentum-transfer estimators in stati",
+      "arxiv_url": "http://arxiv.org/abs/2607.08726v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08726v1",
+      "authors": [
+        "Joshua Kasiri",
+        "Aaron Smith",
+        "Kevin Lorinc",
+        "Olof Nebrin",
+        "Kazutaka Kimura"
+      ],
+      "published": "2026-07-09",
+      "score": 5,
+      "query": "world model robot"
+    },
+    {
+      "title": "Early to Share, Late to Save: Synchronisation-Driven Communication Gating in Bandwidth-Constrained Cooperative VLN",
+      "summary": "Most cooperative Vision-Language Navigation (VLN) methods assume unlimited communication, not considering real-world applications where bandwidth is restricted and information efficiency is critical. We introduce \\textbf{bandwidth-constrained cooperative VLN} and propose \\textbf{hindsight gating}: a lightweight supervised gate that labels communication-critical steps post-hoc from navigation failures, avoiding the high variance of REINFORCE. Contrary to the intuition that agents should communica",
+      "arxiv_url": "http://arxiv.org/abs/2607.08504v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08504v1",
+      "authors": [
+        "Arav Gupta",
+        "Nivedan Yakolli",
+        "Avinash Gautam"
+      ],
+      "published": "2026-07-09",
+      "score": 5,
+      "query": "embodied AI VLM"
+    },
+    {
+      "title": "Playing ZendoWorld: Challenging AI Agents on Active Visual Concept Induction",
+      "summary": "A central challenge in building intelligent systems is enabling agents to jointly perceive complex inputs, form hypotheses about hidden patterns, and design informative experiments to test them. To study this problem, we propose ZendoWorld, a controlled interactive environment in which agents must infer a logical rule about visual game observations, acquire information by proposing new scenes, and refine their hypotheses based on feedback from the game environment. We evaluate several agents spa",
+      "arxiv_url": "http://arxiv.org/abs/2607.08233v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08233v1",
+      "authors": [
+        "Sophia Koehler",
+        "Antonia Wüst",
+        "Inga Ibs",
+        "Wasu Top Piriyakulkij",
+        "Wolfgang Stammer"
+      ],
+      "published": "2026-07-09",
+      "score": 5,
+      "query": "embodied AI VLM"
+    },
+    {
+      "title": "Open-ended Multi-agent Autocurricula via Visual Inspection of Policies with Multi-modal LLMs",
+      "summary": "Open-ended curricula in Reinforcement Learning (RL) aim to train generally-capable agents by identifying tasks that facilitate learning increasingly complex skills. A major challenge when designing such curricula is assessing task difficulty relative to the agent's current learning progress. While previous work has explored using scalar task scores or textual summaries of the agent's behavior, here we study a different approach: directly inspecting policy behavior via recorded episode videos. We",
+      "arxiv_url": "http://arxiv.org/abs/2607.08193v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08193v1",
+      "authors": [
+        "Lorenzo Pantè",
+        "Andrea Fanti",
+        "Roberto Capobianco"
+      ],
+      "published": "2026-07-09",
+      "score": 5,
+      "query": "embodied AI VLM"
+    },
+    {
+      "title": "When Thinking Hurts: Epistemic Signals in the Reasoning Chains of Visual Language Models",
+      "summary": "Uncertainty quantification for visual language models (VLMs) conventionally targets the answer token distribution. We provide the first three-family empirical characterisation of answer entropy behaviour in thinking-mode VLMs. Running four models on identical POPE adversarial samples, we find three qualitatively distinct patterns: Qwen3-VL-8B-Thinking shows complete collapse (ans H AUROC = 0.492); GLM-4.1V-9B-Thinking shows no collapse (0.716); and InternVL3-8B shows selective thinking (chains o",
+      "arxiv_url": "http://arxiv.org/abs/2607.08059v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08059v1",
+      "authors": [
+        "Mayank Singal"
+      ],
+      "published": "2026-07-09",
+      "score": 5,
+      "query": "embodied AI VLM"
+    },
+    {
+      "title": "Sharing economy in the era of full automation: Evidence from autonomous vehicle on-demand mobility services",
+      "summary": "The digital age has facilitated the sharing of underutilized assets. This paper focuses on privately owned autonomous vehicles (AVs), a unique class of robots that can move independently and provide transportation services. When not in personal use, private AV owners can lease their vehicles to a platform that operates an on-demand mobility service (MoD). We refer to this service as AV crowdsourcing, and develop a time-expanded network flow model that captures temporal and spatial heterogeneity ",
+      "arxiv_url": "http://arxiv.org/abs/2607.08610v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08610v1",
+      "authors": [
+        "Xiaoyan Wang",
+        "Kenan Zhang",
+        "Yaochen Ma"
+      ],
+      "published": "2026-07-09",
+      "score": 5,
+      "query": "spatial intelligence 3D"
+    },
+    {
+      "title": "Why Do You Say It Like That? A Phoneme-Level Framework for Explainable Speech Deepfake Detection",
+      "summary": "As the accuracy of speech deepfake detection improves with the use of self-supervised representations such as wav2vec 2.0 and HuBERT, understanding why the speech is classified as bona fide or deepfake remains an open challenge. In pursuit of more trustworthy and interpretable artificial intelligence, we introduce a phoneme-level analysis framework that connects model predictions to measurable phonetic units. Our post-hoc explainability method is generally applicable to a variety of speech deepf",
+      "arxiv_url": "http://arxiv.org/abs/2607.08586v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08586v1",
+      "authors": [
+        "Anna Taylor",
+        "Michele Panariello",
+        "Massimiliano Todisco",
+        "Chiara Galdi",
+        "Nicholas Evans"
+      ],
+      "published": "2026-07-09",
+      "score": 5,
+      "query": "spatial intelligence 3D"
+    },
+    {
+      "title": "DeltaV: Thinking with Visual State Updates in Unified Large Multimodal Models",
+      "summary": "Current Unified Large Multimodal Models (ULMMs) support interleaved multimodal reasoning through textual reasoning and intermediate visual states, but typically generate each visual state as a full image. This full-image generation paradigm introduces substantial visual-token redundancy and dilutes supervision on sparse yet reasoning-critical state transitions. We propose DeltaV, a ULMM that replaces full-image generation with visual updates. Conditioned on historical visual states, DeltaV incre",
+      "arxiv_url": "http://arxiv.org/abs/2607.08434v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08434v1",
+      "authors": [
+        "Pengjie Wang",
+        "Linger Deng",
+        "Zujia Zhang",
+        "Shaojie Zhang",
+        "Zhenbo Luo"
+      ],
+      "published": "2026-07-09",
+      "score": 5,
+      "query": "VLM 3D understanding"
+    },
+    {
+      "title": "Effects of low resolution on the column density PDF of molecular clouds",
+      "summary": "Observational resolution significantly impacts the interpretation of column density probability distribution functions (N-PDFs) in molecular clouds, which are essential for understanding turbulent structures and star formation processes. This study quantifies how low spatial resolution truncates the high-density power-law tails of N-PDFs by simulating distant observations (2-10 kpc) of 17 local massive molecular clouds/regions using Herschel-based column density maps. We propose a parameter-free",
+      "arxiv_url": "http://arxiv.org/abs/2607.08419v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08419v1",
+      "authors": [
+        "Yuping Tang",
+        "Q. Daniel Wang",
+        "Grant W. Wilson",
+        "Xing Lu",
+        "Jinhua He"
+      ],
+      "published": "2026-07-09",
+      "score": 5,
+      "query": "VLM 3D understanding"
+    },
+    {
+      "title": "Attribute Retrieving for Open-Vocabulary Endoscopic Compositional Referring Segmentation",
+      "summary": "Referring Image Segmentation (RIS) aims to segment image regions specified by natural language, enabling fine-grained and controllable visual understanding. Extending RIS to endoscopic imagery, however, presents unique challenges, including scarce high-quality annotations and complex, domain-specific image-text relationships. Although recent vision-language models demonstrate strong cross-domain alignment, they often fail to capture fine-grained textual cues in endoscopic settings, resulting in ",
+      "arxiv_url": "http://arxiv.org/abs/2607.08397v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08397v1",
+      "authors": [
+        "Shun Liu",
+        "Nan Xi",
+        "Yang Liu",
+        "Tianyu Luan",
+        "Xuan Gong"
+      ],
+      "published": "2026-07-09",
+      "score": 5,
+      "query": "VLM 3D understanding"
+    },
+    {
+      "title": "Understanding Axes of Difficulty For Long Context Tasks Via PredicateLongBench",
+      "summary": "Large language models (LLMs) have demonstrated rapidly improving long-context capabilities, prompting a wave of benchmarks designed to evaluate them. However, existing long-context evaluations - from Needle-in-a-Haystack (NIAH) tests to more recent multi-hop reasoning and summarization tasks - predominantly measure average-case performance, and many are either saturated or lack robustness. Notably absent is a systematic way to probe how models perform as we scale up the difficulty of tasks along",
+      "arxiv_url": "http://arxiv.org/abs/2607.08284v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08284v1",
+      "authors": [
+        "Siddhartha Jain",
+        "Ameya Velingker"
+      ],
+      "published": "2026-07-09",
+      "score": 5,
+      "query": "VLM 3D understanding"
+    }
+  ],
+  "total": 49
+}

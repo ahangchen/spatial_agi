@@ -1722,4 +1722,100 @@
    - 文档: papers/2026-07-11_05_See_and_Reach_Precise_Vision_Language_Navigation_for_UAVs_wi.md
    - 亮点: 首次隔离"看到即到达"阶段+10米严格标准, 动态在线3D方向更新解决累积漂移, 高分辨率双视角(前视+下视), 2717条轨迹专用基准
 
-*最后更新时间: 2026-07-11*
+## 2026-07-12 研究的论文（精选5篇）
+
+1. **Track2Map: Online Deformable SLAM with Motion-Aware Pose Optimization in Robotic Surgery** - arXiv:2607.08408
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS, Deformable SLAM, Robotic Surgery, Motion Disentanglement, MICCAI 2026, UCL+Intuitive Surgical
+   - 文档: papers/2026-07-12_01_Track2Map_Deformable_SLAM_Robotic_Surgery.md
+   - 亮点: 光流方向圆标准差区分相机运动vs组织变形, 运动门控冻结/优化位姿, 跟踪驱动变形初始化, 无/噪声/干净位姿三种模式统一工作
+
+2. **PanoLOG: Geometry and Gradient-based Partitioning for Panoramic Outdoor Reconstruction** - arXiv:2607.08769
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Panoramic 3DGS, ERP, Spatial Partitioning, Sky Sphere, Insta360 Research
+   - 文档: papers/2026-07-12_02_PanoLOG_Panoramic_Outdoor_Reconstruction.md
+   - 亮点: 首个全景专用分区策略G2PS, 几何+梯度双驱动相机-块分配, Pano360首个大规模全景基准(>200万㎡), 天空球建模
+
+3. **MoE-GS: On the Design of Mixture-of-Experts for Dynamic Gaussian Splatting** - arXiv:2607.08250
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Dynamic 3DGS, Mixture-of-Experts, Multi-Deformation Modeling, MoDE, MoE-GS
+   - 文档: papers/2026-07-12_03_MoE_GS_Dynamic_Gaussian_Splatting.md
+   - 亮点: 系统分析单一形变模型局限(场景/空间/时间级), MoDE联合训练vs MoE-GS独立+路由两种策略, 开源MoE-GS Studio
+
+4. **FabriVLA: A Lightweight Vision-Language-Action Model for Precise Multi-Task Manipulation** - arXiv:2607.08575
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, Lightweight, Flow Matching, Gated Self-Attention, Shallow Layer Fusion, MT50 90%
+   - 文档: papers/2026-07-12_04_FabriVLA_Lightweight_VLA_Manipulation.md
+   - 亮点: 0.89B参数达MT50 90%成功率, 门控自注意力(零初始化渐进打开), 浅层VLM融合(layer6+layer14), 单阶段联合训练
+
+5. **FSD-VLN: Fast-Slow Dual-System Modeling for Aerial Long-Horizon Vision-Language Navigation** - arXiv:2607.08359
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: UAV VLN, Fast-Slow Dual-System, Diffusion Transformer, Asynchronous, Pengcheng Lab
+   - 文档: papers/2026-07-12_05_FSD_VLN_Aerial_Long_Horizon_VLN.md
+   - 亮点: 快慢解耦(慢系统VLM+快系统DiT), 异步并行推理延迟降50%, DiT建模跨时间动作依赖, 成功率提升2倍
+
+*最后更新时间: 2026-07-12*
+
+## 2026-07-13 研究的论文（精选5篇）
+
+1. **ACE-Brain-0.5: A Unified Embodied Foundational Model for Physical Agentic AI** - arXiv:2607.04426
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Embodied AI, Foundation Model, SSR+, Self-Monitoring, Self-Improvement, Closed-Loop
+   - 文档: papers/2026-07-13_01_ACE-Brain-0.5_Unified_Embodied_Foundation.md
+   - 亮点: 五功能统一(感知/决策/交互/监控/改进), 8B单模型SSR+训练范式, Reactivate阶段防遗忘, 15基准14项超越前代
+
+2. **Lift3D-VLA: Lifting VLA Models to 3D Geometry and Dynamics-Aware Manipulation** - arXiv:2607.06564
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, 3D Point Cloud, GC-MAE, Layer-wise Temporal Action, 2D-to-3D Lifting
+   - 文档: papers/2026-07-13_02_Lift3D-VLA_3D_Geometry_VLA.md
+   - 亮点: 虚拟投影2D提升策略, GC-MAE重建+预测双目标, 层级时间动作建模, MetaWorld+10.8%/RLBench+11.1%
+
+3. **Why Far Looks Up: Probing Spatial Representation in Vision-Language Models** - arXiv:2605.30161
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLM Spatial Reasoning, Vertical-Distance Entanglement, Representation Probing, SpatialTunnel
+   - 文档: papers/2026-07-13_03_Why_Far_Looks_Up_VLM_Spatial_Representation.md
+   - 亮点: 发现VLM垂直-距离纠缠偏见, 数据规模加剧而非解决捷径, SpatialTunnel合成基准解耦垂直位置与深度, 表征质量预测鲁棒性
+
+4. **WCog-VLA: A Dual-Level World-Cognitive VLA for End-to-End Autonomous Driving** - arXiv:2607.08375
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: VLA, Autonomous Driving, World Model, Game-CoT, ADDT, NAVSIM 92.9
+   - 文档: papers/2026-07-13_04_WCog-VLA_World_Cognitive_Autonomous_Driving.md
+   - 亮点: 双层世界认知(语义+生成), 博弈论思维链(Game-CoT), 对齐解耦扩散Transformer(ADDT), NAVSIM PDMS 92.9 SOTA
+
+5. **TemporalGS: Training-Free Plug-and-Play Acceleration for 3DGS Rendering via Temporal Priors** - arXiv:2607.03390
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3DGS, Rendering Acceleration, Temporal Priors, Training-Free, Plug-and-Play
+   - 文档: papers/2026-07-13_05_TemporalGS_Training_Free_3DGS_Acceleration.md
+   - 亮点: 首个训练无关3DGS渲染加速, 时间动态剔除+选择性渲染, 最高1.48×加速, 硬件光栅化兼容
+
+*最后更新时间: 2026-07-13*
+
+## 2026-07-14 研究的论文（精选5篇）
+
+1. **PixelPilot: Scalable Vision-Language-Action Models for End-to-End Autonomous Driving** - arXiv:2607.04637
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, Autonomous Driving, 2D-to-2D Planning, GRPO, Decoupled Lifting
+   - 文档: papers/2026-07-14_01_PixelPilot_Scalable_VLA_Autonomous_Driving.md
+   - 会议: ECCV 2026
+
+2. **MVP-Nav: Multi-layer Value Map Planner Navigator** - arXiv:2606.31919
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: RGB-only Navigation, 3D Foundation Model, VGGT, Semantic-Physical Alignment, Zero-shot
+   - 文档: papers/2026-07-14_02_MVP-Nav_Multi-layer_Value_Map_Navigator.md
+
+3. **DeGenseGS: Geometrically and Semantically Decoupled Surgical Scene Understanding in 4D Gaussian Splatting** - arXiv:2607.04761
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 4D Gaussian Splatting, Semantic-Geometric Decoupling, Surgical Scene, VLM, HexPlane
+   - 文档: papers/2026-07-14_03_DeGenseGS_Decoupled_Surgical_4DGS.md
+
+4. **GeoProp: Grounding Robot State in Vision for Generalist Manipulation** - arXiv:2607.07101
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Proprioception, Geometric Projection, FiLM, Robot Manipulation, Vision Grounding
+   - 文档: papers/2026-07-14_04_GeoProp_Grounding_Robot_State_Vision.md
+   - 机构: 阿里巴巴达摩学院
+
+5. **MindEdit-Bench: Benchmarking Object-Level Counterfactual Spatial Reasoning in VLMs from In-the-Wild Photos** - arXiv:2607.00491
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Counterfactual Reasoning, Spatial Editing, VLM Benchmark, 3D Scene Graph, Cross-view
+   - 文档: papers/2026-07-14_05_MindEdit-Bench_Counterfactual_Spatial_Reasoning.md
+   - 数据集: HuggingFace (ZODAOfficial/MindEdit-Bench)
