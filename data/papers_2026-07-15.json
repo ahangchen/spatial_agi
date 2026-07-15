@@ -1,0 +1,629 @@
+{
+  "date": "2026-07-15",
+  "total_papers": 89,
+  "papers": [
+    {
+      "title": "SpaR3D-MoE: Adaptive 3D Spatial Reasoning from Sparse Views Meets Geometry-Inductive Mixture-of-Experts",
+      "arxiv_url": "https://arxiv.org/abs/2607.06805",
+      "submitted": "2026-07-07",
+      "query": "spatial_intelligence_3D",
+      "score": 17
+    },
+    {
+      "title": "AsySplat: Efficient Asymmetric 3D Gaussian Splatting for Long-Sequence Scene Modeling",
+      "arxiv_url": "https://arxiv.org/abs/2607.06505",
+      "submitted": "2026-07-12",
+      "query": "gaussian_splatting",
+      "score": 16
+    },
+    {
+      "title": "GeoGS-SLAM: Geometry-Only Gaussian Splatting for Dense Monocular SLAM",
+      "arxiv_url": "https://arxiv.org/abs/2607.06519",
+      "submitted": "2026-07-08",
+      "query": "gaussian_splatting",
+      "score": 16
+    },
+    {
+      "title": "GEAR-VLA: Learning Geometry-Aware Action Representations for Generalizable Robotic Manipulation",
+      "arxiv_url": "https://arxiv.org/abs/2607.06910",
+      "submitted": "2026-06-07",
+      "query": "VLM_3D_understanding",
+      "score": 16
+    },
+    {
+      "title": "Reasmory: 3D Reconstruction as Explicit Memory for VLMs Spatial Reasoning",
+      "arxiv_url": "https://arxiv.org/abs/2607.06914",
+      "submitted": "2026-05-30",
+      "query": "VLM_3D_understanding",
+      "score": 16
+    },
+    {
+      "title": "SpatialAct: Probing Spatial Reasoning-to-Action Capabilities of VLM Agents in 3D Scenes",
+      "arxiv_url": "https://arxiv.org/abs/2607.06915",
+      "submitted": "2026-05-29",
+      "query": "VLM_3D_understanding",
+      "score": 16
+    },
+    {
+      "title": "GeoGS-SLAM: Online Monocular Reconstruction Using Gaussian Splatting with Geometric Priors",
+      "arxiv_url": "https://arxiv.org/abs/2607.06504",
+      "submitted": "2026-07-13",
+      "query": "gaussian_splatting",
+      "score": 15
+    },
+    {
+      "title": "Incremental Online Scene Reconstruction by 3D Gaussian Triangulation",
+      "arxiv_url": "https://arxiv.org/abs/2607.06508",
+      "submitted": "2026-07-12",
+      "query": "gaussian_splatting",
+      "score": 15
+    },
+    {
+      "title": "AnythingReality: Robust Online Gaussian Splatting SLAM for Open-Vocabulary VR Scene Exploration",
+      "arxiv_url": "https://arxiv.org/abs/2607.06512",
+      "submitted": "2026-07-10",
+      "query": "gaussian_splatting",
+      "score": 15
+    },
+    {
+      "title": "SplatCtrl: Perception-Action Coupling via Gaussian Scene Representations and Reactive Robot Control",
+      "arxiv_url": "https://arxiv.org/abs/2607.06513",
+      "submitted": "2026-07-09",
+      "query": "gaussian_splatting",
+      "score": 15
+    },
+    {
+      "title": "GEM-Occ: From Visual Geometry Evidence to Embodied Semantic Occupancy Memory",
+      "arxiv_url": "https://arxiv.org/abs/2607.06525",
+      "submitted": "2026-07-06",
+      "query": "gaussian_splatting",
+      "score": 15
+    },
+    {
+      "title": "Stream3D-VLM: Online 3D Spatial Understanding with Incremental Geometry Priors",
+      "arxiv_url": "https://arxiv.org/abs/2607.06911",
+      "submitted": "2026-06-05",
+      "query": "VLM_3D_understanding",
+      "score": 15
+    },
+    {
+      "title": "SyncSpace: Layout-Conditioned 3D Gaussian Splatting for Space Reskinning in Mixed Reality",
+      "arxiv_url": "https://arxiv.org/abs/2607.06511",
+      "submitted": "2026-07-10",
+      "query": "gaussian_splatting",
+      "score": 14
+    },
+    {
+      "title": "SSA-3DGS: Unsupervised Removal of Screen-Space Artifacts for 3D Gaussian Splatting",
+      "arxiv_url": "https://arxiv.org/abs/2607.06524",
+      "submitted": "2026-07-06",
+      "query": "gaussian_splatting",
+      "score": 14
+    },
+    {
+      "title": "Rendering-Aware Bayesian 3D Gaussian Splatting with Native Uncertainty and Adaptive Complexity Control",
+      "arxiv_url": "https://arxiv.org/abs/2607.06526",
+      "submitted": "2026-07-06",
+      "query": "gaussian_splatting",
+      "score": 14
+    },
+    {
+      "title": "Think When It Matters: Conditional VLM Reasoning for Social Navigation with RL Policies",
+      "arxiv_url": "https://arxiv.org/abs/2607.06608",
+      "submitted": "2026-07-12",
+      "query": "world_model_robot",
+      "score": 14
+    },
+    {
+      "title": "WCog-VLA: A Dual-Level World-Cognitive Vision-Language-Action Model for End-to-End Autonomous Driving",
+      "arxiv_url": "https://arxiv.org/abs/2607.06803",
+      "submitted": "2026-07-09",
+      "query": "spatial_intelligence_3D",
+      "score": 14
+    },
+    {
+      "title": "R3D: Quantitative 3D Spatial Reasoning for Egocentric Wearables",
+      "arxiv_url": "https://arxiv.org/abs/2607.06811",
+      "submitted": "2026-07-02",
+      "query": "spatial_intelligence_3D",
+      "score": 14
+    },
+    {
+      "title": "MindEdit-Bench: Benchmarking Object-Level Counterfactual Spatial Reasoning in VLMs from In-the-Wild Photos",
+      "arxiv_url": "https://arxiv.org/abs/2607.06815",
+      "submitted": "2026-07-01",
+      "query": "spatial_intelligence_3D",
+      "score": 14
+    },
+    {
+      "title": "SpaceEra++: A Unified Framework Towards 3D Spatial Reasoning in Video",
+      "arxiv_url": "https://arxiv.org/abs/2607.06902",
+      "submitted": "2026-07-02",
+      "query": "VLM_3D_understanding",
+      "score": 14
+    },
+    {
+      "title": "TS-Mask VLA: 2D Temporal-Spatial Masking for Vision-Language-Action Model with Effective Bridging",
+      "arxiv_url": "https://arxiv.org/abs/2607.06615",
+      "submitted": "2026-07-10",
+      "query": "world_model_robot",
+      "score": 13
+    },
+    {
+      "title": "EDAR: Learning Environment-Dependent Action Representations for Robotic Manipulation",
+      "arxiv_url": "https://arxiv.org/abs/2607.06603",
+      "submitted": "2026-07-13",
+      "query": "world_model_robot",
+      "score": 12
+    },
+    {
+      "title": "Action Map Policy: Learning 3D Closed-loop Manipulation via Pixel Classification",
+      "arxiv_url": "https://arxiv.org/abs/2607.06801",
+      "submitted": "2026-07-12",
+      "query": "spatial_intelligence_3D",
+      "score": 12
+    },
+    {
+      "title": "ABot-3DWorld 0: A Universal World Model to Explore Any 3D Space",
+      "arxiv_url": "https://arxiv.org/abs/2607.06501",
+      "submitted": "2026-07-13",
+      "query": "gaussian_splatting",
+      "score": 11
+    },
+    {
+      "title": "SalientGS: Unified SfM-to-3DGS with Importance-Guided MCMC Gaussian Allocation",
+      "arxiv_url": "https://arxiv.org/abs/2607.06503",
+      "submitted": "2026-07-13",
+      "query": "gaussian_splatting",
+      "score": 11
+    },
+    {
+      "title": "DP-Splat: Bayesian Nonparametric Complexity Control for Gaussian Splatting",
+      "arxiv_url": "https://arxiv.org/abs/2607.06506",
+      "submitted": "2026-07-12",
+      "query": "gaussian_splatting",
+      "score": 11
+    },
+    {
+      "title": "StereoSplat+: Feed-Forward Stereo Gaussian Splatting with Diffusion-Assisted Progressive Inference",
+      "arxiv_url": "https://arxiv.org/abs/2607.06514",
+      "submitted": "2026-07-09",
+      "query": "gaussian_splatting",
+      "score": 11
+    },
+    {
+      "title": "On the Design of Mixture-of-Experts for Dynamic Gaussian Splatting",
+      "arxiv_url": "https://arxiv.org/abs/2607.06518",
+      "submitted": "2026-07-09",
+      "query": "gaussian_splatting",
+      "score": 11
+    },
+    {
+      "title": "GaussFusion: Towards Multimodal 3D Gaussian Pretraining",
+      "arxiv_url": "https://arxiv.org/abs/2607.06523",
+      "submitted": "2026-07-07",
+      "query": "gaussian_splatting",
+      "score": 11
+    },
+    {
+      "title": "Xiaomi-Robotics-U0: Unified Embodied Synthesis with World Foundation Model",
+      "arxiv_url": "https://arxiv.org/abs/2607.06602",
+      "submitted": "2026-07-13",
+      "query": "world_model_robot",
+      "score": 11
+    },
+    {
+      "title": "PIER-Flow: Physics-Informed Efficient Rectified Flow for Real-Time Mobile Robot Navigation",
+      "arxiv_url": "https://arxiv.org/abs/2607.06614",
+      "submitted": "2026-07-11",
+      "query": "world_model_robot",
+      "score": 11
+    },
+    {
+      "title": "A Comprehensive Survey and Systematic Real-World Evaluation of Embodied Vision-and-Language Navigation",
+      "arxiv_url": "https://arxiv.org/abs/2607.06616",
+      "submitted": "2026-07-09",
+      "query": "world_model_robot",
+      "score": 11
+    },
+    {
+      "title": "Seeing Once is Enough? Online Geometry-Aware Token Pruning for 3D Question Answering",
+      "arxiv_url": "https://arxiv.org/abs/2607.06808",
+      "submitted": "2026-07-04",
+      "query": "spatial_intelligence_3D",
+      "score": 11
+    },
+    {
+      "title": "IDEAL-Bench: Indoor Dataset and Evaluation suite for Analyzing 3D Layout reasoning",
+      "arxiv_url": "https://arxiv.org/abs/2607.06809",
+      "submitted": "2026-07-03",
+      "query": "spatial_intelligence_3D",
+      "score": 11
+    },
+    {
+      "title": "OmniView-Space: Reinforcing Spatial Reasoning via Multi-Perspective Spatial Mapping",
+      "arxiv_url": "https://arxiv.org/abs/2607.06814",
+      "submitted": "2026-07-01",
+      "query": "spatial_intelligence_3D",
+      "score": 11
+    },
+    {
+      "title": "PixelPilot: Scalable Vision-Language-Action Models for End-to-End Autonomous Driving",
+      "arxiv_url": "https://arxiv.org/abs/2607.06901",
+      "submitted": "2026-07-05",
+      "query": "VLM_3D_understanding",
+      "score": 11
+    },
+    {
+      "title": "AeroVerse-SatAgent: UAV-Satellite Collaborative Spatial Reasoning Inspired by Dual Visual Pathway Theory",
+      "arxiv_url": "https://arxiv.org/abs/2607.06904",
+      "submitted": "2026-06-30",
+      "query": "VLM_3D_understanding",
+      "score": 11
+    },
+    {
+      "title": "Grassmannian Splatting: Moving rank-2 Spacetime Surfels for Dynamic Scene Rendering",
+      "arxiv_url": "https://arxiv.org/abs/2607.06509",
+      "submitted": "2026-07-11",
+      "query": "gaussian_splatting",
+      "score": 10
+    },
+    {
+      "title": "Geometry and Gradient-based Partitioning for Panoramic Outdoor Reconstruction",
+      "arxiv_url": "https://arxiv.org/abs/2607.06515",
+      "submitted": "2026-07-09",
+      "query": "gaussian_splatting",
+      "score": 10
+    },
+    {
+      "title": "Track2Map: Online Deformable SLAM with Motion-Aware Pose Optimization in Robotic Surgery",
+      "arxiv_url": "https://arxiv.org/abs/2607.06516",
+      "submitted": "2026-07-09",
+      "query": "gaussian_splatting",
+      "score": 10
+    },
+    {
+      "title": "NoDrift3R: Raymap-Guided Coupling for Drift-Robust Unposed Feed-Forward 3D Reconstruction",
+      "arxiv_url": "https://arxiv.org/abs/2607.06520",
+      "submitted": "2026-07-08",
+      "query": "gaussian_splatting",
+      "score": 10
+    },
+    {
+      "title": "RoboSnap: One-Shot Real-to-Sim Scene Generation for Generalizable Robot Learning and Evaluation",
+      "arxiv_url": "https://arxiv.org/abs/2607.06522",
+      "submitted": "2026-07-07",
+      "query": "gaussian_splatting",
+      "score": 10
+    },
+    {
+      "title": "SegDiff: Segmented Trajectory Diffusion for Consistent and Adaptive Robot Manipulation",
+      "arxiv_url": "https://arxiv.org/abs/2607.06607",
+      "submitted": "2026-07-12",
+      "query": "world_model_robot",
+      "score": 10
+    },
+    {
+      "title": "3D Scene Graph Prediction: Generating Hierarchical Models from Partially Observed Environments",
+      "arxiv_url": "https://arxiv.org/abs/2607.06609",
+      "submitted": "2026-07-12",
+      "query": "world_model_robot",
+      "score": 10
+    },
+    {
+      "title": "Is Energy Guidance All You Need? Training-Free Norm Injection for Driving World Models",
+      "arxiv_url": "https://arxiv.org/abs/2607.06610",
+      "submitted": "2026-07-12",
+      "query": "world_model_robot",
+      "score": 10
+    },
+    {
+      "title": "SLIDER: Sparse History-Guided Aerial Robot Target Search using Sliding Local Maps",
+      "arxiv_url": "https://arxiv.org/abs/2607.06612",
+      "submitted": "2026-07-11",
+      "query": "world_model_robot",
+      "score": 10
+    },
+    {
+      "title": "GeoProp: Grounding Robot State in Vision for Generalist Manipulation",
+      "arxiv_url": "https://arxiv.org/abs/2607.06804",
+      "submitted": "2026-07-08",
+      "query": "spatial_intelligence_3D",
+      "score": 10
+    },
+    {
+      "title": "Text-Driven 3D Indoor Scene Synthesis in Non-Manhattan Environments",
+      "arxiv_url": "https://arxiv.org/abs/2607.06812",
+      "submitted": "2026-07-02",
+      "query": "spatial_intelligence_3D",
+      "score": 10
+    },
+    {
+      "title": "SimWorlds: A Multi-Agent System for Dynamic 3D Scene Creation",
+      "arxiv_url": "https://arxiv.org/abs/2607.06813",
+      "submitted": "2026-07-02",
+      "query": "spatial_intelligence_3D",
+      "score": 10
+    },
+    {
+      "title": "Disentangling Pictorial Cue Understanding from Language Bias in VLMs via Depth Ordering Task",
+      "arxiv_url": "https://arxiv.org/abs/2607.06903",
+      "submitted": "2026-07-01",
+      "query": "VLM_3D_understanding",
+      "score": 10
+    },
+    {
+      "title": "Occ-VLM: Occupancy Grounded Vision Language Model for Indoor Scene Understanding",
+      "arxiv_url": "https://arxiv.org/abs/2607.06908",
+      "submitted": "2026-06-18",
+      "query": "VLM_3D_understanding",
+      "score": 10
+    },
+    {
+      "title": "Mixture of Frames Policy: Multi-Frame Action Denoising for Bimanual Mobile Manipulation",
+      "arxiv_url": "https://arxiv.org/abs/2607.06601",
+      "submitted": "2026-07-13",
+      "query": "world_model_robot",
+      "score": 9
+    },
+    {
+      "title": "VL2Spike: Spike-driven Distillation from VLMs for Low-Power Visual Perception in Embodied AI",
+      "arxiv_url": "https://arxiv.org/abs/2607.06706",
+      "submitted": "2026-06-14",
+      "query": "embodied_AI_VLM",
+      "score": 9
+    },
+    {
+      "title": "S-Agent: Spatial Tool-Use Elicits Reasoning for Spatial Intelligence",
+      "arxiv_url": "https://arxiv.org/abs/2607.06907",
+      "submitted": "2026-06-18",
+      "query": "VLM_3D_understanding",
+      "score": 9
+    },
+    {
+      "title": "Beyond 3D VQAs: Injecting 3D Spatial Priors into Vision-Language Models for Enhanced Geometric Reasoning",
+      "arxiv_url": "https://arxiv.org/abs/2607.06918",
+      "submitted": "2026-05-28",
+      "query": "VLM_3D_understanding",
+      "score": 9
+    },
+    {
+      "title": "HyperGS: Fast and Generalizable Gaussian Video Representation",
+      "arxiv_url": "https://arxiv.org/abs/2607.06502",
+      "submitted": "2026-07-13",
+      "query": "gaussian_splatting",
+      "score": 8
+    },
+    {
+      "title": "CoSAG: Compact Semantic Anchor Gaussians via Training-Free Rate-Distortion Coding",
+      "arxiv_url": "https://arxiv.org/abs/2607.06510",
+      "submitted": "2026-07-11",
+      "query": "gaussian_splatting",
+      "score": 8
+    },
+    {
+      "title": "EscFOA: Enhancing Spatial Learning for Visually Impaired Learners via Generative Spatial Audio in 360-Degree Educational Environments",
+      "arxiv_url": "https://arxiv.org/abs/2607.06521",
+      "submitted": "2026-07-08",
+      "query": "gaussian_splatting",
+      "score": 8
+    },
+    {
+      "title": "Lumo-2: Towards Predictive, Aligned, and Scalable Robot Learning",
+      "arxiv_url": "https://arxiv.org/abs/2607.06605",
+      "submitted": "2026-07-13",
+      "query": "world_model_robot",
+      "score": 8
+    },
+    {
+      "title": "Artificial Foveated Perception for Mitigating Shortcut Learning in Robotic Foundation Models",
+      "arxiv_url": "https://arxiv.org/abs/2607.06611",
+      "submitted": "2026-07-12",
+      "query": "world_model_robot",
+      "score": 8
+    },
+    {
+      "title": "Devil in the Lens: Analyzing and Defending Physical Prompt Injection Against VLMs on Wearable Devices",
+      "arxiv_url": "https://arxiv.org/abs/2607.06701",
+      "submitted": "2026-07-11",
+      "query": "embodied_AI_VLM",
+      "score": 8
+    },
+    {
+      "title": "Seeing is Free, Speaking is Not: Uncovering the True Energy Bottleneck in Edge VLM Inference",
+      "arxiv_url": "https://arxiv.org/abs/2607.06702",
+      "submitted": "2026-07-10",
+      "query": "embodied_AI_VLM",
+      "score": 8
+    },
+    {
+      "title": "OneCanvas: 3D Scene Understanding via Panoramic Reprojection",
+      "arxiv_url": "https://arxiv.org/abs/2607.06705",
+      "submitted": "2026-06-17",
+      "query": "embodied_AI_VLM",
+      "score": 8
+    },
+    {
+      "title": "RoboStressBench: Benchmarking VLM Robustness to Physical Visual Stress in Embodied Scenes",
+      "arxiv_url": "https://arxiv.org/abs/2607.06711",
+      "submitted": "2026-05-30",
+      "query": "embodied_AI_VLM",
+      "score": 8
+    },
+    {
+      "title": "MultiView-Bench: A Diagnostic Benchmark for World-Centric Multi-View Integration in VLMs",
+      "arxiv_url": "https://arxiv.org/abs/2607.06802",
+      "submitted": "2026-07-09",
+      "query": "spatial_intelligence_3D",
+      "score": 8
+    },
+    {
+      "title": "PVCap: Towards Accurate 3D Dense Captioning via PseudoCap and VoxelCapNet",
+      "arxiv_url": "https://arxiv.org/abs/2607.06806",
+      "submitted": "2026-07-07",
+      "query": "spatial_intelligence_3D",
+      "score": 8
+    },
+    {
+      "title": "ACE-Brain-0.5: A Unified Embodied Foundational Model for Physical Agentic AI",
+      "arxiv_url": "https://arxiv.org/abs/2607.06807",
+      "submitted": "2026-07-05",
+      "query": "spatial_intelligence_3D",
+      "score": 8
+    },
+    {
+      "title": "Embodied Operators and Benchmarking: Toward Reusable and Deployable Embodied Intelligence Systems",
+      "arxiv_url": "https://arxiv.org/abs/2607.06810",
+      "submitted": "2026-07-03",
+      "query": "spatial_intelligence_3D",
+      "score": 8
+    },
+    {
+      "title": "From Pixels to Concepts: Growing Rich 3D Semantic Scene Graph Forests utilizing Foundation Models",
+      "arxiv_url": "https://arxiv.org/abs/2607.06906",
+      "submitted": "2026-06-22",
+      "query": "VLM_3D_understanding",
+      "score": 8
+    },
+    {
+      "title": "AffordanceVLA: A Vision-Language-Action Model Empowering Action Generation through Affordance-Aware Understanding",
+      "arxiv_url": "https://arxiv.org/abs/2607.06912",
+      "submitted": "2026-06-04",
+      "query": "VLM_3D_understanding",
+      "score": 8
+    },
+    {
+      "title": "MAC-Splat: Multi-Attribute Consistency for High-Fidelity Sparse-View Reconstruction",
+      "arxiv_url": "https://arxiv.org/abs/2607.06507",
+      "submitted": "2026-07-12",
+      "query": "gaussian_splatting",
+      "score": 7
+    },
+    {
+      "title": "HoloTetSphere: Unified TetSphere Mesh Reconstruction for Physical Simulations",
+      "arxiv_url": "https://arxiv.org/abs/2607.06517",
+      "submitted": "2026-07-09",
+      "query": "gaussian_splatting",
+      "score": 7
+    },
+    {
+      "title": "WALA: Learning Executable Latent Actions from Action-Labeled Demonstrations and Action-Free Videos",
+      "arxiv_url": "https://arxiv.org/abs/2607.06604",
+      "submitted": "2026-07-13",
+      "query": "world_model_robot",
+      "score": 7
+    },
+    {
+      "title": "Consistent Yet Wrong: Evidence Insensitivity in Spatial Vision-Language Models",
+      "arxiv_url": "https://arxiv.org/abs/2607.06710",
+      "submitted": "2026-06-01",
+      "query": "embodied_AI_VLM",
+      "score": 6
+    },
+    {
+      "title": "BioProVLA-Agent: An Affordable, Protocol-Driven, Vision-Enhanced VLA-Enabled Embodied Multi-Agent System",
+      "arxiv_url": "https://arxiv.org/abs/2607.06712",
+      "submitted": "2026-05-08",
+      "query": "embodied_AI_VLM",
+      "score": 6
+    },
+    {
+      "title": "VLM3: Vision Language Models Are Native 3D Learners",
+      "arxiv_url": "https://arxiv.org/abs/2607.06916",
+      "submitted": "2026-05-28",
+      "query": "VLM_3D_understanding",
+      "score": 6
+    },
+    {
+      "title": "Grounded 3D-Aware Spatial Vision-Language Modeling (GR3D)",
+      "arxiv_url": "https://arxiv.org/abs/2607.06917",
+      "submitted": "2026-05-28",
+      "query": "VLM_3D_understanding",
+      "score": 6
+    },
+    {
+      "title": "GraspGraphNet: Graph-Structured Multi-Embodiment Dexterous Grasp Generation",
+      "arxiv_url": "https://arxiv.org/abs/2607.06606",
+      "submitted": "2026-07-12",
+      "query": "world_model_robot",
+      "score": 5
+    },
+    {
+      "title": "VINE: Taming Generative Control Policies for Reinforcement Learning",
+      "arxiv_url": "https://arxiv.org/abs/2607.06613",
+      "submitted": "2026-07-11",
+      "query": "world_model_robot",
+      "score": 5
+    },
+    {
+      "title": "Seek to Segment: Active Perception for Panoramic Referring Segmentation",
+      "arxiv_url": "https://arxiv.org/abs/2607.06703",
+      "submitted": "2026-07-02",
+      "query": "embodied_AI_VLM",
+      "score": 5
+    },
+    {
+      "title": "HAT-4D: Lifting Monocular Video for 4D Multi-Object Interactions via Human-Agent Collaboration",
+      "arxiv_url": "https://arxiv.org/abs/2607.06704",
+      "submitted": "2026-06-26",
+      "query": "embodied_AI_VLM",
+      "score": 5
+    },
+    {
+      "title": "HomeWorld: A Unified Floorplan-to-Furnished Framework for Generating Controllable, Densely Interactive Whole-Home Scenes",
+      "arxiv_url": "https://arxiv.org/abs/2607.06707",
+      "submitted": "2026-06-04",
+      "query": "embodied_AI_VLM",
+      "score": 5
+    },
+    {
+      "title": "Dive into the Scene: Breaking the Perceptual Bottleneck in Vision-Language Decision Making via Focus Plan Generation",
+      "arxiv_url": "https://arxiv.org/abs/2607.06709",
+      "submitted": "2026-06-02",
+      "query": "embodied_AI_VLM",
+      "score": 5
+    },
+    {
+      "title": "RoboAtlas: Contextual Active SLAM",
+      "arxiv_url": "https://arxiv.org/abs/2607.06905",
+      "submitted": "2026-06-24",
+      "query": "VLM_3D_understanding",
+      "score": 5
+    },
+    {
+      "title": "PROSE: Training-Free Egocentric Scene Registration with Vision-Language Models",
+      "arxiv_url": "https://arxiv.org/abs/2607.06909",
+      "submitted": "2026-06-15",
+      "query": "VLM_3D_understanding",
+      "score": 5
+    },
+    {
+      "title": "NextMotionQA: Benchmarking and Judging Human Motion Understanding with Vision-Language Models",
+      "arxiv_url": "https://arxiv.org/abs/2607.06708",
+      "submitted": "2026-06-03",
+      "query": "embodied_AI_VLM",
+      "score": 3
+    },
+    {
+      "title": "PhysForge: Generating Physics-Grounded 3D Assets for Interactive Virtual World",
+      "arxiv_url": "https://arxiv.org/abs/2607.06713",
+      "submitted": "2026-05-06",
+      "query": "embodied_AI_VLM",
+      "score": 3
+    },
+    {
+      "title": "NewtPhys: Do Foundation Models Understand Newtonian Physics?",
+      "arxiv_url": "https://arxiv.org/abs/2607.06913",
+      "submitted": "2026-06-02",
+      "query": "VLM_3D_understanding",
+      "score": 3
+    },
+    {
+      "title": "Why Far Looks Up: Probing Spatial Representation in Vision-Language Models",
+      "arxiv_url": "https://arxiv.org/abs/2607.06919",
+      "submitted": "2026-05-28",
+      "query": "VLM_3D_understanding",
+      "score": 3
+    }
+  ]
+}

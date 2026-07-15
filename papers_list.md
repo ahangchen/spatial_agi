@@ -1819,3 +1819,68 @@
    - 关键词: Counterfactual Reasoning, Spatial Editing, VLM Benchmark, 3D Scene Graph, Cross-view
    - 文档: papers/2026-07-14_05_MindEdit-Bench_Counterfactual_Spatial_Reasoning.md
    - 数据集: HuggingFace (ZODAOfficial/MindEdit-Bench)
+
+## 2026-07-15 研究的论文（精选5篇）
+
+1. **ABot-3DWorld 0: A Universal World Model to Explore Any 3D Space** - arXiv:2607.11673
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Model, 3D Gaussian Splatting, SGP, Multimodal Generation, Geographic Anchoring
+   - 文档: papers/2026-07-15_01_ABot-3DWorld_0_Universal_World_Model_3D_Space.md
+   - 机构: 阿里巴巴高德地图
+
+2. **SpaR3D-MoE: Adaptive 3D Spatial Reasoning from Sparse Views Meets Geometry-Inductive Mixture-of-Experts** - arXiv:2607.06620
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Spatial Reasoning, MoE, Sparse RGB Views, VSI-Bench, ECCV 2026
+   - 文档: papers/2026-07-15_02_SpaR3D_MoE_Adaptive_3D_Spatial_Reasoning.md
+   - 发表: ECCV 2026
+
+3. **GEM-Occ: From Visual Geometry Evidence to Embodied Semantic Occupancy Memory** - arXiv:2607.05543
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Semantic Occupancy, Gaussian Evidence Memory, Hierarchical Mapping, Free Space, HIOcc
+   - 文档: papers/2026-07-15_03_GEM-Occ_Visual_Geometry_Embodied_Occupancy.md
+   - 基准: HIOcc (ScanNet+ScanNet+++Matterport3D)
+
+4. **SplatCtrl: Perception-Action Coupling via Gaussian Scene Representations and Reactive Robot Control** - arXiv:2607.08948
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS, Control Barrier Function, SDF, Reactive Control, Perception-Action Coupling
+   - 文档: papers/2026-07-15_04_SplatCtrl_Perception_Action_Coupling_Gaussian.md
+   - 发表: ICRA 2026
+
+5. **MultiView-Bench: A Diagnostic Benchmark for World-Centric Multi-View Integration in VLMs** - arXiv:2607.08970
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Multi-View Integration, Allocentric, VLM Benchmark, ViewNavigator, Spatial Reasoning
+   - 文档: papers/2026-07-15_05_MultiView-Bench_Diagnostic_Multi_View_VLM.md
+   - 机构: Yale University
+
+## 2026-07-16 研究的论文（精选5篇）
+
+1. **WorldBagel: Uncovering the Power of Unified Multimodal Models for Vision-Language-Action-World Modeling** - arXiv:2607.03461
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLAW, Unified Model, BAGEL, Fourier Feature Action Tokenizer, World Modeling, VLA
+   - 文档: papers/2026-07-16_01_WorldBagel_Unified_VLAW_Vision_Language_Action_World.md
+   - 机构: Georgia Institute of Technology
+   - 备注: Rejected by ECCV 2026
+
+2. **RoboSnap: One-Shot Real-to-Sim Scene Generation for Generalizable Robot Learning and Evaluation** - arXiv:2607.06699
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Real-to-Sim, 3DGS, Layered Scene, SDF-Physics Optimization, DROID-Sim, Robot Learning
+   - 文档: papers/2026-07-16_02_RoboSnap_One_Shot_Real_to_Sim_Robot_Learning.md
+   - 机构: Shanghai AI Laboratory, SJTU, Zhejiang University, Tsinghua University
+
+3. **Validate the Dream Before You Trust Its Verdict: Admissibility for World-Model Simulators** - arXiv:2607.07196
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Model, Admissibility, L0-L4 Ladder, Trust Inversion, VV&A, Action-Robustness
+   - 文档: papers/2026-07-16_03_Validate_Dream_World_Model_Admissibility.md
+   - 领域: 自动驾驶安全验证
+
+4. **ABot-AgentOS: A General Robotic Agent OS with Lifelong Multi-modal Memory** - arXiv:2607.10350
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Agent OS, Multi-modal Graph Memory, Verification-aware ReAct, EmbodiedWorldBench, Self-Evolution
+   - 文档: papers/2026-07-16_04_ABot_AgentOS_General_Robotic_Agent_OS_Memory.md
+   - 机构: AMap CV Lab
+
+5. **ActiveFly-Bench: Aligning Embodied Question Answering with Vision-Language-Action for Aerial Embodied Perception** - arXiv:2607.10180
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: UAV, Air-EQA, Observation Behavior Planning, FLUC, 5-DoF Control, Embodied Perception
+   - 文档: papers/2026-07-16_05_ActiveFly_Bench_UAV_Embodied_Perception_VLA.md
+   - 机构: Tsinghua University, Manifold AI
