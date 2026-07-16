@@ -1884,3 +1884,40 @@
    - 关键词: UAV, Air-EQA, Observation Behavior Planning, FLUC, 5-DoF Control, Embodied Perception
    - 文档: papers/2026-07-16_05_ActiveFly_Bench_UAV_Embodied_Perception_VLA.md
    - 机构: Tsinghua University, Manifold AI
+
+---
+
+## 2026-07-17 研究的论文（精选5篇）
+
+1. **VistaVLA: Geometry- and Semantic-Aware 3D Gaussian-Grounded VLA for Robotic Manipulation** - arXiv:2607.12356
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Gaussian Splatting, VLA, Semantic Cognitive Map, Merge-then-Query, Token Compression
+   - 文档: papers/2026-07-17_01_VistaVLA_3D_Gaussian_Grounded_VLA.md
+   - 机构: NTU Singapore, A*STAR I2R
+   - 亮点: 99% token压缩，3D语义高斯作为VLA认知地图，OOD鲁棒性+22.8%
+
+2. **GeoAnchor: Collaborative Reasoning via Latent Decomposition for 3D Spatial Understanding** - arXiv:2607.13454
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Latent Decomposition, Position/Direction/Geometry Latents, Interleaved Text-Latent Reasoning, MLLM
+   - 文档: papers/2026-07-17_02_GeoAnchor_Latent_Decomposition_3D_Spatial.md
+   - 机构: ACM MM 2026接收
+   - 亮点: 三组件潜在分解(位置/方向/几何)，交错文本-潜在推理，协作训练策略
+
+3. **Hallo4D: Multi-Modal Hallucination Mitigation for Consistent Spatio-Temporal Generation** - arXiv:2607.12752
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Hallucination Mitigation, 3D/4D Generation, LMM Detection, Generation-Detection-Correction, Multi-Model Voting
+   - 文档: papers/2026-07-17_03_Hallo4D_Hallucination_Mitigation_Spatio_Temporal.md
+   - 亮点: LMM作为空间一致性裁判，生成-检测-修正范式，model-agnostic
+
+4. **DenseReward: Dense Reward Learning via Failure Synthesis for Robotic Manipulation** - arXiv:2607.13033
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Dense Reward, Failure Synthesis, Frame-Level, RL Training, Vision-Language Reward
+   - 文档: papers/2026-07-17_04_DenseReward_Failure_Synthesis_Robotic.md
+   - 亮点: 自动化失败数据合成管线，帧级密集奖励，支持MPC和RL
+
+5. **SimWorlds: A Multi-Agent System for Dynamic 3D Scene Creation** - arXiv:2607.01766
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Multi-Agent, Dynamic 4D Scene, Text-to-Scene, Runtime State Inspection, 4DBuildBench
+   - 文档: papers/2026-07-17_05_SimWorlds_Multi_Agent_Dynamic_3D_Scene.md
+   - 机构: CMU (Ming-Hsuan Yang)
+   - 亮点: 首个文本到动态4D场景系统，planner-coder-reviewer架构，运行时状态检查
