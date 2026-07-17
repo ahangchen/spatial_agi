@@ -1921,3 +1921,39 @@
    - 文档: papers/2026-07-17_05_SimWorlds_Multi_Agent_Dynamic_3D_Scene.md
    - 机构: CMU (Ming-Hsuan Yang)
    - 亮点: 首个文本到动态4D场景系统，planner-coder-reviewer架构，运行时状态检查
+
+---
+
+## 2026-07-18 研究的论文（精选5篇）
+
+1. **SeeSE3: Emergence of 3D Space in Vision Features** - arXiv:2607.14228
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: SE(3), Vision Foundation Model, Poincaré Adapter, Latent-Space Navigation, Visual Grid Code, Self-supervised
+   - 文档: papers/2026-07-18_01_SeeSE3_Emergence_3D_Space_Vision_Features.md
+   - 机构: Google DeepMind (Guibas, Ovsjanikov, Yang)
+   - 亮点: 首次证明自监督视觉特征隐式包含SE(3)结构，Poincaré Task形式化，潜在空间导航
+
+2. **AeroAct: Action-Centered World-Action Models for Language-Conditioned Quadrotor Flight** - arXiv:2026.07
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: World-Action Model, Quadrotor, DiffAero, 3DGS Rendering, Sim-to-Real, Language-Conditioned
+   - 文档: papers/2026-07-18_02_AeroAct_World_Action_Models_Quadrotor.md
+   - 亮点: 首个面向四旋翼的WAM，DiffAero双渲染器管线，低成本手持采集设备
+
+3. **SoftNav: Injecting 3D Scene Tokens into VLMs for Embodied Navigation** - arXiv:2607.14586
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Soft Token Injection, 3D Scene Encoder, VLM, Navigation, Representation Gap, Zero-shot Transfer
+   - 文档: papers/2026-07-18_03_SoftNav_3D_Scene_Tokens_VLM_Navigation.md
+   - 机构: 浙江大学 (IROS 2026)
+   - 亮点: 首次量化文本序列化的表示差距，17M参数+1200样本达到SOTA，零样本迁移3个任务
+
+4. **SpaceEra++: A Unified Framework Towards 3D Spatial Reasoning in Video** - arXiv:2026.07
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Video 3D Spatial Reasoning, VLM, Spatial Alignment, Progressive Reasoning, Dynamic Spatial Relations
+   - 文档: papers/2026-07-18_04_SpaceErapp_3D_Spatial_Reasoning_Video.md
+   - 亮点: 统一视频3D空间推理框架，感知→关系→推理层次化设计，空间对齐训练
+
+5. **AeroVerse-SatAgent: UAV-Satellite Collaborative Spatial Reasoning Inspired by Dual Visual Pathway Theory** - arXiv:2026.06
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: UAV-Satellite, Dual Visual Pathway, Multi-scale Spatial, What/Where Pathway, Cross-view
+   - 文档: papers/2026-07-18_05_AeroVerse_SatAgent_UAV_Satellite_Spatial.md
+   - 亮点: 认知科学双通路理论的AI映射，公里-厘米多尺度空间推理，异构多视角融合
