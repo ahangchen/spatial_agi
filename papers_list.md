@@ -1957,3 +1957,42 @@
    - 关键词: UAV-Satellite, Dual Visual Pathway, Multi-scale Spatial, What/Where Pathway, Cross-view
    - 文档: papers/2026-07-18_05_AeroVerse_SatAgent_UAV_Satellite_Spatial.md
    - 亮点: 认知科学双通路理论的AI映射，公里-厘米多尺度空间推理，异构多视角融合
+
+---
+
+## 2026-07-19 研究的论文（精选5篇）
+
+1. **AeroAct: Action-Centered World-Action Models for Language-Conditioned Quadrotor Flight** - arXiv:2607.14997v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World-Action Model, Quadrotor Flight, Video Diffusion Transformer, Trajectory Prediction, 3DGS Rendering, Self-Guidance
+   - 文档: papers/2026-07-19_01_AeroAct_WAM_Quadrotor.md
+   - 机构: 北京理工大学
+   - 亮点: 首个物理四旋翼WAM验证，训练-部署解耦设计（训练时视频监督，部署时仅动作解码），DiffAero+Isaac+3DGS三层数据管线，推理加速37.8%
+
+2. **VistaVLA: Geometry- and Semantic-Aware 3D Gaussian-Grounded VLA for Robotic Manipulation** - arXiv:2607.12356v2
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Gaussian Primitives, VLA, Semantic Grounding, Token Compression, Merge-then-Query, Cognitive Map
+   - 文档: papers/2026-07-19_02_VistaVLA_3DGaussian_VLA.md
+   - 机构: 南洋理工大学 EmPACT Lab, A*STAR
+   - 亮点: 3D高斯原语作为VLA认知基元，MtQ实现99%token压缩（10^5→64），在线构建无需预建地图，OOD任务+30%
+
+3. **SpaceEra++: A Unified Framework Towards 3D Spatial Reasoning in Video** - arXiv:2607.01784v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Spatial Reasoning, VLM, ScenePick, SpaceAlign, GRPO, ScanForgeQA, Chain-of-Thought
+   - 文档: papers/2026-07-19_03_SpaceEraPP_Spatial_Reasoning.md
+   - 机构: 哈工大(深圳), 鹏城实验室 (NeurIPS 2025 Spotlight扩展)
+   - 亮点: 全链路统一框架（数据→输入→训练→推理），ScanForgeQA 925K QA对，ScenePick空间-语义平衡采样，SpaceAlign双重约束RL
+
+4. **Xiaomi-Robotics-U0: Unified Embodied Synthesis with World Foundation Model** - arXiv:2607.11643v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Foundation Model, 38B, Unified Training, Embodied Synthesis, Data Engine, Multi-view Generation
+   - 文档: papers/2026-07-19_04_Xiaomi_Robotics_U0.md
+   - 机构: 小米机器人
+   - 亮点: 38B统一自回归框架，五维度结构化解耦控制，82.9×推理加速，World Arena第一，π₀.₅ OOD成功率36.9%→63.2%
+
+5. **RxBrain: Embodied Cognition Foundation Model with Joint Language-Visual Reasoning and Imagination** - arXiv:2607.14187v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Embodied Cognition, Joint Language-Visual Planning, Visual Imagination, Mixture-of-Transformers, Subgoal Planning
+   - 文档: papers/2026-07-19_05_RxBrain_Embodied_Cognition.md
+   - 机构: 北京大学, 香港大学, 腾讯
+   - 亮点: 语言-视觉互补的认知架构，联合计划序列（文本推理+视觉想象交替），自动视频→计划数据管线，RxBrain-Bench评估基准
