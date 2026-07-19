@@ -1996,3 +1996,40 @@
    - 文档: papers/2026-07-19_05_RxBrain_Embodied_Cognition.md
    - 机构: 北京大学, 香港大学, 腾讯
    - 亮点: 语言-视觉互补的认知架构，联合计划序列（文本推理+视觉想象交替），自动视频→计划数据管线，RxBrain-Bench评估基准
+
+## 2026-07-20 研究的论文（精选5篇）
+
+1. **Instant NuRec: Feed-Forward 3D Gaussian Reconstruction for Driving Scene Simulation** - arXiv:2607.14203v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Feed-Forward 3DGS, Driving Simulation, Layered Output, 3DGUT, NuRec, AlpaSim
+   - 文档: papers/2026-07-20_01_Instant_NuRec_Feed_Forward_3DGS_Driving_Sim.md
+   - 机构: NVIDIA
+   - 亮点: 1.5秒重建20秒多相机场景（10³-10⁴倍加速），分层输出（静态/动态/天空），Waymo PSNR +2.01dB
+
+2. **SyncSpace: Layout-Conditioned 3D Gaussian Splatting for Space Reskinning in Mixed Reality** - arXiv:2607.10050v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: MR Space Reskinning, 3DGS, Layout Prior, Coarse-to-Fine Registration, Hand Tracking
+   - 文档: papers/2026-07-20_02_SyncSpace_Layout_3DGS_MR_Reskinning.md
+   - 机构: -
+   - 亮点: 空间重皮肤化概念，布局先验条件化生成，物理-虚拟空间对齐，沉浸式世界替换
+
+3. **REAL: Exploratory, Communicative, and Deployable — Vision-Driven Embodied Agents for Open-World Mobile Manipulation** - arXiv:2607.13653v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Embodied Agent, Sim-to-Real, Open-World Manipulation, VLM, Online RL, REAL-Bench
+   - 文档: papers/2026-07-20_03_REAL_Vision_Driven_Embodied_Agents_Mobile.md
+   - 机构: 上海AI Lab等 (ECCV 2026)
+   - 亮点: 无Oracle感知sim-to-real一致API，241任务基准，真实双臂机器人78.3%成功率，超越商用VLM
+
+4. **EgoHTR: Egocentric 4D Demonstrations of Human Terrain Traversal** - arXiv:2607.13472v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 4D Human Motion, Scene Reconstruction, Humanoid Robot, Terrain Traversal, Multi-sensor
+   - 文档: papers/2026-07-20_04_EgoHTR_Egocentric_4D_Human_Terrain_Traversal.md
+   - 机构: ETH Zurich, Microsoft, University of Toronto
+   - 亮点: 55个场景对齐4D运动序列，150K+帧，可穿戴+3D扫描融合pipeline，Unitree G1部署
+
+5. **JOP-VLN: Joint On-and-Off Policy Learning for Vision-and-Language Navigation** - arXiv:2607.13461v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: VLN, Imitation Learning, Reinforcement Learning, DAgger, High-Entropy Sampling
+   - 文档: papers/2026-07-20_05_JOP_VLN_Joint_On_Off_Policy_VLN.md
+   - 机构: - (IROS 2026)
+   - 亮点: IL+RL首次整合，三阶段训练pipeline，R2R 69.9%新SOTA，错误校正优先轨迹排序
