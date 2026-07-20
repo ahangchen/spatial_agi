@@ -2033,3 +2033,42 @@
    - 文档: papers/2026-07-20_05_JOP_VLN_Joint_On_Off_Policy_VLN.md
    - 机构: - (IROS 2026)
    - 亮点: IL+RL首次整合，三阶段训练pipeline，R2R 69.9%新SOTA，错误校正优先轨迹排序
+
+---
+
+## 2026-07-21 研究的论文（精选5篇）
+
+1. **DriftWorld: Fast World Modeling through Drifting** - arXiv:2607.15065v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Model, Drifting Generative Model, Action-Conditioned Video Generation, Robot Planning, Policy Evaluation
+   - 文档: papers/2026-07-21_01_DriftWorld_Fast_World_Modeling_Drifting.md
+   - 机构: MIT, Harvard (Yilun Du)
+   - 亮点: 单步前向传播30+FPS世界模型（比扩散快17倍），策略评估Pearson r=0.99，Action Accentuation技术
+
+2. **WANDA: Worlds in One Demo — Synthetic Data Engine for Open-World Mobile Manipulation** - arXiv:2607.13154v2
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS World Substrate, One-Demo Learning, Trajectory Rearrangement, Cross-Embodiment, Synthetic Data
+   - 文档: papers/2026-07-21_02_WANDA_Synthetic_Data_Engine_Mobile_Manipulation.md
+   - 机构: Caltech (Guanya Shi, LecAR Lab)
+   - 亮点: 单演示→数千训练轨迹，3DGS作为可操作世界基底，跨具身零样本部署，从照片生成3D世界
+
+3. **COLMAR: Cooperative View Policy Learning for Multi-Agent Active 3D Reconstruction** - arXiv:2607.13524v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Multi-Agent, Active 3D Reconstruction, 3DGS, Parameter-Sharing PPO, View Policy
+   - 文档: papers/2026-07-21_03_COLMAR_Cooperative_Multi_Agent_Active_3D.md
+   - 机构: University of Maryland (Aniket Bera), IROS 2026
+   - 亮点: 无通信多智能体协作（参数共享PPO），重建精度+54%覆盖+49%，3DGS质量作为RL奖励
+
+4. **PGRD: Learning Physics-Guided Residual Dynamics for Deformable Object Simulation** - arXiv:2607.13451v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Physics Simulation, Residual Learning, Deformable Object, 3DGS Video Prediction, MPC
+   - 文档: papers/2026-07-21_04_PGRD_Physics_Guided_Residual_Dynamics_Deformable.md
+   - 机构: UIUC (Svetlana Lazebnik, Yunzhu Li)
+   - 亮点: 弹簧-质点+Transformer残差混合范式，语言→目标图像→MPC操作规划，3DGS动态仿真
+
+5. **SceneBind: Binding What and Where Across Vision, Audio and Language** - arXiv:2607.15265v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Omni-Modal, Semantic-Spatial Binding, Cross-Modal Retrieval, Audio-Visual Localization
+   - 文档: papers/2026-07-21_05_SceneBind_Binding_What_Where_Multimodal.md
+   - 机构: University of Washington (Eli Shlizerman)
+   - 亮点: What+Where统一表示，轻量级空间token增强预训练编码器，双声道音频-视觉数据集
