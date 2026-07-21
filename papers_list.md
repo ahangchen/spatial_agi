@@ -2072,3 +2072,42 @@
    - 文档: papers/2026-07-21_05_SceneBind_Binding_What_Where_Multimodal.md
    - 机构: University of Washington (Eli Shlizerman)
    - 亮点: What+Where统一表示，轻量级空间token增强预训练编码器，双声道音频-视觉数据集
+
+---
+
+## 2026-07-22 研究的论文（精选5篇）
+
+1. **E3DGS: Unified Geometric-Photometric Equivariance for 3D Gaussian Splatting via Color-as-Geometry Embedding** - arXiv:2607.15536
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS, SE(3) Equivariance, Color-as-Geometry, Representation Theory, Wigner-D Matrix
+   - 文档: papers/2026-07-22_01_E3DGS_Unified_Geometric_Photometric_Equivariance.md
+   - 机构: University of Michigan (Maani Ghaffari)
+   - 亮点: 首次将SH系数视为等变几何对象，𝔤𝔩(3)共轭统一几何+光度，O(1)成对交互无需CG张量积
+
+2. **WCog-VLA: A Dual-Level World-Cognitive Vision-Language-Action Model for End-to-End Autonomous Driving** - arXiv:2607.08375
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, World Cognition, BEV, Game-CoT, ADDT, Autonomous Driving, Multi-Agent Trajectory
+   - 文档: papers/2026-07-22_02_WCog_VLA_Dual_Level_World_Cognitive.md
+   - 机构: Tongji University, NTU Singapore
+   - 亮点: 双层世界认知（语义+生成），博弈论思维链推理（85k标注），NAVSIM SOTA PDMS 92.9
+
+3. **Patch Policy: Efficient Embodied Control via Dense Visual Representations** - arXiv:2607.18236
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Dense Visual Features, ViT Patches, Block-Causal Attention, Efficient Control, LeCun
+   - 文档: papers/2026-07-22_03_Patch_Policy_Dense_Visual_Representations.md
+   - 机构: NYU, Meta-FAIR, AMI Labs (Yann LeCun, Lerrel Pinto)
+   - 亮点: 0.7%参数超越OpenVLA-OFT 18%，~11ms推理，block-causal掩码保留空间细节
+
+4. **Depth-Regularized JEPA World Models Learn More Transferable Representations from Real Outdoor Robot Data** - arXiv:2607.16314
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: JEPA, LeWorldModel, Depth Regularization, SIGReg, Outdoor Robot, Transferable
+   - 文档: papers/2026-07-22_04_Depth_Reg_JEPA_World_Model_Transferable.md
+   - 机构: Aigen (agricultural robot fleet)
+   - 亮点: 训练时深度先验+推理时纯RGB，18M参数紧凑JEPA，VO误差降低33%，零推理成本几何注入
+
+5. **PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution** - arXiv:2607.16636
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Embodied OS, State-as-a-File, Session-Centered Runtime, Semantic Verification, Epistemic Memory
+   - 文档: papers/2026-07-22_05_PhyAgentOS_Self_Evolving_OS_Embodied.md
+   - 机构: SCUT, Sun Yat-sen University (Liang Lin)
+   - 亮点: 语义验证层填补"执行终止≠任务完成"空白，文件系统协议解耦认知-物理，19+具身验证
