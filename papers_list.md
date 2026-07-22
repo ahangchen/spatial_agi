@@ -2111,3 +2111,40 @@
    - 文档: papers/2026-07-22_05_PhyAgentOS_Self_Evolving_OS_Embodied.md
    - 机构: SCUT, Sun Yat-sen University (Liang Lin)
    - 亮点: 语义验证层填补"执行终止≠任务完成"空白，文件系统协议解耦认知-物理，19+具身验证
+
+## 2026-07-23 研究的论文（精选5篇）
+
+1. **Masked Visual Actions for Unified World Modeling** - arXiv:2607.19343
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: world model, video generation, VLA, masked actions, unified modeling
+   - 机构: Stanford, MIT, Columbia, UC Berkeley (Li Fei-Fei, Jiajun Wu)
+   - 文档: papers/2026-07-23_01_Masked_Visual_Actions_Unified_World_Modeling.md
+   - 核心贡献: 提出像素空间masked visual action接口，单一checkpoint统一前向动力学+逆向动作推断
+
+2. **Agentic Real2Sim: Physics-based World Modeling with Vision-Language Agents** - arXiv:2607.19190
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: real2sim, VLM agents, physics simulation, world model, episodic twin
+   - 机构: JHU, UCLA, USC, MIT (Alan Yuille, Chenfanfu Jiang)
+   - 文档: papers/2026-07-23_02_Agentic_Real2Sim_Physics_World_Modeling.md
+   - 核心贡献: VLM Agent自动化Real2Sim流程，跨域统一(刚体/可变形体/人形)，开源VLM支持
+
+3. **ZeroSplat: Generalized Referring Segmentation in 3D Gaussian Splatting** - arXiv:2607.18801
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS, language segmentation, scene understanding, zero-shot, ECCV 2026
+   - 发表: ECCV 2026
+   - 文档: papers/2026-07-23_03_ZeroSplat_Generalized_Referring_Segmentation_3DGS.md
+   - 核心贡献: Training-free zero-feature 3DGS分割，支持任意数量目标的广义referring segmentation
+
+4. **RoboInter1.5: A Holistic Intermediate Representation Suite for Embodied World Modeling** - arXiv:2607.18709
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: embodied, world model, intermediate representation, manipulation, VQA, VLA
+   - 机构: Beihang, Shanghai AI Lab, CUHK (Jiangmiao Pang)
+   - 文档: papers/2026-07-23_04_RoboInter1.5_Holistic_Intermediate_Representation.md
+   - 核心贡献: 230k episode密集标注10+种中间表示，VQA+VLA+World三模块联动
+
+5. **Event3R: Asynchronous-to-Global 3D Reconstruction from Event Camera** - arXiv:2607.15727
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: event camera, 3D reconstruction, spatial-temporal, robotics, IROS 2026
+   - 发表: IROS 2026
+   - 文档: papers/2026-07-23_05_Event3R_Async_to_Global_3D_Reconstruction.md
+   - 核心贡献: 首个前馈事件流到3D点云重建框架，MBM自监督预训练解决数据匮乏

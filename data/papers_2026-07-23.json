@@ -1,0 +1,745 @@
+{
+  "date": "2026-07-23",
+  "total_papers": 82,
+  "papers": [
+    {
+      "title": "WCog-VLA: A Dual-Level World-Cognitive Vision-Language-Action Model for End-to-End Autonomous Driving",
+      "submitted": "2026-07-09",
+      "sources": [
+        "spatial_intelligence_3D"
+      ],
+      "abstract_snippet": "World-cognitive VLA with 3D spatial perception",
+      "score": 24
+    },
+    {
+      "title": "SpatialAct: Probing Spatial Reasoning-to-Action Capabilities of VLM Agents in 3D Scenes",
+      "submitted": "2026-05-29",
+      "sources": [
+        "VLM_3D_understanding"
+      ],
+      "abstract_snippet": "VLM spatial reasoning-to-action capability probing",
+      "score": 24
+    },
+    {
+      "title": "ZeroSplat: Generalized Referring Segmentation in 3D Gaussian Splatting",
+      "submitted": "2026-07-21",
+      "sources": [
+        "gaussian_splatting",
+        "VLM_3D_understanding"
+      ],
+      "abstract_snippet": "Language-guided scene segmentation in 3DGS",
+      "score": 22
+    },
+    {
+      "title": "GPOcc++: Unified Sparse Gaussian Occupancy Prediction with Visual Geometry Priors",
+      "submitted": "2026-07-15",
+      "sources": [
+        "spatial_intelligence_3D"
+      ],
+      "abstract_snippet": "3D scene understanding via Gaussian occupancy prediction",
+      "score": 21
+    },
+    {
+      "title": "Instant NuRec: Feed-Forward 3D Gaussian Reconstruction for Driving Scene Simulation",
+      "submitted": "2026-07-15",
+      "sources": [
+        "gaussian_splatting"
+      ],
+      "abstract_snippet": "NVIDIA feed-forward 3DGS for driving simulation",
+      "score": 20
+    },
+    {
+      "title": "SoftNav: Injecting 3D Scene Tokens into VLMs for Embodied Navigation",
+      "submitted": "2026-07-16",
+      "sources": [
+        "VLM_3D_understanding"
+      ],
+      "abstract_snippet": "3D scene tokens for VLM navigation",
+      "score": 20
+    },
+    {
+      "title": "Reasmory: 3D Reconstruction as Explicit Memory for VLMs Spatial Reasoning",
+      "submitted": "2026-05-30",
+      "sources": [
+        "VLM_3D_understanding"
+      ],
+      "abstract_snippet": "3D reconstruction as VLM explicit memory",
+      "score": 20
+    },
+    {
+      "title": "MultiView-Bench: A Diagnostic Benchmark for World-Centric Multi-View Integration in VLMs",
+      "submitted": "2026-07-09",
+      "sources": [
+        "spatial_intelligence_3D"
+      ],
+      "abstract_snippet": "Multi-view integration benchmark for VLM spatial reasoning",
+      "score": 19
+    },
+    {
+      "title": "SpaR3D-MoE: Adaptive 3D Spatial Reasoning from Sparse Views Meets Geometry-Inductive Mixture-of-Experts",
+      "submitted": "2026-07-07",
+      "sources": [
+        "spatial_intelligence_3D"
+      ],
+      "abstract_snippet": "Adaptive 3D spatial reasoning with MoE",
+      "score": 19
+    },
+    {
+      "title": "STeP: Signal Temporal Logic for Precise Specifications for Action Generation with VLMs",
+      "submitted": "2026-07-20",
+      "sources": [
+        "world_model_robot"
+      ],
+      "abstract_snippet": "STL for precise VLA spatial/temporal specifications",
+      "score": 18
+    },
+    {
+      "title": "Event3R: Asynchronous-to-Global 3D Reconstruction from Event Camera via Spatial-Temporal Feature Aggregation",
+      "submitted": "2026-07-18",
+      "sources": [
+        "world_model_robot"
+      ],
+      "abstract_snippet": "Event camera 3D reconstruction for robotics",
+      "score": 18
+    },
+    {
+      "title": "SpaceEra++: A Unified Framework Towards 3D Spatial Reasoning in Video",
+      "submitted": "2026-07-02",
+      "sources": [
+        "VLM_3D_understanding"
+      ],
+      "abstract_snippet": "3D spatial reasoning in video for VLMs",
+      "score": 18
+    },
+    {
+      "title": "AeroAct: Action-Centered World-Action Models for Language-Conditioned Quadrotor Flight",
+      "submitted": "2026-07-16",
+      "sources": [
+        "gaussian_splatting"
+      ],
+      "abstract_snippet": "UAV world-action model with 3DGS rendering pipeline",
+      "score": 17
+    },
+    {
+      "title": "RoboInter1.5: A Holistic Intermediate Representation Suite for Embodied World Modeling and Robotic Manipulation",
+      "submitted": "2026-07-21",
+      "sources": [
+        "world_model_robot"
+      ],
+      "abstract_snippet": "Intermediate representations for embodied world modeling",
+      "score": 17
+    },
+    {
+      "title": "Scene-SAM3D: Multi-View Scene Asset Generation Without Fine-Tuning",
+      "submitted": "2026-07-18",
+      "sources": [
+        "world_model_robot"
+      ],
+      "abstract_snippet": "3D scene asset generation for embodied apps",
+      "score": 17
+    },
+    {
+      "title": "GEAR-VLA: Learning Geometry-Aware Action Representations for Generalizable Robotic Manipulation",
+      "submitted": "2026-06-10",
+      "sources": [
+        "VLM_3D_understanding"
+      ],
+      "abstract_snippet": "Geometry-aware VLA action representations",
+      "score": 17
+    },
+    {
+      "title": "SaaF: Scene-Specific Ambiguity-Aware 3D Language Fields towards Interactive Real-World Object Retrieval",
+      "submitted": "2026-07-14",
+      "sources": [
+        "gaussian_splatting"
+      ],
+      "abstract_snippet": "3DGS language field for service robot object retrieval",
+      "score": 16
+    },
+    {
+      "title": "Agentic Real2Sim: Physics-based World Modeling with Vision-Language Agents",
+      "submitted": "2026-07-21",
+      "sources": [
+        "world_model_robot"
+      ],
+      "abstract_snippet": "VLM agents for real-to-sim physical world modeling",
+      "score": 16
+    },
+    {
+      "title": "More Than Where You Are: Learning Semantics, Structure, and Geometry from Cross-View Localization",
+      "submitted": "2026-07-14",
+      "sources": [
+        "spatial_intelligence_3D"
+      ],
+      "abstract_snippet": "Cross-view understanding for spatial intelligence",
+      "score": 16
+    },
+    {
+      "title": "GeoProp: Grounding Robot State in Vision for Generalist Manipulation",
+      "submitted": "2026-07-08",
+      "sources": [
+        "spatial_intelligence_3D"
+      ],
+      "abstract_snippet": "3D kinematics to 2D feature map alignment for manipulation",
+      "score": 16
+    },
+    {
+      "title": "Stream3D-VLM: Online 3D Spatial Understanding with Incremental Geometry Priors",
+      "submitted": "2026-06-05",
+      "sources": [
+        "VLM_3D_understanding"
+      ],
+      "abstract_snippet": "Online 3D spatial understanding VLM",
+      "score": 16
+    },
+    {
+      "title": "Splat-based 3D Scene Reconstruction with Extreme Motion-blur",
+      "submitted": "2026-07-18",
+      "sources": [
+        "gaussian_splatting"
+      ],
+      "abstract_snippet": "RGB-D 3DGS reconstruction under extreme motion blur",
+      "score": 15
+    },
+    {
+      "title": "G2SR: Geometric Methods for Fast and Memory-Efficient Gaussian-based Surface Reconstruction",
+      "submitted": "2026-07-15",
+      "sources": [
+        "gaussian_splatting"
+      ],
+      "abstract_snippet": "Mobile platform fast geometric 3DGS surface reconstruction",
+      "score": 15
+    },
+    {
+      "title": "Athena-Brain Technical Report: An Efficient Robot Brain for General Intelligence and Embodied Interaction",
+      "submitted": "2026-07-21",
+      "sources": [
+        "world_model_robot"
+      ],
+      "abstract_snippet": "LLM-based robot brain for general intelligence",
+      "score": 15
+    },
+    {
+      "title": "RoboStressBench: Benchmarking VLM Robustness to Physical Visual Stress in Embodied Scenes",
+      "submitted": "2026-05-30",
+      "sources": [
+        "embodied_AI_VLM"
+      ],
+      "abstract_snippet": "VLM robustness benchmark for embodied scenes",
+      "score": 15
+    },
+    {
+      "title": "GeoAnchor: Collaborative Reasoning via Latent Decomposition for 3D Spatial Understanding",
+      "submitted": "2026-07-15",
+      "sources": [
+        "spatial_intelligence_3D"
+      ],
+      "abstract_snippet": "MLLM 3D spatial understanding via latent decomposition",
+      "score": 15
+    },
+    {
+      "title": "DPNeXt: A Lightweight Multi-Scale Feature Fusion Framework for Efficient ViT-Based Multi-Task Dense Prediction",
+      "submitted": "2026-07-17",
+      "sources": [
+        "spatial_intelligence_3D"
+      ],
+      "abstract_snippet": "Multi-task 3D spatial scene understanding",
+      "score": 15
+    },
+    {
+      "title": "PixelPilot: Scalable Vision-Language-Action Models for End-to-End Autonomous Driving",
+      "submitted": "2026-07-05",
+      "sources": [
+        "VLM_3D_understanding"
+      ],
+      "abstract_snippet": "Scalable VLA for autonomous driving",
+      "score": 15
+    },
+    {
+      "title": "AeroVerse-SatAgent: UAV-Satellite Collaborative Spatial Reasoning Inspired by Dual Visual Pathway Theory",
+      "submitted": "2026-06-30",
+      "sources": [
+        "VLM_3D_understanding"
+      ],
+      "abstract_snippet": "UAV-satellite collaborative spatial reasoning",
+      "score": 15
+    },
+    {
+      "title": "PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution",
+      "submitted": "2026-07-18",
+      "sources": [
+        "world_model_robot"
+      ],
+      "abstract_snippet": "Embodied agent OS with decoupled cognitive planning",
+      "score": 14
+    },
+    {
+      "title": "ACE-Brain-0.5: A Unified Embodied Foundational Model for Physical Agentic AI",
+      "submitted": "2026-07-05",
+      "sources": [
+        "spatial_intelligence_3D"
+      ],
+      "abstract_snippet": "Unified embodied foundation model",
+      "score": 14
+    },
+    {
+      "title": "FF-ProCams: Feed-Forward Gaussian Splatting for Projector-Camera System",
+      "submitted": "2026-07-20",
+      "sources": [
+        "gaussian_splatting"
+      ],
+      "abstract_snippet": "Feed-forward 3DGS inverse rendering for ProCams",
+      "score": 13
+    },
+    {
+      "title": "ImprovedVBGS: Real-time Continual Variational Bayes Gaussian Splatting",
+      "submitted": "2026-07-16",
+      "sources": [
+        "gaussian_splatting"
+      ],
+      "abstract_snippet": "Real-time continual 3DGS without replay buffers",
+      "score": 13
+    },
+    {
+      "title": "Immediate 3D Gaussian Splat Reconstruction of Unordered Input with Global Consistency",
+      "submitted": "2026-07-15",
+      "sources": [
+        "gaussian_splatting"
+      ],
+      "abstract_snippet": "3DGS reconstruction from unordered images",
+      "score": 13
+    },
+    {
+      "title": "FARO: Feasibility-Aware Robot Motion Optimization",
+      "submitted": "2026-07-20",
+      "sources": [
+        "world_model_robot"
+      ],
+      "abstract_snippet": "Humanoid loco-manipulation kino-dynamic planning",
+      "score": 13
+    },
+    {
+      "title": "G2-Nav: Grounded and Guarded Vision-Language Costmaps for Robot Social Navigation",
+      "submitted": "2026-07-18",
+      "sources": [
+        "world_model_robot"
+      ],
+      "abstract_snippet": "VLM costmaps for social robot navigation",
+      "score": 13
+    },
+    {
+      "title": "Action Map Policy: Learning 3D Closed-loop Manipulation via Pixel Classification",
+      "submitted": "2026-07-12",
+      "sources": [
+        "spatial_intelligence_3D"
+      ],
+      "abstract_snippet": "3D manipulation as pixel-space classification",
+      "score": 13
+    },
+    {
+      "title": "SceneBind: Binding What and Where Across Vision, Audio and Language",
+      "submitted": "2026-07-16",
+      "sources": [
+        "spatial_intelligence_3D"
+      ],
+      "abstract_snippet": "Omni-modal scene representation with joint semantic and 3D",
+      "score": 13
+    },
+    {
+      "title": "IDEAL-Bench: Indoor Dataset and Evaluation suite for Analyzing 3D Layout reasoning",
+      "submitted": "2026-07-03",
+      "sources": [
+        "VLM_3D_understanding"
+      ],
+      "abstract_snippet": "3D layout reasoning evaluation for VLMs",
+      "score": 13
+    },
+    {
+      "title": "World Translation: Minimizing Sim-to-Real Gap with Backward Dynamics Extraction and Unpaired Domain Translation",
+      "submitted": "2026-07-20",
+      "sources": [
+        "world_model_robot"
+      ],
+      "abstract_snippet": "Sim-to-real gap minimization for robotic policies",
+      "score": 12
+    },
+    {
+      "title": "Depth-Regularized JEPA World Models Learn More Transferable Representations from Real Outdoor Robot Data",
+      "submitted": "2026-07-14",
+      "sources": [
+        "world_model_robot"
+      ],
+      "abstract_snippet": "JEPA world models with depth regularization for outdoor robots",
+      "score": 12
+    },
+    {
+      "title": "HAT-4D: Lifting Monocular Video for 4D Multi-Object Interactions via Human-Agent Collaboration",
+      "submitted": "2026-06-26",
+      "sources": [
+        "embodied_AI_VLM"
+      ],
+      "abstract_snippet": "4D object interactions from monocular video for Embodied AI",
+      "score": 12
+    },
+    {
+      "title": "OneCanvas: 3D Scene Understanding via Panoramic Reprojection",
+      "submitted": "2026-06-17",
+      "sources": [
+        "embodied_AI_VLM"
+      ],
+      "abstract_snippet": "Panoramic reprojection for VLM 3D understanding (Nießner)",
+      "score": 12
+    },
+    {
+      "title": "ECoNGS: Efficient Compressive Neural Gaussian Splats for Volume Visualization",
+      "submitted": "2026-07-20",
+      "sources": [
+        "gaussian_splatting"
+      ],
+      "abstract_snippet": "Compressive 3DGS for volume visualization",
+      "score": 11
+    },
+    {
+      "title": "E3DGS: Unified Geometric-Photometric Equivariance for 3DGS via Color-as-Geometry Embedding",
+      "submitted": "2026-07-16",
+      "sources": [
+        "gaussian_splatting"
+      ],
+      "abstract_snippet": "SE(3)-equivariant 3DGS architectures",
+      "score": 11
+    },
+    {
+      "title": "Bake It Till You Make It: Ultrafast Spatial Texture-Atlas Splatting",
+      "submitted": "2026-07-15",
+      "sources": [
+        "gaussian_splatting"
+      ],
+      "abstract_snippet": "Texture-atlas splatting for ultrafast rendering",
+      "score": 11
+    },
+    {
+      "title": "Masked Visual Actions for Unified World Modeling",
+      "submitted": "2026-07-21",
+      "sources": [
+        "world_model_robot"
+      ],
+      "abstract_snippet": "Video models as world priors, masked visual actions (Li Fei-Fei, Jiajun Wu)",
+      "score": 11
+    },
+    {
+      "title": "WorldScape Policy 2.0: Empowering Steerable World Action Modeling with Reasoning-Augmented Memory",
+      "submitted": "2026-07-21",
+      "sources": [
+        "world_model_robot"
+      ],
+      "abstract_snippet": "World action model with reasoning-augmented memory",
+      "score": 11
+    },
+    {
+      "title": "Patch Policy: Efficient Embodied Control via Dense Visual Representations",
+      "submitted": "2026-07-20",
+      "sources": [
+        "world_model_robot"
+      ],
+      "abstract_snippet": "ViT dense features for robot learning (LeCun, Pinto)",
+      "score": 11
+    },
+    {
+      "title": "ConceptTree: Bringing Semantic Transparency to Black-Box Decision Making for Robotic Manipulation",
+      "submitted": "2026-07-20",
+      "sources": [
+        "world_model_robot"
+      ],
+      "abstract_snippet": "Interpretable decision-making for long-horizon manipulation",
+      "score": 11
+    },
+    {
+      "title": "Seek to Segment: Active Perception for Panoramic Referring Segmentation",
+      "submitted": "2026-07-02",
+      "sources": [
+        "embodied_AI_VLM"
+      ],
+      "abstract_snippet": "Active panoramic referring segmentation for Embodied AI",
+      "score": 11
+    },
+    {
+      "title": "DM-KG: A Novel Method for Boosting Spatial Cognition of VLMs in Street View Imagery",
+      "submitted": "2026-07-13",
+      "sources": [
+        "VLM_3D_understanding"
+      ],
+      "abstract_snippet": "Spatial cognition boosting for VLMs in street view",
+      "score": 11
+    },
+    {
+      "title": "RoboAtlas: Contextual Active SLAM",
+      "submitted": "2026-06-24",
+      "sources": [
+        "VLM_3D_understanding"
+      ],
+      "abstract_snippet": "Contextual active SLAM with 3D semantic mapping",
+      "score": 11
+    },
+    {
+      "title": "From Pixels to Concepts: Growing Rich 3D Semantic Scene Graph Forests utilizing Foundation Models",
+      "submitted": "2026-06-22",
+      "sources": [
+        "VLM_3D_understanding"
+      ],
+      "abstract_snippet": "3D semantic scene graphs from foundation models",
+      "score": 11
+    },
+    {
+      "title": "AffordanceVLA: A Vision-Language-Action Model Empowering Action Generation through Affordance-Aware Understanding",
+      "submitted": "2026-06-04",
+      "sources": [
+        "VLM_3D_understanding"
+      ],
+      "abstract_snippet": "Affordance-aware VLA model",
+      "score": 11
+    },
+    {
+      "title": "FlexiAvatar: Unified 3D Gaussian Human Avatars Under Arbitrary Body Visibility",
+      "submitted": "2026-07-21",
+      "sources": [
+        "gaussian_splatting"
+      ],
+      "abstract_snippet": "AR/VR digital content creation, parametric body models with 3DGS",
+      "score": 10
+    },
+    {
+      "title": "AniGS: Bridging Rendering and Diffusion Prior for 3D Scene Animation",
+      "submitted": "2026-07-20",
+      "sources": [
+        "gaussian_splatting"
+      ],
+      "abstract_snippet": "Scene-level animation of 3DGS, subtle distributed dynamics",
+      "score": 10
+    },
+    {
+      "title": "Packet-Loss Robust 3D Gaussian Compression via Atomic Packaging and GNN-based Error Concealment",
+      "submitted": "2026-07-20",
+      "sources": [
+        "gaussian_splatting"
+      ],
+      "abstract_snippet": "Robust 3DGS compression for network streaming",
+      "score": 10
+    },
+    {
+      "title": "CaT-GS: Efficient 3DGS Rendering for Large Scale Scenes via Inter-frame Caching and Tile Scheduling",
+      "submitted": "2026-07-20",
+      "sources": [
+        "gaussian_splatting"
+      ],
+      "abstract_snippet": "Large-scale 3DGS rendering optimization",
+      "score": 10
+    },
+    {
+      "title": "TopoGS: Planar Reconstruction via Topology-aware 3DGS",
+      "submitted": "2026-07-18",
+      "sources": [
+        "gaussian_splatting"
+      ],
+      "abstract_snippet": "Structured parametric 3D from images via 3DGS topology",
+      "score": 10
+    },
+    {
+      "title": "HybridSim: A Physics-Learning Hybrid Digital Twin for mmWave Human Sensing",
+      "submitted": "2026-07-17",
+      "sources": [
+        "gaussian_splatting"
+      ],
+      "abstract_snippet": "3DGS + inverse rendering for mmWave sensing digital twin",
+      "score": 10
+    },
+    {
+      "title": "Rendering 3D Gaussians on a Graph Processor",
+      "submitted": "2026-07-17",
+      "sources": [
+        "gaussian_splatting"
+      ],
+      "abstract_snippet": "3DGS rendering on graph processor hardware",
+      "score": 10
+    },
+    {
+      "title": "RoboHarness: Memory-Driven Orchestration of Heterogeneous Robot Policies for Long-Horizon Planning",
+      "submitted": "2026-07-20",
+      "sources": [
+        "world_model_robot"
+      ],
+      "abstract_snippet": "Heterogeneous robot policy orchestration",
+      "score": 10
+    },
+    {
+      "title": "FillGauss: Fine-Grained Filling-Aware Impact Sound Generation for 3DGS",
+      "submitted": "2026-07-20",
+      "sources": [
+        "gaussian_splatting"
+      ],
+      "abstract_snippet": "3DGS with impact sound generation, physically grounded",
+      "score": 9
+    },
+    {
+      "title": "SAGE: A Socially-Aware Generative Engine for Heterogeneous Multi-Agent Navigation",
+      "submitted": "2026-07-17",
+      "sources": [
+        "world_model_robot"
+      ],
+      "abstract_snippet": "Social generative engine for multi-agent navigation",
+      "score": 9
+    },
+    {
+      "title": "Consistent Yet Wrong: Evidence Insensitivity in Spatial Vision-Language Models",
+      "submitted": "2026-06-01",
+      "sources": [
+        "embodied_AI_VLM"
+      ],
+      "abstract_snippet": "Spatial VLM evidence insensitivity analysis",
+      "score": 9
+    },
+    {
+      "title": "SeeSE3: Emergence of 3D Space in Vision Features",
+      "submitted": "2026-07-15",
+      "sources": [
+        "spatial_intelligence_3D"
+      ],
+      "abstract_snippet": "Vision foundation models 3D Euclidean space representations (Guibas)",
+      "score": 9
+    },
+    {
+      "title": "VL2Spike: Spike-driven Distillation from VLMs for Low-Power Visual Perception in Embodied AI",
+      "submitted": "2026-06-14",
+      "sources": [
+        "embodied_AI_VLM"
+      ],
+      "abstract_snippet": "VLM to SNN distillation for low-power embodied perception",
+      "score": 8
+    },
+    {
+      "title": "VLM3: Vision Language Models Are Native 3D Learners",
+      "submitted": "2026-05-28",
+      "sources": [
+        "VLM_3D_understanding"
+      ],
+      "abstract_snippet": "VLMs as native 3D learners",
+      "score": 8
+    },
+    {
+      "title": "QIRF Quantum-Inspired Non-Orthogonal Function-Space Compression for 3DGS",
+      "submitted": "2026-07-20",
+      "sources": [
+        "gaussian_splatting"
+      ],
+      "abstract_snippet": "Quantum-inspired compression for 3DGS",
+      "score": 7
+    },
+    {
+      "title": "Exploration Matters for Escaping the Blur Trap in 3DGS",
+      "submitted": "2026-07-20",
+      "sources": [
+        "gaussian_splatting"
+      ],
+      "abstract_snippet": "Gradient bias during optimization in 3DGS",
+      "score": 7
+    },
+    {
+      "title": "SPARE-GS: Structural Parsimony and Resource Efficiency for 3DGS",
+      "submitted": "2026-07-17",
+      "sources": [
+        "gaussian_splatting"
+      ],
+      "abstract_snippet": "Structural sparsity for efficient 3DGS",
+      "score": 7
+    },
+    {
+      "title": "JADE-GS: Joint Alternating Deblurring Guided by Events in 3DGS",
+      "submitted": "2026-07-16",
+      "sources": [
+        "gaussian_splatting"
+      ],
+      "abstract_snippet": "Event-guided deblurring for 3DGS",
+      "score": 7
+    },
+    {
+      "title": "Dive into the Scene: Breaking the Perceptual Bottleneck in Vision-Language Decision Making via Focus Plan Generation",
+      "submitted": "2026-06-02",
+      "sources": [
+        "embodied_AI_VLM"
+      ],
+      "abstract_snippet": "Focus plan generation for VLM decision-making",
+      "score": 7
+    },
+    {
+      "title": "IGGT4D: Streaming 4D Instance-Grounded Geometry Transformer",
+      "submitted": "2026-07-21",
+      "sources": [
+        "spatial_intelligence_3D"
+      ],
+      "abstract_snippet": "Streaming 4D instance-grounded geometry transformer",
+      "score": 7
+    },
+    {
+      "title": "CoGoal3D: Collaborative 3D Object Detection with 3D-Aware Fusion and Refinement",
+      "submitted": "2026-07-21",
+      "sources": [
+        "spatial_intelligence_3D"
+      ],
+      "abstract_snippet": "Collaborative 3D detection with 3D-aware fusion",
+      "score": 7
+    },
+    {
+      "title": "Hallo4D: Multi-Modal Hallucination Mitigation for Consistent Spatio-Temporal Generation",
+      "submitted": "2026-07-15",
+      "sources": [
+        "spatial_intelligence_3D"
+      ],
+      "abstract_snippet": "Hallucination mitigation for 3D generation consistency",
+      "score": 7
+    },
+    {
+      "title": "Locality-Aware Density Control for Efficient Gaussian-based Image Representation",
+      "submitted": "2026-07-20",
+      "sources": [
+        "gaussian_splatting"
+      ],
+      "abstract_snippet": "2D Gaussian density control for image representation",
+      "score": 6
+    },
+    {
+      "title": "Test-Time Scaling for World Action Models via Zero-Shot Geometric Evaluation",
+      "submitted": "2026-07-19",
+      "sources": [
+        "world_model_robot"
+      ],
+      "abstract_snippet": "Test-time scaling for WAMs using geometric evaluation",
+      "score": 6
+    },
+    {
+      "title": "PhysForge: Generating Physics-Grounded 3D Assets for Interactive Virtual World",
+      "submitted": "2026-05-06",
+      "sources": [
+        "embodied_AI_VLM"
+      ],
+      "abstract_snippet": "Physics-grounded 3D asset generation",
+      "score": 6
+    },
+    {
+      "title": "HomeWorld: A Unified Floorplan-to-Furnished Framework for Generating Controllable, Densely Interactive Whole-Home Scenes",
+      "submitted": "2026-06-04",
+      "sources": [
+        "embodied_AI_VLM"
+      ],
+      "abstract_snippet": "Floorplan to furnished whole-home scene generation",
+      "score": 5
+    },
+    {
+      "title": "IntentionNav: A Benchmark for Intent-Driven Object Navigation from Implicit Human Instruction",
+      "submitted": "2026-05-21",
+      "sources": [
+        "embodied_AI_VLM"
+      ],
+      "abstract_snippet": "Intent-driven object navigation benchmark",
+      "score": 5
+    }
+  ]
+}
