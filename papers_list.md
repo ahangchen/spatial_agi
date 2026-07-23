@@ -1,5 +1,37 @@
 # Spatial AGI Research Papers - Daily Analysis
 
+## 2026-07-24 研究的论文（精选5篇）
+
+1. **IGGT4D: Streaming 4D Instance-Grounded Geometry Transformer** - arXiv:2607.19228
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: streaming 4D, instance grounding, causal attention, geometry-instance unified
+   - 文档: papers/2026-07-24_01_IGGT4D_Streaming_4D_Instance_Grounded_Geometry.md
+   - 亮点: 因果流式几何-实例统一Transformer，O(1)流式聚类，InsScene4D-147K数据集
+
+2. **Xiaomi-Robotics-1: Scaling VLA Models with 100K+ Hours Real-World Data** - arXiv:2607.15330
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, large-scale, flow matching, embodied AI
+   - 文档: (摘要分析见每日思考)
+   - 亮点: 100K+小时UMI数据，RoboCasa365 57.6%，两阶段训练(pre-training + post-training)
+
+3. **Scene-SAM3D: Multi-View Scene Asset Generation Without Fine-Tuning** - arXiv:2607.16805
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3D scene generation, training-free, multi-view, SAM3D
+   - 文档: (摘要分析见每日思考)
+   - 亮点: 免微调多视角场景生成，选择-融合-对齐三阶段管线，Replica CD减少43.8%
+
+4. **SafeRelBench: Spatial-Relation-Aware Benchmark for Process-Level Safety** - arXiv:2607.14543
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: spatial safety, process-level evaluation, VLM embodied, benchmark
+   - 文档: (摘要分析见每日思考)
+   - 亮点: 首个空间关系感知过程级安全基准，507样本，248空间关系场景
+
+5. **CDIS: Cross-Dimensional Class-Agnostic 3D Instance Segmentation** - arXiv:2607.17778
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3D instance segmentation, class-agnostic, cross-dimensional, zero-shot
+   - 文档: (摘要分析见每日思考)
+   - 亮点: 2D-3D跨维度反馈循环，zero-shot training-free，superpoint作为几何锚点
+
 ## 2026-06-29 研究的论文（精选5篇）
 
 1. **AirGroundBench: Probing Spatial Intelligence in Multimodal Large Models under Heterogeneous Multi-View Embodied Collaboration** - arXiv:2606.28049
