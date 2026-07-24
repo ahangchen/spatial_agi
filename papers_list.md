@@ -2180,3 +2180,42 @@
    - 发表: IROS 2026
    - 文档: papers/2026-07-23_05_Event3R_Async_to_Global_3D_Reconstruction.md
    - 核心贡献: 首个前馈事件流到3D点云重建框架，MBM自监督预训练解决数据匮乏
+
+---
+
+## 2026-07-25 研究的论文（精选5篇）
+
+1. **3D-Aware VLMs with Implicit and Explicit Geometries (VLM-IE3D)** - arXiv:2607.21595v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLM, 3D awareness, implicit geometry, explicit geometry, RGB-only, ECCV 2026
+   - 机构: NTU, DAMO Academy Alibaba, HuPan Lab
+   - 文档: papers/2026-07-25_01_3D_Aware_VLM_IE3D_Implicit_Explicit_Geometries.md
+   - 核心贡献: 首个同时使用隐式(IGT)+显式(EGT)3D几何Token增强VLM的统一框架，RGB-only实现多任务SOTA
+
+2. **SafeRelBench: A Spatial-Relation-Aware Benchmark for Process-Level Safety in VLM-Driven Embodied Agents** - arXiv:2607.14543v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: safety benchmark, spatial relations, process-level safety, embodied agents, VLM
+   - 机构: BUPT, BIGAI
+   - 文档: papers/2026-07-25_02_SafeRelBench_Spatial_Relation_Safety_VLM_Embodied.md
+   - 核心贡献: 首个将空间关系（支撑/包含/邻近）作为安全评估核心维度的过程级基准，揭示任务成功≠安全合规
+
+3. **GeoGS-SLAM: Online Monocular Reconstruction Using Gaussian Splatting with Geometric Priors** - arXiv:2607.11184v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: SLAM, 3D Gaussian Splatting, geometric priors, VGGT, monocular, RGB-only
+   - 机构: Zhejiang University
+   - 文档: papers/2026-07-25_03_GeoGS_SLAM_Monocular_Reconstruction_Geometric_Priors.md
+   - 核心贡献: 首个结合VGGT前馈几何先验与3DGS光度优化的RGB-only SLAM系统，闭环重建管线实现高保真+高精度
+
+4. **VTM-Nav: Hierarchical Visual-Topological Memory for Cross-Episode Object-Goal Navigation** - arXiv:2607.14514v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: object-goal navigation, cross-episode, visual-topological memory, VLM, training-free
+   - 机构: CASIA, UCAS, Tsinghua
+   - 文档: papers/2026-07-25_04_VTM_Nav_Cross_Episode_Visual_Topological_Memory.md
+   - 核心贡献: 提出跨回合ObjectNav新设定，层次化视觉拓扑记忆（房间+物体）实现无训练经验复用
+
+5. **PhysCoRe: Physics-Corrected Residual World Models for Material-Aware Deformable Dynamics** - arXiv:2607.20653v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: world model, deformable objects, MPM, material identification, residual correction
+   - 机构: Georgia Tech
+   - 文档: papers/2026-07-25_05_PhysCoRe_Physics_Corrected_Residual_World_Model.md
+   - 核心贡献: 物理仿真器+学习模块混合架构，从运动推断材料属性（MfM）+内部残差校正（RfD）
