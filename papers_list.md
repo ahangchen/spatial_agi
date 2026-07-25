@@ -2219,3 +2219,35 @@
    - 机构: Georgia Tech
    - 文档: papers/2026-07-25_05_PhysCoRe_Physics_Corrected_Residual_World_Model.md
    - 核心贡献: 物理仿真器+学习模块混合架构，从运动推断材料属性（MfM）+内部残差校正（RfD）
+
+## 2026-07-26 研究的论文（精选5篇）
+
+1. **GLAM-SLAM: Real-time Gaussian Large-scale Mapping via Flow Densification and Spatial Decomposition** - arXiv:2607.21416
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS SLAM, 大规模建图, 流引导致密化, 空间分解, 实时
+   - 会议: IROS 2026
+   - 文档: papers/2026-07-26_01_GLAM_SLAM_Real_Time_Large_Scale_Mapping.md
+
+2. **KineBench: Benchmarking Embodied World Models via IDM-Free Kinematic Grounding** - arXiv:2607.19876
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Embodied世界模型, 闭环评估, 运动学接地, SPARC, Manipulability
+   - 会议: ECCV 2026
+   - 文档: papers/2026-07-26_02_KineBench_Embodied_World_Model_Kinematic_Grounding.md
+
+3. **Athena-Brain Technical Report: An Efficient Robot Brain for General Intelligence** - arXiv:2026-07-21
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 紧凑机器人大脑, 设备端部署, 高层推理+底层执行, Embodied AI系统
+   - 类型: Technical Report
+   - 文档: papers/2026-07-26_03_Athena_Brain_Robot_General_Intelligence.md
+
+4. **Beyond Episodic Evaluation: Memory Architectural Bottlenecks in Sequential Embodied QA** - arXiv:2026-07-23
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 空间记忆瓶颈, 序列化评估, episodic vs sequential, 架构限制
+   - 机构: UMD, UT Austin, NVIDIA
+   - 文档: papers/2026-07-26_04_Beyond_Episodic_Memory_Bottlenecks_Embodied_QA.md
+
+5. **WorldScape Policy 2.0: Steerable World Action Modeling with Reasoning-Augmented Memory** - arXiv:2607.18840
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Action Model, 长短期事件记忆, ManipEvent-5M, 语义强制, 多模态控制
+   - 机构: 清华, 上交
+   - 文档: papers/2026-07-26_05_WorldScape_Policy_2_Reasoning_Augmented_Memory.md
