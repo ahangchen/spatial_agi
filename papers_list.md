@@ -2251,3 +2251,37 @@
    - 关键词: World Action Model, 长短期事件记忆, ManipEvent-5M, 语义强制, 多模态控制
    - 机构: 清华, 上交
    - 文档: papers/2026-07-26_05_WorldScape_Policy_2_Reasoning_Augmented_Memory.md
+
+## 2026-07-27 研究的论文（精选5篇）
+
+1. **Splat-based 3D Scene Reconstruction with Extreme Motion-blur** - arXiv:2607.16926
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS, 运动模糊, RGB-D重建, 联合优化, 低光照鲁棒性
+   - 会议: ICCV 2025
+   - 机构: KAIST, HYPERGRAM
+   - 文档: papers/2026-07-27_01_Splat_based_3D_Scene_Reconstruction_with_Extreme_Motion.md
+
+2. **GPOcc++: Unified Sparse Gaussian Occupancy Prediction with Visual Geometry Priors** - arXiv:2607.13481
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 占用预测, 稀疏高斯, 视觉几何先验, 表面到体积转换, 室内外统一
+   - 会议: CVPR 2026 (扩展版)
+   - 机构: HKUST(GZ), CUHK(SZ), Sun Yat-sen Univ
+   - 文档: papers/2026-07-27_02_GPOccpp_Unified_Sparse_Gaussian_Occupancy_Predicti.md
+
+3. **Worlds in One Demo (WANDA): A Synthetic Data Engine for Learning Open-World Mobile Manipulation** - arXiv:2607.13154
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 合成数据引擎, 一次演示, 移动操作, 3DGS世界重建, 跨环境泛化
+   - 机构: Caltech (LeCAR Lab)
+   - 文档: papers/2026-07-27_03_Worlds_in_One_Demo_A_Synthetic_Data_Engine_for_Lea.md
+
+4. **Robostral Navigate: Scalable Vision-Language Navigation from Monocular RGB** - arXiv:2607.20785
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLN, 单目RGB, 指向导航, Prefix-Caching, 跨身体泛化
+   - 机构: Meta/FAIR相关
+   - 文档: papers/2026-07-27_04_Robostral_Navigate.md
+
+5. **ZONDA: Zero-shot Object Navigation with Dynamic Avoidance in Multi-floor Environments** - arXiv:2607.21025
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 零样本导航, 多层规划, 动态行人避障, 多视角验证, VLM
+   - 机构: SUSTech, Direct Drive Tech, Great Bay University
+   - 文档: papers/2026-07-27_05_ZONDA_Zero_shot_Object_Navigation_with_Dynamic_Avo.md
