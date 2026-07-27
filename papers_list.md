@@ -2285,3 +2285,36 @@
    - 关键词: 零样本导航, 多层规划, 动态行人避障, 多视角验证, VLM
    - 机构: SUSTech, Direct Drive Tech, Great Bay University
    - 文档: papers/2026-07-27_05_ZONDA_Zero_shot_Object_Navigation_with_Dynamic_Avo.md
+
+## 2026-07-28 研究的论文（精选5篇）
+
+1. **ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation** - arXiv:2607.XXXXX
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: visuo-tactile, world model, robot manipulation, dream data, action-conditioned
+   - 机构: ShanghaiTech University, InstAdapt
+   - 文档: papers/2026-07-28_01_ViTacWorld_Visuo_Tactile_World_Models_Contact_Rich.md
+
+2. **3D-Aware VLMs with Implicit and Explicit Geometries (VLM-IE3D)** - arXiv:2607.21595
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLM, 3D awareness, implicit geometry, explicit geometry, RGB-only, ECCV 2026
+   - 会议: ECCV 2026
+   - 机构: NTU, Shanghai AI Lab
+   - 文档: papers/2026-07-28_02_3D_Aware_VLMs_Implicit_Explicit_Geometries.md
+
+3. **SiPhy: Single-Image Physical Property Reasoning** - arXiv:2607.22355
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: physical reasoning, single-image, material estimation, mass, stiffness, ECCV 2026
+   - 会议: ECCV 2026
+   - 文档: papers/2026-07-28_03_SiPhy_Single_Image_Physical_Property_Reasoning.md
+
+4. **MissionBench: Zero-Shot Mission-Level Evaluation for Aerial MLLM Agents** - arXiv:2607.22014
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: UAV, MLLM, aerial, benchmark, mission-level, embodied, zero-shot
+   - 机构: University of Amsterdam, University of Freiburg
+   - 文档: papers/2026-07-28_04_MissionBench_Zero_Shot_Aerial_MLLM_Agents.md
+
+5. **Robot-Factored World Models via Robot Rendering** - arXiv:2607.XXXXX
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: world model, robot rendering, factorization, video generation, cross-embodiment
+   - 机构: University of Maryland (Hanbyul Joo)
+   - 文档: papers/2026-07-28_05_Robot_Factored_World_Models_Robot_Rendering.md
