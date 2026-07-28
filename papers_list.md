@@ -2318,3 +2318,36 @@
    - 关键词: world model, robot rendering, factorization, video generation, cross-embodiment
    - 机构: University of Maryland (Hanbyul Joo)
    - 文档: papers/2026-07-28_05_Robot_Factored_World_Models_Robot_Rendering.md
+
+## 2026-07-29 研究的论文（精选5篇）
+
+1. **Data Pyramid for Embodied Manipulation** - arXiv:2607.24744v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: embodied data pyramid, data recipe, VLA, world-action model, tactile data, survey
+   - 机构: HKU, NTU, SJTU, CUHK, PKU
+   - 文档: papers/2026-07-29_01_Data_Pyramid_Embodied_Manipulation.md
+
+2. **DeVA: Decoupled Video-Action Model with Physical Guidance** - arXiv:2607.24159v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: video-action model, decoupled experts, affordance, depth, Cosmos-Predict2, robot policy
+   - 机构: UC Irvine, Georgia Tech
+   - 文档: papers/2026-07-29_02_DeVA_Decoupled_Video_Action_Model.md
+
+3. **N₀-TWAM: Scaling Tactile-Native World-Action Model** - arXiv:2607.23783v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: tactile world-action model, MoT, NeoForce, contact-rich manipulation, predict-then-act
+   - 机构: NeoteAI, Fudan TEAI
+   - 文档: papers/2026-07-29_03_N0_TWAM_Tactile_Native_World_Action_Model.md
+
+4. **Real2Sim2Real for VLA Manipulation: AMD ROCm Pipeline** - arXiv:2607.22997v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Real2Sim, 3DGS, Genesis, SmolVLA, ROCm, sim-to-real, Franka
+   - 机构: AMD AIG, BIT
+   - 会议: WAICA 2026
+   - 文档: papers/2026-07-29_04_Real2Sim2Real_VLA_AMD_ROCm.md
+
+5. **VoLN: Vision-Only Long-Horizon Navigation** - arXiv:2607.21400v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: vision-only navigation, long-horizon, UAV, benchmark, beacons, spatial reasoning
+   - 机构: Beihang University
+   - 文档: papers/2026-07-29_05_VoLN_Vision_Only_Long_Horizon_Navigation.md
