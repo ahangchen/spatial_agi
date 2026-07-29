@@ -2351,3 +2351,35 @@
    - 关键词: vision-only navigation, long-horizon, UAV, benchmark, beacons, spatial reasoning
    - 机构: Beihang University
    - 文档: papers/2026-07-29_05_VoLN_Vision_Only_Long_Horizon_Navigation.md
+
+## 2026-07-30 研究的论文（精选5篇）
+
+1. **SONG: A Photorealistic 3D Gaussian Simulation Platform for Benchmarking Social Navigation** - arXiv:2607.25219v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS, social navigation, LLM behavior, Kimodo motion, sim-to-real, benchmark
+   - 机构: Beijing Institute of Technology
+   - 文档: papers/2026-07-30_01_SONG_Photorealistic_3D_Gaussian_Social_Navigation.md
+
+2. **DC-WAM: Dynamic-Centric Visual Supervision and Reasoning for World-Action Models** - arXiv:2607.25918v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World-Action Model, dynamic-centric, DynaRoute, OOD robustness, flow matching
+   - 机构: 多机构合作
+   - 文档: papers/2026-07-30_02_DC_WAM_Dynamic_Centric_World_Action_Models.md
+
+3. **WorldDiT: A Unified Diffusion Architecture for World and Action Modeling** - arXiv:2607.23909v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: unified DiT, diffusion policy, world modeling, RGB patch prediction, sub-billion
+   - 机构: Bagel AI
+   - 文档: papers/2026-07-30_03_WorldDiT_Unified_Diffusion_World_Action_Modeling.md
+
+4. **Spatial-IQ: Deconstructing Spatial Intelligence via Hierarchical Capability Tests** - arXiv:2607.?????
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: spatial intelligence, hierarchical evaluation, MLLM, diagnostic benchmark, perception-cognition-reasoning
+   - 机构: 多机构合作
+   - 文档: papers/2026-07-30_04_SpatialIQ_Deconstructing_Spatial_Intelligence_Hierarchical.md
+
+5. **SAM3D-Guided Object-Centric Representation Alignment for VLA Models** - arXiv:2607.?????
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: SAM3D, object-centric, 3D representation, VLA, π₀, occlusion, pose variation
+   - 机构: 多机构合作
+   - 文档: papers/2026-07-30_05_SAM3D_Guided_Object_Centric_VLA_Alignment.md
