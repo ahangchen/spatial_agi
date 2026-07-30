@@ -2383,3 +2383,35 @@
    - 关键词: SAM3D, object-centric, 3D representation, VLA, π₀, occlusion, pose variation
    - 机构: 多机构合作
    - 文档: papers/2026-07-30_05_SAM3D_Guided_Object_Centric_VLA_Alignment.md
+
+## 2026-07-31 研究的论文（精选5篇）
+
+1. **SpatialQ: Understanding 3D Gaussian Splatting Scene Quality via Visual-based MLLM** - arXiv:2607.26595v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS quality assessment, MLLM reasoning, VGGT, depth+point cloud, degradation diagnosis
+   - 机构: 北京大学, 鹏城实验室, 福州大学
+   - 文档: papers/2026-07-31_01_SpatialQ_3DGS_Quality_MLLM.md
+
+2. **TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with <1 GB VRAM** - arXiv:2607.27205v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, V+L→A, Grounding DINO, non-autoregressive, real-time, 0.2B params
+   - 机构: 华中科技大学, 华为
+   - 文档: papers/2026-07-31_02_TurboVLA_Real_Time_VLA.md
+
+3. **ByDeWay-V2: Explainable and Resource-Efficient Spatial Reasoning in MLLMs** - arXiv:2607.27145v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: spatial reasoning, MLLM, YOLO-World, geometric predicates, depth layering, auditable
+   - 机构: Heritage Institute of Technology, IAIRO, Intel
+   - 文档: papers/2026-07-31_03_ByDeWay_V2_Explainable_Spatial_Reasoning.md
+
+4. **Genie Sim PanoWorld: Infinite Indoor 3D World Generation via Panoramic Scene Modeling** - arXiv:2607.26646v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: panorama-to-3DGS, NavMesh trajectory, video diffusion, PanoVGGT, embodied AI simulation
+   - 机构: 字节跳动
+   - 文档: papers/2026-07-31_04_Genie_Sim_PanoWorld_Infinite_3D_World.md
+
+5. **Pegasus: From Passive Video to Editable Experience for Embodied Intelligence** - arXiv:2607.26903v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: cross-embodiment transfer, task graph, affordance latent, physics verification, human video
+   - 机构: 未明确
+   - 文档: papers/2026-07-31_05_Pegasus_Passive_Video_to_Editable_Experience.md
