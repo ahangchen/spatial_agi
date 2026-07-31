@@ -2415,3 +2415,37 @@
    - 关键词: cross-embodiment transfer, task graph, affordance latent, physics verification, human video
    - 机构: 未明确
    - 文档: papers/2026-07-31_05_Pegasus_Passive_Video_to_Editable_Experience.md
+
+---
+
+## 2026-08-01 研究的论文（精选5篇）
+
+1. **ODEWorld: A Continuous Predictive Architecture via Physical-Time Flow** - arXiv:2607.27924
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: continuous-time world model, ODE, PT-Flow, JVP supervision, representation collapse, backward prediction
+   - 机构: Tsinghua AIR, UC Berkeley BAIR
+   - 文档: papers/2026-08-01_01_ODEWorld_Continuous_Predictive_Physical_Time_Flow.md
+
+2. **World Action Planner: Generalizable Decision-Making with Action-Conditioned World Models** - arXiv:2607.27599
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: model-based planning, pose-image conditioning, VLM agent, imagination-evaluation loop, policy-as-tool
+   - 机构: Harvard University (Yilun Du)
+   - 文档: papers/2026-08-01_02_WAP_World_Action_Planner_Generalizable_Decision.md
+
+3. **SeeSE3: Emergence of 3D Space in Vision Features** - arXiv:2607.14228
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: SE(3) emergence, Poincaré adapter, latent space navigation, visual grid code, self-supervised
+   - 机构: Google DeepMind
+   - 文档: papers/2026-08-01_03_SeeSE3_Emergence_3D_Space_Vision_Features.md
+
+4. **ContactFlow: A Video Action Conditioning That Transfers Across Embodiments** - arXiv:2607.26579
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: contact flow, cross-embodiment transfer, embodiment-agnostic, video world model, propose-imagine-verify-act
+   - 机构: University of Bonn, Lamarr Institute
+   - 文档: papers/2026-08-01_04_ContactFlow_Video_Action_Conditioning_Cross_Embodiment.md
+
+5. **What Can Latent World Models Know? Physical Parameter Identifiability in Multimodal Predictive Representations** - arXiv:2607.27017
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: identifiability map, PokeWorld, certificate-gated protocol, lazy equilibrium, SIGReg, physical parameters
+   - 机构: NYU, CMU, Columbia University
+   - 文档: papers/2026-08-01_05_Latent_WM_Physical_Parameter_Identifiability.md
