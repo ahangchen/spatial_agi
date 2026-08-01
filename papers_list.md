@@ -2449,3 +2449,35 @@
    - 关键词: identifiability map, PokeWorld, certificate-gated protocol, lazy equilibrium, SIGReg, physical parameters
    - 机构: NYU, CMU, Columbia University
    - 文档: papers/2026-08-01_05_Latent_WM_Physical_Parameter_Identifiability.md
+
+## 2026-08-02 研究的论文（精选5篇）
+
+1. **QuantWAMs: Calibrating at the Right Granularity for World Action Models** - arXiv:2607.28405
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: World Action Models, post-training quantization, shared-basis calibration, co-training saliency, rollout auditing, W4A4
+   - 机构: (未明确)
+   - 文档: papers/2026-08-02_01_QuantWAMs_Calibrating_World_Action_Models.md
+
+2. **ViewMind3D: Modular View-Aware Inference for Training-Free 3D-QA** - arXiv:2607.28442
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: training-free 3D-QA, BEV viewpoint indicator, modular orchestration, multi-view selection, role-based reasoning
+   - 机构: UT Arlington, NCKU
+   - 文档: papers/2026-08-02_02_ViewMind3D_Modular_View_Aware_3D_QA.md
+
+3. **CG-World: A Large-Scale World-State Dataset and Protocol for World Models** - arXiv:2607.26xxx
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: world-state dataset, evaluation protocol, hierarchical representation, diagnostic evaluation, world models
+   - 机构: (未明确)
+   - 文档: papers/2026-08-02_03_CGWorld_Large_Scale_World_State_Dataset.md
+
+4. **Enfold: Folding World-Generator Computation into Predictive Representations for Efficient Embodied Control** - arXiv:2607.26657
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: computation folding, predictive representation, world generator distillation, multi-level states, gradient isolation, embodied control
+   - 机构: (未明确)
+   - 文档: papers/2026-08-02_04_Enfold_Folding_World_Generator_Predictive.md
+
+5. **GeoAnchor: Collaborative Reasoning via Latent Decomposition for 3D Spatial Understanding** - arXiv:2607.13454
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: orthogonal latent decomposition, position/direction/geometry latents, interleaved text-latent reasoning, collaborative training, ACM MM 2026
+   - 机构: (未明确)
+   - 文档: papers/2026-08-02_05_GeoAnchor_Collaborative_Reasoning_3D_Spatial.md
