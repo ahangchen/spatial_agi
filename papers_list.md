@@ -2481,3 +2481,35 @@
    - 关键词: orthogonal latent decomposition, position/direction/geometry latents, interleaved text-latent reasoning, collaborative training, ACM MM 2026
    - 机构: (未明确)
    - 文档: papers/2026-08-02_05_GeoAnchor_Collaborative_Reasoning_3D_Spatial.md
+
+## 2026-08-03 研究的论文（精选5篇）
+
+1. **ACE-Data-0: Human-Centric Ambient Capture as Embodied Data Engine** - arXiv:2607.28625
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: embodied data engine, multi-modal synchronization, hand-object interaction, tactile sensing, home-scene HOI dataset
+   - 机构: S-Lab NTU, ACE Robotics
+   - 文档: papers/2026-08-03_01_ACE_Data_0_Human_Centric_Ambient_Capture_Embodied.md
+
+2. **EgoGenesis: Egocentric World-Action Modeling with Online Anchored Projective Memory and Action-3D RoPE** - arXiv:2607.28243
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: egocentric video generation, OAPM, A3D-RoPE, world-action simulator, data augmentation, multi-embodiment
+   - 机构: SJTU, Alibaba Group, HKUST
+   - 文档: papers/2026-08-03_02_EgoGenesis_Egocentric_World_Action_Modeling_OAPM_A3D.md
+
+3. **Hand-Object Interaction in the Age of Large Foundation Models: Reconstruction, Generation, and Embodied Transfer** - arXiv:2607.28394
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: HOI survey, foundation-model priors, geometric/semantic/visual priors, injection mechanisms, embodied transfer
+   - 机构: 多家机构
+   - 文档: papers/2026-08-03_03_HOI_Foundation_Models_Reconstruction_Generation_Embodied.md
+
+4. **AdaAnchor4D: Anchor-Conditioned Spatiotemporal Feature Aggregation for Monocular UAV 4D Reconstruction** - arXiv:2607.28320
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: UAV 4D reconstruction, dynamic Gaussian splatting, anchor-conditioned aggregation, decoupled deformation, density-adaptive coordinate warping
+   - 机构: Xidian University, Sun Yat-sen University
+   - 文档: papers/2026-08-03_04_AdaAnchor4D_Anchor_Conditioned_Spatiotemporal_UAV_4D.md
+
+5. **Self-Evolving Learning for Embodied AI with Criticality Model** - arXiv:2607.28251
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: self-evolving training, criticality model, importance sampling, failure prediction, policy routing, information density
+   - 机构: 多家机构
+   - 文档: papers/2026-08-03_05_Self_Evolving_Learning_Embodied_AI_Criticality.md
