@@ -1,0 +1,413 @@
+{
+  "search_date": "2026-08-04",
+  "total_papers": 50,
+  "search_queries": [
+    "gaussian splatting",
+    "world model robot",
+    "embodied AI VLM",
+    "spatial intelligence 3D",
+    "VLM 3D understanding"
+  ],
+  "papers": [
+    {
+      "title": "World Action Planner: Generalizable Decision-Making with Action-Conditioned World Models",
+      "category": "WorldModel",
+      "published": "2026-07-29",
+      "relevance": "Action-conditioned world models for generalizable planning (Yilun Du)",
+      "score": 14,
+      "note": "Generalizable planning with world models"
+    },
+    {
+      "title": "Spatial-IQ: Deconstructing Spatial Intelligence via Hierarchical Capability Tests",
+      "category": "SpatialIntelligence",
+      "published": "2026-07-24",
+      "relevance": "Hierarchical decomposition of spatial intelligence capabilities",
+      "score": 14,
+      "note": "Deconstructing spatial intelligence"
+    },
+    {
+      "title": "WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning",
+      "category": "VLA/WorldModel",
+      "published": "2026-07-31",
+      "relevance": "World critic model for VLA RL post-training",
+      "score": 13,
+      "note": "World critic for VLA RL"
+    },
+    {
+      "title": "ODEWorld: A Continuous Predictive Architecture via Physical-Time Flow",
+      "category": "WorldModel",
+      "published": "2026-07-30",
+      "relevance": "Continuous-time world model via ODE flow - fundamental architecture",
+      "score": 13,
+      "note": "ODE-based continuous world model"
+    },
+    {
+      "title": "3D-Aware VLMs with Implicit and Explicit Geometries",
+      "category": "VLM/3D",
+      "published": "2026-07-23",
+      "relevance": "3D-aware VLM combining implicit and explicit geometry",
+      "score": 13,
+      "note": "3D-aware VLM design"
+    },
+    {
+      "title": "SeeSE3: Emergence of 3D Space in Vision Features",
+      "category": "3D/VLM",
+      "published": "2026-07-15",
+      "relevance": "3D Euclidean structure in vision foundation model features (Guibas)",
+      "score": 13,
+      "note": "3D space emergence in vision features"
+    },
+    {
+      "title": "SONG: A Photorealistic 3D Gaussian Simulation Platform for Benchmarking Social Navigation",
+      "category": "3DGS/Embodied",
+      "published": "2026-07-27",
+      "relevance": "3DGS social navigation simulator - directly relevant to Spatial AGI",
+      "score": 12,
+      "note": "3DGS-powered social navigation benchmark"
+    },
+    {
+      "title": "BWM: A Low-Cost High-Fidelity World Simulator for Robot Learning",
+      "category": "WorldModel",
+      "published": "2026-07-31",
+      "relevance": "Low-cost high-fidelity world simulator",
+      "score": 12,
+      "note": "Practical world simulator"
+    },
+    {
+      "title": "Enfold: Folding World-Generator Computation into Predictive Representations for Efficient Embodied Control",
+      "category": "WorldModel",
+      "published": "2026-07-29",
+      "relevance": "Efficient embodied control via folded world generator",
+      "score": 12,
+      "note": "Efficient world generator embedding"
+    },
+    {
+      "title": "SiPhy: Single-Image Physical Property Reasoning",
+      "category": "VLM/Physics",
+      "published": "2026-07-24",
+      "relevance": "Physical property reasoning from single image - embodied relevant",
+      "score": 12,
+      "note": "Single-image physics reasoning"
+    },
+    {
+      "title": "SAM3D-Guided Object-Centric Representation Alignment for Vision-Language-Action Models",
+      "category": "VLA/3D",
+      "published": "2026-07-28",
+      "relevance": "3D object-centric alignment for VLA - SAM3D guided",
+      "score": 12,
+      "note": "SAM3D-guided VLA"
+    },
+    {
+      "title": "Beyond Episodic Evaluation: Memory Architectural Bottlenecks in Sequential Embodied Question Answering",
+      "category": "Embodied/Memory",
+      "published": "2026-07-23",
+      "relevance": "Memory architecture for sequential embodied QA - spatial memory",
+      "score": 12,
+      "note": "Structured spatial memory for EmbodiedQA"
+    },
+    {
+      "title": "Real2Sim2Real for Vision-Language-Action Manipulation: An AMD ROCm-Based Pipeline",
+      "category": "VLA/3DGS",
+      "published": "2026-07-24",
+      "relevance": "3DGS+Genesis for VLA training - Real2Sim2Real pipeline",
+      "score": 11,
+      "note": "3DGS+physics engine for VLA"
+    },
+    {
+      "title": "ST-WAM: Semantic-Temporal World Action Model for Robust Manipulation under Visual Distribution Shifts",
+      "category": "WorldModel/VLA",
+      "published": "2026-07-30",
+      "relevance": "World action model robust to visual shifts",
+      "score": 11,
+      "note": "Robust WAM under distribution shift"
+    },
+    {
+      "title": "What Can Latent World Models Know? Physical Parameter Identifiability in Multimodal Predictive Representations",
+      "category": "WorldModel",
+      "published": "2026-07-29",
+      "relevance": "What physical parameters can latent world models recover?",
+      "score": 11,
+      "note": "Physical identifiability in world models"
+    },
+    {
+      "title": "ViewMind3D: Modular View-Aware Inference for Training-Free 3D-QA",
+      "category": "VLM/3D",
+      "published": "2026-07-30",
+      "relevance": "Training-free 3D-QA with view-aware inference",
+      "score": 11,
+      "note": "Training-free 3D-QA"
+    },
+    {
+      "title": "Zero-Shot Mission-Level Evaluation for Aerial MLLM Agents (MissionBench)",
+      "category": "VLM/UAV",
+      "published": "2026-07-24",
+      "relevance": "Aerial MLLM agents mission-level benchmark",
+      "score": 11,
+      "note": "Aerial MLLM benchmark"
+    },
+    {
+      "title": "GeoAnchor: Collaborative Reasoning via Latent Decomposition for 3D Spatial Understanding",
+      "category": "VLM/3D",
+      "published": "2026-07-15",
+      "relevance": "3D spatial understanding via latent decomposition",
+      "score": 11,
+      "note": "Latent decomposition for 3D understanding"
+    },
+    {
+      "title": "SpaceEra++: A Unified Framework Towards 3D Spatial Reasoning in Video",
+      "category": "VLM/3D",
+      "published": "2026-07-02",
+      "relevance": "3D spatial reasoning in video - unified framework",
+      "score": 11,
+      "note": "Video 3D spatial reasoning"
+    },
+    {
+      "title": "AeroVerse-SatAgent: UAV-Satellite Collaborative Spatial Reasoning Inspired by the Dual Visual Pathway Theory",
+      "category": "VLM/UAV",
+      "published": "2026-06-30",
+      "relevance": "UAV-satellite collaborative spatial reasoning - cognitive neuroscience inspired",
+      "score": 11,
+      "note": "UAV-satellite spatial reasoning"
+    },
+    {
+      "title": "SpatialQ: Understanding 3D Gaussian Splatting Scene Quality via Visual-based MLLM",
+      "category": "3DGS/VLM",
+      "published": "2026-07-29",
+      "relevance": "MLLM for 3DGS quality assessment - bridges VLM and 3DGS",
+      "score": 10,
+      "note": "VLM evaluates 3DGS scenes"
+    },
+    {
+      "title": "GLAM-SLAM: Real-time Gaussian Large-scale Mapping via Flow Densification and Spatial Decomposition",
+      "category": "3DGS/SLAM",
+      "published": "2026-07-23",
+      "relevance": "Large-scale 3DGS SLAM with spatial decomposition",
+      "score": 10,
+      "note": "Real-time large-scale 3DGS SLAM"
+    },
+    {
+      "title": "ContactFlow: A video action conditioning that transfers across embodiments",
+      "category": "WorldModel",
+      "published": "2026-07-29",
+      "relevance": "Cross-embodiment video action conditioning",
+      "score": 10,
+      "note": "Cross-embodiment action transfer"
+    },
+    {
+      "title": "HAM-VLN: Harnessing Hierarchical Agentic Memory for Zero-Shot Vision-and-Language Navigation",
+      "category": "VLN",
+      "published": "2026-07-31",
+      "relevance": "Hierarchical memory for zero-shot VLN",
+      "score": 10,
+      "note": "Hierarchical memory VLN"
+    },
+    {
+      "title": "HAT-4D: Lifting Monocular Video for 4D Multi-Object Interactions via Human-Agent Collaboration",
+      "category": "Embodied/4D",
+      "published": "2026-06-26",
+      "relevance": "4D interaction understanding from monocular video for embodied AI",
+      "score": 10,
+      "note": "4D multi-object interactions"
+    },
+    {
+      "title": "IGGT4D: Streaming 4D Instance-Grounded Geometry Transformer",
+      "category": "3D/Geometry",
+      "published": "2026-07-21",
+      "relevance": "Streaming 4D geometry transformer - real-time spatial understanding",
+      "score": 10,
+      "note": "Streaming 4D geometry"
+    },
+    {
+      "title": "MultiView-Bench: A Diagnostic Benchmark for World-Centric Multi-View Integration in VLMs",
+      "category": "VLM/3D",
+      "published": "2026-07-15",
+      "relevance": "Multi-view integration benchmark for VLMs",
+      "score": 10,
+      "note": "Multi-view VLM benchmark"
+    },
+    {
+      "title": "SoftNav: Injecting 3D Scene Tokens into VLMs for Embodied Navigation",
+      "category": "VLM/Navigation",
+      "published": "2026-07-16",
+      "relevance": "3D scene tokens for embodied navigation",
+      "score": 10,
+      "note": "3D tokens for VLM navigation"
+    },
+    {
+      "title": "IDEAL-Bench: Indoor Dataset and Evaluation suite for Analyzing 3D Layout reasoning",
+      "category": "VLM/3D",
+      "published": "2026-07-03",
+      "relevance": "3D layout reasoning evaluation for VLMs",
+      "score": 10,
+      "note": "3D layout reasoning benchmark"
+    },
+    {
+      "title": "StructureGS: Structure-aware Gaussian Splatting for Articulated Object Reconstruction",
+      "category": "3DGS",
+      "published": "2026-07-29",
+      "relevance": "Structure-aware 3DGS for articulated objects - relevant to embodied",
+      "score": 9,
+      "note": "Articulated object 3DGS reconstruction"
+    },
+    {
+      "title": "TacWAM: Anchor-Guided World Action Model with Mechanics-Aware Tactile Prediction",
+      "category": "WorldModel",
+      "published": "2026-07-30",
+      "relevance": "Tactile-aware world action model",
+      "score": 9,
+      "note": "Tactile WAM"
+    },
+    {
+      "title": "Drones2BodyLanguage: Learning to Understand Body Language from Flight through Robust 3D Avatar Placing",
+      "category": "Embodied/UAV",
+      "published": "2026-07-30",
+      "relevance": "UAV understanding human motion - spatial intelligence for drones",
+      "score": 9,
+      "note": "UAV body language understanding"
+    },
+    {
+      "title": "VoLN: Vision-Only Long-Horizon Navigation---Paradigm, Benchmark, and Method",
+      "category": "VLN",
+      "published": "2026-07-23",
+      "relevance": "Vision-only long-horizon navigation without language",
+      "score": 9,
+      "note": "Vision-only navigation paradigm"
+    },
+    {
+      "title": "ZeroSplat: Generalized Referring Segmentation in 3D Gaussian Splatting",
+      "category": "3DGS/VLM",
+      "published": "2026-07-21",
+      "relevance": "Language-guided 3DGS segmentation",
+      "score": 9,
+      "note": "Language 3DGS segmentation"
+    },
+    {
+      "title": "Explainable and Resource-Efficient Spatial Reasoning in Multimodal LLMs for Decision-Critical Applications",
+      "category": "VLM/Spatial",
+      "published": "2026-07-29",
+      "relevance": "Resource-efficient spatial reasoning for critical decisions",
+      "score": 9,
+      "note": "Efficient spatial reasoning MLLM"
+    },
+    {
+      "title": "RoboBRIDGE: A Modular Framework for Bridging Policies to Robust Real-World Robotic Agents",
+      "category": "VLA",
+      "published": "2026-07-30",
+      "relevance": "Bridging VLA policies to real-world robustness",
+      "score": 9,
+      "note": "VLA real-world deployment"
+    },
+    {
+      "title": "FillGS: Filling Observation Gaps in 4D Gaussian Splatting via Viewpoint-Time Selection and Generative Refinement",
+      "category": "3DGS",
+      "published": "2026-07-31",
+      "relevance": "4DGS gap filling with generative refinement",
+      "score": 8,
+      "note": "Generative refinement for 4DGS"
+    },
+    {
+      "title": "4DHumanDiff: Direct Text-to-4DGS Generation for Consistent 360-Degree Dynamic Humans",
+      "category": "3DGS/Generation",
+      "published": "2026-07-29",
+      "relevance": "Text-to-4DGS generation",
+      "score": 8,
+      "note": "Text-to-4DGS human generation"
+    },
+    {
+      "title": "QuantWAMs: Calibrating at the Right Granularity for World Action Models",
+      "category": "WorldModel",
+      "published": "2026-07-30",
+      "relevance": "Quantization of world action models for efficiency",
+      "score": 8,
+      "note": "Quantized WAMs"
+    },
+    {
+      "title": "FBFM: A Training-Free Asynchronous Feedback Mechanism for Flow-Matching in World-Action Models Execution",
+      "category": "WorldModel",
+      "published": "2026-07-31",
+      "relevance": "Async feedback for flow-matching WAMs",
+      "score": 8,
+      "note": "Training-free WAM feedback"
+    },
+    {
+      "title": "DLAM: Distributional Latent Actions with Temporal Constraints",
+      "category": "VLA",
+      "published": "2026-07-29",
+      "relevance": "Distributional latent actions for VLA",
+      "score": 8,
+      "note": "Latent action distributions"
+    },
+    {
+      "title": "Action Map Policy: Learning 3D Closed-loop Manipulation via Pixel Classification",
+      "category": "VLA/3D",
+      "published": "2026-07-12",
+      "relevance": "3D manipulation as pixel classification",
+      "score": 8,
+      "note": "3D manipulation via classification"
+    },
+    {
+      "title": "FocusGS: Spatial Delta Layers for Local Repair and Deterministic Editing of Trained 3D Gaussian Assets",
+      "category": "3DGS",
+      "published": "2026-07-30",
+      "relevance": "Spatial editing of 3DGS assets",
+      "score": 7,
+      "note": "Deterministic spatial editing"
+    },
+    {
+      "title": "CORF-GS: Real-Time Wireless Radiance Field Reconstruction via Coupled Optical-RF Gaussian Splatting",
+      "category": "3DGS",
+      "published": "2026-07-28",
+      "relevance": "Multi-modal 3DGS (optical+RF)",
+      "score": 7,
+      "note": "RF+optical 3DGS"
+    },
+    {
+      "title": "Inter-Reflective Gaussian Splatting for Robust and Efficient Inverse Rendering",
+      "category": "3DGS",
+      "published": "2026-07-24",
+      "relevance": "IRGS++ inverse rendering with inter-reflection",
+      "score": 7,
+      "note": "Inverse rendering 3DGS"
+    },
+    {
+      "title": "Deformable Triangle Splatting: Flexible Primitives for Real-Time Radiance Field Rendering",
+      "category": "3DGS",
+      "published": "2026-07-24",
+      "relevance": "Beyond Gaussians - deformable triangle primitives",
+      "score": 7,
+      "note": "Deformable triangle splatting"
+    },
+    {
+      "title": "OASIS: Occlusion-aware Single-image Hand Avatar Reconstruction via 3D Gaussian Splatting",
+      "category": "3DGS",
+      "published": "2026-07-31",
+      "relevance": "3DGS representation for hand avatars",
+      "score": 6,
+      "note": "Occlusion-aware 3DGS hand avatar"
+    },
+    {
+      "title": "SubSplat: High-Resolution Pixel-aligned 3DGS via Sub-pixel Gaussian Reparameterization",
+      "category": "3DGS",
+      "published": "2026-07-23",
+      "relevance": "High-resolution 3DGS",
+      "score": 6,
+      "note": "Pixel-aligned 3DGS"
+    },
+    {
+      "title": "TOM-GS: Editable Video Representation via Temporal Opacity Modulation of Static 3D Gaussians",
+      "category": "3DGS",
+      "published": "2026-07-21",
+      "relevance": "Editable video 3DGS",
+      "score": 6,
+      "note": "Temporal opacity editing"
+    },
+    {
+      "title": "GenSplatCodec: Feed-Forward Gaussian Splatting Compression via One-Step Diffusion",
+      "category": "3DGS",
+      "published": "2026-07-27",
+      "relevance": "Feed-forward 3DGS compression",
+      "score": 6,
+      "note": "Diffusion-based 3DGS compression"
+    }
+  ]
+}

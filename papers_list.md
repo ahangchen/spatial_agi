@@ -2513,3 +2513,35 @@
    - 关键词: self-evolving training, criticality model, importance sampling, failure prediction, policy routing, information density
    - 机构: 多家机构
    - 文档: papers/2026-08-03_05_Self_Evolving_Learning_Embodied_AI_Criticality.md
+
+## 2026-08-04 研究的论文（精选5篇）
+
+1. **WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning** - arXiv:2607.29613
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Critic Model, VLA-RL, LeJEPA, POMDP, value estimation, world modeling, Pi0/OpenVLA-OFT
+   - 机构: 同济大学, 上海创新研究院, 复旦大学
+   - 文档: papers/2026-08-04_01_WCM_World_Critic_Model_VLA_RL.md
+
+2. **Spatial-IQ: Deconstructing Spatial Intelligence via Hierarchical Capability Tests** - arXiv:2607.2XXXX
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: spatial intelligence, hierarchical capability tests, perception-cognition separation, synthetic evaluation, MLLM diagnosis
+   - 机构: MIT, NYU
+   - 文档: papers/2026-08-04_02_Spatial_IQ_Deconstructing_Spatial_Intelligence.md
+
+3. **3D-Aware VLMs with Implicit and Explicit Geometries** - arXiv:2607.2XXXX
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D-aware VLM, implicit geometry, explicit geometry, depth understanding, multi-modal fusion
+   - 机构: NTU, Sea AI Lab
+   - 文档: papers/2026-08-04_03_3D_Aware_VLMs_Implicit_Explicit_Geometries.md
+
+4. **SONG: A Photorealistic 3D Gaussian Simulation Platform for Benchmarking Social Navigation** - arXiv:2607.2XXXX
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS simulation, social navigation, pedestrian avatars, semantic trajectories, embodied AI infrastructure
+   - 机构: 北京交通大学
+   - 文档: papers/2026-08-04_04_SONG_3DGS_Social_Navigation_Platform.md
+
+5. **BWM: A Low-Cost High-Fidelity World Simulator for Robot Learning** - arXiv:2607.2XXXX
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: world simulator, low-cost, high-fidelity, robot learning, functional fidelity, hybrid rendering
+   - 机构: 待确认
+   - 文档: papers/2026-08-04_05_BWM_Low_Cost_World_Simulator_Robot_Learning.md
