@@ -2545,3 +2545,35 @@
    - 关键词: world simulator, low-cost, high-fidelity, robot learning, functional fidelity, hybrid rendering
    - 机构: 待确认
    - 文档: papers/2026-08-04_05_BWM_Low_Cost_World_Simulator_Robot_Learning.md
+
+## 2026-08-05 研究的论文（精选5篇）
+
+1. **SpatioLM: Towards General Physical Spatial Intelligence in Vision-Language Models** - arXiv:2608.01899
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: spatial intelligence, VLM, plug-and-play module, pseudo depth supervision, VSI-Bench, non-invasive, frozen backbone
+   - 机构: Xiaomi Research
+   - 文档: papers/2026-08-05_01_SpatioLM_Physical_Spatial_Intelligence_VLM.md
+
+2. **SelfWAM: A Self-Grounded Unified World Action Model for Fast Robot Control** - arXiv:2608.00725
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Action Model, self-grounded, clean-action conditioning, robot self-mask prediction, Mixture-of-Transformers, action-conditioned future
+   - 机构: 上海交通大学
+   - 文档: papers/2026-08-05_02_SelfWAM_Self_Grounded_World_Action_Model.md
+
+3. **Faster-WAM: Do World Action Models Need Deep Action Modules?** - arXiv:2608.02365
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: WAM, DoT, single-layer action head, docking interface, RoPE realignment, 66.5ms inference, OOD generalization
+   - 机构: McMaster University
+   - 文档: papers/2026-08-05_03_Faster_WAM_Deep_Action_Modules.md
+
+4. **DF³: World Modeling via Decoder-Free Feature Forecasting in Autonomous Navigation** - arXiv:2608.02428
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: decoder-free, feature forecasting, world modeling, MACF, optical flow, spatial queries, autonomous navigation
+   - 机构: Imperial College London
+   - 文档: papers/2026-08-05_04_DF3_Decoder_Free_Feature_Forecasting.md
+
+5. **OC-VLA++: Monocular Geometry-Guided Cross-View Consistency for Viewpoint-Robust Robotic Manipulation** - arXiv:2608.01066
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, cross-view equivariance, geometry-guided supervision, viewpoint generalization, camera coordinate grounding, paired-view training
+   - 机构: Sydney University
+   - 文档: papers/2026-08-05_05_OC_VLA_pp_Cross_View_Consistency.md
