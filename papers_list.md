@@ -2577,3 +2577,35 @@
    - 关键词: VLA, cross-view equivariance, geometry-guided supervision, viewpoint generalization, camera coordinate grounding, paired-view training
    - 机构: Sydney University
    - 文档: papers/2026-08-05_05_OC_VLA_pp_Cross_View_Consistency.md
+
+## 2026-08-07 研究的论文（精选5篇）
+
+1. **DerainSplat: Feed-Forward Clean 3D Gaussian Splatting from Sparse Rainy Views** - arXiv:2608.02191v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS, Weather Robustness, Feed-Forward, Deraining, Spatial Intelligence
+   - 文档: papers/2026-08-07_01_DerainSplat_Clean_3DGS_Rainy_Views.md
+   - 核心贡献: 首个前馈雨雾→干净3DGS重建框架，四阶段物理引导合成管线
+
+2. **RORA: Realistic Object Reconstruction with Articulation** - arXiv:2608.04842v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS, Object Articulation, Sim-to-Real, Robot Learning, Mixed Representation
+   - 文档: papers/2026-08-07_02_RORA_Realistic_Object_Reconstruction_Articulation.md
+   - 核心贡献: 单次静态扫描推断关节轴，3DGS+Mesh+URDF混合表示导出
+
+3. **AtVLA: Look Where It Matters - Adaptive Visual Refinement for VLA Models** - arXiv:2608.02197v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, Attention Artifacts, Register Token, Uncertainty, Adaptive Cropping
+   - 文档: papers/2026-08-07_03_AtVLA_Adaptive_Visual_Refinement_VLA.md
+   - 核心贡献: 揭示VLA注意力伪影与空间感知关联，Register+不确定性门控裁剪
+
+4. **DecoupleGS: Interactive 3D Gaussian Splatting for E2E Autonomous Driving Testing** - arXiv:2608.01761v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3DGS, Autonomous Driving, Closed-Loop Simulation, Scene Decomposition
+   - 文档: papers/2026-08-07_04_DecoupleGS_Interactive_3DGS_Autonomous_Driving.md
+   - 核心贡献: 解耦3DGS框架解决闭环仿真的效率/几何/光度三大冲突
+
+5. **MobileWAM: Bridging World Action Models to Mobile Manipulation with Chain-of-Foresight** - arXiv:2608.04657v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Action Model, Mobile Manipulation, MoE, Chain-of-Foresight, Video Diffusion
+   - 文档: papers/2026-08-07_05_MobileWAM_World_Action_Model_Mobile_Manipulation.md
+   - 核心贡献: 首个移动操作WAM，Mobile MoE+CoF实现训练密集监督推理零成本
