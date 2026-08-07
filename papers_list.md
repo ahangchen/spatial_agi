@@ -2609,3 +2609,37 @@
    - 关键词: World Action Model, Mobile Manipulation, MoE, Chain-of-Foresight, Video Diffusion
    - 文档: papers/2026-08-07_05_MobileWAM_World_Action_Model_Mobile_Manipulation.md
    - 核心贡献: 首个移动操作WAM，Mobile MoE+CoF实现训练密集监督推理零成本
+
+---
+
+## 2026-08-08 研究的论文（精选5篇）
+
+1. **LAWM-3D: Learning 3D-Aware Latent Actions from Human Videos for Generalizable Robot World Models** - arXiv:2608.05706
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Latent Action Model, 3D-Aware, Multi-View, Geometric Alignment, World Model
+   - 文档: papers/2026-08-08_01_LAWM-3D_3D_Aware_Latent_Actions_Human_Videos_World_Models.md
+   - 核心贡献: 揭示多视角LAM失败模式，三重设计（统一标记化+几何对齐+非单射重建）实现3D感知潜在动作
+
+2. **ω-0 (WA-0): A Latent Predictive World Action Model for Concurrent Humanoid Loco-Manipulation** - arXiv:2608.06375
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Action Model, Humanoid, Loco-Manipulation, Latent Prediction, Diffusion
+   - 文档: papers/2026-08-08_02_WA-0_Latent_Predictive_World_Action_Humanoid_LocoManipulation.md
+   - 核心贡献: 首个全身协调WAM，潜在预测代替视频重建，40h+ ω-HOME数据集
+
+3. **XEWorld: Can Action-Conditioned World Models Generalize to Unseen Robot Embodiments?** - arXiv:2608.05799
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Cross-Embodiment, World Model Evaluation, Diagnostic Benchmark, Visual Pattern Matching
+   - 文档: papers/2026-08-08_03_XEWorld_Action_Conditioned_World_Models_Unseen_Embodiments.md
+   - 核心贡献: 揭示当前世界模型本质是2D视觉模式匹配器，跨形态泛化需要架构创新解耦外观与物理
+
+4. **GeniWorld: A Generalizable Interactive World Model for Robotic Manipulation via Visual Actions** - arXiv:2608.06332
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Interactive World Model, Visual Actions, URDF Rendering, Zero-Shot Generalization
+   - 文档: papers/2026-08-08_04_GeniWorld_Generalizable_Interactive_World_Model_Visual_Actions.md
+   - 核心贡献: URDF视觉动作渲染+机器人-环境解耦，零样本OOD泛化到随机场景
+
+5. **Hunyuan3D-Buffalo 1.0: A Unified Multimodal Model for Scalable 3D Generation, Understanding, and Editing** - Tencent
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3D Unified Model, VLM, DiT, Text-to-3D, Part Generation
+   - 文档: papers/2026-08-08_05_Hunyuan3D-Buffalo_Unified_3D_Generation_Understanding_Editing.md
+   - 核心贡献: 首个工业级3D统一模型（理解+生成+编辑+部件分解），VLM+DiT双模块架构
