@@ -2643,3 +2643,37 @@
    - 关键词: 3D Unified Model, VLM, DiT, Text-to-3D, Part Generation
    - 文档: papers/2026-08-08_05_Hunyuan3D-Buffalo_Unified_3D_Generation_Understanding_Editing.md
    - 核心贡献: 首个工业级3D统一模型（理解+生成+编辑+部件分解），VLM+DiT双模块架构
+
+---
+
+## 2026-08-09 研究的论文（精选5篇）
+
+1. **GeniWorld: A Generalizable Interactive World Model for Robotic Manipulation via Visual Actions** - arXiv:2608.06332
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Interactive World Model, Visual Action Representation, URDF Rendering, Zero-Shot Generalization, Data Synthesis
+   - 文档: papers/2026-08-09_01_GeniWorld_Generalizable_Interactive_World_Model.md
+   - 核心贡献: URDF视觉动作条件化解耦机器人运动学与环境动力学，实现世界模型零样本跨场景泛化和数据合成
+
+2. **DyPES-VLA: Learning Shared Dynamics Priors and Embodiment-Specific Control for Cross-Embodiment Manipulation** - arXiv:2608.06374
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Cross-Embodiment VLA, Dynamics Priors, MoE Action Head, Future Prediction, Native Action Space
+   - 文档: papers/2026-08-09_02_DyPES_VLA_Cross_Embodiment.md
+   - 核心贡献: 共享动力学先验（未来预测监督）+ 具身特定MoE控制，无需动作空间对齐实现跨三大具身体操作
+
+3. **Beyond Flat Policies: Hierarchical Post-Training for Embodied Agents in Robotic Manipulation (HiRoC)** - arXiv:2608.05999
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Hierarchical VLA, Task Decomposition, GRPO, Long-Horizon Manipulation, Subgoal Planning
+   - 文档: papers/2026-08-09_03_HiRoC_Hierarchical_Post_Training.md
+   - 核心贡献: 层次化后训练框架（规划器+执行器），层次化GRPO提供子目标级RL信号解决长时程任务
+
+4. **ω-0: A Latent Predictive World Action Model for Concurrent Humanoid Loco-Manipulation** - arXiv:2608.06375
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Humanoid Loco-Manipulation, Latent Predictive WAM, Whole-Body Control, ω-HOME Dataset, SONIC Controller
+   - 文档: papers/2026-08-09_04_Omega0_Latent_Predictive_WAM_Humanoid.md
+   - 核心贡献: 潜在预测替代视频重建的全身WAM，实现并发行走-操作，40h真实世界家庭数据集ω-HOME
+
+5. **iARCS: Iterative Agentic RL for Controllable 3D Scene Generation** - arXiv:2608.06161
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Controllable Scene Generation, Agentic RL, DDPO, LLM Reward Synthesis, Functional Constraints
+   - 文档: papers/2026-08-09_05_iARCS_Agentic_RL_3D_Scene_Generation.md
+   - 核心贡献: Agent驱动RL框架实现自然语言功能性约束可控的3D场景生成，两阶段策略+奖励反思循环
