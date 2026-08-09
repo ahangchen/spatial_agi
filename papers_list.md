@@ -2677,3 +2677,35 @@
    - 关键词: Controllable Scene Generation, Agentic RL, DDPO, LLM Reward Synthesis, Functional Constraints
    - 文档: papers/2026-08-09_05_iARCS_Agentic_RL_3D_Scene_Generation.md
    - 核心贡献: Agent驱动RL框架实现自然语言功能性约束可控的3D场景生成，两阶段策略+奖励反思循环
+
+## 2026-08-10 研究的论文（精选5篇）
+
+1. **WorldClaw: Agentic 3D Open-World Generation at Scale** - arXiv:2608.05248
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Agentic 3D Generation, Open-World, Coarse-to-Fine, Terrain Foundation, Asset Editing
+   - 文档: papers/2026-08-10_01_WorldClaw_Agentic_3D_Open_World_Generation.md
+   - 核心贡献: 从粗到细的agentic框架生成可探索3D世界，多agent协作维护全局空间一致性
+
+2. **Disentangling 3D Modeling from Spatial Reasoning** - arXiv:2608.04568
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Spatial Reasoning, 3D Modeling, Disentanglement, Spatial Token, VLM
+   - 文档: papers/2026-08-10_02_Disentangling_3D_Modeling_Spatial_Reasoning.md
+   - 核心贡献: 显式解耦3D建模与空间推理的新范式，通过空间token桥接2D视觉与3D空间
+
+3. **SkillMemo: Expert-guided Skill Memory Framework for Compositional Embodied Manipulation** - arXiv:2608.05390
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Skill Memory, Compositional Manipulation, Expert Demonstration, Skill Primitives
+   - 文档: papers/2026-08-10_03_SkillMemo_Expert_Skill_Memory_Embodied_Manipulation.md
+   - 核心贡献: 专家引导的技能记忆框架，通过可组合技能原语实现复杂操作任务复用
+
+4. **SG-WAM: Self-Guided World Modeling in Geometry-Aware Policy Space** - arXiv:2608.01397
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Action Model, Geometry-Aware, Self-Guided, Robot Manipulation
+   - 文档: papers/2026-08-10_04_SG_WAM_Self_Guided_World_Modeling_Geometry.md
+   - 核心贡献: 在几何感知策略空间中构建自引导世界模型，几何一致性损失确保空间预测物理合理
+
+5. **Talk2Sensors: 3D Visual Grounding via Sensor-Adaptive Physical Cue Matching** - arXiv:2608.04568
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Multi-Sensor Fusion, 3D Visual Grounding, Autonomous Driving, Adaptive Routing
+   - 文档: papers/2026-08-10_05_Talk2Sensors_3D_Visual_Grounding_Autonomous_Driving.md
+   - 核心贡献: 首个多传感器(camera+LiDAR+radar)3DVG数据集，查询自适应的物理线索匹配框架
