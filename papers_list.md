@@ -2709,3 +2709,35 @@
    - 关键词: Multi-Sensor Fusion, 3D Visual Grounding, Autonomous Driving, Adaptive Routing
    - 文档: papers/2026-08-10_05_Talk2Sensors_3D_Visual_Grounding_Autonomous_Driving.md
    - 核心贡献: 首个多传感器(camera+LiDAR+radar)3DVG数据集，查询自适应的物理线索匹配框架
+
+## 2026-08-11 研究的论文（精选5篇）
+
+1. **InstanceSplat: Instance-Aware Feed-Forward 3D Gaussian Splatting for Scene Understanding** - arXiv:2608.07144
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS, Instance-Aware, Feed-Forward, Scene Understanding, Open-Vocabulary
+   - 文档: papers/2026-08-11_01_InstanceSplat_Instance_Aware_Feed_Forward_3DGS.md
+   - 核心贡献: 首个统一的前馈实例感知3DGS框架，实例中心学习策略实现重建与场景理解互惠增强
+
+2. **In-Context VLA: Endowing VLA Models with Language via In-Context Post-Training and Agentic Tool Use** - arXiv:2608.05738
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, In-Context Learning, Tool Use, Chain-of-Thought Critique, Robot Manipulation
+   - 文档: papers/2026-08-11_02_InContext_VLA_Language_Via_InContext_Post_Training.md
+   - 核心贡献: 揭示CoT对VLA低层控制的损害，提出"消费语言"范式+Agent工具使用接口
+
+3. **BridgeVLA++: Data-Efficient, Generalizable, Memory-Augmented VLA for 3D Manipulation** - arXiv:2608.03872
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, 3D Manipulation, Memory-Augmented, Data-Efficient, Generalizable
+   - 文档: papers/2026-08-11_03_BridgeVLA_pp_Data_Efficient_Memory_Augmented.md
+   - 核心贡献: 三合一VLA框架（数据效率+泛化+分层记忆），认知科学启发的工作/情景/语义记忆设计
+
+4. **OutLangSplat: 3D Language Gaussian Splatting for UAV Outdoor Scenes** - arXiv:2608.04560
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3D Language GS, UAV, Outdoor Scenes, Open-Vocabulary, Dual-Branch
+   - 文档: papers/2026-08-11_04_OutLangSplat_3D_Language_Gaussian_UAV_Outdoor.md
+   - 核心贡献: 首个UAV户外3D语言高斯泼溅方法，2D-3D双分支+无训练可靠性聚合，首个UAV开放词汇3D理解数据集
+
+5. **SpaceEra++: A Unified Framework Towards 3D Spatial Reasoning in Video** - arXiv:2607.02188
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: VLM, Spatial Reasoning, Video Understanding, Progressive Training, 3D Spatial Token
+   - 文档: papers/2026-08-11_05_SpaceEra_pp_Unified_3D_Spatial_Reasoning_Video.md
+   - 核心贡献: 渐进式多阶段训练（2D→3D→视频→统一），首次系统处理视频中3D空间推理，3D空间token接口设计
