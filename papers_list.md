@@ -2741,3 +2741,41 @@
    - 关键词: VLM, Spatial Reasoning, Video Understanding, Progressive Training, 3D Spatial Token
    - 文档: papers/2026-08-11_05_SpaceEra_pp_Unified_3D_Spatial_Reasoning_Video.md
    - 核心贡献: 渐进式多阶段训练（2D→3D→视频→统一），首次系统处理视频中3D空间推理，3D空间token接口设计
+
+## 2026-08-12 研究的论文（精选5篇）
+
+1. **GWM-VLA: Geometry-Aware Latent World Modeling for Vision-Language-Action Learning** - arXiv:2608.07619
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VGGT-Ω, Multi-view Geometry, Latent World Model, VLA, Flow Matching
+   - 文档: papers/2026-08-12_01_GWM_VLA_Geometry_Aware_Latent.md
+   - 核心创新: 使用VGGT-Ω几何编码器构建多视角几何感知状态，预测腕部视角patch tokens
+   - 性能: LIBERO 97.1%, LIBERO-Plus 76.9%
+
+2. **EmbodimentSemantic: A Spatial Scene-Graph Dataset and Benchmark for VLMs on Embodied Manipulation Trajectories** - arXiv:待确认
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Spatial Scene Graph, Embodied Manipulation, Spatial Relations, Benchmark
+   - 文档: papers/2026-08-12_02_EmbodimentSemantic_A_Spatial_Scene_Graph.md
+   - 核心创新: 首个专注于具身操作中动态空间关系（支撑/包含/顺序/遮挡/深度）的基准
+   - 评估维度: 关系识别、场景图生成、空间接地、动态关系追踪
+
+3. **SLIM-0.5B: Learning Action-Grounded Predictive Latents for Robot Manipulation** - arXiv:2608.09771
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Latent Interaction, MoT, Self-supervised, Flow Matching, Compact Policy
+   - 文档: papers/2026-08-12_03_SLIM_Learning_Action_Grounded_Predictive.md
+   - 核心创新: 0.5B参数的紧凑MoT策略，双向掩码预测（逆+前向动力学）学习动作接地表示
+   - 性能: 与大规模VLA/WAM基线竞争，更低延迟和GPU内存
+
+4. **World Tokens: Enhancing Embodied Policies with Training-Time World Modeling** - arXiv:2608.09730
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Adapter, Perceiver Resampler, Video World Model, Training-Inference Decoupling
+   - 文档: papers/2026-08-12_04_World_Tokens_Enhancing_Embodied_Policies.md
+   - 核心创新: World Adapter将VLM特征压缩为256个world tokens，训练时用视频WM监督，推理时完全移除
+   - 性能: LIBERO 98.2%, SIMPLER-WidowX 71.5%, SIMPLER-GoogleRobot 82.1% (最佳)
+
+5. **JEPA-WAM: Learning VLA Policies with Joint-Embedding World Modeling** - arXiv:2608.09381
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: V-JEPA, Joint Current-Future Target, Shared Predictor, Latent WAM, π₀.₅
+   - 文档: papers/2026-08-12_05_JEPA_WAM_Learning_Vision_Language.md
+   - 核心创新: V-JEPA空间中的联合当前-未来转换目标，共享预测器耦合转换预测和动作生成
+   - 性能: LIBERO-Plus 79.2% (无预训练最佳), π₀.₅实例化86.3% (总体最佳)
+
