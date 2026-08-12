@@ -2779,3 +2779,41 @@
    - 核心创新: V-JEPA空间中的联合当前-未来转换目标，共享预测器耦合转换预测和动作生成
    - 性能: LIBERO-Plus 79.2% (无预训练最佳), π₀.₅实例化86.3% (总体最佳)
 
+
+---
+
+## 2026-08-13 研究的论文（精选5篇）
+
+1. **Embodied Multimodal Grounding for Open-Vocabulary Mobile Manipulation via Semantic 3D Gaussian Splatting** - arXiv:待确认
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Semantic 3DGS, Embodied Manipulation, Open-Vocabulary Grounding, Reachability-Aware, Diffusion VLA
+   - 文档: papers/2026-08-13_01_Embodied_Multimodal_Grounding_Semantic_3DGS.md
+   - 核心创新: Semantic-3DGS作为空间记忆+主动多视角+可达性感知+扩散VLA的完整embodied grounding框架
+   - 会议: ACM Multimedia 2026 (MM '26)
+
+2. **LEGO: Leveled Language Gaussian Splatting** - arXiv:待确认
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS, Hierarchical Semantic, Open-Vocabulary, SAM, CLIP, Multi-Granularity
+   - 文档: papers/2026-08-13_02_LEGO_Leveled_Language_Gaussian_Splatting.md
+   - 核心创新: 在3DGS中引入层次化语义表示，捕捉"花盆→花束→花蕾→花瓣"的固有语义层次
+
+3. **4D-WAM: Infusing Spatiotemporal Awareness into World Action Models through Trajectory Fields** - arXiv:待确认
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Trajectory Fields, 4D Spatiotemporal, World Action Model, Stage-Level Reasoning
+   - 文档: papers/2026-08-13_03_4D_WAM_Trajectory_Fields.md
+   - 核心创新: 轨迹场概念将4D时空推理注入WAM，支持阶段级长时序规划
+   - 团队: 中山大学、阿德莱德大学（Feras Dayoub）
+
+4. **Multi-View Relational Distillation for Spatial Reasoning with Vision-Language Models** - arXiv:待确认
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLM, Spatial Reasoning, Multi-View Distillation, Ranking Loss, KAIST
+   - 文档: papers/2026-08-13_04_Multi_View_Relational_Distillation_Spatial.md
+   - 核心创新: 多视角3D关系蒸馏到VLM的2D特征空间，推理时单视角即可进行空间推理
+   - 机构: KAIST (Seunghoon Hong组)
+
+5. **Chain of Spatial Thoughts: Modality-Agnostic Spatial Grounding for Vision Language Models** - arXiv:待确认
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Spatial Chain-of-Thought, Modality-Agnostic, Spatial Grounding, Autonomous Driving
+   - 文档: papers/2026-08-13_05_Chain_of_Spatial_Thoughts_VLM.md
+   - 核心创新: 将CoT引入空间grounding，模态无关的空间描述语言+空间验证器+自适应推理深度
+   - 机构: York University / Huawei
