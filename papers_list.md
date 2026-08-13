@@ -2817,3 +2817,40 @@
    - 文档: papers/2026-08-13_05_Chain_of_Spatial_Thoughts_VLM.md
    - 核心创新: 将CoT引入空间grounding，模态无关的空间描述语言+空间验证器+自适应推理深度
    - 机构: York University / Huawei
+
+## 2026-08-14 研究的论文（精选5篇）
+
+1. **Multi-Submap Implicit Neural SLAM with Local-to-Global Loop Closure for Large-Scale Scene Reconstruction** - arXiv:2608.09146
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Neural SLAM, Multi-Submap, Loop Closure, Online Distillation, Large-Scale, SJTU/CMU
+   - 文档: papers/2026-08-14_01_Multi_Submap_Neural_SLAM_Large_Scale.md
+   - 核心创新: 渐进式多子图+层次化回环检测+在线蒸馏，解决大规模神经SLAM的灾难性遗忘和轨迹漂移
+   - 机构: 上海交通大学 (Hesheng Wang组) / CMU / NTU
+
+2. **G0.5: One Autoregressive Stream for Robot Reasoning and Action** - arXiv:2608.11739
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, Autoregressive, Cross-Embodiment, Chain-of-Thought, Action Codec, Galaxea
+   - 文档: papers/2026-08-14_02_G05_One_Autoregressive_Stream_Robot.md
+   - 核心创新: 统一自回归VLA——推理和动作在同一token流中生成，跨具身动作codec+原生CoT
+   - 机构: Galaxea AI (基于Qwen3.5 2B)
+
+3. **SCOUT: Unlocking Enhanced Spatial Reasoning via Structured Chain-of-Thought and Multi-Objective Process Reward** - arXiv:2608.12220
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLM, Spatial Reasoning, Structured CoT, Process Reward, RL, Depth Perception
+   - 文档: papers/2026-08-14_03_SCOUT_Spatial_Reasoning_Structured_CoT.md
+   - 核心创新: 结构化CoT显式建模3D深度感知+5种过程奖励+token级信用分配，SCOUT-7B超越GPT-4o
+   - 机构: (基于Qwen2.5-VL)
+
+4. **AtlasVLA: Persistent World-Ego State Modeling for Vision-Language-Action Models** - arXiv:2608.06729
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, Persistent Memory, 4D World State, Voxel Hashing, Ego-Working Memory, Wrist Camera
+   - 文档: papers/2026-08-14_04_AtlasVLA_Persistent_World_Ego_State.md
+   - 核心创新: 双记忆架构（4D世界状态+自我工作记忆），仅腕部相机超越多视角SOTA
+   - 机构: 中科院自动化所
+
+5. **VLAff: Vision-Language-Affordance Model for Unified Actionable Affordances** - arXiv:2608.05215
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Affordance, Egocentric Video, VLM, MANO, SfM, Zero-Shot Manipulation, IROS 2026
+   - 文档: papers/2026-08-14_05_VLAff_Vision_Language_Affordance_Unified.md
+   - 核心创新: 统一视觉/抓取/轨迹三种可供性的VLM基础模型+EgoAffordance 204K数据集
+   - 机构: 东京大学 (IROS 2026)
