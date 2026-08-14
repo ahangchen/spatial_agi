@@ -2854,3 +2854,40 @@
    - 文档: papers/2026-08-14_05_VLAff_Vision_Language_Affordance_Unified.md
    - 核心创新: 统一视觉/抓取/轨迹三种可供性的VLM基础模型+EgoAffordance 204K数据集
    - 机构: 东京大学 (IROS 2026)
+
+## 2026-08-15 研究的论文（精选5篇）
+
+1. **AlayaWorld: Interactive Long-Horizon World Modeling - Full Technical Report (v1.1)** - arXiv:2608.13492
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Model, Streaming 3D Point Cache, Causal VAE, Camera Control, WBench
+   - 文档: papers/2026-08-15_01_AlayaWorld_Interactive_Long_Horizon_World_Model_v1_1.md
+   - 核心创新: 条件-生成表示匹配原则+流式3D点缓存空间记忆+几何化相机控制（移除AdaLN分支），WBench Consistency 89.5第一
+   - 机构: 腾讯 Alaya Lab
+
+2. **Spatial Memory Agent: Experience-Grounded Procedure Memory for Spatial Intelligence** - arXiv:2608.12743
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Spatial Memory, Procedure Memory, Transfer Reliability Score, Frozen VLM, Self-Evolution
+   - 文档: papers/2026-08-15_02_Spatial_Memory_Agent_Experience_Grounded_Procedure_Memory.md
+   - 核心创新: 冻结VLM无参数更新自演化+验证器引导反思蒸馏教训+TRS证据校准检索，跨模型迁移+9.4
+   - 机构: 浙江大学/上海交大/上海创新研究院
+
+3. **LocusGS: Spatially Grounded Tokens for Feed-Forward 3D Gaussian Splatting** - arXiv:2608.12825
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Gaussian Splatting, Query Anchoring, Anchor-to-Ray Bias, Feed-Forward, Spatial Grounding
+   - 文档: papers/2026-08-15_03_LocusGS_Spatially_Grounded_Tokens_Feed_Forward_3DGS.md
+   - 核心创新: 显式3D锚点状态(中心+半径)贯穿解码全程+anchor-to-ray几何偏置，一半高斯数超GS-LRM
+   - 机构: 国防科技大学
+
+4. **R4DSG: Relative 4D Scene Graph Memory for Object-Centric Question Answering in Long Egocentric Video** - arXiv:2608.11017
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4D Scene Graph, Egocentric Video, Object-Centric QA, Anchor-Relative Transition, Wearable AI
+   - 文档: papers/2026-08-15_04_R4DSG_Relative_4D_Scene_Graph_Memory.md
+   - 核心创新: 相对4D场景图记忆（静态锚点+持久身份+转移事件），7小时视频压缩0.58MB，when类+12.5点
+   - 机构: 同济大学/三星中国研究院/上海交大 (ACM MM 2026)
+
+5. **DreamX-Phi 1.0: Action-Conditioned Video World Model for Robotic Manipulation** - arXiv:2608.13489
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Action-Conditioned World Model, PRoPE SE(3), Bimanual Manipulation, SAM3, V-JEPA, WorldArena
+   - 文档: papers/2026-08-15_05_DreamX_Phi_Action_Conditioned_World_Model.md
+   - 核心创新: PRoPE群作用注意力内嵌双臂SE(3)轨迹+SAM3 mask加权+V-JEPA Gram对齐，WorldArena 2.0 Track 1第一
+   - 机构: 蚂蚁集团 DreamX Team

@@ -1,0 +1,462 @@
+{
+ "date": "2026-08-15",
+ "source": "arxiv_web_fetch",
+ "papers": [
+  {
+   "title": "GS2CI: Robust Gaussian Splatting For Snapshot Compressive Imaging via Large Vision Model Priors",
+   "query": "gaussian_splatting",
+   "submitted": "2026-08-13",
+   "relevance": "3DGS+SCI重建"
+  },
+  {
+   "title": "ProbSplat: Efficient Probabilistic Hardware for Gaussian Splatting in 3D Scene Reconstruction",
+   "query": "gaussian_splatting",
+   "submitted": "2026-08-13",
+   "relevance": "3DGS概率硬件"
+  },
+  {
+   "title": "HumanoidVLN: A Physics-Grounded Simulator and Benchmark for Vision-Language Navigation Across Diverse Humanoid Embodiments",
+   "query": "gaussian_splatting",
+   "submitted": "2026-08-13",
+   "relevance": "人形VLN仿真+3DGS场景"
+  },
+  {
+   "title": "LocusGS: Spatially Grounded Tokens for Feed-Forward 3D Gaussian Splatting",
+   "query": "gaussian_splatting",
+   "submitted": "2026-08-13",
+   "relevance": "前馈3DGS空间接地token"
+  },
+  {
+   "title": "Seed2GS: Camera-Free, Training-Free Object Extraction from 3D Gaussian Scenes via a Single Reference-View Grounding",
+   "query": "gaussian_splatting",
+   "submitted": "2026-08-12",
+   "relevance": "3DGS物体提取"
+  },
+  {
+   "title": "CausalSplat: Towards Comprehensive Hierarchical Reasoning in 3D Gaussian Splatting",
+   "query": "gaussian_splatting",
+   "submitted": "2026-08-12",
+   "relevance": "3DGS分层因果推理"
+  },
+  {
+   "title": "WildFireGS: Physics-Based Wildfire Simulation in Large-Scale Semantics-Enriched Gaussian Splatting Forest Scenes",
+   "query": "gaussian_splatting",
+   "submitted": "2026-08-11",
+   "relevance": "3DGS物理仿真野火"
+  },
+  {
+   "title": "GS-CPE: Unified 6-Degree-of-Freedom Camera Pose Estimation via 3D Gaussian Splatting",
+   "query": "gaussian_splatting",
+   "submitted": "2026-08-11",
+   "relevance": "3DGS 6DoF位姿估计"
+  },
+  {
+   "title": "Embodied Multimodal Grounding for Open-Vocabulary Mobile Manipulation via Semantic 3D Gaussian Splatting",
+   "query": "gaussian_splatting",
+   "submitted": "2026-08-11",
+   "relevance": "Semantic 3DGS开放词汇操作"
+  },
+  {
+   "title": "Compact Feed-Forward 3D Gaussians via Saliency-Guided Primitive Merging",
+   "query": "gaussian_splatting",
+   "submitted": "2026-08-11",
+   "relevance": "前馈3DGS压缩"
+  },
+  {
+   "title": "Visual Geometry Foundation-Aware Gaussians for Single-Frame Surround-View Driving Reconstruction",
+   "query": "gaussian_splatting",
+   "submitted": "2026-08-11",
+   "relevance": "3DGS驾驶重建+几何基础模型"
+  },
+  {
+   "title": "Gaussian Sculpting: End-to-End Controllable Surface Reconstruction via Field Optimization",
+   "query": "gaussian_splatting",
+   "submitted": "2026-08-11",
+   "relevance": "3DGS可控表面重建"
+  },
+  {
+   "title": "CasDeblurGS: Cascaded 2D-to-3D Multi-View Consistency for 3DGS from Two Blurry Images",
+   "query": "gaussian_splatting",
+   "submitted": "2026-08-10",
+   "relevance": "3DGS去模糊"
+  },
+  {
+   "title": "TRACE-GS: On-Policy Trajectory Distillation with Privileged Geometric Conditioning for Sparse-View 3DGS Restoration",
+   "query": "gaussian_splatting",
+   "submitted": "2026-08-10",
+   "relevance": "稀疏视角3DGS修复"
+  },
+  {
+   "title": "LEGO: Leveled Language Gaussian Splatting",
+   "query": "gaussian_splatting",
+   "submitted": "2026-08-10",
+   "relevance": "3DGS分层语义开放词汇"
+  },
+  {
+   "title": "EndoMD-SLAM: Endoscopic Gaussian Splatting SLAM under Optical Degradation with Memory and Static-Transient Decomposition",
+   "query": "gaussian_splatting",
+   "submitted": "2026-08-09",
+   "relevance": "3DGS SLAM内窥镜"
+  },
+  {
+   "title": "EvTrajGS: Accurate and Efficient 3D Gaussian Splatting from Unposed Event Streams",
+   "query": "gaussian_splatting",
+   "submitted": "2026-08-09",
+   "relevance": "事件相机3DGS"
+  },
+  {
+   "title": "ERF-GS: Reconstructing Fast Motion from Disjoint Event-RGB Viewpoints",
+   "query": "gaussian_splatting",
+   "submitted": "2026-08-09",
+   "relevance": "事件RGB 3DGS快速运动"
+  },
+  {
+   "title": "FlexSplat: Flexible Feed-Forward 3D Gaussian Splatting without Point Cloud Correspondence",
+   "query": "gaussian_splatting",
+   "submitted": "2026-08-08",
+   "relevance": "无标定前馈3DGS"
+  },
+  {
+   "title": "XClipGS: Exact Half-Space Clipping for Medical Volume Gaussian Splatting",
+   "query": "gaussian_splatting",
+   "submitted": "2026-08-07",
+   "relevance": "医学3DGS体积渲染"
+  },
+  {
+   "title": "InstanceSplat: Instance-Aware Feed-Forward 3D Gaussian Splatting for Scene Understanding",
+   "query": "gaussian_splatting",
+   "submitted": "2026-08-07",
+   "relevance": "实例级前馈3DGS场景理解"
+  },
+  {
+   "title": "UAV3DCrop: Benchmarking 3D Reconstruction in Repeated Multi-Angle UAV Crop Surveys",
+   "query": "gaussian_splatting",
+   "submitted": "2026-08-07",
+   "relevance": "UAV 3DGS农业重建基准"
+  },
+  {
+   "title": "DreamX-Phi 1.0: Action-Conditioned Video World Model for Robotic Manipulation",
+   "query": "world_model_robot",
+   "submitted": "2026-08-13",
+   "relevance": "动作条件视频世界模型"
+  },
+  {
+   "title": "ContactGuard: Pre-Contact Execution Monitoring with Action-Conditioned Latent World Models",
+   "query": "world_model_robot",
+   "submitted": "2026-08-13",
+   "relevance": "预接触监测潜在世界模型"
+  },
+  {
+   "title": "S2-HWM: Sparse Event-Structured Hierarchical World Model for Long-Horizon Surgical Robot Manipulation",
+   "query": "world_model_robot",
+   "submitted": "2026-08-13",
+   "relevance": "手术机器人分层世界模型"
+  },
+  {
+   "title": "H2R-Bench: Benchmarking Human-to-Robot Manipulation Video Generation in World Models",
+   "query": "world_model_robot",
+   "submitted": "2026-08-13",
+   "relevance": "人-机操作视频生成基准"
+  },
+  {
+   "title": "RoboSynChallenge: Mastering Real-World Dexterity via Generalizing Synthesized Manipulation Skills",
+   "query": "world_model_robot",
+   "submitted": "2026-08-12",
+   "relevance": "合成操作技能泛化"
+  },
+  {
+   "title": "D3D-GEN: Robot-Aware Domain-Grounded Interactive 3D World Generation for Social Robotics",
+   "query": "world_model_robot",
+   "submitted": "2026-08-12",
+   "relevance": "交互3D世界生成RAG"
+  },
+  {
+   "title": "G0.5: One Autoregressive Stream for Robot Reasoning and Action",
+   "query": "world_model_robot",
+   "submitted": "2026-08-12",
+   "relevance": "自回归VLA推理+动作统一"
+  },
+  {
+   "title": "Foresight Without Seeing: Latent Futures for World Action Models",
+   "query": "world_model_robot",
+   "submitted": "2026-08-11",
+   "relevance": "潜在未来世界动作模型"
+  },
+  {
+   "title": "Keep the Future, Drop the Rollout: RIFT for World Action Models",
+   "query": "world_model_robot",
+   "submitted": "2026-08-11",
+   "relevance": "WAM rollout延迟优化"
+  },
+  {
+   "title": "Surgical WAM: A World-Action Model for Data-Efficient Surgical Robot Learning",
+   "query": "world_model_robot",
+   "submitted": "2026-08-11",
+   "relevance": "手术世界动作模型"
+  },
+  {
+   "title": "ComBodied Agents: a New Paradigm of Human-Centric Agentic AI",
+   "query": "world_model_robot",
+   "submitted": "2026-08-11",
+   "relevance": "人本Agentic AI范式"
+  },
+  {
+   "title": "JEPA-WAM: Stage-Level Joint-Embedding Prediction for World-Action Models in Robot Manipulation",
+   "query": "world_model_robot",
+   "submitted": "2026-08-11",
+   "relevance": "阶段级JEPA世界动作模型"
+  },
+  {
+   "title": "PBD-AG: Persistent Baseline-Delta Active Graphs with Uncertainty-Aware Inspection for Long-Horizon Service Robots",
+   "query": "world_model_robot",
+   "submitted": "2026-08-11",
+   "relevance": "持久基线增量主动图"
+  },
+  {
+   "title": "Hidden in Plain Sight: Diffusion-Based Unrestricted Robotic Attacks on Vision-Language-Action Models",
+   "query": "world_model_robot",
+   "submitted": "2026-08-10",
+   "relevance": "VLA扩散攻击安全"
+  },
+  {
+   "title": "Towards the Harness of Embodied Agents",
+   "query": "world_model_robot",
+   "submitted": "2026-08-03",
+   "relevance": "Embodied基础设施范式"
+  },
+  {
+   "title": "Aerial Layouting: Design and Control of a Compliant and Actuated End-Effector for Precise In-flight Marking on Ceilings",
+   "query": "world_model_robot",
+   "submitted": "2026-08-11",
+   "relevance": "飞行机器人精确操作"
+  },
+  {
+   "title": "HandEdit: A Unified Benchmark for Egocentric Human-to-Robot Dexterous Hand Image Editing",
+   "query": "embodied_AI_VLM",
+   "submitted": "2026-08-12",
+   "relevance": "灵巧手图像编辑基准"
+  },
+  {
+   "title": "HUGIN: Enhancing Vision-Language Planning for Autonomous Logistics Sorting",
+   "query": "embodied_AI_VLM",
+   "submitted": "2026-08-12",
+   "relevance": "视觉语言规划物流分拣"
+  },
+  {
+   "title": "Multi-View Relational Distillation for Spatial Reasoning with Vision-Language Models",
+   "query": "embodied_AI_VLM",
+   "submitted": "2026-08-11",
+   "relevance": "多视图关系蒸馏空间推理"
+  },
+  {
+   "title": "TrustRoboReward: Preference-Ordered Isotonic Score Editing for Multi-Paradigm Robot Reward Models",
+   "query": "embodied_AI_VLM",
+   "submitted": "2026-08-09",
+   "relevance": "机器人奖励模型VLM"
+  },
+  {
+   "title": "Explore, Map, Remember, Decide: Are Embodied VLMs Ready for Safety-Critical Scenarios?",
+   "query": "embodied_AI_VLM",
+   "submitted": "2026-08-08",
+   "relevance": "空间理论ToS安全评估"
+  },
+  {
+   "title": "ViewMind3D: Modular View-Aware Inference for Training-Free 3D-QA",
+   "query": "embodied_AI_VLM",
+   "submitted": "2026-07-30",
+   "relevance": "免训练3D-QA模块化推理"
+  },
+  {
+   "title": "SiPhy: Single-Image Physical Property Reasoning",
+   "query": "embodied_AI_VLM",
+   "submitted": "2026-07-24",
+   "relevance": "单图物理属性推理"
+  },
+  {
+   "title": "Seek to Segment: Active Perception for Panoramic Referring Segmentation",
+   "query": "embodied_AI_VLM",
+   "submitted": "2026-07-02",
+   "relevance": "全景主动感知分割"
+  },
+  {
+   "title": "HAT-4D: Lifting Monocular Video for 4D Multi-Object Interactions via Human-Agent Collaboration",
+   "query": "embodied_AI_VLM",
+   "submitted": "2026-06-26",
+   "relevance": "4D交互数据提取"
+  },
+  {
+   "title": "HomeWorld: A Unified Floorplan-to-Furnished Framework for Generating Controllable, Densely Interactive Whole-Home Scenes",
+   "query": "embodied_AI_VLM",
+   "submitted": "2026-06-04",
+   "relevance": "全屋交互场景生成"
+  },
+  {
+   "title": "AlayaWorld: Interactive Long-Horizon World Modeling - Full Technical Report (v1.1)",
+   "query": "spatial_intelligence_3D",
+   "submitted": "2026-08-13",
+   "relevance": "交互长时程世界模型技术报告"
+  },
+  {
+   "title": "CoverPrune: Coverage-Driven Token Pruning for 3D VLMs via Optimal Transport",
+   "query": "spatial_intelligence_3D",
+   "submitted": "2026-08-13",
+   "relevance": "3D VLM token剪枝"
+  },
+  {
+   "title": "Spatial Memory Agent: Experience-Grounded Procedure Memory for Spatial Intelligence",
+   "query": "spatial_intelligence_3D",
+   "submitted": "2026-08-12",
+   "relevance": "空间记忆Agent程序性记忆"
+  },
+  {
+   "title": "Mr3D-VL: A generalist vision language foundation model for Multiparametric 3D Magnetic Resonance Imaging",
+   "query": "spatial_intelligence_3D",
+   "submitted": "2026-08-12",
+   "relevance": "3D医学VLM基础模型"
+  },
+  {
+   "title": "R4DSG: Relative 4D Scene Graph Memory for Object-Centric Question Answering in Long Egocentric Video",
+   "query": "spatial_intelligence_3D",
+   "submitted": "2026-08-11",
+   "relevance": "4D场景图记忆长视频QA"
+  },
+  {
+   "title": "Temporally Grounded Compositional Camera Motion Understanding via Geometric Knowledge Distillation",
+   "query": "spatial_intelligence_3D",
+   "submitted": "2026-08-11",
+   "relevance": "相机运动理解几何蒸馏"
+  },
+  {
+   "title": "Chain of Spatial Thoughts: Modality-Agnostic Spatial Grounding for Vision Language Models",
+   "query": "spatial_intelligence_3D",
+   "submitted": "2026-08-10",
+   "relevance": "模态无关空间接地"
+  },
+  {
+   "title": "From Semantic Grounding to Decision Optimization: A Unified Framework for Long-Horizon UAV Vision-Language Navigation",
+   "query": "spatial_intelligence_3D",
+   "submitted": "2026-08-10",
+   "relevance": "UAV长时程VLN统一框架"
+  },
+  {
+   "title": "DA-NBV: A Direction-Aware Next-Best-View Planner for Efficient 3D Reconstruction of Ships at Sea",
+   "query": "spatial_intelligence_3D",
+   "submitted": "2026-08-08",
+   "relevance": "主动视觉NBV规划"
+  },
+  {
+   "title": "iARCS: Iterative Agentic RL for Controllable 3D Scene Generation",
+   "query": "spatial_intelligence_3D",
+   "submitted": "2026-08-06",
+   "relevance": "Agentic RL可控3D场景生成"
+  },
+  {
+   "title": "WorldClaw: Agentic 3D Open-World Generation at Scale",
+   "query": "spatial_intelligence_3D",
+   "submitted": "2026-08-05",
+   "relevance": "大规模Agentic 3D开放世界生成"
+  },
+  {
+   "title": "Disentangling 3D Modeling from Spatial Reasoning",
+   "query": "spatial_intelligence_3D",
+   "submitted": "2026-08-05",
+   "relevance": "3D建模与空间推理解耦"
+  },
+  {
+   "title": "Talk2Sensors: 3D Visual Grounding in Autonomous Driving via Sensor-Adaptive Physical Cue Matching",
+   "query": "spatial_intelligence_3D",
+   "submitted": "2026-08-05",
+   "relevance": "多传感器3D视觉接地"
+  },
+  {
+   "title": "AeroDPO: Unleashing Lightweight UAV Navigation with High-Fidelity Perception and Automated Preference Optimization",
+   "query": "spatial_intelligence_3D",
+   "submitted": "2026-08-02",
+   "relevance": "轻量UAV导航DPO"
+  },
+  {
+   "title": "P2Voxel: Pyramid Pivot Voxelization for 3D Mesh Tokenization",
+   "query": "spatial_intelligence_3D",
+   "submitted": "2026-08-01",
+   "relevance": "3D网格token化"
+  },
+  {
+   "title": "Hunyuan3D-Buffalo 1.0: A Unified Multimodal Model for Scalable 3D Generation, Understanding, and Editing",
+   "query": "VLM_3D_understanding",
+   "submitted": "2026-08-03",
+   "relevance": "统一3D生成理解编辑基础模型"
+  },
+  {
+   "title": "SpatioLM: Towards General Physical Spatial Intelligence in Vision-Language Models",
+   "query": "VLM_3D_understanding",
+   "submitted": "2026-08-03",
+   "relevance": "物理空间智能VLM"
+  },
+  {
+   "title": "GuideGround: VLM-guided Semantic Understanding and Viewpoint-aware Reasoning for 3D Visual Grounding",
+   "query": "VLM_3D_understanding",
+   "submitted": "2026-08-01",
+   "relevance": "3D视觉接地VLM引导"
+  },
+  {
+   "title": "Distill What RGB Can Recover: Privileged 3D Evidence for RGB-Only Vision-Language Models",
+   "query": "VLM_3D_understanding",
+   "submitted": "2026-07-31",
+   "relevance": "特权3D证据蒸馏RGB VLM"
+  },
+  {
+   "title": "Mage-VL: An Efficient Codec-Native Streaming Multimodal Foundation Model",
+   "query": "VLM_3D_understanding",
+   "submitted": "2026-07-27",
+   "relevance": "流式多模态基础模型"
+  },
+  {
+   "title": "3D-Aware VLMs with Implicit and Explicit Geometries",
+   "query": "VLM_3D_understanding",
+   "submitted": "2026-07-23",
+   "relevance": "3D感知VLM隐式显式几何"
+  },
+  {
+   "title": "ZeroSplat: Generalized Referring Segmentation in 3D Gaussian Splatting",
+   "query": "VLM_3D_understanding",
+   "submitted": "2026-07-21",
+   "relevance": "3DGS泛化指代分割"
+  },
+  {
+   "title": "SoftNav: Injecting 3D Scene Tokens into VLMs for Embodied Navigation",
+   "query": "VLM_3D_understanding",
+   "submitted": "2026-07-16",
+   "relevance": "3D场景token注入导航"
+  },
+  {
+   "title": "DM-KG: A Novel Method for Boosting Spatial Cognition of Vision-Language Models in Street View Imagery",
+   "query": "VLM_3D_understanding",
+   "submitted": "2026-07-13",
+   "relevance": "街景空间认知知识图谱"
+  },
+  {
+   "title": "IDEAL-Bench: Indoor Dataset and Evaluation suite for Analyzing 3D Layout reasoning",
+   "query": "VLM_3D_understanding",
+   "submitted": "2026-07-03",
+   "relevance": "室内3D布局推理基准"
+  },
+  {
+   "title": "SpaceEra++: A Unified Framework Towards 3D Spatial Reasoning in Video",
+   "query": "VLM_3D_understanding",
+   "submitted": "2026-07-02",
+   "relevance": "视频3D空间推理统一框架"
+  },
+  {
+   "title": "AeroVerse-SatAgent: UAV-Satellite Collaborative Spatial Reasoning Inspired by the Dual Visual Pathway Theory",
+   "query": "VLM_3D_understanding",
+   "submitted": "2026-06-30",
+   "relevance": "UAV卫星协同空间推理"
+  },
+  {
+   "title": "RoboAtlas: Contextual Active SLAM",
+   "query": "VLM_3D_understanding",
+   "submitted": "2026-06-24",
+   "relevance": "上下文主动SLAM语义推理"
+  }
+ ]
+}
