@@ -2891,3 +2891,40 @@
    - 文档: papers/2026-08-15_05_DreamX_Phi_Action_Conditioned_World_Model.md
    - 核心创新: PRoPE群作用注意力内嵌双臂SE(3)轨迹+SAM3 mask加权+V-JEPA Gram对齐，WorldArena 2.0 Track 1第一
    - 机构: 蚂蚁集团 DreamX Team
+
+## 2026-08-16 研究的论文（精选5篇）
+
+1. **Hugin: Enhancing Vision-Language Planning for Autonomous Logistics Sorting** - arXiv:2608.11692
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: JMSU, Distributed Multi-Camera, VLM Planning, Global Context Ranking, Industrial Deployment
+   - 文档: papers/2026-08-16_01_HUGIN_Vision_Language_Planning_Logistics_Sorting.md
+   - 核心创新: 联合多场景理解(JMSU)形式化+内源数据增强EDA(原子事实约束重组)+全局上下文排序GCR(因果注意力锚点)，Qwen3-VL-8B 63.6%→78.8%，15,000+包裹真机部署
+   - 机构: 未详(工业界，Norse神话命名)
+
+2. **CausalSplat: Towards Comprehensive Hierarchical Reasoning in 3D Gaussian Splatting** - arXiv:2608.11150
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Reasoning Segmentation, 3D Scene Graph, Affordance, Counterfactual, Hierarchical Taxonomy
+   - 文档: papers/2026-08-16_02_CausalSplat_Hierarchical_Reasoning_3DGS.md
+   - 核心创新: 推理3D高斯分割任务定义+四级推理层级(空间/常识/可供性/反事实)+场景图感知-推理解耦架构，Causal-LERF 47.0 vs LUDVIG 23.6
+   - 机构: 北京大学深圳研究生院/华北电力大学/湖南大学
+
+3. **H2R-Bench: Benchmarking Human-to-Robot Manipulation Video Generation in World Models** - arXiv:2608.13049
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Cross-Embodiment Transfer, Video World Model, Functional Contact, Embodiment Correctness, Egocentric Video
+   - 文档: papers/2026-08-16_03_H2R_Bench_Human_Robot_World_Model_Benchmark.md
+   - 核心创新: 源相对人→机迁移评估+五维协议(H2RCore: 接触+本体占60%权重)+视觉质量与迁移脱钩实证(ρ=0.14)，11模型×6任务族×2本体
+   - 机构: 上海交大/浙江大学/OPPO等
+
+4. **HumanoidVLN: A Physics-Grounded Simulator and Benchmark for Vision-Language Navigation Across Diverse Humanoid Embodiments** - arXiv:2608.12860
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Humanoid VLN, Isaac Sim, RL Locomotion, 3DGS Real2Sim, Fall Rate, Multi-Agent Annotation
+   - 文档: papers/2026-08-16_04_HumanoidVLN_Physics_Grounded_VLN_Simulator.md
+   - 核心创新: 人形专属物理VLN基准(RL步行+PD/MPC分层控制×4本体)+摔倒率指标(2.7%-71%)+3DGS Real2Sim管线(Sim-Real r=0.935)+MAA标注，JanusVLN SR 43.55%第一
+   - 机构: VinMotion(越南)/USC
+
+5. **D3D-GEN: Robot-Aware Domain-Grounded Interactive 3D World Generation for Social Robotics** - arXiv:2608.11876
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: World Generation, Domain Grounding, RAG, Robot Infrastructure, Provenance, Isaac Sim/Gazebo
+   - 文档: papers/2026-08-16_05_D3D_GEN_Robot_Aware_Interactive_3D_World_Generation.md
+   - 核心创新: 领域知识获取任务化(接地研究→带溯源约束库，含机器人充电/走廊/停靠约束)+RAG世界生成(户型+资产填充)+场景图与环境同源生成，450世界三域全领先
+   - 机构: 新加坡管理大学/柏林工大/马普所/布伦瑞克工大
