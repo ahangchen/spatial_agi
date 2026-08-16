@@ -168,7 +168,8 @@ def compute_relevance(paper):
 
 
 def main():
-    results_dir = "/home/cwh/coding/spatial_agi/papers"
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    results_dir = os.path.join(script_dir, "papers")
     os.makedirs(results_dir, exist_ok=True)
     
     all_papers = {}  # title_key -> paper dict
