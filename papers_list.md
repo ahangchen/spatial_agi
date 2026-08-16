@@ -2928,3 +2928,40 @@
    - 文档: papers/2026-08-16_05_D3D_GEN_Robot_Aware_Interactive_3D_World_Generation.md
    - 核心创新: 领域知识获取任务化(接地研究→带溯源约束库，含机器人充电/走廊/停靠约束)+RAG世界生成(户型+资产填充)+场景图与环境同源生成，450世界三域全领先
    - 机构: 新加坡管理大学/柏林工大/马普所/布伦瑞克工大
+
+## 2026-08-17 研究的论文（精选5篇）
+
+1. **GST-Bench: Can VLMs Develop Global Spatial Awareness from Video?** - arXiv:2608.05747
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Global Spatial Awareness, Video VQA Benchmark, Self/Object Localization, Top-Down Map, GST-Train
+   - 文档: papers/2026-08-17_01_GST_Bench_Global_Spatial_Awareness_Video.md
+   - 核心创新: 首个强制跨帧全局推理的视频基准(目标不可见+离轨迹查询视角构造性防捷径)+俯视图三级抽象探测+Local/Global变体解耦诊断，22模型评测：Gemini-3-Pro 42.68 vs 人类79.08，GST-Train微调Qwen3-VL-8B达53.52(+27.63)
+   - 机构: ByteDance Seed/浙江大学/新加坡国立大学
+
+2. **SpatialAfford: Teaching Compact VLMs Where to Look and Where to Ground for Affordance** - arXiv:2608.00502
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Affordance Grounding, Attention-Output Mismatch, Spatial Attention Alignment, GRPO, Compact VLM
+   - 文档: papers/2026-08-17_02_SpatialAfford_Compact_VLM_Affordance_Grounding.md
+   - 核心创新: 诊断紧凑VLM"答对但看错"(注意力-输出失配,NSS≈0)+SAA(bbox几何→注意力监督分布,KL对齐"看哪里")+Spatial-Aware GRPO三层奖励("接地到哪")，4B超8B：ReasonAff gIoU 74.92(超Affordance-R1 +7.51)，AGD20K零样本P@50/NSS第一
+   - 机构: 浙江大学/Vivo
+
+3. **ERF-GS: Reconstructing Fast Motion from Disjoint Event-RGB Viewpoints** - arXiv:2608.08531
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Event Camera, 3D Gaussian Splatting, Fast Motion, Disjoint Viewpoints, Densification
+   - 文档: papers/2026-08-17_03_ERF_GS_Event_RGB_Fast_Motion_3DGS.md
+   - 核心创新: 分离视角事件-RGB融合(打破同视角惯例)+EARL(阈值噪声模型NLL+轨迹/颜色正则)+EDS(事件反投影→交叉验证→三重过滤致密化)，-ts/-mb/-dv三级退化协议下Neu3D/Nvidia-dv较4DGS提升0.9-1.4dB DPSNR，运动越快增益越大(Skating +2.77)
+   - 机构: 香港大学/浙江大学CAD&CG国家重点实验室
+
+4. **DynActiveGS: Active Gaussian Splatting for Dynamic Scene Reconstruction** - arXiv:2608.01178 (ACM MM 2026)
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Active Reconstruction, Uncertainty Decomposition, Dynamic Scenes, Voronoi Planning, DINOv3
+   - 文档: papers/2026-08-17_04_DynActiveGS_Active_GS_Dynamic_Reconstruction.md
+   - 核心创新: 首个动态场景主动3DGS重建框架+不确定性二分解(U_s结构"欠观测"vs U_m运动"不可靠"，归因分流)+DINOv3不确定性头β_t²加权双层抑制+运动风险注入Voronoi聚类距离，等预算1000步：Social-MP3D Acc 2.86cm/C.R.94.08%/PSNR 23.04全面领先
+   - 机构: 清华大学深圳国际研究生院/华为/哈工大深圳/鹏城实验室
+
+5. **UAV3DCrop: Benchmarking 3D Reconstruction in Repeated Multi-Angle UAV Crop Surveys** - arXiv:2608.06404
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: UAV Benchmark, Precision Agriculture, Metric Scale, Crop Phenotyping, Feed-forward Geometry
+   - 文档: papers/2026-08-17_05_UAV3DCrop_Multi_Angle_UAV_Crop_Reconstruction.md
+   - 核心创新: 首个农田3D重建基准(88,830图/91场景/4作物/3季/RTK厘米级/CC BY 4.0)+三层目标评测(外观/几何/冠层高度排序互相错位：Splatfacto-big渲染第一但深度第四)+对齐/不对齐双条件揭露米制失败(仅MapAnything尺度AbsRel 0.027存活,其余0.89-0.97)+修正导出杠杆(Splatfacto深度7.5→1.4m)
+   - 机构: 明尼苏达大学双城分校/威斯康星麦迪逊/匹兹堡大学/北京大学等
