@@ -2965,3 +2965,40 @@
    - 文档: papers/2026-08-17_05_UAV3DCrop_Multi_Angle_UAV_Crop_Reconstruction.md
    - 核心创新: 首个农田3D重建基准(88,830图/91场景/4作物/3季/RTK厘米级/CC BY 4.0)+三层目标评测(外观/几何/冠层高度排序互相错位：Splatfacto-big渲染第一但深度第四)+对齐/不对齐双条件揭露米制失败(仅MapAnything尺度AbsRel 0.027存活,其余0.89-0.97)+修正导出杠杆(Splatfacto深度7.5→1.4m)
    - 机构: 明尼苏达大学双城分校/威斯康星麦迪逊/匹兹堡大学/北京大学等
+
+## 2026-08-18 研究的论文（精选5篇）
+
+1. **Embodied Multimodal Grounding for Open-Vocabulary Mobile Manipulation via Semantic 3D Gaussian Splatting** - arXiv:2608.10756 (ACM MM 2026)
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Semantic-3DGS, Shared Interface, Open-Vocabulary Grounding, Mobile Manipulation, Late-Block Injection
+   - 文档: papers/2026-08-18_01_Embodied_Multimodal_Grounding_Semantic_3DGS.md
+   - 核心创新: 任务驱动局部Semantic-3DGS作为感知-动作共享接口(一材五用:主动视角/语言定位/障碍渲染/位姿提取/动作条件化)+晚块语义注入(最后5个扩散专家块+零初始化适配器保先验)+可达性感知站位, 50-trial真机: 长程60% vs PointVLA 40%/DexVLA 28%, 重杂乱74%, 照片欺骗误抓归零
+   - 机构: ACM MM 2026
+
+2. **Chain of Spatial Thoughts (Space Tokens): Modality-Agnostic Spatial Grounding for VLMs** - arXiv:2608.10278
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Spatial Tokens, Latent Distillation, VGGT-Omega, 3D Bounding Box, Chain-of-Thought
+   - 文档: papers/2026-08-18_02_Chain_of_Spatial_Thoughts_Space_Tokens.md
+   - 核心创新: 保留词表token+蒸馏内化显式3D几何(场景级VGGT-Omega潜在对齐+解码重建双监督, 物体级12D bbox匈牙利匹配), 推理零额外模块; token可解码回深度/点图验证几何编码真实性; VSI-Bench: Qwen3-VL-8B +4.3%, 物体大小79.2%/房间大小75.7% SOTA
+   - 机构: VinAI相关研究组
+
+3. **Spatial Memory Agent (SMA): Experience-Grounded Procedure Memory for Spatial Intelligence** - arXiv:2608.12743
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Procedural Memory, Training-free Self-evolution, Transfer Reliability Score, Verifier-guided Reflection, Frozen VLM
+   - 文档: papers/2026-08-18_03_Spatial_Memory_Agent_SMA.md
+   - 核心创新: 空间智能免参数更新自进化第三路线(verifier引导反思→可迁移经验卡+TRS访问证据贝叶斯校准, 创建对错与迁移价值解耦)+两阶段检索(语义过滤+相似度-TRS联合排序), 5基准×4冻结VLM共20评估宏平均全胜
+   - 机构: 浙江大学/上海交大/上海创新研究院
+
+4. **JEPA-WAM: Learning VLA Policies with Joint-Embedding World Modeling** - arXiv:2608.09381
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Latent World Action Model, V-JEPA, Joint Current-Future Target, Shared Predictor, OOD Generalization
+   - 文档: papers/2026-08-18_04_JEPA_WAM_Joint_Embedding_World_Action_Model.md
+   - 核心创新: V-JEPA空间联合当前-未来转移目标(表示变化而非绝对未来, patch级稠密对应)+共享预测器(Qwen2.5-0.5B)让转移监督直接塑造动作骨干, 部署时移除预测分支零开销; LIBERO-Plus 79.2%(无预训练最佳), π0.5实例化86.3%总体最佳(84.5→86.3)
+   - 机构: XYZ Embodied AI等
+
+5. **HumanoidVLN: A Physics-Grounded Simulator and Benchmark for VLN Across Diverse Humanoid Embodiments** - arXiv:2608.12860
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Humanoid VLN, Physics-Grounded Benchmark, 3DGS Real2Sim, Multi-Agent Annotation, Cross-Embodiment
+   - 文档: papers/2026-08-18_05_HumanoidVLN_Physics_Grounded_Benchmark.md
+   - 核心创新: 首个人形多样性物理接地VLN基准(4本体10-12DoF/1.17-1.80m, per-embodiment RL步态+PD/MPC分层控制)+可通行性筛选87场景(≥100m², 3DGS+TSDF碰撞网格Real2Sim)+双生成器-Reviewer MAA防幻觉标注(路由图五元组), 933 episodes; JanusVLN最佳SR 43.55%, sim-real相关r=0.935
+   - 机构: VinMotion/USC

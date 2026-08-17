@@ -1,0 +1,1009 @@
+{
+  "date": "2026-08-18",
+  "total_unique": 240,
+  "total_recent": 47,
+  "papers": [
+    {
+      "title": "Embodied Multimodal Grounding for Open-Vocabulary Mobile Manipulation via Semantic 3D Gaussian Splatting",
+      "summary": "Embodied mobile manipulation requires language, visual observations, three-dimensional scene structure, and action feasibility to be aligned before execution. We study open-vocabulary target grounding with few-shot manipulation in local household workspaces and present an embodied multimodal grounding framework that integrates active multi-view Semantic 3D Gaussian Splatting (Semantic-3DGS), reachability-aware base positioning, and a diffusion-based vision-language-action policy. A task-driven local Semantic-3DGS serves as a shared interface across active sensing, language-conditioned 3D localization, obstacle-aware scene reasoning, base preparation, and semantic conditioning of the action model. To preserve pretrained action priors, the 3D semantic cues are injected only into the late action-expert blocks. In expanded 50-trial real-robot evaluations against representative vision-language-action (VLA) approaches, the full system achieves 60% long-horizon success compared with 40% for PointVLA and 28% for DexVLA, and reaches 74% success in heavily cluttered manipulation compared with 52% for the single-view variant and 46% for PointVLA. It also maintains 75% success under a 75 cm height shift and eliminates photo-induced false grasps. These results indicate that explicit, refreshable 3D semantic grounding can improve robustness under clutter, occlusion, viewpoint variation, and embodiment constraints.",
+      "arxiv_url": "https://arxiv.org/abs/2608.10756v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.10756v1.pdf",
+      "authors": [
+        "Huosen Ou",
+        "Dongni Song",
+        "Yuncong Wang",
+        "Tao Zhou",
+        "Yiding Ji"
+      ],
+      "published": "2026-08-11",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22gaussian_splatting_22.xml"
+      ],
+      "relevance": 16
+    },
+    {
+      "title": "Multi-View Relational Distillation for Spatial Reasoning with Vision-Language Models",
+      "summary": "Vision-language models (VLMs) have achieved strong image and video understanding, yet their visual-spatial representations remain geometrically fragile, leading to failures in spatial reasoning needed for embodied AI, robotics, and autonomous driving. Prior approaches to geometry grounding either fine-tune VLMs on spatial question answering, which can perpetuate spurious visual representations, or fuse features from large geometry-grounded vision models, which substantially increases model size at inference. Knowledge distillation from geometry-grounded vision models offers an alternative, but directly matching multi-view teacher features can disrupt the pretrained alignment between visual and textual representations, degrading object- and language-semantic capabilities. We propose multi-view relational distillation (MVRD), which distills patch-wise cosine similarities across views instead of the teacher features themselves. These relations encode geometric correspondences adequate for spatial understanding, while leaving the student representation underdetermined, allowing it to remain close to its pretrained vision- language space. Across representative VLMs, MVRD improves visual-spatial reasoning, outperforming supervised fine-tuning and feature distillation while approaching feature fusion methods with considerably fewer added parameters and lower latency. We show that MVRD makes visual representations more geometric while retaining language alignment, and generalizes to 3D scene understanding tasks such as object grounding, dense captioning, and question answering.",
+      "arxiv_url": "https://arxiv.org/abs/2608.10864v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.10864v1.pdf",
+      "authors": [
+        "Kiet T. Nguyen",
+        "Hanbo Shim",
+        "Jinwoo Kim",
+        "Seunghoon Hong"
+      ],
+      "published": "2026-08-11",
+      "score": 2,
+      "queries": [
+        "/tmp/arxiv_q_all:VLM_AND_all:3D_AND_all:understanding.xml"
+      ],
+      "relevance": 15
+    },
+    {
+      "title": "SLIM-0.5B: Learning Action-Grounded Predictive Latents for Robot Manipulation",
+      "summary": "Vision-language-action policies rely on large multimodal backbones to jointly perform perception, language conditioning, and action generation at every control step. Much of this capacity supports open-domain semantics, whereas continuous robot manipulation primarily requires compact representations of observations, actions, and the transitions induced by actions. Pixel-level world models provide another route, but predicting visual details irrelevant to control can be unnecessarily expensive. We propose SLIM (Self-supervised Latent Interaction Model), a compact 0.5B-parameter latent interaction policy. SLIM learns action-grounded predictive latents that capture both action-conditioned future transitions and the actions that explain observed changes. SLIM learns these representations through self-supervised masked trajectory prediction, combining action reconstruction with future-latent prediction. A compact Mixture-of-Transformers (MoT) backbone models interactions between observation latents and action tokens. The resulting policy is trained with flow matching for language-conditioned action generation. Across simulation benchmarks and real-world evaluation, SLIM matches or exceeds representative large-scale VLA and world-action-model baselines with fewer parameters, no additional embodied pretraining, lower inference latency, and substantially lower GPU memory usage.",
+      "arxiv_url": "https://arxiv.org/abs/2608.09771v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.09771v1.pdf",
+      "authors": [
+        "Jingkai Wang",
+        "Zihan Tang",
+        "Gu Zhang",
+        "Mingyu Cao",
+        "Jiapeng Chen",
+        "Jingjiao Zhao",
+        "Xiansheng Chen",
+        "Pengwei Wang",
+        "Lemao Liu",
+        "Dejing Dou"
+      ],
+      "published": "2026-08-10",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22world_model_22_AND_all:robot.xml"
+      ],
+      "relevance": 13
+    },
+    {
+      "title": "DreamX-Phi 1.0: Action-Conditioned Video World Model for Robotic Manipulation",
+      "summary": "We present \\textbf{DreamX-Phi 1.0}, an action-conditioned video world model for robotic manipulation that, given an observed frame, a language instruction, and a prescribed action sequence comprising end-effector poses and gripper states, predicts the resulting future observations. Yet realism alone does not guarantee faithfulness: a convincing rollout can still move the wrong arm or lose the manipulated object. To ensure the prediction respects each arm's commanded path, we inject per-arm $\\mathrm{SE}(3)$ transformations into attention via \\textbf{PRoPE-style geometric encoding}, preserving arm identity and rigid-motion structure. Action control alone does not fully constrain scene geometry or the evolution of small manipulated objects. We therefore add a lightweight \\textbf{depth branch} for scene-level geometry and use \\textbf{SAM3 masks} with a frozen \\textbf{V-JEPA teacher} to maintain object consistency throughout grasping. We further distill the multi-step generator into a few-step student via distribution-matching distillation for efficient deployment. At the time of writing, \\model{} achieves first place on Track~1 and second place on Track~2 of the WorldArena~2.0 Challenge. Our model and code will be publicly available.",
+      "arxiv_url": "https://arxiv.org/abs/2608.13489v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.13489v1.pdf",
+      "authors": [
+        " DreamX Team",
+        "Rui Chen",
+        "Xiangxiang Chu",
+        "Geng Li",
+        "Jifan Li",
+        "Qingfeng Shi",
+        "Datao Tang",
+        "Jing Tang",
+        "Jun Wang",
+        "Pengfei Zhang"
+      ],
+      "published": "2026-08-13",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22world_model_22_AND_all:robot.xml"
+      ],
+      "relevance": 12
+    },
+    {
+      "title": "ProbSplat: Efficient Probabilistic Hardware for Gaussian Splatting in 3D Scene Reconstruction",
+      "summary": "This paper presents ProbSplat, a Compute-in-Memory (CIM)-inspired architecture based on programmable and energy efficient floating-gate inverter columns for probabilistic computing. Improving upon our prior work, ProbSplat programs and stores both means and variances of Gaussian mixture components, and evaluates log-likelihood for gaussian splatting during scene reconstruction with high energy efficiency, suitable for robotics and augmented/virtual reality (AR/VR) at the edge. Our proposed scheme enables independent control of both mean and variance via deterministic adjustment of floating-gate MOSFET threshold voltages, increasing the fidelity of hardware to program probability distributions. The design is simulated in 180nm CMOS on 1.8 V at 50 MHz and achieves mean-variance independence with <2.4% deviation during 3-D Gaussian mixture modeling. Compared to conventional digital implementations, ProbSplat significantly reduces compute complexity, memory footprint, and power consumption. The scalable framework consumes 18pJ energy per log-likelihood inference with 4-bit precision while operating for 500 mixture functions in a 3-D GMM. Scene reconstruction with ProbSplat's characteristics gave satisfactory fidelity of 21.99 PSNR (dB) at 8-bit precision.",
+      "arxiv_url": "https://arxiv.org/abs/2608.13143v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.13143v1.pdf",
+      "authors": [
+        "Siddarth Gottumukkula",
+        "M P Samartha",
+        "Vedant Pahariya",
+        "Priyanshi Jain",
+        "Amit Ranjan Trivedi",
+        "Priyesh Shukla"
+      ],
+      "published": "2026-08-13",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22gaussian_splatting_22.xml"
+      ],
+      "relevance": 12
+    },
+    {
+      "title": "HumanoidVLN: A Physics-Grounded Simulator and Benchmark for Vision-Language Navigation Across Diverse Humanoid Embodiments",
+      "summary": "Vision-Language Navigation (VLN) for humanoid robots poses challenges existing benchmarks fail to address: bipedal locomotion imposes physical constraints absent from wheeled agents, humanoid morphologies vary across platforms, and egocentric observations are distorted by locomotion-induced camera dynamics. We present HumanoidVLN, a physics-grounded simulator and benchmark for VLN across diverse humanoid embodiments. Built on NVIDIA Isaac Sim, our platform supports an extensible set of humanoid configurations, demonstrated on four robots (Unitree G1, Unitree H1, Internal-A, Internal-B) spanning 10-12 lower-body DoF and heights from 1.17m to 1.80m, via a hierarchical control stack combining a reinforcement learning locomotion policy with interchangeable PD or MPC path trackers. New robots and VLN models integrate with minimal effort; we demonstrate compatibility with NaVILA, DualVLN, StreamVLN, and JanusVLN. Environments are drawn from artist-designed scenes and 3D Gaussian Splatting reconstructions, filtered for navigable areas exceeding 100 square meters. Instructions are generated by a dual generator-reviewer plus paraphraser multi-agent pipeline with human-in-the-loop verification, yielding 933 collision-aware reference episodes, each paired with one fine-grained instruction and three coarse-grained stylistic variants (formal, natural, casual). Across four models and four embodiments, JanusVLN achieves the highest mean success rate of 43.55% and nDTW of 48.38. In a 20-episode sim-to-real pilot with DualVLN and the Unitree G1, navigation errors correlate strongly (r=0.935), with a mean absolute difference of 0.68m and mean trajectory similarity of 0.782 (+/-0.188) nDTW. These results highlight the interaction between VLN models, controllers, and humanoid embodiments under physical execution. Code, benchmark, and data will be released upon acceptance at https://humanoid-vln.github.io/.",
+      "arxiv_url": "https://arxiv.org/abs/2608.12860v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.12860v1.pdf",
+      "authors": [
+        "Quan-Dung Pham",
+        "Anh Dao",
+        "The-Anh Nguyen",
+        "Minh Nguyen-Dinh",
+        "Phuong Nam Dang",
+        "Tri Pham",
+        "Hung Tran",
+        "Bach Dao",
+        "Tuyen P. Le",
+        "Truong Nguyen",
+        "Quan Nguyen"
+      ],
+      "published": "2026-08-13",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22gaussian_splatting_22.xml"
+      ],
+      "relevance": 12
+    },
+    {
+      "title": "Chain of Spatial Thoughts: Modality-Agnostic Spatial Grounding for Vision Language Models",
+      "summary": "Spatial understanding is fundamental to embodied intelligence, underpinning applications such as robotic manipulation, embodied navigation, and autonomous driving. Although recent vision-language models (VLMs) have achieved impressive performance on spatial reasoning benchmarks, state-of-the-art approaches typically rely on additional spatial encoders or architectural modifications during inference, increasing computational cost. We introduce Space Tokens, a lightweight, architecture-agnostic framework that equips VLMs with explicit continuous spatial representations without requiring additional inference-time modules. By distilling scene-level 3D geometry and object-centric spatial attributes into continuous latent tokens, our method enables these modalities to be directly incorporated into a chain-of-thought reasoning process, thereby improving the VLM's spatial reasoning capabilities. At the same time, the learned representations can be explicitly decoded to verify that they encode meaningful geometric information, while the unified token interface remains extensible to additional modalities. Experiments on VSI-Bench improve Qwen3-VL-8B by 4.3% and SenseNova-SI-1.3 by 1.3%, while achieving state-of-the-art performance on object size (79.2%) and room size estimation (75.7%). These results demonstrate that continuous spatial tokens provide an effective, interpretable, and computationally efficient mechanism for integrating geometric reasoning into large vision-language models.",
+      "arxiv_url": "https://arxiv.org/abs/2608.10278v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.10278v1.pdf",
+      "authors": [
+        "Hunter Schofield",
+        "Mohammed Elmahgiubi",
+        "Mohammad Mahdavian",
+        "Richard Shi",
+        "Jinjun Shan",
+        "Amir Rasouli",
+        "Dongfeng Bai"
+      ],
+      "published": "2026-08-10",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q_all:VLM_AND_all:3D_AND_all:understanding.xml"
+      ],
+      "relevance": 11
+    },
+    {
+      "title": "S2-HWM: Sparse Event-Structured Hierarchical World Model for Long-Horizon Surgical Robot Manipulation",
+      "summary": "Long-horizon surgical robot manipulation is challenging because task rewards are sparse, while meaningful interaction changes occur at irregular intervals. Existing world-model agents typically imagine at primitive-step resolution, leaving variable-duration task progress implicit. Manually specified stages can provide intermediate structure, but their task specific boundaries are difficult to align with state-dependent interaction transitions. We propose S2-HWM, a Sparse Event-Structured Hierarchical World Model that learns sparse event evidence from primitive latent trajectories to coordinate an event-level manager and a primitive-step worker. The event evidence schedules manager goal updates, and each selected latent goal conditions the worker's primitive actions until the next update. The learned event evidence also forms variable-duration segments for an Event Transition Model (ETM), which predicts the next?boundary stochastic state, segment duration, and accumulated segment reward. Chaining these event-level predictions provides a variable-duration continuation beyond the primitive imagination horizon for manager learning, while the worker retains primitive-step actor-critic learning. On a SurRoL-based PegTransfer task, S2-HWM achieves a success rate of 98.7%, outperforming the flat GAS DreamerV3 baseline by 22.7 percentage points.",
+      "arxiv_url": "https://arxiv.org/abs/2608.13103v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.13103v1.pdf",
+      "authors": [
+        "Shuzhe Zhang",
+        "Xin Zhu",
+        "Yinling Qian",
+        "Qiong Wang"
+      ],
+      "published": "2026-08-13",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22world_model_22_AND_all:robot.xml"
+      ],
+      "relevance": 11
+    },
+    {
+      "title": "H2R-Bench: Benchmarking Human-to-Robot Manipulation Video Generation in World Models",
+      "summary": "Large-scale manipulation data is essential for robot learning, yet collecting robot demonstrations remains expensive and difficult to scale. Meanwhile, abundant egocentric human manipulation videos provide rich behavioral experiences, but transferring them across embodiments remains challenging due to differences between human hands and robotic end-effectors. Recent advances in video world models offer a promising pathway to synthesize robot-centric manipulation videos from human observations, while their cross-embodiment transfer capability remains largely unexplored. Therefore, we introduce H2R-Bench, a benchmark for evaluating cross-embodiment human-to-robot manipulation video generation, where models transform egocentric human demonstrations into robot manipulation videos under specified embodiments. Each benchmark instance contains a human demonstration video, target embodiment constraints, and source-grounded annotations covering task goals, action events, functional contacts, and object responses. H2R-Bench evaluates generated videos through five dimensions, including goal-state completion, action-event completion, functional contact transfer, embodiment correctness, and general video quality. We benchmark eleven state-of-the-art video generation models across six manipulation families and two robot embodiments. Our evaluation reveals that current video world models remain limited in human-to-robot manipulation transfer: even leading models often fail in embodiment consistency, functional interaction, and task execution. H2R-Bench provides a systematic diagnostic framework for evaluating whether video world models can bridge the human-to-robot embodiment gap and convert human manipulation observations into robot-centric training resources.",
+      "arxiv_url": "https://arxiv.org/abs/2608.13049v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.13049v1.pdf",
+      "authors": [
+        "Dingyi Rong",
+        "Yue Shi",
+        "Chaofan Ma",
+        "Jiezhang Cao",
+        "Zongrui Wang",
+        "Zeyu Zhang",
+        "Yao Mu",
+        "Guangtao Zhai",
+        "Ning Liu"
+      ],
+      "published": "2026-08-13",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22world_model_22_AND_all:robot.xml"
+      ],
+      "relevance": 11
+    },
+    {
+      "title": "JEPA-WAM: Learning Vision-Language-Action Policies with Joint-Embedding World Modeling",
+      "summary": "Robust robot control benefits from explicitly modeling state transitions, but video-generation world action models (WAMs) introduce substantial deployment cost. Existing latent WAMs avoid explicit future generation, but often compress predictive representations or separate predictive modeling from the representations used for action generation. We introduce JEPA-WAM, a latent WAM built in a pretrained V-JEPA space, which couples latent transition prediction with continuous action generation through a shared predictor. JEPA-WAM predicts a spatially structured joint current-future target that captures task-shared visual temporal structure between current and future observations, while preserving dense patch-level correspondence. Through the shared predictor, transition supervision directly shapes the backbone, from which dedicated representations are extracted for action prediction. The same design can also be instantiated in pretrained VLA policies while preserving their original perception and action pathways. On LIBERO-Plus, JEPA-WAM achieves 79.2%, the best result without large-scale robot-policy pretraining, while its pretrained $π_{0.5}$ instantiation reaches 86.3%, achieving the best overall performance. Experiments on RoboTwin 2.0 and real-world bimanual manipulation further demonstrate strong generalization under visual and spatial shifts.",
+      "arxiv_url": "https://arxiv.org/abs/2608.09381v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.09381v1.pdf",
+      "authors": [
+        "Yihan Lin",
+        "Jiawei He",
+        "Shifeng Bao",
+        "Chen Zhao",
+        "Yang Li",
+        "Xiaobo Wang",
+        "Yan Wang",
+        "Cheng Chi",
+        "Jing Zhang"
+      ],
+      "published": "2026-08-10",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22world_model_22_AND_all:robot.xml"
+      ],
+      "relevance": 11
+    },
+    {
+      "title": "WildFireGS: Physics-Based Wildfire Simulation in Large-Scale Semantics-Enriched Gaussian Splatting Forest Scenes",
+      "summary": "Climate-driven environmental change is driving an increase in both the frequency and severity of wildfire events, making accurate simulation and prediction critical for effective risk mitigation and landscape management. While recent physics-based wildfire models achieve high realism by explicitly simulating combustion, heat transfer, and fuel dynamics, they remain largely restricted to synthetic environments with complete and idealized knowledge of forest structure, limiting their applicability to real-world environments captured via aerial imagery. To provide a pathway toward real-world wildfire digital twins derived directly from observational data, we present WildFireGS, a physics-based wildfire simulation framework operating directly on large-scale, semantics-enriched 3D Gaussian Splatting forest reconstructions. Our approach bridges learning-based scene reconstruction and environmental simulation by augmenting Gaussian primitives with semantics and material properties that encode vegetation type and fuel characteristics. We introduce a particle-based combustion model that operates natively on Gaussian representations, simulating ignition, heat transfer, combustion, and flame propagation across complex forest structures. This enables direct physics-based simulation of fire behavior on reconstructed real-world environments, without requiring conversion to explicit meshes or volumetric grids. We demonstrate the modularity of WildFireGS through a rain-driven cooling mechanism in terms of an energy-sink process to realistically model fire containment. Evaluations on synthetic scenes and real aerial forest captures show physically consistent wildfire behavior, reproducing characteristic dynamics including propagation scaling with vegetation density, wind velocity, and terrain slope. In addition, we validate our model through novel firebreak experiments and biomass loss estimation.",
+      "arxiv_url": "https://arxiv.org/abs/2608.11100v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.11100v1.pdf",
+      "authors": [
+        "Nienke Driessen",
+        "Joris Rijsdijk",
+        "Sören Pirk",
+        "Wojtek Palubicki",
+        "Dominik L. Michels",
+        "Michael Weinmann"
+      ],
+      "published": "2026-08-11",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22gaussian_splatting_22.xml"
+      ],
+      "relevance": 11
+    },
+    {
+      "title": "Spatial Memory Agent: Experience-Grounded Procedure Memory for Spatial Intelligence",
+      "summary": "Spatial intelligence is becoming a foundation for embodied agents, robotic planning, and multimodal assistants. To improve the spatial reasoning ability of VLM agents, existing work has mainly followed two lines. One line uses post-training methods, such as supervised fine-tuning and reinforcement learning. Another line adopts an agentic paradigm in which the model calls external spatial tools, such as depth estimation and 3D reconstruction tools, to gather intermediate spatial evidence. We study a complementary and underexplored route: Can a frozen VLM agent improve its spatial reasoning through \\textbf{parameter-update-free self-evolution}, without depending on external expert spatial tools at inference time? We present \\textbf{Spatial Memory Agent (SMA)}, an \\textbf{experience-grounded runtime framework} that converts verified spatial experience into reusable transferable lessons. In a verifiable spatial environment, SMA queries the frozen VLM, obtains a predicted answer and reward, and uses \\textbf{verifier-guided reflection} to distill compact transferable lessons from spatial experience. SMA further assigns each lesson a \\textbf{Transfer Reliability Score (TRS)}, which is initialized uniformly and calibrated from later retrieval outcomes as visit evidence of future transfer reliability. During \\textbf{read-only deployment}, SMA retrieves lessons by semantic filter and similarity-TRS combined ranking, allowing the retrieved memory to guide frozen model inference. Across five representative spatial benchmarks and four base VLMs, SMA achieves the highest macro average in every base-model block and the best accuracy among the evaluated methods in most of the 20 evaluations, establishing a practical parameter-update-free path for spatial self-evolution across the evaluated frozen model scales and environments.",
+      "arxiv_url": "https://arxiv.org/abs/2608.12743v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.12743v1.pdf",
+      "authors": [
+        "Haokai Zhang",
+        "Yuhang Ding",
+        "Yunshu Zhou",
+        "Xinze Du",
+        "Shengtao Zhang",
+        "Zhiyue Zhao",
+        "Yuling Xi",
+        "Hao Chen"
+      ],
+      "published": "2026-08-13",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22spatial_intelligence_22_AND_all:3D.xml"
+      ],
+      "relevance": 10
+    },
+    {
+      "title": "Latent World Models with Monotone Planning Costs for Image-Goal Navigation",
+      "summary": "Image-goal navigation with latent world models requires not only accurate future prediction, but also a planning cost that reliably ranks candidate action sequences. We define the cost as the cosine distance between the predicted future embedding and the goal embedding, and show that poor cost ordering can mislead sampling-based planners such as Cross-Entropy Method (CEM). To address this, we propose a latent world model built on a frozen DINO-family encoder and train it with two complementary objectives. An autoregressive rollout loss reduces the gap between training and multi-step planning rollouts, while a Monotone Cost Ranking (MCR) loss directly encourages increasingly perturbed action sequences to receive higher planning costs. We also study InfoNCE-based action-contrastive training and find that temporal permutation negatives distort the latent geometry and degrade planning performance. On the GNM navigation dataset, our method outperforms Navigation World Models (NWM), DINO-WM, OmniVLA, and NoMaD, achieving state-of-the-art image-goal navigation performance while reducing orientation error by $2.7\\times$ over the same-encoder DINO WM baseline. We also deploy the model zero-shot on a physical robot, where it follows goal-directed paths in unseen indoor and outdoor environments.",
+      "arxiv_url": "https://arxiv.org/abs/2608.09073v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.09073v1.pdf",
+      "authors": [
+        "Amirhosein Chahe",
+        "Siwei Cai",
+        "Lifeng Zhou"
+      ],
+      "published": "2026-08-10",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22world_model_22_AND_all:robot.xml"
+      ],
+      "relevance": 10
+    },
+    {
+      "title": "Explore, Map, Remember, Decide: Are Embodied VLMs Ready for Safety-Critical Scenarios?",
+      "summary": "Theory of Space framework (ToS) assesses the spatial understanding of curiosity-driven Vision-Language Models (VLMs) under partial observability. As AI techniques are increasingly applied to safety-critical scenarios, it is crucial to understand whether VLMs possess robust spatial memory and make reliable decisions. In this paper, we assess whether VLMs' decisions are based on physical evidence or are corrupted by visual-language biases, if their memory processes align with human cognitive patterns, and how they respond to environmental hazards. We extend the ToS framework into a safety-critical, goal-driven pipeline, named Explore, Map, Remember, and Decide (EMRD). We then quantify Exploration Competence (Explore) through metrics of environmental coverage and temporal efficiency, assess Spatial Fidelity (Map), evaluate, with a suite of psychological metrics, Memory Persistence (Remember), and measure, using focal-point metrics, Cognitive Decision-Making (Decide). Our results show that in terms of decision-making capabilities, VLMs frequently select evacuation points based on pre-trained textual priors while lacking the spatial grounding to justify their choices. We also show that spatial reasoning degrades in low-light conditions, but it is not affected by texture and colour tampering. Our findings suggest that VLM memory fundamentally diverges from human cognition, creating unpredictable risks of misalignment.",
+      "arxiv_url": "https://arxiv.org/abs/2608.08077v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.08077v1.pdf",
+      "authors": [
+        "Gabriele La Malfa",
+        "Nitay Alon",
+        "Emanuele La Malfa",
+        "Reuth Mirsky",
+        "Stefan Sarkadi"
+      ],
+      "published": "2026-08-08",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q_all:embodied_AND_all:AI_AND_all:VLM.xml"
+      ],
+      "relevance": 10
+    },
+    {
+      "title": "EndoMD-SLAM: Endoscopic Gaussian Splatting SLAM under Optical Degradation with Memory and Static-Transient Decomposition",
+      "summary": "Dense 3D reconstruction is critical for clinical endoscopic navigation and documentation. While Gaussian Splatting SLAM systems show promise in this domain, they fundamentally rely on strict multi-view photometric consistency. In routine procedures, this assumption is severely violated by intermittent optical degradations like moving debris and water flushing. Standard systems erroneously fuse these cameraattached artifacts into the persistent 3D geometry, causing severe tracking drift and irreversible map corruption. To address this limitation, we propose EndoMD-SLAM, a framework designed to maintain stability under optical degradation through specialized tracking and mapping mechanisms. On the tracking side, a memory-driven gating mechanism detects unreliable observations to suspend map updates and utilizes historical keyframes for drift-aware relocalization. On the mapping side, a self-supervised static-transient decomposition isolates visual contaminants into a dedicated transient field. This explicit separation prevents artifacts from structurally entangling with the persistent anatomical map. We curate a degradationfocused benchmark from colonoscopy videos to systematically evaluate these failure modes. Extensive experiments show that while standard baselines fail under severe optical degradation, EndoMD-SLAM preserves geometric integrity, reducing absolute trajectory error by 91% and improving rendering fidelity by 9.9 dB PSNR.",
+      "arxiv_url": "https://arxiv.org/abs/2608.08949v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.08949v1.pdf",
+      "authors": [
+        "Nuo Chen",
+        "Kangqi Ni",
+        "Lulin Liu",
+        "Joga Ivatury",
+        "Ying Ding",
+        "Farshid Alambeigi",
+        "Tianlong Chen",
+        "Zhiwen Fan"
+      ],
+      "published": "2026-08-09",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22gaussian_splatting_22.xml"
+      ],
+      "relevance": 10
+    },
+    {
+      "title": "TrustRoboReward: Preference-Ordered Isotonic Score Editing for Multi-Paradigm Robot Reward Models",
+      "summary": "Reward models are a bottleneck for reinforcement learning in embodied AI. Long-horizon robotic manipulation requires scalable vision feedback beyond handcrafted rewards or task-specific annotations. Existing open-source VLM reward judges like RoboReward adopt simple 1--5 trajectory progress scoring, lacking pairwise preferences for RLHF, DPO and Bradley-Terry frameworks, while failing to optimize video scene understanding. Augmenting RoboReward with pairwise comparison and video-QA supervision causes inconsistency between pairwise preferences and pointwise scores, introducing training noise and hurting downstream performance---an issue aggregation methods such as TrustJudge cannot resolve. To address this, we propose TrustRoboReward, a multi-paradigm reward modeling framework equipped with Preference-Ordered Isotonic Score Editing (POISE). We construct a unified four-paradigm dataset with trajectory progress scoring (Score-A), video-QA answer quality scoring (Score-B), and their pairwise counterparts (Pair-A, Pair-B). Pairwise labels align better with human judgment than pointwise scores, inspiring us to calibrate pointwise scores to avoid score-pair reversals against pairwise preferences. POISE rectifies pointwise scores and eliminates cross-paradigm reversal conflicts unresolved by TrustJudge. Theoretically, POISE reduces score-pair reversal conflicts from 20.15% to 0%, whereas TrustJudge retains 20.46% conflicts on the same corpus. Evaluated on our benchmark, Qwen3-VL-4B trained with POISE achieves an overall reward score of 77.96%, nearly matching GPT-5-mini (78.09%, gap 0.13%) and outperforming the strongest RoboReward-4B baseline by 10.13%. It also lifts test-time score-pair consistency to 71.90%, exceeding RoboReward-4B (57.26%) and GPT-5-mini (68.09%). Integrating TrustJudge aggregation during inference boosts the overall score to 78.57%, surpassing the GPT-5-mini teacher model.",
+      "arxiv_url": "https://arxiv.org/abs/2608.08491v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.08491v1.pdf",
+      "authors": [
+        "Yidong Wang",
+        "Yan Zhan",
+        "Ziteng Feng",
+        "Zhenyu Cui",
+        "Ziyi Zhou",
+        "Renzhao Liang",
+        "Jiaxuan Zhu",
+        "Zilei Yang",
+        "Yiran Zhao",
+        "Zhongkuan Mao",
+        "Bo Jia",
+        "Hanchu Ni",
+        "Chenggang Xie",
+        "Biao Liu",
+        "Yi Zhang",
+        "Yong Dai",
+        "Xiaozhu Ju",
+        "Wei Ye",
+        "Shikun Zhang"
+      ],
+      "published": "2026-08-09",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q_all:embodied_AND_all:AI_AND_all:VLM.xml"
+      ],
+      "relevance": 9
+    },
+    {
+      "title": "CausalSplat: Towards Comprehensive Hierarchical Reasoning in 3D Gaussian Splatting",
+      "summary": "While 3D Gaussian Splatting (3DGS) has advanced open vocabulary scene understanding, existing methods remain confined to explicit queries. They struggle to interpret implicit intents, complex spatial constraints, and commonsense reasoning required for practical embodied interactions. To address this gap, we introduce the task of reasoning 3D Gaussian segmentation and construct two benchmarks, Causal-LERF and Causal-ScanNet. These benchmarks systematically evaluate commonsense, spatial, affordance, and counterfactual reasoning. Evaluations reveal that current state of the art methods perform poorly on these reasoning challenges. Therefore, we propose CausalSplat, a framework that integrates vision-language models with 3D scene graphs to disentangle explicit structural perception from implicit logical inference. Extensive experiments demonstrate that CausalSplat achieves state of the art performance on our reasoning benchmarks while showing strong generalizability on standard referring and open vocabulary 3D segmentation tasks. Project Page: https://jiayuding031020.github.io/CausalSplat",
+      "arxiv_url": "https://arxiv.org/abs/2608.11150v2",
+      "pdf_url": "https://arxiv.org/pdf/2608.11150v2.pdf",
+      "authors": [
+        "Jiayu Ding",
+        "Meilu Song",
+        "Yun Chen",
+        "Wei Gao",
+        "Ge Li"
+      ],
+      "published": "2026-08-11",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22gaussian_splatting_22.xml"
+      ],
+      "relevance": 9
+    },
+    {
+      "title": "FlexSplat: Flexible Feed-Forward 3D Gaussian Splatting without Point Cloud Correspondence",
+      "summary": "We present FlexSplat, a feed-forward framework for novel view synthesis (NVS) from uncalibrated, object-centric multi-view image collections. A recent line of query-based methods reconstructs a compact set of 3D Gaussians by treating them as transformer queries that are refined with multi-view deformable attention; these methods, however, assume that camera poses are given. FlexSplat removes this assumption: a geometry transformer is trained jointly with the Gaussian decoder to predict per-image camera parameters and depth, which in turn ground a depth-guided Gaussian parameterization and a multi-view deformable cross-attention that aggregates evidence across all input views into a single, view-consistent set of primitives. An uncertainty-weighted depth-consistency objective lets the jointly trained geometry adapt to the reconstruction task, while the cross-view consensus formed during decoding absorbs the residual error of the estimated cameras and depth. The representation uses a compact Gaussian budget that is decoupled from the input resolution - unlike pixel-aligned methods, the primitive count does not grow with the image grid - and is not dictated by the number of views. On ShapeNet-SRN and Google Scanned Objects (GSO), FlexSplat matches or approaches posed state-of-the-art reconstructors while requiring neither camera poses nor ground-truth depth, and matches the best perceptual (LPIPS) quality among the compared methods on GSO. Our results indicate that a jointly trained geometry front-end is sufficient to bring calibration-free operation to query-based Gaussian reconstruction while staying within 0.7 dB PSNR of posed methods and matching their perceptual quality.",
+      "arxiv_url": "https://arxiv.org/abs/2608.07937v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.07937v1.pdf",
+      "authors": [
+        "Amir Sabbaghziarani",
+        "Hanting Ye",
+        "Maria Gorlatova",
+        "Yi Ding"
+      ],
+      "published": "2026-08-08",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22gaussian_splatting_22.xml"
+      ],
+      "relevance": 9
+    },
+    {
+      "title": "SCOUT: Unlocking Enhanced Spatial Reasoning via Structured Chain-of-Thought and Multi-Objective Process Reward",
+      "summary": "Existing Vision-Language Models (VLMs) exhibits a critical bottleneck in robust spatial reasoning. Recent reinforcement learning (RL) methods aim to close this gap with verifiable outcomes, yet they suffer from poor credit assignment across intermediate reasoning steps. Concurrently, structured reasoning approaches overlook the critical depth perception necessary for comprehensive 3D understanding. To address these challenges, we propose SCOUT (Structured Chain-Of-Thought Utilizing Process-Supervised RL Training). Specifically, we design a structured Chain-of-Thought (CoT) framework that explicitly models 3D environmental perception to ensure robust spatial understanding and reasoning. Furthermore, we introduce a novel RL algorithm featuring multi-objective process rewards and a tailored advantage estimation method, facilitating fine-grained credit assignment across distinct segments of the reasoning trajectory. To support our framework, we develop SCOUT-24k, a structured spatial reasoning CoT dataset synthesized through a customized pipeline. Extensive evaluations demonstrate that SCOUT-3B improves upon baseline models by 16.85% and 6.3% on general spatial benchmarks and complex spatial reasoning tasks respectively. Notably, our larger SCOUT-7B even outperforms GPT-4o by a margin of 4.28%. Moreover, despite being trained exclusively on single image, SCOUT-7B exhibits robust out-of-domain generalization to multi-image and video scenarios. These empirical results render SCOUT as a critical step towards next generation of spatially-aware VLMs.",
+      "arxiv_url": "https://arxiv.org/abs/2608.12220v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.12220v1.pdf",
+      "authors": [
+        "Zile Zhou",
+        "Huining Yuan",
+        "Weichen Zhang",
+        "Xinlei Chen",
+        "Xiao-ping Zhang"
+      ],
+      "published": "2026-08-12",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q_all:VLM_AND_all:3D_AND_all:understanding.xml"
+      ],
+      "relevance": 8
+    },
+    {
+      "title": "Surgical WAM: A World-Action Model for Data-Efficient Surgical Robot Learning",
+      "summary": "Learning reliable surgical manipulation policies is bottlenecked by the scarcity of action-labeled demonstrations: teleoperated surgical robot (e.g., dVRK) trajectories with synchronized kinematics are costly to collect, while surgical tasks demand precise contact handling, long-horizon reasoning, and bimanual coordination. Endoscopic video is comparatively inexpensive and abundant relative to synchronized video--kinematics trajectories, and a natural way to exploit it is to learn world models of surgical scenes. However, existing surgical world models use video primarily for simulation or policy evaluation, and rarely translate the learned dynamics into closed-loop control. This gap raises our central question: under a fixed budget of action-labeled demonstrations, does action-free video pretraining improve closed-loop surgical manipulation? To answer it, we introduce the Surgical World-Action Model (Surgical WAM), a unified generative model built on Cosmos Policy that jointly predicts future endoscopic observations and executable surgical robot action chunks. Surgical WAM first learns surgical visual dynamics from action-free video and is then fine-tuned on the fixed action-labeled budget; at deployment, it acts as a closed-loop, receding-horizon controller that executes a short prefix of each predicted action chunk and replans from the resulting observation. On a suite of four simulated surgical manipulation tasks, video pretraining improves the average success rate from 63.5% to 77.8%, including an absolute gain of 20 percentage points on PegTransfer, with the largest improvements on contact-rich and bimanual tasks. These results demonstrate that action-free video provides transferable visual dynamics priors for learning surgical robot control with limited action supervision, positioning data-efficient video pretraining as a practical path toward scaling up surgical robot learning.",
+      "arxiv_url": "https://arxiv.org/abs/2608.11204v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.11204v1.pdf",
+      "authors": [
+        "Wenrui Bao",
+        "Tianyun Jiang",
+        "Zhiben Chen",
+        "Ser-Nam Lim",
+        "Peter D. Peng",
+        "Yuzhang Shang"
+      ],
+      "published": "2026-08-11",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22world_model_22_AND_all:robot.xml"
+      ],
+      "relevance": 8
+    },
+    {
+      "title": "PBD-AG: Persistent Baseline-Delta Active Graphs with Uncertainty-Aware Inspection for Long-Horizon Service Robots",
+      "summary": "Long-horizon service robots require persistent world models that can be built autonomously in unseen environments and revised as task-relevant objects change. Existing methods rely on online mapping, which accumulates localization and observation errors, static scene representations that cannot capture persistent object changes, or holistic vision-language predictions that lack verifiable 3D geometric evidence. We present PBD-AG, a persistent baseline-delta active graph framework that decouples robot-verified stable fixtures from revisable dynamic object events. Under our framework, the robot autonomously bootstraps the structural baseline from onboard exploration and inspects discovered fixtures to ground hierarchical object beliefs. PBD-AG maintains reliability-weighted object states over geometry, semantics, identity, existence, and support relations, utilizing a geometric visibility gate to mitigate false deletions under occlusion. Inspection viewpoints are selected by a graph-conditioned policy that balances target coverage, travel cost, collision risk, and redundant observation. Simulation experiments in multiple environments and under controlled dynamic evaluation show higher aggregate coarse-fixture F1 than capability-matched controls, as well as stronger identity continuity and event recall. A qualitative physical-robot demonstration further illustrates integration with onboard sensing, providing a traceable world model for long-horizon robotic perception. The project page of PBD-AG is available at https://shuobao214.github.io/PBD-AG/",
+      "arxiv_url": "https://arxiv.org/abs/2608.10449v2",
+      "pdf_url": "https://arxiv.org/pdf/2608.10449v2.pdf",
+      "authors": [
+        "Shuo Bao",
+        "Wei Dong",
+        "Shuyue Zhang",
+        "Ming Shang",
+        "Yuchen Huang",
+        "Han Yu",
+        "Chengjie Xu",
+        "Yiheng Bi",
+        "Kai Sun",
+        "Fuchun Sun",
+        "Xinzhou Wang"
+      ],
+      "published": "2026-08-11",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22world_model_22_AND_all:robot.xml"
+      ],
+      "relevance": 8
+    },
+    {
+      "title": "WA-SpecDec: World-Aware Speculative Decoding for Vision-Language-Action Models",
+      "summary": "Vision-language-action (VLA) policies generate robot controls autoregressively, making closed-loop latency dominated by repeated target-model forward passes. Speculative decoding reduces this cost by verifying blocks of draft action tokens in parallel, and recent VLA methods further relax token-level acceptance because small differences in action-token space often map to similar continuous controls. However, this relaxation remains scene-agnostic. A fixed token-distance tolerance treats the same action-token deviation as equally safe across states, although deviations that are harmless in free space can cause collisions or grasp failures near contact. We propose WA-SpecDec, a world-aware speculative decoding framework that injects world-model-derived physical scene awareness during the VLA prefill stage, producing shared world-aware prefill states for draft proposal and target verification without changing the relaxed acceptance rule. Across three state-of-the-art relaxed acceptance schemes, WA-SpecDec preserves higher task success under looser relaxation and enables longer accepted prefixes. At comparable-success operating points, WA-SpecDec achieves a 1.5x matched-success speedup over VLA speculative decoding alone and reduces near-contact failure (NCF) by 18.6% on average relative to the corresponding speculative baselines.",
+      "arxiv_url": "https://arxiv.org/abs/2608.08725v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.08725v1.pdf",
+      "authors": [
+        "Zikang Wen",
+        "Yuning Zhang",
+        "Dong Yuan"
+      ],
+      "published": "2026-08-09",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22world_model_22_AND_all:robot.xml"
+      ],
+      "relevance": 8
+    },
+    {
+      "title": "HandEdit: A Unified Benchmark for Egocentric Human-to-Robot Dexterous Hand Image Editing",
+      "summary": "Robotic manipulation with dexterous hands is a cornerstone of Embodied AI, yet its progress is stifled by the high cost of collecting embodiment-aware teleoperation data. While abundant egocentric videos of human hands offer a scalable alternative, the profound discrepancies in appearance, articulation, and camera viewpoints between human and robotic data raise significant challenges for co-training. Though existing general image-editing models demonstrate strong capabilities, they lack necessary embodiment-specific priors to fully bridge this gap. In this work, we present HandEdit, a unified large-scale embodiment-aware image-editing dataset and benchmark specifically designed to transform human hands and arms into various dexterous robotic embodiments within egocentric frames. HandEdit comprises over 200M editing instances derived from five diverse source datasets, covering 26 distinct URDFs, including 13 hand-only and 13 hand-arm configurations. Alongside the dataset, we establish a unified benchmark protocol with two tracks: Hand-only and Hand-Arm, supporting URDF-conditioned evaluation. We conduct extensive evaluations of 11 representative image-editing baselines using a multi-dimensional metric suite, including generic similarity metrics, VLM-based judgment, and embodiment-aware metrics. HandEdit serves as a critical resource at the intersection of image editing and robotics: it advances embodiment-aware editing models while enabling scalable dexterous robotic learning from abundant human video data, paving the way for more generalizable Embodied AI.",
+      "arxiv_url": "https://arxiv.org/abs/2608.12122v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.12122v1.pdf",
+      "authors": [
+        "Zhenjie Yang",
+        "Xingyu Jiao",
+        "Guopeng Zhong",
+        "Shuzhe Yang",
+        "Shi Che",
+        "Chao Wu",
+        "Chenyu Jiang",
+        "Dongjie Zhang",
+        "Yideng Zhang",
+        "Zheng Zhang",
+        "Muyun Jiang",
+        "Haisheng Su",
+        "Shuang Jin",
+        "Donghang Zhang",
+        "Chao Yang",
+        "Li Chen",
+        "Hongyang Li",
+        "Zuxuan Wu",
+        "Yu-Gang Jiang",
+        "Xiaosong Jia",
+        "Junchi Yan"
+      ],
+      "published": "2026-08-12",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q_all:embodied_AND_all:AI_AND_all:VLM.xml"
+      ],
+      "relevance": 8
+    },
+    {
+      "title": "HUGIN: Enhancing Vision-Language Planning for Autonomous Logistics Sorting",
+      "summary": "Autonomous logistics sorting systems (ALSS) are an important industrial application of embodied AI, which requires joint planning over spatially disjoint camera views. We formulate this setting as Joint Multi-Scene Understanding (JMSU). With open-world visual understanding and task-planning capabilities, vision-language models (VLMs) are promising candidates for JMSU. However, directly applying existing VLMs to JMSU is non-trivial due to scarce cross-scene supervision and attention dispersion caused by long visual context in JMSU. To address these challenges, we propose HUGIN, a training framework with two complementary components. Endogenous Data Augmentation recombines verified atomic facts under operating constraints, while Global Context Ranking aligns the instruction representation more strongly with the complete visual context than with a partial visual context. To support ongoing research, we construct a high-quality industrial sorting dataset and benchmark named SortingBench from four layouts of autonomous logistics sorting systems. Across five open VLMs, HUGIN consistently outperforms matched baselines; for example, the accuracy on SortingBench of Qwen3-VL-8B increases from 63.6% to 78.8%. Additional experiments verify the effectiveness of each component and JMSU's spillover benefits in embodied tasks. Deployment tests involving more than 15,000 packages support the practical viability of VLM-based planning for autonomous logistics sorting.",
+      "arxiv_url": "https://arxiv.org/abs/2608.11692v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.11692v1.pdf",
+      "authors": [
+        "Xikai Sun",
+        "Cangtian Zhou",
+        "Kebin Liu",
+        "Ke Ma",
+        "Xu Wang",
+        "Zaishu Chen",
+        "Haotian Wang",
+        "Li Liu",
+        "Yunhao Liu"
+      ],
+      "published": "2026-08-12",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q_all:embodied_AND_all:AI_AND_all:VLM.xml"
+      ],
+      "relevance": 8
+    },
+    {
+      "title": "GS$^{2}$CI: Robust Gaussian Splatting For Snapshot Compressive Imaging via Large Vision Model Priors",
+      "summary": "Snapshot Compressive Imaging (SCI) offers an efficient solution for high-speed video acquisition and, under exposure-time camera--scene relative motion, multi-view scene capture by compressing temporal or spatial information into a single 2D measurement. While recent studies have explored SCI for 3D scene reconstruction, existing methods struggle with significant challenges due to information loss, limited viewpoint diversity, and the computational burden of jointly optimizing 3D representations and camera poses. In this work, we propose a novel framework that reconstructs high-quality 3D scenes from a single SCI measurement by leveraging 3D Gaussian Splatting (3DGS) and the powerful priors of large-scale vision foundation models (VFMs). Our primary reconstruction combines measurement-derived 3D VFM initialization with SCI-aware Gaussian optimization. After coarse-stage convergence, an auxiliary 2D VFM provides pseudo-view supervision at synthesized viewpoints for local appearance refinement. To further address the instability caused by ambiguous SCI supervision during 3DGS optimization, we introduce Opacity-Guided Splitting and Growth Regulation (OSGR), an SCI-specific densification strategy that augments split candidates using local opacity statistics, discourages loss-compensating opacity inflation through mean-opacity regulation, and bounds representation growth with explicit candidate-ratio and Gaussian-count constraints. Extensive experiments across multiple benchmarks demonstrate that our method achieves the strongest overall performance, combining leading reconstruction quality and robustness to viewpoint variation with competitive computational efficiency.",
+      "arxiv_url": "https://arxiv.org/abs/2608.13502v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.13502v1.pdf",
+      "authors": [
+        "Yanming Yang",
+        "Chenxi Song",
+        "Ping Wang",
+        "Xin Yuan",
+        "Chi Zhang"
+      ],
+      "published": "2026-08-13",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22gaussian_splatting_22.xml"
+      ],
+      "relevance": 8
+    },
+    {
+      "title": "Seed2GS: Camera-Free, Training-Free Object Extraction from 3D Gaussian Scenes via a Single Reference-View Grounding",
+      "summary": "Extracting a target object from a pre-built 3D Gaussian Splatting (3DGS) scene enables interactive 3D editing. Existing methods either train for tens of minutes per scene, sacrifice accuracy, or require original reconstruction cameras that pre-built assets may not include. We present Seed2GS, which achieves the highest reported LERF-MASK accuracy without original reconstruction cameras or scene-specific representation training. Its key insight is to separate target identity from 3D coverage. QD-SAM3 selects one reliable reference mask from several open-vocabulary candidates, fixing identity once. Seed lift and visibility-adaptive virtual orbits then expose the object from new viewpoints, while tracking propagates the seed without repeated detection. Because the scene remains frozen, these masks supervise only one temporary foreground logit per Gaussian. On LERF-MASK, Seed2GS reaches 92.1% mean intersection over union (mIoU) with a measured compute-only latency of 9.3 seconds, 3.7 points above the strongest scene-trained baseline and 7.6 points above the closest camera-free baseline. With one fixed test reference per scene, the complete pipeline retains 91.1% mIoU; replacing its predicted seed with a ground-truth mask improves mIoU by only 0.72 points. On 3D-OVS, Seed2GS reaches 95.7% mIoU.",
+      "arxiv_url": "https://arxiv.org/abs/2608.11928v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.11928v1.pdf",
+      "authors": [
+        "Zongjian Ding",
+        "Yudong Gao",
+        "Jiale Liu",
+        "Xinglin Yu",
+        "Junxing Ren",
+        "Dong Wei",
+        "Yajing Chen",
+        "Shan Huang",
+        "Mingjun Cheng",
+        "Min Li"
+      ],
+      "published": "2026-08-12",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22gaussian_splatting_22.xml"
+      ],
+      "relevance": 8
+    },
+    {
+      "title": "Gaussian Sculpting: End-to-End Controllable Surface Reconstruction via Field Optimization",
+      "summary": "3D Gaussian Splatting (3DGS) has recently enabled real-time novel view synthesis with impressive quality. However, it struggles to recover accurate surfaces under limited viewpoints and due to the inherent irregularity of Gaussian primitives. The resulting geometric errors are notoriously difficult to correct manually. To address these issues, we propose Gaussian Sculpting, a fully differentiable end-to-end framework for high-quality surface reconstruction. Our key insight is to anchor Gaussians onto an evolving differentiable surface, allowing them to guide signed distance field (SDF) optimization instead of extracting the surface only during post-processing. To enable stable gradient isolation during joint optimization, we design a bi-level training strategy in which the outer loop optimizes the geometry represented by the SDF, while the inner loop updates the Gaussians with the geometry fixed. We further impose constraints on Gaussian parameters to ensure consistency with the underlying surface, thereby improving both geometric and appearance fidelity during optimization. In addition, we introduce a multi-resolution subdivision scheme based on octree-like partitioning to preserve fine details while reducing memory consumption. Experiments on object-level scenes demonstrate that our method effectively removes redundant surfaces, recovers missing structures caused by limited viewpoints, and achieves strong reconstruction quality even at relatively low resolutions.",
+      "arxiv_url": "https://arxiv.org/abs/2608.10602v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.10602v1.pdf",
+      "authors": [
+        "Ke Jiaxin",
+        "Juncheng Liu",
+        "Yi Wang",
+        "Zhouhui Lian",
+        "Bin Liu",
+        "Shengfa Wang",
+        "Xiangjia He"
+      ],
+      "published": "2026-08-11",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22gaussian_splatting_22.xml"
+      ],
+      "relevance": 8
+    },
+    {
+      "title": "EvTrajGS: Accurate and Efficient 3D Gaussian Splatting from Unposed Event Streams",
+      "summary": "Event cameras, with high temporal resolution, high dynamic range, and asynchronous sensing characteristics, have shown great potential for dense 3D reconstruction. Traditional reconstruction methods based on off-the-shelf pose estimates achieve high efficiency but produce low-fidelity results, as inaccurate pose initialization introduces cumulative reconstruction errors. In contrast, recent SLAM-style methods stabilize joint pose-scene optimization through incremental tracking and mapping, yielding higher reconstruction fidelity at the expense of considerable computational overhead. To address this trade-off, this paper presents EvTrajGS, an accurate and efficient 3D Gaussian Splatting framework for unposed event streams. Our method enables reliable joint pose-scene optimization initialized from coarse pose priors, eliminating the need for computationally expensive SLAM-style pipelines. EvTrajGS parameterizes camera motion as a continuous-time trajectory initialized from discrete camera poses, providing a unified representation for pose refinement. We then aggregate adjacent trajectory states into a temporally coupled pose, promoting temporally consistent pose updates during joint optimization. Additionally, we introduce a loss-reweighted event sampling strategy to adaptively emphasize temporally under-reconstructed intervals. Extensive experiments on both synthetic and real-world datasets demonstrate that EvTrajGS outperforms state-of-the-art methods in terms of both geometric reconstruction quality and pose estimation accuracy, achieving 3.8 dB higher PSNR, 0.1 higher SSIM, and over 40\\% lower ATE RMSE while retaining high computational efficiency.",
+      "arxiv_url": "https://arxiv.org/abs/2608.08585v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.08585v1.pdf",
+      "authors": [
+        "Zixuan Chen",
+        "Jiakai Zhang",
+        "Junhao Dong",
+        "Guangcong Wang",
+        "Jianhuang Lai",
+        "Yew-Soon Ong",
+        "Xiaohua Xie"
+      ],
+      "published": "2026-08-09",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22gaussian_splatting_22.xml"
+      ],
+      "relevance": 8
+    },
+    {
+      "title": "hint$^2$: Hierarchical World Models for Inference-Time Temporal Logic Guidance",
+      "summary": "A central goal of robot learning is to enable robots to execute rich instructions specified at runtime. Large-scale language-conditioned policies have made substantial progress toward this goal, yet still struggle with temporal structure and safety constraints. Linear Temporal Logic (LTL) provides a powerful language to express complex, non-Markovian instructions. However, guiding learned manipulation policies toward LTL satisfaction remains challenging because modern policies generate short-horizon action chunks and replan in closed loop, while almost all LTL specifications are evaluated over long-horizon trajectories. In this paper, we introduce hint$^2$, a method for guiding short-horizon policies toward satisfying complex LTL specifications at inference time using hierarchical world models. Our key idea is to derive two separate guidance objectives using each world model's abstraction level. A high-level model predicts future action-induced transitions in task-relevant atomic propositions to guide progress through the LTL automaton, while a low-level dynamics model predicts immediate state evolution for accurate local safety guidance. Our results show that hint$^2$ overcomes the limitations of current LTL-guided diffusion methods, outperforms existing inference-time steering methods in CALVIN, and successfully completes instructions with complex liveness and safety constraints more elegantly than language-conditioned alternatives. Finally, we demonstrate that hint$^2$ can handle complex instructions on a real UR5e manipulator.",
+      "arxiv_url": "https://arxiv.org/abs/2608.13678v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.13678v1.pdf",
+      "authors": [
+        "Moritz Zoellner",
+        "Anastasios Manganaris",
+        "Ahmed H. Qureshi",
+        "Rohan Paleja"
+      ],
+      "published": "2026-08-13",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22world_model_22_AND_all:robot.xml"
+      ],
+      "relevance": 7
+    },
+    {
+      "title": "ContactGuard: Pre-Contact Execution Monitoring with Action-Conditioned Latent World Models",
+      "summary": "Contact-rich manipulation failures are often detected only after the robot has committed to contact. This is especially limiting in wrist-camera setups: close gripper--object views help observe contact, but a poor approach may already push, miss, slip, or disturb the object before conventional detectors react. We introduce \\emph{ContactGuard}, a pre-contact execution monitor for chunked visuomotor policies. Given the policy's planned action chunk, ContactGuard predicts its short-horizon consequence in latent visual space and aborts if the predicted future latent indicates likely failure. Its latent world model is trained from unlabelled robot trajectories to predict compact multi-view visual embeddings under planned actions, avoiding pixel-level video prediction. A lightweight failure probe is then trained from a small labelled set of pre-contact clips. At deployment, ContactGuard anchors prediction before an imminent contact event, rolls the model forward under the policy's own actions, and verifies the predicted post-contact latent. Across real-world contact-rich manipulation tasks, ContactGuard predicts failure more accurately than direct and corrupted-action ablations, and transfers to live robot as a pre-contact abort signal without modifying the underlying policy.",
+      "arxiv_url": "https://arxiv.org/abs/2608.13438v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.13438v1.pdf",
+      "authors": [
+        "Gehan Zheng",
+        "Matthew Johnson-Roberson",
+        "Weiming Zhi"
+      ],
+      "published": "2026-08-13",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22world_model_22_AND_all:robot.xml"
+      ],
+      "relevance": 7
+    },
+    {
+      "title": "4D-WAM: Infusing Spatiotemporal Awareness into World Action Models through Trajectory Fields",
+      "summary": "Building on recent advances in world models, World Action Models (WAMs) jointly model video prediction and action generation. However, they typically represent videos in 2D pixel space, creating a representation gap with 3D space in which robotic actions are executed. Recent 3D approaches introduce 3D information, but fail to fully exploit the dynamics of 3D structures. In this work, we propose 4D-WAM, a model-agnostic training strategy that injects spatiotemporal knowledge from 3D trajectory fields into WAMs through representation alignment. To this end, we introduce two complementary objectives: 1) motion alignment, which aligns temporal feature variations across adjacent frames and encourages the model to build local 4D awareness during training, and 2) destination alignment, which guides the model to infer the final destination from the source frame by minimizing the gap between their attention-like similarity distributions. Together, these objectives provide both local motion supervision and long-horizon goal guidance, enabling WAMs to learn trajectory-level spatiotemporal representations. Extensive in-distribution and out-of-distribution experiments across different base models demonstrate the model's improvements in spatial understanding, execution precision, robustness, generalization, and versatility.",
+      "arxiv_url": "https://arxiv.org/abs/2608.08023v2",
+      "pdf_url": "https://arxiv.org/pdf/2608.08023v2.pdf",
+      "authors": [
+        "Lishan Yang",
+        "Wenxuan Song",
+        "Xi Wang",
+        "Pingyue Sheng",
+        "Zheng Fang",
+        "Ziyang Zhou",
+        "Junjie He",
+        "Haodong Yan",
+        "Jiayi Chen",
+        "Nan Sun",
+        "Qiao Sun",
+        "Pengwei Wang",
+        "Lingqiao Liu",
+        "Yan Wang",
+        "Yuxiang Gao",
+        "Feras Dayoub",
+        "Haoang Li"
+      ],
+      "published": "2026-08-08",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22world_model_22_AND_all:robot.xml"
+      ],
+      "relevance": 7
+    },
+    {
+      "title": "HiCo-GS: Hierarchical Context Aggregation and Geometric Consistency for Octree Gaussian Splatting",
+      "summary": "Octree-based anchor Gaussian Splatting has emerged as a scalable representation for city-scale novel view synthesis, where multi-level anchors adaptively capture scene content from coarse building structures to fine architectural details. However, we identify a fundamental limitation in existing methods: cross-level feature isolation, where each level's anchor features are optimized independently with no inter-level communication, causing color drift on building facades and over-smoothing in textured regions. We present HiCo-GS, a high-fidelity reconstruction framework with two complementary modules. Cross-Level Context Aggregation (CLCA) enables bidirectional hierarchical prior injection by leveraging the octree's spatial containment structure to aggregate per-level context vectors into parent-self-child triplets, fused via a lightweight MLP with residual connection. Coarse-level structural priors flow down to inform fine-level anchors, while fine-level detail statistics feed back to prevent over-smoothing, at negligible computational overhead. Depth-Normal Geometric Consistency (DNGC) regularization enforces agreement between rendered normals and depth-derived normals through an alpha-weighted consistency loss, complemented by edge-aware smoothness losses with progressive warmup that exploit the strong planar priors ubiquitous in urban geometry to suppress floating artifacts. We further introduce the China-Pagoda dataset comprising 8 ancient Chinese pagodas with over 1,200 images each, featuring dense ornamental carvings, curved multi-layer eaves, and repetitive fine-grained textures. Extensive experiments on Mill19, UrbanScene3D, MatrixCity, and China-Pagoda demonstrate that HiCo-GS achieves state-of-the-art rendering quality and substantially cleaner geometry across real-world and synthetic urban benchmarks.Code: https://github.com/WZ-CS/HiCo-GS.",
+      "arxiv_url": "https://arxiv.org/abs/2608.14136v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.14136v1.pdf",
+      "authors": [
+        "Wei Zhang",
+        "Shengkai Yu",
+        "Shiqiang Gong",
+        "Qi Zhang",
+        "Qiang Li",
+        "Qi Wang"
+      ],
+      "published": "2026-08-14",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22gaussian_splatting_22.xml"
+      ],
+      "relevance": 7
+    },
+    {
+      "title": "LocusGS: Spatially Grounded Tokens for Feed-Forward 3D Gaussian Splatting",
+      "summary": "Recent query-based feed-forward 3DGS methods represent a scene using learnable queries, each aggregating multi-view evidence and decoding a group of Gaussians. Ideally, different queries should specialize in coherent local regions of the scene. However, we observe that Gaussians decoded from the same query often scatter across distant scene regions, resulting in weak query-level spatial coherence and poor alignment with the scene structure. We attribute this behavior to the purely latent representation of existing Gaussian queries. To address this limitation, we introduce LocusGS, which augments each Gaussian query with a 3D anchor state consisting of a center and a support radius. The anchor state is progressively refined across decoder layers and is used throughout query interaction, multi-view feature aggregation, and Gaussian generation. Specifically, an anchor-to-ray geometric bias guides each query toward spatially relevant image observations, while anchor-centered decoding organizes its Gaussians within a local region. Experiments on novel view synthesis benchmarks show that LocusGS improves rendering quality over query-based Gaussian token baselines under the same Gaussian budget. Further analysis shows that the learned anchors form coherent spatial layouts and lead to more structured Gaussian distributions, demonstrating that explicit anchor states improve the spatial organization. Our project page: https://leo-frank.github.io/LocusGS_viewer.",
+      "arxiv_url": "https://arxiv.org/abs/2608.12825v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.12825v1.pdf",
+      "authors": [
+        "Wenyu Li",
+        "Sidun Liu",
+        "Tongrui Hu",
+        "Peng Qiao",
+        "Yong Dou"
+      ],
+      "published": "2026-08-13",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22gaussian_splatting_22.xml"
+      ],
+      "relevance": 7
+    },
+    {
+      "title": "GS-CPE: Unified 6-Degree-of-Freedom Camera Pose Estimation via 3D Gaussian Splatting",
+      "summary": "Despite substantial progress in visual localization, from scene coordinate regression to direct camera pose regression, achieving both robust generalization and high accuracy remain challenging. This study introduces GS-CPE (Gaussian Splatting based Camera Pose Estimation), a coarse-to-fine framework for 6-DoF camera pose estimation that unifies geometry-based coarse pose estimation with robust 3D Gaussian Splatting (3DGS) warping based pose refinement. GS-CPE first estimates a coarse pose via retrieval-guided geometric pose estimation on a 3DGS scene representation, then refines it by minimizing a visibility aware masked RGB warping objective in a multi-scale optimization framework, with adaptive re-rendering. Extensive experiments on indoor and outdoor benchmarks including 7Scenes, Cambridge Landmarks, FAST-LIVO2 datasets, and a custom dataset demonstrate state-of-the-art performance, consistently outperforming in both accuracy and generalization.",
+      "arxiv_url": "https://arxiv.org/abs/2608.10938v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.10938v1.pdf",
+      "authors": [
+        "Huaiyuan Weng",
+        "Chul Min Yeum",
+        "Su-Min Kang"
+      ],
+      "published": "2026-08-11",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22gaussian_splatting_22.xml"
+      ],
+      "relevance": 7
+    },
+    {
+      "title": "Visual Geometry Foundation-Aware Gaussians for Single-Frame Surround-View Driving Reconstruction",
+      "summary": "Single-frame surround-view reconstruction faces severe geometric instability and rendering artifacts due to minimal inter-camera overlap. While existing methods rely on complex decoders or auxiliary cues, they remain bottlenecked by the weak geometric capacity of upstream features. We argue that leveraging pretrained visual geometry priors strengthens upstream representations and alleviates the geometric ambiguity in sparse surround views. To this end, we propose VGGD, a visual geometry foundation-aware 3D Gaussian Splatting framework for feed-forward surround-view driving reconstruction, which shifts geometric modeling to the frontend and adapts foundation priors to the driving camera setting. First, VGGD leverages VGGT to provide transferable multi-view geometric prior tokens. Next, we introduce a Dual-Path Neck to decouple geometry-consistent and appearance-aware representations, improving appearance completion in weakly observed regions. We further apply Scale Warmup to stabilize early geometry learning and suppress scale drift under ego-pose changes. Finally, we use a hybrid pixel--volume Gaussian decoder to produce a renderable 3D Gaussian scene for novel-view synthesis. Experiments on the nuScenes single-frame benchmark show that VGGD achieves the best overall rendering quality among the compared methods and improves relative geometric consistency.",
+      "arxiv_url": "https://arxiv.org/abs/2608.10682v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.10682v1.pdf",
+      "authors": [
+        "Junhong Lin",
+        "Jinlong Wang",
+        "Xianda Guo",
+        "Yanlun Peng",
+        "Wei Zheng",
+        "Guoqing Liu",
+        "Hanli Wang",
+        "Tiesong Zhao",
+        "Wei Gao"
+      ],
+      "published": "2026-08-11",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22gaussian_splatting_22.xml"
+      ],
+      "relevance": 7
+    },
+    {
+      "title": "LEGO: Leveled Language Gaussian Splatting",
+      "summary": "We introduce LEGO for advanced open-vocabulary scene understanding. Beyond basic concept recognition, its core innovation lies in capturing the intrinsic semantic hierarchies within the scene, such as the \"flowerpot -> bouquet -> bud -> petal\" lineage. While foundation models like SAM can identify multi-granular structures in 2D, their partitions are strictly perspective-bound and lack cross-view consensus. LEGO self-adaptively re-grades volatile multi-view SAM granularities into a unified, 3D-consistent hierarchy. This provides precise supervision for the structurally coherent, multi-level segmentation of 3D scenes. By grounding these segments with CLIP embeddings, LEGO recovers open-vocabulary semantic logic across hierarchical levels. Furthermore, by incorporating spatial relationships, we elevate these segments into level-wise language scene graphs, effectively empowering Large Language Models to perform complex, context-aware spatial reasoning and precise visual grounding. Experimental results demonstrate that LEGO establishes new state-of-the-art performance across both promptable and open-vocabulary 3D segmentation benchmarks, exhibiting advanced hierarchical scene decomposition and context-aware spatial reasoning.",
+      "arxiv_url": "https://arxiv.org/abs/2608.10057v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.10057v1.pdf",
+      "authors": [
+        "Yuning Peng",
+        "Haiping Wang",
+        "Yuan Liu",
+        "Yipeng Lu",
+        "Zhen Dong",
+        "Bisheng Yang"
+      ],
+      "published": "2026-08-10",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22gaussian_splatting_22.xml"
+      ],
+      "relevance": 7
+    },
+    {
+      "title": "JSGS: JPEG State-Guided Supervision for 3D Gaussian Splatting from Mixed-Quality Views",
+      "summary": "Standard 3D Gaussian Splatting (3DGS) assumes that every input image faithfully samples scene radiance. However, mixed-quality JPEG images violate this assumption because compression-induced blocking and ringing artifacts can corrupt updates to Gaussians shared across views. To address this problem, we propose JPEG State-Guided Supervision for 3D Gaussian Splatting from Mixed-Quality Views (JSGS). JSGS uses luminance and chrominance quantization tables stored in each JPEG file to construct a view-specific JPEG observation operator. This operator encodes and decodes each rendered view for domain-matched comparison with the corresponding decoded input image. The luminance quantization table supplies continuous weights within a fixed middle frequency band. A loss in the low frequency band anchors coarse structure, while the weighted middle frequency loss redistributes supervision among the selected DCT coordinates. The resulting block disagreement also guides the Gaussian Controller to regularize small primitives with high opacity in disagreement regions. Across seven scenes and three mixed-quality schedules, JSGS achieves the lowest mean LPIPS and the highest mean SSIM under every schedule while rendering at approximately 150 FPS. Code: https://github.com/Jayden-Cui/JSGS.",
+      "arxiv_url": "https://arxiv.org/abs/2608.08659v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.08659v1.pdf",
+      "authors": [
+        "Jinhua Cui",
+        "Anhong Wang",
+        "Kai Hu",
+        "Donghan Bu",
+        "Peihao Li",
+        "Tammam Tillo",
+        "Hao Jing",
+        "Shiao Xu"
+      ],
+      "published": "2026-08-09",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22gaussian_splatting_22.xml"
+      ],
+      "relevance": 7
+    },
+    {
+      "title": "ERF-GS: Reconstructing Fast Motion from Disjoint Event-RGB Viewpoints",
+      "summary": "Deep learning-driven representations such as neural radiance fields (NeRFs) and 3D Gaussian splatting (3DGS) have revolutionized the field of dynamic 3D scene reconstruction with improved visual precision and scalability. However, the reconstruction of fast-moving objects remains a challenge; existing methods based on conventional frame-based videos often struggle in scenarios such as sports events and animal videography. We propose an event-RGB fusion Gaussian splatting (ERF-GS) framework that integrates event information into both optimization and densification stages of the Gaussian splatting pipeline, taking advantage of novel event sensors with high frame-rate. Unlike many other event-assisted scene reconstruction methods, ERF-GS was developed using realistic simulation settings and realizes event-based learning detached from RGB inputs. This design enables its application beyond straightforward synthetic data into the realm of natural video with complex layout, low frame rates and severe motion blur. Our experiments show that ERF-GS outperforms both the 4DGS baseline and the concurrent E-D3DGS on different variants of the Neu3D and Nvidia datasets which include blurry RGB frames and disjoint RGB-event viewpoints. Our code is available at https://github.com/andrewbxy/ERF-GS.",
+      "arxiv_url": "https://arxiv.org/abs/2608.08531v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.08531v1.pdf",
+      "authors": [
+        "Xiaoyang Bai",
+        "Zhenyang Li",
+        "Weiwei Xu",
+        "Edmund Y. Lam",
+        "Yifan Peng"
+      ],
+      "published": "2026-08-09",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22gaussian_splatting_22.xml"
+      ],
+      "relevance": 7
+    },
+    {
+      "title": "Ontology-Grounded World Models for Failure Diagnosis and Closed-Loop Repair in Physical AI Systems",
+      "summary": "EV-WM represents candidate quality with feature and event scores, but these scores do not explicitly record an unmet task predicate, a route label for an available correction mechanism, or a post-correction acceptance result. We present Onto-EV-WM, an ontology-grounded diagnosis and verification-gated correction interface layered above EV-WM rather than a replacement world-model architecture. The implemented task-local TBox defines entity types, predicate signatures, and constraints; source-specific grounding maps predicted or simulator-observed states to task ABoxes; and deterministic rules retain each missing predicate and its arguments when assigning a route label. Learned or heuristic proposers remain separate from this symbolic interface; native task predicates determine acceptance, and the bounded protocol determines whether a failed verification is retried. In the aligned PointMaze evaluation, EV-WM and Onto-EV-WM both report 94% success, with mean final-state distances of 0.90573 and 0.61177, respectively; the separately budgeted search reaches 100% success. On LIBERO-Goal, the ontology represents failed task conditions as typed records, retains their predicate arguments, and associates them with the declared source/joint correction route and predicate-gated acceptance; the complete configuration reports 93.8% corrected-window success on seed 0 and 94.05 +- 0.30% across four evaluation-sampling seeds. On the fixed 10,030-task LIBERO-Plus registry, Onto-EV-WM succeeds on 8,526 tasks (85.00%), with suite-level success rates of 65.98% for LIBERO-10, 91.39% for LIBERO-Goal, and 91.38% for both LIBERO-Object and LIBERO-Spatial. These numbers report the performance of the complete ontology-grounded configurations under the tested simulator protocols; an ontology-only causal share is not measured separately, and real-robot recovery is not evaluated.",
+      "arxiv_url": "https://arxiv.org/abs/2608.13901v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.13901v1.pdf",
+      "authors": [
+        "Kailin Wang",
+        "Haoxiang Jie",
+        "Yaoyuan Yan",
+        "Jiacheng Zhou",
+        "Zhiyou Heng"
+      ],
+      "published": "2026-08-14",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22world_model_22_AND_all:robot.xml"
+      ],
+      "relevance": 6
+    },
+    {
+      "title": "ComBodied Agents: a New Paradigm of Human-Centric Agentic AI",
+      "summary": "After an older adult misses a medication dose, a software agent can send another reminder and an embodied agent can bring the medication. Yet neither explains whether the person forgot, is confused, has side effects, or deliberately refused, nor what support is appropriate. This reveals a structural gap in Agentic AI: Digital Agents primarily transform software states, while Embodied Agents transform physical states; neither makes a person's evolving state and agency the primary object of modeling, intervention, and evaluation. We introduce Combodied Agents, a human-centered paradigm that perceives, models, predicts, and supports individual human-state trajectories over time, using software tools, sensors, wearables, robots, and human services as action channels rather than end goals. We unify fragmented capabilities across personal assistants, health agents, AI companions, and adaptive human--AI systems into a closed loop: event-based multimodal perception reconstructs meaningful personal events; longitudinal, correctable memory provides temporal context; Personal World Models estimate future personal states and outcomes under alternative decisions and interventions; and an admissible intervention policy selects proportionate support under consent, uncertainty, safety, reversibility, and user control. Feedback from the person and environment updates the loop. Rather than requiring an exhaustive Human Digital Twin, the framework uses purpose-bounded, uncertainty-aware, user-correctable representations. We organize the design space by human-state targets, relational contexts, and agent roles, and propose scenario-centered evaluation, agency-preservation metrics, benchmark requirements, edge-native personal models, and governance directions. Combodied Agents shift Agentic AI from external task completion toward sustained human benefit.",
+      "arxiv_url": "https://arxiv.org/abs/2608.10915v2",
+      "pdf_url": "https://arxiv.org/pdf/2608.10915v2.pdf",
+      "authors": [
+        "Qianggang Ding",
+        "Xingyao Wang",
+        "Rui Feng",
+        "Zhibin Wang",
+        "Feixiang Yao",
+        "Kelong Mao",
+        "Hao Sun",
+        "Zhiyao Luo",
+        "Jiankai Tang",
+        "Lei Li",
+        "Jiadong Guo",
+        "Minheng Ni",
+        "Weicong Lin",
+        "Chenxi Yang",
+        "Hongxiang Gao",
+        "Zhenghua Chen",
+        "Yang Bai",
+        "Min Wu",
+        "Jun Cheng",
+        "Huazhu Fu",
+        "Dacheng Tao",
+        "Bang Liu"
+      ],
+      "published": "2026-08-11",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22world_model_22_AND_all:robot.xml"
+      ],
+      "relevance": 6
+    },
+    {
+      "title": "CasDeblurGS: Cascaded 2D-to-3D Multi-View Consistency for 3D Gaussian Splatting from Two Blurry Images",
+      "summary": "Free-viewpoint 3D scene media is increasingly important for immersive applications, yet practical capture often suffers from severe view sparsity and motion blur. Although neural rendering has advanced sparse-view synthesis, existing blur-aware methods typically require substantial multi-view redundancy, accurate camera poses, or costly per-scene optimization. We address a stringent yet practical setting: reconstructing a coherent 3D scene from only two motion-blurred images with known intrinsics, without input-view poses, auxiliary sharp images, or per-scene test-time optimization. To this end, we propose CasDeblurGS, a cascaded framework that progressively recovers reliable cross-view information from local 2D correspondences to global 3D guidance. Stage 1 constructs locally reliable guidance through occlusion-aware correspondence filtering, while Stage 2 aggregates the intermediate restorations into a provisional pose-free 3D Gaussian representation whose input-view re-renders provide dense global guidance for final restoration. The resulting views enable a more coherent 3D representation and higher-quality novel-view synthesis. Experiments on real-world and synthetic Deblur-NeRF scenes show consistent gains over strong baselines, improving PSNR by 1.19 dB and 2.11 dB, respectively. Progressive ablations, cross-view correspondence visualization, and camera reprojection analysis further demonstrate improvements in both rendering quality and multi-view geometric consistency.",
+      "arxiv_url": "https://arxiv.org/abs/2608.10345v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.10345v1.pdf",
+      "authors": [
+        "Haeyun Choi",
+        "Minhyuk Jang",
+        "I-Gil Kim"
+      ],
+      "published": "2026-08-11",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22gaussian_splatting_22.xml"
+      ],
+      "relevance": 6
+    },
+    {
+      "title": "TRACE-GS: On-Policy Trajectory Distillation with Privileged Geometric Conditioning for Sparse-View 3DGS Restoration",
+      "summary": "We present TRACE-GS, an on-policy trajectory distillation framework that leverages privileged geometric conditioning at training time, thereby adapting a diffusion prior to sparse-view 3D Gaussian Splatting (3DGS) restoration. Rather than pursuing increasingly sophisticated restoration architectures, we identify a more fundamental limitation shared by existing diffusion-based approaches: supervision at independently noised states does not cover those reached during inference. In sparse-view 3DGS, under-constrained geometry biases denoising from the outset, and the resulting deviations compound along the rollout. TRACE-GS instead performs on-policy trajectory distillation: a teacher conditioned on richer geometry from additional training views supplies targets along the sparse-view student's own rollout, aligning denoising directions and cross-view responses at each visited state. This training-only geometry places TRACE-GS in the learning using privileged information (LUPI) setting. At deployment, only the sparse-view student is retained, and its restored renderings serve as pseudo-observations for 3DGS refinement. To the best of our knowledge, TRACE-GS is the first to derive on-policy supervision from privileged geometry for sparse-view 3DGS restoration, achieving consistent gains and strong generalization across datasets and sparse-view settings.",
+      "arxiv_url": "https://arxiv.org/abs/2608.10286v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.10286v1.pdf",
+      "authors": [
+        "Linlian Jiang",
+        "Yuchen Xi",
+        "Sadman Rakib Pinon",
+        "Ruigang Yang",
+        "Yang Wang",
+        "Xinxin Zuo"
+      ],
+      "published": "2026-08-10",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22gaussian_splatting_22.xml"
+      ],
+      "relevance": 6
+    },
+    {
+      "title": "Compact Feed-Forward 3D Gaussians via Saliency-Guided Primitive Merging",
+      "summary": "3D scene reconstruction, modeling, and rendering are highly relevant for numerous tasks, and 3D Gaussian splatting has become a standard choice in this context. Its feed-forward variants provide fast reconstruction from sparse input views but often produce per-pixel primitives, leading to highly redundant and thus inefficient representations. We present a structure-aware merging pipeline that takes per-pixel primitives from any feed-forward method and consolidates them into a compact, content-adaptive Gaussian set while largely retaining visual quality at just $\\frac{1}{20}^\\text{th}$ of the Gaussians of a per-pixel method. We group spatially coherent Gaussians of similar appearance into variable-size clusters via adaptive superpixel segmentation guided by a saliency map, which allocates fine segments to textured regions and coarse segments to homogeneous areas. We compress each cluster into a compact latent representation through a learned encoder, then match and consolidate representations across views based on geometric overlap and feature similarity via a learned merger. A level-of-detail decoder then produces the final Gaussians at a controllable resolution, enabling a flexible quality-efficiency trade-off at inference. As a post-processing module, the pipeline is backbone-agnostic, leveraging the strengths of existing feed-forward methods. This leads to better and more robust quality than achieved by previous approaches that target a reduction in primitive count, while providing a highly compact representation, that can be rendered efficiently.",
+      "arxiv_url": "https://arxiv.org/abs/2608.10712v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.10712v1.pdf",
+      "authors": [
+        "Tim-Felix Fassch",
+        "Jochen Kall",
+        "Cyrill Stachniss"
+      ],
+      "published": "2026-08-11",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22gaussian_splatting_22.xml"
+      ],
+      "relevance": 5
+    },
+    {
+      "title": "Mr3D-VL: A generalist vision language foundation model for Multiparametric 3D Magnetic Resonance Imaging",
+      "summary": "Multi-parametric magnetic resonance imaging (mpMRI) is a cornerstone for brain tumor diagnosis and treatment, yet current AI models face critical limitations: their lack of natural language interaction and interpretability impedes spatial information integration and cross-modal reasoning required clinically. Key challenges arise from significant physical meaning differences across modalities, spatial misalignment due to scan intervals, and the need for complex multi-feature interpretation in tasks like glioma grading. While visual-language models (VLMs) show promise in cross-modal understanding, existing methods focus mainly on 2D image modeling, neglecting direct perception of 3D volumetric space. Although 3D VLMs have been proposed for report generation and feature alignment in 3D CT imaging, mpMRI applications demand collaborative inference across multiple imaging modalities-a requirement unmet by current solutions. To address this, we introduce Mr3D-VL, a dedicated visual-language foundation model for multi-parametric 3D MRI. With 4 billion parameters, it employs an unsupervised pre-trained shared 3D encoder and 4D rotational positional embedding for dual modality-spatial integration. Its cross-modal projection layer uses a multi-resolution feature implantation strategy to enhance feature perception across resolutions. Experimental results show significant improvements over existing 4B/7B/30B domain-specific and general-purpose models in text generation tasks, achieving a BERTScore of 0.856 for report generation, with question-answering accuracy at 0.713 and multiple-choice accuracy at 0.912.",
+      "arxiv_url": "https://arxiv.org/abs/2608.12689v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.12689v1.pdf",
+      "authors": [
+        "Zhi Qiao",
+        "Xintong Wu",
+        "Yichu He",
+        "Feng Shi"
+      ],
+      "published": "2026-08-13",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q_all:VLM_AND_all:3D_AND_all:understanding.xml"
+      ],
+      "relevance": 4
+    },
+    {
+      "title": "Ensuring Safe Physical AI in Urban Mobility via Hazard-Informed Synthesized Envelopes",
+      "summary": "As heterogeneous robotic systems deploy across diverse urban zones, maintaining safety amid complex human-robot interactions remains a critical challenge. We present a unified framework that bridges systematic hazard analysis and runtime enforcement using hazard-informed safety envelopes. Rather than treating safety as a static constraint isolated within individual software modules, we introduce a cross-layer safety transformation process spanning symbolic, spatial, and dynamic world models. We show how this representation naturally interfaces with physical AI runtime harnesses to guarantee safe urban mobility.",
+      "arxiv_url": "https://arxiv.org/abs/2608.14481v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.14481v1.pdf",
+      "authors": [
+        "Alexei Odinokov",
+        "Rostislav Yavorskiy"
+      ],
+      "published": "2026-08-14",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22world_model_22_AND_all:robot.xml"
+      ],
+      "relevance": 4
+    },
+    {
+      "title": "Splat-based Metal Artifact Reduction in Cone-Beam CT via Polychromatic Modeling",
+      "summary": "Cone-beam computed tomography (CBCT) enables volumetric reconstruction from X-ray projections, but suffers from severe artifacts--especially beam hardening--when imaging materials with high attenuation such as metals. These artifacts arise from the polychromatic nature of X-rays and are not properly addressed by conventional monochromatic reconstruction algorithms. While recent neural representation-based methods offer improved reconstruction quality, they are computationally expensive and often impractical for deployment. We propose a novel physics-inspired, self-calibrating metal artifact reduction method that efficiently reconstructs 3D CBCT volumes while correcting beam hardening artifacts. Our method integrates a polychromatic X-ray projection model, material-dependent attenuation profiles, and system response modeling into a Gaussian Splatting framework. Unlike prior work, we eliminate the need for manual metal masks or strong prior assumptions, and we optimize both reconstruction parameters and X-ray spectral characteristics jointly during training. We further introduce a high-fidelity synthetic CBCT dataset generation pipeline validated on Monte-Carlo x-ray simulation toolbox and release new datasets with severe metal-induced artifacts to support the community. This is the first splat-based method for reducing beam hardening in CBCT. Extensive experiments on both synthetic and real-world datasets demonstrate that our method outperforms state-of-the-art approaches in artifact suppression and reconstruction accuracy.",
+      "arxiv_url": "https://arxiv.org/abs/2608.13159v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.13159v1.pdf",
+      "authors": [
+        "Kiseok Choi",
+        "Inchul Kim",
+        "Jaemin Cho",
+        "Hyeongjun Cho",
+        "Min H. Kim"
+      ],
+      "published": "2026-08-13",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22gaussian_splatting_22.xml"
+      ],
+      "relevance": 4
+    },
+    {
+      "title": "Temporally Grounded Compositional Camera Motion Understanding via Geometric Knowledge Distillation",
+      "summary": "Understanding camera motion is fundamental to video perception, with applications in spatial intelligence and controllable video generation. Multimodal large language models (MLLMs) provide a natural interface for this task, but existing work typically assigns one or more labels to an entire clip. Such clip-level recognition overlooks two defining properties of real camera motion: it can change within a shot, and multiple movements can occur simultaneously. We therefore formulate camera-motion understanding as temporally grounded, compositional recognition, which requires a model to localize motion-consistent intervals and identify every movement active within each interval. We introduce CamChoreo, a benchmark of 4,229 real single-shot clips with expert-annotated temporal segments. Its annotations use a compact vocabulary of 20 direction-aware labels, and nearly half of the segments contain compound camera motion, with multiple movement primitives active simultaneously. Recognizing such fine-grained, compositional motion is hard for current MLLMs, whose visual encoders emphasize semantic content rather than the geometric evidence on which camera motion depends. Directly injecting features from a frozen 3D foundation model addresses this gap, but requires running the expensive geometry model on every input; we refer to this baseline as CamInject. We instead propose CamDistill, which distills the same geometric knowledge into lightweight camera tokens during training and removes the 3D model at inference. CamDistill matches the accuracy of direct feature injection without running the 3D teacher at inference. Together, CamChoreo and CamDistill advance camera-motion understanding from clip-level labeling to temporally grounded, compositional recognition. Project page: https://ddz16.github.io/cammotion.github.io/.",
+      "arxiv_url": "https://arxiv.org/abs/2608.10932v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.10932v1.pdf",
+      "authors": [
+        "Dazhao Du",
+        "Shiyan Du",
+        "Jian Liu",
+        "Yongjian Yu",
+        "Bohai Gu",
+        "Tao Han",
+        "Hualuo Liu",
+        "Eric Liu",
+        "Yujia Zhang",
+        "Xi Chen",
+        "Song Guo"
+      ],
+      "published": "2026-08-11",
+      "score": 1,
+      "queries": [
+        "/tmp/arxiv_q__22spatial_intelligence_22_AND_all:3D.xml"
+      ],
+      "relevance": 3
+    }
+  ]
+}
