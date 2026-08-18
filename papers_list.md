@@ -3002,3 +3002,30 @@
    - 文档: papers/2026-08-18_05_HumanoidVLN_Physics_Grounded_Benchmark.md
    - 核心创新: 首个人形多样性物理接地VLN基准(4本体10-12DoF/1.17-1.80m, per-embodiment RL步态+PD/MPC分层控制)+可通行性筛选87场景(≥100m², 3DGS+TSDF碰撞网格Real2Sim)+双生成器-Reviewer MAA防幻觉标注(路由图五元组), 933 episodes; JanusVLN最佳SR 43.55%, sim-real相关r=0.935
    - 机构: VinMotion/USC
+
+## 2026-08-19 研究的论文（精选5篇）
+
+1. **GaussMemory: Task-Driven 3D Gaussian Scene Memory for Long-Horizon Robotic Manipulation** - arXiv:2608.14986v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Gaussian Splatting, Spatial Memory, VLA, Long-Horizon Manipulation, Unified Memory Attention
+   - 文档: papers/2026-08-19_01_GaussMemory_Task_Driven_3DGS_Scene_Memory.md
+
+2. **Gaussian-JEPA: Joint-Embedding Predictive Learning for 3D Gaussian Splats** - arXiv:2608.15651v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: JEPA, Self-Supervised Pretraining, 3D Gaussian Splatting, Representation Learning, Partial Observation
+   - 文档: papers/2026-08-19_02_Gaussian_JEPA_Joint_Embedding_Predictive_3DGS.md
+
+3. **τ0-VLA: a Hierarchical Robot Foundation Model with World-Model-Guided Test-Time Computation** - arXiv:2608.16885v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Hierarchical VLA, Test-Time Computation, World Model, Beam Search, Cross-Embodiment
+   - 文档: papers/2026-08-19_03_Tau0_VLA_World_Model_Guided_Test_Time_Compute.md
+
+4. **ChainSpace: A Chained-Reasoning Paradigm for Spatial Intelligence** - arXiv:2608.15788v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Spatial Reasoning, Chained Benchmark, Persistent Spatial State, Data Efficiency, MLLM
+   - 文档: papers/2026-08-19_04_ChainSpace_Chained_Reasoning_Spatial_Intelligence.md
+
+5. **LaGSplat: Inferring Physics-Governed Interactive Simulation from Monocular Video Using Latent Lagrangian Gaussian Splatting** - arXiv:2608.16324v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Lagrangian Dynamics, 3D Gaussian Splatting, Interactive Simulation, System Identification, Force Injection
+   - 文档: papers/2026-08-19_05_LaGSplat_Physics_Governed_Interactive_Simulation.md
