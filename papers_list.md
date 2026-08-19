@@ -3029,3 +3029,35 @@
    - 相关性: ⭐⭐⭐⭐⭐
    - 关键词: Lagrangian Dynamics, 3D Gaussian Splatting, Interactive Simulation, System Identification, Force Injection
    - 文档: papers/2026-08-19_05_LaGSplat_Physics_Governed_Interactive_Simulation.md
+
+## 2026-08-20 研究的论文（精选5篇）
+
+1. **GroupForward: Building Referable 3D Scenes via Instance-Grouped Feed-Forward Gaussian Splatting** - arXiv:2608.17535v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Feed-Forward 3DGS, Instance Grouping, Open-Vocabulary Semantics, 3D Referring Segmentation, Scene Graph, VLM Reasoning
+   - 文档: papers/2026-08-20_01_GroupForward_Instance_Grouped_Feed_Forward_3DGS.md
+   - 核心创新: 前馈语义3DGS范式转变——低维实例嵌入替代per-Gaussian高维语义特征, 实例级语义聚合与传播(免闭合集标签), 实例场景图+VLM选择的指代推理框架RSRF(推理而非生成mask)
+
+2. **Hydra-0: Action Flow for Generalist World Modeling and Control** - arXiv:2608.18077v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Action Flow, Generalist World Model, Cross-Embodiment, Video Generation, Open-Loop Policy Evaluation, World Action Model
+   - 文档: papers/2026-08-20_02_Hydra_0_Action_Flow_Generalist_World_Model.md
+   - 核心创新: 机器人动作表示为图像平面稀疏点轨迹(可逆接口: 正向运动学接地视频预测/逆向从期望物体流推断机器人运动), 机器人运动误差↓90.4%, RoboLab开环策略评估回放-真实相关r=0.96, 无需专家机器人演示的动作解码
+
+3. **AlloEgo-VLM: Disambiguating Allocentric and Egocentric Reference Frames in Vision-Language Models** - arXiv:2608.15605v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Reference Frame Disambiguation, Egocentric/Allocentric, Spatial Semantics, VLM SFT, Embodied Object Search
+   - 文档: papers/2026-08-20_03_AlloEgo_VLM_Allocentric_Egocentric_Reference_Frames.md
+   - 核心创新: 形式化VLM参考系歧义问题(VSI-Bench 22%错误源于ego-allo转换), AlloEgo-View双视角结构化标注数据集(GPT-4o起草+Grounding DINO/PosDir校准+人工精修), 多阶段SFT即插即用, Isaac Sim物体搜索验证
+
+4. **Embodied-Navigator (TAMP-Nav): Point, Think, Memorize, and Align for Efficient Navigation** - arXiv:2608.17512v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLN, Pixel-to-3D Action, Selective Reasoning, Anchor-Trajectory Memory, GRPO, R2R-CE
+   - 文档: papers/2026-08-20_04_Embodied_Navigator_TAMP_Nav_Point_Think_Memorize_Align.md
+   - 核心创新: 像素指点动作空间(VLM输出2D像素→深度反投影→SLAM), 选择性CoT+锚点-轨迹记忆(STI RoPE时空token), 两级GRPO(过程+结果双奖励)学会元认知推理调度; R2R-CE 66.2% SR, 仅90k轨迹
+
+5. **MotionGS-SLAM: Event-Modulated Gaussian Splatting for Motion-Blur Robust SLAM** - arXiv:2608.15024v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Event Camera, Motion Blur, 3DGS SLAM, Physics-Based Rendering, Forward Blur Modeling
+   - 文档: papers/2026-08-20_05_MotionGS_SLAM_Event_Modulated_Motion_Blur_Robust.md
+   - 核心创新: 范式反转——去模糊逆问题→渲染管线内正向模糊生成; 事件调制双重高斯核(空间椭圆笔触拉伸+时间自适应曝光积分采样), 4D哈希网格实时事件-高斯关联, 几何-模糊协方差解耦; 剧烈运动下追踪与重建SOTA
