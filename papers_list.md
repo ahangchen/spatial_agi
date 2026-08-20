@@ -3061,3 +3061,35 @@
    - 关键词: Event Camera, Motion Blur, 3DGS SLAM, Physics-Based Rendering, Forward Blur Modeling
    - 文档: papers/2026-08-20_05_MotionGS_SLAM_Event_Modulated_Motion_Blur_Robust.md
    - 核心创新: 范式反转——去模糊逆问题→渲染管线内正向模糊生成; 事件调制双重高斯核(空间椭圆笔触拉伸+时间自适应曝光积分采样), 4D哈希网格实时事件-高斯关联, 几何-模糊协方差解耦; 剧烈运动下追踪与重建SOTA
+
+## 2026-08-21 研究的论文（精选5篇）
+
+1. **GS-VLA: Plug-and-Play Viewpoint Canonicalization for Frozen VLA Policies via Gaussian Splatting** - arXiv:2608.19066v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA Robustness, Viewpoint Canonicalization, 3DGS, Locality Assumption, Disocclusion Inpainting, Frozen Policy
+   - 文档: papers/2026-08-21_01_GS_VLA_Viewpoint_Canonicalization_Frozen_VLA_Gaussian_Splatting.md
+   - 核心创新: 视角鲁棒性从策略参数空间移到观测空间; Locality假设把NVS降维为O(ρ)线性disocclusion补全; 4M参数U-Net预测14维逐像素Gaussian属性+FiLM位姿对嵌入+可微α-splatting; 单检查点跨策略/任务/扰动尺度(5-200cm)泛化, LIBERO最差92.4%→9.3%崩塌大幅恢复, 比AnyCamVLA参数少42×
+
+2. **CL4D: Contrastive Language–4D Pretraining for Vision-Language Reasoning in Dynamic Scenes** - arXiv:2608.18734v1 (ECCV 2026)
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4D Point Cloud, Contrastive Pretraining, 4D VLM, Zero-shot Retrieval, Dynamic Scene Understanding
+   - 文档: papers/2026-08-21_02_CL4D_Contrastive_Language_4D_Pretraining_Dynamic_Scenes.md
+   - 核心创新: 首个语言对齐的动态4D点云对比预训练编码器(补全CLIP谱系2D→视频→3D→4D最后一级); 首个纯4D点云输入VLM(4DVLM); DynAction4D数据集(SMPL+Unity管线, HumanOnly/ObjInteractions/Cluttered三分段+Gemini生成4D-VQA); text-motion检索Recall@1 +16.75%, 纯点云输入击败喂RGB视频的Gemini/GPT-5
+
+3. **World Tokens: Enhancing Embodied Policies with Training-Time World Modeling** - arXiv:2608.09730v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, World Model Distillation, Perceiver Resampler, Exclusive Routing, Flow Matching, Training-Time Supervision
+   - 文档: papers/2026-08-21_03_World_Tokens_Training_Time_World_Modeling_Embodied_Policies.md
+   - 核心创新: 世界建模只在训练时进行、部署时视频分支整体移除(VLA级延迟); World Adapter(256个Perceiver查询)输出世界token作为动作专家唯一视觉-语言上下文(独占路由防旁路); Canny边缘结构锚弱化外观依赖逼token携带语义; 双梯度在token汇合, 未来视频去噪直接塑造控制表征; 2B骨干LIBERO 98.2%/SIMPLER双榜最佳/真机R1 Pro 59.4%→76.0%
+
+4. **CausalSplat: Towards Comprehensive Hierarchical Reasoning in 3D Gaussian Splatting** - arXiv:2608.11150v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Reasoning Segmentation, 3DGS, Scene Graph, Counterfactual Reasoning, Affordance, Benchmark
+   - 文档: papers/2026-08-21_04_CausalSplat_Hierarchical_Reasoning_3DGS.md
+   - 核心创新: 定义Reasoning 3D Gaussian Segmentation新任务; 四层推理分类学(空间/常识/可供性/预测反事实); Causal-LERF+Causal-ScanNet基准(231指令/14场景, 4标注员一致质控); 语义场景图(尺度自适应拓扑边)+VLM三段推理解耦显式结构感知与隐式逻辑推断; 首次把反事实物理推理纳入3D分割评测
+
+5. **RoboInter1.5: A Holistic Intermediate Representation Suite for Embodied World Modeling and Robotic Manipulation** - arXiv:2607.18709v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Intermediate Representation, Embodied Dataset, VLA, World Model, Embodied VQA, Data Infrastructure
+   - 文档: papers/2026-08-21_05_RoboInter1_5_Holistic_Intermediate_Representation_Suite.md
+   - 核心创新: 230k回合/571场景/10+类逐帧稠密中间表示(子任务/技能/接地/可供性/抓取位姿/接触点/轨迹)与动作严格时间同步的开源数据集; 中间表示=正则化动作空间+约束世界rollout的双向接口; RoboInter-VLM(29类时空VQA)/VLA(隐式/显式/模块化三范式)/World(结构条件可控世界模型+首个IR条件长时域基准RoboInter-CV)三位一体; 世界模型预测反哺策略动作精度
