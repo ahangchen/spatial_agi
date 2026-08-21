@@ -3093,3 +3093,35 @@
    - 关键词: Intermediate Representation, Embodied Dataset, VLA, World Model, Embodied VQA, Data Infrastructure
    - 文档: papers/2026-08-21_05_RoboInter1_5_Holistic_Intermediate_Representation_Suite.md
    - 核心创新: 230k回合/571场景/10+类逐帧稠密中间表示(子任务/技能/接地/可供性/抓取位姿/接触点/轨迹)与动作严格时间同步的开源数据集; 中间表示=正则化动作空间+约束世界rollout的双向接口; RoboInter-VLM(29类时空VQA)/VLA(隐式/显式/模块化三范式)/World(结构条件可控世界模型+首个IR条件长时域基准RoboInter-CV)三位一体; 世界模型预测反哺策略动作精度
+
+## 2026-08-22 研究的论文（精选5篇）
+
+1. **Stream4D: 4D-Consistency for Streaming Autoregressive Diffusion Video Models** - arXiv:2608.19556
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Video World Model, 4D Gaussian Splatting, Reward Design, DiffusionNFT, Autoregressive, RLHF
+   - 文档: papers/2026-08-22_01_Stream4D_4D_Consistency_Streaming_AR_Video_Models.md
+   - 核心创新: 揭示静态3DGS奖励的结构性reward hacking(冻结场景捷径, AR设定下被指数放大); 用前馈4DGS(MoVieS)重建作为critic使真实运动获得高一致性奖励; 门控运动奖励(高斯强度门×时间平滑×空间刚性); 三个AR backbone 4D-PSNR最高+6.76dB
+
+2. **DECOWAM: Decoupled Whole-Body World-Action Model for Legged Mobile Manipulation** - arXiv:2608.20114
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Legged Robot, Mobile Manipulation, World-Action Model, Decoupled Interfaces, FastWAM, Dataset
+   - 文档: papers/2026-08-22_02_DECOWAM_Decoupled_Whole_Body_World_Action_Model.md
+   - 核心创新: 腿式移动操作的结构性困难形式化(动态视角/多速率动作耦合/层级意图); 四套解耦接口(残差适配+特权未来瓶颈蒸馏+GRL底盘/手臂因子分解+底盘速度自运动条件); 25.95M参数适配6.7B骨干, 动作MSE -21.7%; ARMDOG数据集(217回合/56k帧同步视频-全身状态-语言)
+
+3. **HiTac-WAM: A Hierarchical Tactile World Action Model for Contact-Rich Robot Manipulation** - arXiv:2608.19574
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Tactile Sensing, World Action Model, Contact Physics, Slip Prediction, Candidate Ranking, Anomaly Detection
+   - 文档: papers/2026-08-22_03_HiTac_WAM_Hierarchical_Tactile_World_Action_Model.md
+   - 核心创新: 触觉预测按物理因果组织成有向层级(接触状态→3D形变场→滑移风险, stop-gradient条件化+接触门控); 定向注意力掩码(评判模态不污染冻结主干); 预测引导候选排序31.1%→61.1%+执行时预测验证闭环72.2%; slip AUPRC +60.4%
+
+4. **QWM: Q-Learning With World Models** - arXiv:2608.17163
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Model-Based RL, Test-Time Search, Q-Learning, Tree Search, Sample Efficiency, VLA Fine-tuning
+   - 文档: papers/2026-08-22_04_QWM_Q_Learning_With_World_Models.md
+   - 核心创新: 世界模型纯测试时使用(想象用于评估而非训练, 零复合偏差); Q函数+预测奖励双估计器聚合的短视野树搜索; 在线rollout也用搜索改善数据质量; Robomimic/LIBERO样本效率与性能双超(EXPO/RLPD载体)
+
+5. **4DAnyone: Create Anyone in 4D from a Casual Monocular Video** - arXiv:2608.20335
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4D Human Reconstruction, Multi-view Video Generation, 4D Gaussian Splatting, Monocular, Context Packing
+   - 文档: papers/2026-08-22_05_4DAnyone_Create_Anyone_in_4D_from_Monocular_Video.md
+   - 核心创新: 多视角生成重建尺度失败的架构级归因(有界注意力上下文: 参考侧O(N)+目标侧组间隔离); RCP参考上下文O(1)压缩+TCR噪声感知分组轮换; 深度缓冲3D骨架条件(z-buffer解前后歧义, accuracy-over-density); 单目视频→4DGS人体完整管线
