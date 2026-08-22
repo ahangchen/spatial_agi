@@ -3125,3 +3125,35 @@
    - 关键词: 4D Human Reconstruction, Multi-view Video Generation, 4D Gaussian Splatting, Monocular, Context Packing
    - 文档: papers/2026-08-22_05_4DAnyone_Create_Anyone_in_4D_from_Monocular_Video.md
    - 核心创新: 多视角生成重建尺度失败的架构级归因(有界注意力上下文: 参考侧O(N)+目标侧组间隔离); RCP参考上下文O(1)压缩+TCR噪声感知分组轮换; 深度缓冲3D骨架条件(z-buffer解前后歧义, accuracy-over-density); 单目视频→4DGS人体完整管线
+
+## 2026-08-23 研究的论文（精选5篇）
+
+1. **Semantic Radiance Fields as Simulators for Spatial Reasoning in Real-World Scenes** - arXiv:2608.13095v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: semantic radiance field, simulator, SAM 3, embodied agents, IJCAI 2026 STRL
+   - 文档: papers/2026-08-23_01_Semantic_Radiance_Fields_as_Simulators_for_Spatial_Reasoning_in_Real_World_Scenes.md
+   - NotebookLM: [notebook_id]
+
+2. **Reinforced Planning with Latent World Models (RP1)** - arXiv:2608.18669v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: learned planner, quasimetric critic, latent world model, offline RL, test-time search
+   - 文档: papers/2026-08-23_02_Reinforced_Planning_with_Latent_World_Models.md
+   - NotebookLM: [notebook_id]
+
+3. **Spatial Memory Agent: Experience-Grounded Procedure Memory for Spatial Intelligence** - arXiv:2608.12743v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: spatial memory, training-free self-evolution, Transfer Reliability Score, VLM agent
+   - 文档: papers/2026-08-23_03_Spatial_Memory_Agent_Experience_Grounded_Procedure_Memory_for_Spatial_Intelligence.md
+   - NotebookLM: [notebook_id]
+
+4. **ChainSpace: A Chained-Reasoning Paradigm for Spatial Intelligence** - arXiv:2608.15788v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: chained reasoning, persistent spatial state, benchmark, simulator supervision, 理想汽车
+   - 文档: papers/2026-08-23_04_ChainSpace_A_Chained_Reasoning_Paradigm_for_Spatial_Intelligence.md
+   - NotebookLM: [notebook_id]
+
+5. **Beyond Similarity Matching: Structured Reasoning for Open-Vocabulary Referring Segmentation in 3DGS (QAGaussian)** - arXiv:2608.16103v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3DGS, referring segmentation, query-conditioned slots, relation-aware graph, adaptive routing
+   - 文档: papers/2026-08-23_05_Beyond_Similarity_Matching_Structured_Reasoning_for_Open_Vocabulary_Referring_Segmentation_in_3DGS.md
+   - NotebookLM: [notebook_id]
