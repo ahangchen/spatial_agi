@@ -3157,3 +3157,30 @@
    - 关键词: 3DGS, referring segmentation, query-conditioned slots, relation-aware graph, adaptive routing
    - 文档: papers/2026-08-23_05_Beyond_Similarity_Matching_Structured_Reasoning_for_Open_Vocabulary_Referring_Segmentation_in_3DGS.md
    - NotebookLM: [notebook_id]
+
+## 2026-08-24 研究的论文（精选5篇）
+
+1. **CoMVS-GS: Collaborative Multi-View Stereo and 3D Gaussian Splatting for Surface Reconstruction** - arXiv:2608.18413
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Gaussian Splatting, MVS, PatchMatch Mutual Supervision, Delaunay Graph-Cut, Surface Reconstruction
+   - 文档: papers/2026-08-24_01_CoMVS_GS_Collaborative_MVS_3DGS_Surface_Reconstruction.md
+
+2. **Geometry-Aware Online Mapping for 3D Gaussian Splatting SLAM** - arXiv:2608.14902 (IROS 2026)
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS-SLAM, Densification, Online Budget, Pixel Footprint, Error-guided
+   - 文档: papers/2026-08-24_02_Geometry_Aware_Online_Mapping_3DGS_SLAM.md
+
+3. **BridgeVLA++: A Data-Efficient, Generalizable, and Memory-Augmented VLA Framework for 3D Manipulation** - arXiv:2608.05042
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, Spatial Memory, Temporal Memory, 3D Manipulation, Heatmap Action
+   - 文档: papers/2026-08-24_03_BridgeVLA_Plus_Memory_Augmented_3D_VLA.md
+
+4. **GrabVG: Graph-Attentive Binding for Visual Grounding in UAV Imagery** - arXiv:2608.18996
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: UAV, Visual Grounding, Graph Attention, Topological Disambiguation, Low-altitude
+   - 文档: papers/2026-08-24_04_GrabVG_Graph_Attentive_Binding_UAV_Grounding.md
+
+5. **World-Model-Grounded LLM Planning for AUV and ASV Navigation Near Offshore Wind Farms** - arXiv:2608.19661 (IROS 2026 Workshop)
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: World Model, LLM Planning, AUV/ASV, Trust-region MPC, Marine Robotics
+   - 文档: papers/2026-08-24_05_World_Model_Grounded_LLM_Planning_AUV_ASV_Wind_Farms.md
