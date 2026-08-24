@@ -3184,3 +3184,30 @@
    - 相关性: ⭐⭐⭐⭐
    - 关键词: World Model, LLM Planning, AUV/ASV, Trust-region MPC, Marine Robotics
    - 文档: papers/2026-08-24_05_World_Model_Grounded_LLM_Planning_AUV_ASV_Wind_Farms.md
+
+## 2026-08-25 研究的论文（精选5篇）
+
+1. **TopoSurfel: Closing the Loop between Gaussian Surfels and Meshes for Surface Reconstruction** - arXiv:2608.20687v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Gaussian Splatting, Surface Reconstruction, Differentiable Mesh, DPSR, Mesh-Guided Optimization
+   - 文档: papers/2026-08-25_01_TopoSurfel_Closing_Loop_Gaussian_Surfels_Meshes.md
+
+2. **GS-Voxel: Fitting-Free Structured Latents for Large-Scale 3DGS Generation** - arXiv:2608.17988v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS Generation, Structured Latents, Flow Models, Satellite-Conditioned, Aerial Scenes
+   - 文档: papers/2026-08-25_02_GS_Voxel_Fitting_Free_Structured_Latents_Large_Scale_3DGS.md
+
+3. **SpotlessGS: Relightable 3D Gaussian Splatting under Dynamic Illumination for Robotic Perception** - arXiv:2608.14713v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Relightable 3DGS, BRDF, Active Illumination, Robotic Perception, IROS 2026
+   - 文档: papers/2026-08-25_03_SpotlessGS_Relightable_3DGS_Dynamic_Illumination_Robotic_Perception.md
+
+4. **OVIP-SG: Open-Vocabulary Instance-Preserving Scene Graphs for Mapping and Retrieval of Small, Fine-Grained Objects** - arXiv:2608.17633v4
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Open-Vocabulary, Scene Graphs, Instance Preservation, Object Retrieval, Embodied Navigation
+   - 文档: papers/2026-08-25_04_OVIP_SG_Open_Vocabulary_Instance_Preserving_Scene_Graphs.md
+
+5. **Can Vision-Language Models Assess Proxemic Risk from Egocentric Robot Images?** - arXiv:2608.12515v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: VLM Evaluation, Proxemic Risk, Spatial Grounding, Socially-Aware Navigation, ECCV 2026 Workshop
+   - 文档: papers/2026-08-25_05_Can_VLMs_Assess_Proxemic_Risk_Egocentric_Robot_Images.md
