@@ -3211,3 +3211,30 @@
    - 相关性: ⭐⭐⭐⭐
    - 关键词: VLM Evaluation, Proxemic Risk, Spatial Grounding, Socially-Aware Navigation, ECCV 2026 Workshop
    - 文档: papers/2026-08-25_05_Can_VLMs_Assess_Proxemic_Risk_Egocentric_Robot_Images.md
+
+## 2026-08-26 研究的论文（精选5篇）
+
+1. **AquaFlow: A Monocular Gaussian Splatting SLAM for Underwater Streaming Reconstruction** - arXiv:2608.22906v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Underwater 3DGS, Streaming SLAM, MASt3R Domain Adaptation, Physical Medium Model, Hybrid Neural-Gaussian Representation
+   - 文档: papers/2026-08-26_01_AquaFlow.md
+
+2. **In-Situ Reconstruction of the International Space Station Using 3D Gaussian Splatting and Astrobee** - arXiv:2608.21685v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: ISS Reconstruction, 3DGS, Astrobee Free-flyer, GLOMAP Global SfM, Appearance Embedding, Space Robotics
+   - 文档: papers/2026-08-26_02_ISS_3DGS_Astrobee.md
+
+3. **M³ISR: A Multi-Modal Multi-View Benchmark for 3D/4D Gaussian Splatting and Feedforward Compression** - arXiv:2608.22465v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3DGS/4DGS Benchmark, Free-Viewpoint Video, Gaussian Compression, Streaming, Feedforward Compression, Rate-Distortion
+   - 文档: papers/2026-08-26_03_M3ISR_Benchmark.md
+
+4. **DreamMimic: Learning Visuomotor Whole-Body Loco-Manipulation via World Model** - arXiv:2608.22278v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Humanoid Loco-Manipulation, World Model, RSSM, Policy Distillation, Privileged Prediction Heads, PCG
+   - 文档: papers/2026-08-26_04_DreamMimic.md
+
+5. **Act with Intent: Distilling Behavior Intent for Vision-Language-Action Models** - arXiv:2608.23478v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, Intention Distillation, Behavior-Level Supervision, Action Decoder, Teacher VLM, GR00T/π0.5
+   - 文档: papers/2026-08-26_05_Act_with_Intent_Indi.md
