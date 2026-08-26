@@ -3238,3 +3238,35 @@
    - 相关性: ⭐⭐⭐⭐⭐
    - 关键词: VLA, Intention Distillation, Behavior-Level Supervision, Action Decoder, Teacher VLM, GR00T/π0.5
    - 文档: papers/2026-08-26_05_Act_with_Intent_Indi.md
+
+## 2026-08-27 研究的论文（精选5篇）
+
+1. **FixAnything: 3D-Consistent Rendering Refinement via Video Generative Priors** - arXiv:2608.23549v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS渲染修复, 视频扩散先验, Flow-DPO, SfM位姿奖励, 表示无关
+   - 文档: papers/2026-08-27_01_FixAnything_3D_Consistent_Rendering_Refinement.md
+   - 亮点: 单一通用视频模型统一修复3DGS/NeRF/Mesh/点云伪影；20条视频+LoRA<1%参数；几何一致性DPO零推理开销
+
+2. **EmbodiedVAE: Disentangled Video VAE for Efficient and Controllable Embodied Manipulation** - arXiv:2608.02990v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 视频VAE, 臂/背景解耦, 不对称压缩, OT运动一致性, 操作世界模型
+   - 文档: papers/2026-08-27_02_EmbodiedVAE_Disentangled_Video_VAE_Manipulation.md
+   - 亮点: 具身定制tokenizer；机械臂4×(16×16)/背景8×(8×8)不对称压缩；重建PSNR平均+2dB且动作控制更精确
+
+3. **AeroGround: A Comprehensive Benchmark for Aerial-Ground Collaborative Reasoning** - arXiv:2608.14721v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 空地协同推理, VLM基准, 跨视角对应, 低空经济, 仿真数据引擎
+   - 文档: papers/2026-08-27_03_AeroGround_Aerial_Ground_Collaborative_Reasoning.md
+   - 亮点: 首个空地协同VLM基准（29K观测/2250QA/11任务）；最强54.4% vs 人类93.3%；四大短板=对应/配准/坐标变换/遮挡
+
+4. **Explore, Map, Remember, Decide: Are Embodied VLMs Ready for Safety-Critical Scenarios?** - arXiv:2608.08077v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 安全关键评估, 空间记忆, 事后合理化, 心理学指标, 证据接地
+   - 文档: papers/2026-08-27_04_EMRD_Embodied_VLMs_Safety_Critical.md
+   - 亮点: VLM撤离决策靠文本先验而非探索证据；低光破坏全链而纹理无害；记忆不符合人类认知规律且不可预测
+
+5. **Surgical WAM: A World-Action Model for Data-Efficient Surgical Robot Learning** - arXiv:2608.11204v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 世界-动作模型, 手术机器人, 无动作视频预训练, Cosmos Policy, 数据效率
+   - 文档: papers/2026-08-27_05_Surgical_WAM_World_Action_Model_Surgical_Robot.md
+   - 亮点: 首个手术WAM；固定动作预算下视频预训练使闭环成功率63.5%→77.8%；接触密集/双手任务收益最大
