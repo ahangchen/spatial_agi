@@ -3270,3 +3270,30 @@
    - 关键词: 世界-动作模型, 手术机器人, 无动作视频预训练, Cosmos Policy, 数据效率
    - 文档: papers/2026-08-27_05_Surgical_WAM_World_Action_Model_Surgical_Robot.md
    - 亮点: 首个手术WAM；固定动作预算下视频预训练使闭环成功率63.5%→77.8%；接触密集/双手任务收益最大
+
+## 2026-08-28 研究的论文（精选5篇）
+
+1. **4DGS-WAM: Bridging Past and Future with an Object-Centric World Action Model based on 4D Gaussian Splatting** - arXiv:2608.25956v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4DGS, World Action Model, Object-Centric, 静态复用, 时间条件化策略
+   - 文档: papers/2026-08-28_01_4DGS_WAM_Object_Centric_World_Action_Model_4DGS.md
+
+2. **GaussianDream++: Efficient 3D Gaussian World Modeling for Robotic Manipulation** - arXiv:2608.25659v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, 高斯世界监督, 世界token, 非对称训练部署, 真机操作
+   - 文档: papers/2026-08-28_02_GaussianDreampp_Efficient_3D_Gaussian_World_Modeling_Manipulation.md
+
+3. **TrAct: Bridging Robot Control and Visual Prediction with Visual Tracks** - arXiv:2608.24101v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 视觉轨迹接口, 轨迹条件世界模型, 测试时搜索, 跨具身, LIBERO-INTEGRAL
+   - 文档: papers/2026-08-28_03_TrAct_Robot_Control_Visual_Prediction_Visual_Tracks.md
+
+4. **V-Link: Recovering Lost Visual Representations in Action DiT for Vision-Language-Action Models** - arXiv:2608.25308v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VL→A传输瓶颈, 表示可达性, Spatial/Semantic Query, 非对称注入, GR00T N1.6
+   - 文档: papers/2026-08-28_04_V_Link_Recovering_Lost_Visual_Representations_Action_DiT.md
+
+5. **DesignAgent3D: Interactive 3D Scene Editing via Designer-like Multimodal Reasoning** - arXiv:2608.21438v1
+   - 相关性: ⭐⭐⭐
+   - 关键词: 3D场景编辑, Plan-Perceive-Act, Design Protocol, 几何锚定分割, human-in-the-loop
+   - 文档: papers/2026-08-28_05_DesignAgent3D_Interactive_3D_Scene_Editing_Designer_Reasoning.md
