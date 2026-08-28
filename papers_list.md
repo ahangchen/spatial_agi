@@ -3297,3 +3297,30 @@
    - 相关性: ⭐⭐⭐
    - 关键词: 3D场景编辑, Plan-Perceive-Act, Design Protocol, 几何锚定分割, human-in-the-loop
    - 文档: papers/2026-08-28_05_DesignAgent3D_Interactive_3D_Scene_Editing_Designer_Reasoning.md
+
+## 2026-08-29 研究的论文（精选5篇）
+
+1. **Embodied-BenchClaw: An Autonomous Multi-Agent System for Embodied Spatial Intelligence Benchmark Construction** - arXiv:2606.11909v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 自动基准构建, 多Agent系统, 契约化技能库, 证据接地, 过程质量控制, SAE激活指纹
+   - 文档: papers/2026-08-29_01_Embodied_BenchClaw_Autonomous_Multi_Agent_Benchmark_Construction.md
+
+2. **ForeTime-VLA: Causal Future-Token Distillation from a World Action Model for Conveyor-Belt Manipulation** - arXiv:2608.20735v2
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 世界动作模型蒸馏, 因果未来token, 动作等价压缩, π0.5, 动态抓取, 相位/转换倒计时
+   - 文档: papers/2026-08-29_02_ForeTime_VLA_Causal_Future_Token_Distillation_WAM.md
+
+3. **From Recovery to Drop-off: How Action Post-training Reduces a VLM's Late-Layer Depth Decodability** - arXiv:2608.08904v2
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA表征退化, 深度可解码性, 逐层探针, MLP写入干扰, 因果消融, MolmoAct2
+   - 文档: papers/2026-08-29_03_Action_Post_Training_Reduces_Late_Layer_Depth_Decodability.md
+
+4. **DriveStack-VLA: Render-Teacher Alignment for BEV-Based DeepStack Vision-Language-Action Model** - arXiv:2606.24051v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: BEV注入, DeepStack, 渲染教师对齐, 注意力蒸馏, GRPO, 轨迹自批评, NAVSIM
+   - 文档: papers/2026-08-29_04_DriveStack_VLA_BEV_DeepStack_Render_Teacher_Alignment.md
+
+5. **Object-Uni: A Unified Model for Object-Centric Spatial Understanding and Controllable Generation** - arXiv:2608.22757v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 物体中心空间智能, 视角化朝向抽象, 位姿条件生成, 理解-生成统一, UniSpatial-80K
+   - 文档: papers/2026-08-29_05_Object_Uni_Object_Centric_Spatial_Understanding_Generation.md
