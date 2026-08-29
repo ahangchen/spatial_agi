@@ -3324,3 +3324,30 @@
    - 相关性: ⭐⭐⭐⭐
    - 关键词: 物体中心空间智能, 视角化朝向抽象, 位姿条件生成, 理解-生成统一, UniSpatial-80K
    - 文档: papers/2026-08-29_05_Object_Uni_Object_Centric_Spatial_Understanding_Generation.md
+
+## 2026-08-30 研究的论文（精选5篇）
+
+1. **CGS-SLAM: Collaborative Gaussian Splatting based SLAM for Multi-Agent Reconstruction** - arXiv:2608.26868v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Collaborative SLAM, 3DGS, RGB+IMU, Metric Depth (Depth Pro), VGGT, Multi-Agent
+   - 文档: papers/2026-08-30_01_CGS_SLAM_Collaborative_Gaussian_Splatting_Multi_Agent_Reconstruction.md
+
+2. **AirForesight: Current-to-Future Spatial Map Imagination with Cross-Space Planning Consistency for UAV-VLN** - arXiv:2608.12835v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: UAV-VLN, Spatial Map Imagination, Future Map, CPCL, LLM, ACM MM 2026
+   - 文档: papers/2026-08-30_02_AirForesight_Current_to_Future_Spatial_Map_Imagination_UAV_VLN.md
+
+3. **Embodied-Navigator (TAMP-Nav): Point, Think, Memorize, and Align for Efficient Navigation** - arXiv:2608.17512v2
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLN, Pixel-to-3D, Selective Reasoning, Anchor-Trajectory Memory, Two-Level GRPO, Qwen2.5-VL
+   - 文档: papers/2026-08-30_03_Embodied_Navigator_Point_Think_Memorize_Align_Efficient_Navigation.md
+
+4. **GaussVid: Sparse-View Gaussian Splatting with 3D-Aware Video Diffusion Priors** - arXiv:2608.21849v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Sparse-View 3DGS, Video Diffusion, Camera Conditioning, Plücker, Wan2.1-VACE
+   - 文档: papers/2026-08-30_04_GaussVid_Sparse_View_Gaussian_Splatting_3D_Aware_Video_Diffusion_Priors.md
+
+5. **Vision-Language Models for Egocentric Video: From Hand-Object Interaction to Embodied AI (Survey)** - arXiv:2608.18671v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Egocentric Video, VLM, Hand-Object Interaction, Graph Reasoning, Embodied AI
+   - 文档: papers/2026-08-30_05_VLMs_Egocentric_Video_HOI_Embodied_AI_Survey.md
