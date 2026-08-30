@@ -3351,3 +3351,30 @@
    - 相关性: ⭐⭐⭐⭐
    - 关键词: Egocentric Video, VLM, Hand-Object Interaction, Graph Reasoning, Embodied AI
    - 文档: papers/2026-08-30_05_VLMs_Egocentric_Video_HOI_Embodied_AI_Survey.md
+
+## 2026-08-31 研究的论文（精选5篇）
+
+1. **CLAP: Cross-Embodiment Video World Models are Zero-Shot Physical Simulators** - arXiv:2608.27400
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Cross-Embodiment, Video World Model, Zero-Shot Simulator, Unified Action Interface, Embodiment Conditioning
+   - 文档: papers/2026-08-31_01_CLAP_Cross_Embodiment_Video_World_Models_Zero_Shot_Physical_Simulators.md
+
+2. **Riemann-1.0: An Embodied World Action Model for Physical AI** - arXiv:2608.27033
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Action Model, Fully Causal Autoregressive, Action Tokenization, Interleaved Obs-Action, Physical AI
+   - 文档: papers/2026-08-31_02_Riemann_1_0_Embodied_World_Action_Model_Physical_AI.md
+
+3. **Zero-WAM: In-Context World-Action Modeling from Human Videos for Open-Ended Task Generalization** - arXiv:2608.27300
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: In-Context Task Specification, Human Videos, World-Action Model, Zero-Shot Generalization, Progress Grounding
+   - 文档: papers/2026-08-31_03_Zero_WAM_In_Context_World_Action_Modeling_Human_Videos.md
+
+4. **SpatialCrafter: Single Image World Modeling with Generative 3D Proxies** - arXiv:2608.27420
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Image-to-Scene, Global 3D Proxy, Long-Term Drift, Anchor Conditioning, Explorable Generation
+   - 文档: papers/2026-08-31_04_SpatialCrafter_Single_Image_World_Modeling_Generative_3D_Proxies.md
+
+5. **LagrangeGS: Non-Conservative Lagrangian System on Dynamic 3D Gaussian Splatting** - arXiv:2608.26800
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Lagrangian Mechanics, Dynamic 3DGS, Dissipation, Time-Reversibility, Physics-Constrained Generation
+   - 文档: papers/2026-08-31_05_LagrangeGS_Non_Conservative_Lagrangian_System_Dynamic_3DGS.md
