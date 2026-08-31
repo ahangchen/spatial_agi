@@ -1,5 +1,37 @@
 # Spatial AGI Research Papers - Daily Analysis
 
+## 2026-09-01 研究的论文（精选5篇）
+
+1. **WALL-SS: Scaling Long-horizon World Models via Next-Scale Autoregression** - arXiv:2608.26239
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: world model, long-horizon, next-scale autoregression, scale-compressed memory, dream forcing
+   - 文档: papers/2026-09-01_01_WALL_SS_Long_Horizon_World_Models_Next_Scale_Autoregression.md
+   - 亮点: 尺度间自回归统一生成/记忆/对齐，分钟级有界内存流式rollout，失败行为联合建模
+
+2. **Beyond Data Scaling: Representation-Centric Continued Pre-training for VLA Models (VLAct)** - arXiv:2608.27550
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, representation-centric pretraining, cross-embodiment, VLM prior preservation
+   - 文档: papers/2026-09-01_02_Beyond_Data_Scaling_Representation_Centric_VLA_Pretraining.md
+   - 亮点: 表征为中心持续预训练，16卡开源超工业VLA（LIBERO-Plus 82.6%），未见具身20%数据超全量GR00T-N1.6
+
+3. **GCA: Learning Implicit Constitutive Laws for Dynamic 3DGS from Monocular Videos** - arXiv:2608.22102
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4DGS, constitutive law, monocular, rank-based depth anchor, physics prior
+   - 文档: papers/2026-09-01_03_GCA_Implicit_Constitutive_Laws_Dynamic_3DGS_Monocular.md
+   - 亮点: 单目视频学材料本构定律，RDGA秩式深度锚定 + 经典本构软先验，CD降48%
+
+4. **AcrossVAM1.0: Particle World Modeling for Text-Assisted Robot Video Prediction** - arXiv:2608.28491
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: particle world model, motion-appearance factorization, SAM3-DLP, lightweight
+   - 文档: papers/2026-09-01_04_AcrossVAM1_0_Particle_World_Modeling_Robot_Video_Prediction.md
+   - 亮点: 0.28M可训练参数+语义粒子接口，轨迹误差降21%，诚实负对照评估（语言通路失效2.8-3.1%）
+
+5. **Beyond Relative Geometry: Metric-Aware Geometry Perception for Robotics (MAGP)** - arXiv:2608.27497
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: metric geometry, scale equivariance, plug-and-play, robotic manipulation
+   - 文档: papers/2026-09-01_05_Beyond_Relative_Geometry_Metric_Aware_Geometry_Perception_Robotics.md
+   - 亮点: 度量尺度等变增强，绝对误差2.01m→0.07m，插入VLA策略RoboTwin +6.26%
+
 ## 2026-07-24 研究的论文（精选5篇）
 
 1. **IGGT4D: Streaming 4D Instance-Grounded Geometry Transformer** - arXiv:2607.19228
