@@ -3410,3 +3410,30 @@
    - 相关性: ⭐⭐⭐⭐⭐
    - 关键词: Lagrangian Mechanics, Dynamic 3DGS, Dissipation, Time-Reversibility, Physics-Constrained Generation
    - 文档: papers/2026-08-31_05_LagrangeGS_Non_Conservative_Lagrangian_System_Dynamic_3DGS.md
+
+## 2026-09-02 研究的论文（精选5篇）
+
+1. **LightNav-0: Eliciting VLM Spatial Intelligence for Generalist Embodied Navigation** - arXiv:2608.30935
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLM Spatial Intelligence, Dual-Channel Pointing, RVQ Action Tokenizer, Generalist Navigation, GRPO
+   - 文档: papers/2026-09-02_01_LightNav_0_VLM_Spatial_Intelligence_Generalist_Embodied_Navigation.md
+
+2. **CometVLA: Co-Training on an Embodied Data Pyramid towards Physical Understanding** - arXiv:2608.30289
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Embodied Data Pyramid, Physical VQA, GAP Token, Information Bottleneck, VLM-VLA Correlation
+   - 文档: papers/2026-09-02_02_CometVLA_Co_Training_Embodied_Data_Pyramid_Physical_Understanding.md
+
+3. **Motus2: A Self-Evolving General World Model for Dexterous Manipulation** - arXiv:2608.30237
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Self-Evolving World Model, Policy-Simulator-Evaluator, Egocentric Data Scaling, Tactile Expert, Model-Based RL
+   - 文档: papers/2026-09-02_03_Motus2_Self_Evolving_General_World_Model_Dexterous_Manipulation.md
+
+4. **When 3D Gaussian Splatting Recovers Real Surfaces** - arXiv:2608.30054
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Geometric Identifiability, First-Hit Abstraction, Billboard Failure, Angular Capacity, Spherical Harmonics
+   - 文档: papers/2026-09-02_04_When_3DGS_Recovers_Real_Surfaces_Identifiability.md
+
+5. **ReconSplat: Generalizable 3D Scene Reconstruction Beyond Observed Views** - arXiv:2608.28895
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Feed-Forward 3DGS, Variational Latent Field, Multi-View Latent Diffusion, View Extrapolation, Joint Appearance-Geometry
+   - 文档: papers/2026-09-02_05_ReconSplat_Generalizable_3D_Scene_Reconstruction_Beyond_Observed_Views.md
