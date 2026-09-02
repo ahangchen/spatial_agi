@@ -3437,3 +3437,30 @@
    - 相关性: ⭐⭐⭐⭐⭐
    - 关键词: Feed-Forward 3DGS, Variational Latent Field, Multi-View Latent Diffusion, View Extrapolation, Joint Appearance-Geometry
    - 文档: papers/2026-09-02_05_ReconSplat_Generalizable_3D_Scene_Reconstruction_Beyond_Observed_Views.md
+
+## 2026-09-03 研究的论文（精选5篇）
+
+1. **CGS-SLAM: Collaborative Gaussian Splatting based SLAM for Multi-Agent Reconstruction** - arXiv:2608.26868
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Collaborative SLAM, Multi-Agent, Metric Monocular Depth, Depth Pro, VGGT, Dynamic Keyframing, GNSS-Denied
+   - 文档: papers/2026-09-03_01_CGS_SLAM_Collaborative_Gaussian_Splatting_Multi_Agent_Reconstruction.md
+
+2. **OmniCAD: A Large-Scale Benchmark for 3D Spatial Reasoning in Robotics Assemblies** - arXiv:2608.22637
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Assembly-Aware Spatial Reasoning, Mate Graph, 6-DoF Pose, Tool-Augmented Agent, Industrial CAD Benchmark
+   - 文档: papers/2026-09-03_02_OmniCAD_Large_Scale_Benchmark_3D_Spatial_Reasoning_Robotics_Assemblies.md
+
+3. **IMPACT: Attention Is the Interaction Map for Scalable Interaction-Aware World Model Training** - arXiv:2609.00161
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Supervision-Allocation Mismatch, Cross-Attention Prior, Interaction Map, Denoising Reweighting, Gradient Routing
+   - 文档: papers/2026-09-03_03_IMPACT_Attention_Interaction_Map_Interaction_Aware_World_Model_Training.md
+
+4. **Matrix-Game 3.5: Enhancing Real-Time Streaming Interactive World Models with Patch Memory** - arXiv:2608.29910
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Patch Memory, Tiled-PRoPE, Static-Dynamic Disentanglement, Real-Time Distillation, Long-Horizon Consistency, 20FPS
+   - 文档: papers/2026-09-03_04_Matrix_Game_3_5_Real_Time_Streaming_Interactive_World_Models_Patch_Memory.md
+
+5. **AnyWorld: Factorized Egocentric World Models for Cross-Embodiment Generalization** - arXiv:2608.29242
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Cross-Embodiment, Action-Camera-Embodiment Factorization, Experience Recomposition, Human Video Transfer, Humanoid VLA
+   - 文档: papers/2026-09-03_05_AnyWorld_Factorized_Egocentric_World_Models_Cross_Embodiment_Generalization.md
