@@ -3464,3 +3464,35 @@
    - 相关性: ⭐⭐⭐⭐⭐
    - 关键词: Cross-Embodiment, Action-Camera-Embodiment Factorization, Experience Recomposition, Human Video Transfer, Humanoid VLA
    - 文档: papers/2026-09-03_05_AnyWorld_Factorized_Egocentric_World_Models_Cross_Embodiment_Generalization.md
+
+## 2026-09-04 研究的论文（精选5篇）
+
+1. **SpatioLM: Towards General Physical Spatial Intelligence in Vision-Language Models** - arXiv:2608.01899v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLM空间推理, 冻结骨干, 伪深度监督, VSI-Bench 71.6, 即插即用模块
+   - 文档: papers/2026-09-04_01_SpatioLM_General_Physical_Spatial_Intelligence_VLM.md
+   - NotebookLM: [notebook_id]
+
+2. **Spatial Memory Agent: Experience-Grounded Procedure Memory for Spatial Intelligence** - arXiv:2608.12743v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 程序性记忆, 免参数更新自进化, Transfer Reliability Score, 验证器引导反思
+   - 文档: papers/2026-09-04_02_Spatial_Memory_Agent_Experience_Grounded_Procedure_Memory.md
+   - NotebookLM: [notebook_id]
+
+3. **Chain of Spatial Thoughts (Space Tokens): Modality-Agnostic Spatial Grounding for VLMs** - arXiv:2608.10278v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 连续空间token, VGGT-Omega蒸馏, 3D框token, 几何思维链, 零推理开销
+   - 文档: papers/2026-09-04_03_Chain_of_Spatial_Thoughts_Space_Tokens_Spatial_Grounding_VLM.md
+   - NotebookLM: [notebook_id]
+
+4. **CL4D: Contrastive Language-4D Pretraining for Vision-Language Reasoning in Dynamic Scenes** - arXiv:2608.18734v2
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4D点云, 对比预训练, 4DVLM, DynAction4D, 点云原生推理, ECCV 2026
+   - 文档: papers/2026-09-04_04_CL4D_Contrastive_Language_4D_Pretraining_Dynamic_Scenes.md
+   - NotebookLM: [notebook_id]
+
+5. **World Tokens: Enhancing Embodied Policies with Training-Time World Modeling** - arXiv:2608.09730v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, 训练期世界建模, World Adapter, 独占动作通路, Canny结构锚, LIBERO 98.2
+   - 文档: papers/2026-09-04_05_World_Tokens_Training_Time_World_Modeling_Embodied_Policies.md
+   - NotebookLM: [notebook_id]
