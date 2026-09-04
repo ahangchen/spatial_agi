@@ -3496,3 +3496,30 @@
    - 关键词: VLA, 训练期世界建模, World Adapter, 独占动作通路, Canny结构锚, LIBERO 98.2
    - 文档: papers/2026-09-04_05_World_Tokens_Training_Time_World_Modeling_Embodied_Policies.md
    - NotebookLM: [notebook_id]
+
+## 2026-09-05 研究的论文（精选5篇）
+
+1. **Spatially Aware World Action Model via Geometric Latent Diffusion (SA-WAM)** - arXiv:2609.02531v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Action Model, Geometric Latent Diffusion, Log-Depth Tokenization, VLA, Inria
+   - 文档: papers/2026-09-05_01_Spatially_Aware_World_Action_Model_Geometric_Latent_Diffusion.md
+
+2. **Lucida: Parse, Generate, and Place for Composable Real-to-Sim Scene Modeling** - arXiv:2608.30821v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Real-to-Sim, Scene Graph, Amodal Generation, GizmoAct VLM Policy, GUI Interaction
+   - 文档: papers/2026-09-05_02_Lucida_Composable_Real_to_Sim_Scene_Modeling.md
+
+3. **STARS-GS: Structure-Aware Regularized Gaussian Splatting for Large-Scale Aerial Surface Reconstruction** - arXiv:2609.03447v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3D Gaussian Splatting, Aerial Reconstruction, Structure-Aware Partitioning, Adaptive Regularization
+   - 文档: papers/2026-09-05_03_STARS_GS_Structure_Aware_Regularized_Gaussian_Splatting_Aerial.md
+
+4. **AnyGS2Mesh: Feed-Forward Mesh Reconstruction from 3D Gaussian Splatting with Arbitrary-Resolution Views** - arXiv:2609.03304v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3DGS to Mesh, Feed-Forward, Gaussian Tokens, Hybrid Depth Refinement, TSDF
+   - 文档: papers/2026-09-05_04_AnyGS2Mesh_Feed_Forward_Mesh_Reconstruction_3DGS.md
+
+5. **Toward Unified Robot Learning: Bridging Representation, Vision-Language-Action, and World Models** - arXiv:2609.03927v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Survey, VLA, World Model, Unified Robot Learning, TMLR 2026
+   - 文档: papers/2026-09-05_05_Toward_Unified_Robot_Learning_Bridging_Representation_VLA_World_Models.md
