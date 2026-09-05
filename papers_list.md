@@ -3523,3 +3523,30 @@
    - 相关性: ⭐⭐⭐⭐⭐
    - 关键词: Survey, VLA, World Model, Unified Robot Learning, TMLR 2026
    - 文档: papers/2026-09-05_05_Toward_Unified_Robot_Learning_Bridging_Representation_VLA_World_Models.md
+
+## 2026-09-06 研究的论文（精选5篇）
+
+1. **Motus2: A Self-Evolving General World Model for Dexterous Manipulation** - arXiv:2608.30237
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Action Model, Self-Evolving, Value Model, Dexterous Manipulation, Egocentric Data Scaling
+   - 文档: papers/2026-09-06_01_Motus2_Self_Evolving_General_World_Model_Dexterous_Manipulation.md
+
+2. **WISE: World-model-guided Imagination Scheduling for Efficient Post-training of VLA Models** - arXiv:2609.03681
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Imagination Scheduling, Bounded Rollout, VLA Post-training, Counterfactual Evaluation, GRPO
+   - 文档: papers/2026-09-06_02_WISE_World_Model_Guided_Imagination_Scheduling_VLA_Post_Training.md
+
+3. **Do Better Imagined Rollouts Mean Better Robot Control? A Controlled Study of World-Model Evaluation Under Feedback** - arXiv:2609.02811
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Model Evaluation, Closed-Loop Control, Rollout Horizon, Measurement Update, State Estimation
+   - 文档: papers/2026-09-06_03_Do_Better_Imagined_Rollouts_Mean_Better_Robot_Control_World_Model_Evaluation.md
+
+4. **SPAR3S: Sparse Auto-regressive Modeling for Scene Generation from Multi-View Images** - arXiv:2609.03931
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Sparse Voxel Latent Space, Scene Completion, Masked Autoregressive Transformer, Photometric Supervision, ECCV 2026
+   - 文档: papers/2026-09-06_04_SPAR3S_Sparse_Autoregressive_Scene_Generation_Multi_View.md
+
+5. **When 3D Gaussian Splatting Recovers Real Surfaces** - arXiv:2608.30054
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3DGS Geometry Identifiability, First-hit Rendering, Parallax, Angular Capacity, Surface Recovery, ECCV 2026
+   - 文档: papers/2026-09-06_05_When_3DGS_Recovers_Real_Surfaces_First_Hit_Identifiability.md
