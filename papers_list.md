@@ -3550,3 +3550,30 @@
    - 相关性: ⭐⭐⭐⭐
    - 关键词: 3DGS Geometry Identifiability, First-hit Rendering, Parallax, Angular Capacity, Surface Recovery, ECCV 2026
    - 文档: papers/2026-09-06_05_When_3DGS_Recovers_Real_Surfaces_First_Hit_Identifiability.md
+
+## 2026-09-07 研究的论文（精选5篇）
+
+1. **GraFT: A Training-Free Framework for Spatial Reasoning in Multimodal Large Language Models via 3D Scene Graphs** - arXiv:2609.03892
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Scene Graph, Training-Free Spatial Reasoning, Symbolic Geometric Tools, BEV Rendering, Egocentric Frame Retrieval, VSI-Bench
+   - 文档: papers/2026-09-07_01_GraFT_Training_Free_Spatial_Reasoning_MLLM_3D_Scene_Graphs.md
+
+2. **Toward Physically Grounded JEPA World Models for Goal-Conditioned Robotic Planning** - arXiv:2609.03565
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: JEPA World Model, State Alignment, Inverse Dynamics, Latent Collapse, Transition Subspace Analysis, CEM Planning
+   - 文档: papers/2026-09-07_02_Physically_Grounded_JEPA_World_Models_Goal_Conditioned_Robotic_Planning.md
+
+3. **InceptionGS: Generative Bootstrapping for Large-Scale Gaussian Splatting under Unstructured View Sampling** - arXiv:2609.02747
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Large-Scale 3DGS, Unstructured View Sampling, Generative Bootstrapping, G-buffer Conditioning, Photometric Blending, GigaNvs
+   - 文档: papers/2026-09-07_03_InceptionGS_Generative_Bootstrapping_Large_Scale_Gaussian_Splatting_Unstructured_View_Sampling.md
+
+4. **Dyn-3D: Unveiling and Resolving Ego-Motion Ambiguity in Vision-Language Models** - arXiv:2609.01059
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Kinematic Collapse, Ego-Motion Perception, Counterfactual 3DGS Rendering, Kinematic-GSPO, Physics-Guided RL, VLM Spatial Reasoning
+   - 文档: papers/2026-09-07_04_Dyn_3D_Unveiling_Resolving_Ego_Motion_Ambiguity_VLMs.md
+
+5. **Air-Ground Collaborative Vision-and-Language Navigation via Shared Bird's-Eye Maps (AGC-VLN)** - arXiv:2609.03483
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Air-Ground Collaboration, UAV+UGV, Shared Bird's-Eye Map, 3D-SPF, Training-Free VLN, CARLA-Air
+   - 文档: papers/2026-09-07_05_AGC_VLN_Air_Ground_Collaborative_VLN_Shared_Birds_Eye_Maps.md
