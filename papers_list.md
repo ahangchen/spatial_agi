@@ -3577,3 +3577,35 @@
    - 相关性: ⭐⭐⭐⭐
    - 关键词: Air-Ground Collaboration, UAV+UGV, Shared Bird's-Eye Map, 3D-SPF, Training-Free VLN, CARLA-Air
    - 文档: papers/2026-09-07_05_AGC_VLN_Air_Ground_Collaborative_VLN_Shared_Birds_Eye_Maps.md
+
+## 2026-09-08 研究的论文（精选5篇）
+
+1. **LightNav-0: Eliciting VLM Spatial Intelligence for Generalist Embodied Navigation** - arXiv:2608.30935
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLM Spatial Intelligence, Dual-Channel Pointing, RVQ Action Tokenizer, Generalist Navigation
+   - 文档: papers/2026-09-08_01_LightNav_0_Eliciting_VLM_Spatial_Intelligence_Generalist_Embodied_Navigation.md
+   - NotebookLM: [notebook_id]
+
+2. **ViewMind3D: Modular View-Aware Inference for Training-Free 3D-QA** - arXiv:2607.28442
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Training-Free 3D-QA, BEV Viewpoint Indicator, Multi-View Selection, Visual Grounding
+   - 文档: papers/2026-09-08_02_ViewMind3D_Modular_View_Aware_Inference_Training_Free_3D_QA.md
+   - NotebookLM: [notebook_id]
+
+3. **GaussianDream++: Efficient 3D Gaussian World Modeling for Robotic Manipulation** - arXiv:2608.25659
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Gaussian World Model, VLA, World State Tokens, Static-Dynamic Factorization
+   - 文档: papers/2026-09-08_03_GaussianDreampp_Efficient_3D_Gaussian_World_Modeling_Robotic_Manipulation.md
+   - NotebookLM: [notebook_id]
+
+4. **AnyWorld: Factorized Egocentric World Models for Cross-Embodiment Generalization** - arXiv:2608.29242
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Cross-Embodiment World Model, Action-Camera-Embodiment Factorization, Experience Recomposition, Human Video
+   - 文档: papers/2026-09-08_04_AnyWorld_Factorized_Egocentric_World_Models_Cross_Embodiment_Generalization.md
+   - NotebookLM: [notebook_id]
+
+5. **TrAct: Bridging Robot Control and Visual Prediction with Visual Tracks** - arXiv:2608.24101
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Visual Tracks, Track-Conditioned World Model, Test-Time Action Selection, VLA
+   - 文档: papers/2026-09-08_05_TrAct_Bridging_Robot_Control_Visual_Prediction_Visual_Tracks.md
+   - NotebookLM: [notebook_id]
