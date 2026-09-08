@@ -3609,3 +3609,35 @@
    - 关键词: Visual Tracks, Track-Conditioned World Model, Test-Time Action Selection, VLA
    - 文档: papers/2026-09-08_05_TrAct_Bridging_Robot_Control_Visual_Prediction_Visual_Tracks.md
    - NotebookLM: [notebook_id]
+
+## 2026-09-09 研究的论文（精选5篇）
+
+1. **ZimaBlue: Evolving Generalizable World Action Models through Scalable Video Pre-training** - arXiv:2609.00188
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Action Model, Video Pre-training, Slow-Fast Dual-System, Cross-Embodiment, DMD Distillation
+   - 文档: papers/2026-09-09_01_ZimaBlue_Evolving_Generalizable_World_Action_Models_Scalable_Video_Pretraining.md
+   - NotebookLM: [notebook_id]
+
+2. **NavArena: Automated Construction of Goal-Oriented Navigation Benchmarks from 3D Gaussian Splatting Reconstructions** - arXiv:2609.04602
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS Benchmark, Navigation Evaluation, Occupancy Costmap, Semantic Grounding, Closed-loop Protocol
+   - 文档: papers/2026-09-09_02_NavArena_Automated_Construction_Goal_Oriented_Navigation_Benchmarks_3DGS.md
+   - NotebookLM: [notebook_id]
+
+3. **Linguistic Trajectory Encoding for Efficient Long-Horizon Spatial Memory in Embodied Agents** - arXiv:2609.04802
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Spatial Memory, Linguistic Trajectory Encoding, Long-Horizon Retrieval, Egocentric Video, SMB Benchmark
+   - 文档: papers/2026-09-09_03_Linguistic_Trajectory_Encoding_Efficient_Long_Horizon_Spatial_Memory_Embodied_Agents.md
+   - NotebookLM: [notebook_id]
+
+4. **Zeva: In-Context Causal Learning for Generalizable Embodied Manipulation** - arXiv:2608.30880
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: In-Context Causal Learning, Frozen Policy, Dual-timescale Memory, Self-Evolution, Test-time Scaling
+   - 文档: papers/2026-09-09_04_Zeva_In_Context_Causal_Learning_Generalizable_Embodied_Manipulation.md
+   - NotebookLM: [notebook_id]
+
+5. **RoSe-SLAM: Robust Semantic-Aware Gaussian Splatting SLAM from Dynamic Monocular Videos** - arXiv:2608.29003
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Dynamic SLAM, Semantic Gaussian Field, Spatial-Temporal Motion Mask, Monocular, Occlusion Inpainting
+   - 文档: papers/2026-09-09_05_RoSe_SLAM_Robust_Semantic_Aware_Gaussian_Splatting_SLAM_Dynamic_Monocular_Videos.md
+   - NotebookLM: [notebook_id]
