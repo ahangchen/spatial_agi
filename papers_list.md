@@ -3641,3 +3641,35 @@
    - 关键词: Dynamic SLAM, Semantic Gaussian Field, Spatial-Temporal Motion Mask, Monocular, Occlusion Inpainting
    - 文档: papers/2026-09-09_05_RoSe_SLAM_Robust_Semantic_Aware_Gaussian_Splatting_SLAM_Dynamic_Monocular_Videos.md
    - NotebookLM: [notebook_id]
+
+## 2026-09-10
+
+1. **SyncWorld: Visual Calibration Enables World Models as Zero-Shot Simulators** - arXiv:2609.09155
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Model, Visual Calibration, Zero-Shot Simulator, Action-Visual Mapping, Test-Time Policy Improvement
+   - 文档: papers/2026-09-10_01_SyncWorld_Visual_Calibration_Enables_World_Models_Zero_Shot_Simulators.md
+   - NotebookLM: [notebook_id]
+
+2. **OpenWAM: An Open, Modular Exploration Towards Systematic World-Action Model Pretraining** - arXiv:2609.07398
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World-Action Model, Modular Pretraining, Controlled Study, Joint Denoising, Open Source Stack
+   - 文档: papers/2026-09-10_02_OpenWAM_Open_Modular_Systematic_World_Action_Model_Pretraining.md
+   - NotebookLM: [notebook_id]
+
+3. **Motus2: A Self-Evolving General World Model for Dexterous Manipulation** - arXiv:2608.30237
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Self-Evolving, World Model, Dexterous Manipulation, Policy-Simulator-Evaluator Loop, Egocentric Data Scaling
+   - 文档: papers/2026-09-10_03_Motus2_Self_Evolving_General_World_Model_Dexterous_Manipulation.md
+   - NotebookLM: [notebook_id]
+
+4. **CST-WM: A Causally Structured World Model for Embodied Visual Tracking** - arXiv:2609.06302
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Causal Hallucination, Structured World Model, Visual Tracking, Re-acquisition, MPC
+   - 文档: papers/2026-09-10_04_CST_WM_Causally_Structured_World_Model_Embodied_Visual_Tracking.md
+   - NotebookLM: [notebook_id]
+
+5. **TTL-SR: Geometry-Aware Test-Time Learning for Quantitative Spatial Reasoning** - arXiv:2609.06004
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Test-Time Learning, Spatial Reasoning, Geometric Consistency, VLM, Pseudo-Labels
+   - 文档: papers/2026-09-10_05_TTL_SR_Geometry_Aware_Test_Time_Learning_Quantitative_Spatial_Reasoning.md
+   - NotebookLM: [notebook_id]
