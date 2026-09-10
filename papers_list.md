@@ -3673,3 +3673,35 @@
    - 关键词: Test-Time Learning, Spatial Reasoning, Geometric Consistency, VLM, Pseudo-Labels
    - 文档: papers/2026-09-10_05_TTL_SR_Geometry_Aware_Test_Time_Learning_Quantitative_Spatial_Reasoning.md
    - NotebookLM: [notebook_id]
+
+## 2026-09-11 研究的论文（精选5篇）
+
+1. **SpatialBlock: Enhancing Spatial Intelligence in LVLMs via Synthetic Block-Stacking Problem** - arXiv:2609.07064
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Spatial Intelligence, Synthetic Data, Block-Stacking, LVLM, GRPO, Cognitive Development
+   - 文档: papers/2026-09-11_01_SpatialBlock_Enhancing_Spatial_Intelligence_LVLMs_Synthetic_Block_Stacking.md
+   - NotebookLM: [notebook_id]
+
+2. **DUET-DINO: Simultaneous Cross-View World Modeling for Latent Planning in Robot Manipulation** - arXiv:2609.10506
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Latent World Model, Cross-View Conditioning, 7-DoF Planning, DINOv3, CEM, Robot Manipulation
+   - 文档: papers/2026-09-11_02_DUET_DINO_Simultaneous_Cross_View_World_Modeling_Latent_Planning_Robot_Manipulation.md
+   - NotebookLM: [notebook_id]
+
+3. **HaWMPO: Hallucination-Aware World Model-based Policy Optimization for Generalist Robot Policy** - arXiv:2609.09941
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Model RL, Hallucination-Aware, GRPO, Reward-Soft, VLA Post-Training, Reliability
+   - 文档: papers/2026-09-11_03_HaWMPO_Hallucination_Aware_World_Model_Policy_Optimization_Generalist_Robot_Policy.md
+   - NotebookLM: [notebook_id]
+
+4. **EdMCGS: Event-Driven Markov Chain Gaussian Splatting for Extreme-Low-Frame-Rate Dynamic Scene Reconstruction** - arXiv:2609.08332
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Event Camera, 3D Gaussian Splatting, Markov Chain, Dynamic Scene, Low Frame Rate, 4D Reconstruction
+   - 文档: papers/2026-09-11_04_EdMCGS_Event_Driven_Markov_Chain_Gaussian_Splatting_Extreme_Low_Frame_Rate_Dynamic_Scenes.md
+   - NotebookLM: [notebook_id]
+
+5. **FolDeX: A Physical-World Benchmark for Long-Horizon Robotic Manipulation of Deformable Objects** - arXiv:2609.10243
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Real-Robot Benchmark, Deformable Objects, Garment Folding, Data Reuse, FoldChallenge, Long-Horizon
+   - 文档: papers/2026-09-11_05_FolDeX_Physical_World_Benchmark_Long_Horizon_Deformable_Object_Manipulation.md
+   - NotebookLM: [notebook_id]
