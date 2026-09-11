@@ -3705,3 +3705,30 @@
    - 关键词: Real-Robot Benchmark, Deformable Objects, Garment Folding, Data Reuse, FoldChallenge, Long-Horizon
    - 文档: papers/2026-09-11_05_FolDeX_Physical_World_Benchmark_Long_Horizon_Deformable_Object_Manipulation.md
    - NotebookLM: [notebook_id]
+
+## 2026-09-12 研究的论文（精选5篇）
+
+1. **Unfold The World: Factorize 4D Properties in Reinforcing Spatial Reasoning (FactoSR)** - arXiv:2609.03729v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Spatial Reasoning, RLVR, 4D Consistency, VLM, GRPO
+   - 文档: papers/2026-09-12_01_FactoSR_Factorized_4D_Reinforcement_Spatial_Reasoning.md
+
+2. **WorldRoamBench: An Open-World Benchmark for Long-Horizon Stability of Interactive World Models** - arXiv:2606.31672v3
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Interactive World Models, Long-Horizon Stability, Benchmark, Memory, Physics
+   - 文档: papers/2026-09-12_02_WorldRoamBench_Long_Horizon_Stability_Interactive_World_Models.md
+
+3. **View-Structured Conformal Prediction for 3D Gaussian Splatting (VSCP)** - arXiv:2609.10307v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Gaussian Splatting, Conformal Prediction, Uncertainty, View-level Coverage
+   - 文档: papers/2026-09-12_03_VSCP_View_Structured_Conformal_Prediction_3DGS.md
+
+4. **Lumera: Engine-Native Editable 3D World Reconstruction with Objects and Lighting** - arXiv:2607.20889v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Editable 3D Scenes, Parametric Lighting, Scene Parsing, UE5, Game-scale
+   - 文档: papers/2026-09-12_04_Lumera_Engine_Native_Editable_3D_Reconstruction_Lighting.md
+
+5. **3DHarnessBench: Probing Agentic 3D-to-Code Capabilities of Frontier Vision-Language Models** - arXiv:2609.06535v1
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Agentic 3D, Blender MCP, Inverse Graphics, Active Perception, Benchmark
+   - 文档: papers/2026-09-12_05_3DHarnessBench_Agentic_3D_to_Code_VLM_Probe.md
