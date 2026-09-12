@@ -1,5 +1,37 @@
 # Spatial AGI Research Papers - Daily Analysis
 
+## 2026-09-13 研究的论文（精选5篇）
+
+1. **NavArena: Automated Construction of Goal-Oriented Navigation Benchmarks with 3D Gaussian Splatting** - arXiv:2609.04602
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS, Navigation Benchmark, Goal-Oriented, Automated Pipeline, Embodied Evaluation
+   - 文档: papers/2026-09-13_01_NavArena_Automated_Construction_Goal_Oriented_Navigation_Benchmarks_3DGS.md
+   - 亮点: 自动化把任意 3DGS 资产转为带多协议成功判据的导航评测，规模化生成可复现场景
+
+2. **BinauralVAE: Spatial Audio Reconstruction for World Models** - arXiv:2609.06837
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Binaural Audio, VAE, Spatial Audio, World Models, Cross-modal
+   - 文档: papers/2026-09-13_02_BinauralVAE_Spatial_Audio_Reconstruction_For_World_Models.md
+   - 亮点: 双耳空间音频作为世界模型的空间信号源，跨模态表征增强空间理解
+
+3. **Spatial-Semantic Reasoning for LLM-Driven Efficient UAV Search Operations** - arXiv:2608.28270
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: UAV Search, LLM Planning, Spatial-Semantic Reasoning, Efficient Exploration
+   - 文档: papers/2026-09-13_03_Spatial_Semantic_Reasoning_LLMs_Efficient_UAV_Search_Operations.md
+   - 亮点: LLM 空间语义推理驱动无人机搜索任务规划与高效探索
+
+4. **GeoAgent: Evaluating VLM Geolocalization Through Embodied Navigation** - arXiv:2608.29483
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Geolocalization, Embodied Navigation, VLM Evaluation, Confirmation Bias, Geographic Bias
+   - 文档: papers/2026-09-13_04_GeoAgent_Evaluating_VLM_Geolocalization_Through_Embodied_Navigation.md
+   - 亮点: Street View 具身导航地理定位评测；确认偏误定量刻画（β=-0.43）；发达地区距离偏差 50-103%；random-walk 因果对照
+
+5. **BioProVLA-Agent: Protocol-Driven VLA-Enabled Embodied Multi-Agent System for Biological Laboratory Manipulation** - arXiv:2605.07306
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, Protocol-Driven, Closed-Loop Verification, VLM-RAG, Wet-lab Manipulation
+   - 文档: papers/2026-09-13_05_BioProVLA_Agent_Protocol_Driven_VLA_Embodied_Multi_Agent_Biological_Laboratory_Manipulation.md
+   - 亮点: ~$800 平台打通协议→解析→验证→执行闭环；VLM-RAG 验证 +9.34pp；AugSmolVLA 过曝下 +40pp
+
 ## 2026-09-01 研究的论文（精选5篇）
 
 1. **WALL-SS: Scaling Long-horizon World Models via Next-Scale Autoregression** - arXiv:2608.26239
