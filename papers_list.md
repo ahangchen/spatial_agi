@@ -3764,3 +3764,35 @@
    - 相关性: ⭐⭐⭐⭐
    - 关键词: Agentic 3D, Blender MCP, Inverse Graphics, Active Perception, Benchmark
    - 文档: papers/2026-09-12_05_3DHarnessBench_Agentic_3D_to_Code_VLM_Probe.md
+
+## 2026-09-14 研究的论文（精选5篇）
+
+1. **GraFT: A Training-Free Framework for Spatial Reasoning in MLLMs via 3D Scene Graphs** - arXiv:2609.03892
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Training-Free, 3D Scene Graph, BEV Rendering, Egocentric Retrieval, VSI-Bench
+   - 文档: papers/2026-09-14_01_GraFT_Training_Free_Spatial_Reasoning_MLLM_3D_Scene_Graphs.md
+   - 亮点: 免训练 3D 场景图按任务派生三种证据（符号工具/BEV渲染/帧检索），VSI-Bench 51.4 超所有专有模型，ScanQA CIDEr +27%
+
+2. **CST-WM: Causally Structured World Model for Embodied Visual Tracking** - arXiv:2609.06302
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Causal World Model, Embodied Tracking, Structural Causal Model, Latent Dynamics, Intervention
+   - 文档: papers/2026-09-14_02_CST_WM_Causally_Structured_World_Model_Embodied_Visual_Tracking.md
+   - 亮点: 结构因果模型约束的隐空间世界模型，因果切边保证干预下状态转移正确，具身视觉追踪鲁棒性提升
+
+3. **SceneTeract: Agentic Scene Interaction via Verified Functional Affordances in 3D** - arXiv:2603.29798
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Functional Affordances, 3D Scenes, VLM Grounding, Scene Interaction, Embodied AI
+   - 文档: papers/2026-09-14_03_SceneTeract_Agentic_Functional_Affordances_VLM_Grounding_3D_Scenes.md
+   - 亮点: 把可供性形式化为"场景×身体"的几何可验证关系，VLM 感知+确定性验证器的 agentic 交互框架
+
+4. **AffordanceVLA: Vision-Language-Action Model with Affordance-Aware Understanding** - arXiv:2606.06155
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, Structured Affordance, Which/Where/How2Act, MoT Experts, LIBERO 95.8%
+   - 文档: papers/2026-09-14_04_AffordanceVLA_Affordance_Aware_Understanding_Action_Generation.md
+   - 亮点: 结构化可供性预测作为感知-动作中间表示与语义锚点，UAA 单向渐进注意力，10万级自动标注管线，LIBERO 95.8%/CALVIN 4.33，40% 数据超 π0 全量
+
+5. **RIDE: Relocalization-Informed Depth Estimation with 3D Gaussian Splatting** - arXiv:2609.11079
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS, Visual Relocalization, Metric Depth, Depth Completion, Temporal Memory
+   - 文档: papers/2026-09-14_05_RIDE_Relocalization_Informed_Depth_Estimation_3DGS.md
+   - 亮点: 重定位 PnP 内点转化为免费稀疏度量锚点校准冻结视频深度先验，零传感器增量产出稠密度量深度，27 条真实机器人路线零微调全胜
