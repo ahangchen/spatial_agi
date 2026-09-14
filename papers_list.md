@@ -3796,3 +3796,35 @@
    - 关键词: 3DGS, Visual Relocalization, Metric Depth, Depth Completion, Temporal Memory
    - 文档: papers/2026-09-14_05_RIDE_Relocalization_Informed_Depth_Estimation_3DGS.md
    - 亮点: 重定位 PnP 内点转化为免费稀疏度量锚点校准冻结视频深度先验，零传感器增量产出稠密度量深度，27 条真实机器人路线零微调全胜
+
+## 2026-09-15 研究的论文（精选5篇）
+
+1. **CL4D: Contrastive Language–4D Pretraining for Vision-Language Reasoning in Dynamic Scenes** - arXiv:2608.18734
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4D Contrastive Pretraining, Dynamic Point Cloud, 4D VLM, DynAction4D, Zero-shot Retrieval
+   - 文档: papers/2026-09-15_01_CL4D_Contrastive_Language_4D_Pretraining_Dynamic_Scenes.md
+   - 亮点: 首个 4D 基础视觉编码器，CLIP 范式推广到动态点云（R@1 +16.75%），4DVLM 以点云输入胜过 RGB 输入的 Gemini/GPT-5，ECCV 2026
+
+2. **Chain of Spatial Thoughts: Modality-Agnostic Spatial Grounding for VLMs (Space Tokens)** - arXiv:2608.10278
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Latent Spatial Tokens, Knowledge Distillation, VGGT-Omega, 3D Bounding Box, Chain-of-Thought
+   - 文档: papers/2026-09-15_02_Chain_of_Spatial_Thoughts_Space_Tokens.md
+   - 亮点: 词表预留 token + 潜空间对齐 + 解码重建双损失把 3D 几何内化进现成 VLM，零推理期开销，VSI-Bench +4.3，物体/房间尺寸估计 SOTA
+
+3. **Occ-VLM: Occupancy Grounded Vision Language Model for Indoor Scene Understanding** - arXiv:2606.19776
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Semantic Occupancy, RGB-only, Single 2D Encoder, Foreground Token Sampling, 3D VQA
+   - 文档: papers/2026-09-15_03_Occ_VLM_Occupancy_Grounded_VLM_Indoor_Scene_Understanding.md
+   - 亮点: 单冻结 2D 编码器 + Occ adapter 双向 2D-3D 桥梁，占用预测既做几何重建又做 token 掩码，多视图语义占用 SOTA，代码开源
+
+4. **OneCanvas: 3D Scene Understanding via Panoramic Reprojection** - arXiv:2606.19253
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Panoramic Canvas, Feature Reprojection, 3D-RoPE Remapping, Procedural Curriculum, Anti-shortcut
+   - 文档: papers/2026-09-15_04_OneCanvas_3D_Scene_Understanding_Panoramic_Reprojection.md
+   - 亮点: 零架构改动零辅助损失，多视图特征按经纬度摆上单张全景画布即 SOTA（SQA3D 65.3/VSI-Bench 70.1/SPBench 零样本 +4.8），训练算力省一个数量级，Nießner 组
+
+5. **Valerant: An Automatic Navigable Game Map Generator via Action-Conditioned World Model Exploration** - arXiv:2609.09418
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: World Action Model, Counterfactual Rollouts, Visual SLAM, Exploration Policy, Game Map Generation
+   - 文档: papers/2026-09-15_05_Valerant_Navigable_Game_Map_Generator_World_Model_Exploration.md
+   - 亮点: 免训练把动作条件视频 WM 升级为 cascaded WAM，反事实 rollout + SLAM 重建 + 建图效用评分，单张图像迭代生成持久可导航 3D 游戏地图
