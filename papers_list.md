@@ -3828,3 +3828,30 @@
    - 关键词: World Action Model, Counterfactual Rollouts, Visual SLAM, Exploration Policy, Game Map Generation
    - 文档: papers/2026-09-15_05_Valerant_Navigable_Game_Map_Generator_World_Model_Exploration.md
    - 亮点: 免训练把动作条件视频 WM 升级为 cascaded WAM，反事实 rollout + SLAM 重建 + 建图效用评分，单张图像迭代生成持久可导航 3D 游戏地图
+
+## 2026-09-16 研究的论文（精选5篇）
+
+1. **GLAM: Training a Latent World Model over Global Spatiotemporal Memory for Active Exploration and Navigation** - arXiv:2609.14561
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Latent World Model, Spatial Memory, JEPA, ObjectNav, Waypoint Prediction
+   - 文档: papers/2026-09-16_01_GLAM_Latent_World_Model_Global_Spatiotemporal_Memory_Navigation.md
+
+2. **SCOUT-SLAM: Structurally-Coupled Dual Uncertainty-Aware 3DGS SLAM in the Wild** - arXiv:2609.14634
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS SLAM, Uncertainty Estimation, Dynamic Scenes, Camera Tracking
+   - 文档: papers/2026-09-16_02_SCOUT_SLAM_Dual_Uncertainty_3DGS_SLAM_In_The_Wild.md
+
+3. **LightNav-0: Eliciting VLM Spatial Intelligence for Generalist Embodied Navigation** - arXiv:2608.30935
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLM Navigation, Pointing Interface, Residual VQ Action Tokenizer, Generalist Agent
+   - 文档: papers/2026-09-16_03_LightNav0_VLM_Spatial_Intelligence_Generalist_Embodied_Navigation.md
+
+4. **Unfold The World: Factorize 4D Properties in Reinforcing Spatial Reasoning (FactoSR)** - arXiv:2609.03729
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Spatial RL, 4D Consistency, Verifiable Rewards, Temporal Reversibility, ECCV 2026
+   - 文档: papers/2026-09-16_04_FactoSR_Factorize_4D_Properties_Reinforcing_Spatial_Reasoning.md
+
+5. **What Makes a 3D Scene Editable? A Factorized Benchmark (EditBench3D)** - arXiv:2609.14899
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3D Scene Editing, Benchmark, 3DGS vs NeRF, Multi-objective Evaluation
+   - 文档: papers/2026-09-16_05_EditBench3D_Factorized_Benchmark_3D_Scene_Editing.md
