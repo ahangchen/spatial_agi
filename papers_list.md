@@ -3855,3 +3855,35 @@
    - 相关性: ⭐⭐⭐⭐
    - 关键词: 3D Scene Editing, Benchmark, 3DGS vs NeRF, Multi-objective Evaluation
    - 文档: papers/2026-09-16_05_EditBench3D_Factorized_Benchmark_3D_Scene_Editing.md
+
+## 2026-09-17 研究的论文（精选5篇）
+
+1. **World-Action Models for Robot Learning and Control: A Survey** - arXiv:2609.16074
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World-Action Model, Survey, MBRL, VLA, Predictive Control
+   - 文档: papers/2026-09-17_01_World_Action_Models_for_Robot_Learning_and_Control_A_Survey.md
+   - 亮点: 首次系统定义 WAM（联合预测未来状态+动作），四线程汇聚谱系+七维分类+六大挑战；"plausible ≠ actionable"直指生成式世界模型要害
+
+2. **SceneBench: A Hierarchical Benchmark for Vision-Language Understanding of 3D Scenes** - arXiv:16233→2609.16233
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Benchmark, Hierarchical Scene Graph, 3DGS, Spatial QA, Grounded QRA
+   - 文档: papers/2026-09-17_02_SceneBench_Hierarchical_Benchmark_Vision_Language_Understanding_3D_Scenes.md
+   - 亮点: 首个 3DGS×层级场景图基准（966场景/183K节点/33,524问），量化 VLM 感知85% vs 推理60%的鸿沟
+
+3. **Bi-FlowGS: Bridging Generative View Completion and Gaussian Geometry through Bidirectional Flow Co-Refinement** - arXiv:2609.17039
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Sparse-View 3DGS, Geometry Cheating, Optical Flow, Video Diffusion, Co-Refinement
+   - 文档: papers/2026-09-17_03_Bi_FlowGS_Bridging_Generative_View_Completion_and_Gaussian_Geometry_Flow_Co_Refinement.md
+   - 亮点: 命名并攻克"Geometry Cheating"失败模式，光流为枢纽的 V2G/G2V 双向共同精化闭环，V2G 即插即用
+
+4. **GeomVLA: Unifying Scene, Motion, and Action in 3D** - arXiv:2609.13812
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D VLA, Scene Trajectory Denoiser, Motion Tokens, Flow Matching, CoRL 2026
+   - 文档: papers/2026-09-17_04_GeomVLA_Unifying_Scene_Motion_and_Action_in_3D.md
+   - 亮点: 场景/运动/动作统一到机器人基座坐标系；消融证明几何一致性>预测本身；无动作预训练真机超基线
+
+5. **MV-STRIDE: Enabling MLLMs to Master Multi-View Spatial Reasoning via Hierarchical Capability Modeling** - arXiv:2609.07258
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Multi-View Spatial Reasoning, Hierarchical Dataset, CoT Construction, SFT-RL, MMSI-Bench
+   - 文档: papers/2026-09-17_05_MV_STRIDE_Multi_View_Spatial_Reasoning_Hierarchical_Capability_Modeling.md
+   - 亮点: 认知依赖结构化数据（三级18类）+跨视角依赖约束防捷径+子问题即CoT，多基准SOTA
