@@ -3887,3 +3887,30 @@
    - 关键词: Multi-View Spatial Reasoning, Hierarchical Dataset, CoT Construction, SFT-RL, MMSI-Bench
    - 文档: papers/2026-09-17_05_MV_STRIDE_Multi_View_Spatial_Reasoning_Hierarchical_Capability_Modeling.md
    - 亮点: 认知依赖结构化数据（三级18类）+跨视角依赖约束防捷径+子问题即CoT，多基准SOTA
+
+## 2026-09-18 研究的论文（精选5篇）
+
+1. **NormLift: From Lifted Features To Semantic Reliability In 3D Gaussian Splatting** - arXiv:2609.18898
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS, 语义特征提升, CLIP 球面余弦对齐, 可靠性分数, training-free
+   - 文档: papers/2026-09-18_01_NormLift_Semantic_Reliability_3D_Gaussian_Splatting.md
+
+2. **PanoGS-SLAM: Panoramic 3D Gaussian Splatting SLAM** - arXiv:2609.17387
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 全景 SLAM, 3DGS, 球域可微渲染, FoV 条件数, DGIS
+   - 文档: papers/2026-09-18_02_PanoGS_SLAM_Panoramic_3DGS_SLAM.md
+
+3. **CoVeR: Coverage-Based Token Pruning for Multi-View 3D Reasoning in VLMs** - arXiv:2609.08345
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 多视角 3D 推理, token 剪枝, k-center 覆盖, Hausdorff 距离, 精确预算
+   - 文档: papers/2026-09-18_03_CoVeR_Coverage_Based_Token_Pruning_Multi_View_3D_Reasoning_VLMs.md
+
+4. **SoftNav: Injecting 3D Scene Tokens into VLMs for Embodied Navigation** - arXiv:2607.14586
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 具身导航, soft token, PQ3D, 表征鸿沟, 零样本迁移
+   - 文档: papers/2026-09-18_04_SoftNav_Injecting_3D_Scene_Tokens_VLMs_Embodied_Navigation.md
+
+5. **StateFlow: Building, Evolving, and Accessing 3D World States for Previsualization** - arXiv:2608.12314
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 世界状态建模, 预可视化, 状态/观测分离, 双视图初始化, 渲染反馈反射
+   - 文档: papers/2026-09-18_05_StateFlow_Building_Evolving_Accessing_3D_World_States.md
