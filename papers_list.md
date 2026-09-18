@@ -3914,3 +3914,30 @@
    - 相关性: ⭐⭐⭐⭐⭐
    - 关键词: 世界状态建模, 预可视化, 状态/观测分离, 双视图初始化, 渲染反馈反射
    - 文档: papers/2026-09-18_05_StateFlow_Building_Evolving_Accessing_3D_World_States.md
+
+## 2026-09-19 研究的论文（精选5篇）
+
+1. **CoRef-GS: Cooperative Referring Gaussian Splatting for Multi-Agent Scene Understanding** - arXiv:2609.20586
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Gaussian Splatting, Multi-Agent, Referring Segmentation, Sim(3) Registration, View-Conditioned Reasoning
+   - 文档: papers/2026-09-19_01_CoRef-GS_Cooperative_Referring_Gaussian_Splatting_for_Multi-Agent_Scene_Understanding.md
+
+2. **VABench: Measuring Embodied Spatial Intelligence through Visual Demonstrations, Active Perception, and Metric Control** - arXiv:2609.19554
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Embodied Benchmark, Active Perception, MLLM, Metric Control, Observe-Reason-Act-Revise
+   - 文档: papers/2026-09-19_02_VABench_Measuring_Embodied_Spatial_Intelligence.md
+
+3. **DexTouch-WM: Learning Action-Conditioned Tactile World Models from Human Touch for Dexterous Robot Manipulation** - arXiv:2609.20649
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Tactile World Model, Cross-Embodiment, Human Touch, Flow-Matching, Dexterous Manipulation
+   - 文档: papers/2026-09-19_03_DexTouch-WM_Action-Conditioned_Tactile_World_Models.md
+
+4. **RiskWorld: Risk-Aware World Modeling with Flow-Guided Occupancy Evolution for Selective Trajectory Planning** - arXiv:2609.18442
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: World Model, Occupancy Forecasting, Risk-Aware Planning, Autonomous Driving, Selective Replacement
+   - 文档: papers/2026-09-19_04_RiskWorld_Risk-Aware_World_Modeling_Flow-Guided_Occupancy.md
+
+5. **sensVLA: Spatially-Grounded Vision-Language-Action Model for Autonomous Wheel Loader** - arXiv:2609.17021
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: VLA, BEV Spatial Grounding, Flow-Matching Action Expert, Heavy Equipment, Fault Tolerance
+   - 文档: papers/2026-09-19_05_sensVLA_Spatially-Grounded_Vision-Language-Action_Model.md
