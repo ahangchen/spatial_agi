@@ -3941,3 +3941,30 @@
    - 相关性: ⭐⭐⭐⭐
    - 关键词: VLA, BEV Spatial Grounding, Flow-Matching Action Expert, Heavy Equipment, Fault Tolerance
    - 文档: papers/2026-09-19_05_sensVLA_Spatially-Grounded_Vision-Language-Action_Model.md
+
+## 2026-09-20 研究的论文（精选5篇）
+
+1. **JEPA-Anything: Learning Predictive Models across Different Worlds** - arXiv:2609.20800
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: JEPA, Orthogonal Predictive Factorization, World Model, Cross-Domain, Scientific Discovery
+   - 文档: papers/2026-09-20_01_JEPA_Anything_Predictive_Models_Across_Worlds.md
+
+2. **WorldContact: A Contact-Centric World Model for Scalable Robot Learning** - arXiv:2609.19600
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Contact-Centric World Model, Deformable Manipulation, Data Engine, VLA Fine-tuning, Real Robot
+   - 文档: papers/2026-09-20_02_WorldContact_Contact_Centric_World_Model_Robot_Learning.md
+
+3. **VGGT-GS SLAM: Uncalibrated Monocular Gaussian Splatting SLAM with Feed-Forward Priors** - arXiv:2609.19628
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Gaussian Splatting SLAM, Self-Calibration, Analytic Jacobians, Feed-Forward Priors, Loop Closure
+   - 文档: papers/2026-09-20_03_VGGT_GS_SLAM_Uncalibrated_Monocular_3DGS_SLAM.md
+
+4. **ANASSA: An Agentic AI Orchestration Framework for Spatial Intelligence** - arXiv:2609.14824
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Agentic GIS, Multi-Agent Orchestration, Spatial Validation, Governance, Human-in-the-Loop
+   - 文档: papers/2026-09-20_04_ANASSA_Agentic_AI_Orchestration_Spatial_Intelligence.md
+
+5. **XPACE: Joint World and Action Modeling from Heterogeneous Experience** - arXiv:2609.17372
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Joint World-Action Model, Heterogeneous Experience, Video Prediction, Self-Improvement, Humanoid Robot
+   - 文档: papers/2026-09-20_05_XPACE_Joint_World_Action_Modeling.md
