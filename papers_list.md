@@ -3968,3 +3968,35 @@
    - 相关性: ⭐⭐⭐⭐⭐
    - 关键词: Joint World-Action Model, Heterogeneous Experience, Video Prediction, Self-Improvement, Humanoid Robot
    - 文档: papers/2026-09-20_05_XPACE_Joint_World_Action_Modeling.md
+
+## 2026-09-21 研究的论文（精选5篇）
+
+1. **Astronex-World 1.0: Real-Time Interactive World Model Foundation** - arXiv:2609.20034
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Model Foundation, Real-Time Interaction, PRoPE, Causal Diffusion, 5B Low-Cost Training
+   - 文档: papers/2026-09-21_01_Astronex-World_Real-Time_Interactive_World_Model_Foundation.md
+   - 亮点: 5B 双形态（双向教师+因果学生）世界模型基础，PRoPE 全层相机注入 + 64 维动作调制统一接口，两张 L20 跑完五阶段训练达到 13.6B-22B 模型 WBench 分数区间，预留动作序列输出接口
+
+2. **Agile-WAM: An Agile Tactile World Action Model for Contact-Rich Robot Control** - arXiv:2609.20761
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Tactile WAM, Flow Matching, Multi-Horizon Prediction, Contact-Rich Manipulation, Low Latency
+   - 文档: papers/2026-09-21_02_Agile-WAM_Agile_Tactile_World_Action_Model_Contact_Rich_Control.md
+   - 亮点: 观测 latent 直接作流源的 vision-tactile-to-action 流匹配；多时域多模态预测（视觉远时域/触觉近时域）；真实任务成功率 +29.4%，推理延迟 11.9ms
+
+3. **RawSLAM: Online HDR Gaussian SLAM from Linear Radiance** - arXiv:2609.20589
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: HDR SLAM, 3D Gaussian Splatting, Linear Radiance, Log Parameterization, Reinhard Loss
+   - 文档: papers/2026-09-21_03_RawSLAM_Online_HDR_Gaussian_SLAM_from_Linear_Radiance.md
+   - 亮点: 首个单曝光 16-bit 线性 HDR 在线 Gaussian SLAM；MLP-free log 颜色参数化 + Reinhard 域压缩损失架构无关可插拔 4 框架；LDR 输入误差也减半；发布 RAW+深度+IMU+OptiTrack 数据集
+
+4. **Unfold The World: Factorize 4D Properties in Reinforcing Spatial Reasoning (FactoSR)** - arXiv:2609.03729
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Spatial Reasoning, RLVR, Factorized Rewards, XY/ZZ/TT, GRPO, VLM
+   - 文档: papers/2026-09-21_04_Unfold_The_World_FactoSR_Factorize_4D_Properties_Spatial_Reasoning.md
+   - 亮点: 把 VLM 空间瓶颈诊断为投影维度失配；因子化 RL 奖励（重投影一致性/深度排序/时间可逆）+ Anchor-Transfer-Verify CoT；VSI-Bench +5.9%，通用能力保持
+
+5. **SnapPhysics: A Physics-Aware Scene Graph from a Single View for Interactive Mixed Reality Scenes** - arXiv:2609.19815
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Physics Property Estimation, Single-View 3D Reconstruction, Scene Graph, VLM Grounding, Mixed Reality
+   - 文档: papers/2026-09-21_05_SnapPhysics_Physics_Aware_Scene_Graph_Single_View_MR.md
+   - 亮点: Training-free 从单图估计质量/摩擦/重心；深度锚定对齐（SAM3D+DA3）+ 物理感知场景图（支撑/接触+拓扑排序+材质传播）接地 VLM；F-Score +18.6%，mALDE −20.5%
