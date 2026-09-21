@@ -4000,3 +4000,30 @@
    - 关键词: Physics Property Estimation, Single-View 3D Reconstruction, Scene Graph, VLM Grounding, Mixed Reality
    - 文档: papers/2026-09-21_05_SnapPhysics_Physics_Aware_Scene_Graph_Single_View_MR.md
    - 亮点: Training-free 从单图估计质量/摩擦/重心；深度锚定对齐（SAM3D+DA3）+ 物理感知场景图（支撑/接触+拓扑排序+材质传播）接地 VLM；F-Score +18.6%，mALDE −20.5%
+
+## 2026-09-22 研究的论文（精选5篇）
+
+1. **Adaptive World Memory 3D Foundation Model for Scalable 3D Mapping, Localization, and Rendering (AWM-3DFM)** - arXiv:2609.21502
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Foundation Model, Adaptive World Memory, 3DGS SLAM, SL(4) Optimization, Gaussian Rendering
+   - 文档: papers/2026-09-22_01_AWM-3DFM_Adaptive_World_Memory_3D_Foundation_Model.md
+
+2. **NavArena: Automated Construction of Goal-Oriented Navigation Benchmarks from 3D Gaussian Splatting Reconstructions** - arXiv:2609.04602
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Navigation Benchmark, 3DGS, Occupancy Costmap, Open-Vocabulary Semantic Grounding, Closed-Loop Evaluation
+   - 文档: papers/2026-09-22_02_NavArena_Automated_Navigation_Benchmarks_from_3DGS.md
+
+3. **3DWay: Generalizing Robot Manipulation via 3D Consistent Waypoints** - arXiv:2609.08224
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Intermediate Representation, 3D Waypoints, Multi-view Consistency, Triangulation, VLA Generalization
+   - 文档: papers/2026-09-22_03_3DWay_Generalizing_Robot_Manipulation_via_3D_Consistent_Waypoints.md
+
+4. **TTL-SR: Geometry-Aware Test-Time Learning for Quantitative Spatial Reasoning** - arXiv:2609.06004
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Test-Time Learning, Quantitative Spatial Reasoning, Geometric Consistency, VLM, Pseudo-labeling
+   - 文档: papers/2026-09-22_04_TTL-SR_Geometry_Aware_Test_Time_Learning_Quantitative_Spatial_Reasoning.md
+
+5. **WorldSculpt: Generating Compositional Worlds from Grounded Videos** - arXiv:2609.05416
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Compositional 3D Generation, Single-Object Generative Prior, Multi-view Conditioning, Canonicalization, Scene Benchmark
+   - 文档: papers/2026-09-22_05_WorldSculpt_Generating_Compositional_Worlds_from_Grounded_Videos.md
