@@ -4027,3 +4027,30 @@
    - 相关性: ⭐⭐⭐⭐⭐
    - 关键词: Compositional 3D Generation, Single-Object Generative Prior, Multi-view Conditioning, Canonicalization, Scene Benchmark
    - 文档: papers/2026-09-22_05_WorldSculpt_Generating_Compositional_Worlds_from_Grounded_Videos.md
+
+## 2026-09-23 研究的论文（精选5篇）
+
+1. **ME-VLM: A Unified VLM for Embodied Cognition and Agent Coordination** - arXiv:2609.24526
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Embodied VLM, Agent RL, MOPD, Spatial Reasoning, Edge Deployment
+   - 文档: papers/2026-09-23_01_ME-VLM_Unified_VLM_Embodied_Cognition_Agent_Coordination.md
+
+2. **Dynamic Thermal Gaussians: Multimodal 4D Gaussian Splatting** - arXiv:2609.24531
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4D Gaussian Splatting, RGB-Thermal, Multimodal Routing, Physical Field
+   - 文档: papers/2026-09-23_02_Dynamic_Thermal_Gaussians_Multimodal_4D_Gaussian_Splatting.md
+
+3. **Elevator-VIGS: Separating Elevator Motion from Robot Motion in Visual-Inertial Gaussian Splatting SLAM** - arXiv:2609.23491
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS SLAM, Transport State, Frame Conflict, Multi-Floor, VLM Ride Detection
+   - 文档: papers/2026-09-23_03_Elevator-VIGS_Separating_Elevator_Motion_from_Robot_Motion_VIGS_SLAM.md
+
+4. **OmniEcho: Spatial Audio Understanding for Embodied Agents** - arXiv:2609.23407
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Spatial Audio, FOA, Omni-Modal, Sound-Guided Navigation
+   - 文档: papers/2026-09-23_04_OmniEcho_Spatial_Audio_Understanding_for_Embodied_Agents.md
+
+5. **Spatial-Interactor: Learning Spatial Reasoning through Interaction with the Observable Physical World** - arXiv:2609.23038
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Spatial Reasoning, State Transition, Curriculum, On-Policy Distillation, LSI-108K
+   - 文档: papers/2026-09-23_05_Spatial-Interactor_Learning_Spatial_Reasoning_through_Interaction.md
