@@ -4054,3 +4054,57 @@
    - 相关性: ⭐⭐⭐⭐⭐
    - 关键词: Spatial Reasoning, State Transition, Curriculum, On-Policy Distillation, LSI-108K
    - 文档: papers/2026-09-23_05_Spatial-Interactor_Learning_Spatial_Reasoning_through_Interaction.md
+
+## 2026-09-24 研究的论文（精选5篇）
+
+1. **φ-RIE: From Photorealistic Reconstruction to Interactive Environments** - arXiv:2609.26795
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Real2Sim, 3D Gaussian Splatting, Coupled Scene Construction, Interactive Environment, Robot Simulation
+   - 文档: papers/2026-09-24_01_PhiRIE_From_Photorealistic_Reconstruction_to_Interactive_Environments.md
+
+2. **Skytopia: Monocular Drone Navigation with Action-Conditioned Latent World Models** - arXiv:2609.26007
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Latent World Model, Drone Navigation, Action Conditioning, Flow Matching, 3DGS Simulation
+   - 文档: papers/2026-09-24_02_Skytopia_Monocular_Drone_Navigation_Action_Conditioned_Latent_World_Models.md
+
+3. **An Action Is Worth One Patch: Unified World-Action Modeling with PatchWAM** - arXiv:2609.25961
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Action Model, Action-as-Patch, Joint Flow Matching, Unified Interface, Manipulation
+   - 文档: papers/2026-09-24_03_PatchWAM_Unified_World_Action_Modeling_Action_as_Patch.md
+
+4. **Metric-Bench: Exploring In-context Spatial Metric Reasoning in VLMs for Indoor Scenes** - arXiv:2609.25841
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Metric Reasoning, Spatial Benchmark, RFT, GRPO, Verifiable Reward
+   - 文档: papers/2026-09-24_04_MetricBench_In_context_Spatial_Metric_Reasoning_VLM.md
+
+5. **Bridge3D: Enabling Vision-Language-Action Models to See and Act in 3D** - arXiv:2609.24525
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, 3D Semantic Field, Spatial Cross-Attention, 3D RoPE, Layer-wise Probing
+   - 文档: papers/2026-09-24_05_Bridge3D_Enabling_VLA_Models_to_See_and_Act_in_3D.md
+
+## 2026-09-25 研究的论文（精选5篇）
+
+1. **GaussianDS: Depth-supervised Semantic Gaussian Splatting for Scene Understanding** - arXiv:2609.27850
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Semantic 3DGS, Depth Supervision, Pseudo-Video Mask Propagation, Open-Vocabulary, Scene Understanding
+   - 文档: papers/2026-09-25_01_GaussianDS_Depth_supervised_Semantic_Gaussian_Splatting_Scene_Understanding.md
+
+2. **AWM-VLA: Aligned World Modeling for Efficient and Explainable Vision-Language-Action Policies** - arXiv:2609.27753
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, Object-Centric Future Prediction, Latent Alignment, MGDA, Explainability
+   - 文档: papers/2026-09-25_02_AWM-VLA_Aligned_World_Modeling_Efficient_Explainable_VLA_Policies.md
+
+3. **Think Like a World Model, Act Like a VLA: Distilling World-Model Representations into Compact Robot Policies** - arXiv:2609.24682
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Model Distillation, Feature Cache, Representation Alignment, Compact VLA, Teacher-Agnostic
+   - 文档: papers/2026-09-25_03_Think_Like_a_World_Model_Act_Like_a_VLA_Distilling_WM_Reps_into_Compact_Policies.md
+
+4. **TopoGS: Topology-Aware Anchor Feature Aggregation for Large-Scale 3D Gaussian Splatting** - arXiv:2609.27868
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Large-Scale 3DGS, Octree Anchor, LOD, Hierarchical Coupling, Containment Aggregation
+   - 文档: papers/2026-09-25_04_TopoGS_Topology_Aware_Anchor_Feature_Aggregation_Large_Scale_3DGS.md
+
+5. **TriWorldBench: A Tri-View Consistency Perspective on Embodied World Models** - arXiv:2609.26314
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Model Benchmark, Tri-View Consistency, Bimanual Manipulation, Phase-Conditioned Evaluation, TWB-Score
+   - 文档: papers/2026-09-25_05_TriWorldBench_Tri_View_Consistency_Perspective_on_Embodied_World_Models.md
