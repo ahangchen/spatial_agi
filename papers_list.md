@@ -4108,3 +4108,30 @@
    - 相关性: ⭐⭐⭐⭐⭐
    - 关键词: World Model Benchmark, Tri-View Consistency, Bimanual Manipulation, Phase-Conditioned Evaluation, TWB-Score
    - 文档: papers/2026-09-25_05_TriWorldBench_Tri_View_Consistency_Perspective_on_Embodied_World_Models.md
+
+## 2026-09-26 研究的论文（精选5篇）
+
+1. **GPT-6-Astra Lights Up Embodied Navigation: Evaluation in Zero-Shot Vision-and-Language Navigation in Continuous Environments** - arXiv:2609.29861
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Zero-Shot VLN-CE, Foundation Model Evaluation, Monocular RGB, Test-Time Reasoning, Embodied Navigation
+   - 文档: papers/2026-09-26_01_GPT-6-Astra_Zero_Shot_VLN_CE_Evaluation.md
+
+2. **Do World Models Make Better Robots? A Survey of Evaluation Benchmarks for Predictive Embodied Intelligence** - arXiv:2609.29669
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Model vs VLA, Benchmark Survey, Contrast Gap, Prediction-to-Action Bridge, Advantage-Aware Metrics
+   - 文档: papers/2026-09-26_02_Do_World_Models_Make_Better_Robots_Eval_Survey.md
+
+3. **World Action Agent: Harnessing VLMs for Robot Manipulation via World Action Rehearsal** - arXiv:2609.29964
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLM Robot Pilot, Action Rehearsal, Contact Views, In-View Correction, Skill Evolution, LIBERO-Pro
+   - 文档: papers/2026-09-26_03_World_Action_Agent_VLM_Robot_Manipulation_World_Action_Rehearsal.md
+
+4. **BayesianGS-SLAM: Uncertainty-Aware Neural Rendering SLAM via Probabilistic Formulation** - arXiv:2609.24140
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS SLAM, Predictive Uncertainty, Opacity Variance, Uncertainty-Normalized Tracking, Predictive Surprise Keyframes
+   - 文档: papers/2026-09-26_04_BayesianGS-SLAM_Uncertainty_Aware_Neural_Rendering_SLAM.md
+
+5. **Seeing Is Not Measuring: Tool-Augmented Metric Spatial Reasoning for Vision-Language Models** - arXiv:2609.29073
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Tool-Augmented VLM, Metric Spatial Reasoning, ReVSI-Bench, Perception-Orchestration Decomposition, 3D Detection Tools
+   - 文档: papers/2026-09-26_05_Seeing_Is_Not_Measuring_Tool_Augmented_Metric_Spatial_Reasoning.md

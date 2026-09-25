@@ -1,0 +1,258 @@
+[
+ {
+  "id": "2609.29861",
+  "title": "GPT-6-Astra Lights Up Embodied Navigation: Evaluation in Zero-Shot Vision-and-Language Navigation in Continuous Environments",
+  "summary": "We investigate whether GPT-6-Astra, a general-purpose foundation model, can navigate unfamiliar environments using its own perception, reasoning, and decision-making capabilities. Our evaluation focues on zero-shot vision-and-language navigation in continuous environments (VLN-CE) through a minimal interface in the Codex harness, aiming to unleash GPT-6-Astra's full potential for navigation. Using monocular RGB, GPT-6-Astra decides when to observe, how to move, and when to stop, without navigation-specific fine-tuning, a trained waypoint predictor, or a pre-built scene map. Our evaluation yields four main findings. First, \\textbf{\\textit{GPT-6-Astra achieves strong zero-shot navigation performance using only monocular RGB observations}}. On the common-adopted zero-shot R2R-CE benchmark, ultra reasoning achieves a success rate of \\textbf{\\textit{79.0\\%}}, exceeding the strongest reported zero-shot and supervised success rates by \\textbf{\\textit{13.0}} and \\textbf{\\textit{6.9}} percentage points, respectively. Second, \\textbf{\\textit{GPT-6-Astra advances multi-stage language instructions into coherent, adaptive navigation}} by grounding spatial",
+  "url": "https://arxiv.org/abs/2609.29861",
+  "query": "spatial+intelligence",
+  "date": "</span> 24 September, 2026"
+ },
+ {
+  "id": "2609.20191",
+  "title": "VLN on the Fly: An Onboard Vision-Language Navigation Stack for Aerial Robots",
+  "summary": "Running vision-language navigation fully onboard an aerial robot is hard, since grounding, planning, and control must share limited compute and a single-stage error is difficult to isolate in flight. End-to-end aerial policies fuse these stages into one network, giving up the observability and safety checks a modular stack keeps available. We propose VLN on the Fly, an onboard stack that keeps grounding, planning, and control as separate, inspectable stages. A quantized VLM",
+  "url": "https://arxiv.org/abs/2609.20191",
+  "query": "VLM+3D",
+  "date": "</span> 7 August, 2026"
+ },
+ {
+  "id": "2609.29669",
+  "title": "Do World Models Make Better Robots? A Survey of Evaluation Benchmarks for Predictive Embodied Intelligence",
+  "summary": "Robot learning now advances along two tracks that rarely meet. On one side, direct Vision-Language-Action (VLA) policies map observations to actions and are scored by closed-loop task success. On the other, predictive and generative world",
+  "url": "https://arxiv.org/abs/2609.29669",
+  "query": "world+model",
+  "date": "</span> 30 August, 2026"
+ },
+ {
+  "id": "2609.20582",
+  "title": "V2-STRep: VLM-Grounded Structured Task Representations for Reusable Robot Skills Acquired from Generated Videos",
+  "summary": "Human manipulation videos provide rich motion and interaction cues for acquiring robot skills without robot demonstrations. Video generation models synthesize such demonstrations from an initial scene image and task instruction, avoiding the need to record demonstrations for each task. However, the recovered motion captures only one scene-specific realization, leaving task structure, geometric relations, and constraints implicit. We present V2-STRep, a zero-shot framework that converts generated video motion into reusable robot skills through VLM",
+  "url": "https://arxiv.org/abs/2609.20582",
+  "query": "VLM+3D",
+  "date": "</span> 17 September, 2026"
+ },
+ {
+  "id": "2609.26007",
+  "title": "Skytopia: Monocular Drone Navigation with Action-Conditioned Latent World Models",
+  "summary": "Monocular drone navigation requires reaching a goal in an unseen environment from a single forward-facing camera, which offers few cues for depth and scale. World models address this by modelling how observations evolve under actions, but they are built to be executed: the prediction is produced at deployment and fed back into action generation at every control step. We argue that what a policy needs from a world model is not the prediction but the representation required to produce it: in flight the executed action explains almost all of the change between observations, so prediction reduces to reprojecting a static scene under a known displacement. We therefore introduce skytopia, a policy built on an action-conditioned latent world model, and the 3D Gaussian",
+  "url": "https://arxiv.org/abs/2609.26007",
+  "query": "gaussian+splatting",
+  "date": "</span> 22 September, 2026"
+ },
+ {
+  "id": "2609.24140",
+  "title": "BayesianGS-SLAM: Uncertainty-Aware Neural Rendering SLAM via Probabilistic Formulation",
+  "summary": "Neural-rendering-based SLAM relies on rendered RGB-D residuals for camera tracking and map optimization, but the reliability of these predictions can vary substantially because of sensor noise, limited observation coverage, and incomplete map representations. Without an explicit reliability estimate, unreliable residuals may adversely affect pose optimization, while frames already well explained by the current map may trigger redundant mapping updates. In this paper, we present BayesianGS-SLAM, an uncertainty-aware 3D Gaussian",
+  "url": "https://arxiv.org/abs/2609.24140",
+  "query": "gaussian+splatting",
+  "date": "</span> 21 September, 2026"
+ },
+ {
+  "id": "2609.06880",
+  "title": "Contextual Observer Grounding: Evaluating Situated Spatial Reasoning in Vision-Language Models",
+  "summary": "Reasoning over language instructions in embodied tasks such as robotics often requires understanding spatial relations from a speaker's situated perspective. Humans infer such perspectives from shared environmental knowledge, activity context, and commonsense. Recent vision-language models (VLMs",
+  "url": "https://arxiv.org/abs/2609.06880",
+  "query": "VLM+3D",
+  "date": "</span> 6 September, 2026"
+ },
+ {
+  "id": "2608.27793",
+  "title": "CAVE-NAV: VLM-Based Autonomous 3D Navigation in Underwater Cave Environments",
+  "summary": "Autonomous navigation in underwater cave environments is essential for search-and-rescue operations, scientific exploration, and emergency egress. Traditional navigation systems commonly depend on dense visual features for localization and mapping. In underwater caves, however, visual degradation can undermine feature-based localization, sonar-based mapping may yield overly conservative obstacle representations, and communication constraints preclude real-time human guidance. To address these limitations, we propose an autonomous underwater cave navigation framework that leverages a vision-language model (VLM",
+  "url": "https://arxiv.org/abs/2608.27793",
+  "query": "VLM+3D",
+  "date": "</span> 27 August, 2026"
+ },
+ {
+  "id": "2609.21176",
+  "title": "4DGS-Fixer: Generative Sparse-View 4D Gaussian Splatting with Iterative Refinement Guided by Video Diffusion Priors",
+  "summary": "This paper addresses the challenges of dynamic scene synthesis from sparse-view videos. Existing methods employ geometric priors, adaptive optimization, or density-control strategies to improve 4D Gaussian",
+  "url": "https://arxiv.org/abs/2609.21176",
+  "query": "gaussian+splatting",
+  "date": "</span> 21 September, 2026"
+ },
+ {
+  "id": "2609.29964",
+  "title": "World Action Agent: Harnessing VLMs for Robot Manipulation via World Action Rehearsal",
+  "summary": "General-purpose vision-language models",
+  "url": "https://arxiv.org/abs/2609.29964",
+  "query": "world+model",
+  "date": "</span> 24 September, 2026"
+ },
+ {
+  "id": "2609.28247",
+  "title": "Controlling Collectives of AI Agents in Reasoning Space with Spatial Transformers",
+  "summary": "Large Language Models (LLMs) introduce an exciting new paradigm for planning and navigation in robotics, but fail on even simple multi-robot tasks as team sizes grow. We propose COMPASS, a scalable, decentralized multi-robot architecture for controlling large collectives of agentic robots with reasoning space feedback control. Feedback is generated locally on each robot by a spatial",
+  "url": "https://arxiv.org/abs/2609.28247",
+  "query": "spatial+intelligence",
+  "date": "</span> 23 September, 2026"
+ },
+ {
+  "id": "2609.29963",
+  "title": "ADATEX4D: adaptive texture capacity allocation for 4D gaussian splatting",
+  "summary": "Textured Gaussians",
+  "url": "https://arxiv.org/abs/2609.29963",
+  "query": "gaussian+splatting",
+  "date": "</span> 24 September, 2026"
+ },
+ {
+  "id": "2609.27850",
+  "title": "GaussianDS: Depth-supervised Semantic Gaussian Splatting for Scene Understanding",
+  "summary": "3D Gaussian",
+  "url": "https://arxiv.org/abs/2609.27850",
+  "query": "gaussian+splatting",
+  "date": "</span> 22 August, 2026"
+ },
+ {
+  "id": "2609.23491",
+  "title": "Elevator-VIGS: Separating Elevator Motion from Robot Motion in Visual-Inertial Gaussian Splatting SLAM",
+  "summary": "We present Elevator-VIGS, a visual-inertial 3D Gaussian",
+  "url": "https://arxiv.org/abs/2609.23491",
+  "query": "gaussian+splatting",
+  "date": "</span> 20 September, 2026"
+ },
+ {
+  "id": "2609.20586",
+  "title": "CoRef-GS: Cooperative Referring Gaussian Splatting for Multi-Agent Scene Understanding",
+  "summary": "Referring scene understanding for embodied robots requires grounding object- and relation-centric language queries from a designated viewpoint. While a local semantic Gaussian",
+  "url": "https://arxiv.org/abs/2609.20586",
+  "query": "gaussian+splatting",
+  "date": "</span> 17 September, 2026"
+ },
+ {
+  "id": "2609.24526",
+  "title": "ME-VLM: A Unified VLM for Embodied Cognition and Agent Coordination",
+  "summary": "Physical AI",
+  "url": "https://arxiv.org/abs/2609.24526",
+  "query": "embodied+AI",
+  "date": "</span> 22 September, 2026"
+ },
+ {
+  "id": "2609.25627",
+  "title": "MachEmbodied-U0: Unified Understanding and Generation Model for Embodied Intelligence",
+  "summary": "General-purpose robot control requires models to understand task intent, identify where to interact, capture how the scene evolves, and generate precise actions. Vision-language-action models provide strong semantic priors but typically do not explicitly model scene dynamics, while world-action models couple visual prediction with control without necessarily exposing the task-relevant semantic and spatial",
+  "url": "https://arxiv.org/abs/2609.25627",
+  "query": "spatial+intelligence",
+  "date": "</span> 21 September, 2026"
+ },
+ {
+  "id": "2609.17021",
+  "title": "sensVLA: Spatially-Grounded Vision-Language-Action Model for Autonomous Wheel Loader",
+  "summary": "Autonomous wheel-loader control requires joint reasoning over task semantics, egocentric vision, proprioception, and 3D",
+  "url": "https://arxiv.org/abs/2609.17021",
+  "query": "VLM+3D",
+  "date": "</span> 15 September, 2026"
+ },
+ {
+  "id": "2609.13606",
+  "title": "From Vision to Harvest: Benchmarking Vision-Language Models for Multi-Arm Robotic Fruit Harvesting",
+  "summary": "Multi-arm robotic harvesting offers a promising path to improve harvesting efficiency and reduce reliance on manual labor. However, practical deployment remains challenging because the system must generalize across diverse environments while efficiently coordinating multiple arms in a shared workspace. Existing methods often require substantial data collection in target environments or rely on simplifying assumptions that limit planning quality. In this work, we introduce the first comprehensive benchmark for evaluating pretrained Vision-Language Models (VLMs",
+  "url": "https://arxiv.org/abs/2609.13606",
+  "query": "VLM+3D",
+  "date": "</span> 11 September, 2026"
+ },
+ {
+  "id": "2609.08224",
+  "title": "3DWay: Generalizing Robot Manipulation via 3D Consistent Waypoints",
+  "summary": "Intermediate representations are key to bridging the modality gap between generalizable manipulation policies and large-scale pretrained vision-language models (VLMs",
+  "url": "https://arxiv.org/abs/2609.08224",
+  "query": "VLM+3D",
+  "date": "</span> 8 September, 2026"
+ },
+ {
+  "id": "2609.04607",
+  "title": "Open-Set 3D Scene Graphs for Field Robotics: An Outdoor Case Study",
+  "summary": "Three-dimensional scene graphs (3DSGs) have emerged as a promising approach for building geometrically grounded, semantically informed, hierarchical general-purpose maps to support high-level robotic reasoning. However, the behavior of 3DSGs in real-world outdoor deployments remains poorly understood, particularly when combined with open-set vision-language models (VLMs",
+  "url": "https://arxiv.org/abs/2609.04607",
+  "query": "VLM+3D",
+  "date": "</span> 3 September, 2026"
+ },
+ {
+  "id": "2609.30092",
+  "title": "Self-Adaptive VLA for Robust Robot Deployment",
+  "summary": "While Vision-Language-Action (VLA) models",
+  "url": "https://arxiv.org/abs/2609.30092",
+  "query": "world+model",
+  "date": "</span> 24 September, 2026"
+ },
+ {
+  "id": "2609.30187",
+  "title": "Ego-Exo4D Human Meshes Dataset: 4D Human Motion Reconstruction for Ego-Exo Captures",
+  "summary": "Ego-Exo4D is a large-scale dataset providing synchronized egocentric and multi-view exocentric video, a rich resource for skill learning and assessment, procedural activity understanding, and embodied",
+  "url": "https://arxiv.org/abs/2609.30187",
+  "query": "embodied+AI",
+  "date": "</span> 24 September, 2026"
+ },
+ {
+  "id": "2609.25841",
+  "title": "Metric-Bench: Exploring In-context Spatial Metric Reasoning in VLMs for Indoor Scenes",
+  "summary": "Metric reasoning is a critical and challenging task for Vision Language Models (VLMs), playing a pivotal role in embodied",
+  "url": "https://arxiv.org/abs/2609.25841",
+  "query": "embodied+AI",
+  "date": "</span> 22 September, 2026"
+ },
+ {
+  "id": "2609.25689",
+  "title": "MotionForge: A Data Generation Pipeline and Large-Scale Benchmark for Long-Horizon Manipulation of Dynamic Objects with Domain Shifts",
+  "summary": "Recent advances in learning-based robot policies have demonstrated promising progress, yet they are predom- inantly evaluated in static or quasi-static environments. In dynamic manipulation, objects and scenes continuously evolve while the robot perceives, reasons, and acts. However, recent dynamic simulation benchmarks largely focus on short-horizon, reactive interactions with simple motion patterns and offer limited support for both systematic evaluation under domain shifts and model-agnostic real-time execution protocols. To bridge these gaps, we introduce MotionForge, the first large- scale simulation benchmark and data-generation pipeline tailored to jointly evaluate domain shifts and long-horizon interaction in dynamic manipulation. MotionForge comprises 40 dynamic interaction tasks spanning 11 distinct motion patterns, with dedicated support for 17 long-horizon tasks. Our benchmark introduces two key novelties: (1) a systematic evaluation protocol for assessing policy robustness under both single-factor (e.g., only backgrounds shift) and joint domain shifts (e.g., simultaneous shifts of objects, backgrounds, lighting, and speed); and (2) a decoupled, latency-aware execution protocol where the environ- ment continuously evolves independently of policy inference time. Extensive evaluations of representative general-purpose robot policies on our benchmark reveal substantial limitations under joint domain shifts. These findings expose a critical gap between current policy ",
+  "url": "https://arxiv.org/abs/2609.25689",
+  "query": "embodied+AI",
+  "date": "</span> 22 September, 2026"
+ },
+ {
+  "id": "2609.19138",
+  "title": "In-Context Robot Learning with VLM Agents",
+  "summary": "Enabling robots to adapt to unfamiliar environments as readily as humans remains a moonshot goal of embodied",
+  "url": "https://arxiv.org/abs/2609.19138",
+  "query": "embodied+AI",
+  "date": "</span> 16 September, 2026"
+ },
+ {
+  "id": "2609.23407",
+  "title": "OmniEcho: Audio-Visual Spatial Understanding for Omni-Modal Embodied Agents",
+  "summary": "Humans can effortlessly localize the direction of a sound source and integrate it with visual cues for reasoning, yet this remains challenging for embodied agents. In particular, it is still unclear how to effectively evaluate and model spatial",
+  "url": "https://arxiv.org/abs/2609.23407",
+  "query": "spatial+intelligence",
+  "date": "</span> 23 September, 2026"
+ },
+ {
+  "id": "2609.29073",
+  "title": "Seeing Is Not Measuring: Tool-Augmented Metric Spatial Reasoning for Vision-Language Models",
+  "summary": "Vision-Language Models (VLMs",
+  "url": "https://arxiv.org/abs/2609.29073",
+  "query": "VLM+3D",
+  "date": "</span> 24 September, 2026"
+ },
+ {
+  "id": "2609.20235",
+  "title": "Scene-Q: Confidence-Aware Coarse-to-Fine Querying of 3D Scenes with Selective VLM Reasoning",
+  "summary": "Indoor mobile robots require open-vocabulary scene understanding that grounds natural-language queries in a consistent 3D",
+  "url": "https://arxiv.org/abs/2609.20235",
+  "query": "VLM+3D",
+  "date": "</span> 28 July, 2026"
+ },
+ {
+  "id": "2609.12747",
+  "title": "Assisted Spatial Cognition Through Vision-Language Models",
+  "summary": "Multimodal AI, powered by Large Language Models (LLMs) and Vision-Language Models (VLMs",
+  "url": "https://arxiv.org/abs/2609.12747",
+  "query": "VLM+3D",
+  "date": "</span> 11 September, 2026"
+ },
+ {
+  "id": "2609.03729",
+  "title": "Unfold The World: Factorize 4D Properties in Reinforcing Spatial Reasoning",
+  "summary": "Despite the remarkable prowess of Vision-Language Models (VLMs",
+  "url": "https://arxiv.org/abs/2609.03729",
+  "query": "VLM+3D",
+  "date": "</span> 3 September, 2026"
+ },
+ {
+  "id": "2608.25308",
+  "title": "V-Link: Recovering Lost Visual Representations in Action DiT for Vision-Language-Action Models",
+  "summary": "Vision-language-action (VLA) models provide a scalable path toward generalist robotic manipulation by integrating visual perception, language understanding, and continuous action control. However, we reveal a critical limitation of VLA architectures: the action expert has limited access to the 3D",
+  "url": "https://arxiv.org/abs/2608.25308",
+  "query": "VLM+3D",
+  "date": "</span> 25 August, 2026"
+ }
+]
