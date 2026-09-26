@@ -4135,3 +4135,35 @@
    - 相关性: ⭐⭐⭐⭐⭐
    - 关键词: Tool-Augmented VLM, Metric Spatial Reasoning, ReVSI-Bench, Perception-Orchestration Decomposition, 3D Detection Tools
    - 文档: papers/2026-09-26_05_Seeing_Is_Not_Measuring_Tool_Augmented_Metric_Spatial_Reasoning.md
+
+## 2026-09-27 研究的论文（精选5篇）
+
+1. **Assisted Spatial Cognition Through Vision-Language Models** - arXiv:2609.12747
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 辅助导航, SLAM3R, SpatialLM, 度量接地, 数字孪生, 无障碍
+   - 文档: papers/2026-09-27_01_Assisted_Spatial_Cognition_Through_VLMs.md
+   - 亮点: 手机视频→公制点云→结构化3D→本地LLM 的分层流水线；"能算不要猜"原则；空间认知作为辅助技术的度量接地试金石
+
+2. **SpatioLM: Towards General Physical Spatial Intelligence in Vision-Language Models** - arXiv:2608.01899
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLM, 空间智能, 激发范式, 零初始化旁路, 伪深度监督, VSI-Bench
+   - 文档: papers/2026-09-27_02_SpatioLM_General_Physical_Spatial_Intelligence.md
+   - 亮点: 冻结主干+即插即用SV-Module激发隐式几何；VSI-Bench 71.6 首次破70；强底座 MD-S 83.5 断层第一；训练-推理不对称设计
+
+3. **LightNav-0: Eliciting VLM Spatial Intelligence for Generalist Embodied Navigation** - arXiv:2608.30935
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 通用导航, 激发范式, 双通道pointing, 残差VQ动作分词, 跨本体零样本, ER mid-training
+   - 文档: papers/2026-09-27_03_LightNav-0_VLM_Spatial_Intelligence_Generalist_Navigation.md
+   - 亮点: 单模型统一指令跟随/ObjectNav/追踪；10/10 导航仿真环境单目SOTA；2K+场景4K+小时数据；真机跨本体零样本泛化
+
+4. **IGGT4D: Streaming 4D Instance-Grounded Geometry Transformer** - arXiv:2607.19228
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 流式4D感知, 实例接地, 因果时空建模, 物体恒存性, InsScene4D-147K, 几何引导标注
+   - 文档: papers/2026-09-27_04_IGGT4D_Streaming_4D_Instance_Grounded_Geometry_Transformer.md
+   - 亮点: 位姿+几何+实例ID统一增量更新；147K场景4D实例数据集与几何引导自动标注飞轮；感知中间件定位
+
+5. **GLAM: Training a Latent World Model over Global Spatiotemporal Memory** - arXiv:2609.14561
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 世界模型, 地图token记忆, JEPA, waypoint latent, 主动探索, ObjectNav
+   - 文档: papers/2026-09-27_05_GLAM_Latent_World_Model_Global_Spatiotemporal_Memory.md
+   - 亮点: 地图派世界模型开山样本；联合预测未来地图latent与导航意图；"预测记忆演化"作为原则化探索基础
