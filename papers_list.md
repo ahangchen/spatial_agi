@@ -1,6 +1,38 @@
 # Spatial AGI Research Papers - Daily Analysis
 
-## 2026-09-13 研究的论文（精选5篇）
+## 2026-09-28 研究的论文（精选5篇）
+
+1. **Representation World Model: Learning States Transition and Executable Plans from First-Person Videos** - arXiv:2609.29171
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 表示世界模型, 轨迹插值, IDM 蒸馏, 无FDDM规划, LIBERO
+   - 文档: papers/2026-09-28_01_Representation_World_Model_Learning_States_Transition_Executable_Plans.md
+   - 亮点: 在插值潜轨迹上训练逆动力学判别器，规划即表示空间中的几何变换；98.25% macro SR、LIBERO-Goal 93%、0.03B 参数
+
+2. **InternW0: Foundational Physical World Model** - arXiv:2609.27656
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 异步双工, MoT, 视频专家/动作专家, K/V 编辑, 接触感知后训练
+   - 文档: papers/2026-09-28_02_InternW0_Foundational_Physical_World_Model.md
+   - 亮点: 视频专家与动作专家异步双工协同，16.47Hz 控制频率；LIBERO 98.6%；37 维统一动作空间
+
+3. **Fysiverse-3D-Vision: Generating Executable 3D Worlds from Images** - arXiv:2609.25741
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 统一VL-几何骨干, 布局解耦涌现, 物体条件化布局分支, 碰撞感知BEV精修, 可执行资产
+   - 文档: papers/2026-09-28_03_Fysiverse_3D_Vision_Executable_3D_Worlds.md
+   - 亮点: 布局从语义+几何共享表示中涌现而非绑定生成器；CD-S 0.0258 断层第一；单图输出带物理参数/铰接/可供性的可执行3D场景
+
+4. **Elevator-VIGS: Separating Elevator Motion from Robot Motion in VI Gaussian Splatting SLAM** - arXiv:2609.23491
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 框架冲突, 运输状态, consider参数, 延迟折叠, 零样本行程检测
+   - 文档: papers/2026-09-28_04_Elevator_VIGS_Visual_Inertial_Gaussian_Splatting_SLAM.md
+   - 亮点: 把电梯场景SLAM失败归因于坐标系分配错误；相机+IMU过电梯追踪，单程误差≤11%层高；行程检测35/35零误报
+
+5. **FOCAL-VLA: Subtask-Guided Geometry Distillation and Implicit World Modeling** - arXiv:2609.21228
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 子任务引导蒸馏, VGGT, Track4World, 隐式世界模型, 监督聚焦
+   - 文档: papers/2026-09-28_05_FOCAL_VLA_Subtask_Geometry_Distillation.md
+   - 亮点: 空间监督随子任务聚焦实体（全图58.7%→子任务级63.4%）；双潜变量零推理开销条件化动作专家；RoboCasa +8.2pt
+
+## 2026-09-27 研究的论文（精选5篇）
 
 1. **NavArena: Automated Construction of Goal-Oriented Navigation Benchmarks with 3D Gaussian Splatting** - arXiv:2609.04602
    - 相关性: ⭐⭐⭐⭐⭐

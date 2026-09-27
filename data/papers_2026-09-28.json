@@ -1,0 +1,1914 @@
+[
+ {
+  "title": "Measuring Healthcare Accessibility and Resilience for Smart and Connected Rural Communities: A Florida Panhandle Case Study",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "…deployment models for mobile clinics, non-emergency medical transportation, telehealth, and disaster-resilient services. The study demonstrates how community-oriented spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.29639"
+ },
+ {
+  "title": "PRIMO: Prior-Informed Odometry from Human-Motion Tracking for Humanoid Robots",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "…lowers mean trajectory errors relative to its Unconstrained counterpart in both simulation and real-robot evaluation. Code is available at https://github.com/Agibot-Spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.23610"
+ },
+ {
+  "title": "VABench: Measuring Embodied Spatial Intelligence through Visual Demonstrations, Active Perception, and Metric Control",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "Spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.19554"
+ },
+ {
+  "title": "From Wizard-of-Oz Human-Robot Dialogue Collection to a Taxonomy of Robot Response Decisions: A Retrospective Analysis of Assistive Pilot Interactions",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "…From 40 episodes, we derived a hierarchical taxonomy of six response modes (ANSWER, REPORT_DONE, REFUSE, CONFIRM, CLARIFY, ACT) and four ambiguity types (intent, referential, spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.19447"
+ },
+ {
+  "title": "EgoPathBench: Evaluating Zero-Shot Egocentric Waypoint Decision-Making in Vision-Language Models",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "…select, from the current first-person observation, a sequence of spatial actions that is feasible for the agent and reaches the goal, placing joint demands on the integrated spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.16610"
+ },
+ {
+  "title": "SceneBench: A Hierarchical Benchmark for Vision-Language Understanding of 3D Scenes",
+  "query": "spatial intelligence",
+  "score": 2,
+  "summary": "…nodes with textual descriptions and 3D bounding boxes. Building on this representation, we define three evaluation tasks: Existence-Based Questions probing object attributes, Spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.16233"
+ },
+ {
+  "title": "ANASSA: An Agentic AI Orchestration Framework for Spatial Intelligence",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "The emergence of large language models (LLMs) and large multimodal models (LMMs) has enabled a new class of agentic systems capable of integrating natural language understanding with tool-based execution. In geographic information systems (GIS), this shift is transforming traditional, expert-driven workflows into semiautonomous systems that can interpret user intent, construct spatial workflows, a…\n        ▽ More",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.14824"
+ },
+ {
+  "title": "SpatialBlock: Enhancing Spatial Intelligence in LVLMs via Synthetic Block-Stacking Problem",
+  "query": "spatial intelligence",
+  "score": 2,
+  "summary": "…achieved strong performance on diverse visual tasks, yet their ability to reconstruct and reason about the 3D structure of the scene depicted in 2D images -- referred to as spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.07064"
+ },
+ {
+  "title": "Diagnosing and Dynamically Filtering Occupancy World Models for Active Mapping",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "Active mapping requires a robot to select camera viewpoints that efficiently reconstruct an unknown 3D scene. To reason about unobserved regions, recent systems use pretrained occupancy networks as world models that complete missing geometry. The predicted structure contributes to expected coverage gain and constrains feasible robot motion. Consequently, occupancy errors can change both what the r…\n        ▽ More",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.06820"
+ },
+ {
+  "title": "LightNav-0: Eliciting VLM Spatial Intelligence for Generalist Embodied Navigation",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "…perception, reasoning, and action while offering limited generalization. Here we present LightNav-0, a compact generalist embodied navigation model that elicits the spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2608.30935"
+ },
+ {
+  "title": "Object-Uni: A Unified Model for Object-Centric Spatial Understanding and Controllable Generation",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "…To mitigate this, we propose \\emph{Object-Uni}, a unified model for object-centric spatial understanding and controllable generation. Specifically, we formulate object-centric spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2608.22757"
+ },
+ {
+  "title": "Annotations as Rollouts: Efficient and Scalable Reinforcement Learning for Video MLLMs",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "…with the respective prior best models, it raises temporal mIoU from 62.5 to 66.0, tracking AO from 73.0 to 78.2, segmentation from 64.3 to 70.4, and the three-benchmark spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2608.20492"
+ },
+ {
+  "title": "OVIP-SG: Open-Vocabulary Instance-Preserving Scene Graphs for Mapping and Retrieval of Small, Fine-Grained Objects",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "…accuracy for object-presence classification. Real-world robotic experiments further demonstrate its practical effectiveness. Code is available at https://github.com/Agibot-Spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2608.17633"
+ },
+ {
+  "title": "ChainSpace: A Chained-Reasoning Paradigm for Spatial Intelligence",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "Spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2608.15788"
+ },
+ {
+  "title": "Spatial Memory Agent: Experience-Grounded Procedure Memory for Spatial Intelligence",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "Spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2608.12743"
+ },
+ {
+  "title": "Temporally Grounded Compositional Camera Motion Understanding via Geometric Knowledge Distillation",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "Understanding camera motion is fundamental to video perception, with applications in spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2608.10932"
+ },
+ {
+  "title": "Advantage-Guided Gate: Reshaping Open-Ended Reasoning for Vision-Based Spatial Intelligence",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "Multimodal large language models (MLLMs) have demonstrated significant potential in complex spatial scene understanding and reasoning tasks. However, their open-ended reasoning process is prone to decision errors and error accumulation, leading to instability in answer quality. To address this, we propose an advantage-guided gating framework that dynamically intervenes in and corrects deviations d…\n        ▽ More",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2608.07987"
+ },
+ {
+  "title": "GST-Bench: Can VLMs Develop Global Spatial Awareness from Video?",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "Spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2608.05747"
+ },
+ {
+  "title": "Disentangling 3D Modeling from Spatial Reasoning",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "…and computational efficiency, demonstrating that explicit separation of perception and reasoning is a scalable and effective alternative paradigm to end-to-end modeling for spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2608.05242"
+ },
+ {
+  "title": "DerainSplat: Feed-Forward Clean 3D Gaussian Splatting from Sparse Rainy Views",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "Although image deraining has advanced substantially, existing methods mainly focus on 2D image restoration. As spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2608.02191"
+ },
+ {
+  "title": "SpatioLM: Towards General Physical Spatial Intelligence in Vision-Language Models",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "…after spatial fine-tuning. To this end, we propose a parameter-efficient \\textit{\\textbf{Spatio}-vision \\textbf{L}anguage \\textbf{M}odels (SpatioLM)}, that enhances spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2608.01899"
+ },
+ {
+  "title": "Spatial-IQ: Deconstructing Spatial Intelligence via Hierarchical Capability Tests",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "Multimodal large language models (MLLMs) excel at visual interpretation but fail on spatial reasoning tasks that humans solve reliably. Existing benchmarks evaluate these models as black boxes, limiting their ability to identify the underlying causes of lower performance: when a model fails a spatial reasoning task, it remains difficult to ascertain whether the hurdle is perceptual, such as recogn…\n        ▽ More",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2607.22864"
+ },
+ {
+  "title": "Show, Don't Tell: Evaluating Spatial Cognition in Generative Pixels Rather Than LLM Text",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "Spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2607.21072"
+ },
+ {
+  "title": "IGGT4D: Streaming 4D Instance-Grounded Geometry Transformer",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "Real-world spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2607.19228"
+ },
+ {
+  "title": "Self in Space: Benchmarking Self-Awareness and Spatial Cognition in UAV Embodied Intelligence",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "…on spatial understanding tasks, with the agent's self-awareness remaining implicit. To address this gap, we introduce SIS-Bench, a benchmark for evaluating embodied spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2607.12477"
+ },
+ {
+  "title": "More Than Where You Are: Learning Semantics, Structure, and Geometry from Cross-View Localization",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "Consistent cross-view understanding under extreme viewpoint changes is essential for spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2607.12429"
+ },
+ {
+  "title": "MobileSAM2: Lightweight Segment Anything for Spatial Intelligence",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "The recent large video foundation model, SAM2, enables segment anything in both images and videos, serving as a powerful base model for various applications. However, many of such use cases require to operate on resource-constrained devices like mobile phones and laptops. In this work, we aim to make SAM2 more mobile-friendly by distilling the heavyweight SAM2 into a lightweight model, facilitatin…\n        ▽ More",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2607.12297"
+ },
+ {
+  "title": "WildCity: A Real-World City-Scale Testbed for Rendering, Simulation, and Spatial Intelligence",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "Humans can navigate an unfamiliar city and gradually form a coherent spatial mental map spanning tens of square kilometers. Can AI build spatial representations at a comparable scale? Although recent foundation models have advanced scene reconstruction and embodied intelligence, scaling to entire cities remains an open challenge, primarily due to the lack of city-scale data. To bridge the gap, we…\n        ▽ More",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2607.06838"
+ },
+ {
+  "title": "ACE-Brain-0.5: A Unified Embodied Foundational Model for Physical Agentic AI",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "…into five coupled functions: spatial perception, decision making, embodied interaction, self-monitoring, and self-improvement. Built on ACE-Brain-0, which established spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2607.04426"
+ },
+ {
+  "title": "IDEAL-Bench: Indoor Dataset and Evaluation suite for Analyzing 3D Layout reasoning",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "Spatial question answering is the dominant paradigm for evaluating spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2607.03614"
+ },
+ {
+  "title": "OmniView-Space: Reinforcing Spatial Reasoning via Multi-Perspective Spatial Mapping",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "Spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2607.00881"
+ },
+ {
+  "title": "From World Models to World Action Models: A Concise Tutorial for Robotics",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "…defined, and what roles they play within robotic AI systems. The tutorial also develops a unified perspective for comparing representative approaches, such as World Labs' spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2607.00836"
+ },
+ {
+  "title": "DLGStream: Dynamic Language-embedded Guassian Splatting for Open-vocabulary Enabled Free-viewpoint Video Streaming",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "…novel language-embedded FVV representation that streams time-varying language features alongside Gaussian attributes to support 4D environment interaction, scene editing, and spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2606.28840"
+ },
+ {
+  "title": "AirGroundBench: Probing Spatial Intelligence in Multimodal Large Models under Heterogeneous Multi-View Embodied Collaboration",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "…but introduce scale mismatch, asymmetric occlusion, and reference-frame inconsistencies. We present AirGroundBench, a diagnostic benchmark for evaluating multi-view spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2606.28049"
+ },
+ {
+  "title": "SpatialUAV: Benchmarking Spatial Intelligence for Low-Altitude UAV Perception, Collaboration, and Motion",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "Spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2606.27876"
+ },
+ {
+  "title": "Physics-Guided Robotic Radiation Source Localization along Arbitrary Measurement Paths in Unstructured Environments",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "…deployment to enhance the practical applicability of the online robotic RSL system. The proposed method advances robot radiation perception from pointwise flux detection to spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2606.27624"
+ },
+ {
+  "title": "UAV-MapFusion: RTK-Aligned Uncertainty-Aware Coarse-to-Fine Multi-Session UAV Mapping",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "Large-scale point cloud maps are essential for robotics and spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2606.26928"
+ },
+ {
+  "title": "From Hallucination to Grounding: Diagnosing Visual Spatial Intelligence via CRISP",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "…often conflate language priors with genuine spatial reasoning. To address this, we introduce CRISP, a novel structural-diagnostic evaluation paradigm that assesses visual spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2606.26535"
+ },
+ {
+  "title": "DriveStack-VLA: Render-Teacher Alignment for BEV-Based DeepStack Vision-Language-Action Model",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "…Model into a driving policy, allowing them to use world knowledge and follow language guidances. However, existing VLA driving models still lack driving-oriented spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2606.24051"
+ },
+ {
+  "title": "Interpretable Material Spatial Intelligence for Discovery of Governing Microstructural Features",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "…still rely on handcrafted descriptors or aggregated representations that overlook spatial organization, limiting insight into governing mechanisms. We introduce Materials Spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2606.23729"
+ },
+ {
+  "title": "OmniSpace: Efficient Geometry Awareness for Autonomous Vehicles MLLMs",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "Multimodal Large Language Models (MLLMs) have achieved remarkable performance on 2D visual tasks, yet enhancing their spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2606.22617"
+ },
+ {
+  "title": "S-Agent: Spatial Tool-Use Elicits Reasoning for Spatial Intelligence",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "Real-world spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2606.20515"
+ },
+ {
+  "title": "SpatialSV: Internalizing Interpretable 3D Spatial Awareness in MLLMs via Task-Oriented Visual Supervision",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "Unlocking the spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2606.19915"
+ },
+ {
+  "title": "Keep It in Mind: User Centric Continual Spatial Intelligence Reasoning in Egocentric Video Streams",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "We introduce UCS-Bench, a dataset spanning 170+ hours of egocentric visual observations with 8.1K+ timestamped questions for diagnosing User-Centric Continual Spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2606.15200"
+ },
+ {
+  "title": "Embodied-BenchClaw: An Autonomous Multi-Agent System for Embodied Spatial Intelligence Benchmark Construction",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "Benchmarks are essential for evaluating embodied spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2606.11909"
+ },
+ {
+  "title": "Globally Localizing Lunar Rover in Pixels via Graph Alignment",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "…spatial awareness, including semantic segmentation and structural reasoning, through cross-view localization learning, highlighting its potential as a promising paradigm for spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2606.10602"
+ },
+ {
+  "title": "CoCoSI: Collaborative Cognitive Map Construction for Spatial Intelligence",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "Spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2606.10401"
+ },
+ {
+  "title": "Learning Geometric Representations from Videos for Spatial Intelligent Multimodal Large Language Models",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "…novel framework that learns geometric representations using purely 2D video sequences. This approach effectively restructures the semantic latent space within MLLMs to unlock spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2606.05833"
+ },
+ {
+  "title": "OVO-S-Bench: A Hierarchical Benchmark for Streaming Spatial Intelligence in Multimodal LLMs",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "…benchmarks either evaluate offline over full videos or target events rather than spatial structure. We introduce OVO-S-Bench, a fully human-annotated benchmark for streaming spatial",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2606.03890"
+ },
+ {
+  "title": "MASER: Modality-Adaptive Specialist Routing for Embodied 3D Spatial Intelligence",
+  "query": "spatial intelligence",
+  "score": 1,
+  "summary": "In 3D environments, Embodied Agents answer spatially relevant questions through reasoning from a mixture of modalities including natural language, RGB images, point clouds, depth maps and camera poses. Existing Vision-Language models (VLMs) are fine-tuned over a single modality. This completely ignores the question semantics which may favor a different modality than the finetuned modality. To addr…\n        ▽ More",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2606.02463"
+ },
+ {
+  "title": "OmniFabric: Coherent UV Space Texture Synthesis for 3D Garment Reconstruction",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "Automated generation of production-ready 3D",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.30234"
+ },
+ {
+  "title": "Robo-Harness K1: Harnessing Robot-Use Agents via Perception Augmentation",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "Foundation vision",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.29389"
+ },
+ {
+  "title": "OREN-X: Octree Residual Network for Real-Time Multi-Modal Mapping",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "…a robot needs to maintain spatial environment information that supports a variety of tasks: geometry for planning and control, radiance for rendering and relocalization, and vision",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.29157"
+ },
+ {
+  "title": "Seeing Is Not Measuring: Tool-Augmented Metric Spatial Reasoning for Vision-Language Models",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "Vision",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.29073"
+ },
+ {
+  "title": "DrGait: Biomechanically Grounded Visual Reasoning for Interpretable Clinical Gait Analysis",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "Current automated gait analysis for clinical applications relies on uninterpretable black-box classifiers. Although Vision",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.28796"
+ },
+ {
+  "title": "From Alignment to Fusion in 3D Vision-Language",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "Unified 3D",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.28222"
+ },
+ {
+  "title": "InfiNoVA: Infinite Novel View Augmentation for Viewpoint Invariant Robot Policies",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "Vision",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.27734"
+ },
+ {
+  "title": "NV-Reason-CT: 3D Visual Language Model for CT Analysis",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "We present NV-Reason-CT, a generative vision",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.27511"
+ },
+ {
+  "title": "StrataVLA: Hierarchical and Efficient 3D Geometric Grounding for Vision-Language-Action Models",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "Vision",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.26071"
+ },
+ {
+  "title": "Metric-Bench: Exploring In-context Spatial Metric Reasoning in VLMs for Indoor Scenes",
+  "query": "VLM 3D",
+  "score": 2,
+  "summary": "Metric reasoning is a critical and challenging task for Vision",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.25841"
+ },
+ {
+  "title": "Fysiverse-3D-Vision Technical Report: Generating Executable 3D Worlds from Images through Unified Spatial Reasoning",
+  "query": "VLM 3D",
+  "score": 2,
+  "summary": "Generative models have advanced image-conditioned 3D",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.25741"
+ },
+ {
+  "title": "MIGU: Multimodal Instruction Grounding under Uncertainty for Manipulation Planning",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "…We present MIGU, a modular framework that combines semantic and geometric evidence into a unified grounding belief and connects it to manipulation planning. MIGU constructs a 3D",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.24995"
+ },
+ {
+  "title": "Bridge3D: Enabling Vision-Language-Action Models to See and Act in 3D",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "Vision",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.24525"
+ },
+ {
+  "title": "AgentSTAR: Agentic Shape Tracking and Reconstruction from Monocular Videos",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "…via agentic analysis-by-synthesis. Unlike prior methods which first estimate dense pixel correspondences and then recover object motion from them, our method infers a structured 3D",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.24487"
+ },
+ {
+  "title": "StenoVLA-3D: 3D-Aware Reasoning VLA for Navigation Through Gastrointestinal Stenoses",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "…model to predict actions from texture-poor monocular observations, make safe control decisions, and retain evidence of lesions after they leave the field of view. Existing vision",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.24187"
+ },
+ {
+  "title": "CARE: Experience-Guided Atomic Corrective Execution for Vision-Language-Action Policies",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "Vision",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.24118"
+ },
+ {
+  "title": "Grounded Action Model: 3D Grounding as a Foundation for Robotics",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "Manipulation policies must know which objects matter and where they are, yet the pretrained backbones that current robot foundation models build on, from language in vision",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.23863"
+ },
+ {
+  "title": "Elevator-VIGS: Separating Elevator Motion from Robot Motion in Visual-Inertial Gaussian Splatting SLAM",
+  "query": "VLM 3D",
+  "score": 2,
+  "summary": "We present Elevator-VIGS, a visual-inertial 3D",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.23491"
+ },
+ {
+  "title": "HEARTH: An Object-Centric RGB-Thermal-3D Dataset for Temperature-Aware Robot Manipulation",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "…such property, but object datasets for robot learning rarely associate measured temperatures with object appearance and geometry. We present HEARTH, an object-centric RGB-thermal-3D",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.23418"
+ },
+ {
+  "title": "Hierarchical Aggregation of Semantic Uncertainty in 3D Scene Graphs",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "Open-vocabulary 3D",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.22351"
+ },
+ {
+  "title": "GALA: Geometry-Aware Latent Action Modeling for Vision-Language-Action Model Pretraining across Embodiments",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "Learning large-scale vision",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.21948"
+ },
+ {
+  "title": "A Scene Language Model for Open-Vocabulary Scene Mapping",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "Open-vocabulary 3D",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.21400"
+ },
+ {
+  "title": "VeriFuse: Bounded Vision-Language Arbitration and Reason-Guided Refinement for Cooperative 3D Perception",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "Vision",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.21323"
+ },
+ {
+  "title": "FOCAL-VLA: Subtask-Guided Geometry Distillation and Implicit World Modeling for Vision-Language-Action Models",
+  "query": "VLM 3D",
+  "score": 2,
+  "summary": "Vision",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.21228"
+ },
+ {
+  "title": "VLN on the Fly: An Onboard Vision-Language Navigation Stack for Aerial Robots",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "Running vision",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.20191"
+ },
+ {
+  "title": "TADreamer: Zero-Shot Language-Guided 3D Navigation for Terrestrial-Aerial Bimodal Robots via Video Imagination",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "…geometric distortions. We present TADreamer, a zero-shot framework that grounds video-imagined navigation in measured geometry without task-specific training or fine-tuning. A vision",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.19824"
+ },
+ {
+  "title": "SnapPhysics: A Physics-Aware Scene Graph from a Single View for Interactive Mixed Reality Scenes",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "We propose SnapPhysics, a training-free framework that reconstructs 3D",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.19815"
+ },
+ {
+  "title": "VLM-MPPI: Grounding Natural Language in Behaviorally Diverse Trajectories for Aerial Navigation",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "…trajectory modes that converge to unique behavioral means, yielding a compact set of intentionally diverse candidates rather than mere stochastic variations. We project these 3D",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.18451"
+ },
+ {
+  "title": "EDCT-Bench: Uncovering Faithfulness Gaps in VLMs via Explanation-Driven Counterfactual Testing",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "Vision",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.17953"
+ },
+ {
+  "title": "sensVLA: Spatially-Grounded Vision-Language-Action Model for Autonomous Wheel Loader",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "Autonomous wheel-loader control requires joint reasoning over task semantics, egocentric vision, proprioception, and 3D",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.17021"
+ },
+ {
+  "title": "NeuroSymbEAD: A Large Scale Neuro-Symbolic Caption Dataset for Omni-Directional Embodied Autonomous Driving",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "…language applications. Our data annotation pipeline allows the generation of varied map segments, populating simulated or real objects within the bounding boxes predicted by any 3D",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.16919"
+ },
+ {
+  "title": "A Unified Vision-Language Model for PSMA PET/CT Report Generation, Visual Question Answering, and Lesion Segmentation",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "Accurate PSMA PET/CT interpretation is central to prostate cancer management, yet existing PET/CT AI models typically address isolated tasks. We propose a unified PSMA PET/CT vision",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.15603"
+ },
+ {
+  "title": "NavPatch: Evidence-Guided Object-Level Costmap Correction with Vision-Language Models",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "…We present NavPatch, an object level correction layer that assigns ADD, REMOVE, or EXTEND to navigation relevant object categories through periodic scene understanding with a vision",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.14543"
+ },
+ {
+  "title": "GeomVLA: Unifying Scene, Motion, and Action in 3D",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "We present GeomVLA, a Vision",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.13812"
+ },
+ {
+  "title": "From Vision to Harvest: Benchmarking Vision-Language Models for Multi-Arm Robotic Fruit Harvesting",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "…in target environments or rely on simplifying assumptions that limit planning quality. In this work, we introduce the first comprehensive benchmark for evaluating pretrained Vision",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.13606"
+ },
+ {
+  "title": "Assisted Spatial Cognition Through Vision-Language Models",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "Multimodal AI, powered by Large Language Models (LLMs) and Vision",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.12747"
+ },
+ {
+  "title": "Recursive Code World Models: Building Complex Worlds through Recursive Scene Programs",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "…but this representation alone does not determine how to construct a complex world. We introduce Recursive Code World Models (RCWM), a framework for reconstructing complex 3D",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.11499"
+ },
+ {
+  "title": "TANGO: Humanoid Navigation in Cluttered Environments with a Whole-Body Vision-Language-Action Model",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "…requires continuous geometry-aware whole-body adaptation, including coordinated arm placement, torso adjustment, and gait modulation for collision-free movement through complex 3D",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.09158"
+ },
+ {
+  "title": "GoDeep: Annotation-Free Open-Vocabulary 3D Scene Understanding via Language-Space Lifting",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "Open vocabulary 3D",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.09082"
+ },
+ {
+  "title": "3DWay: Generalizing Robot Manipulation via 3D Consistent Waypoints",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "Intermediate representations are key to bridging the modality gap between generalizable manipulation policies and large-scale pretrained vision",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.08224"
+ },
+ {
+  "title": "MV-STRIDE: Enabling MLLMs to Master Multi-View Spatial Reasoning via Hierarchical Capability Modeling",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "Despite the rapid progress of Multimodal Large Language Models (MLLMs) in 2D vision",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.07258"
+ },
+ {
+  "title": "PhysMAS: Physics-Grounded Multi-Agent Synthesis of Compositional 4D Gaussians",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "Efficient, fully automatic, and physically plausible 4D Gaussian synthesis is an important goal for dynamic scene generation. Recent physics-based methods couple 3D",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.07174"
+ },
+ {
+  "title": "Contextual Observer Grounding: Evaluating Situated Spatial Reasoning in Vision-Language Models",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "…spatial relations from a speaker's situated perspective. Humans infer such perspectives from shared environmental knowledge, activity context, and commonsense. Recent vision",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.06880"
+ },
+ {
+  "title": "3DHarnessBench: Probing Agentic 3D-to-Code Capabilities of Frontier Vision-Language Models",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "We introduce 3DHarnessBench, a benchmark that evaluates the agentic ability of frontier vision",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.06535"
+ },
+ {
+  "title": "SceneMosaic: Efficient and Diverse Simulation-Ready Scene Generation via Hybrid Agentic Layout Evolution",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "Diverse and simulation-ready indoor scenes are essential for interactive entertainment and embodied AI, yet their scalable generation remains challenging. Recent agentic text-to-3D",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.05594"
+ },
+ {
+  "title": "An overview of 3D Vision-Language Models",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "Vision",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.05583"
+ },
+ {
+  "title": "Learning 3D Editing without Paired Supervision via Generative Prior Distillation",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "Instruction-guided 3D",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.04942"
+ },
+ {
+  "title": "CoMLP: Cooperatively-Gated MLPs for Fine-Grained Cross-Modal Information Fusion in Medical Image Segmentation",
+  "query": "VLM 3D",
+  "score": 1,
+  "summary": "…local and global cross-modal dependencies. We further develop a multi-source fusion architecture in which CoMLP performs both inter-image fusion across imaging modalities and vision",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.04781"
+ },
+ {
+  "title": "Towards Practical Compression of 3D Gaussian Splatting",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.30245"
+ },
+ {
+  "title": "OceanXL: Large-scale Underwater 3D Gaussian Splatting via Block Partitioning and Adaptive Pruning",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "…monitoring, and subsea infrastructure inspection, yet remains challenging at large scale due to light attenuation, scattering, and limited capture coverage. While 3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.29985"
+ },
+ {
+  "title": "ADATEX4D: adaptive texture capacity allocation for 4D gaussian splatting",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "…resolution to every primitive wastes storage on low-detail or weakly visible regions. We introduce AdaTex4D, an adaptive texture-capacity module for deformation-based 4D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.29963"
+ },
+ {
+  "title": "SplatLabel: Pseudo-Labelling through 4D Gaussian Splatting",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "While 2D Vision Foundation Models offer a pathway to automate 3D semantic pseudo-labelling, translating these priors into robust 3D representations typically requires complex heuristics or multi-model ensembles. We introduce SplatLabel, an automated pipeline that leverages a 4D Gaussian representation to extract LiDAR segmentation with predictive confidence, as well as semantic occupancy grids at…\n        ▽ More",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.29836"
+ },
+ {
+  "title": "SpectralCTGaussians: Projection-Domain Reconstruction and Basis Material Decomposition for Spectral CT using 3D Gaussian Splatting",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "…material behavior and leading to richer scene understanding. We present a novel method for spectral CT reconstruction and basis material decomposition using 3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.29638"
+ },
+ {
+  "title": "From Scattered Gaussians to Structured Maps: Efficient Gaussian Splatting Coding via Dual-phase Morton Sorting",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.29041"
+ },
+ {
+  "title": "Only What Was Seen: Observation-Gram Compaction of View-Dependent Appearance in 3D Gaussian Splatting",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "Most of the memory of a 3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.28997"
+ },
+ {
+  "title": "PlenoCI: Plenoptic CharacterIstics for View Dependence Aware Change Classification",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "Radiance field representations such as 3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.28930"
+ },
+ {
+  "title": "PePESeg3D: Perception Prior Enhances Multi-Scale Segmentation for 3D Gaussian Splatting",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "Recent advancements in 3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.28645"
+ },
+ {
+  "title": "TopoGS: Topology-Aware Anchor Feature Aggregation for Large-Scale 3D Gaussian Splatting",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "Octree-based 3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.27868"
+ },
+ {
+  "title": "GaussianDS: Depth-supervised Semantic Gaussian Splatting for Scene Understanding",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.27850"
+ },
+ {
+  "title": "Fusion-Aware Direct 3D Gaussian Generation with Structured Patch Latent Flows",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "Class-guided 3D object generation is important for intelligent content creation, virtual environments, and digital asset design. Although 3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.27779"
+ },
+ {
+  "title": "Visibility-Guided Structured Measure Flow for Class-Conditioned 3D Gaussian Generation",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.27778"
+ },
+ {
+  "title": "GaussPDE: Graph-Based Partial Differential Equation-Driven Rendering for 3D Gaussian Splatting",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "We present GaussPDE, a framework that injects physically structured partial differential equation (PDE) dynamics into pretrained 3D Gaussian scenes without mesh extraction, voxelization, or retraining. Our key observation is that PDE rendering requires not only accurate appearance, but also a reliable discrete computational domain. We therefore first introduce camera-aware regularization during 3D…\n        ▽ More",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.27264"
+ },
+ {
+  "title": "φ-RIE: From Photorealistic Reconstruction to Interactive Environments",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.26795"
+ },
+ {
+  "title": "ArborSplat: Online Semantic Gaussian Splatting SLAM for Orchards",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "Orchard robots need maps that preserve small but semantically important structures such as trunks, trellises, and fruit. 3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.26315"
+ },
+ {
+  "title": "Skytopia: Monocular Drone Navigation with Action-Conditioned Latent World Models",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "…reduces to reprojecting a static scene under a known displacement. We therefore introduce skytopia, a policy built on an action-conditioned latent world model, and the 3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.26007"
+ },
+ {
+  "title": "Dual Covariance Gaussian Splatting SLAM: Decoupling Rendering and Registration for Robust Real-Time Tracking",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "ICP-based 3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.25746"
+ },
+ {
+  "title": "Robust, Estimator-Agnostic Dynamic 3DGS Compression",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "Dynamic 3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.25633"
+ },
+ {
+  "title": "Ultra-fast Neural Inference for Stochastic Gaussian Splatting Denoising",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "Stochastic rendering eliminates the sorting and alpha blending process in Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.25604"
+ },
+ {
+  "title": "Agentic Building-Aware Satellite Gaussian Splatting for Auditable Urban DSM Reconstruction",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "…rendering methods typically optimize average visual fidelity rather than the structures that analysts inspect first: buildings. We present an agentic building-aware satellite Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.25578"
+ },
+ {
+  "title": "4DGS-JEPA: Temporally Compositional Joint-Embedding Prediction for Dynamic Gaussian Splatting",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "Dynamic Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.25036"
+ },
+ {
+  "title": "Dynamic Thermal Gaussians: Multimodal 4D Gaussian Splatting",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "Thermography plays a vital role in military and broader thermal analysis applications. Recent progress in 3D thermal reconstruction has extended temperature analysis from 2D to 3D space, yet most existing works assume static temperature distributions, neglecting the temporal dynamics of heat transfer in real-world environments. To address this limitation, we propose the first dynamic RGB-Thermal r…\n        ▽ More",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.24531"
+ },
+ {
+  "title": "OpenFlyScan: A Quality-Guided Aerial Reconstruction System for Consumer Drones",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.24253"
+ },
+ {
+  "title": "BayesianGS-SLAM: Uncertainty-Aware Neural Rendering SLAM via Probabilistic Formulation",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "…optimization, while frames already well explained by the current map may trigger redundant mapping updates. In this paper, we present BayesianGS-SLAM, an uncertainty-aware 3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.24140"
+ },
+ {
+  "title": "GARO: Geometry-Aware Redundancy Optimization for Real-Time and High-Fidelity Dynamic Gaussian Splatting",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "Novel view synthesis is a key task for dynamic scene reconstruction, where high rendering speed is essential for applications such as virtual reality. Existing deformable Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.23509"
+ },
+ {
+  "title": "GAPS: Generative Active Pseudo-view Selection for Sparse-View 3D Gaussian Splatting",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "Novel view synthesis from sparse observations is severely under-constrained. Although 3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.23436"
+ },
+ {
+  "title": "LiteTex-GS: Fast and Lightweight Texturing for Gaussian Splatting",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.23380"
+ },
+ {
+  "title": "GrapeSplat: Geometry-Grounded Reconstruction via Amalgamated Pose-Free Encoding for Feed-Forward 3D Gaussian Splatting",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "Feed-forward 3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.23182"
+ },
+ {
+  "title": "Splat-CBF: Safe Next-Best-View Control in 3D Gaussian-Splat Maps",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "Where to look and how to move? A robot navigating an unmapped environment must do both at once, and the two goals pull against each other. The regions most worth observing are the ones the map knows least about, and those are exactly where the robot cannot trust its collision margins. We resolve this tension by introducing Splat-CBF, an active perception control barrier function that steers the ca…\n        ▽ More",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.23100"
+ },
+ {
+  "title": "VDGS: Visibility-Driven Large-Scale 3D Gaussian Splatting for Aerial Scene Reconstruction",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "Large-scale scene reconstruction is a critical foundational technology in robotic autonomous systems such as 3D mapping and autonomous driving. In recent years, 3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.23049"
+ },
+ {
+  "title": "Quality Assessment of 3D Gaussian Splatting: Distortions, Benchmarks, and Open Challenges",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.23027"
+ },
+ {
+  "title": "Compressing 3D Gaussian Splatting via Cross-Representation Priors",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.23005"
+ },
+ {
+  "title": "D3GS: Depth, DINO, and RGB Diffusion Co-Guided 3D Gaussian Splatting for Sparse-View Reconstruction",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "Novel view synthesis from sparse inputs remains challenging for 3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.22941"
+ },
+ {
+  "title": "LINGO: Latent Initialization and Gradient Optimization for Sparse-view X-ray Novel View Synthesis and CT Reconstruction with 3D Gaussian Splatting",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "…and Computed Tomography (CT) reconstruction with sparse-view X-ray imaging, insufficient angular coverage leads to structural ambiguity and accumulated noise. Integrating 3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.22849"
+ },
+ {
+  "title": "Kinematic Interface for the Wild: Modular Bimanual Loco-Manipulation Capture from 360$^{\\circ}$ Cameras Alone",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "…fiducials, localization error stayed within 4.5 mm. KIWI's recovered poses were sufficiently consistent for the four wrist streams alone to reconstruct the scene as a 3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.22809"
+ },
+ {
+  "title": "2D GauSS-MI: Efficient Active Scene Reconstruction with Balanced Visual and Geometric Quality",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "…visual and geometric quality with the computational efficiency required for real-time operation. In this work, we present an active reconstruction framework based on 2D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.21516"
+ },
+ {
+  "title": "VoxelTTO: Voxel-Aligned Feed-Forward 3D Gaussian Splatting with Test-Time Optimization",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "Recent feed-forward 3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.21498"
+ },
+ {
+  "title": "Cube-Splat: High-Fidelity 360° Gaussian Splatting SLAM via Cubemap Factorization and Adjoint-Consistent Optimization",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "Recent progress in 3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.21347"
+ },
+ {
+  "title": "AirSplan: Risk-Aware Motion Planning for Quadrotors in Cluttered 3D Gaussian Splats",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "…a collision-free path to the goal. This paper proposes a system that addresses these complementary challenges. The proposed method, AirSplan, adopts a normalized variant of 3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.21226"
+ },
+ {
+  "title": "4DGS-Fixer: Generative Sparse-View 4D Gaussian Splatting with Iterative Refinement Guided by Video Diffusion Priors",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "…observations. However, they cannot fundamentally resolve the ill-posed problem caused by insufficient observations and missing scene information. Moreover, sparse-view 4D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.21176"
+ },
+ {
+  "title": "Demonstration Synthesis from a Single Scan via Gaussian Splatting for Visuomotor Policy Learning",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "…with a single video scan as its only human input and no physics engine in the generation loop. Specifically, GaussianFactory reconstructs the scene as an editable 3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.21112"
+ },
+ {
+  "title": "SplashSplat: Reconstructing Splashing Liquids from Real-World Multi-View Videos",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "…against each new observation and reseeded where coverage is lost, decode local Gaussians for differentiable rendering. SplashSplat outperforms state-of-the-art dynamic Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.20818"
+ },
+ {
+  "title": "PhGS: Post-Hoc Pruning and Refinement of Single-View Feed-Forward 3D Gaussian Reconstructions",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "Recent single-view feed-forward 3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.20623"
+ },
+ {
+  "title": "RawSLAM: Online HDR Gaussian SLAM from Linear Radiance",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "…Gaussian SLAM framework that tracks and maps directly on single-exposure 16-bit linear HDR imagery. Our method rests on three core components: an architecture-agnostic HDR Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.20589"
+ },
+ {
+  "title": "CoRef-GS: Cooperative Referring Gaussian Splatting for Multi-Agent Scene Understanding",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "…methods optimize geometric or photometric alignment without preserving language-grounding-oriented semantic compatibility. We propose CoRef-GS, a cooperative referring Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.20586"
+ },
+ {
+  "title": "EliGSiR: Continual RGB-D Mapping with Gaussian Splatting under Bounded Compute",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "Conventional 3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.20348"
+ },
+ {
+  "title": "GS-PI: An Optimization-Decoupled Appearance Decomposition Approach for Generating PBR Gaussian Assets",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.19907"
+ },
+ {
+  "title": "Printing the Underdetermined: Materializing Multi-solutionness in Figurative Paintings",
+  "query": "gaussian splatting",
+  "score": 1,
+  "summary": "…drifts become inevitable rather than exceptional. Our pipeline samples multiple camera-orbit multi-view video sequences from one painting, reconstructs each sequence with 3D Gaussian",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.19782"
+ },
+ {
+  "title": "Do World Models Make Better Robots? A Survey of Evaluation Benchmarks for Predictive Embodied Intelligence",
+  "query": "world model robot",
+  "score": 2,
+  "summary": "Robot",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.29669"
+ },
+ {
+  "title": "Representation World Model: Learning States, Transition and Executable Plans in Representation",
+  "query": "world model robot",
+  "score": 2,
+  "summary": "We propose the Representation World",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.29171"
+ },
+ {
+  "title": "Streaming-WAM: Action-Conditioned World-Action Model for Asynchronous Robot Manipulation",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "…action models (WAMs) that use future visual prediction at inference time incur substantial generation costs. Asynchronous execution reduces waiting by overlapping inference with robot",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.28927"
+ },
+ {
+  "title": "PointCast: One World Model for Rigid, Articulated, and Deformable Object Manipulation",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "World",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.28393"
+ },
+ {
+  "title": "Generalizable Robotic Insertion with World Models",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "Robotic",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.28258"
+ },
+ {
+  "title": "AWM-VLA: AlignedWorld Modeling for Efficient and Explainable Vision-Language-Action Policies",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "Vision-language-action (VLA) models have become a powerful paradigm for generalist robotic",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.27753"
+ },
+ {
+  "title": "InternW0: A Foundational Physical World Model for Efficient Real-World Interactions",
+  "query": "world model robot",
+  "score": 2,
+  "summary": "…predicting how the world may evolve: predictions must remain actionable as the world continues to change. We introduce InternW0, the first instantiation of the InternW physical world",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.27656"
+ },
+ {
+  "title": "TriWorldBench: A Tri-View Consistency Perspective on Embodied World Models",
+  "query": "world model robot",
+  "score": 2,
+  "summary": "Embodied world",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.26314"
+ },
+ {
+  "title": "GDLAM: Group-Disentangled Latent Action Model for Highly Disentangled Embodied Pretraining",
+  "query": "world model robot",
+  "score": 2,
+  "summary": "…motion, object dynamics, and interaction events, into a single latent vector, resulting in entangled representations with limited semantic structure and consequently restricting world",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.26118"
+ },
+ {
+  "title": "D-JEPA: A Decision-Aligned Latent World Model",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "Latent world",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.24749"
+ },
+ {
+  "title": "Think Like a World Model, Act Like a VLA: Distilling World-Model Representations into Compact Robot Policies",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "…(VLA) models map observations to actions with no objective that accounts for how the world responds, so their robustness is bounded primarily by data coverage. World",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.24682"
+ },
+ {
+  "title": "What Matters in Designing World Action Models: An Empirical Study",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "World Action Models (WAMs) have emerged as a promising paradigm for generalizable robot",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.24048"
+ },
+ {
+  "title": "Imagine-RL: Residual-Confidence-Guided Cross-Attention for World-Model-Augmented VLA Reinforcement Learning",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "…Imagine-RL, which augments noise-space VLA post-training with action-conditioned visual-torque imagination. For each candidate action chunk, a frozen visual-torque latent world",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.24033"
+ },
+ {
+  "title": "UniK: Universal Knowledge Perception for Digital and Physical AI",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "…how organizations operate: \\textit{digital AI}, which reasons over enterprise knowledge to power chatbots and agent workflows; and \\textit{physical AI}, which learns to control robots",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.23971"
+ },
+ {
+  "title": "Robot World Models Are Not Invariant to How the Actions Are Written",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "A robot",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.23252"
+ },
+ {
+  "title": "Prioritized Rollouts for Efficient World Model-based Vision-Language-Action Policy Optimization",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "…(VLA) models have emerged as a powerful paradigm for embodied intelligence, but fine-tuning them with reinforcement learning (RL) remains constrained by the cost of real-world robot",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.22879"
+ },
+ {
+  "title": "PileBelief: Persistent Physical State for Interaction-Driven World Modeling",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "World",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.22858"
+ },
+ {
+  "title": "Expert-Play Contouring Control: Faster-than-Demonstration Planning from Slow Expert and Fast Play",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "Expert demonstrations often specify what a robot",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.22798"
+ },
+ {
+  "title": "Latent Policy Steering: An Efficient and Flexible Framework for Cross-Embodiment Transfer",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "The performance of learned robot",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.22521"
+ },
+ {
+  "title": "ORDER: A Fictitious-World Benchmark for Domain-Adaptive Embodied AI",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "…already knows, performance gains cannot be cleanly attributed to new learning rather than pre-existing knowledge. This matters most for knowledge-intensive, task-light (KHTL) robot",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.22285"
+ },
+ {
+  "title": "Benchmarking World Models for Continual Learning on Compositional Tasks",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "A desirable property of a world",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.22055"
+ },
+ {
+  "title": "Adaptive World Memory 3D Foundation Model for Scalable 3D Mapping, Localization, and Rendering",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "…reasoning from RGB images but remain limited in persistent memory, scalability, and renderable scene modeling. We present a memory-centric 3D foundation model for scalable robotic",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.21502"
+ },
+ {
+  "title": "Adaptive Rollout Truncation Based on Epistemic Uncertainty for Efficient Offline World Model Training",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "Accurate neural world",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.21482"
+ },
+ {
+  "title": "Robotic Multiphase Interaction: Manipulating Coupled Liquid and Solid Dynamics with a World Model",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "This work presents \\textit{Robotic",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.21448"
+ },
+ {
+  "title": "SafeStage: Evaluating Safety Before, During, and After Vision-Language-Conditioned Robot Manipulation",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "Vision-language-conditioned robot",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.21223"
+ },
+ {
+  "title": "DexTouch-WM: Learning Action-Conditioned Tactile World Models from Human Touch for Dexterous Robot Manipulation",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "Learning predictive models of contact-rich dexterous manipulation requires dense tactile interaction, but such data are costly to scale on real robots",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.20649"
+ },
+ {
+  "title": "Semantic SLAM in Precision Agriculture using Bayesian Inference",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "This paper presents a real-time semantic world",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.20604"
+ },
+ {
+  "title": "Feeling Terrain Before Crossing: World Models for Off-Road Navigation",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "Navigation world",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.19863"
+ },
+ {
+  "title": "WorldContact: A Contact-Centric World Model for Scalable Robot Learning",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "Adapting robots",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.19600"
+ },
+ {
+  "title": "GAVEL: Graph World Models for Verified and Efficient Long-Horizon LLM Task Planning",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "Large language models (LLMs) provide a flexible interface for long-horizon robot",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.19315"
+ },
+ {
+  "title": "PointZero: 3D Point Track Completion for Learning Transferable 3D Dynamics",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "World",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.19142"
+ },
+ {
+  "title": "Changepoint-Aware World Models: Detecting Dynamics Shifts and Recovering by Forgetting Stale Replay in Model-Based RL",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "A robot's",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.18950"
+ },
+ {
+  "title": "StrucPhysVideo: Learning Physical Dynamics from Structured Captions and Robot Actions",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "Modeling physical dynamics, including how objects move, interact, and change state, is central to video world",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.18430"
+ },
+ {
+  "title": "WAVE-Go: World-Model Navigation with Adaptive Execution for Wheel-Legged Robots",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "World",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.18193"
+ },
+ {
+  "title": "XPACE: Joint World and Action Modeling from Heterogeneous Experience",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "A general-purpose robot",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.17372"
+ },
+ {
+  "title": "FluxVLA Engine: A One-Stop VLA Engineering Platform for Embodied Intelligence",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "…world-action models (WAMs), and offline reinforcement learning methods are rapidly expanding the design space of embodied policies, yet turning these algorithms into reliable robot",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.17210"
+ },
+ {
+  "title": "The Robot Data Factory",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "Physical AI requires more than increasingly large robot",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.16705"
+ },
+ {
+  "title": "World-Action Models for Robot Learning and Control: A Survey",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "Robots",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.16074"
+ },
+ {
+  "title": "JEPLO: Joint-Embedding Predictive Learning for LiDAR-Based Legged Locomotion",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "…We present JEPLO (Joint-Embedding Predictive learning for legged LOcomotion), a single-stage learning framework for mapping-free, LiDAR-based perceptive locomotion for legged robots",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.15770"
+ },
+ {
+  "title": "Legislating World-Model-Based Planning with Legal Reasoning",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "As robotic",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.15113"
+ },
+ {
+  "title": "AutoLab: An Internet-Accessible Experimental Platform for Operational World Models in Wireless Networks",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "Operational World",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.14854"
+ },
+ {
+  "title": "GLAM: Training a latent world model over global spatiotemporal memory for active exploration and navigation",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "…predict how the evolution of observed spatial memory may support future motion, and convert that prediction into actionable plans. We present GLAM, a goal-conditioned latent world",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.14561"
+ },
+ {
+  "title": "Self-Evolving AI for Humanoids: Mechanisms, Safety, and Evaluation of Post-Deployment Self-Improvement",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "Humanoid robots",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.13236"
+ },
+ {
+  "title": "DWMP: Leveraging Dual World Models for Humanoid Obstacle Traversal",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "Humanoid robots",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.12347"
+ },
+ {
+  "title": "Pelican-Sim 1.0: A General World Model Simulator for Embodied Intelligence",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "In this technical report, we propose Pelican-Sim 1.0, a general world",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.12036"
+ },
+ {
+  "title": "FARM: Reading Failure Signals from the Internal Predictive States of a Frozen Robotic World Model",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "Reliable robot",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.11445"
+ },
+ {
+  "title": "DUET-DINO: Simultaneous Cross-View World Modeling for Latent Planning in Robot Manipulation",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "Action-conditioned latent world",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.10506"
+ },
+ {
+  "title": "Semigroup-JEPA: Latent Dynamics Consistency for Zero-Shot Physics Generalization",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "Joint-Embedding Predictive Architecture (JEPA) world",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.10464"
+ },
+ {
+  "title": "HaWMPO: Hallucination-Aware World Model-based Policy Optimization for Generalist Robot Policy",
+  "query": "world model robot",
+  "score": 1,
+  "summary": "Generalist robot",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.09941"
+ },
+ {
+  "title": "Temporal Gradient Inversion for Private Trajectory Reconstruction in Embodied Reinforcement Learning",
+  "query": "embodied",
+  "score": 1,
+  "summary": "Distributed learning in embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.30258"
+ },
+ {
+  "title": "Ego-Exo4D Human Meshes Dataset: 4D Human Motion Reconstruction for Ego-Exo Captures",
+  "query": "embodied",
+  "score": 1,
+  "summary": "…dataset providing synchronized egocentric and multi-view exocentric video, a rich resource for skill learning and assessment, procedural activity understanding, and embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.30187"
+ },
+ {
+  "title": "World Action Agent: Harnessing VLMs for Robot Manipulation via World Action Rehearsal",
+  "query": "embodied",
+  "score": 1,
+  "summary": "…between observation, rehearsal, and low-level execution, letting the agent remove residual offsets in the view where it observes them. Through the same workspace, WAA acquires embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.29964"
+ },
+ {
+  "title": "GPT-6-Astra Lights Up Embodied Navigation: Evaluation in Zero-Shot Vision-and-Language Navigation in Continuous Environments",
+  "query": "embodied",
+  "score": 1,
+  "summary": "…reasoning}}. Plausible local landmark matches do not consistently lead to correct task completion. Fourth, \\textbf{\\textit{these capabilities motivate rethinking the role of embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.29861"
+ },
+ {
+  "title": "PUBG Ally: A Conversational Embodied Agent as an AI Teammate",
+  "query": "embodied",
+  "score": 1,
+  "summary": "We introduce PUBG Ally, an embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.29837"
+ },
+ {
+  "title": "Free the Language Model From the Vision Encoder: Semantic Serialization as a Perception Interface for Small Language Models",
+  "query": "embodied",
+  "score": 1,
+  "summary": "…models (VLMs) bind visual competence to the scale of their language model: as the language model shrinks, perception and reasoning degrade together. We study an embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.29601"
+ },
+ {
+  "title": "PEEL: Physics-Enabled Evidential Learning for Identifiable Uncertainty in CT Imaging",
+  "query": "embodied",
+  "score": 1,
+  "summary": "…three combinations of four NIG parameters and is constant along a one-dimensional fiber. We identify that fiber using independent physical measurement. As an initial embodiment",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.29599"
+ },
+ {
+  "title": "RoboLDA: A Probabilistic Generative Model for Uncovering Embodied Hierarchical Structures in Voxel-based Soft Robots",
+  "query": "embodied",
+  "score": 1,
+  "summary": "…policies. Our work pioneers hierarchical generative modeling of robot morphology, offering a promising pathway towards more interpretable and generalizable development of embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.29490"
+ },
+ {
+  "title": "HarnessPAI: An Evolving Harness for Physical AI",
+  "query": "embodied",
+  "score": 1,
+  "summary": "Physical AI aims to build embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.29166"
+ },
+ {
+  "title": "A Support-Enhanced Granular-Jamming Gripper for RL-based Grasping with Continuum Manipulators",
+  "query": "embodied",
+  "score": 1,
+  "summary": "…introducing an adaptive structure that relaxes the need for highly accurate modeling and positioning control, this work explores a design paradigm that integrates physical and embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.29093"
+ },
+ {
+  "title": "From Passive Execution to Active Exploration: Agentic Embodied Manipulation in Realistic Environments",
+  "query": "embodied",
+  "score": 1,
+  "summary": "Recent advances in agentic systems have substantially enhanced the long-horizon capability of embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.29091"
+ },
+ {
+  "title": "CrossSafe: Towards Cross-Embodiment Latent Safety Filters",
+  "query": "embodied",
+  "score": 1,
+  "summary": "Cross-embodiment",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.28984"
+ },
+ {
+  "title": "AquaMend: Minimal Re-probing and Conditional Rollback for Latent-Belief Failures in Embodied Agents",
+  "query": "embodied",
+  "score": 1,
+  "summary": "Physical changes or sensing errors can invalidate embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.28973"
+ },
+ {
+  "title": "Characterizing LLM-Based Family Education through the Lens of Activity Theory: A Scoping Review of the HCI Literature",
+  "query": "embodied",
+  "score": 1,
+  "summary": "…rules. We find that the literature centers on child--parent interaction and on language, AI literacy, and relational learning. The introduction of LLMs enabled conversational, embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.28886"
+ },
+ {
+  "title": "FlyCNS: Connectome-Grounded Information Organization for Communication-Constrained Embodied Control",
+  "query": "embodied",
+  "score": 1,
+  "summary": "…yet learning-based control still commonly relies on centralized information processing. This work studies the problem of information organization in communication-constrained embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.28816"
+ },
+ {
+  "title": "Signals of AI Hallucination: Designing Hallucination-Aware Cues for Embodied Conversational Agents in VR",
+  "query": "embodied",
+  "score": 1,
+  "summary": "…help users assess response reliability and identify potential hallucinations. In immersive environments such as Virtual Reality (VR), CAs often take the form of speech-based embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.28812"
+ },
+ {
+  "title": "Watch, Recall, Act: Always-On Robots in Concurrent Embodied Streams",
+  "query": "embodied",
+  "score": 1,
+  "summary": "…0.5 backbone augmented by three lightweight modules that turn live perception, embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.28429"
+ },
+ {
+  "title": "AnchorReasoning: A Visual Grounding and Causal Reasoning Dataset in Long-Tail Autonomous Driving Scenarios",
+  "query": "embodied",
+  "score": 1,
+  "summary": "…learns these hierarchical capabilities, together with an object-size-aware grounding metric for evaluating localization quality. Experiments across eight general-purpose, embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.28366"
+ },
+ {
+  "title": "Modularity is Not Enough: Demonstration of a Solderless 400 V DC, 2.5 kW Three-Phase Inverter",
+  "query": "embodied",
+  "score": 1,
+  "summary": "…electrically intact; subsequent resistance and nominal-power checks likewise indicate no contact degradation. An initial life-cycle assessment (LCA) indicated a higher embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.28244"
+ },
+ {
+  "title": "EmbodiedMemory-Bench: Benchmarking Embodied Memory for Long-Horizon Embodied Tasks",
+  "query": "embodied",
+  "score": 1,
+  "summary": "Long-horizon embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.28236"
+ },
+ {
+  "title": "DEAL-Grasp: Decoupled Alignment Representation for Geometry-Aware Dexterous Grasp Generation",
+  "query": "embodied",
+  "score": 1,
+  "summary": "Synthesizing realistic articulated hand-object interactions is a fundamental problem in virtual reality, embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.28131"
+ },
+ {
+  "title": "AeRSoM: An Aerial Rigid-Soft Integrated Manipulator for Contact-Rich Manipulation",
+  "query": "embodied",
+  "score": 1,
+  "summary": "…to reconcile interaction compliance with manipulation precision. To this end, this article presents an aerial rigid-soft integrated manipulator (AeRSoM) robot that realizes embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.28044"
+ },
+ {
+  "title": "Security and Privacy in Large-Model-Driven Embodied Agents: Attacks, Defenses, and Future Directions",
+  "query": "embodied",
+  "score": 1,
+  "summary": "Large-model-driven embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.27847"
+ },
+ {
+  "title": "RegenHarness: A Robot Agent Harness with Evidence-Gated Recursive Self-Improvement",
+  "query": "embodied",
+  "score": 1,
+  "summary": "…and checks the original user goal before reporting completion. To our knowledge, we are the first to introduce an evidence-gated recursive self-improvement (RSI) protocol for embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.27612"
+ },
+ {
+  "title": "Action-Directed Information for Distributed Control and Agentic Interaction",
+  "query": "embodied",
+  "score": 1,
+  "summary": "…a receiving action, then connect that measure to function by intervention and disturbance evaluation. We instantiate this proposal in DI-Walker, a two-dimensional four-limb embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.27580"
+ },
+ {
+  "title": "EBRL: Asynchronous Embodied RL by Multi-Grained Resource Management",
+  "query": "embodied",
+  "score": 1,
+  "summary": "Embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.27547"
+ },
+ {
+  "title": "Information Capacity of Generative Video Compression: Quantifying the Rate-Compute Exchange at Identical Quality",
+  "query": "embodied",
+  "score": 1,
+  "summary": "…across devices, edge servers, and clouds, and computation at the receiver becomes a resource that can substitute for transmitted bits. Generative video compression (GVC) embodies",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.27493"
+ },
+ {
+  "title": "Passing: An Endless Journey through Reconstructed Spacetime with AI-Generated Sound",
+  "query": "embodied",
+  "score": 1,
+  "summary": "…creative agency across the artist, who defines the rules of spacetime reconstruction; the AI model, which interprets the emergent visual flow as sound; and the audience, whose embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.27489"
+ },
+ {
+  "title": "EmbodiedSWE: Coding Agents for Long Horizon Dexterous Robotics",
+  "query": "embodied",
+  "score": 1,
+  "summary": "…up to half an hour of continuous interaction. We find that frontier coding agents can solve complex long-horizon tasks and transfer prior solutions across both tasks and embodiments",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.27308"
+ },
+ {
+  "title": "Listening and Mirroring: The Effects of Verbal Attunement and Behavioral Mimicry on Social and Empathic Perceptions of Embodied AI Agents in VR",
+  "query": "embodied",
+  "score": 1,
+  "summary": "As embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.27246"
+ },
+ {
+  "title": "CoBranchMR: Supporting Parallel Design and Conflict Resolution in Mixed Reality",
+  "query": "embodied",
+  "score": 1,
+  "summary": "…When merging copies, the system displays potential conflicts on the object's surface and provides several resolution options. By adopting branch-and-merge workflows for embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.27235"
+ },
+ {
+  "title": "NaviScale: Generating Large-Scale Semantic Map Datasets for Object Navigation",
+  "query": "embodied",
+  "score": 1,
+  "summary": "Embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.27218"
+ },
+ {
+  "title": "Intelligence Across Embodiments",
+  "query": "embodied",
+  "score": 1,
+  "summary": "Robotic embodiment",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.27095"
+ },
+ {
+  "title": "Pose-Aware Multimodal Automatic Tagging for Greek Traditional Music",
+  "query": "embodied",
+  "score": 1,
+  "summary": "…music performance is inherently multimodal, as semantic labels such as instruments, regional styles, and dance forms are encoded simultaneously across acoustic, visual, and embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.27094"
+ },
+ {
+  "title": "Reinforcement Learning with Decomposed Subtasks",
+  "query": "embodied",
+  "score": 1,
+  "summary": "…as consequential. We evaluate on four agentic benchmarks: FrozenLake (sparse grid navigation), HotpotQA (multi-hop QA, one retrieval tool), ScienceWorld (long-horizon embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.27035"
+ },
+ {
+  "title": "Humanoid Locomotion with a Fly-Inspired Recurrent Controller",
+  "query": "embodied",
+  "score": 1,
+  "summary": "…intact rollouts. Recorded trajectories and state-matched images connect these findings to sustained movement, lateral drift, and termination events. The study characterizes an embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.27001"
+ },
+ {
+  "title": "MSK-Bench: Benchmarking Full-Body Musculoskeletal Motor Control Across Tasks, Control Paradigms, and Physiological Metrics",
+  "query": "embodied",
+  "score": 1,
+  "summary": "Musculoskeletal (MSK) humanoids provide a physiologically grounded embodiment",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.26872"
+ },
+ {
+  "title": "FLINT: Fast Lightweight Inference for Traversability",
+  "query": "embodied",
+  "score": 1,
+  "summary": "…conditions is challenging due to the lack of structure. There is no fixed vocabulary for what is traversable. The traversability depends on both the environment and the embodiment's",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.26857"
+ },
+ {
+  "title": "Beyond End-Task Success: How to Audit Visual Experience Retrieval in Robotics",
+  "query": "embodied",
+  "score": 1,
+  "summary": "Robots that store past experiences must select which one to reuse in a new scene. Most systems select by visual similarity, and most evaluations report only the success of the selected experience. That number does not show whether the selection was good: a rule can score well by repeatedly using one broadly transferable experience, or poorly because its preferred experience is weak. Since robots i…\n        ▽ More",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.26567"
+ },
+ {
+  "title": "MATE: Multi-Agent Virtual Teleoperation Platform for Humanoid Collaboration Data Collection",
+  "query": "embodied",
+  "score": 1,
+  "summary": "Humanoid robots require diverse embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.26520"
+ },
+ {
+  "title": "Hierarchical Floorplan-Guided Vision-Language Exploration for Embodied Question Answering",
+  "query": "embodied",
+  "score": 1,
+  "summary": "Embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.26360"
+ },
+ {
+  "title": "StepTrigger: Contact-State-Triggered Backdoor Attacks on VLM-Powered Legged Robots",
+  "query": "embodied",
+  "score": 1,
+  "summary": "…new backdoor surface: a compromised planner can behave normally in most runs, yet change its target selection when a hidden trigger is present. Prior attacks on LLM-powered or embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.26131"
+ },
+ {
+  "title": "MotionForge: A Data Generation Pipeline and Large-Scale Benchmark for Long-Horizon Manipulation of Dynamic Objects with Domain Shifts",
+  "query": "embodied",
+  "score": 1,
+  "summary": "…and the requirements of robust long- horizon manipulation of dynamic objects under domain shifts, establishing MotionForge as a comprehensive testbed for future research in embodied",
+  "published": "",
+  "arxiv_url": "https://arxiv.org/abs/2609.25689"
+ }
+]
