@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-29",
+  "source": "arXiv web search (API 406 fallback)",
+  "papers": [
+    {"title": "InternW0-Δ: A World Action Model Bridging Predictive Dynamics and Actions with 20K+ Hours of Open Data", "date": "2026-09-25", "url": "https://arxiv.org/abs/2609.31450", "relevance": "WAM基础模型，预测动力学+动作统一，超大规模开放数据"},
+    {"title": "Rolling-WAM: World Action Models with Rolling Imagination", "date": "2026-09-24", "url": "https://arxiv.org/abs/2609.31170", "relevance": "滚动想象的世界动作模型"},
+    {"title": "Towards VLA-Dreamer: Refining VLA Behavior Using World Models", "date": "2026-09-25", "url": "https://arxiv.org/abs/2609.31431", "relevance": "用世界模型精炼VLA行为，Dreamer范式+VLA"},
+    {"title": "Metric-Bench: Exploring In-context Spatial Metric Reasoning in VLMs for Indoor Scenes", "date": "2026-09-22", "url": "https://arxiv.org/abs/2609.31005", "relevance": "VLM空间度量推理基准，室内场景"},
+    {"title": "NavGen: Visual Generative Models as a Scalable Data Engine for Embodied 3D Navigation", "date": "2026-09-24", "url": "https://arxiv.org/abs/2609.31298", "relevance": "视觉生成模型作为具身3D导航数据引擎"},
+    {"title": "World Action Agent: Harnessing VLMs for Robot Manipulation via World Action Rehearsal", "date": "2026-09-24", "url": "https://arxiv.org/abs/2609.31148", "relevance": "VLM+世界动作排练做机器人操作"},
+    {"title": "Self-Adaptive VLA for Robust Robot Deployment", "date": "2026-09-24", "url": "https://arxiv.org/abs/2609.31108", "relevance": "自适应VLA鲁棒部署"},
+    {"title": "RECAST: From Log Replay to Closed-Loop Driving Simulation with View-Complete Actors", "date": "2026-09-25", "url": "https://arxiv.org/abs/2609.31558", "relevance": "3DGS闭环驾驶仿真"},
+    {"title": "3DWay: Generalizing Robot Manipulation via 3D Consistent Waypoints", "date": "2026-09-08", "url": "https://arxiv.org/abs/2609.30987", "relevance": "3D一致路标点泛化操作"},
+    {"title": "Do World Models Make Better Robots? A Survey of Evaluation Benchmarks for Predictive Embodied Intelligence", "date": "2026-08-30", "url": "https://arxiv.org/abs/2609.31074", "relevance": "世界模型机器人评估综述"},
+    {"title": "ME-VLM: A Unified VLM for Embodied Cognition and Agent Coordination", "date": "2026-09-22", "url": "https://arxiv.org/abs/2609.31135", "relevance": "具身认知统一VLM"},
+    {"title": "AdaHVLA: Adaptive Harnesses for Long-Horizon Vision-Language-Action Execution", "date": "2026-09-24", "url": "https://arxiv.org/abs/2609.31326", "relevance": "长时序VLA执行"},
+    {"title": "SceneBench: A Hierarchical Benchmark for Vision-Language Understanding of 3D Scenes", "date": "2026-09-14", "url": "https://arxiv.org/abs/2609.31247", "relevance": "3D场景视觉语言理解层次基准"},
+    {"title": "Multi-View Relational Distillation for Spatial Reasoning with Vision-Language Models", "date": "2026-08-11", "url": "https://arxiv.org/abs/2609.31364", "relevance": "多视角关系蒸馏空间推理"},
+    {"title": "ClearGS: Reliability-Aware Gaussian Splatting from Handheld Videos", "date": "2026-09-25", "url": "https://arxiv.org/abs/2609.31573", "relevance": "可靠性感知3DGS"},
+    {"title": "GraphWrit3R: End-to-End 3D Scene Graph Writing", "date": "2026-09-25", "url": "https://arxiv.org/abs/2609.31620", "relevance": "端到端3D场景图生成"}
+  ]
+}

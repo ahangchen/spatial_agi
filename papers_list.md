@@ -4199,3 +4199,35 @@
    - 关键词: 世界模型, 地图token记忆, JEPA, waypoint latent, 主动探索, ObjectNav
    - 文档: papers/2026-09-27_05_GLAM_Latent_World_Model_Global_Spatiotemporal_Memory.md
    - 亮点: 地图派世界模型开山样本；联合预测未来地图latent与导航意图；"预测记忆演化"作为原则化探索基础
+
+## 2026-09-29 研究的论文（精选5篇）
+
+1. **InternW0-Δ: A World Action Model Bridging Predictive Dynamics and Actions with 20K+ Hours of Open Data** - arXiv:2609.31394
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Action Model, Causal Imprint, 有向MoT, 4D蒸馏, 异构数据统一
+   - 文档: papers/2026-09-29_01_InternW0Delta_World_Action_Model.md
+   - 亮点: Causal Imprint训练期未来监督/推理零未来开销；20K+小时最大开源异构语料；LIBERO-Plus 92.8%、RoboTwin C2R 71.9%；RTX5090单卡152.8ms（5.11×加速）
+
+2. **Rolling-WAM: World Action Models with Rolling Imagination** - arXiv:2609.30247
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Rolling Diffusion, 滑动窗口去噪, 计算摊销, 视频动作联合, Unitree G1
+   - 文档: papers/2026-09-29_02_Rolling_WAM_Rolling_Imagination.md
+   - 亮点: 滚动噪声调度不变量σ(j+1)(0)=σ(j)(1)；稳态N/W步去噪4.5×加速且保留完整视觉想象；LIBERO 98.1%、RoboTwin 93.3%；真机人形验证
+
+3. **Towards VLA-Dreamer: Refining VLA Behavior Using World Models** - arXiv:2609.31313
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: JEPA世界模型, VLA嵌入空间, Imagination RL, 探针漂移度量, 概念论文
+   - 文档: papers/2026-09-29_03_VLA_Dreamer_World_Model_Refinement.md
+   - 亮点: VLA自身嵌入做世界模型训练场；单一表示三职能（策略输入/预测目标/奖励）；分割/深度探针接到预测嵌入量化想象漂移；判决性实验设计
+
+4. **Metric-Bench: Exploring In-context Spatial Metric Reasoning in VLMs for Indoor Scenes** - arXiv:2609.25841
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 度量推理, 参照接地, 免内参, 可验证奖励RFT, ScanNet
+   - 文档: papers/2026-09-29_04_Metric_Bench_Spatial_Metric_Reasoning.md
+   - 亮点: 首个精确数值（非选择题）空间度量基准；三重可验证奖励（格式+指数精度+分箱接近）；超私有模型43.1%且通用不遗忘（V* +15.9%）；下游RoboSpatial +30.4%
+
+5. **NavGen: Visual Generative Models as a Scalable Data Engine for Embodied 3D Navigation** - arXiv:2609.30770
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 生成式数据引擎, T2V导航数据, 运动再平衡, 长尾放大, UAV真机部署
+   - 文档: papers/2026-09-29_05_NavGen_Generative_Navigation_Data_Engine.md
+   - 亮点: 400K episodes生成数据管线（含运动对称纠偏+深度锁定风格放大10×）；多样性2.8×于最强基线、进步分+17%；47FPS推理、真机UAV零样本75%
