@@ -4231,3 +4231,35 @@
    - 关键词: 生成式数据引擎, T2V导航数据, 运动再平衡, 长尾放大, UAV真机部署
    - 文档: papers/2026-09-29_05_NavGen_Generative_Navigation_Data_Engine.md
    - 亮点: 400K episodes生成数据管线（含运动对称纠偏+深度锁定风格放大10×）；多样性2.8×于最强基线、进步分+17%；47FPS推理、真机UAV零样本75%
+
+## 2026-09-30 研究的论文（精选5篇）
+
+1. **Spatial Grafting: Grounding 3D Features for Flow-Matching Robot Policies** - arXiv:2609.35249
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 空间接地接口, 空间银行, flow-matching动作专家, bank-only cross-attention, VLA/WAM通用
+   - 文档: papers/2026-09-30_01_Spatial_Grafting_Grounding_3D_Features_Flow_Matching_Robot_Policies.md
+   - 亮点: 冻结重建特征绑定度量+末端相对坐标，经bank-only cross-attention注入动作专家末段；一套接口通吃2 VLA+2 WAM；RoboTwin 2.0 94.0/92.4超WAM4D；B1K 5/6任务超2025冠军
+
+2. **WM-VLM: Probing Internal World Models for Interleaved Visual-Textual Reasoning** - arXiv:2609.34826
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 内部世界模型, 交错视觉文本推理, 心理旋转, 可验证中间状态, 两阶段课程
+   - 文档: papers/2026-09-30_02_WM_VLM_Internal_World_Models_Interleaved_Visual_Textual_Reasoning.md
+   - 亮点: VLM内置轻量世界模型分支生成中间视觉状态，先想象后推理；2D/3D心理旋转最高+39.25个百分点；依赖性消融证明状态功能性
+
+3. **RoGSW4RLD: Feed-Forward 4D Gaussian Lifting for Robot World Model Rollouts** - arXiv:2609.35311
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: rollout空间化, 前馈4D高斯场, 铰接几何先验, 保位移精炼, 跨视角一致性
+   - 文档: papers/2026-09-30_03_RoGSW4RLD_Feed_Forward_4D_Gaussian_Lifting_Robot_World_Model_Rollouts.md
+   - 亮点: 把世界模型多相机rollout前馈提升为统一可查询度量4D高斯场；DROID 256片段 PSNR+2.15dB、AbsRel-47%、位移误差-61%；Cosmos 3 rollout增益保持
+
+4. **VCN-Bench: A Video-Contextualized Navigation Benchmark for Spatial Reasoning over Prior Visual Experience** - arXiv:2609.34687
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 先验视觉经验, 闭环空间推理, 目的地解析, 导航落差, 诊断式评测
+   - 文档: papers/2026-09-30_04_VCN_Bench_Video_Contextualized_Navigation_Benchmark_Spatial_Reasoning.md
+   - 亮点: Matterport3D上100k训练/1250评测、5类指令；发现巨大"解析-导航"落差——目标识别正确后导航仍频繁失败；MV-DualVLN双源基线
+
+5. **CollisionSplatting: Collision-Aware Motion Planning in 3DGS Scenes** - arXiv:2609.35619
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS碰撞度量, 可调保守度, 图像条件奖励, MPPI/RRT, GPU加速规划
+   - 文档: papers/2026-09-30_05_CollisionSplatting_Collision_Aware_Motion_Planning_3DGS.md
+   - 亮点: 标准3DGS上概率启发、保守度可调的GPU碰撞度量，联合图像条件奖励实现几何+视觉统一规划；碰撞精度持平、吞吐大涨、显存大降；真机导航/操作验证
