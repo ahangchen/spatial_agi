@@ -4263,3 +4263,35 @@
    - 关键词: 3DGS碰撞度量, 可调保守度, 图像条件奖励, MPPI/RRT, GPU加速规划
    - 文档: papers/2026-09-30_05_CollisionSplatting_Collision_Aware_Motion_Planning_3DGS.md
    - 亮点: 标准3DGS上概率启发、保守度可调的GPU碰撞度量，联合图像条件奖励实现几何+视觉统一规划；碰撞精度持平、吞吐大涨、显存大降；真机导航/操作验证
+
+## 2026-10-01 研究的论文（精选5篇）
+
+1. **Cache-Aware Conv3D Lowering Across Embedded World-Model Decoders** - arXiv:2609.31938
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 世界模型边缘部署, 因果Conv3D降级, 时间tap批量Conv2D, cache语义保持, Jetson Orin
+   - 文档: papers/2026-10-01_01_Cache_Aware_Conv3D_Lowering_Embedded_World_Model_Decoders.md
+   - 亮点: 不改模型的runtime等价变换——Conv3D占VAE解码95.95%的冗余被逐tapConv2D折叠消除；Jetson Orin上VAE解码7×、完整生成2×加速；跨Wan2.1/2.2通用，回收TensorRT绝对加速的95.55%
+
+2. **Spatial-OPSD: Self-Improving Spatial Reasoning via Label-Free Self-Distillation** - arXiv:2609.37055
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 免标签自蒸馏, 特权空间上下文, on-policy蒸馏, 轮次递归自进化, 场景图脚手架
+   - 文档: papers/2026-10-01_02_Spatial_OPSD_Self_Improving_Spatial_Reasoning_Label_Free_Self_Distillation.md
+   - 亮点: 把重建工具链的几何输出变成教师的特权上下文（非答案标签），token级KL蒸馏内化空间知识；轮内冻结+轮间刷新的递归方案；4个VLM家族单轮一致提升，3轮达开源前沿
+
+3. **Toward Comprehensive 3D Grounding: Orientation Grounding through Vision-Language Models** - arXiv:2609.33109
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 朝向接地, 6D朝向, 轴对称等价类, ReferOri数据集, 结构化span输出
+   - 文档: papers/2026-10-01_03_Orientation_Grounding_VLM_ReferOri.md
+   - 亮点: 首个referring朝向接地任务与718K查询ReferOri数据集（Map Anything+SAM2+SAM3D自动流水线，96%人工验证）；OG-VLM对称感知损失+sign/symmetry token；场景级超越Orient Anything
+
+4. **NeuIDO: Neural Intrinsic Dynamics Operator for Physics-Informed 4D World Models** - arXiv:2609.24313
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 神经算子, 本构律学习, Branch-Trunk分解, 可微MPM, 零样本动力学推断
+   - 文档: papers/2026-10-01_04_NeuIDO_Neural_Intrinsic_Dynamics_Operator_Physics_Informed_4D_World_Models.md
+   - 亮点: 把"视频→本构函数"作为跨场景算子学习问题，结束逐场景动力学辨识；已知本构律预训练trunk+视频对齐branch两阶段；零样本新场景实时推断+少样本适配
+
+5. **PhGS: Post-Hoc Pruning and Refinement of Single-View Feed-Forward 3D Gaussian Reconstructions** - arXiv:2609.20623
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 单视角前馈3DGS, 后验剪枝, 重要性采样, 递归精炼, backbone无关
+   - 文档: papers/2026-10-01_05_PhGS_Post_Hoc_Pruning_Refinement_Single_View_Feed_Forward_3DGS.md
+   - 亮点: 首个单视角前馈3DGS后验压缩管线——冻结基座+边缘/不透明度重要性剪枝+逐高斯MLP递归精炼；跨Flash3D/Niagara/SHARP通用；推理时可变保留率匹配弹性部署
