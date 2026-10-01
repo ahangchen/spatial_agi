@@ -4295,3 +4295,35 @@
    - 关键词: 单视角前馈3DGS, 后验剪枝, 重要性采样, 递归精炼, backbone无关
    - 文档: papers/2026-10-01_05_PhGS_Post_Hoc_Pruning_Refinement_Single_View_Feed_Forward_3DGS.md
    - 亮点: 首个单视角前馈3DGS后验压缩管线——冻结基座+边缘/不透明度重要性剪枝+逐高斯MLP递归精炼；跨Flash3D/Niagara/SHARP通用；推理时可变保留率匹配弹性部署
+
+## 2026-10-02 研究的论文（精选5篇）
+
+1. **GaugeVLM: Structuring Spatial Supervision with Measured Geometric Interventions** - arXiv:2609.38285
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 空间偏好优化, GaugeDPO, 几何干预, 跨视角一致性, 测量margin, Constancy-Bench
+   - 文档: papers/2026-10-02_01_GaugeVLM_Measured_Geometric_Interventions_Spatial_Supervision.md
+   - 亮点: 把受控3D干预测得的几何误差直接作为DPO margin；物体干预（应变）+相机干预（恒定）结构化监督；恒常性证书（½最大分歧下界最大误差）；7B模型MSMU+15.0pp/QSpatial+ +18.9pp，25%偏好数据胜全量DPO
+
+2. **Imagine3D-LLM: Teaching MLLMs to Imagine 3D Scenes Before Answering** - arXiv:2609.38177
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D想象, 高斯摘要token, 信息瓶颈, 物体分组涌现, 表征塑造, KAIST/ETH
+   - 文档: papers/2026-10-02_02_Imagine3D_LLM_Teaching_MLLMs_to_Imagine_3D_Scenes.md
+   - 亮点: MLLM内嵌少量摘要token解码紧凑3DGS、光度重建+蒸馏联合训练，"先想象后回答"；瓶颈诱导物体级分组涌现；只监督摘要token却重塑全模型3D感知，7项基准一致超越像素级3D注入
+
+3. **Ego4WAM: What Matters When Scaling Egocentric Human Data for Robot Learning?** - arXiv:2609.40341
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 自我中心数据金字塔, World-Action Model, 人机对齐, 数据时长vs任务多样性, video-only世界建模, 闭环评测
+   - 文档: papers/2026-10-02_03_Ego4WAM_Scaling_Egocentric_Human_Data_Robot_Learning.md
+   - 亮点: 固定backbone系统性解耦人类数据扩展要素；对齐演示提升OOD泛化并降机器人数据需求；时长与多样性分轴作用于不同能力；video-only经世界建模依然有效；数据金字塔+三阶段训练协议+全闭环评测
+
+4. **AgentSTAR: Agentic Shape Tracking and Reconstruction from Monocular Videos** - arXiv:2609.24487
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 分析-综合, VLM agent, 代码化物体模型, 渲染-比较循环, 铰接跟踪, Amazon FAR
+   - 文档: papers/2026-10-02_04_AgentSTAR_Agentic_Shape_Tracking_Reconstruction_Monocular.md
+   - 亮点: 自顶向下建模运动的"原因"而非"证据"——scene.py代码化几何+运动学；VLM指定搜索区域+数值优化精姿的agentic循环；ARCTIC大幅超越3D点跟踪SOTA、HOT3D超越全部刚体基线；可处理透明/严重遮挡物体
+
+5. **EviSplat: Preserving Multi-View Evidence in 3D Gaussian Splatting for Open-Vocabulary Segmentation** - arXiv:2609.34853
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 开放词汇3D分割, 证据保留, 查询时聚合, 类别无关实例, 观测置信度, 3DGS
+   - 文档: papers/2026-10-02_05_EviSplat_Multi_View_Evidence_3DGS_Open_Vocabulary_Segmentation.md
+   - 亮点: 诊断"查询前合并多视角观测丢失证据"的系统性缺陷；实例内逐观测保留特征+逐高斯外观支持分布；查询时"最相关观测+局部证据+频度/明确度加权"两级打分；多数据集SOTA
