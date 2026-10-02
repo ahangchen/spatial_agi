@@ -4327,3 +4327,35 @@
    - 关键词: 开放词汇3D分割, 证据保留, 查询时聚合, 类别无关实例, 观测置信度, 3DGS
    - 文档: papers/2026-10-02_05_EviSplat_Multi_View_Evidence_3DGS_Open_Vocabulary_Segmentation.md
    - 亮点: 诊断"查询前合并多视角观测丢失证据"的系统性缺陷；实例内逐观测保留特征+逐高斯外观支持分布；查询时"最相关观测+局部证据+频度/明确度加权"两级打分；多数据集SOTA
+
+## 2026-10-03 研究的论文（精选5篇）
+
+1. **Sparse-WAM: Accelerating World Action Models via Action-Guided Sparse Imagination** - arXiv:2609.38984
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Action Model, 动作引导稀疏想象, token选择复用, 免训练加速, Pilot引擎, NJU/HKUST
+   - 文档: papers/2026-10-03_01_Sparse_WAM_Action_Guided_Sparse_Imagination_World_Action_Models.md
+   - 亮点: 发现动作-未来注意力时间对角对齐/热点移动/跨步稳定三大规律；帧特定核心token+共享空间锚点双通道选择；RTX 4090实测LIBERO 1.98×加速、成功率仅-0.30pp；想象正在成为空间智能核心算子的高效化关键
+
+2. **Uruqi: Learning Spatial Cognition from Visual Experience** - arXiv:2609.39195
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 空间认知, 自运动追踪, 持久物体映射, motif驱动轨迹, episode耦合监督, 清华/BUPT
+   - 文档: papers/2026-10-03_02_Uruqi_Learning_Spatial_Cognition_From_Visual_Experience.md
+   - 亮点: 诊断GPT-5.5级模型自运动/物体映射系统性缺陷；特权几何编译为时间接地密集episode监督；11,738条motif轨迹仅合成数据即逼近GPT-6 Astra（47.73%→50.41% vs 50.08%）；外部基准零迁移+17.13%
+
+3. **Do World Models Learn Global Understanding?** - arXiv:2609.34058
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 幺半群世界, 约束传播, 组合训练, 证明深度, grokking, Caltech
+   - 文档: papers/2026-10-03_03_Do_World_Models_Learn_Global_Understanding.md
+   - 亮点: "理解"=约束学习+推论传播的可判定形式化；next-state训练跨架构无法传播非平凡约束（64%错误为copy模式）；隐藏中间状态的组合训练达96%并迁移视觉(+42%)/语言(+73%)；泛化随证明深度急剧衰减可由加长路径补偿
+
+4. **4Director: Controlling Video World Models with Rigid 3D Geometry** - arXiv:2610.02160
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 视频世界模型, 显式4D场景, canonical mesh, Motion Adapter, IG-IoU, Stability AI/UIUC
+   - 文档: papers/2026-10-03_04_4Director_Controlling_Video_World_Models_Rigid_3D_Geometry.md
+   - 亮点: 完整mesh+逐帧SE(3)消除图像平面歧义与几何不完备；深度视频锁定几何、生成器补全外观/光照/非刚性动态；RealCOD-Rigid 20,774段自动4D标注；转身揭示的表面是渲染而非重新想象——一致性由表示保证
+
+5. **Beyond the Remembered World: Predictive 4D Belief for Persistent Navigation in Evolving Worlds** - arXiv:2609.39166
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 演化世界导航, 预测性4D信念, persistence-relocation, 可见性条件化负证据, ETA外推, 浙大/UCSD/Deeprobotics
+   - 文档: papers/2026-10-03_05_Beyond_the_Remembered_World_Predictive_4D_Belief_Persistent_Navigation.md
+   - 亮点: 空间记忆升级为时间索引概率信念（含unknown质量）；事件驱动predict-observe-replan滤波+动态重开；候选特定ETA外推+校准检测概率门控负证据；EvoWorld-Bench 80万任务配对时间控制+真机验证，例行模式收益最大
