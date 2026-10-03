@@ -4359,3 +4359,35 @@
    - 关键词: 演化世界导航, 预测性4D信念, persistence-relocation, 可见性条件化负证据, ETA外推, 浙大/UCSD/Deeprobotics
    - 文档: papers/2026-10-03_05_Beyond_the_Remembered_World_Predictive_4D_Belief_Persistent_Navigation.md
    - 亮点: 空间记忆升级为时间索引概率信念（含unknown质量）；事件驱动predict-observe-replan滤波+动态重开；候选特定ETA外推+校准检测概率门控负证据；EvoWorld-Bench 80万任务配对时间控制+真机验证，例行模式收益最大
+
+## 2026-10-04 研究的论文（精选5篇）
+
+1. **Token-World: World Modeling in Vision-Language Model Token Space for Robot Manipulation** - arXiv:2610.00575
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 世界模型, VLM token空间, S-VAE紧凑压缩, flow matching DiT, 策略对齐仿真, PKU/HKUST
+   - 文档: papers/2026-10-04_01_Token_World_World_Modeling_VLM_Token_Space_Robot_Manipulation.md
+   - 亮点: 世界模型状态直接建在策略消费的VLM token空间，绕过RGB中间层；特征维压缩保空间布局，重构-可建模性权衡消融（d=16甜点）；闭环策略评估相关性0.794 vs Ctrl-World 0.583，仿真延迟降2-6倍
+
+2. **MEGA: Object-Level Mesh Extraction from 3D Gaussian Splatting via Spatial Visual Distillation** - arXiv:2610.01707
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS, 物体级水密网格, 空间视觉蒸馏, 神经SDF, 高斯-网格统一表示, PKU/鹏城实验室
+   - 文档: papers/2026-10-04_02_MEGA_Object_Level_Mesh_Extraction_3DGS_Spatial_Visual_Distillation.md
+   - 亮点: 解决3DGS"能看不能摸"；segment-then-mesh范式：3DGS当老师216虚拟视角渲染→蒸馏神经SDF→水密坐标对齐网格；meshable方法SOTA且SVD可即插增强2DGS/PGSR；高斯管看、网格管摸的物理交互统一表示
+
+3. **Social-WM: Safety-Aware Latent World Models for Robot Social Navigation** - arXiv:2609.40177
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 社交导航, 名义-可实现动作差异, 可实现逆动力学, 潜在世界模型, 安全信号, Lehigh
+   - 文档: papers/2026-10-04_03_Social_WM_Safety_Aware_Latent_World_Models_Robot_Social_Navigation.md
+   - 亮点: 把交互数据中"指令未完全执行"从噪声升为安全信号；逆动力学监督改用里程计实际运动，迫使潜在表征编码安全信息；propose-imagine-evaluate-select闭环，HM3D碰撞率近乎减半（39→21.67%），零样本迁移MP3D
+
+4. **ChronoGraph: Functional 4D Scene Graphs with Vision-Language Models for Interaction Understanding and Grounded Planning** - arXiv:2609.39665
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4D场景图, 可供性部件, Graph-as-CoT, 几何进奖励GRPO, 理解-规划统一, ETH/Berkeley/Google
+   - 文档: papers/2026-10-04_04_ChronoGraph_Functional_4D_Scene_Graphs_VLM_Interaction_Understanding_Grounded_Planning.md
+   - 亮点: 功能4D场景图统一交互理解与落地规划（观察转移与预期转移同构）；数据引擎自动产出15K带3D接地的QA并反作弊过滤；SFT+图奖励RL（NW对齐+3D中心高斯核奖励），9B达75.2逼近GPT-6 Astra，零样本VLM4D +6.6
+
+5. **ASENA: Self-evolving Agents for Embodied Navigation** - arXiv:2609.39207
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 编码agent具身化, 权重固定工作区演化, 原子导航数据引擎, VLN工具化, 分层安全, NVIDIA
+   - 文档: papers/2026-10-04_05_ASENA_Self_Evolving_Agents_Embodied_Navigation.md
+   - 亮点: 编码agent接入真实G1：写程序/读传感器/修程序/沉淀技能，权重冻结靠工作区演化10轮72%→98%；几何验证的9类原子导航数据训练4B策略（R2R 68.7/RxR 70.2 SOTA）；揭示强编码agent本身即SOTA导航器（87-88%≈人类90%）
