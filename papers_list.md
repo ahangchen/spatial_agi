@@ -4391,3 +4391,35 @@
    - 关键词: 编码agent具身化, 权重固定工作区演化, 原子导航数据引擎, VLN工具化, 分层安全, NVIDIA
    - 文档: papers/2026-10-04_05_ASENA_Self_Evolving_Agents_Embodied_Navigation.md
    - 亮点: 编码agent接入真实G1：写程序/读传感器/修程序/沉淀技能，权重冻结靠工作区演化10轮72%→98%；几何验证的9类原子导航数据训练4B策略（R2R 68.7/RxR 70.2 SOTA）；揭示强编码agent本身即SOTA导航器（87-88%≈人类90%）
+
+## 2026-10-05 研究的论文（精选5篇）
+
+1. **KilometerVision: A New Frontier for Large-Scale Spatial Intelligence in VLMs** - arXiv:2609.39588
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 城市尺度空间智能, landmark-route-map认知范式, VPS视频地图锚定, 反捷径MCQA, VLM诊断, Google DeepMind, ECCV 2026
+   - 文档: papers/2026-10-05_01_KilometerVision_Large_Scale_Spatial_Intelligence_VLM.md
+   - 亮点: 首个公里级真实视频空间智能基准（235视频/288h/1000题）；VPS三遍标定把锚定成本降70倍；诊断出VLM靠2D识别+文本匹配绕过空间推理、无路径积分与认知地图——Spatial AGI能力边界的硬证据
+
+2. **RelationVGGT: Visual Geometry Transformers for 3D Spatial Relation Segmentation** - arXiv:2610.00970
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D空间关系分割, 前馈无位姿, subject条件化逐像素关系场, DINOv2+Pi3双基础模型, VLM/LLM关系数据引擎, NeurIPS 2026
+   - 文档: papers/2026-10-05_02_RelationVGGT_Visual_Geometry_Transformers_3D_Spatial_Relation_Segmentation.md
+   - 亮点: 把体积式关系搜索改写为图像网格逐像素预测；target类别不给、由subject+relation推断封死语义捷径；ScanNet++实例标签+LLM自动产出多视角一致关系标注
+
+3. **Reconstructing the Dynamic World: A Representation-Centric View of 4D Scene Reconstruction** - arXiv:2609.39960
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4D重建综述, 4D NeRF/4DGS, 时间建模四分法, 逐场景优化金标准, 三轴评测(NVS/几何/效率), 102方法22数据集
+   - 文档: papers/2026-10-05_03_Representation_Centric_View_4D_Scene_Reconstruction_Survey.md
+   - 亮点: 覆盖最全的4D动态重建综述；统一"表征×时间建模×管线×目标"分类法；高PSNR≠正确运动的评测批判对Spatial AGI评测设计直接适用
+
+4. **World Observer: Joint Actor-Observer Generation for Persistent World Modeling** - arXiv:2610.02162
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 持久世界模型, 观察与行动解耦, 全景observer, RoPE时间对齐跨流attention, Observer Sink, OOV世界空间指标, KAIST
+   - 文档: papers/2026-10-05_04_World_Observer_Joint_Actor_Observer_Generation_Persistent_World_Modeling.md
+   - 亮点: 命名并系统化世界模型四类视野外失败(frame-locked/lost/frozen/impostor)；联合生成actor+全景observer外化记忆；observer prompt可导演未见事件；OOV-D_gt/D_self/F指标
+
+5. **UniWAM: Unified World-Action Model** - arXiv:2610.02054
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 统一世界-动作模型, MoT三专家(VLM推理+VGM生成+动作), 三源分层监督, 物理语言动作, 历史条件流匹配, 人机共训缩放律
+   - 文档: papers/2026-10-05_05_UniWAM_Unified_World_Action_Model.md
+   - 亮点: ~10k小时(VQA 8.3M对+人类5072h+机器人4958h)统一预训练；监督按物理一致性分层分配；未来帧噪声增强+历史初始化流匹配减少去噪步数；log-linear人机共训缩放律
