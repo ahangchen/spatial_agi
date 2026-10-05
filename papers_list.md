@@ -4423,3 +4423,35 @@
    - 关键词: 统一世界-动作模型, MoT三专家(VLM推理+VGM生成+动作), 三源分层监督, 物理语言动作, 历史条件流匹配, 人机共训缩放律
    - 文档: papers/2026-10-05_05_UniWAM_Unified_World_Action_Model.md
    - 亮点: ~10k小时(VQA 8.3M对+人类5072h+机器人4958h)统一预训练；监督按物理一致性分层分配；未来帧噪声增强+历史初始化流匹配减少去噪步数；log-linear人机共训缩放律
+
+## 2026-10-06 研究的论文（精选5篇）
+
+1. **GeoLatent: Geometry-Guided Latent Structuring with Routed Optimization for 3D Reasoning** - arXiv:2610.02091
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 分解空间latent, 公共-残差几何对齐CR-GEO, 路由优化, 视觉瓶颈, 有效秩, 表征塌缩
+   - 文档: papers/2026-10-06_01_GeoLatent_Geometry_Guided_Latent_Structuring_Routed_Optimization_3D_Reasoning.md
+   - 亮点: 证明GeoAnchor coverage目标存在塌缩解析最优解；CR-GEO把几何有效秩1.00→3.87；bottleneck干预证明latent被真实使用(readout阻断89.1%→25.8%)；SPAR 73.0%/SPBench 72.1%均为SOTA
+
+2. **From Reasoning Failures to Composable Video Spatial Intelligence (CROSS)** - arXiv:2610.01999
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 空间失败分类学, 受控诊断, 类型化几何算子, 坐标契约, 训练无关修复, SpatialClaw
+   - 文档: papers/2026-10-06_02_From_Reasoning_Failures_to_Composable_Video_Spatial_Intelligence_CROSS.md
+   - 亮点: 四类失败根因(感知不准/信息缺失/选错测量/参考系状态错误)解释52.5-99.1%的GT上下文失败；诊断驱动的算子库冻结后跨基准迁移(ReVSI 55.9→60.2, DSI-Bench 62.8→66.3)；"中心距vs表面距"发现极具工程价值
+
+3. **TRACE: Privacy-Preserving Next-Best-View Selection over Distributed 3D Gaussian-Splat Maps** - arXiv:2610.00822
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 多机器人3DGS, 隐私保护NBV, 透射率/辐射聚合, 深度bin分解, SO(3)位姿梯度, 期望信息增益
+   - 文档: papers/2026-10-06_03_TRACE_Privacy_Preserving_Next_Best_View_Distributed_3DGS_Maps.md
+   - 亮点: 证明多机EIG耦合仅通过每射线两个统计量且可深度bin分解；消息尺寸与地图规模无关；零地图共享下达集中式EIG的97.9%(83.3%朝向差<15°)；有精确条件与误差界的可证明空间计算
+
+4. **Are Frontier VLM Agents Ready to Be Robot Generalists? Embodied Agent Arena** - arXiv:2610.00854
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 具身评测, 五能力域, GeoProbe受控几何基准, 任务要求分层, 端点放置瓶颈, 参考系构造断层
+   - 文档: papers/2026-10-06_04_Are_Frontier_VLM_Agents_Ready_To_Be_Robot_Generalists_Embodied_Agent_Arena.md
+   - 亮点: 1000案例/32源/7模型统一评测；Astra估计接地强(Planning 80.3%)但操作仅41.8%——目标协调是泛化缺口；轨迹RMSE最低者追踪成功率反而不是最高,36/37失败在端点；oracle尺度对齐使深度AbsRel 0.104→0.038
+
+5. **Spatial Strategies, Not Actions: Vector-Quantized Geodesics as Tools for LLM-Driven Agents** - arXiv:2610.00613
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 空间策略编排, 测地线测度量化, 自动技能发现, LLM工具选择, 部分可观测动态网格, 低延迟决策
+   - 文档: papers/2026-10-06_05_Spatial_Strategies_Not_Actions_Vector_Quantized_Geodesics_LLM_Agents.md
+   - 亮点: 魔方算法式分工——几何发现技能(250测地线→K=5原型),LLM只做识别选择；非推理配置+工具库≈CoT配置达标率而决策成本分钟级→秒级；可带符号测度量化为技能涌现留接口
