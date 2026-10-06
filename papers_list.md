@@ -4455,3 +4455,35 @@
    - 关键词: 空间策略编排, 测地线测度量化, 自动技能发现, LLM工具选择, 部分可观测动态网格, 低延迟决策
    - 文档: papers/2026-10-06_05_Spatial_Strategies_Not_Actions_Vector_Quantized_Geodesics_LLM_Agents.md
    - 亮点: 魔方算法式分工——几何发现技能(250测地线→K=5原型),LLM只做识别选择；非推理配置+工具库≈CoT配置达标率而决策成本分钟级→秒级；可带符号测度量化为技能涌现留接口
+
+## 2026-10-07 研究的论文（精选5篇）
+
+1. **World Motion Models: Flexible Sequence Modeling of SE(3) Trajectories** - arXiv:2610.01742
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: SE(3)轨迹统一原语, per-token噪声flow matching, context token任意条件化, mask即任务, 跨具身
+   - 文档: papers/2026-10-07_01_World_Motion_Models_Flexible_Sequence_Modeling_SE3_Trajectories.md
+   - 亮点: NeurIPS 2026 Spotlight（Darrell/Kanazawa组）；铰接物体/人体/手物/相机/机器人统一为稀疏SE(3)轨迹token；单一网络经mask覆盖未来预测/infilling/MPC/IK/retargeting/策略学习六类任务；"mask即任务"是空间基础模型范式
+
+2. **H-JEPA: End-to-End Learning of Hierarchical World Models for Visual Planning** - arXiv:2610.06805
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 层级JEPA, 每层独立潜在空间, 时间尺度分离, 自顶向下子目标规划, 涌现抽象
+   - 文档: papers/2026-10-07_02_H_JEPA_Hierarchical_World_Models_Visual_Planning.md
+   - 亮点: LeCun组对JEPA层级化的正式回答；高层自动丢弃快变量保留慢任务状态；Visual AntMaze三层18%→73%且规划计算更少；DROID真实视频层级提升离线规划保真度
+
+3. **SpatialChain: A Benchmark for Auditing Spatial Reasoning Faithfulness in VLMs** - arXiv:2610.06413
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 空间推理忠实性, 场景图接地推理链, 捷径率, LLM judge校准, 符号验证数据
+   - 文档: papers/2026-10-07_03_SpatialChain_Auditing_Spatial_Reasoning_Faithfulness_VLMs.md
+   - 亮点: NeurIPS 2026 ESR Workshop；9个thinking-VLM中4个准确率≥79%但捷径率>39%；judge-人类一致性≈人类-人类、跨judge排名ρ=0.88；SFT使Qwen3-VL-8B +6.2pp且捷径率39%→22%
+
+4. **EvoMem-VLA: State-Evolution Memory for Long-Horizon Robot Manipulation** - arXiv:2610.05418
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 状态演化记忆, 条件化delta tokenization, 变化即记忆, 任务自适应路由, 长时程操作
+   - 文档: papers/2026-10-07_04_EvoMem_VLA_State_Evolution_Memory_Long_Horizon_Manipulation.md
+   - 亮点: 证明孤立快照记忆不能告诉策略"什么变了"；有向delta token+证据关联构造演化记忆；单策略RMBench 80.7%/RoboMME 82.0%/真实83.8%全面SOTA；双路由覆盖普通与多阶段任务
+
+5. **Mobile-4DGS: Unified Static-Dynamic Real-time Mobile Gaussian Splatting** - arXiv:2610.05289
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 移动端4DGS, 镜面能量折叠一阶SH, 二阶高斯运动, 可学习时间支撑, 深度顺序证书
+   - 文档: papers/2026-10-07_05_Mobile_4DGS_Unified_Static_Dynamic_Realtime_Mobile_Gaussian_Splatting.md
+   - 亮点: 移动端统一静态+动态实时高斯渲染；免形变网络纯显式4D（二阶运动+时间支撑+二值分区）；MC镜面能量折叠进一阶SH+预烘焙偏移；Depth-Order Certificate复用时间连贯性跳过排序
