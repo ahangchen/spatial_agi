@@ -4487,3 +4487,35 @@
    - 关键词: 移动端4DGS, 镜面能量折叠一阶SH, 二阶高斯运动, 可学习时间支撑, 深度顺序证书
    - 文档: papers/2026-10-07_05_Mobile_4DGS_Unified_Static_Dynamic_Realtime_Mobile_Gaussian_Splatting.md
    - 亮点: 移动端统一静态+动态实时高斯渲染；免形变网络纯显式4D（二阶运动+时间支撑+二值分区）；MC镜面能量折叠进一阶SH+预烘焙偏移；Depth-Order Certificate复用时间连贯性跳过排序
+
+## 2026-10-08 研究的论文（精选5篇）
+
+1. **M3SunAgent: Monocular 3D Spatial Understanding Agent for Metric Depth Estimation and 3D Visual Grounding** - arXiv:2610.07982
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 空间视觉编程, LLM任务规划, 实例级米制深度, 单目3D grounding, DSL程序, 零训练
+   - 文档: papers/2026-10-08_01_M3SunAgent_Monocular_3D_Spatial_Understanding_Agent.md
+   - 亮点: LLM生成DSL程序编排检测/测深/反投影/提升工具链，LLM与VLM全冻结零空间训练；实例深度δ<0.25达52.61%全场最佳，grounding mIoU 41.73%超空间训练的MonoVLM 3.62pp；证明接口正确性可补偿训练缺失
+
+2. **Unfold The World: Factorize 4D Properties in Reinforcing Spatial Reasoning (FactoSR)** - arXiv:2609.03729
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 因子化奖励, XY重投影/Z深度序/T时间可逆, RLVR, GRPO, VLM空间推理, ECCV 2026
+   - 文档: papers/2026-10-08_02_Unfold_The_World_Factorize_4D_Properties_Reinforcing_Spatial_Reasoning.md
+   - 亮点: 把VLM空间瓶颈诊断为2D投影维度塌缩；将4D一致性分解为三个可验证几何子目标用GRPO优化；VSI-Bench +5.9%、All-Angles-Bench +4.5%且保留通用能力；奖励工程>数据工程
+
+3. **StateFlow: Building, Evolving, and Accessing 3D World States for Previsualization** - arXiv:2608.12314
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 显式持久世界状态, 状态构建/演化/访问, 冲突感知双视图初始化, 世界记忆, 渲染反馈反思
+   - 文档: papers/2026-10-08_03_StateFlow_Building_Evolving_Accessing_3D_World_States.md
+   - 亮点: 主张生成式创作的缺失组件是显式持久工作状态而非更强生成器；编辑=结构化状态转移保留世界记忆避免全场景重生成；渲染反馈反思用物理校验替代VLM语义相机规划
+
+4. **SoftNav: Injecting 3D Scene Tokens into VLMs for Embodied Navigation** - arXiv:2607.14586
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 实体级soft token, 表示间隙, 双冻结+17M参数, 1200样本蒸馏, 零样本迁移, IROS 2026
+   - 文档: papers/2026-10-08_04_SoftNav_Injecting_3D_Scene_Tokens_VLMs_Embodied_Navigation.md
+   - 亮点: 受控消融量化证明3D信息文本序列化有显著性能惩罚；PQ3D实体嵌入经MLP注入Qwen2.5-VL隐空间；HM3D-OVON 74.2/68.3/66.7% SR双SOTA，零样本过GOAT-Bench/SG3D并部署真实机器人
+
+5. **DensiTok: Making Feed-Forward 3D Gaussian Splatting See More Views Than It Is Given** - arXiv:2610.07958
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 前馈3DGS, 稀疏视角, token空间证据增密, 单步flow-matching, 即插即用, 冻结骨干
+   - 文档: papers/2026-10-08_05_DensiTok_FeedForward_3DGS_See_More_Views_Than_Given.md
+   - 亮点: 把稀疏视角退化瓶颈定位于重建头之前的证据缺失；潜空间单步flow-matching按相机几何补全未观测视角token；增密证据而非合成像素，3骨干×2基准一致有效
