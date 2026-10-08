@@ -1,5 +1,37 @@
 # Spatial AGI Research Papers - Daily Analysis
 
+## 2026-10-09 研究的论文（精选5篇）
+
+1. **Long-WAM: Scaling the Context of World-Action Models** - arXiv:2610.10528
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World-Action Model, AR视频预训练, 上下文缩放, 异步执行, 边缘部署
+   - 文档: papers/2026-10-09_01_Long-WAM_Scaling_the_Context_of_World-Action_Models.md
+   - 亮点: 证明"拥有历史≠利用历史"——AR预训练解锁长上下文收益（GR-1 63.3%→78.7%）；预测仅到σ★=0.9的隐空间想象；107.4ms/动作块部署到RTX 5090/Jetson；动态堆叠95%（π0.5与Fast-WAM均0/20）
+
+2. **GeoWM: Efficient Direct World Modeling in Explicit Geometry** - arXiv:2610.07381
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 几何世界模型, 显式几何预测, 视界条件化, 流匹配, 无rollout
+   - 文档: papers/2026-10-09_02_GeoWM_Efficient_Direct_World_Modeling_in_Explicit_Geometry.md
+   - 亮点: 直接在显式几何空间（深度+位姿）预测未来，horizon作为输入独立查询无误差累积；几何锚=旧观测重投影到预测视点；206M参数单GPU数小时训练，深度误差-4~58%、推理时间-98%
+
+3. **Never Look Back: Understanding Persistence in 3D Object Memory (Ledger)** - arXiv:2610.10538
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D物体记忆, 自我中心视频, 静置段, 持久化规则, 空间问答
+   - 文档: papers/2026-10-09_03_Never_Look_Back_Persistence_in_3D_Object_Memory_Ledger.md
+   - 亮点: 位置+移动历史+上下文描述的三要素文本记忆，不回放视频回答空间问题；HD-EPIC 29.7%→42.6%、VQ3D 0.99m；k-连续确认抗定位噪声；含未接触物体；多场景构建/检索失效分析
+
+4. **SearchWorld: Spatial Value-Grounded Imagination for UAV Object Search** - arXiv:2610.09335
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: UAV目标搜索, RSSM世界模型, BEV空间价值场, 认知-行动网络, 想象rollout
+   - 文档: papers/2026-10-09_04_SearchWorld_Spatial_Value-Grounded_Imagination_UAV_Object_Search.md
+   - 亮点: 三层BEV记忆（探索/障碍/价值）——"价值空间化"替代标量critic；解码价值场经想象足迹池化引导移动决策；UAV-ON SR 19.5%→23.8%、oracle 35.5%
+
+5. **Metric-Bench: In-context Spatial Metric Reasoning in VLMs（含MetricReasoner）** - arXiv:2609.25841
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 度量推理, VLM基准, 上下文参考锚定, RFT可验证奖励, 2D-3D映射
+   - 文档: papers/2026-10-09_05_Metric-Bench_In-context_Spatial_Metric_Reasoning_VLMs.md
+   - 亮点: 参考度量锚定+绝对数值+无内参的度量推理基准（1340 QA五类空间量）；EP+BP可验证奖励RFT激发VLM内在2D-3D映射；超更大专有模型43.1%且通用能力不降（V* +15.9%、BLINK 88.9%）
+
 ## 2026-09-28 研究的论文（精选5篇）
 
 1. **Representation World Model: Learning States Transition and Executable Plans from First-Person Videos** - arXiv:2609.29171
