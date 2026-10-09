@@ -4551,3 +4551,35 @@
    - 关键词: 前馈3DGS, 稀疏视角, token空间证据增密, 单步flow-matching, 即插即用, 冻结骨干
    - 文档: papers/2026-10-08_05_DensiTok_FeedForward_3DGS_See_More_Views_Than_Given.md
    - 亮点: 把稀疏视角退化瓶颈定位于重建头之前的证据缺失；潜空间单步flow-matching按相机几何补全未观测视角token；增密证据而非合成像素，3骨干×2基准一致有效
+
+## 2026-10-10 研究的论文（精选5篇）
+
+1. **Distilling Routed 3D Privilege for Spatial Reasoning in Vision-Language Models (GPD)** - arXiv:2610.12355
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 几何特权蒸馏, 在策略自蒸馏OPSD, 问题条件化路由, 深度/语义/BEV文本线索, 错误门控GRPO, VLM空间推理
+   - 文档: papers/2026-10-10_01_Distilling_Routed_3D_Privilege_Spatial_Reasoning_VLMs.md
+   - 亮点: 诊断"空间错误起源于感知而非推理，答案特权纠正不了，只有场景真实几何可以"；depth/semantic/BEV按问题路由给OPSD教师做token级蒸馏，仅在错误轨迹施加；部署保持RGB-only，VSI-Bench 57.1超GRPO与answer-privileged OPSD
+
+2. **UNITAS: A 3D-Native World Action Model for Embodied Manipulation** - arXiv:2610.12099
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D原生世界动作模型, action flow/scene flow, 共享度量坐标系, world-aligned位置嵌入, 物理时间轨迹tokenizer, 跨具身
+   - 文档: papers/2026-10-10_02_UNITAS_3D_Native_World_Action_Model_Embodied_Manipulation.md
+   - 亮点: 首个把观测/动作/场景动力学统一进共享度量3D坐标系的WAM；点轨迹作为人手/夹爪/场景的统一物理语言；1.7B参数RoboTwin位移误差比PointWorld低49%，LIBERO 99.8%，真机平均85%
+
+3. **Slot3R: Set-Associative Spatial Memory for Streaming 3D Reconstruction** - arXiv:2610.12282
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 组相联空间记忆, 球面哈希寻址, 位置决定地址/内容决定合并, 置信度感知写入, 640token有界读出, training-free
+   - 文档: papers/2026-10-10_03_Slot3R_Set_Associative_Spatial_Memory_Streaming_3D_Reconstruction.md
+   - 亮点: 诊断Point3R"空间邻近混同状态同一"导致过早信息坍缩；同址K路槽位+特征相似度融合判据；7Scenes Acc误差降57-63%，19FPS跑通1000帧流（竞品800帧OOM）；空间记忆三准则：空间组织、地址/身份分离、存储访问解耦
+
+4. **2DGS-Planner: Rasterization-based Path Planning in 2D Gaussian Splatting Map** - arXiv:2610.11752
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 光栅化查询接口, 多视角归因, 渲染法线离散度, 自适应路图采样, 圆柱净空场缓存, 未观测保守语义
+   - 文档: papers/2026-10-10_04_2DGS_Planner_Rasterization_Path_Planning_2D_Gaussian_Splatting_Map.md
+   - 亮点: "渲染好看≠基元几何对齐"，主张查询alpha合成几何而非把基元当障碍；贡献加权法线离散度免费度量结构复杂度引导采样；未观测=证据不足≠自由空间；GS地图落地机器人规划的查询接口范式
+
+5. **DreamTrue: Action-Faithful Robot World Model with Counterfactual Post-Training** - arXiv:2610.12468
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 动作忠实世界模型, 纯RGB离线标定, SE(3)反事实动作, 具身视频奖励, RL后训练, 跨具身
+   - 文档: papers/2026-10-10_05_DreamTrue_Action_Faithful_Robot_World_Model_Counterfactual_Post_Training.md
+   - 亮点: "抓空但物体照样升起"的成功偏差幻觉——世界模型幻觉是因果错觉而非视觉伪影；三组对应+共面性纯RGB恢复标定(开源153K段)；缺陷标注训奖励+反事实RL后训练，交互缺陷率48.12%→6.25%；AgiBot World Challenge 2026世界模型赛道冠军
