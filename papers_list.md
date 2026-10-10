@@ -1,5 +1,37 @@
 # Spatial AGI Research Papers - Daily Analysis
 
+## 2026-10-11 研究的论文（精选5篇）
+
+1. **PLaW-VLA: Predictive Latent World Modeling for Vision-Language-Action Policies** - arXiv:2610.12285
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, 潜世界模型, V-JEPA 2, 结构化因果注意力, 并行未来预测
+   - 文档: papers/2026-10-11_01_PLaW-VLA_Predictive_Latent_World_Modeling_Vision-Language-Action_Policies.md
+   - 亮点: 在冻结V-JEPA 2潜空间预测任务相关未来并直接条件化动作；三专家MoT+预测分支随机丢弃；RoboTwin Hard +11.8pp、LIBERO 97.4%、推理延迟仅生成式世界-动作模型1/19
+
+2. **Spatial Memory Intelligence (SMI): Understanding-Driven Long-Term Memory for World Models** - arXiv:2610.02521
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 空间记忆管理, MLLM记忆管理员, 空间聚类, 动作感知检索, 可靠性过滤
+   - 文档: papers/2026-10-11_02_Spatial_Memory_Intelligence_Endowing_World_Models_Understanding-Driven_Long-Term_Memory.md
+   - 亮点: 首个用理解模型系统管理世界模型空间记忆的框架；四原子操作（聚类/稀疏化/检索/过滤）；83.68%记忆稀疏化同时提升一致性与稳定性；"善于遗忘"被证明是建设性的
+
+3. **ALONE: A Bayesian Spatial World Model for Navigation under Intermittent Perception** - arXiv:2610.11591
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 贝叶斯空间信念, 间歇感知, 查询空间可靠性, 按需观测, 无人机导航
+   - 文档: papers/2026-10-11_03_Acting_from_Belief_Looking_When_Needed_Bayesian_Spatial_World_Model_Navigation.md
+   - 亮点: 动作传播信念+观测修正信念+可靠性图驱动观测决策；98%/97%成功率下需新观测的决策步仅0.9%/1.3%（观测需求降两个数量级）；真机10/10；查询空间可靠性概念区别于latent熵
+
+4. **RoboJEPA: Scaling Robotic Latent World Models** - arXiv:2610.10515
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: scaling law, JEPA, 多本体世界模型, 想象误差, 零样本规划
+   - 文档: papers/2026-10-11_04_RoboJEPA_Scaling_Robotic_Latent_World_Models.md
+   - 亮点: 首个机器人世界模型scaling law：想象误差二阶幂律L(C)=A·C^(α−γ·lnC)+E可外推；12本体23数据集、8B最大JEPA预测器；想象误差与真机规划成功强相关；能力阈值~10^22 FLOPs
+
+5. **DepthWorld: 3D World Model for Robot Manipulation** - arXiv:2610.08780
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D世界模型, DROID-3D标定, 度量深度, 空间潜平铺, 几何保真
+   - 文档: papers/2026-10-11_05_DepthWorld_3D_World_Model_Robot_Manipulation.md
+   - 亮点: DROID-3D：跨回合联合因子图标定的70k+回合3D语料（<0.7px外参）；空间潜平铺零破坏SVD先验；深度监督反哺RGB +1.48 dB PSNR——几何监督是外观学习的正则项
+
 ## 2026-10-09 研究的论文（精选5篇）
 
 1. **Long-WAM: Scaling the Context of World-Action Models** - arXiv:2610.10528
