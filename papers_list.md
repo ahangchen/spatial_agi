@@ -4615,3 +4615,35 @@
    - 关键词: 动作忠实世界模型, 纯RGB离线标定, SE(3)反事实动作, 具身视频奖励, RL后训练, 跨具身
    - 文档: papers/2026-10-10_05_DreamTrue_Action_Faithful_Robot_World_Model_Counterfactual_Post_Training.md
    - 亮点: "抓空但物体照样升起"的成功偏差幻觉——世界模型幻觉是因果错觉而非视觉伪影；三组对应+共面性纯RGB恢复标定(开源153K段)；缺陷标注训奖励+反事实RL后训练，交互缺陷率48.12%→6.25%；AgiBot World Challenge 2026世界模型赛道冠军
+
+## 2026-10-12 研究的论文（精选5篇）
+
+1. **Cross-Embodiment Robot Foundation World Models with Latent Actions (LAC-WM)** - arXiv:2610.10846
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 跨具身世界模型, 统一潜在动作空间, 逆动力学IDM, 运动解码器, 动作投影器, LoRA微调, Stanford+Meta FAIR
+   - 文档: papers/2026-10-12_01_Cross_Embodiment_Robot_Foundation_World_Models_Latent_Actions.md
+   - 亮点: 证明显式动作标签导致跨具身潜空间割裂且负scaling，统一潜在动作空间正scaling；灵巧操作+46.7%，LIBERO 82.4%→92.0%；UMAP可视化展示"运动解码损失焊接潜空间"；与RoboJEPA互补：统一干预表征+统一状态表征
+
+2. **OuroWorld: Bringing Any 3D World Alive as Diverse, Endlessly Looping 3D Cinemagraphs** - arXiv:2610.12461
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D cinemagraph, 傅里叶周期形变场, looping by construction, Grounded Drift Field, mask-free, VLM动态导演, 4DGS
+   - 文档: papers/2026-10-12_02_OuroWorld_Any_3DGS_Scene_Endlessly_Looping_3D_Cinemagraphs.md
+   - 亮点: 五项能力全满足唯一方法(mask-free/true3D/数学循环/多样运动/光照)；循环由傅里叶参数化构造保证而非损失惩罚；锚定参考视角的drift field吸收生成不一致且推理时丢弃；39场景用户研究胜率70.8-99.0%；"结构不变量优先于软约束"的设计律
+
+3. **LeWAM: A JEPA World Action Model with Diffusion-Steering-Based MPC** - arXiv:2610.12407
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: JEPA世界动作模型, 四模式掩码训练, rectified flow策略头, 扩散引导MPC, 噪声空间搜索, 典型集投影, SIGReg
+   - 文档: papers/2026-10-12_03_LeWAM_JEPA_World_Action_Model_Diffusion_Steering_MPC.md
+   - 亮点: 无重建统一WAM：前向/后向/逆动力学/策略四模式共享384维JEPA潜空间；DS-MPC把决策变量从动作空间移到策略噪声空间+球面投影，机制性杜绝"优化幻觉未来"；潜空间probe对齐更好且抗视觉干扰；"搜索必须以生成先验为边界"
+
+4. **SpaceCast-Bench: Evaluating Predictive Spatial Reasoning in Vision-Language Models** - arXiv:2610.12402
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 预测性空间推理, observe-transform-infer, 空间状态更新, attachment图, 桥接视角, 空间基准, 几何接地管线
+   - 文档: papers/2026-10-12_04_SpaceCast-Bench_Evaluating_Predictive_Spatial_Reasoning_VLMs.md
+   - 亮点: 首个直接评测"未观测变换后果推断"的基准(3862题/182场景/16任务/3层级)；最佳模型58.0% vs 人类87.2%，空间特化模型近随机(迁移失败)；CoT无益、桥接视角关键、显式3D证据>生成结果图像；SFT数据引擎域内+31.7且6个域外基准一致提升
+
+5. **World Motion Models: Flexible Sequence Modeling of SE(3) Trajectories** - arXiv:2610.01742
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: SE(3)轨迹token, any-to-any条件化, 逐token噪声水平flow-matching, 上下文token, 跨具身重定向, 低秩运动假设, Berkeley+Harvard
+   - 文档: papers/2026-10-12_05_World_Motion_Models_Flexible_Sequence_Modeling_SE3_Trajectories.md
+   - 亮点: "any-to-any边缘条件化=世界模型的操作型定义"；SE(3)轨迹作为4D世界统一语言(人体/手物/场景流/相机/机器人动作同语)；单网络掩码切换=策略/动力学/填充/重定向；9维三点pose参数化折叠旋转进欧氏空间；6应用全SOTA
