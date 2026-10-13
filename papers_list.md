@@ -4647,3 +4647,35 @@
    - 关键词: SE(3)轨迹token, any-to-any条件化, 逐token噪声水平flow-matching, 上下文token, 跨具身重定向, 低秩运动假设, Berkeley+Harvard
    - 文档: papers/2026-10-12_05_World_Motion_Models_Flexible_Sequence_Modeling_SE3_Trajectories.md
    - 亮点: "any-to-any边缘条件化=世界模型的操作型定义"；SE(3)轨迹作为4D世界统一语言(人体/手物/场景流/相机/机器人动作同语)；单网络掩码切换=策略/动力学/填充/重定向；9维三点pose参数化折叠旋转进欧氏空间；6应用全SOTA
+
+## 2026-10-14 研究的论文（精选5篇）
+
+1. **SpatialASM: Internalizing Active Mentalization for Spatial Reasoning** - arXiv:2610.13832
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 主动空间心理化, 视角规划, 视角想象, allocentric新颖视角生成, GeoP几何扰动过滤, 脚手架替换, GRPO, 上海AI Lab
+   - 文档: papers/2026-10-14_01_SpatialASM_Internalizing_Active_Mentalization_for_Spatial_Reasoning.md
+   - 亮点: 把"何时看哪里+那里有什么"形式化为ASM能力并用训练时NVG蒸馏进LVLM；渲染视图替换为文本caption实现"训练靠渲染、推理零渲染"；Spatial457-6d +8.7、MindCube +5.2，通用VQA回退<0.6；"空间想象可在语言token空间表达"
+
+2. **LAPT-Scale: Scaling Embodied Policies with Latent Action Pre-Training on Human Videos** - arXiv:2610.13732
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 连续潜在动作模型, 人类视频预训练, 感知/语义/光流三重对齐, DINOv2+RAFT, 三阶段VLA训练, flow-matching动作专家, JD Joy
+   - 文档: papers/2026-10-14_02_LAPT-Scale_Scaling_Embodied_Policies_Latent_Action_Pre_Training_Human_Videos.md
+   - 亮点: 23.3K小时egocentric视频→连续潜在动作（d=32）；人视频1K→5K小时真机成功率63.3%→85.0%的scaling证据；统一动作专家跨潜在/机器人动作空间三阶段连续训练；"观察学习路线存在可预期scaling law"
+
+3. **M3SunAgent: Monocular 3D Spatial Understanding Agent** - arXiv:2610.07982
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 单目3D空间理解, 空间视觉编程, LLM任务规划器, 实例级度量深度, 3D视觉定位, 焦距归一化, M3SI基准, HUST+A*STAR
+   - 文档: papers/2026-10-14_03_M3SunAgent_Monocular_3D_Spatial_Understanding_Agent_Metric_Depth_3D_Visual_Grounding.md
+   - 亮点: DSL程序统一实例级度量深度与单目3D grounding；多点采样+离群过滤聚合实例深度（δ<0.25达52.61%）；3D mIoU 41.73%超MonoVLM 3.62%且规划器零训练；空间agent路线与端到端VLM的正面对照
+
+4. **SimVTA: Simulation-Grounded Video-Trajectory Alignment for Driving World Action Models** - arXiv:2610.13781
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 驾驶世界动作模型, 后训练监督缺口, 3DGS真实场景渲染, World Engine, 轨迹GRPO, 奖励+误差两阶段目标选择, 在线渲染, OpenDriveLab
+   - 文档: papers/2026-10-14_04_SimVTA_Simulation_Grounded_Video_Trajectory_Alignment_Driving_World_Action_Models.md
+   - 亮点: 用3DGS渲染为RL候选轨迹提供轨迹匹配未来视频，填补WAM后训练监督缺口；NAVSIM v1 PDMS +5.1（86.2→91.3）、v2 EPDMS 88.2、HUGSIM闭环HD-Score 38.8；高奖励+高误差目标选择+在线渲染保持轨迹-视频对应
+
+5. **Rendering-Free Lookahead for Question-Guided Active Vision** - arXiv:2610.11039
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 主动视觉, answerability动作价值, 特权前瞻教师, 3DGS渲染目标, 两阶段价值蒸馏, LoRA, 零渲染部署, sim-to-real, 东京大学
+   - 文档: papers/2026-10-14_05_Rendering_Free_Lookahead_Question_Guided_Active_Vision.md
+   - 亮点: 用VLM可回答性对候选相机运动打分并蒸馏成动作价值策略；候选级价值蒸馏显著优于动作克隆（3.05 vs 2.47）且超GPT-5.1（2.81）；一步变体匹配特权渲染oracle（2.98）；迁移到真实6-DoF机械臂且部署零渲染
