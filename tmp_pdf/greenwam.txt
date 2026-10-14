@@ -1,0 +1,2572 @@
+GreenWAM: A World
+Foundation Model for Robotics
+Gennady Sidorov, Valerii Kornilov, Denis Grankin, Polina Fedotova, Aleksey Postnikov
+Brain Team, Sber Robotics Center
+A robot needs a world model that predicts how its actions will change the scene and a policy that chooses
+those actions. Models are usually built and evaluated for only one of these roles, and every robot records its
+actions in its own format. We ask whether one robot world model can serve both roles across different bodies,
+and what makes this work. We present GreenW AM, a world foundation model for robotics, together with the
+recipe that produces it: (1) a shared anatomical action space that describes 20 robot families, from bimanual
+arms to dexterous humanoids, in common joint coordinates; (2) joint training on these families in visual,
+action-conditioned and world–action modes; and (3) policies that split an action expert off the generator.
+As a world model, GreenW AMattains top-tier trajectory, depth and 3D accuracy on WorldArena 1.0, ahead
+of every world–action model and video generator in our comparison. As a policy, it scores among the top
+entries of the RoboTwin 2.0 leaderboard, reaches the highest zero-shot LIBERO-plus success among the
+compared methods and is competitive with dedicated vision–language–action and world–action policies on
+CAL VIN and LIBERO. We further adapt GreenW AM to a real humanoid, where it succeeds more often
+than policies adapted from 𝜋0.5 and from Cosmos 3 Edge, and distill it into a single-step policy for real-time
+control. Controlled experiments yield three findings: robot specialization improves world prediction and
+control together; an action expert helps when split off at the start of adaptation; and keeping world-model
+modes during policy adaptation preserves robustness to scene changes.
+Project page ⋅ Code ⋅ Weights ⋅ October 2026
+1 Introduction
+World foundation models learn how scenes evolve from large-scale video, and world–action models reuse this
+knowledge to predict observations and actions jointly [ 58, 92]. For a robot, the two uses are linked: the
+model must predict how the scene changes when the robot moves, and it must produce that motion itself.
+Both uses therefore depend on how the model represents the robot body. Yet models are usually built and
+evaluated for one of these roles: world models are judged by their predictions, world–action models by the
+success of the resulting policy.
+Robot data are fragmented across bodies and recording conventions. Joint layouts, grippers and dexterous
+hands, camera sets, frame rates and task boundaries differ between datasets, and the same tensor dimension
+can mean different motions on different robots. Current models describe a robot through an action projection
+for each embodiment domain, through end-effector poses with gripper or hand states, or through joint vectors
+padded to a common length [ 58, 2]. In each case the correspondence between the arms, torso, legs and fingers
+of different bodies remains implicit or absent. We ask whether one robot world model can serve both as a
+world model and as a policy across different bodies, and what makes this work.
+We present GreenW AM, a world foundation model for robotics built on Cosmos 3 Edge [ 58], together
+with the recipe that produces it (Figure 1). Cosmos 3 Edge learned robot actions only coarsely: from
+six embodiments dominated by a single dataset, as end-effector pose deltas and a gripper opening, with a
+separate projection for each embodiment domain (Figure 2). The recipe replaces this in three steps. First, a
+shared anatomical action space describes the bodies of 20 robot families, from bimanual arms to humanoids
+with dexterous hands, in common joint coordinates: a codec for each robot layout maps its joints onto
+shared slots for the legs, torso, arms and finger joints, so that one slot means the same joint motion on every
+robot (Section 3.2). Second, one model is trained jointly on these families in visual, action-conditioned and
+© 2026 Sber Robotics Center.
+arXiv:2610.18774v1  [cs.RO]  13 Oct 2026
+(a) Robot experience 20 families
+Green
+/g47/g48/g5B/g57/g48/g55/g52/g58/g56
+/g4B/g44/g51/g47/g56
+Unitree G1
+/g47/g48/g5B/g57/g48/g55/g52/g58/g56
+/g4B/g44/g51/g47/g56
+AgiBot G2A
+/g4A/g55/g4C/g53/g53/g48/g55/g56
+Worker
+/g4A/g55/g4C/g53/g53/g48/g55/g56
+and others…
+/g59/g4C/g47/g48/g52/g4D/g52/g4C/g51/g57/g3/g56/g57/g44/g57/g48/g56/g57/g48/g5B/g57
+1.67K h/g3/g44/g49/g57/g48/g55/g3/g54/g58/g44/g4F/g4C/g57/g5C/g3/gEC/g4F/g57/g48/g55/g4C/g51/g4A
+(b) Training examples
+subtask clips
+/g14/g11/g17/g16/g3/g30/g3/g4E/g48/g53/g57
+captions
+/g4C/g51/g56/g57/g55/g58/g46/g57/g4C/g52/g51/g56
+views, states
+/g57/g4C/g50/g48/g10/g44/g4F/g4C/g4A/g51/g48/g47
+/g52/g51/g48/g3/g48/g5B/g44/g50/g53/g4F/g48/g3/g20
+/g46/g4F/g4C/g53/g3/gE/g56/g57/g44/g57/g48/g56/g3/gE/g57/g48/g5B/g57
+(c) Shared anatomical interface
+native joint → anatomical role → shared slot
+/g2A/g55/g48/g48/g51right_elbow_pitch_joint
+/g38/g51/g4C/g57/g55/g48/g48/g3/g2A/g14right_elbow_joint
+/g24/g4A/g4C/g25/g52/g57/g3/g2A/g15/g24right_arm_joint_4
+/g3A/g52/g55/g4E/g48/g55manipulator_2_joint_2_position
+→/g3/g55/g52/g4F/g48right elbow → slot 47
+/g50/g44/g56/g4E/g48/g47legs body arms hands
+/g2A/g55/g48/g48/g51
+/g38/g51/g4C/g57/g55/g48/g48/g3/g2A/g14
+/g24/g4A/g4C/g25/g52/g57/g3/g2A/g15/g24
+/g3A/g52/g55/g4E/g48/g55
+/g56/g44/g50/g48/g3/g46/g52/g4F/g52/g55/g3/g20/g3/g56/g44/g50/g48/g3/g45/g52/g47/g5C/g3/g53/g44/g55/g57/g3/g52/g51/g3/g48/g59/g48/g55/g5C/g3/g55/g52/g45/g52/g57
+(d) Robotics stage
+/g4C/g51/g4C/g57/g4C/g44/g4F/g4C/g5D/g44/g57/g4C/g52/g51
+Cosmos 3 Edge 4Brobot examples
+joint video–action model
+/g57/g48/g5B/g57
+/g59/g4C/g47/g48/g52/g3/g4F/g44/g57/g48/g51/g57/g56
+/g1A/g1C/g10/g56/g4F/g52/g57/g3/g56/g57/g44/g57/g48/g56
+shared transformer layers
+/g44/g57/g57/g48/g51/g57/g4C/g52/g51/g3/g44/g46/g55/g52/g56/g56/g3/g57/g48/g5B/g57/gF/g3/g59/g4C/g47/g48/g52/g3/g44/g51/g47/g3/g56/g57/g44/g57/g48/g56
+training tasks /g57/g48/g5B/g57/g59/g4C/g47/g48/g52/g56/g57/g44/g57/g48/g56
+/g57/g48/g5B/g57/g3→/g3/g59/g4C/g47/g48/g52 /gCC
+/g4C/g50/g44/g4A/g48/g3→/g3/g59/g4C/g47/g48/g52 /gCC
+/g4C/g50/g44/g4A/g48/g3→/g3/g59/g4C/g47/g48/g52/g3/gB/gE/g3/g4B/g4C/g56/g57/g52/g55/g5C/gC/gCC
+/g49/g52/g55/g5A/g44/g55/g47/g3/g47/g5C/g51/g44/g50/g4C/g46/g56
+/g49/g52/g55/g5A/g44/g55/g47/g3/g47/g5C/g51/g44/g50/g4C/g46/g56/g3/gB/gE/g3/g4B/g4C/g56/g57/g52/g55/g5C/gC
+/g4C/g51/g59/g48/g55/g56/g48/g3/g47/g5C/g51/g44/g50/g4C/g46/g56
+/g5A/g52/g55/g4F/g47/gCB/g44/g46/g57/g4C/g52/g51/g3/gB/g3A/g24/g30/gC
+(e) World prediction
++ commanded actions q0 Δq1 Δq2 ··· ΔqN
+/g4A/g4C/g59/g48/g51 /g53/g55/g48/g47/g4C/g46/g57/g48/g47
+Unitree G1
+AgiBot G2A
+(f) Policy
+/g57/g44/g56/g4E
+generator action expert
+/g44/g57/g57/g48/g51/g57/g4C/g52/g51/g3/g56/g4B/g44/g55/g48/g47/g3/g4C/g51/g3/g48/g59/g48/g55/g5C/g3/g4F/g44/g5C/g48/g55
+/g44/g46/g57/g4C/g52/g51
+/g46/g4B/g58/g51/g4E
+post-training /g47/g4C/g56/g57/g4C/g4F/g4F/g44/g57/g4C/g52/g51/g55/g48/g44/g4F/g10/g57/g4C/g50/g48/g3/g48/g5B/g48/g46/g58/g57/g4C/g52/g51
+(g) Benchmark results
+Policy World prediction
+GreenWAM /g25/g48/g56/g57/g3/g55/g48/g49/g48/g55/g48/g51/g46/g48/g3/g53/g48/g55/g3/g44/g5B/g4C/g56
+π0.5/gF/g3/g3B/g10/g39/g2F/g24/gF/g3/g29/g44/g56/g57/g3A/g24/g30
+GreenWAM /g25/g48/g56/g57/g3/g55/g48/g49/g48/g55/g48/g51/g46/g48/g3/g53/g48/g55/g3/g44/g5B/g4C/g56
+/g30/g52/g57/g58/g45/g55/g44/g4C/g51/gF/g3/g29/g4F/g52/g5A/g3A/g24/g30/g10/g29/g4C/g59/g48/g24/g4A/g48/g56/gF/g3/g38/g31/g2C/g36
+CALVIN ABC→D
+4.64
+/g17/g11/g17/g16
+LIBERO
+97.4
+/g1C/g1B/g11/g14
+LIBERO-plus
+86.8
+/g1B/g18/g11/g1A
+RoboTwin rand.
+48.1
+/g17/g19/g11/g13
+RoboTwin clean
+87.0
+/g1A/g1A/g11/g1B
+RoboDojo
+16.12
+/g14/g14/g11/g17/g17
+Content consistency
+65.64
+/g18/g1C/g11/g18/g14
+3D accuracy
+93.40
+/g1C/g15/g11/g13/g18
+Physics adherence
+62.21
+/g19/g17/g11/g18/g1C
+Depth accuracy
+98.16
+/g1B/g1B/g11/g19/g18
+JEPA similarity
+98.41
+/g1C/g19/g11/g1B/g1B
+Trajectory accuracy
+55.97
+/g17/g17/g11/g17/g15
+Green
+WAM
+/g4A/g4C/g59/g48/g51/g53/g55/g48/g47/g4C/g46/g57/g48/g47
+Figure 1 From robot experience to prediction and control. (a–b) Video, measured states and text from 20 robot
+families form aligned subtask examples. (c–d) A shared 79-slot anatomical action space connects robot motion to a joint
+video–action model built on Cosmos 3 Edge. (e) Forward prediction of GreenW AMfor Unitree G1 and AgiBot G2A
+on held-out recordings (Section 5.1). (f) As a policy, the foundation adds a coupled action expert and is distilled for
+humanoid control. (g) GreenW AMagainst the best of three references on every axis (grey dashed outline). Left: policy,
+against 𝜋0.5 [62], X-VLA [103] and FastW AM [95]; the 𝜋0.5 CAL VIN value is the supervised fine-tuned checkpoint reported
+by 𝜋RL [17], RoboDojo scores come from the oﬀicial leaderboard [ 67]. Right: WorldArena 1.0 against Motubrain [ 56],
+FlowW AM-FiveAges [21] and UNIS [ 46]: three categories of the motion-capped score (Section 5.2; for the other models
+an upper bound) and three fidelity metrics. Every axis starts where its bar chart in Figures 9 and 11 starts, but not
+below half of its best value, and ends at the best value on that axis.
+world–action modes, on recordings prepared as whole subtasks with instructions (Sections 3.3 and 4). Third,
+policies split an action expert off the generator (Section 6.1).
+Both roles are obtained from this one foundation, through one action interface. A single model predicts
+video on held-out recordings of six robot families, with no robot-specific generator or action projection
+(Section 5.1), and a single-arm Franka, absent from the robotics corpus, is controlled through the same shared
+interface on CAL VIN and LIBERO. As a world model, GreenW AMattains top-tier trajectory, depth and
+3D accuracy on WorldArena 1.0, ahead of every world–action model and video generator in our comparison,
+including Motubrain [ 56] and FlowW AM-FiveAges [ 21] (Section 5.2). As a policy, it scores among the
+top entries of the RoboTwin 2.0 leaderboard, reaches the highest zero-shot LIBERO-plus success among
+the compared methods and is competitive on CAL VIN and LIBERO (Section 6). On a real humanoid,
+it completes 95.6% of in-distribution instructions, against 88.9% for a policy adapted from its parent and
+84.4% for 𝜋0.5, and a distilled single-step student answers 12.3 times faster than the unoptimized policy
+(Sections 6.4 and 6.5).
+Controlled comparisons (Section 7) identify what makes this work. First, robot specialization improves
+world prediction and control together (Section 7.1). Adapted from GreenW AMrather than from its action-
+trained parent, the world model raises trajectory accuracy on WorldArena by 3.0 points and lowers its video
+prediction error by 23%. The policy predicts held-out RoboTwin frames more accurately and succeeds 5.4%
+more often, or 8.4% with the action expert. Second, splitting an action expert off the generator at the start
+2
+of adaptation raises policy success by 3.3% (Section 7.2). Third, keeping world-model modes during policy
+adaptation raises success in randomized scenes by 8.0% (Section 7.3).
+Contributions. We make four contributions.
+• Recipe. A shared anatomical action space and a data pipeline that adapt an action-trained world foun-
+dation model to 20 robot families (Sections 3 and 4).
+• One model, two roles. Joint training in seven visual, action-conditioned and world–action modes yields a
+world model and, through an action expert split off the generator, a policy (Sections 3.3, 4.3, 6.1 and 6.2).
+• What it brings and why. Results in both roles on WorldArena 1.0, RoboTwin 2.0, CAL VIN, RoboDojo,
+LIBERO and LIBERO-plus, and controlled comparisons showing that robot specialization benefits both
+roles (Sections 5 to 7).
+• Real robot. Adaptation to a real humanoid and distillation into a single-step policy for real-time control
+(Sections 6.4 and 6.5).
+2 Related Work
+GreenW AMbuilds on four lines of work: robotics specialization of world foundation models, action repre-
+sentations shared across robot bodies, policies derived from video generators, and temporal context for long
+rollouts and simulation. Table 1 compares the closest technical reports by the capabilities of their models.
+Table 1 Closest technical reports by the capabilities of the model they present. A mark means the report presents the
+model in that role; it does not rank quality. Actions→video: generation conditioned on robot actions (forward dynamics,
+action-conditioned simulation); Video→actions: inverse dynamics; Policy: joint prediction of video and actions used for
+control; Long rollout : autoregressive continuation with memory of past blocks; Real robot: experiments on a physical
+robot, for GreenW AMon the Green humanoid (Section 6.5).
+Report Group Video gen. Actions →video Video →actions Policy Long rollout Real robot
+Cosmos 3 [ 58] NVIDIA 3 3 3 3 3
+DreamZero [ 92] NVIDIA 3 3 3 3
+DreamDojo [ 25] NVIDIA 3 3 3 3
+DreamGen [ 34] NVIDIA 3 3 3
+GigaWorld-0, GigaWorld-1, GigaWorld-Policy-0.5 [ 27, 28, 29] GigaAI 3 3 3 3 3 3
+Motubrain, Motus2 [ 56, 8] ShengShu 3 3 3 3 3 3
+GE-Act 2.0, GE-Sim 2.0 [ 2, 63] AgiBot 3 3 3 3 3 3
+LingBot-V A, 2.0 [42, 97] Robbyant 3 3 3 3 3 3
+ABot-PhysWorld [20] AMAP 3 3
+W ALL-WM, W ALL-SS [44, 96] X Square 3 3 3 3 3
+Xiaomi-Robotics-U0 [ 46] Xiaomi 3 3 3
+1X World Model [ 1] 1X 3 3 3
+GreenW AM Sber Robotics 3 3 3 3 3 3
+Robotics specialization of world foundations. Cosmos 3 already combines visual generation, forward
+and inverse dynamics, and world–action modeling in a reasoner–generator architecture [ 58]. Its robot data,
+however, cover six embodiments, with 81% of the hours from one dataset, and represent actions as end-
+effector pose deltas with a gripper opening. GreenW AM retrains this foundation on measured joint and
+Cartesian trajectories of 20 robot families, aligned with subtask video and text. Genie Envisioner likewise
+connects a shared world foundation to prediction, control and simulation applications [ 47]. Alternative
+data routes include human video with latent proxy actions in DreamDojo and generated robot experience in
+GigaWorld-0 [25, 27]. Earlier work established action-conditioned video prediction as an interactive simulator
+learned from diverse datasets [ 89], and V-JEPA 2 post-trains a latent action-conditioned world model for
+robot planning [ 6].
+Correspondences across robot bodies. Cross-embodiment policies face the same correspondence problem.
+Open X-Embodiment pools demonstrations of 22 robots [ 60]; Octo is fine-tuned to new sensors and action
+spaces [ 59], and CrossFormer controls robots for manipulation, navigation, locomotion and aviation without
+manually aligning their observation or action spaces [ 22]. HPT maps the proprioception and vision of each
+embodiment to tokens processed by a shared trunk [ 80], X-VLA adds embodiment-specific soft prompts [ 103],
+UniAct learns a universal space of atomic actions [ 102], and RDT-1B defines a unified action space whose
+coordinates keep their physical meaning [ 49]. Green-VLA uses a unified, embodiment-aware action interface
+with which a single policy controls humanoids, mobile manipulators and fixed-base arms, and then adapts
+this policy to the Green humanoid [ 5]. Among world models, Cosmos 3 represents camera and end-effector
+motion together with gripper or fingertip state, using an input and output projection for each embodiment
+3
+domain [ 58]. GE-Sim 2.0 represents actions as action maps: the end-effector pose of each arm is projected
+into every camera image with calibrated intrinsics and extrinsics, drawn as a marker whose shading gives the
+gripper opening, and concatenated with the video latents [ 63]. Such maps are natural for a video generator
+and simple to build, and they suit robots whose cameras are calibrated in every frame. For humanoids with
+moving head and wrist cameras they require exact calibration of every view, and they cannot express finger
+joints. GreenW AM instead passes the measured joint and Cartesian states through one unified projector
+(Section 3.2) and still follows the commanded actions closely (Sections 5.1 and 5.2). GreenW AMuses explicit
+slots and masks: its 79 anatomical slots cover legs, base, torso, head, arm joints and finger joints.
+Robot data, share of hours by source
+Cosmos 3 · 6 embodiments
+largest single share 81%
+GreenWAM · 20 robot families
+largest single share 15%
+Action types
+Cosmos 3
+abs. Δ
+GreenWAM
+abs. Δ
+joint
+Cartesian
+hands gripper open/close finger joints
+Figure 2 Robot data and action types of Cos-
+mos 3 [ 58] and GreenW AM: shares of robot
+hours (top; AgiBot World supplies 81% of
+the robot hours of Cosmos 3, the largest
+GreenW AM family 15% of ours) and action
+representations (bottom).
+From world prediction to policy. Early approaches generate
+a plan as video and extract the actions from it [ 23], or pretrain
+on video and fine-tune for both video and action prediction [ 16].
+UV A learns a joint video–action latent with decoupled decoding
+heads [ 43], and UWM couples video and action diffusion so that
+one model acts as a policy, forward dynamics, inverse dynam-
+ics or video generator depending on the noise levels of the two
+streams [ 104]; the modes of GreenW AM follow the same idea
+across many robot bodies. Video-model priors support control
+through several prediction interfaces: joint video–action genera-
+tion in DreamZero, causal prediction and asynchronous execution
+in LingBot-V A, and visual planning followed by inverse dynamics
+in GE-Act 2.0 [ 92, 42, 2]. As a policy, GreenW AMretains joint
+video–action prediction and specializes the action stream through
+a dedicated expert.
+Policies built on video models also differ in whether actions
+share the video backbone or receive an expert of their own, and in
+how that expert is initialized. Motus pretrains an action expert
+with latent actions, and ME-Dex inherits its video and action
+experts [ 7, 99]. GreenW AMcopies its generator into an action
+expert at the split, preserving the parent function before further optimization. Section 7.2 compares this
+split with a shared tower from the same start.
+Temporal context and simulation. W ALL-WM aligns captions, video and actions at the level of semantic
+events [ 44], related to the complete-subtask atoms used in our data pipeline. Genie Envisioner and GE-
+Sim 2.0 use sparse history for long rollouts, with GE-Sim 2.0 perturbing history during training to account
+for generated-context errors [ 47, 63]. DreamZero updates its cached predictions with real observations during
+closed-loop execution [ 92]. GreenW AMtakes four anchors at fixed positions of the history, each encoded
+separately, and trains continuation with recorded history; Figure 10 shows its rollouts of more than 20 s on
+WorldArena.
+World simulators also support uses beyond video prediction. GigaWorld-1 studies agreement between
+generated rollouts and real policy executions [ 28]; GE-Sim 2.0 predicts proprioception and evaluates task
+completion in simulated rollouts [ 63]. W ALL-SS addresses long action-conditioned simulation with bounded
+memory and alignment against drift [ 96], and the 1X World Model supports policy and checkpoint selec-
+tion [ 1].
+3 GreenWAM
+GreenW AMmaps the states of different robots into shared anatomical coordinates and trains one generator
+to predict video, robot motion or both; a policy is obtained by splitting an action expert off this genera-
+tor (Section 6.1). Layout-specific codecs absorb the differences between native robot interfaces; Section 4
+describes the data and the training.
+4
+3.1 Model Overview
+We initialize GreenW AMfrom the released Cosmos 3 Edge 4B checkpoint [ 58]. Its mixture-of-transformers
+backbone (Figure 3) couples a reasoner and a generator, with a causal video V AE and rectified-flow train-
+ing [ 50]. Its robot actions, however, come from six embodiments and are represented as end-effector pose
+deltas with a gripper opening (Figure 2); the robotics stage retrains the action modes on measured joint and
+Cartesian states of 20 robot families, with the joints in a shared anatomical action space.
+During the robotics stage the reasoner and the V AE stay frozen. The generator, the shared action
+projections and the action-modality embeddings are trained. All modes retain the Cosmos 3 JSON prompt
+format (Section 4.2).
+Instruction Canvas video Robot state
+“… Press the control knob
+on the front of the black
+stove with the right dex-
+terous hand to turn it on …”
+task instruction
+t
+ground-truth frames
+legs body arms hands
+native joint state at t = 0
+Language tokenizer Video VAE
+frozen
+Shared input projection
+trained
+l1 l2 l3 ··· v0 v ̃1 v ̃2 ··· v ̃N q0 Δq1 Δq2 ··· ΔqN
+Reasoner tokens Generator tokens · WAM Action-expert tokens
+Reasoner · frozen Generator · trained Action expert
+Layer norm Layer norm Layer norm
+Shared multimodal attention
+reasoner: causal · video and action rows: full attention over all tokens
+Layer norm Layer norm Layer norm
+MLP MLP MLP
+×L
+v ̂1 v ̂2 v ̂3 ··· v ̂N Δq ̂1 Δq ̂2 Δq ̂3 ··· Δq ̂N
+Video VAE decoder
+frozen
+State output projection
+trained
+t
+predicted frames
+q ̂k = q0 + Δq ̂k
+legs body arms hands
+predicted joint states, k = 1 … N
+Tokens
+language
+video
+video · noised target
+state
+state · noised target
+Figure 3 GreenWAM architecture, shown for the world–action (WAM) mode on one held-out Green humanoid
+episode. The task instruction, the multi-camera canvas and the robot’s native joint state at 𝑡 = 0 enter a frozen
+reasoner, a trained generator for the video tokens and, in the adapted policy, an action expert for the state and action
+tokens, all sharing multimodal attention (the Cosmos 3 Edge mixture of transformers); the layout’s codec maps the
+native joints to the 79 anatomical slots before the shared input projection (Figure 4). In GreenW AM the state and
+action tokens pass through the generator; the action expert is split off it for policy adaptation (Section 6.1). Filled
+tokens are clean conditions and dashed tokens are noised targets; which streams are conditions changes with the mode
+(Figure 29). Predicted state targets are decoded relative to 𝑞0 (Equation ( 2)) and mapped back to native joint states.
+Video: ground truth (top) and the GreenW AMprediction (bottom). Frozen and trained refer to the robotics stage.
+5
+3.2 Shared Anatomical Action Space
+Robot datasets disagree on state layout, joint order, units, sign and zero conventions. Embodiment-specific
+projectors accommodate these formats but leave the correspondence between their input coordinates implicit.
+GreenW AMestablishes that correspondence before projection: layout-specific codecs map native channels to
+79 anatomical coordinates, which then pass through one shared input and output projector (Figure 4). Thus
+the left elbow occupies the same slot on every platform, while platform-specific conventions are handled by
+the codec. All 20 families therefore share one action projector, and no robot has action parameters of its own.
+This is a stricter design than one projection per embodiment domain, as in Cosmos 3 Edge, or end-effector
+poses rendered into the camera images, as in GE-Sim 2.0 [ 63]. The vocabulary has four blocks:
+• Legs (12).
+• Body (23): base pose (7), base twist (6), torso (7) and head (3). Pose and twist are separate quantities.
+• Arms (18).
+• Hands (26): one open–closed coordinate per parallel gripper and per-finger coordinates for dexterous
+hands, with auxiliary slots for a second gripper finger, encoders and finger abduction.
+Layout-specific codecs select, reorder and normalize native channels into anatomical slots. Validity masks
+exclude missing or unresolved coordinates from the loss. Correspondences are established from documented
+channels, robot kinematics and measured trajectories; Section A.3 gives the details. New post-training
+layouts use these same slots and shared projectors. For a layout ℓ with native state 𝑥, the codec assigns slot
+𝑗 either a native channel 𝜋ℓ(𝑗) with a sign 𝜌ℓ𝑗 ∈ {−1, 1} and a zero offset 𝑜ℓ𝑗, or nothing:
+𝑞𝑗 = {𝜌ℓ𝑗(𝑥𝜋ℓ(𝑗) − 𝑜ℓ𝑗), 𝑚 ℓ𝑗 = 1,
+0, 𝑚ℓ𝑗 = 0, ̄ 𝑞𝑗 = 𝑞𝑗 − 𝜇ℓ𝑗
+𝑠ℓ𝑗
+, (1)
+where 𝑚ℓ𝑗 is the validity mask and 𝜇ℓ𝑗, 𝑠ℓ𝑗 are statistics of the layout’s training data. Masked slots are
+excluded from the loss, so a coordinate that a robot does not have never receives a target.
+Encodings by mode. Joint states and Cartesian end-effector (EEF) poses are two views of the robot
+state; absolute and relative values are two encodings. Inverse dynamics predicts the absolute trajectory 𝑞0∶𝑇 ,
+including the initial state, from video alone. Forward dynamics, forward dynamics with history and W AM
+express a subset of coordinates relative to the state at the block boundary:
+𝛿𝑘 = 𝑞 𝑘 − 𝑑ℓ ⊙ 𝑞0, ̂ 𝑞 𝑘 = ̂𝛿𝑘 + 𝑑ℓ ⊙ 𝑞0, (2)
+where 𝑞0 is the state at the block boundary, 𝑞𝑘 the state at the 𝑘-th target time and 𝑑ℓ a binary mask of
+the layout. By default leg, torso, head and arm joints are relative, while grippers, hands and fingers stay
+absolute; a layout can declare its whole state relative, as the Green humanoid does. The relative values
+are neither velocities nor accumulated increments, and 𝑑ℓ is separate from the validity mask 𝑚ℓ, which only
+removes unavailable coordinates from the loss. Where a source also records a reliable end-effector pose, the
+joint or EEF view is chosen with equal probability after the window is sampled, so a window never gains
+sampling mass from having two views. EEF poses occupy separate slots with their own frames; their codec
+composes poses in SE(3), so the additive rule above applies to joint coordinates only. The projector performs
+no forward or inverse kinematics.
+Families overlap mostly in the arm block, while legs, torso, head and fingers are present only for part of
+the corpus (Figure 4). Every robot that has a joint contributes to training its slot, and an absent finger or
+leg joint never becomes a zero target that the model would have to learn as motion.
+3.3 Joint Video–Action Modeling
+A robot clip with its states can answer more than one question: what the scene will look like, what the
+robot will see if it follows a given trajectory, which trajectory produced the observed video, and what to do
+next. Instead of training a separate model for each question, we train one set of generator weights on seven
+modes (Table 2). A mode is defined by which streams are clean conditions and which are noised targets.
+For a mode 𝑚, let 𝑐𝑚 be the clean conditions and 𝒮𝑚 the generated streams, such as video latents 𝑧 or
+anatomical states 𝑞. All generated streams of an example share one noise level 𝜎 ∈ [0, 1] . A clean target 𝑥0
+with Gaussian noise 𝜖 is noised along the rectified-flow path, and the generator predicts its velocity:
+6
+One layout →  shared slots Worker / ARX5 · 3 of 14 channels shown
+manipulator_1_joint_0_position 36 arms.left.shoulder_roll
+manipulator_2_joint_2_position 47 arms.right.elbow
+gripper_1_position 65 hands.left.gripper
+codec
+ℓ
+select
+permute
+sign, zero
+Shared
+input
+projection
+state tokens
+Which slots each robot fills empty = masked out of the loss
+legs 12 body 23 arms 18 hands 26
+Green humanoid 51
+Unitree G1 + Inspire 41
+Fourier GR1T1 44
+AgiBot G2A 24
+AgiBot G1 27
+Galaxea R1Pro (sim) 22
+AIRBOT MMK2 36
+Worker / ARX5 14
+Figure 4 Shared 79-slot anatomical action space. Top: the codec of one layout selects its native channels, puts them
+in slot order and flips signs and shifts zeros where needed, so that a slot means the same joint motion on every robot,
+for example the same positive direction of the left shoulder roll; three of the fourteen Worker channels are shown. A
+shared input projection maps the slot vector to state tokens. Bottom: slots filled by eight source layouts; empty slots
+are masked in the loss.
+𝑥𝜎 = (1 − 𝜎) 𝑥 0 + 𝜎 𝜖, 𝑣 = 𝜖 − 𝑥 0, ℒ 𝑚 = 𝔼 𝜎,𝜖 ∑
+𝑠∈𝒮𝑚
+𝜆𝑠
+∥𝑀𝑠 ⊙ ( ̂ 𝑣𝜃(𝑥𝜎, 𝑐𝑚, 𝜎)𝑠 − 𝑣𝑠)∥
+2
+‖𝑀𝑠‖1
+, (3)
+where 𝑀𝑠 masks the valid elements of stream 𝑠 and 𝜆𝑠 weights the stream; for states the average runs
+over body-part groups (Equation ( 6)). The W AM mode generates future video and the state offsets of
+Equation ( 2) from the first frame 𝑧0, the measured state 𝑞0 and the instruction 𝑐. History modes instead
+condition the next block on an ordered tuple 𝐴𝑏 of four independently encoded RGB anchors:
+𝑝𝜃(𝑧1∶𝐻, 𝛿1∶𝐻 ∣ 𝑧 0, 𝑞0, 𝑐),
+𝑝𝜃(𝑧𝑏+1 ∣ 𝐴 𝑏, 𝑐𝑏+1), 𝑝 𝜃(𝑧𝑏+1 ∣ 𝐴 𝑏, 𝑈𝑏+1, 𝑐𝑏+1), (4)
+where the last two distributions correspond to image-to-video and forward dynamics with history, respectively,
+and 𝑈𝑏+1 contains the supplied state-trajectory tokens. The anchors may repeat when history is short; their
+exact positions are specified in Section B.2.
+An eligible example can be used in several modes; the admissible subsets depend on available modalities,
+text and outcome labels (Sections B.4 and 4.2).
+The fixed mixture gives three quarters of the examples to predicting video, with or without the robot’s
+trajectory, and a quarter to producing robot states through inverse dynamics and W AM. Among the autore-
+gressive examples, forward dynamics with history receives twice the share of image-to-video with history.
+The modes share a physical-time grid for video and state targets. Visual and dynamics modes use whole
+prepared subtasks; autoregressive modes continue across complete subtask blocks, while W AM predicts a
+short future inside a successful demonstration. The exact horizons, resampling rules and condition–target
+arrangement are given in Section B.2 and Figure 29.
+7
+Table 2 Training modes. Shares are sampling probabilities over examples, not over tokens or compute.
+Mode Clean conditions Targets Share
+Text-to-video Visual caption Subtask video 20%
+Image-to-video Visual caption, initial RGB Subtask video 10%
+Image-to-video with
+history
+Block caption, four RGB anchors from
+history
+Next block video 10%
+Forward dynamics Task instruction, initial RGB, future
+states
+Subtask video 15%
+Forward dynamics with
+history
+Block instruction, four RGB anchors,
+future states
+Next block video 20%
+Inverse dynamics Observed video, inverse instruction Absolute state trajectory incl. 𝑞0 10%
+World–action (W AM) Task instruction, initial RGB, measured
+𝑞0
+Future video and state offsets 15%
+3.4 Multi-View Observations and Temporal Context
+Our corpus contains episodes with either one camera or three synchronized cameras. For three-view sources,
+we compose the head and two wrist views offline into one video per contiguous kept segment (Figure 5). The
+head view occupies approximately the top two thirds, with the wrist views below in a fixed Left | Right order.
+Choosing among five 480p canvas buckets preserves the head-camera aspect ratio and keeps the aspect-ratio
+change of every panel within 0.94–1.15; single-camera sources use the full frame. Camera roles are verified
+per source by correlating view motion with left- and right-arm motion. Canvas sizes and temporal sampling
+are specified in Section B.2.
+The autoregressive modes condition each new block on sparse visual history, as in Genie Envisioner and
+GE-Sim 2.0 [ 47, 63]. As in Genie Envisioner, the generator receives four RGB anchors; unlike its random
+draws during training, ours sit at the same fixed positions in training and at inference: the start, one third,
+two thirds and end of the available history on the effective video grid, so the last anchor is always the most
+recent frame. Each anchor is encoded separately by the V AE; at the start of an episode the initial frame
+is repeated. Training uses ground-truth history (teacher forcing); at inference the history is the generated
+video. History may cross neighboring kept subtasks of the same episode and camera, and it is reset at
+rejected gaps and episode boundaries. Each block carries its own caption or instruction.
+Unitree G1
+Unitree G1
+dexterous hands
+RoboCOIN
+AIRBOT MMK2
+dexterous hands
+RoboCOIN
+RealMan AIDAL
+grippers
+RoboCOIN
+AgileX Cobot Magic
+grippers
+GenieSim 3.0
+AgiBot G2
+grippers
+Figure 5 Training canvases of five robot families. From left: Unitree G1 and AIRBOT MMK2 with dexterous hands,
+RealMan AIDAL, AgileX Cobot Magic and AgiBot G2 with grippers; all recorded on real robots except AgiBot G2,
+which comes from simulation. The head camera occupies the top two thirds of the canvas, and the left and right wrist
+cameras share the bottom row (dashed lines); each view is resized to its panel without cropping. All five use the 640 ×640
+canvas, the most frequent of the five canvas sizes.
+4 Robot Experience and Training
+Robot datasets differ in frame rate, camera layout, state semantics and task boundaries, yet every training
+example must align a robot’s motion with the video and language of the same interval. We cut recordings
+8
+into subtask clips, filter unusable ones and derive separate text for visual prediction and for action learning,
+and then train the robotics stage. Application-specific adaptations are described with their evaluations in
+Sections 5.2 and 6.
+4.1 Cross-Embodiment Corpus
+Families. The training data span 20 main robot families (Figure 26), all two-armed: bimanual plat-
+forms with parallel grippers and humanoids with grippers or dexterous hands, in real and simulated scenes.
+Section A lists the layouts and the subsets admitted to training.
+They combine public and internal robot datasets in LeRobot format [ 13] with our humanoid data. The
+training unit is an atom: a subtask clip from one episode, with synchronized views, measured states, text
+and provenance. Section A gives the admission rules and the counts of each stage.
+4.2 Data Curation and Training Mixture
+Public robot datasets come as whole episodes, each with its own labels, camera set and quality. Sampling
+fixed-length windows from them would place unrelated subtasks in one example and pair each window
+with a label written for a different interval. We therefore prepare the data in stages, each adding one
+decision without rewriting earlier ones (Figure 6). Registration fixes the camera roles, state layout and robot
+properties of each source, and cutting into atoms yields the admitted corpus of 1.44 million whole-subtask
+atoms (1 688.5 h); the quality pass keeps 1.43 million atoms (1 674.7 h); captioning and command derivation
+give 1.19 million atoms an accepted command.
+Admission. We first resolve semantic subtask boundaries from the source annotations. An episode is used
+whole only when it has no finer temporal annotation; ambiguous or incomplete boundaries are excluded. A
+(a) Robots in the corpus
+Two-arm platform
+grippers
+/g19/g16/g1B/g3/g4B/g3/g79/g3/g16/g1B/g8
+Humanoid
+grippers
+/g19/g15/g17/g3/g4B/g3/g79/g3/g16/g1A/g8
+Humanoid
+dexterous hands
+/g17/g15/g19/g3/g4B/g3/g79/g3/g15/g18/g8
+(b) Selecting subtask clips
+1 /g36/g58/g45/g57/g44/g56/g4E/g3/g56/g48/g4A/g50/g48/g51/g57/g44/g57/g4C/g52/g51
+• annotated subtask boundaries
+• length limits
+/g14/g11/g17/g17/g3/g30/g3/g46/g4F/g4C/g53/g56/g3/g79/g3/g14/g11/g19/g1C/g2E/g3/g4B
+2 /g39/g4C/g47/g48/g52/g3/g54/g58/g44/g4F/g4C/g57/g5C/g3/gEC/g4F/g57/g48/g55/g4C/g51/g4A
+• idle, duplicated or cut clips
+• undecodable video
+/g14/g11/g17/g16/g3/g30/g3/g46/g4F/g4C/g53/g56/g3/g79/g3/g14/g11/g19/g1A/g2E/g3/g4B
+(c) From a clip to training examples
+0 s
+ 4 s
+7 s
+ 9.8 s
+RoboCOIN · Unitree G1
+/g39/g4C/g56/g58/g44/g4F/g3/g47/g48/g56/g46/g55/g4C/g53/g57/g4C/g52/g51
+→ text-to-video
+→ image-to-video (+ history)
+40% of examples
+“A humanoid robot with
+silver and black
+articulated arms stands
+at the near edge of a
+white table in a
+real-world workspace. …”
+/g26/g52/g50/g50/g44/g51/g47
+→ forward dynamics (+ history)
+→ world–action (WAM)
+50% of examples
+“Extend the left
+dexterous hand toward
+the orange and white
+bread roll on the left
+side of the table and
+grasp it. …”
+/g36/g57/g44/g57/g48/g3/g57/g55/g44/g4D/g48/g46/g57/g52/g55/g5C
+→ forward dynamics (+ history)
+→ world–action (WAM)
+→ inverse dynamics
+60% of examples
+left arm
+left hand
+0 s 4 s 7 s 9.8 s
+Figure 6 Robot data. (a) The corpus: 20 robot families, 1 688.5 h after admission, 74% real, all two-armed, in three
+embodiment groups; each group is shown by a head-camera frame whose width is proportional to its hours. (b) Episodes
+are cut into subtask clips (atoms) at annotated subtask boundaries within length limits (Equation ( 10)) (1.44 million
+clips, 1 688.5 h); video-quality filtering removes idle, duplicated, cut and undecodable clips (1.43 million clips, 1 674.7 h).
+(c) One clip (RoboCOIN, Unitree G1 with dexterous hands, real), shown at the boundaries of its action phases. Its
+visual description and derived command are quoted in part, verbatim; its recorded state trajectory shows the three joints
+that move most of the left arm and of the left hand, each scaled to its own range. Arrows name the training modes
+that use each output, with their shares of examples (Table 2); the state trajectory serves all three action modes, as a
+condition of forward dynamics and as the target of world–action prediction and inverse dynamics, so the shares overlap.
+9
+length limit rejects overlong atoms without cutting them into arbitrary windows (Figure 6b). A separate
+quality pass removes idle intervals, duplicated frame runs, temporal cuts and unreadable clips (Figure 6b).
+Passing the video-quality check does not by itself make an atom available to every training mode: the
+text-dependent modes also need an accepted caption or command (Section A.2 and Table 4).
+/g2C/g51/g53/g58/g57/g56/g26/g44/g53/g57/g4C/g52/g51/g48/g55/g26/g52/g51/g57/g48/g51/g57/g3/g4A/g44/g57/g48/g56/g26/g52/g50/g50/g44/g51/g47/g3/g53/g44/g56/g56
+/g4B/g48/g44/g47/g10/g46/g44/g50/g48/g55/g44/g3/g46/g4F/g4C/g53
+/g50/g48/g57/g44/g47/g44/g57/g44
+/g79/g3/g47/g58/g55/g44/g57/g4C/g52/g51
+/g79/g3/g56/g58/g45/g57/g44/g56/g4E/g3/g4F/g44/g45/g48/g4F
+/g79/g3/g48/g50/g45/g52/g47/g4C/g50/g48/g51/g57
+/g79/g3/g48/gEB/g48/g46/g57/g52/g55
+/g79/g3/g55/g48/g44/g4F/g3/g52/g55/g3/g56/g4C/g50
+/g52/g51/g48/g3/gEC/g48/g4F/g47/g3/g53/g48/g55/g3/g57/g58/g55/g51
+/g4C/g51/g3/g52/g51/g48/g3/g47/g4C/g44/g4F/g52/g4A/g58/g48
+/g14/g56/g58/g45/g4D/g48/g46/g57/g56
+/g15/g45/g44/g46/g4E/g4A/g55/g52/g58/g51/g47
+/g16/g4F/g4C/g4A/g4B/g57/g4C/g51/g4A
+/g17/g44/g48/g56/g57/g4B/g48/g57/g4C/g46/g56
+/g18/g46/g52/g51/g57/g48/g5B/g57
+/g19/g44/g57/g57/g48/g50/g53/g57/g3/g55/g48/g46/g52/g55/g47/g46/g4B/g48/g46/g4E
+/g1A/g44/g46/g57/g4C/g52/g51/g3/g53/g4B/g44/g56/g48/g56
+/g1B/g57/g48/g50/g53/g52/g55/g44/g4F/g3/g46/g44/g53/g57/g4C/g52/g51
+/g1C/g46/g52/g51/g56/g4C/g56/g57/g48/g51/g46/g5C/g46/g4B/g48/g46/g4E
+/g59/g4C/g56/g58/g44/g4F/g3/g47/g48/g56/g46/g55/g4C/g53/g57/g4C/g52/g51/g46/g52/g50/g50/g44/g51/g47
+/g79/g3/g49/g52/g55/g45/g4C/g47/g47/g48/g51/g3/g53/g4B/g55/g44/g56/g48/g56
+/g79/g3/g48/gEB/g48/g46/g57/g52/g55/g3/g59/g56/g3/g55/g48/g4A/g4C/g56/g57/g55/g5C
+/g79/g3/g46/g52/g51/g57/g44/g46/g57/g3/g46/g4F/g44/g4C/g50/g56
+/g79/g3/g46/g52/g50/g53/g4F/g48/g57/g4C/g52/g51/g3/g46/g4F/g44/g4C/g50/g56/g3/g59/g56
+/g44/g57/g57/g48/g50/g53/g57/g3/g55/g48/g46/g52/g55/g47
+/g49/g44/g4C/g4F/g1D/g3/g55/g48/g5A/g55/g4C/g57/g48/g3/gEC/g48/g4F/g47/g3≤/g3/g15
+≤/g3/g17/g3/g44/g57/g57/g48/g50/g53/g57/g56
+/g44/g46/g57/g4C/g52/g51/g3/g53/g4B/g44/g56/g48/g56/g3→
+/g52/g51/g48/g3/g46/g52/g50/g50/g44/g51/g47/g3/g53/g48/g55/g3/g53/g4B/g44/g56/g48
+/g14/gD0/g28/g5B/g57/g48/g51/g47/g3/g57/g4B/g48/g3/g4F/g48/g49/g57/g3/g47/g48/g5B/g57/g48/g55/g52/g58/g56
+/g4B/g44/g51/g47/g3/g57/g52/g5A/g44/g55/g47/g3/g57/g4B/g48/g3/g52/g55/g44/g51/g4A/g48/g3/gD4/gD1
+/g15/gD0/g2F/g4C/g49/g57/g3/g57/g4B/g48/g3/g45/g55/g48/g44/g47/g3/g55/g52/g4F/g4F/gF/g3/g46/g44/g55/g55/g5C
+/g4C/g57/g3/g52/g59/g48/g55/g3/g57/g4B/g48/g3/g53/g58/g55/g53/g4F/g48/g3/g53/g4F/g44/g57/g48/gF/g3/gD4/gD1
+/g16/gD0/g35/g48/g4F/g48/g44/g56/g48/g3/g57/g4B/g48/g3/g45/g55/g48/g44/g47/g3/g55/g52/g4F/g4F/g3/g52/g51
+/g57/g4B/g48/g3/g53/g4F/g44/g57/g48/g3/g44/g51/g47/g3/g55/g48/g57/g55/g44/g46/g57/g3/gD4/gD1
+/g59/g4C/g56/g58/g44/g4F/g3/g47/g48/g56/g46/g55/g4C/g53/g57/g4C/g52/g51
+→/g3/g57/g48/g5B/g57/g10/g57/g52/g10/g59/g4C/g47/g48/g52
+→/g3/g4C/g50/g44/g4A/g48/g10/g57/g52/g10/g59/g4C/g47/g48/g52/g3/gB/gE/g3/g4B/g4C/g56/g57/g52/g55/g5C/gC
+/g46/g52/g50/g50/g44/g51/g47
+→/g3/g49/g52/g55/g5A/g44/g55/g47/g3/g47/g5C/g51/g44/g50/g4C/g46/g56/g3/gB/gE/g3/g4B/g4C/g56/g57/g52/g55/g5C/gC
+→/g3/g5A/g52/g55/g4F/g47/gCB/g44/g46/g57/g4C/g52/g51/g3/gB/g3A/g24/g30/gC
+/gEC/g5B/g48/g47/g3/g4C/g51/g56/g57/g55/g58/g46/g57/g4C/g52/g51→/g3/g4C/g51/g59/g48/g55/g56/g48/g3/g47/g5C/g51/g44/g50/g4C/g46/g56/g51/g52/g3/g46/g44/g53/g57/g4C/g52/g51
+Figure 7 Captioner and command pass. The inputs are the head-camera clip of Figure 6c with its duration, subtask
+label, embodiment, effector and domain. The captioner (Qwen3.8-27B [ 64]) writes nine fields in one dialogue, one field
+per turn; the attempt record and the consistency field (red) are checks and never enter a training prompt. Blue dots mark
+the fields that form the visual description (fields from subjects through context, action phases and the temporal caption);
+green dots mark the fields the command pass reads (context, action phases and the temporal caption). Content gates
+test forbidden phrases, the effector against the registry, and contact and completion claims against the attempt record; a
+failing field is rewritten at most twice, and the whole dialogue is attempted at most four times. The command pass turns
+the action phases into one command per phase, keeping all phases in order; shown are the opening words of the three
+commands derived for the input clip. Bottom: the visual description conditions text-to-video and image-to-video, the
+command conditions forward dynamics and world–action prediction, and inverse dynamics receives a fixed instruction.
+From captions to instructions. The text pipeline produces a visual description and a prospective command
+for each atom (Figure 6c and Figure 7). A video captioner (Qwen3.8-27B [ 64]) writes a structured record
+one field per turn in a single dialogue, so each field is conditioned on those already written: subjects (the
+robot and its effector), background, lighting, aesthetics, context, an attempt record, timed action phases, a
+temporal caption and a consistency check. The source task label supplies the intended goal, and registry
+facts fix the embodiment, effector type and real or simulated domain. Before the action phases, the captioner
+records how far the attempt got, reading it from the final frame rather than from the label; later fields must
+end where the clip ends, and a caption whose motion does not match the object and kind of action named
+by the label is rejected. A second, text-only stage converts the action phases into a prospective command for
+the same fragment. It preserves the observed motions, object references and phase order, including partial
+or failed attempts, rather than completing an intended task that is not demonstrated. Using the source
+label as the command would instead pair an unfinished attempt with a goal that the clip never reaches.
+The conversion does not see native dataset instructions. Visual modes use the visual description; forward
+dynamics and W AM use the derived command; inverse dynamics uses a fixed trajectory-recovery instruction.
+Section B.3 details the captioner, the conversion, their checks and the final prompt format.
+Aligned training inputs. Camera selection and ordering are explicit for each source. Synchronized RGB
+views are assembled into one canvas while retaining the original episode timestamps for states and text.
+Frame-rate reduction selects corresponding video and state times; it does not rescale physical joint positions
+or displacements. Autoregressive examples join complete adjacent atoms and stop at rejected gaps. W AM
+additionally requires a positive success label; failed, unknown and unlabeled outcomes are excluded from
+W AM but can enter other eligible modes. Its short prediction window retains the command of the enclosing
+atom, so the instruction describes the ongoing subtask rather than a task that must finish within that
+window.
+10
+State-derived targets. Recorded action columns mix joint targets, velocities, teleoperation master states
+and progress signals. We instead construct a common trajectory from measured states with the codec of
+Equation ( 1):
+𝑞𝑘 = codecℓ(𝑠(𝑡0 + Δ𝑘)), (5)
+where 𝑠 is the recorded state, Δ𝑘 is a physical time offset within one admitted interval and codec ℓ maps layout
+ℓ to the shared anatomical slots. Inverse dynamics predicts absolute 𝑞𝑘; forward dynamics and W AM use
+the targets 𝛿𝑘 of Equation ( 2). The targets therefore describe realized robot motion. Executing a predicted
+trajectory additionally requires the robot-specific decoder of Section 6.2.
+Normalization statistics are computed on the training split only (Section A.3).
+Training mixture. Sampling chooses a mode, a robot cluster (Equation ( 12)), a dataset and a window. The
+Worker/ARX5 and Green humanoid clusters receive fixed shares; other clusters and datasets are weighted
+by the square root of their admissible subtask counts. Each source is sampled only in the modes its data
+support. Full sampling targets are given in Section B.4 and Table 8.
+4.3 GreenWAM Training
+Objective. The robotics stage trains all seven modes with the rectified-flow objective (Equation ( 3)). The
+generator predicts the velocity of each noised target stream. Video loss averages over valid target elements.
+State loss first averages within each represented body-part group and then across groups, so a group with
+more coordinates does not automatically receive more weight. Let 𝑒𝑡𝑗 = ̂ 𝑣𝑡𝑗 − 𝑣𝑡𝑗 be the velocity error of the
+state targets in Equation ( 5), 𝑚𝑡𝑗 select valid noised targets, and 𝒢 contain the body-part groups with at
+least one such target. Then
+ℒstate = 1
+|𝒢| ∑
+𝑔∈𝒢
+∑𝑡 ∑𝑗∈𝑔 𝑚𝑡𝑗 𝑒2
+𝑡𝑗
+∑𝑡 ∑𝑗∈𝑔 𝑚𝑡𝑗
+, ℒ = 𝜆 (ℒ video + ℒstate). (6)
+All generated streams share the noise level 𝜎 of Equation ( 3), drawn from the noise schedule of Cosmos 3
+Edge (Section B). The loss carries no noise-level weight, and both terms are scaled by 𝜆 = 10 , as in Cosmos 3
+Edge, so video and state carry equal weight. Losses are averaged over examples, and a stream without targets
+contributes zero. The anatomical groups are legs, body, arms and hands; unresolved and absent coordinates
+are masked. Clean conditions, including the measured 𝑞0 in W AM, carry no loss; in inverse dynamics
+the initial state is a target. The RoboTwin policy recipe instead weights valid action coordinates equally
+(Section B.5). Text conditioning is dropped with probability 0.1 for classifier-free guidance [ 32].
+With the reasoner and V AE frozen, training runs on 64 H100 GPUs with a global batch of 256 examples.
+Parameters are sharded within each node of 8 GPUs and replicated across nodes and attention is checkpointed
+selectively. The full optimizer, schedule and sampling recipe are given in Table 5 and Section B.
+Training scale. The robotics stage produces GreenW AMafter 36 500 optimizer steps, corresponding to 9.34
+million sampled examples. This checkpoint initializes downstream adaptations. The learning-rate schedule
+and checkpoint settings are given in Table 5. Sections 5 and 6 evaluate this checkpoint as a world model
+and as a policy.
+5 GreenWAM as a World Model
+Section 5.1 tests the robotics checkpoint itself, without any benchmark adaptation, on held-out recordings
+of robots from the training corpus: whether one model predicts video for different bodies and whether the
+generated motion follows the commanded trajectory. Section 5.2 adapts the checkpoint to WorldArena 1.0, a
+public benchmark of action-conditioned video prediction, and compares it with the models on its leaderboard.
+All results in this section use the generator alone, without the action expert of the policies.
+11
+5.1 The Robotics Checkpoint on Held-Out Recordings
+We take one held-out recording for each of six robot families: AgiBot G2A, AgileX, Unitree G1, Fourier GR1,
+Worker/ARX5 and the Green humanoid, the last both in simulation and on the real robot. Given the first
+frame and the recorded joint trajectory, the model generates the video of the whole recording (Figure 1e).
+Unless stated otherwise, sampling uses 35 steps, classifier-free guidance 6 and shift 5, and comparisons
+between checkpoints keep the sampler fixed. Protocols and evaluation details are given in Sections C and C.5.
+Action following. A world model is useful for control only if its video follows the commanded actions
+instead of continuing the scene on its own. For each of these recordings we keep the first frame and multiply
+the commanded displacement from the starting pose by 0, 0.5, 1 and 1.5: zero commands the robot to stand
+still, and 1 replays the recording (Figure 8). On every robot the generated motion grows with the command.
+With zero displacement the video keeps less than a fifth of the motion it shows under the recorded command,
+and at one and a half times the displacement it shows about a quarter more; motion is the mean change
+between consecutive frames. Trajectory accuracy is measured on WorldArena (Section 5.2).
+One start frame, four commanded actions
+Unitree G1, head camera · recorded actions scaled before prediction
+start (shared)
+halfway
+end
+× 0
+ × 0.5
+ × 1 (recorded)
+ × 1.5
+Figure 8 Action following. One start frame of Unitree G1 (head camera) predicted forward with the recorded state
+offsets scaled by 0, 0.5, 1 and 1.5; each column shows the halfway point (top) and the end (bottom) of the prediction.
+With zero offsets the bread stays on the table; with the other three scales it ends on the plate, and at the halfway point
+the larger the scale, the further the arm has moved.
+5.2 WorldArena Adaptation and Results
+WorldArena 1.0 is a public benchmark of embodied video generation; its track 1 scores 15 metrics grouped into
+visual quality, motion quality, content consistency, physics adherence, 3D accuracy and controllability [ 70].
+We adapt GreenW AMon the training data that the benchmark allows and predict its test episodes from
+their recorded actions. GreenW AMis strongest where the prediction must match the recorded motion and
+geometry: among the compared world–action models and video generators it has the highest trajectory,
+depth and 3D accuracy (56.0, 98.2 and 93.4), and among all 127 entries of the board it is second in JEPA
+similarity (98.41, after BLM at 98.49).
+The action variant of track 1 gives the first frame and the robot actions of a held-out episode and asks
+for the video. Figure 10 shows two such episodes. This variant maps onto forward dynamics with history:
+every block is conditioned on the recorded actions and on four anchors of the history, which for the first
+block repeat the recorded first frame (Section B.5). The text prompt is empty, so sampling uses 35 steps
+without guidance (Section C.5). The benchmark’s embodiment has the ARX5 arms of RoboTwin and reuses
+its layout extension, so the benchmark’s actions enter through the shared projection of GreenW AMrather
+than an action projection of their own (Section 3.2).
+The overall score averages the board’s 15 metrics after capping the three motion metrics at the ground
+truth, so that a model cannot gain by moving more than the recorded robot:
+EWMScore = 1
+15
+15
+∑
+𝑘=1
+̃ 𝑚𝑘, ̃ 𝑚 𝑘 = {min (𝑚𝑘, 𝑚 GT
+𝑘 ), 𝑘 ∈ 𝒦 motion,
+𝑚𝑘 otherwise, (7)
+where 𝒦motion contains dynamic degree, flow score and motion smoothness. The cap is needed because
+these metrics reward motion beyond the recording; the organizers of WorldArena 2.0 found that they reach
+12
+98.4
+70
+JEP A Similarity
+56.0
+0
+T rajectory Accuracy
+98.2
+70
+Depth Accuracy
+Fidelity
+63.8
+ 63.3
+55
+EWMScore, motion capped
+67.7
+65.6
+50
+Content Consistency
+64.6
+ 62.2
+30
+Physics Adherence
+93.4
+80
+3D Accuracy
+Overall and categories
+GreenW AM
+ BWM
+ UNIS
+ ABot
+ Motu
+ FlowW AM
+CogVideoX
+ Wan2.6
+ Ctrl-World
+ IRASim
+ Cosmos-P2.5
+Figure 9 WorldArena 1.0, track 1: GreenWAM among models of the leaderboard. Fidelity: agreement with the
+ground-truth video. JEPA similarity compares the distributions of V-JEPA features of real and generated videos at the
+set level (JEDi [ 54]; higher is better); trajectory and depth accuracy are computed per video. Overall and categories:
+EWMScore (Equation ( 7)), the mean of the 15 board metrics with dynamic degree, flow score and motion smoothness
+capped at the ground truth, and three of its categories. GreenW AMis capped per video on all 1 000 test episodes; for
+the other models the caps are applied to their leaderboard means [ 84], which gives them an upper bound. Controllability,
+visual quality and motion quality also enter EWMScore and are listed with all categories in Table 11. Cut marks identify
+axes that do not start at zero.
+abnormally high values without better modeling of the dynamics and adopted the same rule [ 83]. Of the 127
+entries of the WorldArena 1.0 board, 112 exceed the recorded-video reference in dynamic degree and 113 in
+flow score, the leading ones by up to four and eight times. Under the cap the scores of the leading entries
+drop by 6 to 11, UNIS for example from 73.64 to 63.65, while GreenW AM, whose motion scores stay below
+the reference, loses 0.05.
+Under this aggregate GreenW AMreaches 63.31 on the 1 000 test episodes (Figure 9), above the published
+world–action models Motubrain [ 56] (63.16) and FlowW AM-FiveAges [21] (62.99), whose recomputed scores
+are upper bounds. Scores of other models are recomputed from their leaderboard entries under the same
+motion cap, so they can differ from the values quoted in their reports.
+The recorded videos as a reference. We also score the real test videos with the same evaluator. They
+reach 67.23, the score of a model that would reproduce every recording exactly, and on 13 of the 15 metrics
+GreenW AMdiffers from them by less than four. The two categories in which it trails, visual quality and
+controllability, do not compare a video with its recording: visual quality rates image appearance, and
+controllability is assigned by a vision–language judge. On these categories many board entries score above
+the real videos themselves, so they follow image appearance more than agreement with the recorded episode
+(Section C.1).
+13
+WorldArena 1.0, long rollouts /g57/g4B/g48/g3/g52/g51/g4F/g5C/g3/g49/g55/g44/g50/g48/g3/g57/g44/g4E/g48/g51/g3/g49/g55/g52/g50/g3/g57/g4B/g48/g3/g55/g48/g46/g52/g55/g47/g4C/g51/g4A
+episode 944 /g52/g53/g48/g51/g3/g57/g4B/g48/g3/gED/g44/g53/g3/g79/g3/g15/g17/g3/g56/g3/g79/g3/g33/g36/g31/g35/g3/g15/g14/g11/g1B/g3/g47/g25/gF/g3/g44/g45/g52/g58/g57/g3/g57/g4B/g48/g3/g50/g48/g47/g4C/g44/g51/g3/g48/g53/g4C/g56/g52/g47/g48
+0 s /g17/g11/g18/g3/g56 /g1C/g3/g56 /g14/g16/g11/g18/g3/g56/g14/g1B/g3/g56 /g15/g16/g11/g16/g3/g56
+recorded
+GreenWAM
+episode 213 /g50/g52/g59/g48/g3/g57/g4B/g48/g3/g45/g52/g57/g57/g4F/g48/g56/g3/g79/g3/g15/g15/g3/g56/g3/g79/g3/g33/g36/g31/g35/g3/g15/g14/g11/g18/g3/g47/g25/gF/g3/g44/g45/g52/g58/g57/g3/g57/g4B/g48/g3/g50/g48/g47/g4C/g44/g51/g3/g48/g53/g4C/g56/g52/g47/g48
+0 s /g17/g11/g18/g3/g56 /g1C/g3/g56 /g14/g16/g11/g18/g3/g56/g14/g1B/g3/g56 /g15/g13/g3/g56
+recorded
+GreenWAM
+Figure 10 Long WorldArena rollouts. Two test episodes of WorldArena 1.0, “open the flap” and “move the bottles”,
+each over 20 s, with the recording above the prediction of GreenW AMat six moments. Only the first frame, outlined,
+comes from the recording; the model then follows the recorded actions in blocks of about 7 s, each conditioned on four
+of its own generated frames.
+6 GreenWAM as a Policy
+We adapt GreenW AMto control by predicting a future state trajectory together with video. Sections 6.1
+and 6.2 describe how a policy is obtained: the action expert split off the generator and the post-training
+common to all benchmarks, while each benchmark keeps its own demonstrations, command interface and
+inference settings. Section 6.3 reports the four simulation benchmarks. Real-time control on the humanoid
+benefits from a faster policy, so Section 6.4 distills the policy into a one-step student and measures its latency,
+and Section 6.5 evaluates the teacher and the student on the robot.
+6.1 Policy Architecture
+In the robotics stage of GreenW AM, video and action tokens pass through one generator. For policy adap-
+tation, action tokens move to a dedicated transformer while video tokens remain in the generator. Joint
+attention connects the two streams at every layer, so action prediction retains access to visual dynamics
+while the streams acquire separate parameters during adaptation. Related expert architectures differ in how
+the expert is initialized [ 7, 99].
+Let ℎ𝑧 and ℎ𝑞 be the video and action tokens entering a layer. The generator 𝐺 projects the video tokens
+and the expert 𝐸 the action tokens, attention runs over both streams together, and each stream keeps its
+own feed-forward block:
+(𝑄, 𝐾, 𝑉 )𝑧 = 𝑊 𝐺 ℎ𝑧, (𝑄, 𝐾, 𝑉 ) 𝑞 = 𝑊 𝐸 ℎ𝑞, [ ̃ℎ𝑧; ̃ℎ𝑞] = Attn([𝑄𝑧; 𝑄𝑞], [𝐾𝑧; 𝐾𝑞], [𝑉 𝑧; 𝑉 𝑞]). (8)
+We initialize the action expert by copying the generator tower, 𝜃𝐸 ← 𝜃 𝐺. The expert has the same shape
+as the parent tower, so the split does not change the predictions at initialization. The towers then diverge
+14
+during post-training. The expert adds as many parameters as the generator tower and about 8% to the time
+of a training step. Section 7.2 measures what the split brings.
+6.2 Policy Post-Training
+Policy adaptation connects joint video–state prediction to a target robot’s control loop. Each benchmark
+specifies its demonstrations, camera layout and command interface; the common learning objective is the
+W AM mode of GreenW AM(Equation ( 4); recipes in Section B.5).
+Shared recipe. The policy receives a task instruction, the current camera canvas and the measured state
+𝑞0, and predicts future video together with state offsets over horizon 𝐻. Training uses demonstrations of the
+target robot, with measured future states as supervision. At inference, the predicted targets are decoded
+relative to 𝑞0 (Equation ( 2)) into the robot’s native command representation. The controller executes a
+prefix of the prediction, acquires a new observation and replans. The decoder and the execution interval are
+specific to each application.
+Appearance augmentation. Clean demonstrations show one appearance of each scene, and benchmarks
+that randomize scenes test others. Two augmentations address this without touching the geometry. Back-
+ground replacement: in half of the samples the static background (table, walls, floor), segmented by replaying
+the demonstration in the simulator, is replaced by a procedural texture modulated by the original shading,
+so that shadows are preserved; it needs the simulator for segmentation and is used on RoboTwin. Color
+augmentation perturbs the colors of each camera image independently; it is applied to 80% of the samples
+and adds no crops or rotations. Section 7.5 measures what background replacement brings.
+The per-benchmark recipes, camera layouts, data volumes and execution settings are given in Section B.5.
+6.3 Simulation Benchmarks
+We evaluate the adapted policies on RoboTwin 2.0, CAL VIN, RoboDojo and LIBERO. The target benchmark
+protocols are specified in Table 9 and Section C. No RoboTwin, RoboDojo, CAL VIN or LIBERO data enter
+the corpus of GreenW AM. Policies use benchmark-specific denoising steps, guidance and replanning intervals
+(Section B.5). Results of other methods are taken from their reports or leaderboards, as noted in each table;
+Figure 11 summarizes the four benchmarks, and Section D.1 gives the full CAL VIN, RoboDojo and LIBERO
+tables.
+6.3.1 RoboTwin 2.0
+On RoboTwin 2.0, GreenW AMscores among the top entries of the leaderboard (Table 3); Figure 12 shows
+one task in the clean and the randomized setting. The leaderboard fixes the post-training data, 50 clean
+demonstrations per task, but not the pretraining.
+Our RoboTwin policy reaches 86.98% clean and 48.10% randomized success, averaging 67.54%, over 50
+tasks with 100 trials per task in each setting. It is evaluated under the leaderboard protocol on the oﬀicial
+seeds. Controlled comparisons at a fixed adaptation budget support both design choices: initializing from
+GreenW AMand splitting off an action expert at the start of adaptation together raise clean success by 10.8%
+over a single-tower policy adapted from Cosmos 3 Edge (Sections 7.1 and 7.2). The leaderboard trains on
+clean demonstrations only; Section 7.5 examines how individual scene changes affect randomized success.
+The GreenW AM corpus contains no RoboTwin data, whereas pretraining can expose a policy to ran-
+domized RoboTwin demonstrations. ME-Dex-1.0 inherits Motus experts [ 99], and Motus and X-W AM list
+27 500 RoboTwin pretraining episodes, matching the set of 2 500 clean and 25 000 randomized demonstra-
+tions [ 7, 30]; WorldScape Policy 2.0 lists 35.7 thousand without specifying their split [ 74]. Table 3 marks
+the two leaderboard entries whose pretraining includes randomized RoboTwin scenes.
+6.3.2 CAL VIN
+CAL VIN tests whether a policy can chain language-conditioned skills in an unseen environment: each suc-
+cessful instruction advances a chain of five without resetting the scene, so earlier errors carry over to later
+instructions. We adapt on environments A, B and C, with no data from D, and evaluate on 1 000 chains in
+15
+Table 3 RoboTwin 2.0, 50 tasks. A verage success rate, %.
+Method Clean Randomized A verage
+Leaderboard: 50 clean demonstrations per task
+ME-Dex-1.0 [ 99]† 89.6 68.1 78.8
+OLA-Sem 75.1 67.6 71.3
+GigaBrain-0.7 [ 26] 66.8 67.9 67.3
+WorldScape Policy 2.0 [ 74] 84.9 38.5 61.7
+4D-W AM [88] 81.5 41.8 61.6
+𝜋0.5 [62] 70.7 46.0 58.4
+OLA-Geo 83.0 33.6 58.3
+Spatial Forcing [ 41] 77.2 26.7 52.0
+X-W AM† [30] 70.0 25.8 47.9
+X-VLA [ 103] 68.0 20.9 44.5
+ABot-M0 [ 90] 57.4 30.4 43.9
+EventVLA [87] 65.6 15.7 40.6
+Xiaomi-Robotics-0 [ 15] 62.9 18.2 40.5
+Fast-W AM [95] 77.8 1.9 39.9
+GalaxeaVLA [ 35] 62.7 12.7 37.7
+AHA-W AM [14] 64.3 3.2 33.8
+starVLA [ 73] 46.5 3.2 24.8
+GreenWAM, leaderboard protocol 86.98 48.10 67.54
+Outside the leaderboard: clean demonstrations only, own evaluation
+Qwen-RobotManip-Context [ 94] 84.7 69.4 77.05
+Published: clean and randomized demonstrations
+𝜋0 [11] 65.92 58.40 62.16
+𝜋0.5 [62] 82.74 76.76 79.75
+X-VLA [ 103] 72.80 72.84 72.82
+DeMaVLA [ 75] 88.42 86.78 87.60
+Motus [ 7] 88.66 87.02 87.84
+Fast-W AM [95] 91.88 91.78 91.83
+DSW AM [106] 92.38 91.90 92.14
+LingBot-V A [42] 92.9 91.6 92.25
+LingBot-V A 2.0 [97] 93.8 93.4 93.6
+Motubrain [ 56] 95.8 96.1 95.95
+Upper block: the oﬀicial leaderboard, which trains on 50 clean demonstrations per task (co-train track, ordered by the leaderboard
+average of clean and randomized success; the single-task baselines 𝜋0, DP3, RDT, ACT and DP, at most 31.4 on average, are
+omitted) [ 68]; †: the checkpoint that post-training starts from was trained on randomized RoboTwin scenes. The reports of
+GigaBrain-0.7, WorldScape Policy 2.0 and OLA-Geo, and of Qwen-RobotManip outside the leaderboard, do not state whether their
+pretraining included randomized RoboTwin scenes; for the other entries of these two blocks it was not. Outside the leaderboard: a
+report that also trains on clean demonstrations only but uses its own evaluation: Qwen-RobotManip-Context with joint control [ 94]
+(Table 5, easy and hard settings). Lower block: published results whose training adds 500 randomized demonstrations per task (stated
+for Motus, Fast-W AM, LingBot-V A, LingBot-V A 2.0 and Motubrain), as reported in DSW AM [106] (Table 1) for 𝜋0, 𝜋0.5, DeMaVLA,
+Motus, Fast-W AM and DSW AM; in Motus [7] (Table 2) for X-VLA; in the LingBot-V A repository [ 66] for LingBot-V A; in the reports
+of LingBot-V A 2.0 [97] (Table 1) and Motubrain [ 56]. GreenW AMfollows the leaderboard protocol and is listed under its block.
+D (Table 12; protocol in Section C). GreenW AMcompletes 4.64 instructions per chain on average, with a
+standard error of about 0.03, above FLOWER (4.53).
+6.3.3 RoboDojo
+RoboDojo tests generalization, precision, long-horizon execution, memory and open-vocabulary instructions
+in simulation (Table 13). Its tasks use the same ARX5 arms as RoboTwin. The RoboDojo aggregate gives
+16
+67.5
+GreenW AM
+24.8
+StarVLA
+39.9
+Fast-W AM
+44.5
+X-VLA
+58.4
+π0.5
+67.3
+GigaBrain
+RoboT win 2.0
+4.64
+GreenW AM
+4.29
+VPP
+4.41
+UniVLA
+4.44
+DreamVLA
+4.53
+FLOWER
+4.75
+Xiaomi R0
+4
+CAL VIN ABC→D
+16.12
+GreenW AM
+7.69
+X-W AM
+10.13
+X-VLA
+11.44
+π0.5
+20.07
+Xiaomi R1
+24.90
+DM0.5
+33.95
+Simate-beta
+RoboDojo
+97.4
+GreenW AM
+96.9
+π0.5
+97.6
+Fast-W AM
+97.8
+OA-W AM
+98.5
+Cosmos
+Policy
+99.0
+Faster-W AM
+90
+LIBERO
+86.8
+GreenW AM
+49.1
+Fast-W AM
+69.6
+OpenVLA
+OFT
+82.2
+Cosmos
+Policy
+85.7
+π0.5
+86.1
+CKT-W AM
+20
+LIBERO-plus, zero-shot
+Figure 11 Manipulation benchmarks. GreenW AM (first bar of each panel) and selected baselines from Tables 3,
+12 and 13 and from published LIBERO [ 48] and LIBERO-plus [ 24] results. RoboTwin reports mean clean/randomized
+success over 50 tasks with 100 trials per task; pretraining on randomized RoboTwin scenes is marked in Table 3. LIBERO
+reports the average success over its four task suites and LIBERO-plus the zero-shot success over all perturbed episodes;
+GreenW AMvalues on both come from the same policy (Table 14). LIBERO and LIBERO-plus values and their sources
+are listed in Table 14. Cut marks identify axes that do not start at zero.
+equal weight to its five capability dimensions rather than to every individual task. Trained on the oﬀicial
+training set and compared with the oﬀicial leaderboard, GreenW AMreaches a score of 16.12 and a success
+rate of 10.49% (Table 13), higher on both aggregates than 𝜋0.5, X-VLA and X-W AM. The recipe is given in
+Section B.5.
+17
+RoboTwin 2.0 · “stack blocks two”
+clean
+scene
+randomized
+scene
+start grasp red place red grasp green carry green stacked
+Figure 12 RoboTwin 2.0 rollouts of the GreenWAM policy. The task stack_blocks_two in a clean (top) and a
+randomized scene (bottom). Head-camera frames at six phases: start, red block grasped, red block placed, green block
+grasped, green block carried, tower built. Both episodes succeed.
+6.3.4 LIBERO and LIBERO-plus
+40 60 80 100
+Robot init 67.5
+Camera 81.7
+Layout 84.4
+Background 90.3
+Language 94.3
+Noise 95.6
+Light 97.4
+GreenWAM Cosmos Policy π0.5
+Figure 13 LIBERO-plus by axis. Zero-shot
+success; baselines from [ 52].
+LIBERO evaluates single-arm manipulation with a Franka arm
+in simulation over four task suites that vary spatial layout, objects,
+goals and task length [ 48]. Recent policies exceed 96% average suc-
+cess on it. LIBERO-plus keeps the LIBERO tasks and perturbs
+them along seven axes, from camera viewpoint to object layout [ 24].
+In the zero-shot setting a policy trained on standard LIBERO is
+evaluated on the perturbed episodes, which exposes robustness
+gaps that the standard suites hide: Fast-W AM [ 95], for example,
+reaches 97.6% on LIBERO and 49.1% on LIBERO-plus [ 100] (Ta-
+ble 14). The single-arm Franka embodiment is absent from the
+robotics corpus, whose families are all two-armed. With one pol-
+icy, GreenW AMis close to the dedicated policies on LIBERO and
+reaches the highest zero-shot LIBERO-plus success in Table 14;
+Figure 31 shows typical failures.
+Success is highest under lighting, sensor-noise and language perturbations, where GreenW AMleads both
+baselines (Figure 13). Under changed viewpoints, success is 81.7%, above both baselines. Changed back-
+grounds are handled without the background replacement used on RoboTwin, which needs simulator seg-
+mentation of the demonstrations.
+6.4 Distillation for Real-Time Control
+We distill the adapted policy into a one-step student with modality-specific consistency objectives, following
+Flash-W AM [4] (Figure 14). The student keeps the teacher’s observations, state representation and joint
+video–action outputs; only its sampling changes at deployment. We initialize a frozen teacher, a trainable
+student and an EMA target student from the adapted policy. Unlike Flash-W AM, which uses separate noise
+schedules for video and actions, video latents and the action chunk share one noise level. The teacher steps
+between neighboring levels of a shared schedule of 4 noise levels, from a noisier sample to a less noisy one.
+The teacher makes two passes, with the instruction and with an empty prompt, and applies guidance to
+video (scale 3–4) but not to actions; the student learns to produce a consistent clean prediction at both
+points, with the lower-noise target supplied by the EMA student and detached from the gradient.
+Video and action targets use separate consistency maps. The video map uses noise-dependent skip and
+output coeﬀicients, while the action map directly estimates the clean state target as 𝑥𝜎 − 𝜎 ̂ 𝑣𝜃. An action
+flow-matching term, which Flash-W AM uses only in a regularized baseline, keeps the student anchored to
+the demonstration targets:
+ℒdistill = 𝜆 𝑣ℒCD,𝑣 + 𝜆𝑎ℒCD,𝑎 + 𝜆FMℒFM,𝑎. (9)
+Loss distances, weights and the EMA decay are given in Section B.5.
+18
+(a) One step on the noise path
+noise clean
+shared schedule, 4 noise levels
+σs σe
+teacher
+step
+xs
+x ̃e
+one clean
+estimate
+/g56/g57/g58/g47/g48/g51/g57
+/g28/g30/g24/g3/g57/g44/g55/g4A/g48/g57
+Tokens and roles
+video latent action
+noised noised
+frozen
+trained
+EMA copy
+(b) Training
+noisy start xs at σs · instruction
+/g59/g4C/g47/g48/g52/g3/g4F/g44/g57/g48/g51/g57/g56/g3/g44/g51/g47/g3/g44/g46/g57/g4C/g52/g51/g3/g46/g4B/g58/g51/g4E/g3/g56/g4B/g44/g55/g48/g3/g52/g51/g48/g3/g51/g52/g4C/g56/g48/g3/g4F/g48/g59/g48/g4F
+Teacher
+frozen
+video action
+Student
+trained
+video action
+EMA target
+frozen copy
+video action
+EMA 0.995
+one guided teacher step σs → σe, giving x̃ e
+/g15/g3/g53/g44/g56/g56/g48/g56/g1D/g3/g4C/g51/g56/g57/g55/g58/g46/g57/g4C/g52/g51/gF/g3/g48/g50/g53/g57/g5C/g3/g79/g3/g4A/g58/g4C/g47/g44/g51/g46/g48/g1D/g3/g59/g4C/g47/g48/g52/g3/g16/gCB/g17/gF/g3/g44/g46/g57/g4C/g52/g51/g3/g14
+Losses · gradient to the student only
+/g59/g4C/g47/g48/g52/g3/g46/g52/g51/g56/g4C/g56/g57/g48/g51/g46/g5Ccskipx + cout(x − σu) /g99/g3/g14
+/g44/g46/g57/g4C/g52/g51/g3/g46/g52/g51/g56/g4C/g56/g57/g48/g51/g46/g5Cx − σu /g99/g3/g14
+/g44/g46/g57/g4C/g52/g51/g3/gED/g52/g5A/g3/g50/g44/g57/g46/g4B/g4C/g51/g4Au → ε − x0 /g99/g3/g13/g11/g13/g14
+/gD3/g3/g46/g52/g51/g56/g4C/g56/g57/g48/g51/g46/g5C/g1D/g3/g56/g57/g58/g47/g48/g51/g57/g3/g44/g57/g3xs/g3/g50/g44/g57/g46/g4B/g48/g56/g3/g28/g30/g24/g3/g57/g44/g55/g4A/g48/g57/g3/g44/g57/g3x ̃e
+/gD3/g3/gED/g52/g5A/g3/g50/g44/g57/g46/g4B/g4C/g51/g4A/g3/g4E/g48/g48/g53/g56/g3/g44/g46/g57/g4C/g52/g51/g56/g3/g52/g51/g3/g57/g4B/g48/g3/g47/g48/g50/g52/g51/g56/g57/g55/g44/g57/g4C/g52/g51/g56
+/gD3/g3/g53/g56/g48/g58/g47/g52/g10/g2B/g58/g45/g48/g55/g3/g47/g4C/g56/g57/g44/g51/g46/g48/g3/g52/g59/g48/g55/g3/g4A/g48/g51/g48/g55/g44/g57/g48/g47/g3/g48/g4F/g48/g50/g48/g51/g57/g56
+(c) On the robot
+Teacher
+K steps · 2 passes each
+/g59/g4C/g47/g48/g52/g3/g4F/g44/g57/g48/g51/g57/g56
+/g44/g46/g57/g4C/g52/g51/g3/g46/g4B/g58/g51/g4E
+Student
+1 step · 1 pass
+/g59/g4C/g47/g48/g52/g3/g4F/g44/g57/g48/g51/g57/g56
+/g44/g46/g57/g4C/g52/g51/g3/g46/g4B/g58/g51/g4E
+/gD3/g3/g56/g44/g50/g48/g3/g4C/g51/g53/g58/g57/g56/g3/g44/g51/g47/g3/g52/g58/g57/g53/g58/g57/g56
+/gD3/g3/g51/g52/g3/g4A/g58/g4C/g47/g44/g51/g46/g48/g3/g53/g44/g56/g56
+Figure 14 Consistency distillation of the policy. The losses are those of Equation ( 9). (a) One step on the shared
+noise path: the teacher steps from 𝑥𝑠 to ̃ 𝑥𝑒 between neighboring anchors of the schedule, and the student at 𝑥𝑠 and the
+exponential-moving-average (EMA) target at ̃ 𝑥𝑒 must give the same clean estimate. (b) Training: a frozen teacher, the
+trained student and its EMA copy as the target; video and action consistency losses and an action flow-matching term,
+with the gradient to the student only. (c) On the robot the student replaces the teacher’s guided multi-step sampling
+with one step and one pass. The recipe follows Flash-W AM [ 4], with one noise level for both streams and an added
+action flow-matching term.
+Median latency per policy call, ms
+/g31/g39/g2C/g27/g2C/g24/g3/g35/g37/g3B/g3/g17/g13/g1C/g13/gF/g3/g50/g48/g47/g4C/g44/g51/g3/g52/g59/g48/g55/g3/g14/g13/g13/g3/g48/g53/g4C/g56/g52/g47/g48/g56
+Rate, Hz Speed-up
+/g59/g56/g3/g2A/g55/g48/g48/g51/g3A/g24/g30
+/g13 /g14/g13/g13 /g15/g13/g13 /g16/g13/g13 /g17/g13/g13
+GreenWAM /g17/g16/g18/g11/g1C/g15/g11/g16/g99/g14/g11/g13/g13
+/gE/g3/g46/g44/g46/g4B/g4C/g51/g4A /g17/g14/g14/g11/g14/g15/g11/g17/g99/g14/g11/g13/g19
+/gE/g3/g4A/g58/g4C/g47/g44/g51/g46/g48/g3/g53/g44/g46/g4E/g4C/g51/g4A /g16/g14/g17/g11/g14/g16/g11/g15/g99/g14/g11/g16/g1C
+/gE/g3/gEC/g55/g56/g57/g10/g49/g55/g44/g50/g48/g3/g39/g24/g28 /g15/g16/g19/g11/g17 /g17/g11/g15/g99/g14/g11/g1B/g17
+/gE/g3/g46/g52/g50/g53/g4C/g4F/g44/g57/g4C/g52/g51 /g14/g1B/g17/g11/g19 /g18/g11/g17/g99/g15/g11/g16/g19
+/gE/g3/g3A/g1B/g24/g1B /g14/g16/g17/g11/g19 /g1A/g11/g17/g99/g16/g11/g15/g17
++ distillation 35.4 28.3 ×12.32
+/g57/g4C/g50/g48/g3/g55/g48/g50/g52/g59/g48/g47/g3/g45/g5C/g3/g57/g4B/g48/g3/g56/g57/g48/g53
+Figure 15 Policy inference latency on one NVIDIA RTX 4090. Median latency per policy call over 100 episodes. The
+optimizations are applied cumulatively to the GreenW AMpolicy; the light segment of each row is the time removed by
+that step. Speed-ups are relative to GreenW AMwithout optimizations; Table 10 also gives the time to the first action.
+Latency. Caching the instruction and vision key–value states across denoising steps, evaluating both
+branches of classifier-free guidance in one pass, encoding only the conditioning frame, compiling the generator
+and running the feed-forward layers with 8-bit weights and activations bring the GreenW AM policy to
+134.6 ms (Figure 15). Distillation then replaces the four guided denoising steps with one consistency step:
+the distilled policy answers in 35.4 ms, 3.8 times faster than the optimized teacher and 12.3 times faster
+than the unoptimized policy, at 28.3 Hz. Distillation pays off most on the robot’s onboard computer, whose
+compute budget is well below that of an RTX 4090; running the student there is our next step (Section 8).
+Section C.3 describes the benchmark and each optimization; Section 6.5 reports the task success of the
+distilled policy on the humanoid.
+19
+6.5 Real-World Humanoid Evaluation
+Green humanoid, one continuous episode lift and hand over bagbottle into bagcap into bag
+1
+start
+2
+grasp cap
+3
+cap into bag
+4
+grasp bottle
+5
+bottle into bag
+6
+grasp handles
+7
+lift bag
+8
+hand over
+Figure 16 GreenWAM policy inference on the Green humanoid. Eight frames of one continuous episode, cropped from
+a side camera: the robot puts a cap and a bottle into a bag, lifts the bag by its handles and hands it to a person. Colors
+mark the three subtasks.
+We evaluate the policies on a packing task in which the Green humanoid places a bottle and a cap
+into a bag, then lifts the loaded bag with both hands. For evaluation the task is given as five consecutive
+instructions, grasping and placing each object and then lifting the bag; each names the object and, for
+the single-arm actions, the hand to use, and the scene is not reset between them. Variants use different
+bottles and assign the pick-and-place steps to the left or right hand. We measure success at each instruction.
+Figure 16 shows a packing rollout followed by a handover to a person.
+We adapt 𝜋0.5 [62, 61], Cosmos 3 Edge [ 58] and GreenW AMusing the same demonstration split. We also
+evaluate the distilled GreenW AMpolicy (Section 6.4) against its teacher.
+Observation and control. Every policy receives the task instruction, the current camera observations and
+the measured robot state. Cameras and controlled joints are the same for all policies; preprocessing and
+action representation follow each model’s adaptation recipe (Section B.5). GreenW AM, its distilled student
+and the Cosmos 3 Edge policy predict 16 actions per call, and 𝜋0.5 predicts 50.
+In-distribution (ID) and out-of-distribution (OOD) evaluation. ID trials use new resets of the objects
+and scenes represented in policy adaptation; OOD trials keep the task but change objects or scene conditions
+excluded from adaptation. Each policy is evaluated on 70 instructions in 14 scene configurations, 9 ID and
+5 OOD, with one attempt per instruction; an instruction succeeds if it is completed before its timeout
+without human help, and success is the fraction of successful instructions in each split (Figure 17; protocol
+in Section C.2). GreenW AMsucceeds in 95.6% of ID and 84.0% of OOD trials, ahead of the Cosmos 3 Edge
+policy (88.9% and 80.0%) and 𝜋0.5 (84.4% and 76.0%).
+Distilled policy. The teacher and the distilled student run with the same observations, action horizon and
+replanning schedule, so their success rates are directly comparable (Figure 17): the student reaches 91.1%
+ID and 80.0% OOD success.
+Across the four simulation benchmarks and the humanoid, the same foundation and the same action inter-
+face yield policies for two-armed robots with grippers, a single-arm Franka and a humanoid with dexterous
+hands. Section 7 isolates the choices behind these results.
+20
+In distribution
+0 25 50 75 100
+Out of distribution
+0 25 50 75 100
+instruction success, %
+π0.5 84.4 76.0
+Cosmos 3 Edge policy 88.9 80.0
+GreenWAM (teacher) 95.6 84.0
+GreenWAM (distilled) 91.1 80.0
+Figure 17 Instruction success on the Green humanoid. In-distribution and out-of-distribution success of the four
+policies, the fraction of successful instructions within each split (Equation ( 14)). The teacher and the distilled student
+run with the same execution settings.
+← alternative better GreenWAM choice better →
+World model adapted from GreenWAM vs Cosmos 3 Edge
+Forward PSNR, dB
+RoboTwin held-out
+First-block PSNR, dB
+WorldArena
+EWMScore
+WorldArena
+Q1 Specialized start
+3,000 adaptation steps
++1.26+1.26 +1.14+1.14 +0.23+0.23
+−2 0 +2 −2 0 +2 −1 0 +1
+Policy RoboTwin 2.0 success, %
+Clean Randomized Mean
+Q1 Specialized start
+GreenWAM vs Cosmos 3 Edge
++7.9+7.9 +2.8+2.8 +5.4+5.4
+Q2 Action expert, from GreenWAM
+vs one tower for video and actions
++2.8+2.8 +3.7+3.7 +3.3+3.3
+Q1 + Q2 together
+GreenWAM + expert vs Cosmos 3 Edge
++10.8+10.8 +6.1+6.1 +8.4+8.4
+Q3 World-model modes
+WAM + visual prediction
+vs WAM only
+−1.4−1.4 +8.0+8.0 +3.3+3.3
+−10 0 +10 0 +10 0 +10 +20
+Figure 18 Controlled comparisons at a fixed budget. Paired differences (Equation ( 15)) with 95% intervals from a
+hierarchical bootstrap over tasks and episodes; the sign is the choice made in GreenW AMminus the alternative, and
+teal marks intervals that exclude zero. World model: forward PSNR on 50 held-out RoboTwin windows, and first-block
+PSNR and capped EWMScore on the 1 000 WorldArena test episodes, bootstrapped over episodes; each column has
+its own scale. Policy: RoboTwin 2.0 success over 50 tasks with 20 trials per task and setting. World-model modes:
+W AM with visual prediction, that is forward dynamics and image-to-video with weights 0.05 each next to W AM at
+0.9, compared with W AM only. Q1: robot specialization, GreenW AMagainst Cosmos 3 Edge; Q2: an action expert
+against a single tower, both from GreenW AM; Q3: world-model modes kept during policy adaptation. The row Q1 + Q2
+compares GreenW AMwith an action expert split off at the start against the single-tower Cosmos 3 Edge run; each pair
+is estimated on the common seeds of its two runs (Equation ( 15)), so this row need not equal the sum of Q1 and Q2.
+7 Empirical Analysis
+We test three choices in adapting the shared foundation: robot-specialized initialization, a separate action
+expert and the retention of world-model modes during policy adaptation. Each comparison holds the down-
+stream data and the adaptation budget fixed (Figure 18). We then examine how individual scene changes
+affect the policy and what appearance augmentation recovers; evaluation details are given in Section C.5.
+21
+Comparisons. The pairs are specified below; a further comparison combines the first two choices (row
+Q1 + Q2 in Figure 18).
+• Robot specialization. GreenW AMand its parent Cosmos 3 Edge are adapted with the same recipe for
+3 000 steps: to WorldArena 1.0, evaluated on its 1 000 test episodes, and to RoboTwin 2.0 as single-tower
+policies, evaluated with 20 trials per task and setting; the two RoboTwin policies are also compared by
+forward prediction on 50 held-out clips.
+• Action expert. From GreenW AM, the single-tower RoboTwin policy is compared with one trained by the
+same recipe but with the action expert split off at the start; 3 000 steps each.
+• World-model modes. Both runs are warm-started from the same RoboTwin policy, trained with the full
+recipe: W AM at 0.9, forward dynamics and image-to-video at 0.05 each. One run then continues with
+this mixture, the other with W AM only; 2 500 steps each.
+Both runs of a pair are evaluated with the same evaluation code, sampler and seeds.
+Statistics. Differences average over tasks, as the benchmarks do, and their 95% intervals come from a
+hierarchical bootstrap over tasks and episodes (Section C.4).
+7.1 What Robot Specialization Brings to Each Role
+Starting from GreenW AMimproves both forward prediction and policy success at a fixed adaptation budget.
+We adapt GreenW AM and its parent Cosmos 3 Edge with the same recipe and budget, once as a world
+model and once as a policy. The parent learns its joint-space action projections from scratch, as it must for
+joint-space actions, while the prompt format, the W AM mode and the multi-camera canvas are native to
+both.
+PSNR of predicted vs recorded video
+one dot = one held-out clip
+10
+10
+20
+20
+30
+30
+Cosmos 3 Edge forward quality, dB
+GreenWAM forward quality, dB
+Higher with GreenWAM
+Higher with Cosmos 3 Edge
+Equal
+Figure 19 Forward PSNR per held-out clip of the poli-
+cies from GreenW AMand from Cosmos 3 Edge: 38 of 50
+RoboTwin clips lie above the diagonal.
+Gain over Cosmos 3 Edge
+RoboTwin 2.0, mean success, %
+0
++5
++10
+Cosmos 3 Edge
+1K 2K 3K
+adaptation steps
++8.4
++5.4
+adapted from GreenWAM + expert
+GreenWAM
+Figure 20 Gain over Cosmos 3 Edge during adaptation.
+Mean RoboTwin 2.0 success (Figure 18).
+World model. We adapt both checkpoints to WorldArena with the recipe of Section 5.2 for 3 000 steps
+and compare them on all 1 000 test episodes. The model adapted from the robot-specialized checkpoint is
+closer to the recording in 87.1% of the episodes. PSNR rises by 1.1 dB on the first block, generated from the
+recorded frame alone, and by 1.2 dB on the later blocks, which continue from the model’s own frames, so
+the error falls by about a quarter and the gain persists through autoregressive continuation. Specialization
+improves the metrics on which GreenW AMis strongest: trajectory accuracy rises by 3.0, from 44.4 to 47.4,
+and depth accuracy by 0.5, from 96.65 to 97.12. The aggregate score rises by 0.23, mostly from physics
+adherence (+1.3).
+22
+The RoboTwin policies compared below show the same effect on held-out frames. On one held-out window
+per task, the policy adapted from GreenW AMpredicts the next 20 frames 1.3 dB more accurately than the
+one adapted from the parent and is closer to the recording in 38 of the 50 windows (Figure 19).
+Policy. Adapted to RoboTwin 2.0 with the single-tower recipe for 3 000 steps, the policy from GreenW AM
+succeeds more often than the policy from the parent: by 7.9% in clean scenes and 5.4% on average (Figure 18).
+The advantage emerges early in training and persists: under 1% after 500 steps, 6.2% at 2 500 and 5.4% at
+3 000 (Figure 20). The validation losses behave differently: they start far apart, 8.15 for GreenW AMagainst
+19.61 for the parent, and nearly meet by step 3 000 (1.51 and 1.56), while the gap in closed-loop success
+remains. The advantage is similar against a parent trained with the W AM mode only (5.2%). Adding the
+action expert to the specialized start (Section 7.2) widens it to 8.4% on average and 10.8% in clean scenes.
+On the real humanoid, the comparison of policies adapted from 𝜋0.5, from the parent and from GreenW AM
+poses the same question (Section 6.5).
+7.2 Coupling the World Model to Action
+Splitting the action expert at the start of adaptation raises policy success while preserving the initial pre-
+dictions. During policy adaptation, GreenW AM moves action tokens into an expert (Equation ( 8)) that
+starts as an exact copy of the generator tower, so the split changes the trainable parameterization without
+changing the initial predictions (Section 6.1). Both runs therefore start from the same function.
+Trained for 3 000 steps from GreenW AMwith the recipe of Section 7.1, the policy with the expert succeeds
+3.3% more often on average than the one that keeps the shared generator, 2.8% in clean and 3.7% in
+randomized scenes. It raises success on 28 tasks and lowers it on 11 in clean scenes, and on 22 and 7 in
+randomized scenes. The gain comes with almost equal validation losses (1.503 with the expert and 1.510
+without).
+7.3 Retaining World-Model Modes during Policy Adaptation
+RoboTwin success, randomized
+one dot = one task, 20 trials
+0
+0
+25
+25
+50
+50
+75
+75
+100
+100
+WAM only, %
+WAM + visual prediction, %
+Higher with WAM + visual prediction
+Higher with WAM only
+Equal
+Figure 21 Per-task effect of visual
+prediction. Randomized RoboTwin
+success per task, 20 trials, with and
+without forward dynamics and image-
+to-video.
+Keeping world-model modes during policy adaptation improves ro-
+bustness to scene changes. On RoboTwin, policy adaptation trains the
+W AM mode and keeps small shares of forward prediction and image-
+to-video generation (0.9, 0.05 and 0.05). Against W AM alone, trained
+for 2 500 steps from the same checkpoint and evaluated identically, the
+additional modes raise randomized success by 8.0%, with gains on 31
+of the 50 tasks and losses on 9, and leave clean success without a sig-
+nificant change (Figure 21). Both runs predict video inside the W AM
+mode, so the gain comes from the additional modes rather than from
+predicting video at all. Modes that receive a tenth of the training exam-
+ples thus preserve robustness to scene changes that the W AM objective
+alone loses.
+Together, the three comparisons show what makes the shared foun-
+dation work as a policy: robot specialization, an action expert copied
+from the generator and retained world-model modes each raise success
+at a fixed adaptation budget, the last mainly in randomized scenes, and
+specialization improves the world model at the same time.
+7.4 What the Policy Imagines
+A world–action model predicts the video of each action chunk together
+with the actions, so, unlike a policy that predicts actions alone, it shows
+what it expects to happen: decoding its predictions at every replanning
+step gives a view of the policy’s imagination (Figure 22). We evaluate the final RoboTwin policy on all 50
+tasks in two settings: clean scenes, which match the 50 clean demonstrations per task used for adaptation (in
+distribution), and randomized scenes with new backgrounds, clutter, lighting and table heights, which appear
+neither in these demonstrations nor in the GreenW AMcorpus (out of distribution). At every replanning
+23
+Clean scenes · in distribution
+executed
+imagined
+success · “place empty cup” LPIPS 0.012
+task: move the cup onto the coaster
+imagined frames follow the executed ones
+failure · “blocks ranking size” LPIPS 0.030
+task: blocks from large to small, left to right
+imagined correctly, yet they end medium, large, small
+Randomized scenes · out of distribution
+executed
+imagined
+success · “move stapler pad” LPIPS 0.025
+task: move the stapler onto the yellow mat
+imagination holds in a cluttered scene
+failure · “place object basket” LPIPS 0.189
+task: put the toy car into the basket and lift it
+the imagined arm smears, then the bottle vanishes
+start end of episode start end of episode
+Figure 22 What the RoboTwin policy imagines while it acts. A success and a failure in clean scenes (in distribution)
+and in randomized scenes (out of distribution). For each episode, the head-camera frame rendered after an action chunk
+is executed (top strip) and the frame the policy predicted for the same moment in the W AM mode (bottom strip), at four
+moments from the start to the end of the episode; LPIPS is the mean over the episode. In the clean failure the policy
+imagines the outcome of its actions correctly, including the wrong order in which the blocks end; in the randomized
+failure the imagined scene departs from the executed one.
+Per episode
+mean prediction error over the episode
+0.00
+0.05
+0.10
+0.15
+0.20
+LPIPS, head view
+success failure success failure
+clean scenes randomized scenes
+Success against prediction error
+episodes grouped by their mean error
+0
+25
+50
+75
+100
+success rate, %
+0.00 0.02 0.04 0.06 0.08 0.10
+mean LPIPS of the episode, head view
+clean scenes randomized scenes
+Figure 23 Prediction error and success on RoboTwin 2.0. LPIPS between the predicted and the executed head-camera
+frames, averaged over each episode. Left: successful and failed episodes in clean and randomized scenes (box: quartiles;
+line: median). Right: success rate in this run of the episodes grouped by their mean error (below 0.03, 0.03–0.05,
+0.05–0.07 and above 0.07), drawn at the median error of each group.
+step we compare the predicted head-camera frames with the frames observed after the chunk is executed, by
+LPIPS and by PSNR against a baseline that repeats the last observed frame. In distribution the imagination
+is accurate: in successful clean episodes the predictions exceed this baseline by a median of 9.6 dB of PSNR,
+and in the clean success of Figure 22 the imagined frames follow the executed ones to the end of the episode.
+Success follows imagination in both settings, but depends on it far more out of distribution (Figure 23).
+In clean scenes, success stays between 86% and 96% for all but the 6% of episodes with the largest error. In
+randomized scenes, it falls from 85% for the most accurate imagination to 27% for the least accurate, and
+24
+Clean
+reference
+Background
+textures
+cleanclean changedchanged
+Table height
+±3 cm, wrist view
+Clutter
+distractor objects
+Lighting
+color and intensity
+All axes
+randomized setting
+Figure 24 Randomization axes of RoboTwin 2.0. One scene of stack_blocks_two right after reset, without a policy,
+under each axis: background textures, table height (lowered by up to 3 cm in the oﬀicial setting, raised or lowered by
+3 cm in our test), distractor objects on the table, lighting color and intensity, and all axes together as in the oﬀicial
+randomized setting. All tiles use the head camera except table height, which is barely visible there and is shown from
+the left wrist camera; the dashed line marks the table edge of the clean scene. The scene is generated anew for each
+setting, so object positions differ between tiles.
+a third of these episodes are in that worst group. The link is not only a consequence of failing: judged by
+the first 100 steps alone, randomized episodes with an accurate imagination succeed twice as often as those
+with a poor one.
+A review of 20 randomly drawn failures in each setting shows how they arise. In clean scenes, 19 of them
+imagine the executed scene correctly, outcome included: a block that is never released, blocks stacked in the
+wrong order, an object dropped beside its target (Figure 22). The policy foresees what its actions do and
+still chooses the wrong ones. In randomized scenes, 13 of the 20 failures come from how the policy sees the
+changed scene: its imagination departs from what happens, or it grasps a distractor instead of the target
+and imagines doing so. DreamZero attributes most of its failures to video generation rather than action
+prediction [ 92]; our measurements show that this holds out of distribution, while in distribution the policy
+imagines correctly and fails in its actions.
+This accounts for the result of Section 7.3. Retaining forward dynamics and image-to-video during adap-
+tation raised randomized success by 8.0% and left clean success unchanged: the training signal of video
+prediction pays off where failures come from imagination, not where the policy already imagines correctly.
+Robustness to new scenes thus goes with imagining them well, and GreenW AMkeeps the video prediction
+of its world-model role while it learns to act.
+7.5 Robustness to Scene Randomization
+Randomization changes appearance and geometry at once, so a single success rate does not show which change
+matters most. We therefore vary one axis at a time (Figure 24) and then test appearance augmentation;
+Table 3 lists the clean and randomized success of other methods with their training data.
+Individual scene changes. The single-axis tests use seeds outside the oﬀicial set. Background textures
+and table height cause the largest drops, 12% and 8% below the clean reference; distractors and lighting
+change success by less than 1%, and unseen instructions do not lower it. A new background changes only the
+image, which augmentation can target. A table 3 cm higher or lower changes the trajectory the arm must
+follow, and the augmentations used here change observations while keeping the recorded states and actions,
+so they add no demonstrations of such motions.
+Trajectory accuracy and replanning. Execution is sensitive to small errors: replaying expert trajectories
+with joint noise of 0.05 rad succeeds in 80% of trials, and with 0.1 rad in 30%. Executing 8 instead of 16
+predicted steps before replanning lowers clean success by 14.8%.
+Appearance augmentation. Background replacement targets the costliest appearance change: in a paired
+comparison on tasks chosen before training, it raises randomized success by 13.1% and leaves clean success
+unchanged.
+8 Discussion and Limitations
+One foundation for both roles. A single robotics checkpoint yields both a world model and policies. The
+controlled comparisons connect the two roles: robot specialization improves forward prediction and policy
+25
+success at the same budget, and the policy that predicts held-out frames more accurately also succeeds more
+often.
+World modeling as part of control. Keeping forward dynamics and image-to-video next to W AM during
+adaptation raises randomized RoboTwin success by 8.0%, although both variants predict video. Decoding
+the policy’s own predictions shows the same link inside one model: out of distribution, success follows the
+accuracy of the imagined scene, which is where retaining world-model modes pays off (Section 7.4).
+One action space for all bodies. One projector serves all 20 families, so a new robot needs a codec rather
+than new action parameters (Section A.3). The single-arm Franka of CAL VIN and LIBERO, absent from
+the robotics corpus, enters through the same interface and reaches 4.64 on CAL VIN and 97.4% on LIBERO.
+Limitations. The policies remain sensitive to changes in task geometry, such as table height on RoboTwin
+or the robot’s initial configuration on LIBERO-plus: the augmentations used here change observations but
+add no new motions. Long rollouts continue from the model’s own frames, so prediction error accumulates
+from block to block. Each benchmark is reached through its own post-training, and the real-robot evaluation
+covers one humanoid and one packing task.
+Outlook. Natural next steps are running the distilled single-step policy on the robot’s onboard computer,
+transfer to bodies that neither the parent nor the robotics stage has seen, motion-level augmentation for
+robustness to task geometry, and the use of the world-model role to evaluate policies in imagined rollouts.
+9 Conclusion
+We asked whether one robot world model can serve both as a world model and as a policy across different
+bodies, and what makes this work. Adapted from Cosmos 3 Edge to 20 robot families through a shared
+anatomical action space and joint video–action training, one foundation yields a world model with top-tier
+trajectory, depth and 3D accuracy on WorldArena 1.0, ahead of all compared world–action models and video
+generators, and policies that score among the top entries of the RoboTwin 2.0 leaderboard, are competitive
+on CAL VIN and LIBERO and, on a real humanoid, succeed more often than policies adapted from 𝜋0.5 and
+from Cosmos 3 Edge. Controlled comparisons identify three choices that make this work: robot specialization,
+which improves both roles together, an action expert split off the generator, and world-model modes kept
+during policy adaptation. A distilled one-step student answers at 28.3 Hz and keeps its lead over 𝜋0.5 on the
+robot. We release the weights of the RoboTwin 2.0, LIBERO and CAL VIN policies and of the WorldArena
+world model, together with the code that evaluates them. Because a new robot needs a codec rather than
+new action parameters, the next steps are bodies unseen in training and more reliable long-horizon prediction
+and control under changes in task geometry.
+References
+[1] 1X Technologies. 1X World Model: Evaluating bits, not atoms. Technical progress report, 2025. URL https://www.1x.tech/
+1x-world-model.pdf .
+[2] AgiBot Research Team, R. Liu, W. Zhao, Z. Yang, L. Chen, P. Zhou, S. Chen, G. Ren, Y. Peng, et al. GE-Act 2.0: Pretraining
+and scaling a world-action model for robotic manipulation, 2026. URL https://arxiv.org/abs/2609.05588.
+[3] AgiBot World Team. AgiBot World 2026. Hugging Face dataset, 2026. URL https://huggingface.co/datasets/agibot-world/
+AgiBotWorld2026.
+[4] A. Akbari, C. Zhang, A. Akbari, L. Zhao, Y. Chen, W. Chen, X. Zhang, G. Yuan, and Y. Wang. Flash-W AM: Modality-aware
+distillation for world action models, 2026. URL https://arxiv.org/abs/2606.05254.
+[5] I. Apanasevich, M. Artemyev, R. Babakyan, P. Fedotova, D. Grankin, E. Kupryashin, A. Misailidi, D. Nerus, et al. Green-VLA:
+Staged vision-language-action model for generalist robots, 2026. URL https://arxiv.org/abs/2602.00919.
+[6] M. Assran, A. Bardes, D. Fan, Q. Garrido, R. Howes, M. Komeili, M. Muckley, et al. V-JEPA 2: Self-supervised video models
+enable understanding, prediction and planning, 2025. URL https://arxiv.org/abs/2506.09985.
+[7] H. Bi, H. Tan, S. Xie, Z. Wang, S. Huang, H. Liu, R. Zhao, Y. Feng, C. Xiang, Y. Rong, H. Zhao, H. Liu, Z. Su, L. Ma, H. Su,
+and J. Zhu. Motus: A Unified Latent Action World Model, 2025. URL https://arxiv.org/abs/2512.13030.
+[8] H. Bi, Z. Zhou, Y. Tang, J. Pang, S. Huang, H. Liu, R. Wang, S. Huang, et al. Motus2: A self-evolving general world model for
+dexterous manipulation, 2026. URL https://arxiv.org/abs/2608.30237.
+[9] BitRobot, Unitree, and Hugging Face. HIW-500: Humanoids in-the-wild dataset for robot learning. Dataset, 2026. URL
+https://bitrobot-foundation.github.io/humanoids-in-the-wild-500-hours .
+[10] BitRobot Foundation. G1 WBT Dex1 building-children-table, 2026. URL https://huggingface.co/datasets/BitRobot/G1_WBT_
+Dex1_Building-Children-Table . Dataset on Hugging Face.
+[11] K. Black, N. Brown, D. Driess, A. Esmail, M. Equi, C. Finn, N. Fusai, L. Groom, et al. 𝜋0: A vision-language-action flow model
+for general robot control, 2024. URL https://arxiv.org/abs/2410.24164.
+26
+[12] BWM Team. BWM: A low-cost high-fidelity world simulator for robot learning, 2026. URL https://arxiv.org/abs/2607.29302.
+[13] R. Cadene, S. Alibert, A. Soare, Q. Gallouedec, A. Zouitine, S. Palma, P. Kooijmans, M. Aractingi, M. Shukor, D. Aubakirova,
+et al. LeRobot: State-of-the-art machine learning for real-world robotics in PyTorch. GitHub repository, 2024. URL https:
+//github.com/huggingface/lerobot.
+[14] J. Cai, L. Ling, S. Chu, Z. Liu, J. Kang, Z. Liang, W. Xu, Y. Mao, et al. AHA-W AM: Asynchronous horizon-adaptive world-action
+modeling with observation-guided context routing, 2026. URL https://arxiv.org/abs/2606.09811.
+[15] R. Cai, J. Guo, X. He, P. Jin, J. Li, B. Lin, F. Liu, W. Liu, et al. Xiaomi-Robotics-0: An open-sourced vision-language-action
+model with real-time execution, 2026. URL https://arxiv.org/abs/2602.12684.
+[16] C.-L. Cheang, G. Chen, Y. Jing, T. Kong, H. Li, Y. Li, Y. Liu, H. Wu, et al. GR-2: A generative video-language-action model
+with web-scale knowledge for robot manipulation, 2024. URL https://arxiv.org/abs/2410.06158.
+[17] K. Chen, Z. Liu, T. Zhang, Z. Guo, S. Xu, H. Lin, H. Zang, X. Li, B. Wei, J. Zhou, Q. Zhang, Z. Yu, G. Fan, T. Huang, Y. Wang,
+and C. Yu. 𝜋RL: Online RL fine-tuning for flow-based vision-language-action models, 2025. URL https://arxiv.org/abs/2510.
+25889.
+[18] T. Chen, Z. Chen, B. Chen, Z. Cai, Y. Liu, Z. Li, Q. Liang, X. Lin, et al. RoboTwin 2.0: A scalable data generator and benchmark
+with strong domain randomization for robust bimanual robotic manipulation, 2025. URL https://arxiv.org/abs/2506.18088.
+[19] T. Chen, Y. Chen, Z. Li, J. Tang, K. Su, H. Lu, W. Wan, B. Chen, et al. RoboDojo: A unified sim-and-real benchmark for
+comprehensive evaluation of generalist robot manipulation policies, 2026. URL https://arxiv.org/abs/2607.04434.
+[20] Y. Chen, R. Chen, D. Huo, Y. Yang, D. Qi, H. Liu, T. Lin, S. Zeng, et al. ABot-PhysWorld: Interactive world foundation model
+for robotic manipulation with physics alignment, 2026. URL https://arxiv.org/abs/2603.23376.
+[21] Y. Chen, P. Li, Y. Xu, Q. Ma, J. Yang, K. Wang, J. Yang, D. An, et al. FlowW AM: Optical flow as a unified action representation
+for world action models, 2026. URL https://arxiv.org/abs/2607.13017.
+[22] R. Doshi, H. Walke, O. Mees, S. Dasari, and S. Levine. Scaling cross-embodied learning: One policy for manipulation, navigation,
+locomotion and aviation, 2024. URL https://arxiv.org/abs/2408.11812.
+[23] Y. Du, M. Yang, B. Dai, H. Dai, O. Nachum, J. B. Tenenbaum, D. Schuurmans, and P. Abbeel. Learning universal policies via
+text-guided video generation, 2023. URL https://arxiv.org/abs/2302.00111.
+[24] S. Fei, S. Wang, J. Shi, Z. Dai, J. Cai, P. Qian, L. Ji, X. He, S. Zhang, Z. Fei, J. Fu, J. Gong, and X. Qiu. LIBERO-Plus:
+In-depth robustness analysis of vision-language-action models, 2025. URL https://arxiv.org/abs/2510.13626.
+[25] S. Gao, W. Liang, K. Zheng, A. Malik, S. Ye, S. Yu, W.-C. Tseng, Y. Dong, et al. DreamDojo: A generalist robot world model
+from large-scale human videos, 2026. URL https://arxiv.org/abs/2602.06949.
+[26] GigaBrain Team, A. Ye, A. Sun, C. Jin, C. Cheng, C. Shi, D. Shang, D. Zhang, G. Huang, et al. GigaBrain-0.7: Scaling embodied
+foundation models to emergent capabilities with a three-system architecture, 2026. URL https://arxiv.org/abs/2608.15875.
+[27] GigaWorld Team, A. Ye, B. Wang, C. Ni, G. Huang, G. Zhao, H. Li, J. Zhu, K. Li, et al. GigaWorld-0: World models as data
+engine to empower embodied AI, 2025. URL https://arxiv.org/abs/2511.19861.
+[28] GigaWorld Team, A. Ma, B. Wang, B. Li, C. Ni, G. Li, G. Huang, G. Zhao, et al. GigaWorld-1: A roadmap to build world
+models for robot policy evaluation, 2026. URL https://arxiv.org/abs/2607.02642.
+[29] GigaWorld Team, A. Ye, A. Ma, B. Wang, C. Ni, F. Ye, G. Huang, G. Li, G. Zhao, et al. GigaWorld-Policy-0.5: A faster and
+stronger W AM empowered by autoresearch, 2026. URL https://arxiv.org/abs/2607.13960.
+[30] J. Guo, Q. Li, P. Li, Z. Chen, N. Sun, Y. Su, H. Wang, Y. Zhang, et al. Unified 4D world action modeling from video priors with
+asynchronous denoising, 2026. URL https://arxiv.org/abs/2604.26694.
+[31] Y. Guo, L. X. Shi, J. Chen, and C. Finn. Ctrl-World: A controllable generative world model for robot manipulation, 2025. URL
+https://arxiv.org/abs/2510.10125.
+[32] J. Ho and T. Salimans. Classifier-free diffusion guidance, 2022. URL https://arxiv.org/abs/2207.12598.
+[33] Y. Hu, Y. Guo, P. Wang, X. Chen, Y.-J. Wang, J. Zhang, K. Sreenath, C. Lu, et al. Video prediction policy: A generalist robot
+policy with predictive visual representations, 2024. URL https://arxiv.org/abs/2412.14803.
+[34] J. Jang, S. Ye, Z. Lin, J. Xiang, J. Bjorck, Y. Fang, F. Hu, S. Huang, et al. DreamGen: Unlocking generalization in robot
+learning through video world models, 2025. URL https://arxiv.org/abs/2505.12705.
+[35] T. Jiang, T. Yuan, Y. Liu, C. Lu, J. Cui, X. Liu, S. Cheng, J. Gao, et al. Galaxea open-world dataset and G0 dual-system VLA
+model, 2025. URL https://arxiv.org/abs/2509.00576.
+[36] Y. Jiang, Y. Guo, H. Yang, G. Lei, N. Chen, Y. Zhang, S. Yan, B. Lin, F. Gao, and B. Qi. CKT-W AM: Parameter-eﬀicient
+context knowledge transfer between world action models, 2026. URL https://arxiv.org/abs/2605.06247.
+[37] J. Ke, Q. Wang, Y. Wang, P. Milanfar, and F. Yang. MUSIQ: Multi-scale image quality transformer, 2021. URL https:
+//arxiv.org/abs/2108.05997.
+[38] M. J. Kim, C. Finn, and P. Liang. Fine-tuning vision-language-action models: Optimizing speed and success, 2025. URL
+https://arxiv.org/abs/2502.19645.
+[39] M. J. Kim, Y. Gao, T.-Y. Lin, Y.-C. Lin, Y. Ge, G. Lam, P. Liang, S. Song, et al. Cosmos Policy: Fine-tuning video models for
+visuomotor control and planning, 2026. URL https://arxiv.org/abs/2601.16163.
+[40] C. Li, R. Zhang, J. Wong, C. Gokmen, S. Srivastava, R. Martín-Martín, C. Wang, G. Levine, et al. BEHA VIOR-1K: A human-
+centered, embodied ai benchmark with 1,000 everyday activities and realistic simulation, 2024. URL https://arxiv.org/abs/
+2403.09227.
+[41] F. Li, W. Song, H. Zhao, J. Wang, P. Ding, D. Wang, L. Zeng, and H. Li. Spatial forcing: Implicit spatial representation
+alignment for vision-language-action model, 2025. URL https://arxiv.org/abs/2510.12276.
+[42] L. Li, Q. Zhang, Y. Luo, S. Yang, R. Wang, F. Han, M. Yu, Z. Gao, et al. Causal world modeling for robot control, 2026. URL
+https://arxiv.org/abs/2601.21998.
+[43] S. Li, Y. Gao, D. Sadigh, and S. Song. Unified video action model, 2025. URL https://arxiv.org/abs/2503.00200.
+[44] S. Li, V. Yao, C. Yang, T. Qu, R. Cheng, R. Yu, H. Lu, N. Von, et al. W ALL-WM: Carving world action modeling at the event
+joints, 2026. URL https://arxiv.org/abs/2606.01955.
+[45] X. Li, P. Li, L. Qian, M. Liu, D. Wang, J. Liu, B. Kang, X. Ma, et al. What matters in building vision-language-action models
+for generalist robots, 2024. URL https://arxiv.org/abs/2412.14058.
+27
+[46] X. Li, J. Guo, Q. Li, L. Qian, H. Lai, Y. Wang, H. Yan, J. Cao, et al. Xiaomi-Robotics-U0: Unified embodied synthesis with
+world foundation model, 2026. URL https://arxiv.org/abs/2607.11643.
+[47] Y. Liao, P. Zhou, S. Huang, D. Yang, S. Chen, Y. Jiang, Y. Hu, J. Cai, S. Liu, J. Luo, L. Chen, S. Yan, M. Yao, and G. Ren. Genie
+Envisioner: A unified world foundation platform for robotic manipulation, 2025. URL https://arxiv.org/abs/2508.05635v3.
+[48] B. Liu, Y. Zhu, C. Gao, Y. Feng, Q. Liu, Y. Zhu, and P. Stone. LIBERO: Benchmarking knowledge transfer for lifelong robot
+learning. In Advances in Neural Information Processing Systems (Datasets and Benchmarks Track) , 2023.
+[49] S. Liu, L. Wu, B. Li, H. Tan, H. Chen, Z. Wang, K. Xu, H. Su, et al. RDT-1B: a diffusion foundation model for bimanual
+manipulation, 2024. URL https://arxiv.org/abs/2410.07864.
+[50] X. Liu, C. Gong, and Q. Liu. Flow straight and fast: Learning to generate and transfer data with rectified flow, 2022. URL
+https://arxiv.org/abs/2209.03003.
+[51] Y. Liu, P. Ding, T. Jiang, X. Wang, M. Lin, W. Song, H. Zhang, Z. Zhuang, H. Zhao, W. Zhao, S. Huang, J. Shi, and D. Wang.
+MMaDA-VLA: Large diffusion vision-language-action model with unified multi-modal instruction and generation, 2026. URL
+https://arxiv.org/abs/2603.25406.
+[52] Y. Liu, P. Sun, S. Li, Y. Xie, L. Zhang, X. Chao, S. Dong, F. Chen, X.-P. Zhang, and W. Ding. OA-W AM: Object-addressable
+world action model for robust robot manipulation, 2026. URL https://arxiv.org/abs/2605.06481.
+[53] I. Loshchilov and F. Hutter. Decoupled weight decay regularization, 2017. URL https://arxiv.org/abs/1711.05101.
+[54] G. Y. Luo, G. M. Favero, Z. H. Luo, A. Jolicoeur-Martineau, and C. Pal. Beyond FVD: Enhanced evaluation metrics for video
+generation quality, 2024. URL https://arxiv.org/abs/2410.05203.
+[55] O. Mees, L. Hermann, E. Rosete-Beas, and W. Burgard. CAL VIN: A benchmark for language-conditioned policy learning for
+long-horizon robot manipulation tasks, 2021. URL https://arxiv.org/abs/2112.03227.
+[56] Motubrain Team, C. Xiang, F. Bao, H. Liu, H. Tan, H. Bi, J. Li, J. Liu, J. Pang, et al. Motubrain: An advanced world action
+model for robot control, 2026. URL https://arxiv.org/abs/2604.27792.
+[57] NVIDIA, A. Ali, J. Bai, M. Bala, Y. Balaji, A. Blakeman, T. Cai, J. Cao, T. Cao, et al. World simulation with video foundation
+models for physical ai, 2025. URL https://arxiv.org/abs/2511.00062.
+[58] NVIDIA, Aditi, N. Agarwal, A. Ali, J. Allen, M. Antolini, A. Aubame, A. Azzolini, J. Bai, et al. Cosmos 3: Omnimodal world
+models for physical AI, 2026. URL https://arxiv.org/abs/2606.02800.
+[59] Octo Model Team, D. Ghosh, H. Walke, K. Pertsch, K. Black, O. Mees, S. Dasari, J. Hejna, T. Kreiman, et al. Octo: An
+open-source generalist robot policy, 2024. URL https://arxiv.org/abs/2405.12213.
+[60] Open X-Embodiment Collaboration, A. O’Neill, A. Rehman, A. Gupta, A. Maddukuri, A. Gupta, A. Padalkar, A. Lee, A. Pooley,
+et al. Open X-Embodiment: Robotic learning datasets and RT-X models, 2023. URL https://arxiv.org/abs/2310.08864.
+[61] Physical Intelligence. OpenPI: Open-source robotics models and fine-tuning. Oﬀicial software repository, 2025. URL https:
+//github.com/Physical-Intelligence/openpi.
+[62] Physical Intelligence, K. Black, N. Brown, J. Darpinian, K. Dhabalia, D. Driess, A. Esmail, M. Equi, C. Finn, et al. 𝜋0.5: a
+vision-language-action model with open-world generalization, 2025. URL https://arxiv.org/abs/2504.16054.
+[63] B. Qiu, L. Chen, Y. Liao, N. Wang, L. Wang, J. Luo, W. Zhao, S. Chen, et al. GE-Sim 2.0: A roadmap towards comprehensive
+closed-loop video world simulators for robotic manipulation, 2026. URL https://arxiv.org/abs/2605.27491.
+[64] Qwen Team. Qwen3.8-Max: A new bar for coding and cowork. Blog post, August 2026. URL https://qwen.ai/blog?id=qwen3.8 .
+Model card: https://huggingface.co/Qwen/Qwen3.8-27B.
+[65] M. Reuss, H. Zhou, M. Rühle, Ömer Erdinç Yağmurlu, F. Otto, and R. Lioutikov. FLOWER: Democratizing generalist robot
+policies with eﬀicient vision-language-action flow policies, 2025. URL https://arxiv.org/abs/2509.04996.
+[66] Robbyant. LingBot-V A repository, 2026. URL https://github.com/Robbyant/lingbot-va.
+[67] RoboDojo Team. RoboDojo leaderboard. Project website, 2026. URL https://robodojo-benchmark.com/leaderboard.
+[68] RoboTwin Team. RoboTwin 2.0 leaderboard. Project website, 2026. URL https://robotwin-platform.github.io/leaderboard.
+[69] C. Schuhmann, R. Beaumont, R. Vencu, C. Gordon, R. Wightman, M. Cherti, T. Coombes, A. Katta, C. Mullis, M. Wortsman,
+et al. LAION-5B: An open large-scale dataset for training next generation image-text models, 2022. URL https://arxiv.org/
+abs/2210.08402.
+[70] Y. Shang, Z. Li, Y. Ma, W. Su, X. Jin, Z. Wang, L. Jin, X. Zhang, et al. WorldArena: A unified benchmark for evaluating
+perception and functional utility of embodied world models, 2026. URL https://arxiv.org/abs/2602.08971.
+[71] Y. Shang, Y. Tang, Y. Ma, Z. Li, L. Jin, W. Su, X. Jin, Z. Wang, et al. WorldArena 2.0: Extending embodied world model
+benchmarking on modality, functionality and platform, 2026. URL https://arxiv.org/abs/2605.17912.
+[72] Y. Song and P. Dhariwal. Improved techniques for training consistency models, 2023. URL https://arxiv.org/abs/2310.14189.
+[73] StarVLA Community. StarVLA: A Lego-like codebase for vision-language-action model developing, 2026. URL https://arxiv.
+org/abs/2604.05014.
+[74] H. Su, Z. Liu, X. Jin, H. Dou, C. Hu, B. Li, Z. Liu, R. Xu, J. Fang, X. Zhang, Z. Yang, X. Yang, C. Gao, J. Yan, Y. Li, and
+W. Wu. WorldScape Policy 2.0: Empowering steerable world action modeling with reasoning-augmented memory and in-context
+learning, 2026. URL https://arxiv.org/abs/2607.18840.
+[75] T. Su, J. Zhu, T. Wang, Y. He, Z. Huang, J. Zhang, C. Ma, H. Wang, et al. DeMaVLA: A vision-language-action foundation
+model for generalizable deformable manipulation, 2026. URL https://arxiv.org/abs/2605.31286.
+[76] Y. Tian, S. Yang, J. Zeng, P. Wang, D. Lin, H. Dong, and J. Pang. Predictive inverse dynamics models are scalable learners for
+robotic manipulation, 2024. URL https://arxiv.org/abs/2412.15109.
+[77] Y. Tian, Y. Yang, Y. Xie, Z. Cai, X. Shi, N. Gao, H. Liu, X. Jiang, et al. InternData-A1: Pioneering high-fidelity synthetic data
+for pre-training generalist policy, 2025. URL https://arxiv.org/abs/2511.16651.
+[78] Unitree Robotics. Unitree open robot datasets, 2025. URL https://huggingface.co/unitreerobotics. Dataset on Hugging Face.
+[79] T. Wan, A. Wang, B. Ai, B. Wen, C. Mao, C.-W. Xie, D. Chen, F. Yu, et al. Wan: Open and advanced large-scale video
+generative models, 2025. URL https://arxiv.org/abs/2503.20314.
+[80] L. Wang, X. Chen, J. Zhao, and K. He. Scaling proprioceptive-visual learning with heterogeneous pre-trained transformers, 2024.
+URL https://arxiv.org/abs/2409.20537.
+28
+[81] Y. Wang, X. Li, W. Wang, J. Zhang, Y. Li, Y. Chen, X. Wang, and Z. Zhang. Unified vision-language-action model, 2025. URL
+https://arxiv.org/abs/2506.19850.
+[82] Z. Wang, C. Liu, Y. Xiang, R. Zhang, Q. Hao, H. Lu, H. Chen, Z. Feng, et al. The great march 100: 100 detail-oriented tasks
+for evaluating embodied ai agents, 2026. URL https://arxiv.org/abs/2601.11421.
+[83] WorldArena Team. WorldArena 2.0: Motion quality evaluation update. Project website, 2026. URL https://v2.world-arena.
+ai/WorldArena-2.0/motion-quality-evaluation-update.html .
+[84] WorldArena Team. WorldArena leaderboard. Hugging Face Space, 2026. URL https://huggingface.co/spaces/WorldArena/
+WorldArena.
+[85] K. Wu, C. Hou, J. Liu, Z. Che, X. Ju, Z. Yang, M. Li, Y. Zhao, et al. RoboMIND: Benchmark on multi-embodiment intelligence
+normative data for robot manipulation, 2024. URL https://arxiv.org/abs/2412.13877.
+[86] S. Wu, X. Liu, S. Xie, P. Wang, X. Li, B. Yang, Z. Li, K. Zhu, et al. RoboCOIN: An open-sourced bimanual robotic data
+collection for integrated manipulation, 2025. URL https://arxiv.org/abs/2511.17441.
+[87] G. Yang, Z. Tu, Y. Yang, S. Mao, J. Dong, T. Chen, J. Peng, J. Xiong, et al. EventVLA: Event-driven visual evidence memory
+for long-horizon vision-language-action policies, 2026. URL https://arxiv.org/abs/2606.20092.
+[88] L. Yang, W. Song, X. Wang, P. Sheng, Z. Fang, Z. Zhou, J. He, H. Yan, et al. 4D-W AM: Infusing spatiotemporal awareness into
+world action models through trajectory fields, 2026. URL https://arxiv.org/abs/2608.08023.
+[89] S. Yang, Y. Du, K. Ghasemipour, J. Tompson, L. Kaelbling, D. Schuurmans, and P. Abbeel. Learning interactive real-world
+simulators, 2023. URL https://arxiv.org/abs/2310.06114.
+[90] Y. Yang, S. Zeng, T. Lin, X. Chang, D. Qi, J. Xiao, H. Liu, R. Chen, et al. ABot-M0: VLA foundation model for robotic
+manipulation with action manifold learning, 2026. URL https://arxiv.org/abs/2602.11236.
+[91] Z. Yang, J. Teng, W. Zheng, M. Ding, S. Huang, J. Xu, Y. Yang, W. Hong, et al. CogVideoX: Text-to-video diffusion models
+with an expert transformer, 2024. URL https://arxiv.org/abs/2408.06072.
+[92] S. Ye, Y. Ge, K. Zheng, S. Gao, S. Yu, G. Kurian, S. Indupuru, Y. L. Tan, et al. World action models are zero-shot policies,
+2026. URL https://arxiv.org/abs/2602.15922.
+[93] C. Yin, D. Huang, D. Yang, J. Wang, N. Zhao, C. Xu, W. Sun, L. Hou, et al. Genie sim 3.0 : A high-fidelity comprehensive
+simulation platform for humanoid robot, 2026. URL https://arxiv.org/abs/2601.02078.
+[94] H. Yuan, Z. Liang, A. Chen, Y. Wang, H. Li, P. Lin, Y. Huang, Z. Lei, et al. Qwen-robotmanip technical report: Alignment
+unlocks scale for robotic manipulation foundation models, 2026. URL https://arxiv.org/abs/2606.17846.
+[95] T. Yuan, Z. Dong, Y. Liu, and H. Zhao. Fast-W AM: Do world action models need test-time future imagination?, 2026. URL
+https://arxiv.org/abs/2603.16666.
+[96] M. Zhang, R. Sun, X. Wang, C. Zhang, S. Li, M. Cao, H. Lu, E. Chen, et al. W ALL-SS: Scaling long-horizon world models via
+next-scale autoregression, 2026. URL https://arxiv.org/abs/2608.26239.
+[97] Q. Zhang, L. Li, L. Zhang, S. Yang, Y. Luo, S. Li, R. Wang, J. Wang, et al. Native video-action pretraining for generalizable
+robot control, 2026. URL https://arxiv.org/abs/2607.08639.
+[98] W. Zhang, H. Liu, Z. Qi, Y. Wang, X. Yu, J. Zhang, R. Dong, J. He, F. Lu, H. Wang, Z. Zhang, L. Yi, W. Zeng, and X. Jin.
+DreamVLA: A vision-language-action model dreamed with comprehensive world knowledge, 2025. URL https://arxiv.org/abs/
+2507.04447.
+[99] X. Zhang, X. Liu, Q. Tang, J. Wang, R. Wang, Z. Cheng, B. Lin, H. Wen, M. Li, K. Zhan, and Y. Liu. ME-Dex 1.0: Bringing
+Heterogeneous Tactile Sensing into World Action Modeling, 2026. URL https://arxiv.org/abs/2609.21449.
+[100] W. Zhao, H. Jiang, X. Shi, L. Liu, F. Huang, Z. Su, W. Sui, and X. Wang. Faster-W AM: Eﬀicient inference-time future
+conditioning for robust world action models, 2026. URL https://arxiv.org/abs/2608.04404.
+[101] Z. Zhao, H. Jing, X. Liu, J. Mao, A. Jha, H. Yang, R. Xue, S. Zakharov, et al. Humanoid everyday: A comprehensive robotic
+dataset for open-world humanoid manipulation, 2025. URL https://arxiv.org/abs/2510.08807.
+[102] J. Zheng, J. Li, D. Liu, Y. Zheng, Z. Wang, Z. Ou, Y. Liu, J. Liu, et al. Universal actions for enhanced embodied foundation
+models, 2025. URL https://arxiv.org/abs/2501.10105.
+[103] J. Zheng, J. Li, Z. Wang, D. Liu, X. Kang, Y. Feng, Y. Zheng, J. Zou, et al. X-VLA: Soft-prompted transformer as scalable
+cross-embodiment vision-language-action model, 2025. URL https://arxiv.org/abs/2510.10274.
+[104] C. Zhu, R. Yu, S. Feng, B. Burchfiel, P. Shah, and A. Gupta. Unified world models: Coupling video and action diffusion for
+pretraining on large robotic datasets, 2025. URL https://arxiv.org/abs/2504.02792.
+[105] F. Zhu, H. Wu, S. Guo, Y. Liu, C. Cheang, and T. Kong. IRASim: A fine-grained world model for robot manipulation, 2024.
+URL https://arxiv.org/abs/2406.14540.
+[106] J. Zhu, J. Zhang, T. Su, T. Liu, Z. Wang, K. Xie, Z. Huang, C. Ma, Y. He, T. Wang, H. Wang, W. Ding, and Y. Xu. DSW AM: A
+dual-system world action foundation model for fine-grained robot manipulation, 2026. URL https://arxiv.org/abs/2607.04927.
+A Data Inventory and Anatomical Mappings
+A.1 Family and Source Inventory
+The corpus groups datasets by the robot body they describe (Figure 25). All twelve Unitree G1 layouts,
+which differ in hands and cameras, share one family; the two Worker datasets share another, as do the
+Green humanoid and its simulator. The largest family contributions to the admitted corpus are AgiBot G2A
+(256.0 h), Piper / Cobot Magic (227.2 h), the Green humanoid (214.8 h), Unitree G1 (204.9 h) and AgiBot
+G1 / Genie-1 (148.5 h). Figure 26 shows the 20 main families and their real/simulated composition. The
+inventory covers 1 217 datasets.
+29
+humanoid
+AgiBot G2A
+grippers
+humanoid
+Green humanoid
+dexterous hands
+humanoid
+Unitree G1
+dexterous hands
+humanoid
+Fourier GR1T1
+dexterous hands
+humanoid
+Galaxea R1Pro
+grippers
+humanoid
+TienKung
+grippers
+humanoid
+Leju
+dexterous hands
+humanoid
+Unitree H1
+dexterous hands
+humanoid
+AIRBOT MMK2
+dexterous hands
+humanoid
+Tianyi
+dexterous hands
+humanoid
+AlphaBot2
+grippers
+two-arm
+Piper / Cobot Magic
+grippers
+two-arm
+AgiBot G1 / Genie-1
+grippers
+two-arm
+Galaxea R1Lite
+grippers
+two-arm
+Worker / ARX5
+grippers
+two-arm
+RealMan AIDAL
+grippers
+two-arm
+ManipArena EX001
+grippers
+Figure 25 Robot families of the corpus. Training canvases of the robot families, as the model receives them: the head
+view on top and the other cameras in a strip below. Each tile shows one dataset of its family, so other datasets of the
+same family may differ in hands or cameras. Humanoids come first, then two-arm platforms; the chip on each tile gives
+the body type, and the label below gives the effector.
+Source-level filtering retains 1.43 million atoms totaling 1 674.7 h. InternData-A1 [ 77], the Green hu-
+manoid, RoboCOIN [ 86], GM100 [ 82] and AgiBotWorld-2026 [ 3] supply the largest retained volumes; further
+public sources include GR00T-Teleop-GR1 [ 25], BEHA VIOR-1K [40], Genie Sim 3.0 [ 93], RoboMIND [ 85],
+Humanoid Everyday [ 101], HIW-500 [ 9], the G1 IKEA assembly recordings [ 10] and Unitree datasets [ 78].
+Galaxea Open-World [ 35] has the largest quality-filter reduction (6.84 h, 9% of its admitted hours).
+A.2 Corpus Admission and Quality Filtering
+Sources. Each source is converted to one LeRobot layout and registered with its camera roles, state layout
+and three static facts that the captioner later receives: embodiment, end-effector type and real or simulated
+domain. Camera roles and the meaning of state and action columns are established from metadata, sampled
+tables and video rather than from column names. A video stream needs more than 10 FPS and at least 448
+pixels on the short side; depth and infrared streams are not used. Failed and recovery demonstrations are
+kept, since for a world model they are valid physical rollouts.
+Semantic atoms. An atom is the smallest annotated temporal unit of a recording, recovered from subtask
+tables, task-index runs, skill annotations or instruction intervals. An entire episode becomes one atom
+only when no finer annotation exists; missing or overlapping boundaries are marked unresolved rather than
+replaced by the whole episode. The source label is kept separately from the training instruction.
+Length. Admission uses the camera in the head or ego role. The maximum admitted length is
+𝑒 − 𝑠 ≤ min(𝐵(ℎ), ⌊10 𝑓⌋) , 𝐵(ℎ) = { 300, ℎ ≤ 480,
+200, 480 < ℎ ≤ 1000, (10)
+30
+Corpus composition by robot family
+1,688.5 hours · 20 robot families · 74% real-world
+Real-world Simulation
+0 50 100 150 200 250
+Duration (hours)
+AgiBot G2A 256
+Piper / Cobot Magic 227
+Green humanoid 215
+Unitree G1 205
+AgiBot G1 / Genie-1 148
+ARX R5a / Lift-2 106
+Galaxea R1Lite 93
+Fourier GR1T1 88
+Galaxea R1Pro 83
+Worker / ARX5 80
+TienKung 59
+RealMan AIDAL 58
+Leju 30
+Unitree H1 12
+RoboCOIN Ruantong/A2D 10
+AIRBOT MMK2 8
+Tianyi 7
+AlphaBot2 2
+Fourier GR1T2 0.8
+ManipArena EX001 0.4
+Figure 26 Hours per robot family, real-world and simulated. Combined names such as Piper / Cobot Magic denote
+datasets of one robot body grouped into one family (Section A). End labels are rounded. Hour shares differ from the
+sampling probabilities used in training (Section B.4).
+where ℎ is the admission-view height and 𝑓 its frame rate. An overlong atom is rejected as a whole; the gate
+does not shorten it or invent new boundaries.
+Quality filtering. The quality pass, computed on the admission camera, removes idle, repeated-frame,
+abruptly cut and unreadable clips (Table 4). An atom is idle when more than 70% of its motion values fall
+below 0.2 of the episode median; a whole episode is compared with the median motion of episodes from the
+same dataset instead. Repeated frames require both a repeated share above 0.30 and a run of at least two
+repeated transitions, which separates sustained freezes from isolated duplicates left by frame-rate conversion.
+A cut requires a histogram-distance peak together with large color and grayscale changes.
+Splits and text. Training and holdout are separated at the episode level, giving 1.40 million training
+and 28.6 thousand held-out atoms before text exclusions. Atoms without an accepted caption or derived
+command stay in the quality-admitted pool but do not enter the text-dependent modes; native instructions
+are not used as a fallback.
+Table 4 Data-quality pass over the admitted corpus. Atoms in thousands, hours rounded to one decimal. An atom
+can be removed for several reasons (40 atoms are), so the reason rows do not add up to the total.
+Atoms, thousands Hours
+Admitted subtask atoms 1 437 1 688.5
+Not scored, excluded 0.1 0.2
+Removed
+idle clip (idle score above 0.7) 7.3 8.5
+repeated frames 2.1 2.9
+abrupt cut within the clip 1.8 2.3
+unreadable video < 0.1 < 0.1
+total 11.1 13.6
+Kept for training 1 426 1 674.7
+31
+A.3 Anatomical Mappings
+Legs · 12
+left right
+Body · 23
+base pose twist torso head
+Arms · 18
+left right
+Hands · 26
+left right
+family hours
+AgiBot G2A 256
+Piper / Cobot Magic 227
+Green humanoid 215
+Unitree G1 205
+AgiBot G1 / Genie-1 148
+ARX R5a / Lift-2 106
+Galaxea R1Lite 93
+Fourier GR1T1 88
+Galaxea R1Pro 83
+Worker / ARX5 80
+TienKung 59
+RealMan AIDAL 58
+Leju 30
+Unitree H1 12
+Ruantong/A2D 10
+AIRBOT MMK2 8
+Tianyi 7
+AlphaBot2 2
+Fourier GR1T2 <1
+ManipArena EX001 <1
+filled in the data, excluded from the loss absent
+Figure 27 Coverage of the 79 anatomical slots by family. Rows: the 20 families ordered by admitted hours. Columns:
+slots grouped into legs (12), body (23: base pose, twist, torso and head), arms (18) and hands (26), with left and right
+subgroups. A colored cell is filled by a named channel of at least one layout of the family. A gray cell holds only
+unresolved channels of that body part: they stay in the data, are excluded from the loss and claim no correspondence
+to the slot. A light cell marks an absent slot. The hands of Ruantong/A2D are unresolved.
+Figure 27 shows which slots each family fills. Each of the 43 registered source layouts has a codec that
+selects its channels, permutes them into slot order and fixes sign and zero for every slot role; scale and
+offset are absorbed by per-layout statistics. A coordinate enters a shared slot only when its correspondence
+follows from the URDF at zero pose, the manufacturer documentation or named channels, and for the
+main families the joint assignment is validated by forward kinematics against measured end-effector poses.
+Channels without an established correspondence stay outside the shared slots. A validity mask removes
+absent and unresolved coordinates from the loss, so equal tensor width never implies equal meaning. The
+Worker platform, for example, stores two 6-DoF arms and two grippers under generic channel names, and
+its codec assigns each channel an anatomical role (Figure 4). Robots that appear only in post-training enter
+through the same interface as layout extensions: a new codec maps their channels onto existing slots, and
+the shared projectors of GreenW AMstay unchanged. RoboTwin uses ARX5 arms, so its layout reuses the
+Worker family, whose forward kinematics reproduces the recorded RoboTwin gripper paths to within 5.2
+and 7.1 mm; the single Franka arm of CAL VIN enters through the Cartesian end-effector slots. State rows
+are aligned to video frames per source. Normalization statistics are computed on the training split only,
+separately for absolute and offset encodings and per layout, and pooled per slot with a lower bound on the
+scale in physical units; W AM statistics use successful demonstrations only.
+B Training and Adaptation Recipes
+B.1 Robotics Training Recipe
+Recipe. Figure 28 shows the training losses. The noise level shared by all generated streams is drawn
+as in the video training of Cosmos 3 Edge: ̃ 𝜎 = 1 − 𝑢 − 𝑠 (cos2 𝜋𝑢
+2 − 1 + 𝑢) with 𝑢 ∼ 𝒰(0, 1) and 𝑠 = 1.29 ,
+shifted to 𝜎 = 𝑘 ̃ 𝜎/(1 + (𝑘 − 1) ̃ 𝜎)with 𝑘 = 5 for 480p canvases. Each micro-batch packs 4 examples of one
+mode, so that examples with history anchors are not mixed with examples without them. The learning rate
+32
+Text-to-video
+2.2
+2.4
+2.6
+0 10K 20K 30K
+Image-to-video
+1.7
+1.8
+1.9
+2
+0 10K 20K 30K
+Image-to-video
+with history
+1.6
+1.7
+1.8
+1.9
+0 10K 20K 30K
+Forward dynamics
+1.6
+1.7
+1.8
+1.9
+0 10K 20K 30K
+Forward dynamics
+with history
+1.5
+1.6
+1.7
+1.8
+1.9
+0 10K 20K 30K
+Inverse dynamics
+log scale
+0.3
+1
+3
+10
+0 10K 20K 30K
+World–action (WAM)
+log scale
+2
+3
+5
+7
+0 10K 20K 30K
+x axis: training step
+Figure 28 Robotics-stage training. Training loss of each mode as reported (light) and its running median over about
+500 steps (dark); inverse dynamics and W AM are on a log scale because they start an order of magnitude higher, and
+their medians fall from 8.3 to 0.29 and from 6.2 to 1.98.
+follows a square-root rule from the base rate of 2 × 10 −5 at batch 128, i.e. 𝜂 = 2 × 10 −5√𝐵/128, and the
+newly initialized action projections and modality embeddings use a rate five times larger.
+Table 5 Recipe of the robotics stage.
+Setting Value
+Initialization Cosmos 3 Edge 4B
+Trainable Generator, action projections, action-modality embeddings
+Frozen Reasoner, video V AE
+Modes, % of examples text-to-video 20, image-to-video 10, image-to-video with history 10, forward dynam-
+ics 15, forward dynamics with history 20, inverse dynamics 10, W AM 15
+Frame rate native, capped at 30 FPS
+Training unit whole subtask; each autoregressive block is one subtask
+Rollout up to 30 s of future video in whole-subtask blocks; 4 RGB anchors of history
+W AM horizon about 1.07 s; successful demonstrations only
+Joint targets inverse dynamics: absolute, including 𝑞0; other modes: offsets from the block start
+Canvas sizes 640×640, 736 ×544, 544 ×736, 832 ×480, 480 ×832
+Global batch 256 examples (64 GPUs × 4 packed examples)
+Optimizer AdamW [53], 𝛽 = (0.9, 0.99) , weight decay 0.05
+Learning rate 2.83 × 10−5; ×5 on action projections and embeddings
+Schedule 500 warm-up steps, then linear decay
+Gradient clipping 1.0
+Noise level shared by all generated streams; Cosmos 3 Edge video schedule, shift 5 at 480p
+(Section 4.3)
+Loss video and state terms, each scaled by 10; state: mean within valid body-part groups,
+then across groups
+Prompt Cosmos 3 JSON, up to 768 tokens, text dropout 0.1
+Validation every 1 200 steps
+Steps trained 36 500 (9.34 million examples)
+33
+B.2 Temporal Sampling and Prediction Targets
+Physical time. We retain each source’s physical timing and cap the effective video rate at 30 FPS. A
+source recorded at 𝑓𝑠 is read with stride max (1, ⌈𝑓𝑠/30⌉): 15, 20 and 30 FPS are retained, while 50 FPS
+becomes 25 FPS. Video frames and measured states are selected on the same time grid, and the effective
+rate is passed to the model. This preserves motion speed in physical time; joint positions and displacements
+are not multiplied by the sampling-rate ratio. Three-view sources use the 480p canvas buckets 640 ×640,
+736×544, 544 ×736, 832 ×480 and 480 ×832 according to the head-camera aspect ratio.
+Whole subtasks. A fixed-length clip can cut an action in the middle and pair an incomplete grasp with
+the description of the whole grasp. Text-to-video, image-to-video, forward dynamics and inverse dynamics
+therefore use a complete prepared subtask rather than a fixed-length clip. In the autoregressive modes one
+block is one whole subtask; a following block is added only if it fits completely, and the last block is never
+truncated. The autoregressive budget is expressed in physical time, up to 30 s of future video, so the number
+of predicted frames follows the frame rate of the source.
+History anchors. Let 𝑎 be the start of the contiguous kept history and 𝑏 the last observed boundary, both
+in native-frame indices, and let 𝑠 be the stride on the effective video grid. With 𝑁 = ⌊(𝑏 − 𝑎)/𝑠⌋ , the four
+RGB anchors are
+ℎ𝑖 = 𝑎 + 𝑠 ⌊ 𝑖𝑁
+3 ⌋ , 𝑖 = 0, 1, 2, 3. (11)
+Each frame is encoded separately. At the start of an episode or an admitted rollout, 𝑎 = 𝑏 and all four
+anchors are the initial frame; short histories can likewise repeat an anchor. Target frames begin at 𝑏 + 𝑠 ,
+so every anchor precedes the predicted block. History extends across adjacent kept subtasks of the same
+episode and camera and resets at rejected gaps. A target block must fit within its admitted subtask; decoder
+padding does not supply missing history or target frames.
+WAM horizon. W AM predicts a short future inside a subtask with a physical horizon of about 1.07 s.
+Video and state targets cover this interval; V AE padding creates no additional action targets. The command
+is bound to the enclosing admitted atom and is retained when sampling the shorter W AM window. It specifies
+the ongoing task rather than promising its completion within 𝐻. W AM admits only positive success labels;
+failed, unknown and absent outcomes remain outside its training subset.
+mode share video tokens state tokens conditions → target
+Text-to-video 20% v ̃0 v ̃1 v ̃2 ··· v ̃N — /g57/g48/g5B/g57/g3→/g3/g56/g58/g45/g57/g44/g56/g4E/g3/g59/g4C/g47/g48/g52
+Image-to-video 10% v0 v ̃1 v ̃2 ··· v ̃N — /gE/g3/gEC/g55/g56/g57/g3/g49/g55/g44/g50/g48
+Forward dynamics 15% v0 v ̃1 v ̃2 ··· v ̃N q0 Δq1 Δq2 ··· ΔqN /gE/g3/g540/g3/g44/g51/g47/g3/g49/g58/g57/g58/g55/g48/g3/g56/g57/g44/g57/g48/g56
+Inverse dynamics 10% v0 v1 v2 ··· vN q0 q1 q2 ··· qN /g59/g4C/g47/g48/g52/g3→/g3/g44/g45/g56/g52/g4F/g58/g57/g48/g3/g56/g57/g44/g57/g48/g56
+World–action (WAM) 15% v0 v ̃1 v ̃2 ··· v ̃N q0 Δq1 Δq2 ··· ΔqN /g49/g55/g44/g50/g48/g3/gE/g3/g540/g3→/g3/g59/g4C/g47/g48/g52/gF/g3Δ/g54
+Image-to-video
+/g5A/g4C/g57/g4B/g3/g4B/g4C/g56/g57/g52/g55/g5C10% v ̃ v ̃ v ̃ — /g17/g3/g44/g51/g46/g4B/g52/g55/g56/g3→/g3/g51/g48/g5B/g57/g3/g45/g4F/g52/g46/g4E
+Forward dynamics
+/g5A/g4C/g57/g4B/g3/g4B/g4C/g56/g57/g52/g55/g5C20% v ̃ v ̃ v ̃ q0 Δq Δq Δq /gE/g3/g540/g3/g44/g51/g47/g3/g45/g4F/g52/g46/g4E/g3/g56/g57/g44/g57/g48/g56
+/g46/g4F/g48/g44/g51/g3/g59/g4C/g47/g48/g52/g51/g52/g4C/g56/g48/g47/g3/g59/g4C/g47/g48/g52/g3/g57/g44/g55/g4A/g48/g57/g46/g4F/g48/g44/g51/g3/g56/g57/g44/g57/g48/g51/g52/g4C/g56/g48/g47/g3/g56/g57/g44/g57/g48/g3/g57/g44/g55/g4A/g48/g57/g35/g2A/g25/g3/g44/g51/g46/g4B/g52/g55
+/g37/g48/g5B/g57/g3/gB/g46/g44/g53/g57/g4C/g52/g51/g3/g52/g55/g3/g4C/g51/g56/g57/g55/g58/g46/g57/g4C/g52/g51/gC/g3/g4C/g56/g3/g44/g3/g46/g4F/g48/g44/g51/g3/g46/g52/g51/g47/g4C/g57/g4C/g52/g51/g3/g4C/g51/g3/g48/g59/g48/g55/g5C/g3/g50/g52/g47/g48/g11/g3Δ/g54/g3/g20/g3/g54/g3−/g3/g540/g11
+Figure 29 Clean conditions and noised targets in the seven modes, with each mode’s share of training examples.
+Text (caption or instruction) is a clean condition in every mode. Forward dynamics, with and without history, conditions
+on 𝑞0 and the clean future targets 𝛿𝑘 of Equation ( 2); inverse dynamics predicts absolute states including 𝑞0. W AM
+predicts future frames and state offsets over about 1.07 s at the effective frame rate of the source. Autoregressive modes
+predict the next whole-subtask block from four RGB anchors of the history.
+34
+B.3 Structured Captions and Commands
+A visual description records what is visible, including the scene and the observed outcome; an action instruc-
+tion specifies what the robot should do during the same fragment. We keep both for every atom instead of
+treating a retrospective caption as a policy command.
+Captioner. A vision-language model (Qwen3.8-27B [ 64] with FP8 weights) captions the admission-camera
+clip of one atom. It also receives the clip duration, the source subtask label and three registry facts: embod-
+iment (humanoid or bimanual platform), end effector (dexterous hand or two-finger gripper) and domain
+(real or simulation). The label supplies the goal and the target object, while only the frames establish how
+far the attempt got. The registry facts are taken as given, so a cropped or occluded effector does not change
+the described embodiment.
+Field-by-field generation. The captioner writes one field per turn in a single dialogue, and each answer
+is appended to the context before the next request (Table 6). Later fields must therefore agree with earlier
+ones, and one object keeps one name and one color throughout the record. Action phases start at 0:00,
+stay ordered and contiguous and end at the clip duration. A shared instruction block fixes the vocabulary:
+actor-relative left and right, the registry’s effector term, no camera language, no hedging and no contact
+detail that the view cannot resolve. An attempt record, written before the action phases, states the end state,
+whether the target moved and where the effector ends; a clip that ends mid-motion then receives phases and
+a narrative that also end mid-motion.
+Table 6 Fields of the caption record in generation order. The two checks are generated in the same dialogue but stored
+outside the caption and never enter a training prompt.
+Field Content Role
+1 Subjects Robot, and a person if present: embodiment, effector, lo-
+cation, orientation, pose, action, state changes, arm and
+leg counts; person attributes stay empty for the robot
+Caption
+2 Background Setting, furniture and objects with colors and materials;
+real or simulated domain
+Caption
+3 Lighting Conditions, direction, shadows, effect on the scene Caption
+4 Aesthetics Composition, color scheme, mood, patterns Caption
+5 Context One sentence: activity, setting, active effector and its
+side
+Caption; rewriter
+6 Attempt record End state in the final frame, whether the target moved,
+effector position at the end, outcome
+Check
+7 Action phases One to five timed phases: effector, object, where it goes Caption; rewriter
+8 Temporal caption One chronological paragraph of 120–180 words that ends
+on the final state
+Caption; rewriter
+9 Consistency Agreement with the label and the registry facts; mis-
+match clause
+Check
+Content gates. Each answer is checked for forbidden phrases, effector terms that contradict the registry,
+contact claims and completion words that the attempt record rules out. A violation returns the phrase to the
+model for a rewrite of the same field, at most twice; a remaining violation restarts the atom, up to 4 attempts.
+Atoms without an accepted caption stay in the quality-admitted pool but not in the text-dependent modes.
+Coverage. In total, 1.24 million atoms have an accepted visual caption and 187 thousand do not; 1.19
+million of them also have an accepted command.
+From caption to command. A second language-model pass turns the ordered action phases into one
+imperative command per phase, keeping the phase order, the effector, significant motions, releases and
+spatial relations. It does not see native operator commands, and partial or failed motions remain attempts
+rather than completed actions. A command is accepted only if every phase is present, in order and within the
+token budget; it is never truncated. Table 7 follows one atom from the source label to the derived command.
+35
+Table 7 One atom from the source label to the derived command: the clip of Figure 6c (RoboCOIN, Unitree G1
+with dexterous hands, real). Captioner and rewriter outputs are quoted verbatim.
+Source label Grasp the bread from the table and place it into the plate.
+Registry facts humanoid; dexterous hand; real
+Action phases 0:00–0:04 The left dexterous hand reaches toward the orange and white bread roll on the
+left side of the table and grasps it.
+0:04–0:07 The left dexterous hand lifts the bread roll, carries it over the purple plate,
+and lowers it onto the plate.
+0:07–0:10 The left dexterous hand releases the bread roll on the plate and retracts away
+from the workspace.
+Attempt record target moved: yes; effector at end: away from the workspace; outcome: reached
+Consistency agrees
+Derived command Extend the left dexterous hand toward the orange and white bread roll on the left side
+of the table and grasp it. Lift the bread roll, carry it over the purple plate, and lower it
+onto the plate. Release the bread roll on the plate and retract the left hand away from
+the workspace.
+B.4 Training Mixture
+Sampling in proportion to hours would let four families supply more than half of all examples (Table 8);
+sampling uniformly over datasets would do the opposite and repeat the smallest datasets many times. We
+use a middle path. Sampling first chooses a mode, then a robot cluster, then a dataset and a window. Mode
+shares are those of Table 2. Cluster shares are fixed for our two main targets: the Worker/ARX5 cluster
+receives 12% of examples and the Green humanoid cluster (real and simulation) 18%. In this configured
+mixture, the remaining 19 clusters share 70% in proportion to
+√
+𝑁 , where 𝑁 is the number of unique
+admissible training subtasks of the cluster:
+𝑝𝑐 = 0.70 ⋅ √𝑁𝑐
+∑𝑐′ √𝑁𝑐′
+. (12)
+The sampler first enumerates eligible unique subtasks for each mode, cluster and dataset after text admis-
+sion, modality checks and temporal-window admission. Let 𝑝𝑚 and 𝑝𝑐 be the configured mode and cluster
+shares, and let ℰ contain the mode–cluster pairs with eligible data. We obtain their joint probabilities by
+maximum entropy:
+𝑃 ∗ = arg max
+𝑃 ≥0
+− ∑
+𝑚,𝑐
+𝑃𝑚𝑐 log 𝑃𝑚𝑐,
+∑
+𝑐
+𝑃𝑚𝑐 = 𝑝 𝑚, ∑
+𝑚
+𝑃𝑚𝑐 = 𝑝 𝑐, 𝑃 𝑚𝑐 = 0 if (𝑚, 𝑐) ∉ ℰ.
+(13)
+The implementation checks support feasibility before solving for the joint table, rather than renormalizing
+one marginal at the expense of the other. Within a supported pair, a dataset 𝑑 has conditional probability
+proportional to √𝑁𝑚𝑐𝑑, where 𝑁𝑚𝑐𝑑 counts its eligible unique subtasks in that mode. Sampling then chooses
+a subtask uniformly within the dataset before selecting its temporal window and, where available, its joint
+or EEF view. Thus additional windows or a second action view do not increase a subtask’s sampling mass.
+Table 8 lists the configured cluster targets next to the admitted-hour shares; all sampling shares refer to
+examples.
+The table makes the trade-off explicit. Our two deployment targets are sampled well above their share of
+hours, the largest public families are sampled below it, and families with a few hours of data are seen several
+times more often than their volume alone would warrant, at the cost of repeating their subtasks.
+B.5 Policy Adaptation Recipes
+RoboTwin 2.0. The policy is trained under the leaderboard protocol on all 2 500 clean demonstrations
+(50 per task); a split into 40 training and 10 held-out episodes per task is used only for recipe selection. The
+36
+Table 8 Configured sampling targets by registered family, computed from the training split, next to admitted hours.
+Targets are set before text and mode admission.
+Family Admitted, h Hours, % Sampling, %
+Green humanoid 214.8 12.7 18.0
+Worker / ARX5 80.3 4.8 12.0
+AgiBot G2A 256.0 15.2 9.1
+Piper / Cobot Magic 227.2 13.5 7.8
+Unitree G1 204.9 12.1 7.2
+Fourier GR1T1 87.9 5.2 6.9
+AgiBot G1 / Genie-1 148.5 8.8 5.2
+Galaxea R1Pro 82.9 4.9 4.9
+Galaxea R1Lite 92.6 5.5 4.3
+ARX R5a / Lift-2 105.8 6.3 4.2
+TienKung 59.3 3.5 4.1
+RealMan AIDAL 57.7 3.4 4.0
+Leju 30.0 1.8 3.2
+AIRBOT MMK2 7.8 0.5 2.4
+Unitree H1 12.5 0.7 2.2
+RoboCOIN Ruantong/A2D 10.1 0.6 1.7
+Tianyi 6.8 0.4 1.4
+AlphaBot2 2.2 0.1 0.7
+Fourier GR1T2 0.8 < 0.1 0.4
+ManipArena EX001 0.4 < 0.1 0.2
+OpenArm < 0.01 < 0.01 0.04
+policy commands both arms and grippers in joint space. RoboTwin records a frame every 15 planner steps of
+1/250 s, so the physical frame rate is 16.67 Hz rather than the 30 Hz in its metadata, and the W AM horizon
+keeps the 1.07 s of GreenW AM. Episodes are cut into equal contiguous atoms of at most 10 s, and W AM
+windows start at every frame where a full window fits, which gives about 470 thousand windows instead of
+15 thousand tiled ones. The mode mixture is W AM-heavy (0.9 W AM, 0.05 forward, 0.05 image-to-video),
+each of the 14 action coordinates carries the same loss weight, and each sample draws a random paraphrase
+from the seen instructions of its episode. The reported policy is trained in stages from GreenW AMwith
+background replacement, color augmentation and the action expert. At evaluation the policy predicts 16
+steps, samples them with 8 denoising steps without guidance and executes the whole prediction before
+replanning.
+WorldArena 1.0. The world model starts from GreenW AMand is adapted for 10 000 steps with a global
+batch of 64, a peak learning rate of 1.41 × 10−5 after 500 warm-up steps and a cosine decay to 0.1 of the peak.
+It is trained on the clean RoboTwin 2.0 demonstrations, whose ARX5 arms are those of the benchmark,
+rendered as a single head-camera canvas of 736 ×544 and cut into blocks of at most 15 s. Only forward
+dynamics with history is trained, and the text prompt is always empty, as in the action variant of the
+benchmark. At evaluation every block, including the first, is generated in this mode from four anchors of the
+history, which for the first block repeat the recorded first frame; sampling uses 35 steps without guidance.
+LIBERO. The LIBERO policy is adapted from GreenW AM with the action expert in stages, with ap-
+pearance augmentation, a random perspective distortion of the third-person camera image and paraphrased
+instructions. No LIBERO-plus episode is used in training, and the same policy is evaluated on both bench-
+marks.
+RoboDojo. The policy follows the oﬀicial protocol: it is trained on the oﬀicial training set and com-
+pared with the entries of the oﬀicial leaderboard (Section C.1). It uses the generator–expert architecture
+of GreenW AMwith attention restricted by stream: the history attends to the instruction and to itself, the
+current frame to the instruction, the history and itself, the state to the current frame and itself, and the
+actions to the generated video, the state and themselves. The history is pinned after the instruction, and the
+current frame, the generated video and the actions are placed at their time offsets from it. Training runs for
+37
+60 000 steps with a global batch of 352, a learning rate warmed up over 3 000 steps to 8×10 −5 and decayed by
+a cosine to 10−6, weight decay 0.01, an exponential moving average of the weights and quantile-normalized
+actions; a fifth of the training examples are image-to-video.
+CAL VIN. The CAL VIN policy is trained on the ABC training split only (Section C). Its single Franka arm
+enters GreenW AMthrough the Cartesian end-effector slots with per-frame SE(3) offsets and the absolute
+initial pose as the current state. At evaluation the policy predicts 20 steps, samples them with 4 UniPC
+steps, a timestep shift of 3 and guidance 1.5, and executes the first 10 before replanning.
+Green humanoid. The comparison uses three initializations: the public 𝜋0.5 base checkpoint [61], Cosmos 3
+Edge, and GreenW AM. They are adapted on the same Green demonstration split. The distilled policy starts
+from the reported GreenW AMteacher and uses only the training split for the consistency and demonstration
+losses. Its consistency losses use a masked pseudo-Huber distance [ 72], with unavailable action coordinates
+and clean conditions excluded; the loss weights are (1, 1, 0.01) and the EMA decay is 0.995. Only the online
+student is optimized; the teacher and the EMA target are used only during training. Validation episodes
+select checkpoints and inference settings; neither ID test episodes nor OOD trials are used for selection.
+Each policy retains its own observation preprocessing, action representation and training recipe, with a
+common set of camera streams and controlled joints at the robot interface. Normalization statistics are fitted
+on training data.
+C Evaluation Protocols
+RoboTwin 2.0
+clean scene
+RoboTwin 2.0
+randomized scene
+CALVIN
+environment D (ABC → D)
+RoboDojo
+two-arm tasks
+LIBERO
+standard scene
+LIBERO-plus
+shifted camera viewpoint
+LIBERO-plus
+changed table texture
+WorldArena 1.0
+track 1, recorded frame
+Figure 30 Benchmark scenes. One frame per benchmark and setting. The RoboTwin 2.0, LIBERO and LIBERO-
+plus frames come from evaluation episodes of our policies: the first head-camera frames of the clean and randomized
+episodes of Figure 12, a standard LIBERO scene, a LIBERO-plus scene with the camera turned by −32∘ and one with a
+changed table texture. The other frames are recorded benchmark data: the static camera of an environment-D episode
+of CAL VIN, the head camera of a RoboDojo demonstration and a recorded frame of a WorldArena 1.0 test episode.
+C.1 Public Benchmarks
+RoboTwin 2.0. The benchmark comprises 50 bimanual tasks on the Aloha-AgileX embodiment, whose
+arms share the ARX5 kinematics (Section A.3). The leaderboard protocol trains on 50 clean demonstrations
+per task (2 500 in total) and evaluates 100 trials per task in clean scenes (clean2clean, easy) and in random-
+ized scenes with clutter, random lighting, background textures and table height (clean2random, hard); the
+leaderboard ranks by the average of the two. A leaderboard entry requires public code, public weights and
+a technical report [ 68].
+38
+Table 9 Evaluation protocols. Figure 30 shows one frame of each benchmark.
+Benchmark Protocol Metric
+WorldArena 1.0, track 1 [ 70] Action-conditioned prediction on
+1 000 test episodes
+Perceptual and embodiment metrics;
+motion-capped aggregate in Figure 9
+RoboTwin 2.0 [ 18] 50 bimanual tasks, 100 trials per
+task, clean and randomized scenes
+Success rate, clean and randomized
+LIBERO [ 48] Four task suites of a single Franka
+arm in simulation
+A verage success over the suites
+LIBERO-plus [ 24] LIBERO tasks under seven
+perturbation axes, zero-shot after
+standard LIBERO training
+Success over all perturbed episodes
+RoboDojo [ 19] 42 simulation tasks in five capability
+dimensions, 150 trials per task over
+3 seeds
+Score and success rate averaged over
+dimensions
+CAL VIN [55] ABC→D, chains of five instructions A verage completed length
+Green humanoid Shared ID/OOD trial set for 𝜋0.5,
+Cosmos 3 Edge, GreenW AMand its
+distilled student
+Instruction success by split
+WorldArena. Evaluation uses track 1 of WorldArena 1.0. The metric breakdown includes image quality,
+aesthetic quality, JEPA similarity, dynamic degree, flow score, motion smoothness, subject consistency,
+background consistency, photometric consistency, interaction quality, trajectory accuracy, depth accuracy,
+perspectivity, instruction following and semantic alignment [ 70]. GreenW AMis evaluated on all 1 000 test
+episodes. For GreenW AM, dynamic degree, flow score and motion smoothness are capped separately against
+each episode’s ground truth before averaging. For competitors, only model-level metric means are available,
+so the caps are the corresponding ground-truth means 23.05, 12.50 and 69.79 over all 1 000 reference episodes.
+This follows the motion-capping rule of WorldArena 2.0 [ 71, 83]; the videos and test episodes remain those
+of WorldArena 1.0. The recomputed aggregate therefore differs from the oﬀicial WorldArena 1.0 leaderboard
+score. The figure shows a selected comparison: BLM, WorldScape v0.2, GigaWorld-1, GE-Sim 2.0 and
+SisyphusWorld are omitted. Visual quality combines two scores computed without reference to the recording,
+MUSIQ image quality [ 37] and LAION aesthetic quality [ 69], with JEPA similarity; GreenW AM reaches
+57.2 against 59.5 for the recordings, while 103 of the 127 board entries score above the recordings in image
+quality. Instruction following and interaction quality are assigned by a vision–language judge, Qwen3-VL in
+the WorldArena evaluator [ 70]. Across the judged GreenW AMvideos, both correlate weakly with trajectory
+accuracy ( 𝑟 = 0.05 ) and more strongly with aesthetic quality ( 𝑟 = 0.29 and 0.32), and 41 and 67 board
+entries score above the recordings on them.
+RoboDojo. The benchmark comprises 42 simulation tasks grouped into five capability dimensions (gen-
+eralization, memory, precision, long-horizon, open-vocabulary instructions) and 18 real-world tasks. Each
+policy is evaluated with 150 trials per task over three seeds; score and success rate are averaged within
+dimensions and then across dimensions [ 19]. The simulated robot is a bimanual ARX5 at 25 Hz with a
+head and two wrist cameras; training uses 3 500 demonstrations, 100 for each of 34 tasks and 100 auxiliary
+domain-randomized ones, and the open-vocabulary tasks are not in training. A verified leaderboard entry
+reports three seeds on the public layouts, passes a hidden-layout consistency check and releases the evaluated
+checkpoint and code [ 67].
+LIBERO and LIBERO-plus. LIBERO provides suites of simulated tasks for a single Franka arm [ 48]; follow-
+ing common practice [ 38], evaluation uses LIBERO-Spatial, LIBERO-Object, LIBERO-Goal and LIBERO-
+Long, the long-horizon subset of LIBERO-100, and reports the success rate averaged over the four suites.
+LIBERO-plus applies perturbations of camera viewpoint, robot initial state, language, lighting, background,
+sensor noise and object layout to the LIBERO tasks, with one trial per perturbed episode; in the zero-shot
+setting the policy is trained on standard LIBERO only [ 24].
+CAL VIN. Policies train on environments A, B and C and are evaluated in the unseen environment D on
+chains of five language instructions; the metric is the average number of completed instructions [ 55]. Training
+39
+uses the ABC training split only: no episode of environment D, including its validation split, is used for
+training, and results are reported on 1 000 chains.
+C.2 Real-Humanoid Comparison Protocol
+Tasks and splits. The packing task is given as five consecutive instructions without resetting the scene
+(Section 6.5). ID trials use new resets of the objects and scenes represented in policy adaptation; OOD trials
+change objects or scene conditions excluded from adaptation, validation and distillation data. Every policy
+is evaluated on the same 14 scene configurations, 9 ID and 5 OOD, each with the five instructions of the
+task, which gives 45 ID and 25 OOD instructions per policy, each attempted once. All policies receive the
+same instructions, cameras and controlled joints.
+Success. An instruction succeeds when it is completed before its timeout without human assistance;
+failures, timeouts and stops caused by the policy count as failed instructions. For split 𝑑 and policy 𝑝, let
+𝑠𝑝𝑑 be the number of successful instructions and 𝑛𝑝𝑑 the number of evaluated instructions. The split score is
+SR𝑝,𝑑 = 100 𝑠𝑝𝑑
+𝑛𝑝𝑑
+, (14)
+reported separately for ID and OOD.
+C.3 Latency Benchmark
+We benchmark inference latency on a single NVIDIA RTX 4090 with FlashAttention-2 (Table 10). The
+video branch works on three latent frames: one conditioning frame and two generated frames, which decode
+into an eight-frame prediction at 10 Hz. Each request also conditions on the proprioceptive state and a
+128-token instruction. To isolate the cost of the model, the observation and the state stay fixed within an
+episode, and the instruction changes once, at its start. Median latency is the steady-state latency after
+the instruction-dependent quantities have been cached; time to first action (TTA) is the latency of the first
+request after a new instruction and includes building that cache. Each value is computed over 100 episodes,
+and the rate is 1000 divided by the latency in milliseconds.
+Table 10 Policy inference latency on one NVIDIA RTX 4090. Optimizations are applied cumulatively to the
+GreenW AM policy, and speedups are relative to it. Median latency over 100 episodes; TTA is the time to the first
+action after a new instruction.
+Configuration Median, ms Rate, Hz TTA, ms Speedup
+GreenW AM 435.9 2.3 435.9 1.00×
++ caching 411.1 2.4 430.8 1.06×
++ guidance packing 314.1 3.2 334.0 1.39×
++ first-frame V AE 236.4 4.2 256.5 1.84×
++ compilation 184.6 5.4 195.5 2.36×
++ W8A8 134.6 7.4 148.6 3.24×
++ distillation 35.4 28.3 48.8 12.32×
+The optimizations are applied in turn. Caching reuses the instruction and vision key–value states across
+denoising steps, so later steps run only the generative backbone. Guidance packing evaluates the conditional
+and empty-prompt branches of classifier-free guidance in one forward pass and also caches the empty-prompt
+key–value states. First-frame V AE encoding passes only the conditioning frame through the V AE encoder,
+since the other two latent frames are generated by the policy. Compilation traces the generator blocks
+together with this single-frame encoder, and W8A8 runs the feed-forward layers with 8-bit weights and
+activations. Distillation replaces the four guided denoising steps with one consistency step and keeps the
+instruction cache. Once caching is enabled, a new instruction adds 11–20 ms to the first request, and 13.4 ms
+for the distilled policy.
+40
+C.4 Paired Comparisons
+Let 𝑦𝐴
+𝑡𝑒, 𝑦𝐵
+𝑡𝑒 ∈ {0, 1} be the outcomes of the two runs on episode 𝑒 of task 𝑡, over the common seeds 𝐸𝑡 of the
+two runs. The reported difference averages over tasks, as the benchmark does:
+Δ = 1
+|𝒯| ∑
+𝑡∈𝒯
+1
+|𝐸𝑡| ∑
+𝑒∈𝐸𝑡
+(𝑦𝐴
+𝑡𝑒 − 𝑦𝐵
+𝑡𝑒). (15)
+Its 95% interval comes from a hierarchical bootstrap with 5 000 replicates: tasks are resampled with
+replacement, then episode pairs within each resampled task, and the interval spans the 2.5th to 97.5th
+percentiles. The interval therefore describes the uncertainty of evaluating the two checkpoints, not the
+variation between training runs. Forward prediction uses the same estimator with PSNR per clip in place of
+𝑦.
+C.5 Evaluation Details
+With an empty text prompt, as in the action variant of WorldArena, classifier-free guidance has no effect, and
+that variant is sampled without it. CAL VIN test instructions are excluded from the language-augmentation
+pools. The reported RoboTwin result uses 100 trials per task and setting, and the controlled comparisons
+pair episodes on common seeds (Equation ( 15)).
+D Additional Results and Qualitative Examples
+D.1 Benchmark Tables
+Table 11 gives the WorldArena categories behind Figure 9, and Tables 12 to 14 list the CAL VIN, RoboDojo,
+LIBERO and LIBERO-plus results summarized in Figure 11, with the source of every value.
+Table 11 WorldArena 1.0, track 1: overall score, categories and fidelity of the models in Figure 9. EWMScore
+(Equation ( 7)) is the mean of the 15 board metrics with dynamic degree, flow score and motion smoothness capped at
+the ground truth: per video for GreenW AM, at the leaderboard means for the other models (an upper bound for them).
+The last row scores the recorded test videos themselves with the same evaluator.
+Categories Fidelity to ground truth
+Model EWMScore Visual Content Physics 3D Control JEPA Traj. Depth
+GreenWAM 63.31 57.2 65.6 62.2 93.4 84.1 98.4 56.0 98.2
+BWM-Fast [12] 63.80 63.1 58.2 62.4 91.8 89.7 97.9 44.9 86.4
+UNIS [ 46] 63.65 61.8 55.9 64.6 92.0 91.6 90.6 41.9 85.2
+ABot-PhysWorld (text) [ 20] 63.65 64.4 63.4 56.7 85.5 90.8 90.4 31.5 72.0
+Motubrain [ 56] 63.16 64.0 59.5 58.5 91.5 85.8 96.9 43.1 88.7
+FlowW AM-FiveAges [21] 62.99 63.5 57.3 60.5 90.9 87.0 95.3 44.4 85.6
+CogVideoX [ 91] 61.30 55.8 67.7 50.9 88.3 82.6 94.8 34.8 91.1
+Wan2.6 [79] 60.96 61.4 64.0 42.7 84.7 89.0 72.6 12.2 75.4
+Ctrl-World [31] 60.56 57.4 62.2 55.4 88.5 78.2 92.8 48.2 93.2
+IRASim [ 105] 59.63 56.1 65.7 49.3 88.8 77.4 93.7 35.9 93.5
+Cosmos-Predict 2.5 [ 57] 57.83 58.1 61.7 44.0 87.5 75.2 90.7 27.5 90.3
+Recorded test videos 67.23 59.5 66.7 79.6 95.4 87.2 99.9 86.9 100.0
+D.2 Failure Cases
+Figure 31 shows typical failures of the LIBERO and RoboTwin policies. In both episodes the task is carried
+out up to its last phase: the object is grasped, carried and brought to its target. The error lies in the final
+placement, a cream cheese tilted on the rim of the bowl and a stapler released only partly onto the pad, and
+the policy does not correct it before the step limit. The errors lie in precise placement and recovery.
+41
+Table 12 CAL VIN ABC→D, 1 000 chains. A ver-
+age number of completed instructions in a chain
+of five. Values are taken from Xiaomi-Robotics-
+0 [ 15] (Table 2), except DreamVLA [ 98] (Ta-
+ble 1), MMaDA-VLA [ 51] (Table 1) and 𝜋0.5,
+the supervised fine-tuned checkpoint reported in
+𝜋RL [17] (Table 5).
+Method A vg. length
+Published methods
+𝜋0.5 (SFT) [ 62] 3.84
+RoboVLMs [ 45] 4.25
+Seer-Large [ 76] 4.28
+VPP [ 33] 4.29
+UniVLA [ 81] 4.41
+DreamVLA [98] 4.44
+FLOWER [ 65] 4.53
+Xiaomi-Robotics-0 [ 15] 4.75
+MMaDA-VLA [ 51] 4.78
+GreenWAM 4.64
+Table 13 RoboDojo simulation benchmark. Score and success
+rate averaged over the five capability dimensions, from the oﬀicial
+leaderboard [ 67]: the top five entries and the methods shown in
+Figure 11. Human teleoperation reaches a score of 80.42 and a
+success rate of 76.03% [ 19].
+Method Rank Score Success
+rate, %
+Leaderboard entries
+PhysicalRSI 1 36.27 31.38
+Awomo-0.5 2 35.34 29.64
+Simate-beta 3 33.95 27.96
+Rex-M1 Preview 4 33.79 27.44
+VPP2-Preview 5 31.40 25.62
+DM0.5 10 24.90 19.34
+Xiaomi-Robotics-1 13 20.07 13.93
+𝜋0.5 [62] 20 11.44 6.93
+X-VLA [ 103] 24 10.13 6.52
+X-W AM [30] 28 7.69 3.83
+Our adapted policy
+GreenWAM 16.12 10.49
+Table 14 LIBERO and LIBERO-plus. A verage success over the four LIBERO task suites and zero-shot LIBERO-plus
+success over all perturbed episodes, %.
+Method LIBERO LIBERO-plus, zero-shot
+Faster-W AM [100] 99.0 73.6
+CKT-W AM [36] 98.8 86.1
+Cosmos Policy [ 39] 98.5 82.2
+OA-W AM [52] 97.8 83.9
+Fast-W AM [95] 97.6 49.1
+OpenVLA-OFT [38] 97.1 69.6
+𝜋0.5 [62] 96.9 85.7
+GreenWAM 97.4 86.8
+GreenW AM: the same policy for both benchmarks (recipe in Section B.5); LIBERO-plus over all 10 030 perturbed episodes, one trial
+each. LIBERO: Cosmos Policy [ 39], Table 1 ( 𝜋0.5, OpenVLA-OFT, Cosmos Policy), OA-W AM [ 52], Table 1, the LIBERO table of
+Faster-W AM [100] (Fast-W AM, Faster-W AM) and CKT-W AM, Table 9. LIBERO-plus: OA-W AM, Table 2, zero-shot after standard
+LIBERO training ( 𝜋0.5, Cosmos Policy, OpenVLA-OFT, OA-W AM), the LIBERO-plus table of Faster-W AM (Fast-W AM,
+Faster-W AM) and CKT-W AM [36], Table 1. All LIBERO-plus values are success rates over all perturbed episodes, as in the
+benchmark.
+42
+/g2C/g50/g53/g55/g48/g46/g4C/g56/g48/g3/gEC/g51/g44/g4F/g3/g53/g4B/g44/g56/g48/g3/g5A/g4C/g57/g4B/g52/g58/g57/g3/g55/g48/g46/g52/g59/g48/g55/g5C
+LIBERO-Goal · “put the cream cheese in the bowl”
+start
+ grasp
+ over the bowl
+ released tilted
+ moves away
+ step limit
+RoboTwin 2.0 · “move stapler pad”
+start
+ grasp
+ carry
+ partly on the pad
+ held, no correction
+ step limit
+Figure 31 Failure cases of the LIBERO and RoboTwin policies (Tables 3 and 14). Imprecise final phase without
+recovery. LIBERO-Goal, “put the cream cheese in the bowl”: the cheese reaches the bowl but rests tilted on its rim,
+which the success check does not accept; the policy then moves toward the plate and does not return before the limit of
+310 steps. RoboTwin 2.0, move_stapler_pad in a clean scene: the stapler is carried to the green pad but released only
+partly onto it, and the gripper holds it without correction until the limit of 400 control steps.
+43

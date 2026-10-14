@@ -1,0 +1,412 @@
+embodied dynamics encountered in the real world. Thinker-WM is trained from a heterogeneous mixture
+of general video data, publicly available robot datasets, in-house robot data, and egocentric human video.
+General video provides broad visual and temporal priors; robot data provides action-grounded supervision
+acrossdifferentembodiments,environments,andtasks;andegocentricvideoexpandscoverageofreal-world
+interactions and human motion [7,10,13,43]. These sources differ substantially in sensor configuration,
+action representation, embodiment, and annotation format. Thinker-WM therefore maps heterogeneous
+robot actions into a common representation at the model boundary, allowing shared dynamics to be learned
+across embodiments while preserving robot-specific decoding. In this way, data diversity and architectural
+unification reinforce each other: diverse sources broaden the distribution of world dynamics, while the
+shared representation provides a common space in which those dynamics can be learned.
+We evaluate Thinker-WM across embodied world-model benchmarks and a range of generative
+settings, including action-conditioned future generation, depth generation, long-horizon rollout, trajectory
+transfer, video-to-action generation, and instruction-conditioned generation. These experiments examine
+whether a shared multimodal representation can support world prediction, geometric modeling, and action
+generation within a single model. Thinker-WM ranked first on EWMBench [12], WorldOlympiad [42] and
+WorldArena [29], while additional experiments demonstrate its ability to support multiple world-model and
+world-action conditionals within the same parameterization.
+The main contributions of this work are:
+• Representation-level multimodal unification.We introduce the Unified Dynamic Transformer
+in which RGB, depth, action, and task-level conditioning are lifted into a shared intermediate
+representation and transformed by common parameters, placing multimodal interaction inside the
+representation rather than only at the input or output interfaces.
+• Geometry as part of the generative world state.We incorporate depth as a native generative
+modalitythatsharesthelatentandspatiotemporalstructureofvisualmodelingandwhosesupervision
+directly shapes the shared representation, making physical geometry an explicit component of the
+modeled world dynamics.
+• Scalable heterogeneous embodied learning.We combine general video, publicly available robot
+data, in-house robot data, and egocentric human video, together with a common action representation
+acrossembodiments,toprovidecomplementaryvisual,geometric,andactionsupervisionforscalable
+world-action modeling.
+2 Related Work
+We view world models as generative models that learn how an environment evolves under observations,
+conditions, and interventions. Their role has gradually expanded from compact predictive simulators to
+large-scale generative models with broad visual priors, and more recently to models that jointly generate
+future observations and executable actions. From this perspective, we organize prior work into three stages:
+simulator-oriented world models, latent and generative world models, and world models that generate
+actions alongside the future. We further discuss recent efforts to introduce explicit geometric structure into
+this unified formulation, which provides the closest context for Thinker-WM.
+2.1 Simulator-oriented World Models
+Early world models were developed primarily as learned simulators for model-based planning and
+reinforcement learning. World Models [8] compress observations into a compact latent space, model
+3
+temporal dynamics with a recurrent mixture-density network, and enable agents to train policies inside
+the model’s imagined rollouts. PlaNet and the subsequent Dreamer family [9] further demonstrate that a
+learned latent dynamics model can support planning and behavior learning without requiring the policy
+to interact with the real environment at every step. DreamerV3 [9] in particular shows that a common
+world-modeling recipe can operate across a broad collection of tasks and domains under a largely fixed
+training configuration.
+The central abstraction in this family is a predictive transition model,
+zt+1∼p θ(zt+1|z t,at),(1)
+wherezt is a learned latent state andat specifies an intervention. The model therefore functions primarily
+as a simulator: given a current state and an action, it predicts a plausible future state on which planning or
+control can be performed. This formulation is computationally efficient and well suited to model-based
+decision making, but the learned latent space is usually optimized around the environments and tasks
+encountered during training. Consequently, the visual prior and open-world knowledge available in
+large-scale image and video corpora are not directly inherited by the dynamics model.
+2.2 Latent and Generative World Models
+Recent work increasingly treats the world model itself as a large-scale generative model rather than a
+compacttask-specificsimulator. Thisshift replacesmanuallydesignedor task-specific latentdynamics with
+generativemodelscapableofcapturingrichervisualstructureandbroaderphysicalpriors. GAIA-1[ 11],for
+example, learns an action-conditioned generative model of driving scenes from large-scale fleet data, while
+Genie [5] learns a controllable latent interface directly from large collections of video without requiring
+explicit action annotations. UniSim [38] further combines image, robotics, and navigation data to construct
+a general-purpose simulator whose outputs can represent the visual consequences of both high-level
+instructions and low-level controls. iVideoGPT [33] integrates action-conditioned video prediction with
+visual planning and model-based reinforcement learning, while Pandora [35] allows language-conditioned
+interventions throughout a generated trajectory rather than restricting the condition to the initial frame.
+Large-scale video generation models provide another important foundation for this transition. Rather
+than learning visual dynamics from scratch, recent systems exploit pretrained video-generation backbones
+to inherit strong priors over appearance, motion, and scene structure. The Cosmos World Foundation
+Model [24], for example, positions a pretrained generative world model as a reusable foundation for
+downstream world-model construction and synthetic data generation. Xiaomi-Robotics-U0 [16] similarly
+explores broad multimodal generation and embodied scene synthesis, positioning a world foundation model
+as both a generative world model and a scalable source of downstream training data. These systems
+demonstrate that large-scale visual pretraining can substantially broaden the knowledge available to a world
+model beyond the distribution of a single embodied environment.
+Despite their generality, however, the action interface of these models is often indirect. Actions may
+be represented as latent controls, natural language commands, or environment-specific interfaces rather
+than as executable physical robot actions. In other cases, the generated visual trajectory is treated as a
+simulatorforaseparate downstreampolicy, orthemodel serves asa dataenginewhose generated embodied
+data improves a separately trained policy [16]. Thus, the generative world model provides the predictive
+component of control while the executable action model remains outside the generative process. This
+separation motivates the next stage of world-model development: jointly modeling the future world and the
+action that produces it.
+2.3 World Models with Action
+This stage of the progression extends generative world modeling by incorporating an executable action
+space into the same generative process as future-world prediction. Instead of the sequential formulation
+ˆx(t+1:t+H) =g ψ(xt,c), a t =h ϕ(ˆxt+1:t+H,xt),(2)
+4
+where a video generator is followed by a separate inverse-dynamics model, these approaches seek to model
+video and action jointly. The resulting formulation allows the model to learn not only what the world may
+look like after an intervention, but also which physical action is associated with that evolution.
+Motus [3] is an early example of this unified formulation. It combines pretrained experts for
+vision-language understanding, video generation, inverse dynamics, and policy learning within a Mixture-
+of-Transformersarchitecture, allowingseveralworld-modelingandcontroldistributionstoberepresentedin
+one system. To exploit action-free video, Motus additionally introduces latent actions derived from visual
+motion and uses a multi-stage curriculum to progressively bridge video generation and robot control. This
+demonstrates that large-scale video priors and action learning can be combined within a single generative
+framework, while physical embodiment grounding is still largely introduced at the later robot-specific stage.
+MotuBrain [21] further develops the unified formulation with a three-stream architecture and a data
+pyramidspanningwebvideo,egocentrichumanvideo,andheterogeneousrobottrajectories. Inparticular,it
+treats egocentric video as video-only supervision rather than requiring every video to have an explicit robot
+action label. Its action representation is also expressed relative to the conditioning frame, with relative
+position and rotation providing a more transferable interface across robot configurations. These choices are
+closely related to the setting considered in this work, where action-free egocentric video and heterogeneous
+robot trajectories must coexist during training. However, MotuBrain retains embodiment-specific physical
+scales rather than explicitly registering the action statistics of different robots at a shared model boundary,
+and its temporal instruction structure is primarily episode-level rather than aligned to individual instruction
+segments.
+A complementary line unifies video and action through diffusion noise rather than through separate
+modality-specific architectures. Diffusion Forcing [6] assigns independent noise levels to different temporal
+tokens, enabling a single denoising model to express multiple conditional distributions under different
+temporal masks. UWM [45] applies this principle to robot learning by sharing a transformer between
+image and action diffusion processes, allowing the same model to operate as a policy, a world model,
+or a joint video-action model depending on the masking configuration. Diffusion ReRoll [14] further
+introduces asymmetric SNR-based reweighting for image and action losses. These methods provide a
+flexible probabilistic view of world modeling with action, although action and image remain separate
+diffusion channels and their embodiment-specific representations are not the primary focus.
+Another direction expands the scope of modality unification. Cosmos 3 [25] jointly models language,
+image, video, audio, and action using a shared multimodal backbone, with domain-aware input and output
+projections that carry each embodiment into a shared latent action space. Ego and effector poses are
+encoded as frame-to-frame relative transforms, while grasp states directly encode the current manipulation
+state, and large-scale egocentric human video supplies additional pseudo-action supervision.
+Recent work has additionally introduced explicit geometric structure into this joint generative process.
+GeoSem-WAM[19]augmentsjointworldandactionlearningwithgeometricandsemanticfutureprediction,
+showingthatstructuredspatialinformationcanprovideaction-relevantsupervisionbeyondRGBappearance.
+WAM4D[17]introduceslightweightspatialregistertokenssupervisedbyfuturedepthtoinject4Dgeometric
+priors into a video-action model, while removing the geometry branch during action inference for efficiency.
+These results suggest that metric geometry can provide a useful intermediate representation for connecting
+visual dynamics and physical interaction. In these approaches, however, geometry is primarily introduced
+as an auxiliary supervisory signal or intermediate representation rather than as a modality that is jointly
+generated throughout the same generative process.
+DreamZero [39] provides the closest instance of the pretrained-backbone route. It builds a robot
+foundationmodelontopofalargeimage-to-videodiffusionbackboneandjointlydenoisesvisualtrajectories
+androbotactionsunderasharedobjective,showingthatpreservingastrongvisualgenerationpriorimproves
+downstream robot control relative to vision-language-action baselines. Its remaining boundaries are of a
+different kind: the instruction is supplied by a frozen text encoder rather than produced by the generative
+process, the model is pretrained separately for each embodiment, and its action target stays at relative joint
+positions rather than a shared end-effector representation. Zero-WAM [44] extends the same direction to
+in-context human-video supervision, but keeps separate query, key, and value projections, feed-forward
+5
+networks,andoutputheadspermodality,sothatvideoandactionmeetonlyinsidethesharedattentionlayers.
+The two therefore share at different depths: one transformer with separated decoders in DreamZero [39],
+shared attention over separated parameters in Zero-WAM [44].
+2.4 Position of Thinker-WM
+The progression above moves from world models as compact simulators, to large-scale generative models
+withtransferablevisualpriors,andfinallytoworldmodelsthatjointlypredictthefutureworldandexecutable
+actions. Thinker-WM follows the latter formulation while extending it in three directions. First, it preserves
+a pretrained flow-matching video-generation backbone and incorporates robot and egocentric data without
+reducing action-free video to an action-labeled proxy. Second, it treats appearance, metric geometry, and
+action as co-evolving outputs of a shared intermediate representation rather than using geometry only as an
+auxiliary training signal. Third, it registers heterogeneous robot actions at the model boundary using a
+common relative end-effector representation and per-robot statistics, allowing different embodiments to
+share the same generative space while retaining exact robot-specific decoding.
+Architecturally, Thinker-WM therefore places the main unification inside the UDT. Modality-specific
+encodersanddecoderstranslatevideo,geometry,action,andlanguageintoacommonlatentinterface,where
+shared attention and feed-forward transformations model their joint evolution. The resulting formulation
+treats the world model not merely as a simulator for a downstream policy, but as a unified generative model
+in which visual dynamics, physical structure, and executable action are different manifestations of the same
+underlying world process.
+3 Model Architecture
+3.1 Overview: Representation-Level Unified World Model
+A world model for embodied intelligence must capture more than the visual appearance of the future. The
+evolutionofanembodiedenvironmentisjointlyreflectedinwhattheagentobserves,thegeometricstructure
+of the scene, and the actions that cause the observed changes. Thinker-WM therefore models RGB video,
+metric depth, and robot action within a single generative framework, rather than treating action generation
+as a downstream module of visual prediction.
+Givenanobservation ot andatask-levelcondition c,Thinker-WMmodelsthejointdistributionoffuture
+visual, geometric, and action trajectories as
+p(vt+1:t+H,dt+1:t+H,at+1:t+H|ot,c),(3)
+wherev,d,and adenoteRGBvideo,metricdepth,androbotaction,respectively. Thekeydesignprincipleis
+representation-level unification: each generative modality is first encoded by a modality-specific encoder
+into an intermediate dynamic representation. These representations then feed into a Unified Dynamics
+Transformer (UDT) to participate in the shared dynamic evolution. The outputs are subsequently separated
+and decoded through modality-specific generation head.
+This design satisfied two requirements that are often conflated in multimodal models. On the one hand,
+RGB, depth, and action have fundamentally different input statistics and output semantics and therefore
+requirededicatedinterfaces. Ontheotherhand,theirfutureevolutionisphysicallycoupled: actionsalterthe
+environment, visual observations reveal the consequences, and metric geometry constrains both perception
+and interaction.
+Thinker-WM is initialized from a pretrained Wan2.2 TI2V-5B video generation backbone and extends
+it with dedicated depth and action pathways. A frozen Qwen3-VL-2B [1] model provides task-level
+6
+understanding, which is projected into the model as a structured conditioning representation rather than
+treated as a fourth generative stream. The resulting information flow can be summarized as
+(ot,c)→{E v,Ed,Ea,E l}→U→{D v,Dd,Da}→(ˆv, ˆd,ˆa),(4)
+whereEv,Ed, andEa arethemodality-specificgenerativeencoders, El producesthetask-levelunderstanding
+representation,U denotes the unified dynamics transformer, andDv,Dd, andDa decode the corresponding
+future modalities. The following sections describe the latent interfaces, the construction of the unified
+dynamics transformer, and the generative parameterization in detail.
+Table 1:Structure and weight origin of the three-stage architecture and auxiliary branches. Pretrained visual blocks
+are inherited from Wan2.2 TI2V-5B and remain trainable, while the VAE and VLM are frozen.
+Component Blocks Weight origin Role
+Visual encoderEv,d 8 blocks Inherited Encode RGB and physical-fidelity tokens.
+RGB UDTU14 blocks Inherited Model appearance and interaction.
+Physical-fidelity UDTU14 blocks Inherited Model geometry and interaction.
+Visual decoderDv,d 8 blocks Inherited Decode RGB and physical-fidelity outputs.
+Action encoderEa 8 blocks Initialized Encode action tokens.
+Action decoderDa 8 blocks Initialized Decode executable actions.
+Understandingund4 MLP blocks Initialized + Qwen3-VL Provide task and planning guidance.
+3.2 Multimodal Representation
+3.2.1 Language Representation
+Language is represented as a task-level conditioning sequence rather than a fourth generative stream. The
+structured prompt is processed by a frozen Qwen3-VL-2B [1]. Its final hidden states are truncated to at
+most 1000 tokens and projected into the model width through a linear bridge followed by four residual MLP
+blocks, producing the conditioning sequencehund.
+Instructions from heterogeneous datasets are normalized into a structured three-field prompt containing
+Task,Scene, andAction. The fixed schema separates the task objective from the scene description and the
+intended operation, reducing variation in prompt format across data sources and providing a consistent
+semantic structure for the language encoder. Prompt structure is further regularized during training.
+Redundant occurrences of the field are merged, the order of the three fields is randomly shuffled, and
+random field dropout is applied. Evaluation uses a fixedTask–Scene–Actionorder. These transformations
+encourage the model to rely on semantic content rather than field position or the presence of a complete
+schema.
+3.2.2 Visual Representation
+RGB frames and depth maps are both compressed by the frozen Wan2.2 VAE into the same latent topology.
+At 640×480 resolution,awindowof49framesismappedtoalatentgridof 13×30×40 ,andpatchification
+withkernel (1,2,2) produces 13×15×20 = 3900 tokensforeachvisualstream. UsingthesameVAEand
+spatiotemporal organization allows RGB and depth to occupy compatible latent coordinates while retaining
+distinct modality semantics.
+The two visual modalities nevertheless use separate input projections. RGB tokens are mapped
+directly into the model width, while depth tokens use their own patch embedding followed by a learnable
+stream embedding that distinguishes geometric information from appearance. After multimodal dynamics
+modeling, the two streams are mapped back through modality-specific output projections. Thus, RGB and
+depthshareacommonlatenttopology,buttheirinputandoutputrepresentationsremainexplicitlyseparated
+where their underlying statistics differ. Figure 2 illustrates the resulting visual encoding paths.
+7
+VAE
+Encoder
+RGB
+~ N(μ, Σ)
+RGB Emb. Unified Latent
+Depth
+~ N(μ, Σ)
+Depth Emb. Type Emb. Unified Latent
+Self-Attention
+Cross-Attention
+FFN
+EEF Action
+~ N(μ, Σ)
+Action Emb. Unified Latent
+SA
+CA
+FFN
+Turn on
+the fan
+Prompt
+Qwen3-VL
+MLP Unified Latent
+(a)Encoder stage
+Unified Latent RGB Unemb. Velocity
+Unified Latent Depth Unemb. Velocity
+Self-Attention
+Cross-Attention
+FFN
+Unified Latent Action Unemb. Velocity
+SA
+CA
+FFN (b)Decoder stage
+Figure 2: Multimodal encoding and decoding pipelines.RGB video, metric depth, and action are mapped into the
+unifiedlatentspacethroughmodality-specificencodersandprocessedbackintotheirrespectiveoutputspacesthrough
+modality-specific decoders. The frozen Qwen3-VL-2B converts the structured prompt into the conditioning sequence
+hund, while robot identity is provided through learnable tokensr. The decoder stage predicts the flow-matching
+velocity field for each modality rather than directly producing decoded samples.
+3.2.3 Unified Action Representation
+Robot actions are substantially more heterogeneous than visual inputs: different embodiments expose
+different action dimensions, coordinate frames, control conventions, and actuator interfaces. A shared
+generative model therefore requires an action representation that is independent of the raw dimension of
+any particular robot. Thinker-WM maps every embodiment into a fixed unified action space ofU= 20
+dimensions, organized as dual-arm delta end-effector positions, rotations, and gripper states. For robotr
+with raw actiona∈R dr, we define a semantic slot map
+πr :{1,...,U}→{1,...,d r}∪{−1},
+whereπr(u)specifies which raw action dimension corresponds to unified slotu, andπr(u) =−1 indicates
+that the robot does not have that degree of freedom. The unified action and its validity mask are then
+defined as
+˜au =
+(
+aπr(u), π r(u)≥0,
+0, π r(u) =−1, mu =
+(
+1, π r(u)≥0,
+0, π r(u) =−1. (5)
+Here,mu indicates whether unified dimensionu is valid for robotr. Invalid dimensions are neither noised
+nor included in the training loss, so the zero-filled entries do not become artificial action targets.
+We represent all robot actions using a unified relative end-effector (EEF) representation. For each end
+effector, the position and orientation at timetare expressed relative to its state at the conditioning frame:
+∆pt =p t−p 0, R rel
+t =R⊤
+0Rt.(6)
+Here, ∆pt denotes the relative EEF displacement andRrel
+t the relative EEF rotation, represented using
+the continuous 6D rotation parameterization. Anchoring each trajectory to its own conditioning frame
+removes dependence on the global coordinate frame and makes action representations more comparable
+across scenes, camera poses, and embodiments.
+Action normalization is applied at the model boundary using statistics computed separately for each
+robot. Gripper and dexterous-hand dimensions are scaled to[−1,1] while the remaining dimensions retain
+their physical units. The visual and action streams are temporally aligned with a fixed6:1correspondence,
+with six action steps per video frame. A temporal convolution with kernel and stride 6 compresses the
+8
+action sequence into 48 tokens of width 3072, while the action decoder expands each token back to6×20
+action values. The resulting action tokens therefore share the temporal horizon of the visual latent sequence
+while remaining compact enough for joint processing.
+Embodiment identity is provided through a small set of learnable robot tokens. For each robot, eight
+learnable tokens are prepended to the language conditioning sequence to form the cross-attention context of
+the encoder and decoder:
+c= [r 1:8 ;h und ].(7)
+Placing robot identity in the conditioning context rather than in the main generative sequence preserves the
+sequence structure shared across embodiments.
+Together, these three representations establish the model boundary: visual streams preserve a shared
+spatiotemporal latent topology, heterogeneous robot actions are registered into a common 20-dimensional
+action space, and language is converted into a structured conditioning sequence. These representations are
+then passed to the Unified Dynamics Transformer, where their interactions and joint temporal evolution are
+modeled explicitly.
+3.3 Unified Dynamics Transformer
+The Unified Dynamics Transformer (UDT) is the central multimodal dynamics modeling stage of Thinker-
+WM. The encoded RGB, depth, and action tokens are concatenated into a joint generative sequence, while
+the language representation provides task-level conditioning through cross-attention. The UDT therefore
+operates on a common latent sequence while preserving modality-specific representations at its input and
+output boundaries.
+Given the modality-specific latent representationsz0
+v,z0
+d, andz0
+a, the unified dynamics stage is written
+as
+z′ =U
+ 
+[z 0
+v ;z 0
+d ;z 0
+a ],h und
+
+,(8)
+where [·;·] denotes concatenation along the token dimension andhund is the task-level conditioning
+sequence. The outputz′ is subsequently separated into modality-specific streams for RGB, depth, and
+action decoding.
+Self-Attention
+RGB VideoDepth VideoEEF ActionPrompt
+RGB Video
+Depth Video
+EEF Action
+Prompt
+Query
+Key
+Cross-Attention
+RGB VideoDepth VideoEEF ActionPrompt
+RGB Video
+Depth Video
+EEF Action
+Prompt
+Query
+Key
+Q Attends to K Isolated
+Figure 3: Attention pattern of the UDT during pretraining.Self-attention provides cross-modal interaction
+among RGB, depth, and action, while cross-attention provides the dedicated task-conditioning path from the prompt
+representation. Depth interacts asymmetrically with the other generative streams during pretraining.
+The attention structure during pretraining is shown in Figure 3. RGB and action form the main
+generative interaction path, allowing the two streams to exchange information through self-attention. Depth
+9
+is asymmetric: it reads from the visual and action streams but does not feed back into them. This one-way
+coupling allows geometric supervision to shape the shared representation while preventing imperfect depth
+supervision from directly perturbing the pretrained visual and action pathways. The language tokens are
+isolated from self-attention and provide task-level conditioning through the dedicated cross-attention path
+shown in the figure.
+Self-Attention
+RGB VideoDepth VideoEEF ActionPrompt
+RGB Video
+Depth Video
+EEF Action
+Prompt
+Query
+Key
+Cross-Attention
+RGB VideoDepth VideoEEF ActionPrompt
+RGB Video
+Depth Video
+EEF Action
+Prompt
+Query
+Key
+Q Attends to K Isolated
+Figure 4: Attention pattern of the UDT during post-training.Compared with pretraining, the geometric stream
+is opened to bidirectional interaction with RGB and action, enabling multimodal refinement under reliable depth
+supervision.
+In the post-training stage, RGB and action tokens are also allowed to attend to depth tokens (Figure 4),
+enabling bidirectional interaction among RGB, depth, and action. This changes the role of geometry from a
+one-way supervisory signal into a bidirectional source of multimodal refinement, allowing appearance,
+geometry, and action to jointly adapt during the final training stage. The original language representation
+h0
+und isfirstprovidedtotheencoder,andtheUDTmaintainsboththeoriginalandthelayer-updatedlanguage
+representations. For UDT blockk, the cross-attention keys and values are constructed as
+Kk =W K[h 0
+und;h k
+und ], V k =W V [h 0
+und;h k
+und ].(9)
+Thispreservestheoriginaltaskconditionwhileallowingthelanguagerepresentationtoadapttotheevolving
+multimodal state.
+The UDT further uses modality-aware positional and timestep conditioning. RGB tokens use 3D
+rotary position encoding, language tokens use one-dimensional positional encoding, and action tokens use
+temporal-only rotary encoding with a frequency scaling matched to the fixed temporal alignment between
+video and action. A shared timestep embedding provides the adaLN modulation for the generative streams
+using their respective flow times.
+3.4 Function-Oriented Training
+The shared multi-modal representation makes it possible to use the same parameterization under different
+combinations of observed and generated modalities. In particular, RGB, depth, and action are modeled
+within the same UDT, while a modality can either be generated from noise, provided as a clean condition,
+or omitted from the computation. This flexibility allows the same model to realize joint world–action
+generation, visual world prediction, policy inference, and cross-modal generation without introducing
+separate networks.
+Rather than relying on random modality dropout to implicitly cover these conditionals, Thinker-WM
+explicitly assigns a training configuration to each function mode, as illustrated in Table 2 and Figure 5.
+10

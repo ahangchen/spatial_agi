@@ -1,0 +1,621 @@
+Table 2: Function-oriented training modes.Each training mode corresponds to one function of the shared model.
+Mode Training Detail Role
+WAM joint denoising of visual streams and action joint generation
+WM action branch omitted visual world model
+VLA first video frame kept clean policy on the current observation
+A2V clean action injected, prompt dropped action-conditioned visual generation
+V2A clean video injected, prompt dropped video-conditioned action generation
+Uncond prompt dropped, joint denoising unconditional branch for guidance
+The function modes include joint generation (WAM), visual world modeling (WM), action generation
+from the current observation (VLA), action-conditioned visual generation (A2V), video-conditioned action
+generation (V2A), and the unconditional branch required for classifier-free guidance.
+Conditional generation is implemented by assigning zero flow time to the conditioning modality. Under
+the flow-matching path in Eq. (11), settingσ= 0yields
+xσ=0 =x.(10)
+The conditioned modality is therefore passed through its original encoder as a clean observation, while its
+prediction loss is excluded from the objective. The same construction is used for action-conditioned visual
+generation, video-conditioned action generation, and VLA, where the first video frame is provided as the
+clean observation.
+WAM Mode
+Thinker-WM
+Turn on
+the fan
+Prompt
+RGB Image
+EEF Action
+RGB Video
+Depth Video
+EEF Action
+WM Mode
+Thinker-WM
+Turn on
+the fan
+Prompt
+RGB Image
+EEF Action
+RGB Video
+Depth Video
+EEF Action
+VLA Mode
+Thinker-WM
+Turn on
+the fan
+Prompt
+RGB Image
+EEF Action
+RGB Video
+Depth Video
+EEF Action
+A2V Mode
+Thinker-WM
+Prompt
+RGB Image
+EEF Action
+RGB Video
+Depth Video
+EEF Action
+V2A Mode
+Thinker-WM
+Prompt
+RGB Video
+EEF Action
+RGB Video
+Depth Video
+EEF Action
+Uncond Mode
+Thinker-WM
+Prompt
+RGB Image
+EEF Action
+RGB Video
+Depth Video
+EEF Action
+Figure 5: Function modes of Thinker-WM.Each panel shows the modality configuration of one function, with
+dashed outlines indicating omitted inputs or outputs.
+For each training mode, omitted modalities are excluded from both the forward computation and their
+associated loss terms. The resulting optimization objective therefore matches the corresponding inference
+configuration: conditioned modalities are held fixed as observations, generated modalities are supervised
+against their target distributions, and omitted modalities are absent from the computation graph. This
+explicit alignment between training and inference allows a single parameterization to support multiple
+world-model and cross-modal generation settings.
+11
+3.5 Flow-Matching Parameterization
+Thinker-WM applies a unified velocity-field parameterization to every generative modality. For modality
+m∈{v,d,a} , letxm denote its clean representation,ϵm∼N(0,I) , andσm∈[0,1] . The noisy state and
+target velocity are
+xm,σm = (1−σ m)xm +σmϵm, u ⋆
+m =ϵ m−xm.(11)
+Themodelpredicts ˆum =v θ,m(xm,σm,σm,c) foreachgenerativestream,where cdenotesthecorresponding
+multimodal conditioning context.
+RGB and depth follow the same flow trajectory and therefore share a common noise schedule, while the
+action stream uses a separate schedule:
+σ(s) = sh·s
+1 + (sh−1)·s , s∼Uniform{1,...,1000},(12)
+with sh = 6.0 for RGB and depth andsh = 1.0 for action. The modality-specific schedules are retained at
+inference so that the sampling trajectories remain consistent with the corresponding training distributions.
+At inference, the learned velocity fields are integrated using 50 steps for RGB and depth and 10 steps
+for action. Classifier-free guidance is applied only to the visual streams, while the action branch is sampled
+without guidance to avoid instability in the generated action trajectories.
+3.6 Training Objective
+Giventhevelocity-fieldparameterizationabove,thetraininglossforeachgenerativemodalityisthestandard
+flow-matching regression objective:
+Lm(θ) =E xm,ϵm,σm
+h
+∥vθ,m(xm,σm,σm,c)−u ⋆
+m∥2
+2
+i
+.(13)
+For the action stream, the unified action space hasU= 20 dimensions with a validity maskmu that
+retains only the degrees of freedom available to the robot. The action loss is
+La(θ) =E
+"PU
+u=1mu
+ˆua,u−u⋆
+a,u
+2
+2PU
+u=1mu +ε
+#
+,(14)
+whereεisasmallnumericalstabilizer. Invalidactiondimensionsareneithernoisednorincludedintheloss;
+when the loss is computed in the action-token space, the validity mask is expanded to the corresponding
+token dimensions. The modality-specific noise schedules in Section 3.5 are used when evaluating the
+correspondingL m.
+At training time, the current function moder partitions the modalities into a generated setG(r), a
+conditioned setC(r), and an omitted setO(r). The total objective is
+Ltotal(θ) =
+X
+m∈G(r)
+λmLm(θ;r),(15)
+whereλm balances the modality scales or effective token counts. Form∈C(r) , settingσm = 0 feeds the
+modality as a clean observation while excluding its prediction loss; form∈O(r) , the modality is absent
+from both the forward computation and the loss. Consequently, the six function modes—WAM, WM,
+VLA, A2V, V2A, and Uncond—share the same loss form and differ only in which modalities are generated,
+conditioned,oromitted. Themodesaresampledwithfixedproportionsdeterminedbytheglobalstepindex,
+ensuring consistency across data-parallel ranks.
+4 Data
+Our pretraining corpus aggregates approximately20,000hours of high-quality egocentric human video and
+10,000hours of robot data, including around4,000hours with aligned depth. We organize the corpus into
+in-house data, internet data, and depth data. Figure 6 summarizes its composition.
+12
+Thinker-WM Pretraining Corpus
+Every sample carries aligned Video, Depth, Action, and Language records
+Ego Data
+Egocentric human videos from multiple datasets
+~20K hours
+Task: Rinsing mop
+Video
+Depth
+Action
+Task: Cleaning sink
+Video
+Depth
+Action
+More episodes sampled from the training mixture
+Real Robot Data
+Real-world robot recordings from multiple datasets
+~10K hours
+Task: Turn on the fan
+Video
+Depth
+Action
+Task: Wash clothes in the washing machine
+Video
+Depth
+Action
+More episodes sampled from the training mixture
+Simulated Robot Data
+Simulated robot interactions from multiple datasets
+~1K hours
+Task: Pick the bottle head-up with the right arm
+Video
+Depth
+Action
+Task: Hand the red block to the right arm
+Video
+Depth
+Action
+More episodes sampled from the training mixture
+Figure 6: Training data composition. For each category, two example episodes are shown with five video frames,
+their aligned depth labels, and the corresponding action curves; task text serves as the language record. The grids
+show additional episodes sampled from the training mixture. Depth is obtained by stereo matching for egocentric
+video, predicted by a monocular teacher for real robot video, and rendered exactly in simulation.
+13
+4.1 In-House Data
+In-house data provide coverage of our target embodiments, environments, and task distributions. It includes
+high-quality egocentric human video collected internally, spanning household, commercial, retail, and
+industrial scenarios. These egocentric recordings are captured with head-mounted stereo devices at 30Hz,
+and each frame includes hand keypoints and head pose. We further organize this egocentric corpus
+into 10 major categories and 20 subcategories, with the data evenly distributed across these categories.
+This egocentric data supplies scalable task, scene, object, and long-horizon activity diversity that robot
+teleoperation cannot economically reach. We also integrate high-quality real-robot data collected from
+UBTech robots, which provides paired visual observations and executable actions for learning practical
+robot dynamics and embodiment-specific action representations.
+4.2 Internet Data
+Internet data consist of open-source datasets collected from the web. General video data, including
+OpenVid [23], cover diverse scenes, objects, activities, and visual dynamics, providing broad visual and
+temporal priors beyond the distribution of embodied datasets. Open-source robot datasets, including
+AgiBot [31] and RoboMIND [34], cover diverse embodiments, environments, and manipulation tasks,
+offering paired visual observations and actions for learning embodied dynamics and cross-embodiment
+representations. RoboTwin [22] provides simulated manipulation data. Egocentric human video sources,
+including EgoVerse [27] and Ego4D [7], supply scalable task, scene, object, and long-horizon activity
+diversity. The sources listed here are representative rather than exhaustive; additional public datasets are
+also included in the pretraining mixture.
+4.3 Depth Data
+1. Data Sources 2. Depth Generation 3. Quality Check
+Egocentric Data: 1K hours 
+• depth.zarr (uint16 mm, 480×640)
+• metadata.json
+• depth_selections.jsonl
+QC Metrics
+Egocentric Data
+Robot Data: 3K hours 
+Episode sampling · Shared clip index
+base_0 head_color
+Stereo rectification
+Disparity-to-depth estimation
+Fast-FoundationStereo (FFS)
+Warp & resize
+480×640
+Egocentric Data
+base_1
+Robot Data 
+RGB frame extraction
+Monocular depth estimation
+Depth Anything 3 (DA3)
+Resize
+480×640
+Depth pseudo-GT
+Egocentric Robot
+Save sidecar
+Shared RGB / depth indices
+Background hole ratio
+ Motion area hole ratio
+ Outlier ratio
+Valid depth ratio
+Near-field valid depth ratio
+Background depth consistency
+Background hole ratio
+Background depth consistency
+Sensor depth agreement (AbsRel)
+Near-motion AbsRel
+Robot Data
+Figure 7: Depth data pipeline. We generate depth pseudo-labels for egocentric and robot videos, filter low-quality
+clips, and align the retained depth with RGB frames for world model training.
+To complement RGB observations with explicit geometric information, we augment egocentric and
+robotvideoswithdepthpseudo-labels. WeuseFast-FoundationStereo[ 32]toestimatedepthfromegocentric
+stereo pairs and DepthAnything3 [18] to predict depth from monocular robot videos. The resulting depth
+maps are aligned with the original RGB views and resized to a common resolution. We apply clip-level
+quality control based on temporal consistency, depth validity, and agreement with available sensor depth,
+discarding clips with unreliable predictions. During training, we sample synchronized RGB and depth
+sequences,applylogarithmicdepthencoding,andencodebothmodalitieswiththesamefrozenVAE.Depth
+is then learned as an additional generative stream using flow matching, providing geometric supervision for
+modeling spatial structure and physical interactions.
+14
+5 Infrastructure
+5.1 Overview
+World-model training relies on heterogeneous data sources that were not originally collected for joint use.
+These sources span robot trajectories from diverse embodiments, simulation rollouts, public video, and
+egocentric human recordings, each with distinct storage formats, modalities, temporal structures, action
+spaces, and annotation conventions. TheData Factoryseparates a data layer that maintains factual records
+from a training layer that specifies sampling and composition policies. This decoupling allows either side to
+evolve without rebuilding the other. Figure 8 illustrates the producer–consumer architecture.
+Heterogeneous Raw Data
+Robot data
+Multi-view
+video
+…
+State / Action
+logs
+Language
+annotations
+MP4/HDF5/Parquet/Zarr ...
+Data Factory (Producer)
+1
+Episode-Centric
+Data Organization
+Multi-format
+source readers
+Unified Episode
+Catalog (JSONL)
+Ei = (Vi, Si, Ai, Li, ...,Σ i,Λ i)
+SQLite offset index
+Fast indexed lazy access
+2 Model-Driven Sampling & Data Composition
+Sample policy qj = (ej, Ij
+V, Ij
+S, Ij
+A, Ij
+L)
+within-source + source-level strategy
+Within-source sampling strategy
+1 Window sampling
+… …
+selected window
+2 Modality selection
+V S A L
+3 Sample composition
++
+V S L
+Training
+sample
+Source-level sampling strategy
+D1
+w1
+D2
+w2
+D3
+w3
+D4
+w4
+…
+Batch ratio Rank assignment
+3
+Efficient Data
+Delivery
+Batch adapt
+and collate
+Asynchronous
+prefetch
+Push ready batches
+to queue
+Rank-Local
+Ready-Batch
+Queue
+0≤q t ≤Q
+Model Training
+(Consumer)
+Model
+computation
+Consumes already prepared batches
+Effective throughput:
+λeff ≤min(λ p,λ c)
+Figure 8:Overview of the Data Factory producer–consumer pipeline. Heterogeneous multimodal data are organized
+into episode-centric catalogsEi = (Vi,S i,A i,L i,Σ i,Λ i) and accessed lazily through a SQLite offset index. The
+model specifies each training sample asqj = (ej,I V
+j ,I S
+j ,I A
+j ,I L
+j ), including within-source window and modality
+selection, while source-level sampling controls the mixture of data sources across batches and ranks. The resulting
+samples are adapted, collated, and asynchronously prefetched into a rank-local ready-batch queue with occupancy
+0≤q t≤Q , from which the training process consumes prepared batches. The effective pipeline throughput is
+bounded byλeff≤min(λ p,λ c), whereλp andλ c denote the producer and consumer rates.
+The fundamental unit is theEpisode, which carries its own modalities, index spaces, and physical
+locations:
+Ei = (Vi,Si,Ai,Li,Σi,Λi),(16)
+whereVi,Si,Ai,Li denote video, state, action, and language modalities, andΣi,Λi their schemas and
+physicallocators. Modalitieskeepindependentindexspaces,solengthsandcorrespondencesarenotforced,
+and absent modalities are declared rather than imputed. Episodes are published in immutable catalogs
+that record facts rather than pre-cut windows, enabling lazy materialization through byte-offset indices.
+Sampling is expressed by the model: the factory materializes exactly what the model requests without
+interpreting semantics, so a new source costs a description rather than a pipeline.
+5.2 Quality Control and Gating
+Quality control is implemented as a set of boundaries along the sample path, each with different granularity
+and cost. Offline gates operate on whole Episodes and windows, rejecting timelines with non-finite values
+or magnitudes beyond per-source guards, filtering stationary windows, and excluding Episodes shorter than
+a training window. Egocentric recordings receive an additional filter that removes windows dominated
+by camera self-motion, keeping only start positions whose rotation and translation stay within calibrated
+thresholds. Online gates at load time validate action and state ranges before video decoding, retry missing
+or corrupt videos against a bounded number of alternates, and blacklist persistent failures. Batch-level
+checksvalidateshapes,valueranges,finiteness,andthemodelinputcontract;agenuinelyabsentmodalityis
+marked rather than filled. At the step level, samples with extreme unified-action magnitudes have their loss
+weight zeroed, non-finite values are replaced before zeroing, and any step affected by non-finite parameters,
+15
+loss, or gradients is skipped. The depth stream carries its own gates: a selection file marks usable Episodes,
+depth frames are checked against video frames for alignment, unreadable depth is marked absent and loses
+its loss share, and depths are clamped to the codec range.
+5.3 Data Preparation and Throughput Matching
+Reading and encoding a batch dominates preparation cost, while the noise used for training changes every
+step. We therefore encode each batch once and reuse the latents acrossN optimization steps, each of which
+draws fresh noise and timestep and runs a full forward–backward pass:
+Bt =B t0, t 0 =⌊t/N⌋N,(17)
+whereBt is the encoded batch at stept. TheN steps are independent denoising objectives because the
+flow-matching target is rebuilt from fresh noise each step. This divides the encoding cost byN.
+To keep the training loop from waiting, a bounded per-rank queue lets a background producer keep
+complete batches ready ahead of consumption. Because a fresh batch is requested once everyN steps,
+preparation stays hidden as long as
+Cprep ≤N·C step,(18)
+whereCprep is host time to prepare a batch andCstep the time of one model step. When this holds with
+margin, the queue stays filled and the model never observes preparation latency; otherwise the queue drains
+and the model waits. Figure 9 illustrates the arrangement.
+Training Step
+VAE Reuse
+Bounded Queue
+Prepare the next batch Prepare the next batchBatch Preparation
+A B C B C D
+B C D C D E
+time
+Figure 9:Throughput matching between data preparation and model computation. Batches are labelled in arrival
+order; preparation stays ahead of consumption within each VAE reuse window, so the model never waits.
+5.4 Load Balancing across Ranks
+In synchronous training, all ranks must update the same parameters at the same step. If ranks train different
+branch subsets, the reduction operates over different tensor sets and can deadlock under ZeRO-1. We
+therefore make the function mode a pure function of the step number, sampled from configured proportions
+with a generator seeded only by that step, persisted with the checkpoint, and advanced identically by every
+rank. This guarantees agreement across ranks and across restarts. The same reasoning requires identical
+token layouts: windows are cut to fixed lengths so no padding is needed and every rank carries the same
+number of tokens. Figure 10 illustrates the arrangement.
+Source assignment offers two deterministic schedules. The default assigns the same source to every
+rank at a given step, keeping batches internally consistent. The alternative distributes rank slots across
+sources in proportion to their weights, mixing the corpus more finely at the risk of stragglers. Both require
+no inter-rank communication. Losses are averaged across ranks, and non-finite and outlier signals are
+reduced so that a condition seen by one rank is acted on by all.
+16
+Same Mode on Every Rank
+Rank 0
+Rank 1
+Rank 2
+Rank 3
+step
+WAM WM VLA A2V V2A Uncond
+Figure 10:Load balancing across ranks in a synchronous run. Every row is one rank and every column one
+optimization step, and the function mode of a step is sampled with a generator seeded only by the step number, so a
+column carries the same mode on every rank and the same choice is reproduced after a restart. The legend names the
+six modes, which are sampled in the configured proportions.
+5.5 Evaluation Orchestration
+Evaluation runs every fixed number of steps on a fixed set of samples, with deterministic assignment to
+ranks derived from the same weights as the training mixture. To avoid competing with training for GPUs, a
+background process decodes evaluation clips into a shared-storage cache and writes a completion manifest.
+The foreground evaluation only reads the cache, so prepared evaluations take seconds and never occupy a
+GPU needed by training. The cache is content-keyed and reused across restarts and runs; an evaluation
+whose cache is not ready is skipped rather than stalling training. Out-of-memory shards are rerun with
+smaller micro-batches, keeping the evaluated set complete, and results join the same logging channel as
+training metrics.
+6 Training Strategy
+Thinker-WM supports multiple control modes and is trained on heterogeneous data sources. Large-scale
+generalvideosuppliesbroadvisualandtemporalpriors[ 5,8,35];realrobotrecordingsprovideembodiment-
+specific visual statistics and the action supervision on which the conditionals of Eq.(3)depend; egocentric
+humanvideosuppliesscalabletask,scene,andobjectdiversitythatrobotteleoperationcannoteconomically
+reach [4, 26]. The Data Factory provides the execution substrate, and this section specifies how these
+sources are combined into a staged curriculum.
+6.1 Staged Training Curriculum
+Training across all data distributions from the outset can destabilize optimization, as heterogeneous
+objectives compete for the capacity of the shared model and may pull the representation toward dominant
+training distributions. Fully sequential training, in contrast, risks catastrophic forgetting of capabilities
+acquired in earlier stages [15, 20]. To balance acquisition and retention, Thinker-WM adopts a staged
+17
+curriculum with lightweight rehearsal, progressively introducing new data distributions and capabilities
+while maintaining a small replay stream from earlier stages [2, 28]. The training distribution of stagesis
+Ds = (1−ϵ s)D main
+s +ϵ sDreplay
+s , ϵ s≪1,(19)
+whereDmain
+s carriesthenewcapabilityand Dreplay
+s samplesallpreviouslyaligneddistributions. Eachstage
+thereforemixesinasmallfractionofthedatafromtheprecedingstage,sothatcapabilitiesaccumulaterather
+than overwrite. Stages are ordered so that shared representations stabilize before downstream modules
+couple into them. Table 3 summarizes the data, updated scope, and installed capability of each stage.
+Table 3:The four training stages. Each stage installs one or more capabilities while mixing in a fixed small fraction
+of the data from the previous stage. Stage 0 is the pretrained Wan2.2 model, used as it stands.
+Stage Main data Updated scope Capability installed
+0 internet-scale video inherited visual and world prior
+1 robot data
+egocentric human video
+data from the previous stage
+video pathway robot-view video prediction
+2 curated robot data
+curated egocentric human video
+data from the previous stage
+all parameters video-action coupling + geometry
+3 target-robot data
+data from the previous stage
+all parameters target-robot specialization
+Stage 0 is the pretrained Wan2.2 TI2V-5B backbone [30], which supplies the broad visual and temporal
+prior and is not trained here. Stage 1 introduces open-source robot recordings and egocentric human
+video, training only the video pathway to adapt the inherited prior to first-person embodied observations;
+a small fraction of Stage 0 data is replayed to preserve scene, lighting, and camera-motion diversity.
+Stage 2 turns the video-only model into a joint video–action model on curated robot and egocentric data,
+introducing the action stream and the geometric stream together, with the planning condition providing
+a shared conditioning signal across branches. Stage 3 specializes the model to the target robot using
+embodiment-specific recordings and accurate geometric supervision; the earlier stages are replayed so that
+the shared backbone and previously acquired capabilities are preserved. Overall, the curriculum follows a
+progression ofinheritance,integration, andspecialization.
+6.2 Stage-wise Parameter and Geometry Schedule
+We initialize from the Wan2.2 TI2V-5B backbone [30] and reuse its pretrained blocks, patch embeddings,
+modulation layers, and positional geometry across all three architectural depths (Section 3.2). Stage 0
+leaves these weights untouched. Stage 1 updates the visual pathway only, adapting the inherited prior to
+robot-view and first-person statistics without disturbing branches that have no counterpart in the pretrained
+model. From Stage 2 onward, all trainable parameters are active: the action tower, the geometric pathway,
+and the shared UDT are optimized jointly. The frozen components remain fixed throughout, as the VAE
+and the VLM keep their pretrained weights.
+Geometry enters in Stage 2 and is integrated into the shared representation so that the model jointly
+predicts future observations, geometry, and actions. While the mixture is dominated by data with coarse
+or partial depth annotation, the geometric channel is one-way: geometry reads appearance and action,
+but neither reads geometry, so the geometric objective shapes the shared weights only through its own
+loss gradient. Once training is restricted to datasets with accurate depth, which in this curriculum is the
+target-robot fine-tuning stage, the remaining direction is opened so that appearance and action also read the
+geometric stream (Figures 3 and 4).
+18
+6.3 Function Mode and Noise Scheduling
+The function modes of Section 3.4 partition the joint distribution of Eq.(3) across world modeling, policy
+learning, and cross-modal generation. They are sampled in the fixed ratio
+wam:wm:vla:a2v:v2a:uncond= 0.5 : 0.1 : 0.1 : 0.1 : 0.1 : 0.1,
+so that half of the optimization steps train the full joint distribution while every function is exercised
+regularly. Mode assignment is made once per optimization step for the whole batch, seeded by the global
+step index and identical across all data-parallel ranks, so every rank computes gradients for the same
+set of branches and the sharded optimizer remains consistent. These proportions belong to the training
+configuration and can be revised without touching the architecture.
+Both streams are trained against the time-shifted noise grids of Eq.(12). The shift concentrates video
+training at high noise levels, where global scene structure is determined and the 3900-token visual latent
+requires the most supervision, while the 48-token action sequence is low-dimensional and smooth, so a
+near-uniform grid covers it without wasting steps. Within the joint modeswam and uncond, the two noise
+levels share a common baseuand receive independent jitterδm before applying their own shift:
+˜σm = clamp
+ 
+u+δ m,0,1
+
+, u∼Uniform(0,1), δ m∼Uniform(−r,r), m∈{v,a}.
+(20)
+At inference the two streams are denoised in lockstep along coupled trajectories, so the noise combinations
+visited during training should match those traversed at inference. The shared base keeps the streams
+at matched denoising progress, and the jitter half-widthr= 0.10 , calibrated to one cell of the 10-step
+action inference grid, decorrelates their exact levels within that resolution. Single-modality modes retain
+independent per-modality sampling, since only one stream carries a loss there.
+7 Motion Probe
+Chapters 3 and 6 establish that Thinker-WM jointly models RGB, depth, and action through a shared
+Unified Dynamics Transformer (UDT). A natural question is whether the shared representation truly
+captures cross-modal coupling, or merely processes modalities in parallel. We introduceMotion Probe, a
+lightweight diagnostic module that evaluates whether motion information can be recovered from the shared
+video representation, thereby providing direct evidence for the effectiveness of the UDT. Motion probe’s
+effect is evaluated in Section 8.2.4.
+7.1 Probe Design and Offline Motion Teacher
+The probe rests on a simple logic: if the UDT truly unifies appearance and action, the video tokens should
+carry sufficient motion information to reconstruct end-effector displacement aligned with the executed
+action,evenwithoutaction-specificsupervisiononthevideopathway. Wetestthisbyattachingalightweight
+Motion Headto the frozen UDT video tokens. The head is deliberately small—spatial pooling followed
+by temporal regression—so that its capacity cannot compensate for missing motion information in the
+shared representation. The UDT weights are kept frozen throughout the probe, and only the Motion Head is
+trained.
+To evaluate the probe on real-robot data, we require a reliable visual motion reference. However,
+AgiBot [31] lacks reliable camera extrinsics and depth. We therefore construct an offline motion teacher, in
+whichSpatialTrackerV2[ 36]isappliedoncetotheground-truthRGBvideotoproduce3Dpointtrajectories
+on a dense grid. We discard tracks with negligible image-space motion or that leave the valid image region
+19
+(a) Offline Visual Motion Teacher (Preprocessing, once before training)
+GT RGB Video
+Spatial
+TrackerV2
+(RGB-only)
+T × H × W × 3
+3D Point Trajectories
+Background (filtered)
+Object-related
+Gripper-related
+Track Filtering
+& Aggregation
+Remove static points
+Discard out-of-view tracks
+Keep motion-correlated
+tracks
+Median aggregation
+Visual Center TrajectoryCt
+Per-window Sim(3)
+(Umeyama alignment)
+Ct = sRCt + t
+Aligned Visual Motion Teacher
+ΔPteacher
+(in robot coordinate system)
+Frozen and cached
+(used in training)
+(b) Training with Motion Probe (no change to backbone)
+Predicted Video
+(from world model)
+Video
+Backbone
+(unchanged)
+Video Representation
+T × C × H × W
+Motion
+Head ΔPvid
+(T × 2 × 3)
+Predicted Action
+(from world model)
+T × (action dim)
+Action
+Head
+(unchanged)
+ΔPaction
+(T × 2 × 3)
+Gradient to video
+Gradient to action
+No gradient (frozen)Motion Probe Consistency Objectives
+v : Video-to-Action
+motion(ΔPvid ,ΔPGT
+action)
+c : Prediction Consistency
+motion(ΔPvid ,ΔPaction)
+a : Action-to-Teacher
+motion(ΔPvid,ΔPaction,ΔPteacher)
+= task
++ λv
+v
++ λa
+a
++ λc
+c
+Figure 11:Overview of Motion Probe.(a)Offline visual motion teacher construction: SpatialTrackerV2 extracts 3D
+point trajectories from ground-truth RGB video, motion-aware filtering and median aggregation produce a robust
+visual center trajectory, and a per-window Sim(3) transform aligns it with the recorded end-effector motion. The
+aligned teacher is frozen and cached.(b)Probing the frozen UDT: a lightweight Motion Head predicts end-effector
+displacement from the shared video representation. The UDT weights remain frozen, and only the Motion Head is
+trained. Low probe error indicates that the shared representation encodes action-relevant motion.
+for a large fraction of the sequence, retain tracks whose motion magnitude correlates with the recorded
+end-effector motion, and aggregate them by temporal median to obtain a robust visual center trajectory
+Ct. An Umeyama alignment betweenCt and the ground-truth end-effector trajectory yields a per-window
+Sim(3) transform parameterized by scales, rotationR, and translationt:
+˜Ct =sRC t +t.(21)
+Since the probe is defined on temporal displacement, the translation cancels after differencing:
+∆ ˜Ct = ˜Ct+1− ˜Ct =sR(C t+1−Ct) =sR∆C t.(22)
+The aligned displacement∆ ˜Ct is the visual motion teacher. The Sim(3) parameters are estimated once
+from ground-truth data and frozen; they are never refined on model predictions, so the teacher remains a
+fixed geometric reference rather than an adaptive target.
+Not every window yields reliable supervision. A window is markedusableif path correlation≥0.95 ,
+motion-magnitude correlation≥0.55 , trajectory-shape agreement≥0.65 , frame-wise directional cosine
+≥0.5 , and the estimated scales∈[0.2,30] . Windows that fail these criteria are excluded from the probe.
+This filtering is applied offline, and the resulting teacher signals are cached.
+7.2 Probe Objective and Interpretation
+The Motion Head maps frozen UDT video tokens to left- and right-hand translational displacements,
+∆ ˆPvid∈R T×2×3.(23)
+20

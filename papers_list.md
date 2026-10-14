@@ -1,5 +1,37 @@
 # Spatial AGI Research Papers - Daily Analysis
 
+## 2026-10-15 研究的论文（精选5篇）
+
+1. **Thinker-WM: Unified World Model with Shared Multimodal Backbone** - arXiv:2610.18447
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 统一世界模型, 共享多模态骨干, 深度非对称→双向融合课程, 3D感知正则, 动作条件视频预测, Ubtech
+   - 文档: papers/2026-10-15_01_Thinker_WM_Unified_World_Model_Shared_Multimodal_Backbone.md
+   - 亮点: 单一MoT骨干三榜第一（EWMBench、WorldOlympiad、WorldArena轨迹精度63.27）；三阶段深度融合课程把3D感知变成VLM表征正则（去深度RGB端点-3.6dB）；44小时真人形验证学习等变、感知-预测双角色互促
+
+2. **GreenWAM: A World Foundation Model for Robotics** - arXiv:2610.18774
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 世界基础模型, 79槽位解剖学动作空间, 跨20本体, 7模式联合训练, 动作专家分离, 一致性蒸馏28.3Hz, Sber
+   - 文档: papers/2026-10-15_02_GreenWAM_World_Foundation_Model_Robotics.md
+   - 亮点: 一个模型两种角色且两端SOTA（WorldArena轨迹/深度/3D第一 + RoboTwin 67.5% + 真人形ID 95.6%）；三项受控消融：特化起点+5.4%、动作专家+3.3%、保留世界模型模式随机场景+8.0%（世界预测是空间泛化正则器）；蒸馏35.4ms/28.3Hz闭环
+
+3. **Demiurge: Forging Navigable 4D Worlds via Autoregressive Video Rerendering** - arXiv:2610.14685
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 视频重渲染, 4D点云记忆, 自回归世界构造, 双流扭曲, 记忆一致深度补全, 180°大视差, USTC+Tencent
+   - 文档: papers/2026-10-15_03_Demiurge_Navigable_4D_Worlds_Autoregressive_Video_Rerendering.md
+   - 亮点: 动态4D点云记忆把逐轨迹独立生成升级为跨轨迹一致的4D世界构造；外观记忆(选择性更新)+几何记忆(全量更新)按深度冲突逐像素融合；P-MSE降85.7%、180°无重叠旋转、输出直接优化3DGS（PSNR 24.36 +2.15dB）；"条件污染比条件残缺危害更大"
+
+4. **PUGS: Physics-Guided Uncertainty Modeling for Underwater Dynamic 3DGS** - arXiv:2610.17936
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 动态3DGS, 变分不确定性建模, 物理信号检测, 重参数化探索, 退火, 双路径自一致蒸馏, 中国海洋大学+CASIA
+   - 文档: papers/2026-10-15_04_PUGS_Physics_Guided_Uncertainty_Underwater_Dynamic_3DGS.md
+   - 亮点: 不确定性不是置信度分数而是可学习的水下介质物理信号（散射/折射/海雪统计签名）；探索-退火-蒸馏训练动力学，stop-gradient单向流；UVEB +1.16dB、DRUVA +3.99dB、烟雾/半透明场景增益最大——歧义观测下空间表示应内建不确定性维度
+
+5. **CityCode: Building Agent-Operable 3D Cities from Sparse Aerial Observations** - arXiv:2610.18342
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: agent可操作3D城市, 单张航拍图, 度量结构恢复, 持久实体ID, 依赖感知版本化执行, 长程任务链, 南大+上海AI Lab
+   - 文档: papers/2026-10-15_05_CityCode_Agent_Operable_3D_Cities_Sparse_Aerial.md
+   - 亮点: 城市作为可维护代码状态而非渲染目标：单图+相机参数恢复度量建筑/路网/资产，DSM RMSE 14.37m；版本化执行（收据/幂等/回滚）支撑50链×50步全过，对照系统暴露任务级执行根本缺口；确立空间智能评测的"状态可维护性"维度
+
 ## 2026-10-11 研究的论文（精选5篇）
 
 1. **PLaW-VLA: Predictive Latent World Modeling for Vision-Language-Action Policies** - arXiv:2610.12285

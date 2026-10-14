@@ -1,0 +1,1307 @@
+1
+PUGS: Physics-Guided Uncertainty Modeling for Underwater
+Dynamic 3D Gaussian Splatting
+Tingjun Li, Yuxi Wang∗, Guoqiang Zhong∗,Member, IEEE, Zhaoxiang Zhang,Senior Member, IEEE
+.
+Abstract—Dynamic 3D Gaussian Splatting (3DGS) has recently
+emerged as an efficient paradigm for reconstructing dynamic
+scenes. Existing approaches predominantly model scene dynamics
+through deterministic deformation fields, implicitly assuming
+that each Gaussian follows a unique geometric trajectory over
+time. However, this assumption fundamentally breaks down in
+underwater scenes, where light scattering, refraction, marine
+snow, and severe visibility degradation introduce substantial
+physical ambiguity into the imaging process. To address this
+problem, we present a physics-guided uncertainty model for
+underwater dynamic 3DGS (PUGS) that learns to detect the
+inherent uncertainty induced by underwater image formation
+and exploits it as a physical signal to guide dynamic scene
+representation. Instead of estimating a single deterministic dis-
+placement, PUGS parameterizes each Gaussian’s motion as
+a probability distribution characterized by both its expected
+deformation and physical uncertainty. Specifically, we first in-
+troduce a stochastic deformation optimization strategy that
+samples Gaussian trajectories through local reparameterization,
+encouraging adaptive exploration of multiple physically plausible
+solutions during training. To progressively consolidate the learned
+geometry, we further propose an uncertainty stochastic annealing
+framework together with a dual-path self-consistency distillation
+objective, which gradually transforms stochastic exploration into
+deterministic reconstruction while preserving temporal coher-
+ence. Extensive experiments on challenging underwater dynamic
+datasets and physics-aware benchmark demonstrate that the pro-
+posed method consistently outperforms state-of-the-art methods
+in rendering quality, temporal consistency, and reconstruction
+robustness under complex conditions, achieving an average PSNR
+improvement of 1.16 dB over the strongest baseline on the
+UVEB benchmark and 3.99 dB on DRUV A. Project page is that:
+https://tingtingpius.github.io/PUGS/.
+Index Terms—Dynamic 3D Gaussian Splatting, Variational
+Inference, Uncertainty Quantification, Novel View Synthesis.
+I. INTRODUCTION
+S
+YNTHESIZING photorealistic dynamic environments
+from monocular footage is a long-standing problem in
+This work was partially supported by the National Natural Science Founda-
+tion of China (NSFC) under Grant No. 62606500, 42476194 and U24A20242,
+the Natural Science Foundation of Shandong Province under Grant No.
+ZR2024MF097, and 2026HWYQ-026, and Natural Science Foundation of
+Hainan Province under Grant No. 425MS106.
+T. Li, Y . Wang, and G. Zhong are with the College of Computer Science
+and Technology, Faculty of Information Science and Engineering, Ocean Uni-
+versity of China, Qingdao 266100, China (e-mail:{15220071995@163.com,
+yuxiwang93@gmail.com, gqzhong@ouc.edu.cn})
+Z. Zhang is with the New Laboratory of Pattern Recognition (NLPR),
+State Key Laboratory of Multimodal Artificial Intelligence Systems, Institute
+of Automation, Chinese Academy of Sciences (CASIA), and University
+of Chinese Academy of Sciences (UCAS), Beijing 100049, China (e-mail:
+zhaoxiang.zhang@ia.ac.cn).
+Y . Wang and G. Zhong are corresponding authors.
+computer vision and multimedia research. The ability to recon-
+struct dynamic 3D scenes from a single moving camera under-
+pins a wide range of applications, including autonomous nav-
+igation, robotic interaction, and immersive content creation.
+In particular, underwater scenarios such as an autonomous
+underwater vehicle (AUV) operation [20]–[22], marine bio-
+logical monitoring, and virtual oceanography require accurate
+and temporally consistent 3D reconstructions to enable reliable
+perception in highly challenging environments. Therefore,
+advancing dynamic scene reconstruction in underwater settings
+not only extends the applicability of 3DGS to challenging
+underwater domains but also carries significant practical im-
+plications for ocean exploration.
+The recent emergence of Neural Radiance Fields (NeRF)
+[7] and 3D Gaussian Splatting (3DGS) [1] fundamentally
+transforms the landscape of view synthesis. NeRF introduces
+the concept of representing scenes as continuous volumetric
+radiance fields optimized via implicit differentiable rendering.
+However, its high computational cost and slow rendering
+speed motivate the development of 3D Gaussian Splatting,
+which represents scenes as sets of explicit 3D Gaussians
+optimized through rasterization-based rendering, enabling real-
+time performance while retaining high fidelity. Building upon
+this, dynamic extensions such as Deformable 3DGS [4] and
+4D-GS [5] are proposed to handle non-rigid motion by learn-
+ing a deformation field that maps time-varying Gaussians to
+a canonical space [23]. These approaches are demonstrated
+impressive results on standard dynamic datasets, establishing
+deformation-based methods as the paradigm for dynamic 3D
+reconstruction.
+Despite their success in terrestrial settings, these state-of-
+the-art dynamic 3DGS methods face fundamental challenges
+when deployed underwater. Unlike in-air scenes, underwater
+environments exhibit severe optical distortions caused by
+wavelength-dependent absorption, forward and backward scat-
+tering, and dynamic refractive distortions [13]. These effects
+manifest as high-frequency visual artifacts [25] that are entan-
+gled with the actual geometric motion of the scene [24]. Criti-
+cally, existing deformation-field models treat every pixel-level
+change as a deterministic coordinate shift, assuming that all
+temporal variations correspond to meaningful structural mo-
+tion. However, in underwater scenarios, marine snow [26] and
+refractive caustics introduce stochastic perturbations whose
+apparent motion is indistinguishable from scene deformation.
+As shown in Fig. 1, when a deterministic model attempts
+to minimize reconstruction loss in these regions [27], this
+optimization inevitably leads to floating artifacts, temporal in-
+consistency, and a fundamental failure to distinguish between
+arXiv:2610.17936v1  [cs.CV]  13 Oct 2026
+2
+Fig. 1. We present PUGS, a method that explicitly models physical uncertainty in dynamic 3D Gaussian splatting. On the challenging underwater sequence,
+a deterministic deformation-based method (Row 1) entangles structural motion with optical interference, producing floaters, blur, distortion, and ghosting
+artifacts. In contrast, PUGS (Row 2) learns a per-pixel physical uncertainty signal∆σ(visualized as heatmaps) that captures where and when the optical
+medium degrades observation reliability. This uncertainty is annealed over timeβ(t) : 1→0, enabling the model to progressively resolve physical ambiguity
+and produce clean, artifact-free renderings that closely match the ground-truth reference.
+structural motion and optical interference. Traditional methods
+[14], [16] attempt to address this by deterministically modeling
+optical properties such as wavelength-dependent attenuation
+through optical fitting and modifying alpha blending. How-
+ever, such approaches cannot model the stochastic appearance
+of marine snow and other particle scattering in underwater
+environments. It is precisely due to these phenomena that we
+argue that modeling this uncertainty is essential for robust
+underwater reconstruction.
+These stochastic phenomena share a critical property that is
+overlooked in prior work. Backscatter intensity correlates with
+suspended particle density along the line of sight; refractive
+caustics concentrate at depth-dependent spatial frequencies;
+marine snow follows characteristic size and velocity dis-
+tributions [26]. In other words, the statistical signature of
+underwater optical degradation is not arbitrary—it is aphysical
+signalthat can be detected and exploited. We argue that a
+model which learns to predict not onlywhereeach Gaussian
+moves, but alsohow uncertainthat prediction is, effectively
+learns to sense the local optical properties of the surrounding
+water medium—without requiring explicit simulation of the
+forward image formation process.
+In this paper, we posit thatthe central challenge of un-
+derwater dynamic reconstruction is not merely recovering
+geometry from degraded observations, but learning to de-
+tect and exploit the physical uncertainty signal embedded
+in the imaging process.This signal, once extracted, reveals
+which scene regions are affected by scattering, refraction,
+or turbidity—enabling the reconstruction to adaptively allo-
+cate representational capacity and to disentangle persistent
+structural motion from transient optical interference. Rather
+than forcing every observation to correspond to a unique
+deformation, an ideal representation should distinguish persis-
+tent geometric evolution from stochastic optical perturbations,
+allowing multiple physically plausible hypotheses during op-
+timization before converging to a consistent reconstruction.
+Motivated by this observation, we propose a Physics-Guided
+Uncertainty Model for Underwater Dynamic 3D Gaussian
+Splatting, called PUGS. Instead of predicting deterministic
+Gaussian displacements, PUGS reformulates dynamic scene
+representation from a probabilistic perspective, modeling each
+Gaussian trajectory as a latent distribution characterized by its
+expected motion and physical uncertainty. Here, uncertainty
+is not treated as an auxiliary confidence score, but serves
+as a compact representation of the stochastic physical effects
+introduced by underwater image formation. Consequently, the
+model naturally separates stable structural evolution from tran-
+sient optical disturbances, yielding significantly more robust
+deformation estimation in visually degraded environments.
+Building upon this probabilistic representation, we further
+develop a unified uncertainty-aware optimization framework
+consisting of three complementary components. First, we
+introduce stochastic Gaussian deformation via local reparame-
+terization, enabling adaptive exploration of multiple physically
+3
+plausible trajectories during optimization. Second, we propose
+a dual-path self-consistency distillation mechanism together
+with uncertainty stochastic annealing, progressively reduc-
+ing stochasticity while preserving temporal coherence and
+geometric stability throughout training. Finally, the learned
+uncertainty is exploited as an explicit reliability cue to guide
+adaptive Gaussian densification, allocating additional represen-
+tation capacity to ambiguous regions affected by severe optical
+degradation or complex non-rigid motion. During inference,
+uncertainty sampling is disabled, producing deterministic ren-
+derings without sacrificing reconstruction fidelity. Extensive
+experiments on two underwater dynamic and one physical
+benchmarks demonstrate that PUGS achieves new state-of-
+the-art performance under severe turbidity and marine snow
+conditions.
+The main contributions of our work are as follows:
+•We identify that deterministic deformation models in
+dynamic 3DGS fundamentally conflate structural mo-
+tion with underwater optical perturbations, and propose
+PUGS—a framework that learns to detect the physical un-
+certainty signal induced by underwater image formation
+and exploits this signal to guide dynamic reconstruction.
+•We introduce a stochastic deformation field with reparam-
+eterized sampling that predicts per-Gaussian positional
+uncertainty alongside mean displacements, enabling ro-
+bust optimization under severe refractive distortions and
+transient visual noise.
+•We employ a Dual-path Rendering Self-consistency Dis-
+tillation mechanism that jointly optimizes stochastic and
+deterministic rendering branches, enforcing long-term
+structural coherence while enabling local exploration to
+escape poor minima.
+•We conduct extensive experiments on three dy-
+namic benchmarks—UVEB, DRUV A, and PhysGaia—
+and demonstrate that PUGS consistently achieves state-
+of-the-art reconstruction quality across diverse underwa-
+ter and physical scenes, with comprehensive ablations
+verifying the contribution of each proposed component.
+II. RELATEDWORK
+A. Dynamic Scene Reconstruction
+Early neural approaches for dynamic scene reconstruction,
+such as D-NeRF [8] and Nerfies [9], extended NeRF by
+learning deformation fields to map time-varying observations
+to a canonical space, though their purely MLP-based nature in-
+curred significant computational costs. Subsequent hybrid rep-
+resentations like TiNeuV ox [30] and HexPlane [15] improved
+efficiency through voxel grids and factorized spatiotemporal
+volumes. Beyond NeRF-based paradigms, a diverse body
+of work has explored alternative representations. Traditional
+methods leverage multi-view stereo and SLAM systems [31]
+to reconstruct dynamic scenes through mesh deformation
+and keyframe-based optimization. More recently, learning-
+based approaches emerge, including video segmentation-based
+techniques that treat dynamic reconstruction as layer de-
+composition [32], and depth-prior methods that incorporate
+monocular depth estimates to regularize the under-constrained
+problem [33]. These methods, while effective in specific
+domains, often rely on strong priors or suffer from limited
+generalizability.
+With the advent of 3D Gaussian Splatting (3DGS) [1], the
+field shifts toward explicit scene representations that achieve
+real-time rendering with high fidelity. Dynamic extensions of
+3DGS rapidly proliferate. Deformable-3DGS [4] employs a
+deformation network to predict time-dependent transforma-
+tions per Gaussian, while 4D-GS [5] adopts HexPlane-based
+spatiotemporal structures for efficient optimization. Gaussian-
+Flow [6] integrates optical flow supervision, and SC-GS [34]
+introduces sparse control points to reduce computational over-
+head. SAGD [40] further decomposes boundary Gaussians
+to enforce geometric structure, mitigating the ambiguity of
+unconstrained 3DGS primitives. Other notable approaches
+include Spacetime-GS [35] and 3DGStream [36], which fo-
+cus on streaming and long-sequence reconstruction. Collec-
+tively, these methods [59], [71] establish deformation-field-
+based 3DGS as the prevailing paradigm for dynamic recon-
+struction. Critically, however, all of these methods inherit a
+shared assumption: that every observed pixel change originates
+from geometric motion. In underwater environments, where
+scattering, refraction, and marine snow produce pixel-level
+fluctuations that are statistically structured by the physical
+properties of the water medium, this assumption becomes
+untenable—the models cannot distinguish a floating particle
+from a moving surface, because they lack any mechanism to
+detect the physical signal embedded in these degradations.
+Moreover, none of the approaches above incorporate mech-
+anisms to represent or reason about motion uncertainty [60].
+while methods such as Shape of Motion [2] and Mosca
+[3] introduce new physical prior constraints such as depth
+maps, 2D tracks, masks, etc. to achieve high-quality motion
+information and geometric depth estimation, they neglect
+the reconstruction quality. Our method requires no external
+supervision signals such as depth maps, optical flow, or 2D
+tracks—it relies solely on the learned physical uncertainty
+signal to guide reconstruction. PUGS introduces a variational
+Bayesian deformation framework that learns to detect this
+physical signal, enabling robust underwater reconstruction
+by decoupling structural evolution from stochastic medium
+interference.
+B. Uncertainty Quantification in Rendering
+The survey by Wang et al. [72] provides comprehen-
+sive coverage of existing methods, but it focuses primarily
+on uncertainty in 2D vision tasks, where uncertainty-aware
+pseudo-label refinement [74] and entropy-based curriculum
+self-training [75] have been extensively studied; in dynamic
+3D reconstruction, deformation-level uncertainty remains an
+open gap. Uncertainty estimation is essential for deploy-
+ing neural rendering methods in safety-critical applications.
+Existing uncertainty quantification approaches generally fall
+into three categories: closed-form likelihood models, Bayesian
+methods, and ensemble methods. Closed-form likelihood mod-
+els, exemplified by NeRF-W [17] and ActiveNeRF [12], model
+ray colors using probabilistic distributions to handle transient
+4
+Fig. 2. Overview of the PUGS Pipeline for Underwater Dynamic Scene Reconstruction. Given a monocular video, SfM initializes a set of canonical Gaussians.
+To address the observational ambiguities caused by underwater physical disturbances, our deformation field predicts not only the displacement mean∆µ
+but also the positional uncertainty∆σ, yielding a complete characterization of the motion distribution. A deterministic rendering path (clean path) and
+an uncertainty-aware rendering path (uncertainty path) are then constructed in parallel and jointly optimized via a self-consistency distillation constraint.
+Meanwhile, Gaussians with high uncertainty are adaptively split to enhance local representation capacity, thereby improving the robustness of underwater
+reconstruction. In this way, underwater dynamics modeling addresses the failure of deterministic deformation fields under ambiguous observations, while
+uncertainty-guided optimization leverages the learned uncertainty to allocate representation capacity and stabilize training.
+occluders in static scenes by learning per-pixel variance that
+re-weights the photometric loss. Bayesian methods such as S-
+NeRF [11] , CF-NeRF [49] and LP-BNN [73] learn posterior
+distributions over radiance fields via variational inference, en-
+abling epistemic uncertainty estimation at the cost of sampling
+overhead. Ensemble methods, including Density-aware NeRF
+Ensembles (DANE) [37], train multiple models independently,
+providing robust uncertainty estimates but imposing significant
+computational burdens.
+With the emergence of 3D Gaussian Splatting, recent work
+begins exploring uncertainty quantification within this explicit
+paradigm. Methods like horseshoe Splatting [38], [61]intro-
+duce a Bayesian extension of 3DGS with factorized vari-
+ational inference for calibrated uncertainty estimation [62].
+RU4D-SLAM [39] incorporates uncertainty-aware perception
+into Gaussian Splatting SLAM for dynamic scenes through
+semantic-guided reweighting. More relevant to dynamic recon-
+struction, FUGS [28] and RobustSplat [29] explicitly models
+motion uncertainty by learning uncertainty relations among
+neighboring Gaussians. Additionally, FisherRF [41] takes an
+information-theoretic approach for downstream tasks such as
+view selection [63].
+However, the aforementioned methods [68] share a common
+characteristic: they treat uncertainty as a confidence score—a
+scalar weight that modulates the contribution of each pixel
+or Gaussian to the reconstruction loss. While effective for
+outlier rejection, this passive formulation does not capture
+where or why the uncertainty arises, nor does it use un-
+certainty to actively guide the reconstruction process. PUGS
+takes a fundamentally different approach. Rather than treating
+uncertainty as a post-hoc confidence estimate, we treat it as
+a physical signal. The position variance∆σpredicted by
+our variational Bayesian deformation field is not an abstract
+confidence measure—it is a learned detector that responds to
+the statistical signatures of underwater optical degradation.
+When scattering or refractive distortion dominates a scene
+region,∆σincreases, signaling that the model should ex-
+pand its exploration radius and allocate additional Gaussian
+capacity. When the water is clear and observations are reliable,
+∆σattenuates, and the model converges to near-deterministic
+behavior. This active sensing-and-guidance loop—where the
+physical signal is first detected and then exploited for ex-
+ploration, refinement, and densification—distinguishes PUGS
+from all existing uncertainty-aware rendering methods.
+C. Underwater Vision and Reconstruction
+Underwater imaging is fundamentally constrained by the
+physical properties of the aquatic medium [42], [64]. As de-
+scribed by the Jaffe-McGlamery model [48], light propagation
+underwater is governed by wavelength-dependent absorption
+5
+and forward/backward scattering, which collectively degrade
+image quality through color distortion, contrast reduction,
+and haze-like artifacts [44]. Traditional restoration methods
+focused on 2D image enhancement, employing hand-crafted
+priors such as the Dark Channel Prior (DCP) [43] to com-
+pensate for these degradations through post-processing tech-
+niques. While effective for improving visual quality, these 2D
+approaches lack any notion of 3D geometry, limiting their
+applicability to tasks requiring spatial understanding.
+The transition to 3D reconstruction in underwater envi-
+ronments is driven by integrating medium-specific physical
+models into neural rendering frameworks. WaterNeRF [18]
+first extends NeRF to underwater scenes by incorporating
+attenuation coefficients into the volume rendering pipeline,
+enabling joint estimation of scene geometry and water pa-
+rameters from monocular video. SeaThru-NeRF [13] further
+advances this direction by modeling both absorption and
+scattering effects, achieving more accurate color restoration
+and geometry reconstruction in turbid conditions. These works
+[65], [66] demonstrate that implicitly accounting for the under-
+water medium is essential for high-fidelity 3D reconstruction,
+yet they remain confined to static scenes.
+Extending underwater reconstruction to dynamic 4D sce-
+narios: capturing marine life, moving AUVs, or time-varying
+water conditions, introduces additional complexity. In dynamic
+settings, the coupling of fluid dynamics with optical distortions
+makes it difficult to distinguish genuine scene motion from
+medium-induced artifacts: a floating particle and a moving
+fish scale can produce nearly identical pixel-level changes
+under refractive distortion. Existing dynamic reconstruction
+frameworks, which assume deterministic motion models, often
+misinterpret refractive fluctuations and suspended particles
+as geometric changes, leading to ”geometric bleeding” and
+temporal incoherence. To our knowledge, PUGS is the first
+framework to address this challenge by learning to detect the
+physical signal [67] within a Gaussian Splatting paradigm,
+decoupling true structural motion from stochastic medium
+interference.
+III. METHOD
+In this section, we present PUGS for high-fidelity dynamic
+scene reconstruction grounded in a physical uncertainty strat-
+egy, with a particular focus on challenging scenarios such
+as underwater environments. To address the susceptibility of
+deterministic deformation fields to local minima and ”float-
+ing” artifacts, we formulate uncertainty-aware physics-based
+motion modeling within a variational inference paradigm.
+As illustrated in Figure 2, our method consists of three
+tightly coupled components:(1) Uncertainty-Guided Dy-
+namic Scene Representation.While maintaining a set
+of static canonical Gaussians as the geometric scaffold, we
+introduce a stochastic variational deformation field to model
+per-frame motion. Instead of predicting a single deterministic
+displacement, the field simultaneously predicts a mean and
+a per-Gaussian position variance, treating the variance as a
+representation of uncertainty and thereby encoding physical
+uncertainty as a learnable distribution.(2) Uncertainty-
+Guided Adaptive Refinement with Annealing.The learned
+position variance not only serves as an indicator for trig-
+gering adaptive Gaussian splitting and densification in high-
+uncertainty regions, but is also multiplied by the annealing
+factorβ(t), progressively diminishing its own contribution,
+ensuring that refinement operates on increasingly stable ge-
+ometry as training converges.(3) Dual-Path Rendering with
+Self-Consistent Distillation.During training, we construct a
+uncertainty-aware rendering path via reparameterization and a
+parallel deterministic path using only the mean displacement.
+A self-consistency distillation loss aligns the deterministic
+prediction with the visual consensus of the uncertainty path,
+encouraging the deterministic output to capture the central
+tendency of the explored distribution.
+A. Uncertainty-Guided Dynamic Scene Representation
+In underwater dynamic scenes, the observed pixel inten-
+sity at the camera is not a deterministic function of 3D
+geometry alone. Rather, it is the resultant of three interacting
+optical pathways: direct transmission, forward scattering, and
+backscatter [13]. The latter two components introduce stochas-
+tic fluctuations whose magnitude depends on the local density
+of suspended particles, the optical properties of the water
+column, and the relative geometry among the light source,
+the scene, and the camera. Critically, these fluctuations exhibit
+strong spatial structure: regions with high turbidity or dense
+particle concentrations produce substantially larger frame-
+to-frame variance than regions in clear water. This makes
+themagnitudeof optical degradation a detectable physical
+quantity.
+Our core idea is to learn this quantity. Rather than modeling
+the forward physics of underwater image formation explicitly,
+we train a neural deformation field to predict, alongside
+each Gaussian’s expected displacement, a position variance
+∆σthat captures the local magnitude of physically induced
+observational ambiguity. When∆σis large, it signals that the
+corresponding image region is likely affected by scattering,
+refraction, or particulate occlusion—the model is, in effect,
+learning to sense the underwater optical environmentthrough
+the statistics of its own reconstruction uncertainty. This learned
+physical signal subsequently drives two complementary pro-
+cesses: stochastic exploration with progressive annealing and
+uncertainty-guided Gaussian densification.
+We adopt a canonical-space representation where scene
+geometry and appearance are defined in a static, time-invariant
+reference frame. Building upon 3D Gaussian Splatting, each
+scene primitive is represented by SFM [10] as an anisotropic
+3D Gaussian characterized by its center positionµ∈R 3,
+covariance matrixΣ∈R 3×3, opacityα∈[0,1], and
+view-dependent colorcencoded via spherical harmonics. The
+rendering process projects these Gaussians onto the image
+plane via differentiable splatting. For a given pixelp, the
+rendered colorC(p)is computed as
+C(p) =
+X
+i∈N
+ciαi
+i−1Y
+j=1
+(1−α j)G(p;µi,Σi),(1)
+whereGdenotes the 2D Gaussian kernel obtained by project-
+ing the 3D covariance, and primitives are sorted by depth. To
+6
+model dynamic scenes, traditional methods introduce a learn-
+able deformation fieldϕthat only maps canonical positions
+xcan to time-dependent deformed positionsx t:
+xt =x can +ϕ(x can,t).(2)
+This traditional formulation [4] allows the network to learn
+smooth and plausible motions while maintaining a compact
+scene representation. However, traditional deformation net-
+works predict deterministic displacements, which inherently
+struggle with ambiguous scenarios such as rapid motion,
+optical distortions, or occlusions. These ambiguities manifest
+as optimization challenges, trapping the learning process in
+suboptimal local minima and resulting in characteristic arti-
+facts like floating Gaussians or geometric inconsistencies. This
+issue is especially severe in underwater scenes, where complex
+physical motions, light refraction, and scattering collectively
+degrade the imaging process. We address this fundamental
+limitation by reformulating deformation prediction as a prob-
+abilistic process, thereby substantially mitigating these motion
+ambiguities.
+Our deformation networkϕ θ takes as input a canonical
+positionx can ∈R 3 and a time embeddinge t ∈R d , and
+outputs a distribution over deformations rather than a single
+displacement vector. Specifically, the network predicts both the
+mean displacement∆µ∈R 3 and position variance∆σ∈R 3
+:
+ϕθ(xcan,t)→(∆µ,∆σ).(3)
+The mean displacement∆µrepresents the expected motion
+trajectory, while the variance∆σquantifies the physical posi-
+tion uncertainty at each spatial location and temporal instant.
+The variance∆σcan be understood as an adaptive exploration
+radius. In regions with clear, unambiguous observations, the
+network learns to predict small variances, leading to deter-
+ministic, precise positioning. Conversely, in regions exhibiting
+physical uncertainty such as motion blur, optical distortions,
+or occlusions, larger variances permit broader exploration,
+allowing the optimization to discover geometrically consistent
+solutions that might be missed by deterministic approaches.
+Our formulation uses anℓ 1 uncertainty sparsity loss on
+∆σin place of an explicit KL divergence term. This choice
+is both pragmatic and physically motivated. A zero-centered
+Laplace prior (of whichℓ 1 regularization is the maximum a
+posteriori counterpart) encodes the inductive bias that physical
+uncertainty should be sparse while only regions affected by
+scattering, refraction, or occlusion should exhibit substantial
+uncertainty. The uncertainty sparsity penalty thus encourages
+the model to allocate its exploration budget exclusively to
+regions where the underwater medium has genuinely degraded
+the visual signal, preventing variance inflation in clear, unam-
+biguous areas.
+B. Uncertainty-Guided Adaptive Refinement with Annealing
+During training, we employ the reparameterization strategy
+to enable stochastic exploration of the deformation space while
+maintaining gradient flow. The actual displacement applied to
+each Gaussian is sampled as :
+∆x= ∆µ+β(t)·(∆σ⊙ϵ),ϵ∼N(0,I),(4)
+where⊙denotes element-wise multiplication andβ(t)∈[0,1]
+is a global stochastic annealing (SA) factor that controls the
+exploration magnitude. This formulation allows Gaussians to
+stochastically jitter around their predicted mean positions,
+effectively exploring the local optimization landscape. The
+key insight is that this stochastic perturbation enables the
+optimization to escape sharp local minima [69] that commonly
+arise from physically ambiguous observations in challenging
+underwater scenarios.
+The reparameterized sampling in Eq. (4) can be understood
+as a physics-aware exploration mechanism. In regions where
+∆σis large the stochastic perturbation automatically expands
+the exploration radius, enabling the optimization to evaluate
+multiple physically plausible configurations. In clear, well-
+observed regions where∆σis small, the perturbation naturally
+shrinks, and the deformation behaves near-deterministically.
+The annealing factorβ(t)globally modulates this behavior:
+early in training, it permits broad exploration to escape poor
+local minima induced by optical ambiguity; as training con-
+verges, it suppresses perturbation, allowing the model to settle
+into a temporally coherent reconstruction guided by the now-
+stabilized physical signal.
+Furthermore, traditional Gaussian splitting strategies con-
+sider only the spatial extent of Gaussian primitives. We extend
+this criterion by treating the learned physical uncertainty∆σ
+as an explicit signal for adaptive capacity allocation. When
+a Gaussian exhibits position variance exceeding a predefined
+threshold, it indicates that the underlying scene region is sub-
+ject to severe underwater optical degradation—dense scatter-
+ing, refractive caustics, or marine snow occlusion—that cannot
+be adequately represented at the current spatial resolution.
+We therefore split such high-uncertainty Gaussians, allocating
+additional primitives to model the complex, medium-induced
+appearance variations. This mechanism ensures that repre-
+sentational capacity is automatically concentrated where the
+physical environment most degrades visual information, rather
+than being uniformly distributed across the scene.
+C. Dual-Path Rendering with Self-Consistency Distillation
+A core contribution of PUGS is theDual-Path Rendering
+Self-Consistency Distillationframework, which jointly opti-
+mizes stochastic and deterministic rendering branches to en-
+force long-term structural coherence while enabling local ex-
+ploration to escape poor minima induced by optical ambiguity.
+During training, we construct two parallel rendering paths that
+share the same underlying Gaussian primitives but differ in
+how deformations are applied: a deterministic clean path using
+only the predicted mean displacement∆µto produceI clean,
+and a uncertainty path using the reparameterized displacement
+from Eq. (4) to produceI unc [45]. By supervisingI unc against
+the ground-truth frame, we implicitly encourage the model to
+converge toward flat minima in the loss landscape—regions
+where small perturbations do not catastrophically degrade
+reconstruction quality. The reconstruction objective integrates
+pixel-wiseℓ 1 loss with D-SSIM [46] to capture both high-
+frequency textures and global structures:
+Lrecon = (1−λ ssim)∥Iunc−I gt∥1 +λ ssimLD-SSIM(Iunc,I gt).(5)
+7
+A critical challenge is ensuring that the deterministic expec-
+tation∆µremains an accurate surrogate for the entire motion
+distribution at inference time, when stochastic sampling is
+disabled. We resolve this by introducing aself-consistency
+distillation lossthat explicitly aligns the clean path output
+with the visual consensus formed by the uncertainty path:
+Ldistill =∥I clean−sg(I unc)∥1,(6)
+where sg(·)denotes the stop-gradient operation. Crucially,
+gradients flow exclusively through the clean path, treating the
+stochastically explored rendering as a fixed visual target; if
+gradients instead propagated through both paths, the optimiza-
+tion would collapse the uncertainty path toward the clean pre-
+diction, nullifying the exploration benefit. This design forces
+the mean displacement to capture the consensus appearance
+across the distribution of physically plausible deformations.
+Concretely, when marine snow or refractive caustics create
+multiple equally valid pixel configurations, the uncertainty
+path samples across these alternatives, and the distillation
+loss pulls the clean path toward their central tendency. This
+mechanism [70] enables PUGS to produce sharp, temporally
+coherent renderings at inference time despite stochastic train-
+ing perturbations.
+To prevent the deformation field from inflating∆σas a
+slack variable, we impose anℓ 1 uncertainty sparsity loss on
+the uncertainty field, denotedL unc =|∆σ| 1. The complete
+objective is formulated as:
+Ltotal =L recon +λ distill·L distill +λ unc·L unc.(7)
+We employ a dynamic scheduling forλ distill, progressively
+shifting the optimization priority from broad stochastic explo-
+ration to precise deterministic alignment as training converges,
+thereby ensuring that the clean path—and thus inference-
+time rendering—inherits the robustness benefits of variational
+exploration while ultimately satisfying long-term structural
+coherence across the temporal sequence.
+IV. EXPERIMENTS
+A. Experimental Settings
+DatasetsWe compare PUGS on three different bench-
+marks, including two underwater datasets: UVEB [55] and
+DRUV A [51], and a new dataset of complex physical scenes
+PhysGaia [50]. UVEB is a diverse set of complex dynamic
+underwater scenes. On this dataset, we run experiments on
+eleven scenes. These scenes collectively encompass diverse
+reconstruction challenges, including fine-grained texture de-
+tails (Boat), high-speed non-rigid motion (Snake), articulated
+deformations (Fish), complex occlusions (Shoal), and severe
+refractive distortions coupled with “marine snow” effects
+(Coral), providing a comprehensive testbed for evaluating
+dynamic reconstruction under realistic underwater optical con-
+ditions. DRUV A is an underwater dataset featuring highly
+turbid scenes. In this dataset, we run experiments on four
+scenes: A1, A2, A11, and A12. PhysGaia is a new dataset
+of complex physical scenes, and we run experiments on seven
+scenes: hanok, single flag, pisa, bouncing balls, basin, tube,
+and single smoke.
+For UVEB and DRUV A, each scene is captured by monoc-
+ular video in underwater environments, with camera poses
+estimated using COLMAP [10] and formatted to follow the
+D-NeRF data structure. Following the official protocol of
+Deformable-GS [4], we split each scene into training and
+test sets. For PhysGaia, we follow the benchmark protocol
+established in PhysGaia [50].
+Implementation DetailsAll experiments are conducted on a
+single NVIDIA RTX 3090 GPU with 24GB memory, using
+PyTorch [47] as the deep learning framework. For a fair
+comparison, we train all baseline methods using their official
+implementations with the hyperparameters recommended in
+their respective papers, and we unify the training iterations to
+40,000 across all methods to ensure consistent optimization
+budgets. Each scene takes approximately two hours to train,
+including both our method and the baselines. We note that the
+original PhysGaia paper reports results with fewer decimal
+places than our other two benchmarks. To maintain a consis-
+tent presentation precision across all three datasets, we pad the
+published baseline values with trailing zeros where necessary.
+No values are altered beyond this formatting adjustment.
+BaselinesWe compare PUGS against representative baseline
+methods on each benchmark, following the evaluation protocol
+of each corresponding benchmark.
+For benchmark UVEB, a diverse set of complex dy-
+namic underwater scenes, we compare our PUGS against
+six representative baseline methods spanning static and dy-
+namic reconstruction, domain-specific underwater modeling:
+(1)3D-GS[1]: The original 3D GS framework for static
+scene reconstruction. (2)Sea-splat[16]: A method de-
+signed for underwater scene reconstruction that incorporates
+wavelength-dependent optical modeling. (3)3D-4DGS[19]:
+A hybrid static-dynamic Gaussian Splatting framework that
+combines a static 3D representation with a dynamic 4D
+component to achieve fast reconstruction of dynamic scenes.
+(4)Deformable-GS[4]: A representative deformation-field-
+based dynamic 3DGS method that learns per-Gaussian defor-
+mations via an MLP mapping spatiotemporal coordinates to
+transformations of a canonical set of Gaussians. (5)Light-
+GS(Gaussian-Splatting-Lightning) [53]: A framework that
+enables fast reconstruction and real-time rendering of urban-
+scale scenes while maintaining robustness against appearance
+variations across multi-view captures. (6)PSF-4D[54]: A
+framework that proposes a novel 4D scene editing framework
+that exploits different aspects of the diffusion process to
+ensure temporal and multi-view coherence during editing. (7)
+RobustGS [52] enhances 3D Gaussian Splatting’s robustness
+to dynamic distractors by combining robust loss functions with
+distractor segmentation masks, achieving better quantitative
+and qualitative results than vanilla 3D Gaussian Splatting and
+RobustNeRF in cluttered scenes.
+For benchmark DRUV A, we adopt the baseline configu-
+ration established by UDF [58], which is the most closely
+related work to ours in both methodology and problem setting.
+UDF jointly models underwater structure and view-dependent
+medium effects over time, sharing a similar design philos-
+ophy with PUGS in addressing temporally varying under-
+water degradations. To ensure a fair and controlled com-
+8
+TABLE I
+QUANTITATIVE COMPARISON ONUVEBDATASET. WE COMPARE OUR METHOD TO STATE-OF-THE-ART APPROACHES,INCLUDING STATIC3D-GS,
+SEA-SPLAT, 3D-4DGS, PSF-4D, LIGHT-GS, ROBUSTGSANDDEFORMABLE-GS. WE REPORTPSNR, SSIM,ANDLPIPS. , ,AND
+BACKGROUNDS DENOTE THE BEST,SECOND-BEST,AND THIRD-BEST RESULTS,RESPECTIVELY.
+Boat Streak Fish Cave
+Method PSNR↑SSIM↑LPIPS↓ PSNR↑SSIM↑LPIPS↓ PSNR↑SSIM↑LPIPS↓ PSNR↑SSIM↑LPIPS↓
+3D-GS 24.03 0.829 0.309 24.53 0.897 0.096 24.75 0.815 0.230 28.53 0.928 0.344
+Sea-splat 24.87 0.779 0.337 28.72 0.934 0.058 26.98 0.822 0.262 29.61 0.932 0.269
+3D-4DGS 24.22 0.854 0.306 29.04 0.905 0.063 32.03 0.917 0.130 24.73 0.884 0.283
+RobustGS 17.81 0.832 0.233 22.95 0.807 0.153 25.58 0.780 0.189 26.14 0.949 0.197
+PSF-4D 25.05 0.812 0.320 32.41 0.953 0.044 27.13 0.903 0.242 35.45 0.966 0.139
+Light-GS 25.13 0.861 0.195 28.53 0.912 0.075 33.42 0.955 0.109 32.25 0.961 0.114
+Deformable-GS 25.77 0.843 0.231 32.49 0.956 0.062 32.87 0.925 0.120 37.27 0.947 0.272
+Ours 29.17 0.875 0.190 32.78 0.959 0.056 33.47 0.927 0.111 41.01 0.995 0.009
+Strait fishes Puffer Coral Ground
+Method PSNR↑SSIM↑LPIPS↓ PSNR↑SSIM↑LPIPS↓ PSNR↑SSIM↑LPIPS↓ PSNR↑SSIM↑LPIPS↓
+3D-GS 25.79 0.823 0.313 25.54 0.826 0.230 20.64 0.858 0.230 27.05 0.786 0.318
+Sea-splat 26.03 0.822 0.302 26.10 0.871 0.171 26.69 0.910 0.083 27.84 0.833 0.259
+3D-4DGS 19.71 0.644 0.572 16.21 0.561 0.715 28.52 0.915 0.070 24.99 0.728 0.427
+RobustGS 26.72 0.850 0.266 24.60 0.857 0.193 25.30 0.893 0.120 26.68 0.815 0.278
+PSF-4D 27.03 0.860 0.294 28.16 0.886 0.172 31.93 0.910 0.280 29.50 0.863 0.250
+Light-GS 26.65 0.864 0.358 27.13 0.894 0.147 27.82 0.918 0.082 28.54 0.849 0.245
+Deformable-GS 26.43 0.816 0.302 29.30 0.919 0.142 29.88 0.931 0.092 29.32 0.875 0.224
+Ours 27.11 0.853 0.276 29.51 0.918 0.141 31.17 0.951 0.069 29.98 0.882 0.188
+Snake Shoal Anemone Average
+Method PSNR↑SSIM↑LPIPS↓ PSNR↑SSIM↑LPIPS↓ PSNR↑SSIM↑LPIPS↓ PSNR↑SSIM↑LPIPS↓
+3D-GS 21.09 0.865 0.309 22.09 0.799 0.308 29.07 0.875 0.352 24.83 0.846 0.276
+Sea-splat 29.06 0.909 0.136 22.17 0.810 0.354 28.34 0.889 0.314 26.95 0.865 0.231
+3D-4DGS 29.53 0.914 0.145 21.11 0.753 0.418 27.02 0.848 0.407 25.19 0.811 0.321
+RobustGS 28.97 0.927 0.158 19.47 0.716 0.354 27.74 0.892 0.315 24.72 0.848 0.223
+PSF-4D 29.92 0.929 0.154 22.52 0.782 0.331 31.75 0.911 0.287 29.17 0.889 0.228
+Light-GS 29.86 0.932 0.114 22.35 0.841 0.281 30.08 0.898 0.278 28.34 0.899 0.182
+Deformable-GS 30.32 0.936 0.099 22.84 0.852 0.251 30.13 0.908 0.279 29.69 0.901 0.188
+Ours 30.62 0.937 0.098 22.90 0.853 0.249 31.68 0.919 0.272 30.85 0.915 0.151
+TABLE II
+QUANTITATIVE COMPARISON ONDRUVADATASET. WE COMPARE OUR METHOD TO STATE-OF-THE-ART APPROACHES,INCLUDINGTINEUVOX,
+SEATHRU-NERF, 4DGAUSSIAN, 4DGS, WATERSPLATTING ANDUDF. WE REPORTPSNR, SSIM,ANDLPIPS. , ,AND BACKGROUNDS
+DENOTE THE BEST,SECOND-BEST,AND THIRD-BEST RESULTS,RESPECTIVELY.
+A1 A2 A11 A12 Average
+Method PSNR↑SSIM↑LPIPS↓ PSNR↑SSIM↑LPIPS↓ PSNR↑SSIM↑LPIPS↓ PSNR↑SSIM↑LPIPS↓ PSNR↑SSIM↑LPIPS↓
+TiNeuV ox 23.05 0.757 0.664 21.74 0.843 0.637 27.02 0.878 0.355 27.59 0.911 0.221 24.85 0.847 0.469
+SeaThru-NeRF 26.27 0.778 0.336 20.23 0.694 0.481 27.62 0.916 0.254 26.13 0.883 0.282 25.06 0.818 0.338
+4DGaussian 22.84 0.688 0.535 20.93 0.586 0.638 26.84 0.882 0.273 25.84 0.906 0.244 24.11 0.766 0.423
+4DGS 20.75 0.736 0.449 19.54 0.678 0.516 24.09 0.938 0.173 25.79 0.956 0.128 22.54 0.827 0.317
+WaterSplatting 28.71 0.830 0.376 26.33 0.809 0.406 32.33 0.962 0.207 30.86 0.958 0.201 29.56 0.890 0.298
+UDF 29.29 0.842 0.300 27.35 0.801 0.384 34.03 0.964 0.123 31.01 0.969 0.100 30.42 0.894 0.227
+Ours 33.50 0.909 0.202 31.17 0.902 0.226 37.63 0.969 0.209 35.35 0.944 0.233 34.41 0.931 0.218
+parison, we follow UDF’s evaluation protocol and compare
+against the same set of baselines reported in their paper.
+We compare our PUGS against six representative baseline
+methods across four scenes: (1)TiNeuVox[30]: a radiance
+field framework that represents scenes with time-aware voxel
+features. (2)SeaThru-NeRF[13]: a new rendering model
+for NeRFs in scattering media. (3)4DGS[5]: a holistic
+representation for dynamic scenes. (4)Water-Splatting[56]:
+a novel approach that fuses volumetric rendering with 3DGS
+to handle underwater data effectively. (5)4DGaussian[57]:
+a model that is conceptually simple, consisting of a 4D
+Gaussian parameterized by anisotropic ellipses. (6)UDF[58]:
+a model that jointly represents underwater structure and view-
+dependent medium over time.
+For PhysGaia, we follow the benchmark protocol estab-
+lished in [50] and compare against the same set of baselines
+evaluated in that work. We compare our PUGS against five rep-
+resentative baseline methods in seven scenes: (1)Deformable-
+GS[4], (2)4DGS[5], (3)STG[35], (4)Mosca[3], and
+(5)SOM[2].
+B. Quantitative and Qualitative Results
+Results on UVEBTable I shows quantitative results in UVEB
+dataset, comparing eleven underwater scenes. Our PUGS
+consistently outperforms all baselines. Static 3D-GS fails on
+complex motions (e.g., Snake 21.09 dB). Sea-splat improves
+over static methods but lags behind dynamic approaches. De-
+terministic methods (3D-4DGS, Deformable-GS) perform well
+9
+Fig. 3. Qualitative Comparison on UVEB dataset. We conduct comparisons across nine scenes and provide zoomed-in views for each scene to examine
+the rendered reconstruction details, with a particular focus on dynamic content and complex scene regions. Our method consistently produces higher-quality
+results in both dynamic and static regions.
+Fig. 4. Qualitative Comparison on DRUV A dataset. We conduct comparisons across two scenes and provide zoomed-in views for each scene to examine
+the rendered reconstruction details, with a particular focus on dynamic content and complex scene regions. Our method consistently produces higher-quality
+results in both dynamic and static regions.
+10
+TABLE III
+QUANTITATIVE COMPARISON ON DYNAMIC SCENES. WE COMPARE OUR METHOD TOMOSCA, STG, SOM, 4DGSANDDEFORMABLE-GS. WE REPORT
+PSNR, SSIM,ANDLPIPS. , ,AND BACKGROUNDS DENOTE THE BEST,SECOND-BEST,AND THIRD-BEST RESULTS,RESPECTIVELY.
+hanok single flag pisa bouncing balls
+Method PSNR↑SSIM↑LPIPS↓ PSNR↑SSIM↑LPIPS↓ PSNR↑SSIM↑LPIPS↓ PSNR↑SSIM↑LPIPS↓
+MoSca 14.80 0.590 0.420 15.30 0.560 0.500 16.70 0.540 0.570 19.90 0.810 0.120
+STG 14.80 0.600 0.410 26.00 0.870 0.140 20.10 0.680 0.330 11.90 0.510 0.600
+SOM 14.70 0.670 0.400 16.30 0.600 0.240 17.10 0.650 0.410 17.40 0.790 0.140
+4DGS 15.50 0.740 0.320 18.00 0.650 0.290 19.30 0.670 0.260 22.70 0.860 0.100
+Deformable-GS 16.30 0.780 0.280 18.30 0.680 0.240 20.70 0.720 0.260 19.80 0.770 0.150
+Ours 16.10 0.760 0.290 18.60 0.690 0.240 20.80 0.730 0.260 21.50 0.910 0.130
+basin tube single smoke average
+Method PSNR↑SSIM↑LPIPS↓ PSNR↑SSIM↑LPIPS↓ PSNR↑SSIM↑LPIPS↓ PSNR↑SSIM↑LPIPS↓
+MoSca 18.40 0.620 0.410 18.30 0.860 0.250 24.80 0.950 0.140 18.30 0.700 0.340
+STG 16.80 0.660 0.430 22.10 0.920 0.120 24.50 0.970 0.100 19.50 0.740 0.300
+SOM 16.30 0.610 0.430 22.50 0.930 0.150 23.90 0.950 0.180 18.30 0.740 0.280
+4DGS 18.00 0.680 0.380 28.80 0.960 0.080 26.10 0.970 0.080 21.20 0.790 0.220
+Deformable-GS 18.20 0.670 0.360 27.70 0.960 0.050 26.50 0.970 0.080 21.10 0.790 0.200
+Ours 19.00 0.680 0.330 28.10 0.960 0.060 28.10 0.980 0.070 21.70 0.820 0.200
+on structured motions like Streak and Snake but collapse under
+challenging conditions. In contrast, PUGS achieves the highest
+scores across almost all metrics. On Cave, it reaches 41.01
+dB (+3.74 over Deformable-GS) and LPIPS 0.009. On Boat,
+it reaches 29.17 dB (+3.40 over Deformable-GS) . Consistent
+gains on Snake and Shoal confirm that uncertainty modeling
+decouples structural motion from stochastic interference.
+Figure 3 shows that deterministic baselines produce floaters
+and motion blur around object boundaries in the dataset
+UVEB. Our method recovers sharp textures and clean back-
+grounds, escaping local minima via stochastic exploration.
+Consistency distillation ensures temporal coherence. These
+qualitative results align with our quantitative findings, validat-
+ing that PUGS decouples scene dynamics from environmental
+noise for high-fidelity underwater reconstruction.
+Results on DRUV ATable II reports quantitative results on
+the DRUV A dataset across four underwater scenes. PUGS
+achieves the best PSNR on all four scenes and the best
+SSIM on three scenes, demonstrating strong pixel-level re-
+construction accuracy. However, we observe a PSNR-LPIPS
+trade-off in highly turbid scenes. On A11 and A12, PUGS
+attains substantially higher PSNR (37.63 dB and 35.35 dB)
+than the next-best method UDF (34.03 dB and 31.01 dB),
+yet its LPIPS scores (0.209 and 0.233) lag behind UDF
+(0.123 and 0.100). We attribute this to variance inflation in
+regions with dense floating particles. The model accounts
+for turbidity-induced occlusion by increasing the exploration
+radius, which can introduce subtle blurring that penalizes
+perceptual metrics while preserving pixel-wise accuracy. We
+regard mitigating this trade-off as a direction for future work.
+Despite this limitation, PUGS outperforms all compared meth-
+ods, including TiNeuV ox, SeaThru-NeRF, 4DGaussian, 4DGS,
+WaterSplatting, and UDF, in overall PSNR and SSIM.
+Figure 4 presents qualitative results on the DRUV A dataset.
+In turbid water, our method exhibits some blurriness: in A11,
+the rope behind the stone slab appears slightly blurred, and
+in A12, the background behind the stone slab also shows
+mild blurring. These artifacts are consistent with the variance
+inflation behavior discussed above. Nevertheless, even in these
+challenging cases, PUGS preserves sharper foreground struc-
+tures compared to baselines.
+Results on PhysGaiaTable III presents the quantitative results
+on the PhysGaia benchmark. PUGS achieves the best average
+PSNR of 21.70 dB, outperforming Deformable-GS by 0.60
+dB, which demonstrates that the proposed uncertainty-aware
+framework generalizes beyond underwater domains. A per-
+scene analysis reveals a pattern consistent with our design
+philosophy. PUGS delivers its most decisive gains on scenes
+featuring volumetric, semi-transparent media—single smoke
+(28.10 dB, +1.60 dB over Deformable-GS) andbasin(19.00
+dB, +0.80 dB)—where stochastic appearance variation creates
+genuine observational ambiguity for the deformation field
+to resolve. Conversely, on scenes dominated by structured,
+deterministic dynamics under perfect visibility, such ashanok
+(16.10 dB vs. Deformable-GS 16.30 dB) andsingle flag(18.60
+dB vs. STG 26.00 dB), the stochastic mechanism provides
+marginal or no benefit, as every pixel-level change corresponds
+to a unique, resolvable geometric displacement. This diver-
+gence confirms that∆σgenuinely responds toobservational
+uncertainty rather than functioning as a generic regularizer,
+and suggests that a data-driven annealing policy adapting the
+exploration level to scene statistics could further extend PUGS
+to broader dynamic scenarios.
+C. Ablation Study
+To systematically evaluate the contribution of each algo-
+rithmic component and investigate their internal synergies,
+we conduct a comprehensive ablation study focusing on three
+core designs of PUGS: the Stochastic Annealing (SA) mech-
+anism, the Uncertainty Sparsity Loss (L sparse), and the Self-
+Consistency Distillation Loss (L distill). Quantitative compar-
+isons across nine configurations in two different scenes are
+summarized in Table IV, and V. Ablation experiments are
+conducted on the Snake scene and Boat scene. Qualitative
+results of the ablation study in Snake scene are presented in
+Figure 5, qualitative results of the ablation study in Boat scene
+11
+TABLE IV
+RESULTS INSNAKE SCENE OF THE CONTRIBUTION OF EACH PROPOSED
+COMPONENT: STOCHASTICANNEALING(SA), UNCERTAINTYSPARSITY
+LOSS(L UNC ),ANDSELF-CONSISTENCYDISTILLATIONLOSS(L DISTILL ).
+WE REPORTPSNR, SSIM,ANDLPIPS. , ,AND BACKGROUNDS
+DENOTE THE BEST,SECOND-BEST,AND THIRD-BEST RESULTS,
+RESPECTIVELY.
+SAL unc Ldistill PSNR↑SSIM↑LPIPS↓
+30.09 0.933 0.160
+✓ 30.45 0.935 0.102
+✓ 30.40 0.936 0.099
+✓ 30.31 0.935 0.157
+✓ ✓ 30.34 0.936 0.099
+✓ ✓ 30.48 0.936 0.099
+✓ ✓ 30.53 0.936 0.100
+✓ ✓ ✓ 30.62 0.937 0.098
+TABLE V
+RESULTS INBOAT SCENE OF THE CONTRIBUTION OF EACH PROPOSED
+COMPONENT: STOCHASTICANNEALING(SA), UNCERTAINTYSPARSITY
+LOSS(L UNC ),ANDSELF-CONSISTENCYDISTILLATIONLOSS(L DISTILL ).
+WE REPORTPSNR, SSIM,ANDLPIPS. , ,AND BACKGROUNDS
+DENOTE THE BEST,SECOND-BEST,AND THIRD-BEST RESULTS,
+RESPECTIVELY.
+SAL unc Ldistill PSNR↑SSIM↑LPIPS↓
+28.10 0.858 0.231
+✓ 28.12 0.868 0.233
+✓ 28.38 0.866 0.195
+✓ 28.72 0.872 0.197
+✓ ✓ 28.09 0.865 0.230
+✓ ✓ 28.95 0.872 0.200
+✓ ✓ 28.93 0.874 0.192
+✓ ✓ ✓ 29.17 0.875 0.190
+Fig. 5. We conduct qualitative ablation experiments on the Snake scene,
+evaluating the contributions of the Stochastic Annealing mechanism, the
+Distillation Loss, and the Uncertainty Sparsity Loss.
+Fig. 6. We conduct qualitative ablation experiments on the Boat scene,
+evaluating the contributions of the Stochastic Annealing mechanism, the
+Distillation Loss, and the Uncertainty Sparsity Loss.
+are presented in Figure 6, further illustrating the visual impact
+of each component.
+(1) Stochastic Annealing Mechanism.As shown in Table IV,
+when SA is introduced alone, the model achieves a significant
+performance boost, demonstrating that controlled stochasticity
+enables broader exploration of the solution space, allowing
+the model to escape local minima induced by refractive noise.
+However, SA alone yields limited improvement in perceptual
+quality. This underscores the necessity of coupling stochastic
+exploration with robust regularization to ensure fine-grained
+detail recovery. When SA is combined withL sparse, perfor-
+mance further improves to PSNR 30.53 dB and LPIPS 0.0995,
+indicating that the sparsity constraint effectively prevents the
+network from inflating uncertainty arbitrarily while preserving
+SA’s exploratory benefits. Similarly, combining SA withL distill
+yields PSNR 30.48 dB, showing that the distillation loss helps
+enhance temporal coherence.
+(2) Uncertainty Sparsity Loss.When applied independently
+to the baseline,L sparse yields a moderate improvement in
+geometric compactness. This confirms thatL sparse effectively
+prevents the network from inflating uncertainty arbitrarily, pro-
+moting compact geometry and eliminating floating artifacts.
+When combined withL distill, the model achieves PSNR 30.34
+dB and LPIPS 0.0990, demonstrating that these two regular-
+ization terms work complementarily to enforce both geometric
+compactness and temporal stability. The best combination
+involvingL sparse appears when paired with SA, where the
+exploratory capability of SA and the compactness constraint
+jointly contribute to reconstruction.
+(3) Self-Consistency Distillation Loss.IncorporatingL distill
+independently forces the mean prediction to remain robust
+against stochastic perturbations, leading to substantial im-
+provements in perceptual quality. Visually, this manifests as
+significantly sharper textures and reduced motion blur. When
+combined withL sparse, the two regularization terms together
+achieve strong performance (PSNR 30.34 dB), demonstrating
+their complementary roles in enforcing both temporal coher-
+ence and geometric compactness.
+V. CONCLUSION
+In this work, we presented PUGS, a framework that re-
+formulates underwater dynamic scene reconstruction as prob-
+abilistic inference over Gaussian trajectories. Unlike deter-
+ministic deformation fields that conflate structural motion
+with optical perturbations, PUGS explicitly models physical
+12
+uncertainty as a learnable distribution over per-Gaussian dis-
+placements. A variational deformation field jointly predicts
+motion means and position variances, enabling reparameter-
+ized stochastic sampling that escapes local minima induced
+by physically ambiguous observations. Dual-path rendering
+couples a stochastic exploratory branch with a deterministic
+inference branch via self-consistency distillation and pro-
+gressive uncertainty annealing, while the learned variance
+guides adaptive Gaussian densification toward optically de-
+graded regions. Across three benchmarks spanning 22 dynamic
+scenes, PUGS achieves state-of-the-art performance, including
+30.85 dB PSNR on UVEB (+1.16 dB over Deformable-GS)
+with pronounced gains of +3.74 dB and +3.40 dB on Cave
+and Boat, and 34.41 dB on DRUV A (+3.99 dB over UDF).
+Limitationsinclude a PSNR–LPIPS trade-off under extreme
+turbidity and the reliance on manually scheduled annealing,
+both of which motivate future work on data-driven uncertainty
+scheduling. Beyond underwater domains, this principled inte-
+gration of physical image formation and uncertainty modeling
+offers a promising direction for robust reconstruction in fog,
+smoke, and other scattering media.
+REFERENCES
+[1] B. Kerbl, G. Kopanas, T. Leimk ¨uhler, G. Drettakiset al., “3d gaussian
+splatting for real-time radiance field rendering,”ACM Trans. Graph.,
+vol. 42, no. 4, pp. 139–1, 2023.
+[2] Q. Wang, V . Ye, H. Gao, W. Zeng, J. Austin, Z. Li, and A. Kanazawa,
+“Shape of Motion: 4D Reconstruction from a Single Video,” inPro-
+ceedings of the IEEE/CVF International Conference on Computer Vision
+(ICCV), 2025.
+[3] J. Lei, Y . Weng, A. W. Harley, L. Guibas, and K. Daniilidis, “Mosca:
+Dynamic gaussian fusion from casual videos via 4d motion scaffolds,”
+in2025 IEEE/CVF Conference on Computer Vision and Pattern Recog-
+nition (CVPR), IEEE, pp. 6165–6177, 2025.
+[4] Z. Yang, X. Gao, W. Zhou, S. Jiao, Y . Zhang, and X. Jin, “Deformable
+3D Gaussians for High-Fidelity Monocular Dynamic Scene Reconstruc-
+tion,” inProceedings of the IEEE/CVF Conference on Computer Vision
+and Pattern Recognition (CVPR), 2024.
+[5] G. Wu, T. Yi, J. Fang, L. Xie, X. Zhang, W. Wei, W. Liu, Q. Tian,
+and X. Wang, “4D Gaussian Splatting for Real-Time Dynamic Scene
+Rendering,” inProceedings of the IEEE/CVF Conference on Computer
+Vision and Pattern Recognition (CVPR), 2024.
+[6] Y . Lin, Z. Dai, S. Zhu, and Y . Yao, “Gaussian-Flow: 4D Reconstruction
+with Dynamic 3D Gaussian Splatting,” inProceedings of the IEEE/CVF
+Conference on Computer Vision and Pattern Recognition (CVPR), 2024.
+[7] B. Mildenhall, P. P. Srinivasan, M. Tancik, J. T. Barron, R. Ramamoorthi,
+and R. Ng, “NeRF: Representing Scenes as Neural Radiance Fields for
+View Synthesis,” inEuropean Conference on Computer Vision (ECCV),
+2020.
+[8] A. Pumarola, E. Corona, G. Pons-Moll, and F. Moreno-Noguer, “D-
+NeRF: Neural Radiance Fields for Dynamic Scenes,” inProceedings of
+the IEEE/CVF Conference on Computer Vision and Pattern Recognition
+(CVPR), 2021.
+[9] K. Park, U. Sinha, J. T. Barron, S. Bouaziz, D. B. Goldman, S. M. Seitz,
+and R. Martin-Brualla, “Nerfies: Deformable Neural Radiance Fields,”
+inProceedings of the IEEE/CVF International Conference on Computer
+Vision (ICCV), 2021.
+[10] J. L. Sch ¨onberger and J.-M. Frahm, “Structure-from-Motion Revisited,”
+inProceedings of the IEEE/CVF Conference on Computer Vision and
+Pattern Recognition (CVPR), 2016.
+[11] J. Shen, A. Ruiz, and L. Agapito, “Stochastic Neural Radiance Fields:
+Quantifying Uncertainty in Implicit 3D Representations,” in3DV, 2021.
+[12] X. Pan, Z. Lai, S. Song, and G. Huang, “ActiveNeRF: Learning where to
+See with Uncertainty Estimation,” inEuropean Conference on Computer
+Vision (ECCV), 2022.
+[13] D. Levy, N. Pearl, T. Treibitz, and D. Simon, “SeaThru-NeRF: Neu-
+ral Radiance Fields for Underwater Scenes,” inProceedings of the
+IEEE/CVF Conference on Computer Vision and Pattern Recognition
+(CVPR), 2023.
+[14] P. Sypek, T. Varghese, O. Pizarro, and S. Williams, “WaterNeRF: Neural
+Radiance Fields for Underwater Scene Reconstruction,” inICRA, 2024.
+[15] A. Cao and J. Johnson, “HexPlane: A Unifying Segmentation for
+Dynamic Scenes,” inProceedings of the IEEE/CVF Conference on
+Computer Vision and Pattern Recognition (CVPR), pp. 25–35, 2023.
+[16] D. Yang, J. J. Leonard, and Y . Girdhar, “SeaSplat: Representing Under-
+water Scenes with 3D Gaussian Splatting and a Physically Grounded
+Image Formation Model,” in2025 IEEE International Conference on
+Robotics and Automation (ICRA), 2025.
+[17] R. Martin-Brualla, N. Radwan, M. S. Sajjadi, J. T. Barron, A. Doso-
+vitskiy, and D. Duckworth, “Nerf in the wild: Neural radiance fields
+for unconstrained photo collections,” inProceedings of the IEEE/CVF
+Conference on Computer Vision and Pattern Recognition, pp. 7210–
+7219, 2021.
+[18] Y . Wang, J. Zhang, Z. Raoet al., “WaterNeRF: Neural Radiance Fields
+for Underwater Scenes,” inEuropean Conference on Computer Vision,
+2022.
+[19] S. Oh, Y . Lee, H. Jeon, and E. Park, “Hybrid 3D-4D Gaussian Splatting
+for Fast Dynamic Scene Representation,” 2025. [Online]. Available:
+https://arxiv.org/abs/2505.13215 arXiv:2505.13215.
+[20] D. Ma, Y . Li, T. Ma, and A. M. Pascoal, “The state of the art
+in key technologies for autonomous underwater vehicles: A review,”
+Engineering, Elsevier, 2025.
+[21] L. He, M. Xie, and Y . Zhang, “A review of path following, trajectory
+tracking, and formation control for autonomous underwater vehicles,”
+Drones, MDPI, vol. 9, no. 4, p. 286, 2025.
+[22] J. Zhong, M. Li, A. Gruen, K. Schindler, X. Liao, and Q. Guo, “Cutting-
+edge 3D reconstruction solutions for underwater coral reef images: A
+review and comparison,”ISPRS Journal of Photogrammetry and Remote
+Sensing, Elsevier, vol. 230, pp. 779–803, 2025.
+[23] J. Fan, X. Zeng, J. Zhang, M. Gong, Y . Yang, and D. Tao, “Advances
+in Radiance Field for Dynamic Scene: From Neural Field to Gaussian
+Field,”arXiv preprint arXiv:2505.10049, 2025.
+[24] X. Zhang, Z. Zhang, L. Ran, and X. Li, “Refractive Neural Rendering
+of Underwater Scenes via Complex Refractive Surface Reconstruction,”
+inChinese Conference on Pattern Recognition and Computer Vision
+(PRCV), Springer, pp. 262–276, 2025.
+[25] Y . Song, “Visual 3D Reconstruction in the Deep Sea: from Geometric
+and Radiometric Perspectives,” Ph.D. dissertation, 2024.
+[26] L. M. Hodne, E. Leikvoll, M. Yip, A. L. Teigen, A. Stahl, and R. Mester,
+“Detecting and suppressing marine snow for underwater visual slam,”
+inProceedings of the IEEE/CVF conference on computer vision and
+pattern recognition, pp. 5101–5109, 2022.
+[27] Z. Hui, A. K. Gostar, W. Chuah, A. Bab-Hadiashar, and R. Tennakoon,
+“Joint Modeling of Corruption-Driven and Information-Limited Un-
+certainty for Robust 3D Gaussian Splatting,” inProceedings of the
+IEEE/CVF Winter Conference on Applications of Computer Vision, pp.
+688–697, 2026.
+[28] M. Shao, Y . Qiao, K. Zhang, and L. Meng, “Frequency-aware un-
+certainty Gaussian splatting for dynamic scene reconstruction,”IEEE
+Transactions on Visualization and Computer Graphics, IEEE, 2025.
+[29] C. Fu, Y . Zhang, K. Yao, G. Chen, Y . Xiong, C. Huang, S. Cui,
+and X. Cao, “RobustSplat: Decoupling densification and dynamics for
+transient-free 3DGS,” inProceedings of the IEEE/CVF International
+Conference on Computer Vision, pp. 27126–27136, 2025.
+[30] J. Fang, T. Yi, X. Wang, L. Xie, X. Zhang, W. Liu, M. Nießner, and
+Q. Tian, “Fast dynamic radiance fields with time-aware neural voxels,”
+inSIGGRAPH Asia 2022 Conference Papers, pp. 1–9, 2022.
+[31] T. Taketomi, H. Uchiyama, and S. Ikeda, “Visual SLAM algorithms: A
+survey from 2010 to 2016,”IPSJ transactions on computer vision and
+applications, Springer, vol. 9, no. 1, p. 16, 2017.
+[32] V . Tschernezki, D. Larlus, and A. Vedaldi, “Neuraldiff: Segmenting
+3d objects that move in egocentric videos,” in2021 International
+Conference on 3D Vision (3DV), IEEE, pp. 910–919, 2021.
+[33] Y . Liang, E. Laidlaw, A. Meyerowitz, S. Sridhar, and J. Tompkin,
+“Semantic attention flow fields for monocular dynamic scene decom-
+position,” inProceedings of the IEEE/CVF International Conference on
+Computer Vision, pp. 21797–21806, 2023.
+[34] Y .-H. Huang, Y .-T. Sun, Z. Yang, X. Lyu, Y .-P. Cao, and X. Qi, “Sc-
+gs: Sparse-controlled gaussian splatting for editable dynamic scenes,”
+inProceedings of the IEEE/CVF conference on computer vision and
+pattern recognition, pp. 4220–4230, 2024.
+[35] Z. Li, Z. Chen, Z. Li, and Y . Xu, “Spacetime gaussian feature splatting
+for real-time dynamic view synthesis,” inProceedings of the IEEE/CVF
+Conference on Computer Vision and Pattern Recognition, pp. 8508–
+8520, 2024.
+13
+[36] J. Sun, H. Jiao, G. Li, Z. Zhang, L. Zhao, and W. Xing, “3dgstream: On-
+the-fly training of 3d gaussians for efficient streaming of photo-realistic
+free-viewpoint videos,” inProceedings of the IEEE/CVF Conference on
+Computer Vision and Pattern Recognition, pp. 20675–20685, 2024.
+[37] N. S ¨underhauf, J. Abou-Chakra, and D. Miller, “Density-aware
+NeRF Ensembles: Quantifying Predictive Uncertainty in Neural
+Radiance Fields,” in2023 IEEE International Conference on
+Robotics and Automation (ICRA), pp. 9370–9376, 2023. DOI:
+10.1109/ICRA48891.2023.10161012.
+[38] F. Wu, T. H. Chan, Y . Chen, L. Zhu, G. Yin, and L. Yu, “Horseshoe
+Splatting: Handling Structural Sparsity for Uncertainty-Aware Gaussian-
+Splatting Radiance Field Rendering,” inThe Fourteenth International
+Conference on Learning Representations.
+[39] Y . Zhao, H. Zhang, K. Huang, Q. Wang, Z. Shao, and D. Wu, “RU4D-
+SLAM: Reweighting Uncertainty in Gaussian Splatting SLAM for 4D
+Scene Reconstruction,”arXiv preprint arXiv:2602.20807, 2026.
+[40] X. Hu, Y . Wang, L. Fan, C. Luo, J. Fan, Z. Lei, Q. Li, J. Peng,
+and Z. Zhang, “SAGD: Boundary-enhanced segment anything in 3D
+Gaussian via Gaussian decomposition,”IEEE Transactions on Image
+Processing, IEEE, 2026.
+[41] W. Jiang, B. Lei, and K. Daniilidis, “Fisherrf: Active view selection and
+mapping with radiance fields using fisher information,” inEuropean
+conference on computer vision, Springer, pp. 422–440, 2024.
+[42] S. Li, Z. Zhang, Q. Zhang, H. Yao, X. Li, J. Mi, and H. Wang,
+“Breakthrough underwater physical environment limitations on optical
+information representations: an overview and suggestions,”Journal of
+Marine Science and Engineering, MDPI, vol. 12, no. 7, p. 1055, 2024.
+[43] K. He, J. Sun, and X. Tang, “Single image haze removal using dark
+channel prior,”IEEE transactions on pattern analysis and machine
+intelligence, Ieee, vol. 33, no. 12, pp. 2341–2353, 2010.
+[44] S. Anwar and C. Li, “Diving deeper into underwater image enhance-
+ment: A survey,”Signal Processing: Image Communication, Elsevier,
+vol. 89, p. 115978, 2020.
+[45] K. Mishchenko and S. U. Stich, “Noise injection irons out local minima
+and saddle points,” inOPT 2023: Optimization for Machine Learning,
+2023.
+[46] M. Choi, I. Kim, and H. J. Kim, “Efficient multi-view training for 3D
+Gaussian Splatting,”arXiv preprint arXiv:2506.12727, 2025.
+[47] A. Paszke, S. Gross, F. Massa, A. Lerer, J. Bradbury, G. Chanan,
+T. Killeen, Z. Lin, N. Gimelshein, L. Antigaet al., “Pytorch: An
+imperative style, high-performance deep learning library,”Advances in
+neural information processing systems, vol. 32, 2019.
+[48] J. S. Jaffe, “Computer modeling and the design of optimal underwater
+imaging systems,”IEEE journal of oceanic engineering, IEEE, vol. 15,
+no. 2, pp. 101–111, 2002.
+[49] J. Shen, A. Agudo, F. Moreno-Noguer, and A. Ruiz, “Conditional-flow
+nerf: Accurate 3d modelling with reliable uncertainty quantification,” in
+European Conference on Computer Vision, Springer, pp. 540–557, 2022.
+[50] M. Kim, G. Kim, J. Choi, W. Roh, and B. Han, “PhysGaia:Physics-
+Aware Benchmark with Multi-Body Interactions for Dynamic Novel
+View Synthesis,” inCVPR, 2026.
+[51] N. Varghese, A. Kumar, and A. N. Rajagopalan, “Self-supervised
+Monocular Underwater Depth Recovery, Image Restoration, and a Real-
+sea Video Dataset,” inProceedings of the IEEE/CVF International
+Conference on Computer Vision (ICCV), pp. 12248–12258, 2023.
+[52] P. Ungermann, A. Ettenhofer, M. Nießner, and B. Roessle, “Robust 3d
+gaussian splatting for novel view synthesis in presence of distractors,”
+inDAGM German Conference on Pattern Recognition, Springer, pp.
+153–167, 2024.
+[53] Z. Yuan, H. Huang, Z. Xiong, D. Wang, and G. Yang, “Robust and
+Efficient 3D Gaussian Splatting for Urban Scene Reconstruction,” in
+Proceedings of the IEEE/CVF International Conference on Computer
+Vision (ICCV), pp. 26209–26219, 2025.
+[54] H. Iqbal, N. Karim, A. Farooq, U. Khalid, Z. Zhang, and J. Hua, “PSF-
+4D: A progressive sampling framework for view-consistent 4D editing,”
+Computers & Graphics, Elsevier, p. 104645, 2026.
+[55] Y . Xie, L. Kong, K. Chen, Z. Zheng, X. Yu, Z. Yu, and B. Zheng,
+“UVEB: A Large-scale Benchmark and Baseline Towards Real-World
+Underwater Video Enhancement,” inProceedings of the IEEE/CVF
+Conference on Computer Vision and Pattern Recognition, pp. 22358–
+22367, 2024.
+[56] H. Li, W. Song, T. Xu, A. Elsig, and J. Kulhanek, “Watersplatting: Fast
+underwater 3d scene reconstruction using gaussian splatting,” in2025
+International Conference on 3D Vision (3DV), IEEE, pp. 969–978, 2025.
+[57] Z. Yang, H. Yang, Z. Pan, and L. Zhang, “Real-time photorealistic
+dynamic scene representation and rendering with 4d gaussian splatting,”
+inInternational Conference on Learning Representations, vol. 2024, pp.
+9142–9159, 2024.
+[58] R. Liu, Z. Duan, J. Gao, W. Wang, and Y . Yang, “Uncertainty-Aware
+3D Reconstruction for Dynamic Underwater Scenes,” inInternational
+Conference on Learning Representations (ICLR), 2026.
+[59] C. Stearns, A. Harley, M. Uy, F. Dubost, F. Tombari, G. Wetzstein,
+and L. Guibas, “Dynamic Gaussian Marbles for Novel View Synthesis
+of Casual Monocular Videos,” inSIGGRAPH Asia 2024 Conference
+Papers, 2024.
+[60] F. Guo, C.-C. Hsu, S. Ding, and C. Zhang, “Uncertainty Matters in
+Dynamic Gaussian Splatting for Monocular 4D Reconstruction,” in
+International Conference on Learning Representations (ICLR), 2026.
+[61] R. Li and Y .-m. Cheung, “Variational Multi-scale Representation for
+Estimating Uncertainty in 3D Gaussian Splatting,” inAdvances in Neural
+Information Processing Systems (NeurIPS), 2024.
+[62] T. Van de Maele, O. Catal, A. Tschantz, C. L. Buckley, and T. Ver-
+belen, “Variational Bayes Gaussian Splatting,” inAdvances in Neural
+Information Processing Systems (NeurIPS), 2024.
+[63] A. Hanson, A. Tu, V . Singla, M. Jayawardhana, M. Zwicker, and
+T. Goldstein, “PUP 3D-GS: Principled Uncertainty Pruning for 3D
+Gaussian Splatting,” inProceedings of the IEEE/CVF Conference on
+Computer Vision and Pattern Recognition (CVPR), pp. 5949–5958,
+2025.
+[64] H. Wang, N. Anantrasirichai, F. Zhang, and D. Bull, “UW-GS:
+Distractor-Aware 3D Gaussian Splatting for Enhanced Underwater Scene
+Reconstruction,” inProceedings of the IEEE/CVF Winter Conference on
+Applications of Computer Vision (WACV), pp. 3280–3289, 2025.
+[65] T. Zhang, W. Zhi, K. Meyers, N. Joshi, J. G. Mangelson, C. Barbalata,
+and M. Johnson-Roberson, “RecGS: Removing Water Caustic with
+Recurrent Gaussian Splatting,”IEEE Robotics and Automation Letters,
+2025.
+[66] S. Liu, N. Gao, Z. Gu, H. Dou, Y . Deng, and H. Li, “Spatiotemporal
+Degradation-Aware 3D Gaussian Splatting for Realistic Underwater
+Scene Reconstruction,” inProceedings of the 33rd ACM International
+Conference on Multimedia, pp. 141–150, 2025.
+[67] G. Huang, H. Wang, Z. Qi, W. Lu, D. R. Bull, and N. Anantrasirichai,
+“R-Splatting: From Restoration to Reconstruction: Rethinking 3D Gaus-
+sian Splatting for Underwater Scenes,”arXiv preprint arXiv:2509.17789,
+2025.
+[68] Y . Feng, X. Feng, Y . Shang, Y . Jiang, C. Yu, Z. Zong, T. Shao,
+H. Wu, K. Zhou, C. Jianget al., “Gaussian Splashing: Unified Particles
+for Versatile Motion Synthesis and Rendering,” inProceedings of the
+IEEE/CVF Conference on Computer Vision and Pattern Recognition
+(CVPR), 2025.
+[69] S. Kheradmand, D. Rebain, G. Sharma, W. Sun, Y .-C. Tseng, H. Isack,
+A. Kar, A. Tagliasacchi, and K. M. Yi, “3D Gaussian Splatting as
+Markov Chain Monte Carlo,” inAdvances in Neural Information Pro-
+cessing Systems (NeurIPS), 2024.
+[70] J. Fan, W. Li, Y . Han, T. Dai, and Y . Tang, “Momentum-GS: Momentum
+Gaussian Self-Distillation for High-Quality Large Scene Reconstruc-
+tion,” inProceedings of the IEEE/CVF International Conference on
+Computer Vision (ICCV), pp. 25250–25260, 2025.
+[71] S. Peng, Y . Long, Y . Yan, H. Lin, C. Zhou, H. Sun, K. Zhan, X. Lang,
+H. Bao, and X. Zhou, “Street Gaussians: Modeling Dynamic Urban
+Scenes With Gaussian Primitives,”IEEE transactions on pattern analysis
+and machine intelligence, IEEE, 2025.
+[72] K. Wang, F. Cuzzolin, K. Shariatmadar, D. Moens, and H. Hallez,
+“A Review of Uncertainty Representation and Quantification in Neural
+Networks,”IEEE Transactions on Pattern Analysis and Machine Intel-
+ligence, IEEE, 2025.
+[73] G. Franchi, A. Bursuc, E. Aldea, S. Dubuisson, and I. Bloch, “En-
+coding the latent posterior of bayesian neural networks for uncertainty
+quantification,”IEEE Transactions on Pattern Analysis and Machine
+Intelligence, IEEE, vol. 46, no. 4, pp. 2027–2040, 2023.
+[74] Y . Wang, J. Peng, and Z. Zhang, “Uncertainty-aware pseudo label
+refinery for domain adaptive semantic segmentation,” inProceedings
+of the IEEE/CVF International Conference on Computer Vision (ICCV),
+pp. 9072–9081, 2021.
+[75] Y . Wang, J. Liang, and Z. Zhang, “A curriculum-style self-training
+approach for source-free semantic segmentation,”IEEE Transactions
+on Pattern Analysis and Machine Intelligence, vol. 46, pp. 9890–9907,
+2024.
+14
+Tingjun Liis currently pursuing his M.E. degree
+in Computer Science and Technology with the Col-
+lege of Computer Science and Technology, Ocean
+University of China, Qingdao, China. He received
+his B.E. degree in Computer Science and Technol-
+ogy from Harbin Institute of Technology, Shenzhen,
+China, in 2020. His research interests include under-
+water 3D reconstruction, dynamic neural rendering,
+and computer vision.
+Yuxi Wangreceived his Bachelor’s degree from
+Northeastern University, China, in 2016, and his
+PhD degree from University of Chinese Academy
+of Sciences (UCAS), Institute of Automation, Chi-
+nese Academy of Sciences (CASIA), in January
+2022. He is currently an associate professor in the
+School of Information Science and Engineering,
+Ocean University of China, Qingdao, 266003, China.
+Before that, he served as an assistant professor in
+the Centre for Artificial Intelligence and Robotics
+(CAIR), Hong Kong Institute of Science & Inno-
+vation, Chinese Academy of Science (HKISI-CAS) from 2022 to 2025. His
+research interests include 3D AIGC, embodied AI, visual-language navigation,
+and domain adaptation. He is serving as the Associate Editor of Pattern
+Recognition. He has also served as the PC of international conferences like
+CVPR, NeurIPS, ICCV , AAAI, IJCAI and ACM MM.
+Guoqiang Zhongreceived his B.S. degree in Mathe-
+matics from Hebei Normal University, Shijiazhuang,
+China, his M.S. degree in Operations Research and
+Cybernetics from Beijing University of Technology
+(BJUT), Beijing, China, and his Ph.D degree in
+Pattern Recognition and Intelligent Systems from In-
+stitute of Automation, Chinese Academy of Sciences
+(CASIA), Beijing, China, in 2004, 2007 and 2011,
+respectively. Between October 2011 and July 2013,
+he was a Postdoctoral Fellow with the Synchromedia
+Laboratory for Multimedia Communication in Telep-
+resence, University of Quebec, Montreal, Canada. Between March 2014 and
+December 2020, he was an Associate Professor at Department of Computer
+Science and Technology, Ocean University of China, Qingdao, China. Since
+January 2021, he has been a Full Professor at College of Computer Science
+and Technology, Ocean University of China. His research interests include
+Pattern Recognition, Machine Learning and Computer Vision.
+Zhaoxiang Zhangreceived his bachelor’s degree
+from the Department of Electronic Science and
+Technology in the University of Science and Tech-
+nology of China (USTC) in 2004. After that, he
+was a Ph.D. candidate under the supervision of
+Professor Tieniu Tan in the National Laboratory of
+Pattern Recognition, Institute of Automation, Chi-
+nese Academy of Sciences, where he received his
+Ph.D. degree in 2009. In October 2009, he joined
+the School of Computer Science and Engineering,
+Beihang University, as an Assistant Professor (2009-
+2011), an Associate Professor (2012-2015) and the Vise-Director of the
+Department of Computer application technology (2014-2015). In July 2015,
+he returned to the Institute of Automation, Chinese Academy of Sciences. He
+is now a full Professor in the Center for Research on Intelligent Perception and
+Computing (CRIPAC) and the State Key Laboratory of Multimodal Artificial
+Intelligence Systems. His research interests include Computer Vision, Pattern
+Recognition, and Machine Learning. Recently, he specifically focuses on deep
+learning models, biologically-inspired visual computing and human-like learn-
+ing, and their applications on human analysis and scene understanding. He
+has published more than 200 papers in international journals and conferences,
+including reputable international journals such as JMLR, IEEE TIP, IEEE
+TNN, IEEE TCSVT, IEEE TIFS and top level international conferences like
+CVPR, ICCV , NIPS, ECCV , AAAI, IJCAI and ACM MM. He is serving
+or has served as the Associate Editor of IEEE T-CSVT, Patten Recognition,
+Neurocomputing, and Frontiers of Computer Science. He has served as the
+Area Chair, Senior PC of international conferences like CVPR, NIPS, ICML,
+AAAI, IJCAI and ACM MM. He is a Senior Member of IEEE, a Distinguished
+Member of CCF, and a Distinguished member of CAAI.

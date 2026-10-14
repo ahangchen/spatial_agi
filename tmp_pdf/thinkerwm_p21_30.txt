@@ -1,0 +1,466 @@
+It is trained only on the motion loss between predicted video motion and ground-truth end-effector
+displacement:
+Lprobe =L motion
+
+∆ ˆPvid,∆P GT
+action
+
+,(24)
+whereL motion combines end-point error and motion-magnitude discrepancy:
+Lmotion(x,y) = 1
+|T|
+X
+t∈T
+∥xt−yt∥2 + 1
+|T|
+X
+t∈T
+|∥xt∥2−∥yt∥2|.(25)
+The probe is interpreted as a measurement, not as a performance improvement. If the frozen UDT
+video representation already encodes action-relevant motion, a small head should recover displacement
+with low error; if recovery fails, the shared representation does not carry sufficient motion structure for
+downstream use. A low probe error therefore provides direct evidence that the UDT has learned a genuinely
+unified representation in which appearance and action are coupled, rather than merely processed in parallel.
+The probe introduces no new training stage, no modification to the backbone, and no additional generation
+branch; its value lies in the representational evidence it provides.
+8 Experiments
+8.1 Results on Benchmarks
+We report our evaluation results on three well-recognized world-model benchmarks.
+8.1.1 EWMBench Evaluation
+We first evaluate the quality of the generated world itself. EWMBench [12] is a standard benchmark
+for embodied world models. It scores a generated video along eight dimensions covering visual scene
+consistency, end-effector motion correctness, and semantic alignment with the instruction, and reports
+their sum as Overall. Its standard evaluation set contains 21 episodes drawn from 7 manipulation tasks.
+For every episode, the model produces three candidate videos conditioned on the ground-truth first frame
+and the official instruction, the best candidate is selected by Hausdorff distance, and each dimension is
+normalized to[0,1] and averaged over all valid trials, 63 videos in total. Generation uses 48 frames at
+a resolution of480×640 with 50 denoising steps and a classifier-free guidance scale of 5.0. Since the
+benchmark computes its metrics at 30 FPS, generated results are upsampled from 5 FPS to 30 FPS so that
+the comparison follows the protocol on which the benchmark is defined.
+Table 4 reports the main results. General video generators reach high visual scores but degrade sharply
+on the motion dimensions. Veo3 scores 0.8415 on SceneC and 0.8965 on CLIP, yet its HSD and Dyn
+fall to 0.2130 and 0.1932, showing that visual fidelity alone does not imply a physically consistent world.
+Embodied world models close part of this gap, and Thinker-WM obtains the highest Overall in the table at
+4.66. The advantage is most visible where appearance and action meet: nDTW reaches 0.7102 against
+0.6708forQwen-RobotWorldand0.6226forLVP,andDynreaches0.3630against0.3429and0.0433. This
+is consistent with the model design: video, depth, and action are generated in one joint process rather than
+through an action head attached to a video generator, so the robot trajectory is part of what the generative
+process is trained to match.
+The same benchmark also tracks the four stages of the training curriculum in Section 6. The pretrained
+backbone, used without any training of our own, obtains an Overall of 2.63. Training the video pathway
+alone on robot first-person data raises it to 3.34, joint video–action training reaches 4.44, and supervised
+fine-tuning on the recordings of the deployed robot reaches 4.66. The progression is monotone, so both the
+21
+Table 4:Generation quality on EWMBench. Every dimension is normalized to[0,1], the Overall column is the sum
+of the eight dimensions, and higher is better. Numbers for the baseline models are taken from Qwen-RobotWorld [40],
+which reports them on the same evaluation set. The last block is our model.
+Type Model SceneC↑HSD↑Dyn↑nDTW↑Diversity↑BLEU↑CLIP↑Logics↑Overall↑
+General video Veo3 0.8415 0.2130 0.1932 0.1613 0.0221 0.2139 0.8965 0.9474 3.49
+Wan2.6 0.6712 0.2034 0.0900 0.1715 0.0502 0.1616 0.8743 1.0000 3.22
+Kling26 0.8211 0.3272 0.1822 0.3423 0.0173 0.2591 0.9014 1.0000 3.85
+LTX-2 0.7850 0.2076 0.1283 0.2443 0.0120 0.1425 0.8869 0.5000 3.01
+Sora2 0.8526 0.2807 0.3494 0.2754 0.0314 0.2466 0.9100 0.9474 3.89
+Embodied world model Cosmos 0.7963 0.2500 0.2052 0.2533 0.0803 0.1230 0.8458 0.7333 3.29
+GigaWorld 0.8707 0.3050 0.0849 0.2783 0.0278 0.2048 0.8873 0.9000 3.56
+LVP 0.8795 0.4248 0.0433 0.6226 0.0093 0.2179 0.8995 0.9524 4.05
+Vidar 0.7341 0.1877 0.1520 0.1769 0.0653 0.1607 0.8821 0.9411 3.30
+WoW 0.8866 0.2494 0.0529 0.2566 0.0266 0.1932 0.9001 0.9524 3.52
+Qwen-RobotWorld 0.9142 0.5660 0.3429 0.6708 0.0114 0.2079 0.8834 1.0000 4.60
+Ours Thinker-WM 0.8877 0.5638 0.3630 0.7102 0.0117 0.2691 0.9020 0.9524 4.66
+breadth of the mixture and the specialization to the deployed robot translate into measurable generation
+quality (Figure 12).
+Stage 0 Stage 1 Stage 2 Stage 3
+2.5
+3.0
+3.5
+4.0
+4.5EWMBench Overall
+Qwen-RobotWorld 4.60
+LVP 4.05
+Sora2 3.89
+Wan2.6 3.22
+2.63
+3.34
+4.44
+4.66
+Figure 12:Overall EWMBench score across the four training stages of Section 6, with the final checkpoint of each
+stage as a point. The dashed lines are four reference baselines from Table 4, namely Wan2.6, Sora2 as the strongest
+general video model, LVP, and the strongest overall, Qwen-RobotWorld.
+8.1.2 WorldOlympiad Evaluation
+WorldOlympiad [42] complements EWMBench by evaluating video world models on a broader real-robot
+distribution. We use its Robotics subdomain leaderboard, which contains 400 manipulation episodes
+from more than ten physical robot embodiments and spans multiple camera configurations, including
+head-mounted, wrist-mounted, and external viewpoints. The benchmark reports physical faithfulness,
+3D consistency, CLIP-based semantic similarity, and interaction fidelity, providing a stronger test of
+cross-embodimentandcross-viewgeneralizationthanEWMBench. Bothbenchmarksarebuiltonreal-robot
+interaction videos, so together they assess whether the learned visual dynamics remain consistent across
+heterogeneous real-world robotic settings.
+FollowingtheofficialWorldOlympiadprotocol,theoverallscore,denotedasAllinTable5,iscomputed
+as the equal-weight average of the three core evaluation tracks:
+SAll = 1
+3 (Sphys +S 3D +S interact),(26)
+where Sphys, S3D, andSinteract denote physical faithfulness, 3D consistency, and interaction fidelity,
+22
+respectively. The reported CLIP score is not averaged as an additional independent term inSAll; rather, it
+serves as an auxiliary semantic signal within the interaction metric.
+Table 5:WorldOlympiad Evaluation Results on the Robotics Subdomain Leaderboard.
+Model Physical 3D Cons. CLIP Interact. All
+Uranus 0.925 0.511 0.304 0.730 0.722
+Cosmos-Predict-2.5 0.937 0.479 0.321 0.721 0.712
+LingBot-World0.9490.393 0.314 0.710 0.684
+Rolling Forcing 0.870 0.3890.3290.566 0.608
+LongLive 0.857 0.472 0.327 0.470 0.600
+Yume-1.5 0.851 0.288 0.312 0.624 0.588
+WoW 0.787 0.272 0.288 0.447 0.502
+Ours0.9230.5310.3060.765 0.740
+As shown in Table 5, our proposed Thinker-WM achieves the highest overall score of 0.740, together
+with the best 3D Consistency (0.531) and Interaction score (0.765) among the compared methods. These
+results indicate a favorable balance between geometric consistency and interaction fidelity, supporting the
+model’sabilitytoproduceplausibleandcoherentfuturedynamicsinreal-worldroboticscenarios. Figure13
+presents the official screenshot of the WorldOlympiad robotics leaderboard, corroborating our top-ranking
+performance on this benchmark.
+Figure 13:Official screenshot of the WorldOlympiad robotics leaderboard, where our proposed model ranks first.
+23
+8.1.3 WorldArena Track-1 Evaluation
+We further evaluate on WorldArena [29] Track-1, a simulation-based benchmark for open-loop embodied
+video generation. Unlike EWMBench and WorldOlympiad, which are built on real-robot manipulation
+videos, WorldArena provides controlled simulated environments with diverse task configurations and
+interaction dynamics. The track assesses visual appearance, temporal consistency, physical plausibility, 3D
+geometric fidelity, and compliance with task instructions and action conditions. Because Dynamic Degree,
+Flow Score, and Motion Smoothness are highly sensitive to frame rate and temporal sampling density, we
+exclude these three motion-related metrics and adopt the unweighted mean of the remaining twelve metrics
+as the core comparison metric, following the official benchmark recommendation as these three motion
+metrics suffer from frame-sampling exploitation bugs. The retained metrics cover visual quality, content
+consistency, physics adherence, 3D accuracy, and controllability:Image Quality,Aesthetic Quality,JEPA
+Similarity,Subject Consistency,Background Consistency,Photometric Consistency,Interaction Quality,
+Trajectory,Accuracy,Depth Accuracy,Perspectivity,Instruction Following, andSemantic Alignment.
+Table 6:WorldArena dimension-level scores under the 12-metric protocol.
+Metric Ours DexWorldEngine BWM-Fast UNIS MotuBrain Wan2.6 Cosmos-Predict2.5
+Visual Quality
+Image Quality 37.26 51.44 51.22 53.94 54.0567.3649.48
+Aesthetic Quality 37.65 40.96 40.15 40.79 41.0244.4034.14
+JEPA Similarity 93.94 86.7197.8790.60 96.88 72.57 90.65
+Content Consistency
+Subject Consistency 82.58 81.46 81.42 79.0583.5173.15 67.24
+Background Consistency90.1988.85 90.17 86.44 89.91 84.29 72.72
+Photometric Consistency46.334.42 3.08 2.13 5.10 34.57 45.21
+Physics Adherence Interaction Quality 70.20 81.04 79.88 87.30 73.90 73.1690.35
+Trajectory Accuracy 50.7151.4144.89 41.89 43.10 12.18 27.49
+3D Accuracy Depth Accuracy92.4986.19 86.41 85.25 88.65 75.43 60.54
+Perspectivity 90.08 97.58 97.1498.8494.32 93.94 84.68
+Controllability Instruction Following 78.86 92.62 90.22 93.86 82.6093.9490.35
+Semantic Alignment90.4789.45 89.15 89.35 89.09 88.09 89.86
+12-Metric EWMScore↑71.7371.01 70.97 70.79 70.18 67.43 64.40
+Table 6 reports the 12-metric evaluation. Our model achieves the highest overall score of 71.73, with
+particularlystrongperformanceinBackgroundConsistency,PhotometricConsistency,DepthAccuracy,and
+Semantic Alignment. Together with the real-world evaluations on EWMBench and WorldOlympiad, the
+WorldArena results provide complementary evidence that the video prediction component of Thinker-WM
+maintains strong visual and structural prediction capability across both real and simulated embodied
+environments.
+8.2 Ablation and Analysis
+We conduct a set of controlled experiments to examine the functional behavior of Thinker-WM and the role
+of its shared multimodal representation. The experiments address four complementary questions. First,
+does the model actually consume an action sequence when it is provided as a condition? Second, does
+depth contribute to downstream control beyond improving geometric prediction, and does the direction of
+RGB–depth interaction matter? Third, can the six function modes share the same UDT parameters without
+introducing substantial optimization conflict? Finally, can additional motion-level supervision improve
+action prediction without degrading the existing video representation?
+8.2.1 Action Conditioning Controls Future Generation
+A central capability of a world–action model is to let a specified action trajectory determine the predicted
+future rather than merely coexisting with an independently generated video. We therefore compare the
+standard joint-generation mode with an action-conditioned mode in which the ground-truth action sequence
+is provided as a clean condition and the language prompt is removed. Both settings use the same network
+24
+parameters, so the comparison isolates the effect of conditioning the video generation process on an explicit
+action trajectory.
+Table 7:Generation with the ground-truth action sequence as a condition, compared with joint generation on the
+same model. Numbers are averaged over the evaluated checkpoints, and the dimensions that compare motion against
+the ground truth are shown separately.
+Dimension Joint Action-conditioned∆
+Overall 4.66 5.03+0.37
+HSD 0.5638 0.7369+0.1731
+nDTW 0.7102 0.8736+0.1634
+Dyn 0.3630 0.3636+0.0006
+Table 7 reports the results averaged over the evaluated checkpoints. Supplying the ground-truth
+action increases the Overall score from4.66 to 5.03, with the largest improvements appearing in the
+motion-sensitive metrics. HSD increases from0.5638 to 0.7369, nDTW from0.7102 to 0.8736, and
+Dyn from 0.3630 to 0.3636. In particular, HSD and nDTW directly measure the agreement between
+the generated motion and the recorded trajectory, making their improvement a direct indication that the
+predicted future changes in response to the provided action sequence.
+The result shows that the action stream is used as a generative condition rather than treated as an
+auxiliary output that can be ignored by the video pathway. The same weights can therefore represent both
+autonomous future generation and action-steered future prediction, with the supplied trajectory providing
+an explicit control signal for the generated world. Qualitative trajectory-transfer results in Section 8.3.2
+provide a complementary visualization of this behavior.
+8.2.2 Depth as a Co-Evolving Generative State
+We evaluate depth from two complementary perspectives: the accuracy of generated geometry and the
+benefit of RGB–depth interaction for closed-loop control.
+Depthgenerationaccuracy.WecompareThinker-WMwithRynnWorld-4D[ 41]on48AgiBotvalidation
+sequences. RynnWorld-4D also includes AgiBot in its training corpus. We evaluate generated depth using
+absolute relative error (AbsRel) and root mean squared error (RMSE). As shown in Table 8, Thinker-WM
+achieves an AbsRel of0.1360 and an RMSE of0.1790m, compared with 0.1625 and 0.2075m for
+RynnWorld-4D. These correspond to relative error reductions of16.3%and13.7%, respectively.
+As a valid-range sensitivity check, restricting RynnWorld-4D’s evaluation range from0.05–5.0m to the
+0.15–4.0m range used by Thinker-WM changes its AbsRel only from0.162517 to 0.162474. Thus, the
+observed AbsRel improvement is not explained by this difference in valid depth range.
+Table 8:Generated depth accuracy on 48 AgiBot validation sequences. RMSE is measured in meters. Lower is
+better for both metrics.
+Method AbsRel↓RMSE (m)↓
+RynnWorld-4D 0.1625 0.2075
+Thinker-WM 0.1360 0.1790
+Impact on closed-loop control.Accurate depth generation alone does not establish its utility for action
+prediction. We therefore conduct a controlled ablation on the RoboTwinturn_switch task. All three
+configurations are trained for 8K steps under the same training recipe, using 24 video frames and a 48-step
+action horizon. At inference, video and action are each sampled with 10 denoising steps. We evaluate the
+6K,7K,and8Kcheckpointswith20closed-looptrialspercheckpoint. TheRGB-onlybaselineremovesthe
+25
+depth stream.RGB + Depth (One-way)adds depth generation but restricts RGB–depth interaction to one
+direction. Our fullThinker-WMenables bidirectional RGB–depth interaction within the shared generative
+backbone, allowing appearance and geometry to co-evolve before decoding. This comparison tests whether
+bidirectional interaction provides benefits beyond introducing a depth stream with restricted coupling.
+Table 9:Closed-loop success on the RoboTwinturn_switchtask. Interaction denotes RGB–depth information flow.
+Each checkpoint is evaluated over 20 trials; overall success aggregates the three checkpoints.
+Configuration Interaction 6K 7K 8K Overall
+RGB-only None 12/20 12/20 12/20 60.0%
+RGB + Depth One-way 12/20 12/20 14/20 63.3%
+Thinker-WM Bidirectional 15/20 15/20 15/20 75.0%
+As shown in Table 9, adding depth with one-way interaction increases overall success from60.0%
+to 63.3%. Bidirectional interaction achieves75.0%, improving over the RGB-only and one-way variants
+by 15.0and 11.7percentage points, respectively. The full model also outperforms both variants at every
+evaluated checkpoint. These results suggest that the benefit of depth depends not only on its prediction
+objective, but also on how its latent representation interacts with RGB during joint generation.
+Together, these experiments demonstrate improved depth generation accuracy on the evaluated AgiBot
+subset and a closed-loop control benefit from bidirectional geometric interaction on RoboTwin. They
+support treating depth as a co-evolving generative state within the representation used for action generation.
+8.2.3 Gradient Compatibility across Function Modes
+The function modes of Thinker-WM are optimized with a shared set of UDT parameters. This design raises
+a basic optimization question: do the different modes provide compatible training signals, or do some
+objectives interfere with one another? We investigate this question directly through the geometry of the loss
+gradients on the shared UDT.
+For each function mode, we evaluate its loss on the same training batches and with the same noise
+realization, while forcing the modes to run independently on the shared weights. We compute pairwise
+cosine similarity between the resulting gradients with respect to the shared UDT parameters, together
+with the corresponding gradient norms. The measurement is repeated at five checkpoints spanning the
+joint-training stage, so that the observed geometry can be separated from checkpoint-specific variation.
+Figure 14 summarizes the results. First, the shared UDT shows no measurable pairwise gradient
+conflict: the minimum cosine similarity across the six modes is approximately−0.005, within the variation
+observed for pairs whose true alignment is near zero. Most mode pairs are therefore either aligned or
+approximately orthogonal rather than negatively aligned. Second, the degree of alignment follows the
+functional relationship between the modes. The joint WAM mode shows its strongest alignment with
+the inverse-dynamics, unconditional, and policy modes, with cosine similarities of0.19, 0.17, and0.14,
+respectively. In contrast, mode pairs with less overlap in their supervised outputs remain close to zero,
+including 0.000 between the WM and VLA modes and−0.001 between the A2V and V2A modes. This
+structure is consistent with the functional overlap among the different training objectives.
+The auxiliary modes also produce substantial optimization signals on the shared UDT. Their mean
+gradient norms range from0.34 to 0.50, compared with0.68 for the joint WAM mode. Thus, the near-
+orthogonal pairs do not result from vanishing gradients; the corresponding objectives actively update the
+shared representation. The same pattern is more pronounced on the action branch, where the gradient
+alignment with the inverse-dynamics, unconditional, and policy modes reaches0.36, 0.35, and 0.28,
+respectively. This localization is consistent with the fact that these objectives directly supervise the action
+pathway.
+The action-conditioned mode provides a complementary case. Its gradient alignment is close to
+orthogonal on both the shared UDT and the action branch, with cosine similarities of0.037 and 0.006,
+respectively. Attention measurements on the same checkpoints show a strongly asymmetric interaction
+26
+WAM WM VLA A2V V2A
+UNCOND
+WAM
+WM
+VLA
+A2V
+V2A
+UNCOND
+– 0.05 0.14 0.04 0.19 0.17
+0.05 – 0.00 0.05 0.00 0.04
+0.14 0.00 – 0.00 0.19 0.16
+0.04 0.05 0.00 – 0.00 0.04
+0.19 0.00 0.19 0.00 – 0.19
+0.17 0.04 0.16 0.04 0.19 –
+Cosine on the Shared UDT
+WAM WM VLA A2V V2A
+UNCOND
+0.0
+0.2
+0.4
+0.6
+0.8Gradient norm
+0.68
+0.34
+0.47
+0.34
+0.50
+0.66
+Gradient Norm on the UDT
+Figure 14: Gradient geometry of the six training modes.Every mode is forced on its own pass over the same
+batches with a shared noise realization, and the pairwise cosine of the loss gradients with respect to the shared
+parameters is averaged over five checkpoints spanning the joint training stage. Left, the cosine matrix on the shared
+UDT, with the diagonal omitted. Right, the gradient norm per mode on the shared UDT, where the bar is the mean
+over the five checkpoints and the whisker covers their range. No pair is negative, and every auxiliary mode carries
+gradients of comparable magnitude in a direction that adds to the joint one.
+betweenvideoandactiontokens: videotokensallocateapproximately 0.5%oftheirattentionmasstoaction
+tokens, whereas action tokens allocate substantially more to video tokens. This asymmetric coupling is
+consistent with the relatively weak gradient interaction of the action-conditioned objective with the shared
+optimization direction.
+We further verify the gradient measurements at the objective level. Under identical batches and noise
+realizations, the video loss of the joint WAM mode is0.230, compared with0.232for the video-only WM
+mode, indicating that jointly modeling action does not introduce a measurable degradation in the video
+objective. Conversely, providing a ground-truth action sequence as a clean condition reduces the video
+loss by0.016 relative to the video-only mode, while the inverse-dynamics mode reduces the action loss by
+0.010 relative to the policy mode. These changes follow the intended role of the conditional modes and
+provide an objective-level counterpart to the measured gradient geometry.
+Overall, the six modes exhibit non-conflicting and non-trivial optimization signals on the shared UDT,
+while their alignment structure reflects the functional relationships among the corresponding objectives.
+Thesemeasurementssupportthecompatibilityofthemultifunctiontrainingschemewithasharedmultimodal
+representation. They do not, however, establish whether the particular mode sampling ratio is optimal under
+a fixed optimization budget, since the six modes divide the available training steps; isolating that effect
+would require matched training runs with different step allocations.
+8.2.4 Motion Probe Evaluation
+Motion probing evaluates whether action-relevant motion information is recoverable from the shared video
+representation. This analysis complements the gradient-compatibility analysis in Section 8.2.3: while
+the latter examines whether auxiliary training objectives interfere during optimization, the motion probe
+assesses the action-related information available in the learned representation.
+We evaluate the probe on a held-out set of 96 AgiBot windows. For each UDT checkpoint, we freeze
+the video representation and train the same probing-head architecture under a consistent training protocol.
+The probe predicts executed end-effector displacement from the frozen video representation alone, and its
+accuracy is measured by action mean squared error (MSE). By keeping the representation frozen and the
+probing protocol fixed, this evaluation measures how readily action-relevant motion information can be
+extracted from the learned features, rather than how well the representation adapts to the probe objective.
+As shown in Figure 15, action MSE decreases monotonically across the evaluated training checkpoints.
+27
+This trend indicates that end-effector displacement becomes increasingly recoverable from the frozen UDT
+video representation as training progresses. The result provides evidence that the shared representation
+progressively develops features that are informative about robot motion.
+Base Probe
+3,000 steps
+Probe
+5,000 steps
+Probe training steps
+0.10
+0.11
+0.12
+0.13
+0.14
+0.15
+0.16
+0.17
+0.18
+0.19
+Action MSE  ↓
+−32.9%
+−16.2%
+0.136
+0.130
+0.114
+0.173
+0.146
+0.116
+Baseline 1  |  backbone: 60k steps
+Baseline 2  |  backbone: 120k steps
+Figure 15:Action MSE of a motion probe evaluated on frozen UDT video representations from different training
+checkpoints. Lower is better. Both plotted series exhibit a monotonic decrease in MSE, indicating that action-relevant
+motion information becomes increasingly recoverable from the learned representation.
+The reliability of the offline visual motion teacher is important for interpreting these results, since the
+probe relies on teacher-generated motion pseudo-labels rather than manual annotations for its primary
+supervision. We therefore evaluate the teacher on an in-house test split for which ground-truth end-effector
+motion is available. Table 10 reports the agreement between teacher-estimated and ground-truth motion,
+along with the retention rates associated with the reliability filters used to construct the pseudo-labeled
+dataset.
+Table 10:Reliability of the offline visual motion teacher on the in-housetest split. The upper block reports
+agreement between teacher-estimated and ground-truth end-effector motion. The lower block summarizes the
+pseudo-label filtering statistics. All retention and rejection percentages are computed relative to the full set of
+candidate windows.
+Metric Result
+Teacher Quality
+Frame-wise directional cosine similarity 0.65
+Cumulative displacement cosine similarity 0.83
+End-point error (m) 0.041
+Trajectory-shape score 0.86
+Path correlation 0.99
+Motion-magnitude correlation 0.71
+Filtering Statistics
+Retention rate (keep) 70%
+Retention rate (HQ) 50%
+Rejection rate 30%
+The teacher achieves stronger agreement on global trajectory characteristics than on frame-wise motion.
+Cumulativedisplacementcosinesimilarityreaches0.83,whilethetrajectory-shapescoreandpathcorrelation
+are 0.86 and 0.99, respectively. The end-point error is 0.041 m. In comparison, frame-wise directional
+cosine similarity is 0.65, and motion-magnitude correlation is 0.71, suggesting that local direction and
+displacement magnitude remain imperfectly estimated. These results indicate that the teacher captures
+important aspects of the overall motion trajectory, while leaving room for errors at finer temporal and
+magnitude scales.
+The keep criterion retains 70% of candidate windows, while the stricter high-quality (HQ) criterion
+28
+retains 50%; the remaining 30% are rejected by the keep filter. These statistics characterize the coverage of
+the filtering procedure and the proportion of windows retained for pseudo-labeling.
+Taken together, the motion-probe results show that action-relevant motion information is recoverable
+from the frozen UDT video representation and becomes increasingly accessible as training progresses.
+Because the probe depends on an imperfect visual teacher, these findings should be interpreted as evidence
+of action-relevant information recoverability under the probe protocol, rather than as proof of exact motion
+reconstruction across all candidate windows.
+8.3 Qualitative Capabilities and Generalization
+We next examine qualitative behaviors that are not fully captured by the quantitative benchmarks above:
+long-horizon generation, bidirectional interaction between trajectory and video, and zero-shot execution of
+unseen instructions in unseen scenes. Rather than providing quantitative comparisons, these experiments
+serve as controlled probes of whether the capabilities suggested by the shared representation manifest at
+inference time.
+8.3.1 Training-Free Long-Horizon Generation
+time (s)
+0.0 9.6 19.2 28.8 38.4 48.0 57.6 67.2 76.8 86.4 96.0 105.6
+time (s)
+0.0 9.6 19.2 28.8 38.4 48.0 57.6 67.2 76.8 86.4 96.0 105.6
+time (s)
+0.0 9.6 19.2 28.8 38.4 48.0 57.6 67.2 76.8 86.4 96.0 105.6
+Brush water bottle
+Fold short sleeve
+Fold towels on the table
+Figure 16:Long-horizon generation on three recorded episodes. Each block samples the frames of the model’s
+rollout of one episode. Only the first frame of a rollout is a ground-truth observation; every later conditioning frame
+is produced by the model, so the115.2seconds shown are generated without any test-time supervision.
+Themodelisnevertrainedfor longrollouts. Everytrainingwindowisanindependent clipof48frames,
+no stage feeds a prediction back as a condition, and no autoregressive fine-tuning is performed. Long
+videos are obtained at inference by using the last frame of one segment as the first frame of the next, and
+by switching the instruction at segment boundaries so that each segment is conditioned on the annotation
+covering its own time window.
+We evaluate this procedure in two regimes. The first chains ten 48-frame segments from eight
+EWMBench first frames with their official instructions, yielding 96 seconds of video from a single
+conditioning frame. The second chains twelve segments from sixteen long real-robot episodes, about 115
+seconds of video, with the instruction changing at every segment and each segment covering one annotated
+29
+Table 11:Accuracy of the action sequence recovered from a recorded window by the inverse mode, measured against
+the recorded trajectory.
+Space RMSE
+Native reader space, 14 dimensions 0.0540
+Unified action space, 20 dimensions 0.0293
+sub-task. In both cases, the first frame is the only ground-truth frame the model ever sees; every later
+conditioning frame is its own output.
+Figure 16 shows three rollouts. The generation covers several sub-tasks of a full manipulation episode,
+and the object layout and robot configuration are preserved rather than drifting toward a generic scene. The
+model therefore holds the scene it started from for the full rollout without test-time supervision.
+This stability is consistent with the conditioning design. The structured instruction enters every layer
+through cross-attention, so each segment remains anchored to the same task instead of recovering it from a
+drifting visual context. Segment length and frame rate also match training, so continuing from a generated
+frame introduces no temporal shift, and each new segment is conditioned on a clean frame rather than a
+noisy latent.
+8.3.2 Trajectory Transfer and Action Recovery
+Section 8.2.1 shows that the model consumes an action sequence when one is available. The two cases
+below illustrate this behavior on recorded trajectories rather than synthetic actions.
+In the first case, generation is conditioned on a real recorded trajectory. The source is a bimanual
+episode dominated by left-arm motion, with the window chosen for maximal end-effector path length.
+The model receives the first frame of an evaluation sample together with that recorded trajectory, so the
+scene and the trajectory come from different recordings. This tests whether the model follows the supplied
+trajectory rather than reproducing the motion originally performed in that scene.
+time (s)
+0.0 1.0 2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.0
+OriginalReference A2V
+Figure 17:Trajectory transfer. Top to bottom: the original execution of the scene, the recorded window whose
+end-effector trajectory is supplied as the condition, and the video generated from that trajectory. Frames are sampled
+at the times marked below.
+Figure 17 compares the generated video against both the original execution and the recording whose
+trajectory was supplied. Figure 18 plots the supplied trajectory, confirming that the generated motion
+follows the requested path rather than a plausible alternative for the same task.
+The second case closes the loop. The inverse mode of the same model recovers actions from the
+recording by treating the video window as a clean condition and denoising the action stream. The recovered
+sequence is then used to regenerate the video. As Table 11 reports, the recovered action matches the
+recording with RMSE of0.0540in native reader space and0.0293in unified action space, with the largest
+residuals at gripper open/close transitions.
+30
