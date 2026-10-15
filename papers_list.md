@@ -1,5 +1,37 @@
 # Spatial AGI Research Papers - Daily Analysis
 
+## 2026-10-16 研究的论文（精选5篇）
+
+1. **GeoThinker-F: Endogenous Predictive World Representations for Fast Spatial Intelligence** - arXiv:2610.20592
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 内生预测世界表征, LFP中间层预测头, SGT Fusion层交错注入, 离线VGGT教师, 去推理时几何编码器, 3.6×加速, XPeng+中山大学
+   - 文档: papers/2026-10-16_01_GeoThinker_F_Endogenous_Predictive_World_Representations_Fast_Spatial_Intelligence.md
+   - 亮点: "预测有用表征≠复现专家特征"的目标放松是内化关键；延迟1.45s→0.40s且六基准平均69.29/VSI-Bench 70.4；外部3D模型从运行时组件退化为训练期教师——空间智能的"去3D化"即"规模化"
+
+2. **What Matters for World Modeling in Vision-Language-Action Models?** - arXiv:2610.19825
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA世界建模四范式, 受控实证, 隐式未来对齐, 显式未来查询, MoT未来专家, 外部世界预测器, 统一余弦监督, 中科院自动化所
+   - 文档: papers/2026-10-16_02_What_Matters_World_Modeling_Vision-Language-Action_Models.md
+   - 亮点: 首个表征×范式×骨干受控归因研究；无普适最优表征但2D语义跨范式稳健、VGGT/V-JEPA范式敏感；MoT解耦专家OOD最强且与预训练VLA兼容最好；长时程/动态任务世界建模收益最大
+
+3. **DynThinker: Unifying Static 3D and Dynamic 4D Spatial Reasoning** - arXiv:2610.20598
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 空间-动态干扰, checkpoint插值诊断, 参数组恢复, D-EMA组级解耦EMA, SDF语义门控双流融合, 静态3D+动态4D统一, 中山大学+NTU+影眸
+   - 文档: papers/2026-10-16_03_DynThinker_Unifying_Static_3D_Dynamic_4D_Spatial_Reasoning.md
+   - 亮点: 首次定位3D后训练侵蚀动态能力的干扰集中于后层MLP；D-EMA组级差异化时间平均+参数组SDF双流融合；单模型9基准10指标平均60.5超GPT-5.6 Sol(59.5)，静态动态双开源SOTA
+
+4. **GS-PRM: Gaussian Visual Roadmap for Image-Goal Navigation** - arXiv:2610.19541
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS渲染路线图, RC-free渲染无碰撞, 条件可靠性定理, 间隙自适应覆盖, 图像目标导航, 渲染即认证, 不派生占据栅格
+   - 文档: papers/2026-10-16_04_GS_PRM_Gaussian_Visual_Roadmap_Image_Goal_Navigation.md
+   - 亮点: 单一渲染接口统一里程碑验证/连通性/图像定位/子目标生成；RC-free形式化+条件可靠性与完整性充分条件（神经表征上的经典规划理论）；vs SplatNav成功率2×、通行时间−57.2%，DevGRU 0%→50%
+
+5. **Enhancing Latent World Models with Associative Memory** - arXiv:2610.19683
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: JEPA+联想记忆, 内容寻址低秩记忆槽, AdaLN串行条件化, 槽结构多样性损失, 时间均衡熵损失, 长时程规划, 上海AI Lab+复旦
+   - 文档: papers/2026-10-16_05_Enhancing_Latent_World_Models_Associative_Memory.md
+   - 亮点: 首个JEPA+长期记忆工作；"rollout步数不是瓶颈、时间结构表征才是"——仅加步数导致目标附近抖动；双防塌缩损失（槽不雷同+利用均衡）+记忆换参数，四基准SOTA超LeWM与参数翻倍HWM
+
 ## 2026-10-15 研究的论文（精选5篇）
 
 1. **Thinker-WM: Unified World Model with Shared Multimodal Backbone** - arXiv:2610.18447
