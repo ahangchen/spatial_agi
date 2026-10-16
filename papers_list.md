@@ -4743,3 +4743,35 @@
    - 关键词: 主动视觉, answerability动作价值, 特权前瞻教师, 3DGS渲染目标, 两阶段价值蒸馏, LoRA, 零渲染部署, sim-to-real, 东京大学
    - 文档: papers/2026-10-14_05_Rendering_Free_Lookahead_Question_Guided_Active_Vision.md
    - 亮点: 用VLM可回答性对候选相机运动打分并蒸馏成动作价值策略；候选级价值蒸馏显著优于动作克隆（3.05 vs 2.47）且超GPT-5.1（2.81）；一步变体匹配特权渲染oracle（2.98）；迁移到真实6-DoF机械臂且部署零渲染
+
+## 2026-10-17 研究的论文（精选5篇）
+
+1. **DK-VLM: Geometry as Position for Spatial Reasoning in Vision-Language Models** - arXiv:2610.22356
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 双核注意力, 几何即位置, Point GTA, Camera GTA, 参考系复合监督, VSI-Bench 74.33, HIT+华为
+   - 文档: papers/2026-10-17_01_DK-VLM_Geometry_as_Position_for_Spatial_Reasoning_VLMs.md
+   - 亮点: 几何以第二位置编码并行进入注意力而非融合特征；语义核保留mRoPE+几何核全注意力+门控融合；RC分步转向/朝向链式目标监督参考系更新；3.86%可训练参数达VSI-Bench 74.33/ReVSI-32 58.28且通用视频理解不退化；"语义与空间可组合成多核认知架构"
+
+2. **DepthWorld: 3D World Model for Robot Manipulation** - arXiv:2610.08780
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D世界模型, DROID-3D, 跨episode联合因子图, URDF渲染锚定, 空间潜变量平铺, SVD, 深度监督反哺RGB
+   - 文档: papers/2026-10-17_02_DepthWorld_3D_World_Model_for_Robot_Manipulation.md
+   - 亮点: 70K+ episodes标定3D语料（外参<0.7px@90%）；联合因子图分离共享运动学误差与场景外参噪声；潜变量平铺零修改VAE联合预测RGB+深度；同等预算深度监督提升RGB +1.48dB PSNR——"几何是外观理解的骨架"
+
+3. **Urbex: Agentic Spatial Grounding for City-Scale 3D Scenes** - arXiv:2610.18356
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 主动空间搜索, 城市尺度3D grounding, 地标查询/缩放/斜视三工具, BEV坐标投影, RL搜索策略, CityRefer, 阿里DreamX
+   - 文档: papers/2026-10-17_03_Urbex_Agentic_Spatial_Grounding_for_City_Scale_3D_Scenes.md
+   - 亮点: grounding从候选排序重框为主动空间搜索；2D归一化坐标思考+环境负责度量投影的分工；exp(-d/τ)距离奖励解决零重叠稀疏奖励；CityRefer最佳Hit@1/IoU且快于最强排序基线、STPLS3D-Refer零样本鲁棒
+
+4. **Make It Flow: Animating Water in 3D Gaussian Splatting Scenes** - arXiv:2610.13860
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3DGS流体动画, 光流抬升, 3D欧拉运动场, cinemagraph对称变形, unscented transform, 实时渲染, TU Braunschweig
+   - 文档: papers/2026-10-17_04_Make_It_Flow_Animating_Water_in_3D_Gaussian_Splatting_Scenes.md
+   - 亮点: 无动态捕获/仿真/重训练给静态3DGS注入循环水流；多视角光流深度重投影+体素命中率精化为欧拉运动场；2D cinemagraph重述为高斯拉格朗日变形；"感知级保真与物理级保真应分层对待"
+
+5. **SearchWorld: Spatial Value-Grounded Imagination for UAV Object Search via World Models** - arXiv:2610.09335
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: RSSM世界模型, 显式空间认知记忆, 空间价值层, 价值引导想象, 认知-行动网络替代actor-critic, UAV-ON, NUDT
+   - 文档: papers/2026-10-17_05_SearchWorld_Spatial_Value_Grounded_Imagination_UAV_Object_Search_World_Models.md
+   - 亮点: 三层BEV记忆（探索/障碍几何构造+价值学习解码）分类空间信息本质；标量critic升级为空间价值场"回答在哪值而非值多少"；想象足迹池化评估动作、决策时零像素解码；UAV-ON SR 23.8%/OSR 35.5%全面超已发表最佳
