@@ -1,0 +1,2138 @@
+{
+ "date": "2026-10-17",
+ "papers": [
+  {
+   "id": "2610.22052",
+   "title": "Compression of Uniformly Distributed Unit Quaternions",
+   "summary": "…the practical benefits of the proposed approach in several graphics applications, including tangent-space normal mapping, skeletal animation with blend weights, and Gaussian",
+   "authors": "Carsten Faber, \n      \n      Bastian Kuth, \n      \n      Rinaldo Schuster, \n      \n      Daniel Pauls, \n      \n      Quirin Meyer",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.22052",
+   "pdf_url": "https://arxiv.org/pdf/2610.22052"
+  },
+  {
+   "id": "2610.21668",
+   "title": "Edit4D: Editable 4D Scene Generation with Textual Control",
+   "summary": "…composition. Using these prompts, we synthesize multi-view scene images with text-to-image and camera-conditioned generative priors and reconstruct a background 3D Gaussian",
+   "authors": "Chanwoo Kim, \n      \n      Tackgeun You, \n      \n      Hwasup Lim",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.21668",
+   "pdf_url": "https://arxiv.org/pdf/2610.21668"
+  },
+  {
+   "id": "2610.21634",
+   "title": "Anchor3DGS: Feed-Forward 3D Gaussian Splatting with Compact Anchor-Based Representation",
+   "summary": "Recent feed-forward 3D Gaussian",
+   "authors": "Sheng Ye, \n      \n      Jiangke Lin, \n      \n      Fudong Wang, \n      \n      Yi Yuan, \n      \n      Zhen-Hui Dong, \n      \n      Yong-Jin Liu",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.21634",
+   "pdf_url": "https://arxiv.org/pdf/2610.21634"
+  },
+  {
+   "id": "2610.21619",
+   "title": "Training-Free Target-Aware Refinement of 3D Gaussian Language Map",
+   "summary": "Distilling vision-language features into 3D Gaussian",
+   "authors": "Sibaek Lee, \n      \n      Kyeongsu Kang, \n      \n      Seongbo Ha, \n      \n      Yewon Jeon, \n      \n      Joonyeol Choi, \n      \n      Daegeol Ko, \n      \n      Jaehyuk Hur, \n      \n      Taemin Choi, \n      \n      Minsu Kim, \n      \n      Hyungjoo Ahn, \n      \n      Wonsok Yoo, \n      \n      Hyeonwoo Yu",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.21619",
+   "pdf_url": "https://arxiv.org/pdf/2610.21619"
+  },
+  {
+   "id": "2610.21121",
+   "title": "ResStreamGS: Residual-Sensitive Dual-Stream Gaussian Splatting for Mobile Volumetric Video Streaming",
+   "summary": "…video enables immersive free-viewpoint experiences, but delivering high-quality 3D content under constrained bandwidth and computation remains challenging. Recent 3D Gaussian",
+   "authors": "Haoran Liu, \n      \n      Di Wu, \n      \n      Wang Luo, \n      \n      Hengyuan Na, \n      \n      Miao Hu, \n      \n      Guocong Quan",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.21121",
+   "pdf_url": "https://arxiv.org/pdf/2610.21121"
+  },
+  {
+   "id": "2610.20590",
+   "title": "Feed-Forward Multi-View Feature Coding for 3D Gaussian Splatting",
+   "summary": "Feed-forward 3D Gaussian",
+   "authors": "Seungmi Choi, \n      \n      Ji-Hyoun Choi, \n      \n      Suhyun Jo, \n      \n      Tae-Gwon Park, \n      \n      Hui Yong Kim",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.20590",
+   "pdf_url": "https://arxiv.org/pdf/2610.20590"
+  },
+  {
+   "id": "2610.20397",
+   "title": "Where Should the Gaussians Go? Reusable Label-Aware Allocation for Budget-Constrained Gaussian Splatting of Cinematic CT",
+   "summary": "Anatomical labels help 3D Gaussian",
+   "authors": "Bowen Xiang, \n      \n      Dingjie Su, \n      \n      Jon S. Heiselman, \n      \n      Michael I. Miga",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.20397",
+   "pdf_url": "https://arxiv.org/pdf/2610.20397"
+  },
+  {
+   "id": "2610.19847",
+   "title": "VisibilitySplat: Ray-Traced Occlusion for Relighting with 3D Gaussian Splatting",
+   "summary": "We address inverse rendering with 3D Gaussian",
+   "authors": "Sven Kluge, \n      \n      Oliver Staadt",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.19847",
+   "pdf_url": "https://arxiv.org/pdf/2610.19847"
+  },
+  {
+   "id": "2610.19742",
+   "title": "HyperLoop: Hyperspectral-Assisted Loop Closure Detection in 3D-SLAM for Planetary Exploration",
+   "summary": "Autonomous navigation of planetary rovers is challenged by visually repetitive, featureless terrain. SLAM systems based on 3D Gaussian",
+   "authors": "Annie Bhalla, \n      \n      Dennis Rotondi, \n      \n      Riccardo Giubilato, \n      \n      Kai O. Arras, \n      \n      Wolfgang Stuerzl",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.19742",
+   "pdf_url": "https://arxiv.org/pdf/2610.19742"
+  },
+  {
+   "id": "2610.19541",
+   "title": "GS-PRM: Gaussian Visual Roadmap for Image-Goal Navigation",
+   "summary": "Image-goal navigation requires a global planner that connects visually specified endpoints while providing observations that a local policy can follow. Three-dimensional Gaussian",
+   "authors": "Ashraf Siddique, \n      \n      Kyung Min Han, \n      \n      Young J. Kim",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.19541",
+   "pdf_url": "https://arxiv.org/pdf/2610.19541"
+  },
+  {
+   "id": "2610.19538",
+   "title": "RDCompGS: Rate-Distortion Optimization for Compression of 3D Gaussian Splatting with Image Codecs",
+   "summary": "3D Gaussian",
+   "authors": "Huiping Ren, \n      \n      Shuai Wan, \n      \n      Luqian Bai, \n      \n      Zhang Chen, \n      \n      Fuzheng Yang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.19538",
+   "pdf_url": "https://arxiv.org/pdf/2610.19538"
+  },
+  {
+   "id": "2610.19502",
+   "title": "Holi-Spatial 360: Generative Reconstruction from Sparse Panoramas for Spatial Rendering and Intelligence",
+   "summary": "…generation, our Correspondence-Guided Geometric Optimization converts feed-forward reconstruction priors into reliable cross-view constraints and builds a coherent 3D Gaussian",
+   "authors": "Yuanyuan Gao, \n      \n      Zhirui Liu, \n      \n      Yuning Gong, \n      \n      Yifei Liu, \n      \n      Yifan Zhan, \n      \n      Kuixuan Jiao, \n      \n      Xiaolong Zhou, \n      \n      Yifan Yang, \n      \n      Hongjie Zhang, \n      \n      Xue Yang, \n      \n      Dan Xu, \n      \n      Zhihang Zhong",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.19502",
+   "pdf_url": "https://arxiv.org/pdf/2610.19502"
+  },
+  {
+   "id": "2610.19120",
+   "title": "DoReMe: Dual optimization of Reconstruction and Motion estimation for self-navigated free-breathing abdominal MRI using Gaussian Splatting",
+   "summary": "…surrogate signals. We propose a coupled reconstruction-motion estimation algorithm for self-navigated free-breathing acquisition, in which motion is represented by compact Gaussian",
+   "authors": "Majd Helo, \n      \n      Dominik Nickel, \n      \n      Thomas Kuestner",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.19120",
+   "pdf_url": "https://arxiv.org/pdf/2610.19120"
+  },
+  {
+   "id": "2610.18168",
+   "title": "Back to the Future: Reverse-Consequence Modeling for Long-Horizon Particle Dynamics",
+   "summary": "…dynamics and reduces uncertainty, producing physically plausible and temporally coherent transitions. We further integrate ReStep dynamics as the physical engine within a 3D Gaussian",
+   "authors": "Leyan Zhang, \n      \n      Nantian He, \n      \n      Jiajun Ma, \n      \n      Yanpeng Zhao, \n      \n      Yunbo Wang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.18168",
+   "pdf_url": "https://arxiv.org/pdf/2610.18168"
+  },
+  {
+   "id": "2610.17936",
+   "title": "PUGS: Physics-Guided Uncertainty Modeling for Underwater Dynamic 3D Gaussian Splatting",
+   "summary": "Dynamic 3D Gaussian",
+   "authors": "Tingjun Li, \n      \n      Yuxi Wang, \n      \n      Guoqiang Zhong, \n      \n      Zhaoxiang Zhang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.17936",
+   "pdf_url": "https://arxiv.org/pdf/2610.17936"
+  },
+  {
+   "id": "2610.17605",
+   "title": "PLEDGE: Progressive Lossy Error-Bounded Compression of 3D Gaussian Splatting",
+   "summary": "Existing 3D Gaussian",
+   "authors": "Mingze Xia, \n      \n      Yuxiao Li, \n      \n      Baixi Sun, \n      \n      Wenbo Li, \n      \n      Pu Jiao, \n      \n      Sheng Di, \n      \n      Franck Cappello, \n      \n      Hanqi Guo, \n      \n      Xin Liang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.17605",
+   "pdf_url": "https://arxiv.org/pdf/2610.17605"
+  },
+  {
+   "id": "2610.17521",
+   "title": "YUBI-Real2Sim: 3DGS Scene Verification for Reliable Policy Evaluation",
+   "summary": "Evaluating VLA policies on real robots is costly, time-consuming, and difficult to reproduce, making real-to-sim simulation essential for scalable evaluation. While 3D Gaussian",
+   "authors": "Hiroki Nishizawa, \n      \n      Takehiko Ohkawa, \n      \n      Nicola Scianca, \n      \n      Tatsuya Matsushima, \n      \n      Shigeo Morishima, \n      \n      Kei Ota",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.17521",
+   "pdf_url": "https://arxiv.org/pdf/2610.17521"
+  },
+  {
+   "id": "2610.17513",
+   "title": "Gaussian Splatting for Real-Time Scene Reconstruction: Methods, Systems, and Trade-offs",
+   "summary": "3D Gaussian",
+   "authors": "Ashim Dahal, \n      \n      Rabab Abdelfattah, \n      \n      Nick Rahimi",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.17513",
+   "pdf_url": "https://arxiv.org/pdf/2610.17513"
+  },
+  {
+   "id": "2610.16292",
+   "title": "3D Gaussian Splatting for Fine-grained Urban Scene Reconstruction via Semantic-guided Density Control and Loss Design",
+   "summary": "3D Gaussian",
+   "authors": "Yueling Liao, \n      \n      San Jiang, \n      \n      Xing Zhang, \n      \n      Zhongwen Hu",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.16292",
+   "pdf_url": "https://arxiv.org/pdf/2610.16292"
+  },
+  {
+   "id": "2610.16177",
+   "title": "DIGS: Distribution-Informed Gaussian Splatting for Training-Free Open-Vocabulary 3D Segmentation",
+   "summary": "Open-vocabulary 3D Gaussian",
+   "authors": "Zhifan Zeng, \n      \n      Wenbo Xiao, \n      \n      Arcot Sowmya, \n      \n      Changming Sun",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.16177",
+   "pdf_url": "https://arxiv.org/pdf/2610.16177"
+  },
+  {
+   "id": "2610.14963",
+   "title": "AD-GS: Anatomical Density-guided 3D Gaussian Splatting for Sparse-View Dental CBCT Reconstruction",
+   "summary": "…Tomography (CBCT) reconstruction is essential for reducing radiation dose and scan effort, but remains underconstrained due to limited projection information. Recent 3D Gaussian",
+   "authors": "Zonglin Li, \n      \n      Kexian Xie, \n      \n      Feiran Li, \n      \n      Chu Zhou, \n      \n      Yixing Huang, \n      \n      Ruiyang Chen, \n      \n      Zhanyu Ma, \n      \n      Heng Guo",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.14963",
+   "pdf_url": "https://arxiv.org/pdf/2610.14963"
+  },
+  {
+   "id": "2610.14685",
+   "title": "Demiurge: Forging Navigable 4D Worlds via Autoregressive Video Rerendering",
+   "summary": "…under challenging camera motions, including 180-degree rotations with no input-view overlap; and geometry-faithful outputs that can be directly optimized into high-quality 3D Gaussian",
+   "authors": "Hanxin Zhu, \n      \n      Jianqi Ma, \n      \n      Cong Wang, \n      \n      Zhihao Hu, \n      \n      Junyao Gao, \n      \n      Tianyu He, \n      \n      Junyan Lin, \n      \n      Jiayin Xiao, \n      \n      Jiateng Shou, \n      \n      Sen Liang, \n      \n      Weidong Zhang, \n      \n      Zhibo Chen, \n      \n      Jun Zhang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.14685",
+   "pdf_url": "https://arxiv.org/pdf/2610.14685"
+  },
+  {
+   "id": "2610.14663",
+   "title": "TETRIS-4DGS: Efficient Post-Training Compression of 4D Gaussian Splatting",
+   "summary": "4D Gaussian",
+   "authors": "Chengzhen Wu, \n      \n      Kelei Liu, \n      \n      Sicheng Li, \n      \n      Lu Yu, \n      \n      Yiyi Liao",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.14663",
+   "pdf_url": "https://arxiv.org/pdf/2610.14663"
+  },
+  {
+   "id": "2610.14090",
+   "title": "When pose graphs are not enough: a failure analysis of pose-graph-based camera estimation for Gaussian splatting",
+   "summary": "Exterior Gaussian",
+   "authors": "Senthil Palanisamy, \n      \n      Azwad Sabik, \n      \n      Alan Dolhasz, \n      \n      Mira Slavcheva",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.14090",
+   "pdf_url": "https://arxiv.org/pdf/2610.14090"
+  },
+  {
+   "id": "2610.13945",
+   "title": "Splat2Act: From Captured Scenes to Personalized VLA Manipulation",
+   "summary": "…Unlike prior real-to-sim work that reconstructs individual tabletops, Splat2Act operates on building-scale indoor environments: it builds a photorealistic digital twin with 3D Gaussian",
+   "authors": "Xiaomeng Ye, \n      \n      Krishna Jaganathan, \n      \n      Gyubeum Lim, \n      \n      Gunjan Chhablani, \n      \n      Muhammad Zubair Irshad, \n      \n      Zsolt Kira",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.13945",
+   "pdf_url": "https://arxiv.org/pdf/2610.13945"
+  },
+  {
+   "id": "2610.13860",
+   "title": "Make It Flow: Animating Water in 3D Gaussian Splatting Scenes",
+   "summary": "Explicit 3D scene representations such as 3D Gaussian",
+   "authors": "Kjell Keune, \n      \n      Florian Hahlbohm, \n      \n      Jannis Möller, \n      \n      Susana Castillo, \n      \n      Martin Eisemann, \n      \n      Marcus Magnor",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.13860",
+   "pdf_url": "https://arxiv.org/pdf/2610.13860"
+  },
+  {
+   "id": "2610.13781",
+   "title": "SimVTA: Simulation-Grounded Video-Trajectory Alignment for Driving World Action Models",
+   "summary": "…for each observation and use a real-world simulator (e.g., World Engine) to render future videos for high-reward candidates in real-world scenes reconstructed with 3D Gaussian",
+   "authors": "Changhui Jing, \n      \n      Haochen Tian, \n      \n      Hongchen Li, \n      \n      Tianyu Li, \n      \n      Caojun Wang, \n      \n      Zihao Zhang, \n      \n      Yanhao Liu, \n      \n      Chengen Xie, \n      \n      Bailin Li, \n      \n      Hao Zhao, \n      \n      Zhenjie Yang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.13781",
+   "pdf_url": "https://arxiv.org/pdf/2610.13781"
+  },
+  {
+   "id": "2610.13757",
+   "title": "Gaussian Splatting with Reflections Guided by What is Seen",
+   "summary": "While novel view synthesis methods like Neural Radiance Fields (NeRF) and 3D Gaussian",
+   "authors": "Yiming Liang, \n      \n      Tianyu Xiao, \n      \n      Hiroshi Ishikawa",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.13757",
+   "pdf_url": "https://arxiv.org/pdf/2610.13757"
+  },
+  {
+   "id": "2610.13643",
+   "title": "DexBioLab: Benchmarking Dexterous Manipulation with Dynamic Experimental Phenomena in Realistic Laboratories",
+   "summary": "…of laboratory procedures. To further enhance environmental realism, we develop a hybrid rendering pipeline that integrates interactive simulated foreground objects with Gaussian",
+   "authors": "Xuanye Wu, \n      \n      Yue Shi, \n      \n      Yongcan Yang, \n      \n      Yiqun Wang, \n      \n      Zhaoqi Wan, \n      \n      Dayu Xia, \n      \n      Yanming Shao, \n      \n      Jiezhang Cao, \n      \n      Xiangfei Li, \n      \n      Yao Mu, \n      \n      Guangtao Zhai",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.13643",
+   "pdf_url": "https://arxiv.org/pdf/2610.13643"
+  },
+  {
+   "id": "2610.13541",
+   "title": "Efficient Confidence-Aware Densification for 3DGS",
+   "summary": "3DGS-MCMC has replaced the gradient-driven density control of 3D Gaussian",
+   "authors": "Manuel Hofer, \n      \n      Thomas Köhler, \n      \n      Felix Windisch, \n      \n      Bernhard Kerbl, \n      \n      Markus Steinberger, \n      \n      Lukas Radl",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.13541",
+   "pdf_url": "https://arxiv.org/pdf/2610.13541"
+  },
+  {
+   "id": "2610.13503",
+   "title": "SplatQ: Interaction-Aware Pruning of 3D Gaussian Splatting via Quadratic Selection",
+   "summary": "Existing 3D Gaussian",
+   "authors": "Hongbin Ye, \n      \n      Haixu Liu, \n      \n      Shenwei Kang, \n      \n      Wenxiu Wei, \n      \n      Tinglan Wang, \n      \n      Hongdong Zhu, \n      \n      Fan Tang, \n      \n      Qi Gao, \n      \n      Yin Ma, \n      \n      Kai Wen, \n      \n      Hai Wei, \n      \n      Nuo Qian, \n      \n      Wei-Shi Zheng, \n      \n      Shaobo Chen, \n      \n      Fa-Ting Hong, \n      \n      Jingke Meng",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.13503",
+   "pdf_url": "https://arxiv.org/pdf/2610.13503"
+  },
+  {
+   "id": "2610.13498",
+   "title": "A Hybrid and Hierarchical Ray Tracing Method for Efficient 3D Gaussian Rendering",
+   "summary": "3D Gaussian",
+   "authors": "Tiancheng Zhao, \n      \n      Sixu Li, \n      \n      Yuzhou Chen, \n      \n      Hengyu Ding, \n      \n      Zhiming Pan, \n      \n      Chaojian Li",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.13498",
+   "pdf_url": "https://arxiv.org/pdf/2610.13498"
+  },
+  {
+   "id": "2610.13309",
+   "title": "NovaSplat: Model-Free 6D Object Pose Estimation via 3D Gaussian Splatting Onboarding and Refinement",
+   "summary": "…trailed their model-based counterparts. We present NovaSplat, a model-free pipeline that closes this gap. From a short smartphone video captured at onboarding, we train a 3D Gaussian",
+   "authors": "Georgios Floros, \n      \n      Evangelos Sartinas, \n      \n      Orestis Vangelis, \n      \n      Maria Pateraki",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.13309",
+   "pdf_url": "https://arxiv.org/pdf/2610.13309"
+  },
+  {
+   "id": "2610.13177",
+   "title": "CompactSplat: Spatially Adaptive Gaussian Distribution for Feedforward Scene Reconstruction",
+   "summary": "…per-scene optimization remains highly challenging, especially for recovering accurate geometry and fine textures. While recent feedforward approaches leverage generalizable 3D Gaussian",
+   "authors": "Bing He, \n      \n      Jingnan Gao, \n      \n      Yunuo Chen, \n      \n      Zhengxue Cheng, \n      \n      Rong Xie, \n      \n      Li Song, \n      \n      Wenjun Zhang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.13177",
+   "pdf_url": "https://arxiv.org/pdf/2610.13177"
+  },
+  {
+   "id": "2610.13143",
+   "title": "Measurable Semantic 3D Gaussian Splatting with Joint Region and Depth Supervision for Interactive Building Inspection",
+   "summary": "…provide the geometric measurability, semantic structure, and interactive information access required for engineering applications. This study proposes a measurable semantic 3D Gaussian",
+   "authors": "Yi Zhang, \n      \n      Tian Tan, \n      \n      Ray Kai Leung Su",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.13143",
+   "pdf_url": "https://arxiv.org/pdf/2610.13143"
+  },
+  {
+   "id": "2610.12461",
+   "title": "OuroWorld: Bringing Any 3D World Alive as Diverse, Endlessly Looping 3D Cinemagraphs",
+   "summary": "Recent 3D world models generate photorealistic, explorable scenes that remain frozen in time. OuroWorld is a mask-free framework that turns any static 3D Gaussian",
+   "authors": "You-Zhe Xie, \n      \n      Ting-Wei Chou, \n      \n      Yu-Hsuan Li, \n      \n      Kaipeng Zhang, \n      \n      Zhixiang Wang, \n      \n      Yu-Lun Liu",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.12461",
+   "pdf_url": "https://arxiv.org/pdf/2610.12461"
+  },
+  {
+   "id": "2610.12127",
+   "title": "LVS: Local View Synthesis from Relative Camera Pose by Reusing Previous Views",
+   "summary": "Interactive scene exploration requires frequent view updates, although small camera motions preserve much of the visible content. Conventional 3D Gaussian",
+   "authors": "Qizhou Huo, \n      \n      Xuan Sun, \n      \n      Yongfei Guo, \n      \n      Zhipeng Wang, \n      \n      Yuanhao Gong",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.12127",
+   "pdf_url": "https://arxiv.org/pdf/2610.12127"
+  },
+  {
+   "id": "2610.11752",
+   "title": "2DGS-Planner: Rasterization-based Path Planning in 2D Gaussian Splatting Map",
+   "summary": "Gaussian",
+   "authors": "Jiwon Park, \n      \n      Dong-Uk Seo, \n      \n      Hyun Myung",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.11752",
+   "pdf_url": "https://arxiv.org/pdf/2610.11752"
+  },
+  {
+   "id": "2610.11572",
+   "title": "PAM-ToD: Plug-and-Play Appearance Modeling for Cross-Time-of-Day 3D Gaussian Splatting",
+   "summary": "Adapting a pre-trained 3D Gaussian",
+   "authors": "Kota Shimomura, \n      \n      Sungho Moon, \n      \n      Tsubasa Hirakawa, \n      \n      Takayoshi Yamashita, \n      \n      Sunghoon Im, \n      \n      Hironobu Fujiyoshi",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.11572",
+   "pdf_url": "https://arxiv.org/pdf/2610.11572"
+  },
+  {
+   "id": "2610.11547",
+   "title": "OX-NeRF: 3D X-ray Tomography Reconstruction from Sparse Views Using Implicit Neural Representation",
+   "summary": "NeRF and Gaussian",
+   "authors": "Thomas Welsch, \n      \n      Min-Hsin Tu, \n      \n      David J. Chapman, \n      \n      Daniel E. Eakins",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.11547",
+   "pdf_url": "https://arxiv.org/pdf/2610.11547"
+  },
+  {
+   "id": "2610.11364",
+   "title": "FlyMark: Training-Free Invisible Watermarking of 3D Gaussian Splatting via a Fruit Fly Connectome",
+   "summary": "A trained 3D Gaussian",
+   "authors": "Ziyuan Luo, \n      \n      Haoliang Li, \n      \n      Renjie Wan",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.11364",
+   "pdf_url": "https://arxiv.org/pdf/2610.11364"
+  },
+  {
+   "id": "2610.11039",
+   "title": "Rendering-Free Lookahead for Question-Guided Active Vision",
+   "summary": "…by predicted future answerability. RFL transfers visual lookahead from deployment to offline training. At training, a privileged teacher renders candidate future views in 3D Gaussian",
+   "authors": "Koya Sakamoto, \n      \n      Daichi Azuma, \n      \n      Shuhei Kurita, \n      \n      Naoya Chiba, \n      \n      Yusuke Iwasawa, \n      \n      Yutaka Matsuo, \n      \n      Taiki Miyanishi",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.11039",
+   "pdf_url": "https://arxiv.org/pdf/2610.11039"
+  },
+  {
+   "id": "2610.11011",
+   "title": "PCAsplat: Gaussian Splatting with Local PCA Regularization",
+   "summary": "Gaussian",
+   "authors": "Vitor Matias, \n      \n      Filipe Nascimento, \n      \n      Kiyohiro Nakayama, \n      \n      João Paulo Lima, \n      \n      Márcus Lobo, \n      \n      Gordon Wetzstein, \n      \n      Leonidas Guibas, \n      \n      Afonso Paiva, \n      \n      Tiago Novello",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.11011",
+   "pdf_url": "https://arxiv.org/pdf/2610.11011"
+  },
+  {
+   "id": "2610.10554",
+   "title": "GaussianBench: Physics-Fidelity Evaluation for Gaussian Scene Representations",
+   "summary": "3D Gaussian",
+   "authors": "Chukwudalu Dumebi-Kachikwu",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.10554",
+   "pdf_url": "https://arxiv.org/pdf/2610.10554"
+  },
+  {
+   "id": "2610.10396",
+   "title": "Gaussian Density Splatting Network",
+   "summary": "This paper proposes a novel crowd counting approach, the Gaussian",
+   "authors": "Miao Shang, \n      \n      Yabin Wang, \n      \n      Xiaopeng Hong",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.10396",
+   "pdf_url": "https://arxiv.org/pdf/2610.10396"
+  },
+  {
+   "id": "2610.09853",
+   "title": "DeltaSplat: Iterative Gaussian Refinement for Pose-Free Feed-Forward 3D Gaussian Splatting",
+   "summary": "Pose-free feed-forward 3D Gaussian",
+   "authors": "Chanung Park, \n      \n      Seunghyeon Song, \n      \n      Joo Chan Lee, \n      \n      Eunbyung Park, \n      \n      Jong Hwan Ko",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.09853",
+   "pdf_url": "https://arxiv.org/pdf/2610.09853"
+  },
+  {
+   "id": "2610.09343",
+   "title": "TileSkipper: Region-Adaptive Tile Pruning for 3D Gaussian Splatting",
+   "summary": "Tiled 3D Gaussian",
+   "authors": "Jingxing Li, \n      \n      Yongjae Lee, \n      \n      Deliang Fan, \n      \n      Abhay Kumar Yadav, \n      \n      Cheng Peng, \n      \n      Rama Chellappa",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.09343",
+   "pdf_url": "https://arxiv.org/pdf/2610.09343"
+  },
+  {
+   "id": "2610.09116",
+   "title": "SPLATIFY: Reproduce, Discover, Innovate! From Papers and Ideas to Trainable 3DGS Code",
+   "summary": "The rapid growth of 3D Gaussian",
+   "authors": "Seemandhar Jain, \n      \n      Keshav Gupta, \n      \n      Manmohan Chandraker",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.09116",
+   "pdf_url": "https://arxiv.org/pdf/2610.09116"
+  },
+  {
+   "id": "2610.08756",
+   "title": "Post-Training Semantic Lifting for 3D Gaussian Splatting: Separating Detector, Lifting and Representation Error",
+   "summary": "The same Gaussian",
+   "authors": "Iván Verdugo Guerra, \n      \n      Ezequiel López Rubio, \n      \n      Jorge García González",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.08756",
+   "pdf_url": "https://arxiv.org/pdf/2610.08756"
+  },
+  {
+   "id": "2610.07958",
+   "title": "DensiTok: Making Feed-Forward 3D Gaussian Splatting See More Views Than It Is Given",
+   "summary": "Feed-forward 3D Gaussian",
+   "authors": "Minhyeok Lee, \n      \n      Jungho Lee, \n      \n      Minseok Kang, \n      \n      Heeseung Choi, \n      \n      Ig-Jae Kim, \n      \n      Sangyoun Lee",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.07958",
+   "pdf_url": "https://arxiv.org/pdf/2610.07958"
+  },
+  {
+   "id": "2610.22364",
+   "title": "T2-z: Test-Time Optimization of Environment Latents for Robotic World Models",
+   "summary": "Predicting how the world",
+   "authors": "Chenyuan Zhou, \n      \n      Yining Hong, \n      \n      Huang Huang, \n      \n      Yunfan Jiang, \n      \n      Wenlong Huang, \n      \n      David Held, \n      \n      Vitor Campagnolo Guizilini, \n      \n      Yue Wang, \n      \n      Li Fei-Fei, \n      \n      Jiajun Wu, \n      \n      Leonidas Guibas, \n      \n      Yejin Choi",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.22364",
+   "pdf_url": "https://arxiv.org/pdf/2610.22364"
+  },
+  {
+   "id": "2610.22340",
+   "title": "Dexterity from Supervised Play",
+   "summary": "How can robots",
+   "authors": "Botao He, \n      \n      Yiming Dou, \n      \n      Yiannis Aloimonos, \n      \n      Jitendra Malik, \n      \n      Akash Sharma, \n      \n      Ruoshi Liu",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.22340",
+   "pdf_url": "https://arxiv.org/pdf/2610.22340"
+  },
+  {
+   "id": "2610.22193",
+   "title": "MOSS: Mode-Oriented Source Shaping for Robot Flow Matching Policies",
+   "summary": "In robotic",
+   "authors": "Zirun Ma, \n      \n      Jindou Jia, \n      \n      Tuo An, \n      \n      Jiaqi Bai, \n      \n      Jiahua Dong, \n      \n      Jianfei Yang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.22193",
+   "pdf_url": "https://arxiv.org/pdf/2610.22193"
+  },
+  {
+   "id": "2610.22056",
+   "title": "Progress Reward Model for Reinforcement Learning via Large Language Models",
+   "summary": "…reinforcement learning (RL) algorithms face significant limitations in handling long-term tasks with sparse rewards. Recent advancements have leveraged large language models",
+   "authors": "Xiuhui Zhang, \n      \n      Ning Gao, \n      \n      Xingyu Jiang, \n      \n      Yihui Chen, \n      \n      Yuheng Pan, \n      \n      Mohan Zhang, \n      \n      Yue Deng",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.22056",
+   "pdf_url": "https://arxiv.org/pdf/2610.22056"
+  },
+  {
+   "id": "2610.21922",
+   "title": "TS-WAM: Temporal Latent Actions and World-Action Coupling for Vision-Language Robot Control",
+   "summary": "Many vision-language-action policies rely on action-labeled robot",
+   "authors": "Menghao Yin, \n      \n      Jiaju Yin, \n      \n      Xiyue Dong, \n      \n      Lixin Xu, \n      \n      Zhenhui Zhang, \n      \n      Ke Zhang, \n      \n      Yating Feng, \n      \n      Renjing Xu",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.21922",
+   "pdf_url": "https://arxiv.org/pdf/2610.21922"
+  },
+  {
+   "id": "2610.21798",
+   "title": "Cross-Embodiment Causal Transfer from Human Videos to Robot Manipulation",
+   "summary": "Scaling robot",
+   "authors": "Xingyu Zhang, \n      \n      Yingchao Li, \n      \n      Peizheng Guo, \n      \n      Jie Hu, \n      \n      Changwen Zheng, \n      \n      Wenwen Qiang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.21798",
+   "pdf_url": "https://arxiv.org/pdf/2610.21798"
+  },
+  {
+   "id": "2610.21621",
+   "title": "SPEAR: Selective Preference Elicitation with Adaptive Rewards for VLM-Guided Robotic Manipulation",
+   "summary": "Recent Vision-Language Models",
+   "authors": "Zewen Wu, \n      \n      Ruizhe Liu, \n      \n      Pei Zhou, \n      \n      Feng Chen, \n      \n      Yanchao Yang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.21621",
+   "pdf_url": "https://arxiv.org/pdf/2610.21621"
+  },
+  {
+   "id": "2610.21539",
+   "title": "Reinforcement Learning-driven Diffusion Models: Language, Vision, and Beyond",
+   "summary": "Diffusion models",
+   "authors": "Zhiyuan Ma, \n      \n      Jiabao Wei, \n      \n      Tianyu Wang, \n      \n      Hanqing Wang, \n      \n      Jiadong Pan, \n      \n      Haowen Xu, \n      \n      Liangliang Zhao, \n      \n      Ruixun Liu, \n      \n      Yuhan Wang, \n      \n      Yuwei Zhang, \n      \n      Liang Feng, \n      \n      Junhao Xiao, \n      \n      Kaiyan Zhang, \n      \n      Xuekai Zhu, \n      \n      Daizong Liu, \n      \n      Biqing Qi, \n      \n      Yihao Liu, \n      \n      Ganqu Cui, \n      \n      Ning Ding, \n      \n      Linfeng Zhang, \n      \n      Jianjun Li, \n      \n      Kun He, \n      \n      Xiang Bai, \n      \n      Bowen Zhou",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.21539",
+   "pdf_url": "https://arxiv.org/pdf/2610.21539"
+  },
+  {
+   "id": "2610.21453",
+   "title": "CarryOn: A Dual-Loop Harness for Personalized and Reliable Robot Assistance",
+   "summary": "While generalist vision-language-action (VLA) models",
+   "authors": "Zixuan Wang, \n      \n      Yuqi Liu, \n      \n      Yuxin Chen, \n      \n      Sengqiao Yang, \n      \n      Jinhui Ye, \n      \n      Pengguang Chen, \n      \n      Changsheng Lu, \n      \n      Shu Liu, \n      \n      Bei Yu, \n      \n      Jiaya Jia",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.21453",
+   "pdf_url": "https://arxiv.org/pdf/2610.21453"
+  },
+  {
+   "id": "2610.21374",
+   "title": "From Optical Flow to Safety: Visual Safety Certification via Scale-Free Relative Motion",
+   "summary": "…motion encoded by monocular optical flow as the representation for collision-risk certification, without reconstructing obstacle position, velocity, geometry, or a metric world",
+   "authors": "Bazeela Banday, \n      \n      Jishnu Keshavan",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.21374",
+   "pdf_url": "https://arxiv.org/pdf/2610.21374"
+  },
+  {
+   "id": "2610.21362",
+   "title": "LTM: Latent Transition Based In-Context Memory for Vision-Language-Action Models",
+   "summary": "Robotic",
+   "authors": "Qixin Sun, \n      \n      WenLong Gao, \n      \n      Xiansheng Chen, \n      \n      Zhongyuan Wang, \n      \n      Si Liu, \n      \n      Pengwei Wang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.21362",
+   "pdf_url": "https://arxiv.org/pdf/2610.21362"
+  },
+  {
+   "id": "2610.21361",
+   "title": "Hierarchical Building-Floo-Room Framework for Privacy-Preserving Autonomous Delivery in Large-Scale Buildings",
+   "summary": "…including building, floor, and room, while ensuring scheduling efficiency. Existing methods often focus solely on algorithmic development, neglecting integration with physical robotic",
+   "authors": "Xu Xiaoji, \n      \n      Luo Rui, \n      \n      Chen Jinhua, \n      \n      Xiang Changying, \n      \n      Zhang Leihan, \n      \n      Liao Zhongyuan",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.21361",
+   "pdf_url": "https://arxiv.org/pdf/2610.21361"
+  },
+  {
+   "id": "2610.21349",
+   "title": "CQDC-Warp: GPU-Accelerated Differentiable Quasi-Dynamic Simulation for Contact-Rich Manipulation",
+   "summary": "Efficient synthesis of contact-rich manipulation trajectories is essential for downstream robot",
+   "authors": "Yanchen Ding, \n      \n      Jiayi Chen, \n      \n      Jianfeng Xu, \n      \n      Wei Zhao, \n      \n      Li Yi, \n      \n      He Wang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.21349",
+   "pdf_url": "https://arxiv.org/pdf/2610.21349"
+  },
+  {
+   "id": "2610.21282",
+   "title": "LICOA: Learning Instruction-Conditioned Optical Actions for Mobile Spatial Augmented Reality",
+   "summary": "…with two degrees of freedom (2DoF) and projection scale provide rapid local control of the beam. A shared interface maps synchronized external and onboard RGB cameras with robot",
+   "authors": "Yuchen Deng, \n      \n      Shunkai Zhou, \n      \n      Ruixuan Zhu, \n      \n      Haibin Ling, \n      \n      Bingyao Huang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.21282",
+   "pdf_url": "https://arxiv.org/pdf/2610.21282"
+  },
+  {
+   "id": "2610.21244",
+   "title": "System1-Arena: Which Decisions Can Be Left to System 1?",
+   "summary": "Large language models",
+   "authors": "Tianyu Chen, \n      \n      Xinyang Liu, \n      \n      Ruyi An, \n      \n      Zhendong Wang, \n      \n      Mingyuan Zhou",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.21244",
+   "pdf_url": "https://arxiv.org/pdf/2610.21244"
+  },
+  {
+   "id": "2610.21239",
+   "title": "CLIS-MPPI: Closed-Loop Model Predictive Path Integral Control With Initial-State Sampling Under Execution Delay",
+   "summary": "Sampling-based motion planning such as Model",
+   "authors": "Zidong Liu, \n      \n      Xu Chen",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.21239",
+   "pdf_url": "https://arxiv.org/pdf/2610.21239"
+  },
+  {
+   "id": "2610.21171",
+   "title": "Physical AI: A Survey of Models, Learning, Systems, and Open Challenges",
+   "summary": "Physical AI aims to enable intelligent systems to perceive, reason, act, and learn through interaction with the physical world",
+   "authors": "Bin Gao, \n      \n      Anuj Gautam, \n      \n      Aritra Bagchi, \n      \n      Yunkai Liang, \n      \n      Wentao Li, \n      \n      Ronghui Li, \n      \n      Zhi Zhou, \n      \n      Yancan Mao, \n      \n      Xiao Yan, \n      \n      Xin He, \n      \n      Qingyun Zou, \n      \n      Wenshuo Yue, \n      \n      Dan Chen, \n      \n      Zhanglu Yan, \n      \n      Fei Xu, \n      \n      Huize Li, \n      \n      Weijie Wang, \n      \n      Tao Ouyang, \n      \n      Tulika Mitra",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.21171",
+   "pdf_url": "https://arxiv.org/pdf/2610.21171"
+  },
+  {
+   "id": "2610.20904",
+   "title": "EgoJEPA: Beyond Retargeting for Dexterous Manipulation from Egocentric Videos",
+   "summary": "Egocentric human videos offer a scalable alternative to costly robot",
+   "authors": "Meng Cao, \n      \n      Can Zhao, \n      \n      Jinjie Wei, \n      \n      Haonan Zhao, \n      \n      Yulong Zhang, \n      \n      Duo Han, \n      \n      Xiaofan Li, \n      \n      Ziwu Song, \n      \n      Rongtao Xu, \n      \n      Ruyi Gan, \n      \n      Hao Wang, \n      \n      Qian Wang, \n      \n      Daolin Ma, \n      \n      Ian Reid, \n      \n      Xiaodan Liang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.20904",
+   "pdf_url": "https://arxiv.org/pdf/2610.20904"
+  },
+  {
+   "id": "2610.20840",
+   "title": "A Phenomenology of Neural Geometry in Vision-Language-Action Models",
+   "summary": "Robotic",
+   "authors": "Mozes Jacobs, \n      \n      Aiden Swann, \n      \n      Mathilde Papillon, \n      \n      Siddharth Boppana, \n      \n      Fenil R. Doshi, \n      \n      Usha Bhalla, \n      \n      Thomas Icard, \n      \n      Matt Feiszli, \n      \n      Thomas McGrath, \n      \n      Vasudev Shyam, \n      \n      Demba Ba, \n      \n      Leon Bergen, \n      \n      Nina Miolane, \n      \n      Owen Lewis, \n      \n      Jack Merullo, \n      \n      Ekdeep Singh Lubana, \n      \n      Atticus Geiger, \n      \n      Matthew Kowal, \n      \n      Thomas Fel",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.20840",
+   "pdf_url": "https://arxiv.org/pdf/2610.20840"
+  },
+  {
+   "id": "2610.20606",
+   "title": "Modeling and Understanding Neural Weights of Humanoid Policies with Diffusion",
+   "summary": "Recent advances in robot",
+   "authors": "Huixuan Cheng, \n      \n      Bike Zhang, \n      \n      Shankar Sastry, \n      \n      Koushil Sreenath",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.20606",
+   "pdf_url": "https://arxiv.org/pdf/2610.20606"
+  },
+  {
+   "id": "2610.20442",
+   "title": "Towards Agentic Robots: Model, Data, Environment, and Harness",
+   "summary": "Foundation models",
+   "authors": "Chonghan Qin, \n      \n      Dongming Wu, \n      \n      Kaituo Feng, \n      \n      Jiaxu Wang, \n      \n      Xinlei Yu, \n      \n      Peiwen Sun, \n      \n      Yijia Fan, \n      \n      Xilin He, \n      \n      Bingao Chen, \n      \n      Weitong Lian, \n      \n      Ryan Ji, \n      \n      Wenqi Ren, \n      \n      Xiaobin Hu, \n      \n      Dahua Lin, \n      \n      Yu-Gang Jiang, \n      \n      Xiangyu Yue",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.20442",
+   "pdf_url": "https://arxiv.org/pdf/2610.20442"
+  },
+  {
+   "id": "2610.20223",
+   "title": "ObjDream: Guiding Vision-Language-Action Models with Object-Level Understanding and Future State Prediction",
+   "summary": "Vision-language-action (VLA) models",
+   "authors": "Huailiang Ma, \n      \n      Yuxuan Li, \n      \n      Ziyi Zhao, \n      \n      Xinkai Wang, \n      \n      Mingyu Li, \n      \n      Xinyu Guo, \n      \n      Lifeng Zhu, \n      \n      Aiguo Song, \n      \n      Cewu Lu, \n      \n      Jianhua Sun",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.20223",
+   "pdf_url": "https://arxiv.org/pdf/2610.20223"
+  },
+  {
+   "id": "2610.20157",
+   "title": "Atomic-WAM: Execution-Grounded Atomic-Motion Reasoning for World Action Models",
+   "summary": "World",
+   "authors": "Shijun Shi, \n      \n      Zhe Liu, \n      \n      Zhi Hou, \n      \n      Yinan Chen, \n      \n      Tao Zhang, \n      \n      Kai Hu, \n      \n      Yong Liu, \n      \n      Jiangning Zhang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.20157",
+   "pdf_url": "https://arxiv.org/pdf/2610.20157"
+  },
+  {
+   "id": "2610.20134",
+   "title": "Tactile-Guided Robot Learning: From Representation Learning to Foundation Models",
+   "summary": "Tactile sensing is becoming central to robust, adaptive, and dexterous robotic",
+   "authors": "Kiyanoush Nazari, \n      \n      Luchen Li, \n      \n      Haoshu Fang, \n      \n      Nima Fazeli, \n      \n      Zhibin Li, \n      \n      Fumiya Iida, \n      \n      Thomas George Thuruthel",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.20134",
+   "pdf_url": "https://arxiv.org/pdf/2610.20134"
+  },
+  {
+   "id": "2610.19957",
+   "title": "Complementary Future Token Pruning for World Action Models",
+   "summary": "World",
+   "authors": "Baekseung Kim, \n      \n      Junhoo Lee, \n      \n      Sohyeon Hong, \n      \n      Suhyun Jeon, \n      \n      Minkyu Kim, \n      \n      Seungyeon Kim, \n      \n      Donghoon Han, \n      \n      Nojun Kwak",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.19957",
+   "pdf_url": "https://arxiv.org/pdf/2610.19957"
+  },
+  {
+   "id": "2610.19913",
+   "title": "MUCO: A Mani-Unit-Structured Manipulation Framework for Compositional Long-Horizon Robot Tasks",
+   "summary": "Learning and executing long-horizon robot",
+   "authors": "Xiangyi Wei, \n      \n      Hanzhe Yao, \n      \n      Jingwen Shang, \n      \n      Zhenhong Wu, \n      \n      Yang Li, \n      \n      Changbo Wang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.19913",
+   "pdf_url": "https://arxiv.org/pdf/2610.19913"
+  },
+  {
+   "id": "2610.19753",
+   "title": "Coordi-pi: Coordination-Aware Dual-Hand Action Representation for Bimanual Dexterous Manipulation",
+   "summary": "Vision-language-action (VLA) models",
+   "authors": "Yiming Meng, \n      \n      Yanming Shao, \n      \n      Weijie Shen, \n      \n      Kunyang Lin, \n      \n      Jiayu Sun, \n      \n      Ping Luo, \n      \n      Yao Mu",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.19753",
+   "pdf_url": "https://arxiv.org/pdf/2610.19753"
+  },
+  {
+   "id": "2610.19746",
+   "title": "One-shot Human Video-Guided Adaptation for Vision-Language-Action Models",
+   "summary": "Vision-language-action (VLA) models",
+   "authors": "Qi Chen, \n      \n      Yuwei Wu, \n      \n      Quan Chen, \n      \n      Kunpeng Gao, \n      \n      Jin Chen, \n      \n      Che Sun, \n      \n      Zhi Gao, \n      \n      Yunde Jia",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.19746",
+   "pdf_url": "https://arxiv.org/pdf/2610.19746"
+  },
+  {
+   "id": "2610.19656",
+   "title": "Accelerating VLA Inference with Perturbation Informed Execution",
+   "summary": "Action-chunking vision-language-action (VLA) models",
+   "authors": "Jehun Lee, \n      \n      Hajun Lee, \n      \n      Jimin Ryu, \n      \n      Youhan Lee, \n      \n      Beomseok Kang, \n      \n      Jonghyun Choi, \n      \n      Jae-Joon Kim",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.19656",
+   "pdf_url": "https://arxiv.org/pdf/2610.19656"
+  },
+  {
+   "id": "2610.19518",
+   "title": "HiFun: a Hierarchical Framework for Efficient Functional Dexterous Manipulation Learning",
+   "summary": "While multi-fingered dexterous robot",
+   "authors": "Linyi Huang, \n      \n      Guowei Huai, \n      \n      Weibin Liu, \n      \n      Shulong Jiang, \n      \n      Ping Tan, \n      \n      Weixuan Zhang, \n      \n      Hui Zhang, \n      \n      Jie Song",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.19518",
+   "pdf_url": "https://arxiv.org/pdf/2610.19518"
+  },
+  {
+   "id": "2610.19517",
+   "title": "VLRLA: Deployment-Time Adaptation of Vision-Language-Action Models through In-Context Reinforcement Learning",
+   "summary": "Vision-language-action (VLA) models",
+   "authors": "Diyuan Shi, \n      \n      Yiqi Tang, \n      \n      Hongyin Zhang, \n      \n      You Wu, \n      \n      Donglin Wang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.19517",
+   "pdf_url": "https://arxiv.org/pdf/2610.19517"
+  },
+  {
+   "id": "2610.19330",
+   "title": "NavAble: A Large-Scale Dataset and Synthetic Data Generation Pipeline for Blind Navigation",
+   "summary": "…NavAble, a large-scale dataset spanning 11 accessibility-critical object classes, combining 41K curated open-source images with 8K newly collected, densely annotated real-world",
+   "authors": "Hochul Hwang, \n      \n      Jahir Sadik Monon, \n      \n      Soowan Yang, \n      \n      Shiven Umeshbhai Patel, \n      \n      Anh Nhat Hong Nguyen, \n      \n      Kien Nguyen, \n      \n      Keshav Garg, \n      \n      Dylan Gage, \n      \n      Duretti Hordofaa, \n      \n      Anshu Anjna, \n      \n      Eshed Ohn-Bar, \n      \n      Donghyun Kim",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.19330",
+   "pdf_url": "https://arxiv.org/pdf/2610.19330"
+  },
+  {
+   "id": "2610.19327",
+   "title": "SonoWorld: Towards Interactive Pose-Controllable Ultrasound World Models",
+   "summary": "Robotic",
+   "authors": "Zefan Yang, \n      \n      Zheyuan Zhang, \n      \n      Boris Maihe, \n      \n      Yikang Liu, \n      \n      Hang Yu, \n      \n      Ankush Mukherjee, \n      \n      Xiao Chen, \n      \n      Pingkun Yan, \n      \n      Terrence Chen, \n      \n      Shanhui Sun",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.19327",
+   "pdf_url": "https://arxiv.org/pdf/2610.19327"
+  },
+  {
+   "id": "2610.19212",
+   "title": "Decoupled Drift-Diffusion World Models for Consistent Future Frame Prediction",
+   "summary": "World",
+   "authors": "Anton Arapin, \n      \n      Aditya Singh, \n      \n      Yixin Wang, \n      \n      Jun Gao, \n      \n      Bernadette Bucher",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.19212",
+   "pdf_url": "https://arxiv.org/pdf/2610.19212"
+  },
+  {
+   "id": "2610.19129",
+   "title": "Imagining Goals with Geometric Horizon Models for Policy Generalization",
+   "summary": "Training from offline data has allowed for substantial progress in domains such as robotics",
+   "authors": "Daniel Lawson, \n      \n      Dhruv Sreenivas, \n      \n      Adriana Hugessen, \n      \n      Khimya Khetarpal, \n      \n      Glen Berseth",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.19129",
+   "pdf_url": "https://arxiv.org/pdf/2610.19129"
+  },
+  {
+   "id": "2610.19097",
+   "title": "Benchmarking 3D Reconstruction for Under-Ice Robotic Perception in Arctic Environments",
+   "summary": "As the Arctic transitions toward a seasonally ice-free state, capturing the complex morphology of submerged sea ice is crucial for advancing models",
+   "authors": "Klára Orbán, \n      \n      Ashwin Nedungadi, \n      \n      Ana-Ştefania Kogălniceanu, \n      \n      Bianca-Marcela Sava, \n      \n      Bastian Cieply, \n      \n      Raul-Alexandru Simon, \n      \n      Kuderna-Iulian Benţa, \n      \n      Stefan Lüdtke",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.19097",
+   "pdf_url": "https://arxiv.org/pdf/2610.19097"
+  },
+  {
+   "id": "2610.19044",
+   "title": "RingNav: Task-Shaped Circular Memory for Visual Heading",
+   "summary": "Tiny robots",
+   "authors": "Naitri Rajyaguru, \n      \n      Aryan Tajne, \n      \n      Stephen Jardim, \n      \n      Cornelia Fermuller, \n      \n      Yiannis Aloimonos",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.19044",
+   "pdf_url": "https://arxiv.org/pdf/2610.19044"
+  },
+  {
+   "id": "2610.18950",
+   "title": ": Scaling Open-World Egocentric Human Data for Humanoid Loco-Manipulation",
+   "summary": "Humanoid loco-manipulation requires coordinated whole-body interaction with the physical world",
+   "authors": "Lambda-humanoid Team",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.18950",
+   "pdf_url": "https://arxiv.org/pdf/2610.18950"
+  },
+  {
+   "id": "2610.18873",
+   "title": "LoopWAM: Closed-Loop Generalist Policy Improvement from Deployment Rollouts",
+   "summary": "Scaling expert demonstrations alone does not enable generalist robot",
+   "authors": "Wenxuan Guo, \n      \n      Yingping Liang, \n      \n      Zhaoguo Wang, \n      \n      Ziyuan Li, \n      \n      Angyuan Ma, \n      \n      Zhenyu Wu, \n      \n      Chengkun Wang, \n      \n      Bingyao Yu, \n      \n      Ze Chen, \n      \n      Borui Zhang, \n      \n      Xiuwei Xu, \n      \n      Meng Zhang, \n      \n      Erjin Zhou, \n      \n      Jiwen Lu",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.18873",
+   "pdf_url": "https://arxiv.org/pdf/2610.18873"
+  },
+  {
+   "id": "2610.18855",
+   "title": "Interaction Latents as Actions for Contact-Rich Manipulation",
+   "summary": "Contact-rich manipulation requires robots",
+   "authors": "Yuhang Zheng, \n      \n      Yujie Zang, \n      \n      Yuchen Liu, \n      \n      Yupeng Zheng, \n      \n      Zhennan Jiang, \n      \n      Zebin Xing, \n      \n      Shuai Tian, \n      \n      Songen Gu, \n      \n      Jingxiang Guo, \n      \n      Chen Gao, \n      \n      Zhongpu Xia, \n      \n      Shuicheng Yan",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.18855",
+   "pdf_url": "https://arxiv.org/pdf/2610.18855"
+  },
+  {
+   "id": "2610.18852",
+   "title": "ForceWAM: Decoupling Future and Response Learning from Demo and Play Data for Contact-Rich Manipulation",
+   "summary": "…Task-agnostic play provides broader experience of contact dynamics without specifying task goals. To fully leverage these two types of data, we introduce ForceWAM, a force world",
+   "authors": "Zijun Xu, \n      \n      Wendi Chen, \n      \n      Xinkai Wang, \n      \n      Jiachen Zou, \n      \n      Hongjin Chen, \n      \n      Hairuo Liu, \n      \n      Bokai Lin, \n      \n      Shihao Ma, \n      \n      Ke Ma, \n      \n      Zhiwei Zhang, \n      \n      Zhuohao Yan, \n      \n      Ke Wu, \n      \n      Haoming Song, \n      \n      Xueqi Li, \n      \n      Chuan Wen, \n      \n      Jieru Zhao, \n      \n      Wenchao Ding, \n      \n      Cewu Lu, \n      \n      Lixin Yang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.18852",
+   "pdf_url": "https://arxiv.org/pdf/2610.18852"
+  },
+  {
+   "id": "2610.18850",
+   "title": "Collaborative Planning for UAV-UGV Teams under Operational Constraints via Masked Error-bounded Neuro-Symbolic Diffusion",
+   "summary": "Collaborative planning under operational constraints is essential for heterogeneous robot",
+   "authors": "Zihao Deng, \n      \n      Qianhuang Li, \n      \n      Maggie Wigness, \n      \n      John Rogers, \n      \n      Donghyun Kim, \n      \n      Hao Zhang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.18850",
+   "pdf_url": "https://arxiv.org/pdf/2610.18850"
+  },
+  {
+   "id": "2610.18774",
+   "title": "GreenWAM: A World Foundation Model for Robotics",
+   "summary": "A robot",
+   "authors": "Gennady Sidorov, \n      \n      Valerii Kornilov, \n      \n      Denis Grankin, \n      \n      Polina Fedotova, \n      \n      Aleksey Postnikov",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.18774",
+   "pdf_url": "https://arxiv.org/pdf/2610.18774"
+  },
+  {
+   "id": "2610.18699",
+   "title": "RoboFQE: Rollout-Free Evaluation of Visual Robot Policies from Offline Trajectories",
+   "summary": "Evaluating robot",
+   "authors": "Yunfu Deng, \n      \n      Sangwoo Shin, \n      \n      Brahma S. Pavse, \n      \n      Josiah P. Hanna",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.18699",
+   "pdf_url": "https://arxiv.org/pdf/2610.18699"
+  },
+  {
+   "id": "2610.18670",
+   "title": "Perception Beyond the Visible: Incompleteness-Aware Scene Understanding for Robot Autonomy",
+   "summary": "Reliable robot",
+   "authors": "Rohit Mohan",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.18670",
+   "pdf_url": "https://arxiv.org/pdf/2610.18670"
+  },
+  {
+   "id": "2610.18650",
+   "title": "ForkCast: Predictive Recovery for Vision-Language-Action Policies via Counterfactual Futures",
+   "summary": "…executing the policy's nominal action chunk (Commit), adjusting the camera viewpoint (Reobserve), and replanning the arm trajectory (Replan). A candidate-conditioned world",
+   "authors": "Chenru Wen, \n      \n      Huajian Zeng, \n      \n      Haokai Ding, \n      \n      Jian Kang, \n      \n      Anqing Duan, \n      \n      Dawei Zhou, \n      \n      Dezhen Song, \n      \n      Xingxing Zuo",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.18650",
+   "pdf_url": "https://arxiv.org/pdf/2610.18650"
+  },
+  {
+   "id": "2610.18637",
+   "title": "Grid or Nodes? Probing Object Memory in World Models Under Partial Observability",
+   "summary": "A robot's",
+   "authors": "Justin McMillen, \n      \n      Yasin Yilmaz",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.18637",
+   "pdf_url": "https://arxiv.org/pdf/2610.18637"
+  },
+  {
+   "id": "2610.18596",
+   "title": "ACCRUE: Continual Off-Policy Reinforcement Learning for Robot Foundation Models",
+   "summary": "Reinforcement learning (RL) post-training improves robot",
+   "authors": "Changyeon Kim, \n      \n      Kimin Lee, \n      \n      Yashraj Narang, \n      \n      Yijie Guo",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.18596",
+   "pdf_url": "https://arxiv.org/pdf/2610.18596"
+  },
+  {
+   "id": "2610.18568",
+   "title": "WAVE-0: Bridging VLA Policies and WAMs with Lightweight Latent Future Prediction",
+   "summary": "Vision-language-action (VLA) policies excel at generalist robotic",
+   "authors": "Haomin Wang, \n      \n      Anqiong Ji, \n      \n      Ke Wang, \n      \n      Zhongshan Liu, \n      \n      Ru Ying, \n      \n      Ran Zheng, \n      \n      Zhipeng Zhang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.18568",
+   "pdf_url": "https://arxiv.org/pdf/2610.18568"
+  },
+  {
+   "id": "2610.18523",
+   "title": "APTree: Extended Behavior Trees for Adaptive and Scalable Automated Robotic Task Planning in Construction",
+   "summary": "Task planning for robots",
+   "authors": "Shermin Sherkat, \n      \n      Thomas Wortmann, \n      \n      Andreas Wortmann",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.18523",
+   "pdf_url": "https://arxiv.org/pdf/2610.18523"
+  },
+  {
+   "id": "2610.18836",
+   "title": "Plan-Bench: Can Existing VLMs Go Well Beyond Perception to Reason and Plan in Embodied Worlds?",
+   "summary": "Vision-Language Models (VLMs",
+   "authors": "Juntong Feng, \n      \n      Qingan Liu, \n      \n      Jingru Dong, \n      \n      Yue Zhu, \n      \n      Weiming Zheng, \n      \n      Yujie Cheng, \n      \n      Xinzhe Han, \n      \n      Shuai Hao, \n      \n      Yunzhi Zhuge, \n      \n      Haiwen Diao, \n      \n      Huchuan Lu",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.18836",
+   "pdf_url": "https://arxiv.org/pdf/2610.18836"
+  },
+  {
+   "id": "2610.15362",
+   "title": "LERR-Nav: Learning to Coordinate Exploration, Recovery, and Reminiscing for Object Navigation",
+   "summary": "Object Navigation in unseen environments remains a fundamental challenge in embodied",
+   "authors": "Jingzhi Huang, \n      \n      Junkai Huang, \n      \n      Yuhang Peng, \n      \n      Keyu Mu, \n      \n      Hailong Huang, \n      \n      Haoyang Yang, \n      \n      Renbo Luo, \n      \n      Lujia Wang, \n      \n      Yi Wang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.15362",
+   "pdf_url": "https://arxiv.org/pdf/2610.15362"
+  },
+  {
+   "id": "2610.09294",
+   "title": "RT-Safe: Benchmarking Agent Safety in Real-Time Embodied Environment",
+   "summary": "Rapid progress in AI",
+   "authors": "Tianruo Rose Xu, \n      \n      Jiawei Ren, \n      \n      Yichi Yang, \n      \n      Zhaoxu Zheng, \n      \n      Lianhui Qin",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.09294",
+   "pdf_url": "https://arxiv.org/pdf/2610.09294"
+  },
+  {
+   "id": "2609.38966",
+   "title": "Video2SwimFish: An Automated Pipeline for Reconstructing Controllable Fish Models and Biological Locomotion from Real Fish Videos",
+   "summary": "We present Video2SwimFish, an automated pipeline and benchmark for building controllable fish assets from real-fish videos for underwater embodied",
+   "authors": "Hangong Chen, \n      \n      Linfeng Cheng, \n      \n      Tahsin Zaman Jilan, \n      \n      Ian Fuller, \n      \n      Lee Caesar, \n      \n      Jiaye Wu, \n      \n      Yantian Zha",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2609.38966",
+   "pdf_url": "https://arxiv.org/pdf/2609.38966"
+  },
+  {
+   "id": "2609.38285",
+   "title": "GaugeVLM: Structuring Spatial Supervision with Measured Geometric Interventions",
+   "summary": "Vision-language models (VLMs",
+   "authors": "Hongbo Wang, \n      \n      Zihan Lin, \n      \n      Wenkui Yang, \n      \n      Shiran Ge, \n      \n      Yuang Ai, \n      \n      Jie Cao, \n      \n      Huaibo Huang, \n      \n      Ran He",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2609.38285",
+   "pdf_url": "https://arxiv.org/pdf/2609.38285"
+  },
+  {
+   "id": "2609.28366",
+   "title": "AnchorReasoning: A Visual Grounding and Causal Reasoning Dataset in Long-Tail Autonomous Driving Scenarios",
+   "summary": "Vision-language models (VLMs",
+   "authors": "Zhipeng Bao, \n      \n      Wenjie Zhao, \n      \n      Tianle Zhu, \n      \n      Haohua Que, \n      \n      Chence Yang, \n      \n      Geng Yuan, \n      \n      Qianwen Li",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2609.28366",
+   "pdf_url": "https://arxiv.org/pdf/2609.28366"
+  },
+  {
+   "id": "2609.25841",
+   "title": "Metric-Bench: Exploring In-context Spatial Metric Reasoning in VLMs for Indoor Scenes",
+   "summary": "Metric reasoning is a critical and challenging task for Vision Language Models (VLMs",
+   "authors": "Yuling Xi, \n      \n      Haokai Zhang, \n      \n      Muzhi Zhu, \n      \n      Hao Zhong, \n      \n      Zongze Du, \n      \n      Hengyu Zhao, \n      \n      Chenchen Jing, \n      \n      Yufei Yin, \n      \n      Bin Qin, \n      \n      Yongjie Yang, \n      \n      Zhenbo Luo, \n      \n      Hao Chen, \n      \n      Chunhua Shen",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2609.25841",
+   "pdf_url": "https://arxiv.org/pdf/2609.25841"
+  },
+  {
+   "id": "2609.24526",
+   "title": "ME-VLM: A Unified VLM for Embodied Cognition and Agent Coordination",
+   "summary": "Physical AI",
+   "authors": "Foundation Model, \n      \n      Li Auto Inc",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2609.24526",
+   "pdf_url": "https://arxiv.org/pdf/2609.24526"
+  },
+  {
+   "id": "2609.19138",
+   "title": "In-Context Robot Learning with VLM Agents",
+   "summary": "Enabling robots to adapt to unfamiliar environments as readily as humans remains a moonshot goal of embodied",
+   "authors": "Dongzhou Cheng, \n      \n      Taoran Yi, \n      \n      Ye Fang, \n      \n      Xingwu Zhang, \n      \n      Fan Feng, \n      \n      Yixuan Li, \n      \n      Gengxiong Zhuang, \n      \n      Rongze Wang, \n      \n      Shuai Yang, \n      \n      Wei Song, \n      \n      Weizhi Xue, \n      \n      Minyan Wu, \n      \n      Jie Gui, \n      \n      Jiaqi Wang, \n      \n      Tong Wu",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2609.19138",
+   "pdf_url": "https://arxiv.org/pdf/2609.19138"
+  },
+  {
+   "id": "2609.14615",
+   "title": "Open-UniMo: Towards Unified Motion-Language Understanding and Generation in the Open World",
+   "summary": "Unified motion generation and understanding is crucial for embodied",
+   "authors": "Guocun Wang, \n      \n      Kenkun Liu, \n      \n      Guorui Song, \n      \n      Jing Lin, \n      \n      Zhe Huang, \n      \n      Luyuan Zhang, \n      \n      Dake Zhong, \n      \n      Choo Sin Wai, \n      \n      Xiaoguang Han, \n      \n      Haoqian Wang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2609.14615",
+   "pdf_url": "https://arxiv.org/pdf/2609.14615"
+  },
+  {
+   "id": "2609.09396",
+   "title": "VANTAGE-Bench: Evaluating the Infrastructure AI Gap in Vision-Language Models",
+   "summary": "As Vision-Language Models (VLMs",
+   "authors": "Zaid Pervaiz Bhat, \n      \n      Nimra Nayyar, \n      \n      Arihant Jain, \n      \n      Lap Fung Chan, \n      \n      John Suchanek, \n      \n      Yu Wang, \n      \n      Varun Praveen, \n      \n      Tomasz Kornuta, \n      \n      Vidya Nariyambut Murali",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2609.09396",
+   "pdf_url": "https://arxiv.org/pdf/2609.09396"
+  },
+  {
+   "id": "2609.05594",
+   "title": "SceneMosaic: Efficient and Diverse Simulation-Ready Scene Generation via Hybrid Agentic Layout Evolution",
+   "summary": "Diverse and simulation-ready indoor scenes are essential for interactive entertainment and embodied",
+   "authors": "Xingjian Ran, \n      \n      Xiaoye Mo, \n      \n      Sihao Liu, \n      \n      Jianyu Zhang, \n      \n      Li Luo, \n      \n      Bo Dai",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2609.05594",
+   "pdf_url": "https://arxiv.org/pdf/2609.05594"
+  },
+  {
+   "id": "2609.05583",
+   "title": "An overview of 3D Vision-Language Models",
+   "summary": "Vision-Language Models (VLMs",
+   "authors": "Márcus Lobo, \n      \n      Vitor Matias, \n      \n      Afonso Paiva, \n      \n      Jeová Farias, \n      \n      Tiago Novello, \n      \n      Moacir Ponti",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2609.05583",
+   "pdf_url": "https://arxiv.org/pdf/2609.05583"
+  },
+  {
+   "id": "2608.30821",
+   "title": "Lucida: Parse, Generate, and Place for Composable Real-to-Sim Scene Modeling",
+   "summary": "Composable scene modeling aims to recover a real indoor scene as complete, editable object assets arranged as observed, giving robot simulation and embodied",
+   "authors": "Minghan Qin, \n      \n      Yuang Wang, \n      \n      Xiuyu Yang, \n      \n      Yushi Long, \n      \n      Yujian Zhang, \n      \n      Ruihuan Wang, \n      \n      Kai Ye, \n      \n      Yangang Zhang, \n      \n      Hang Li",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2608.30821",
+   "pdf_url": "https://arxiv.org/pdf/2608.30821"
+  },
+  {
+   "id": "2608.30428",
+   "title": "Lies We Can See: Joint Verbal and Non-Verbal Deception by VLM Agents in Embodied Social Interactions",
+   "summary": "Strategic deception by LLM and VLM",
+   "authors": "Jaewoo Ahn, \n      \n      Junseo Kim, \n      \n      Hyunseo Kim, \n      \n      Heeseung Yun, \n      \n      Jaehyeon Son, \n      \n      Zsolt Kira, \n      \n      Gunhee Kim",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2608.30428",
+   "pdf_url": "https://arxiv.org/pdf/2608.30428"
+  },
+  {
+   "id": "2608.29483",
+   "title": "GeoAgent: Evaluating VLM Geolocalization Through Embodied Navigation",
+   "summary": "Modern Vision-Language Models (VLMs",
+   "authors": "Arka Mukherjee, \n      \n      Soham Roy, \n      \n      Kartikeya Trivedi, \n      \n      Shreya Ghosh",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2608.29483",
+   "pdf_url": "https://arxiv.org/pdf/2608.29483"
+  },
+  {
+   "id": "2608.23354",
+   "title": "OptiSight: Bridging Semantic Reasoning and Geometric Control for Embodied Navigation",
+   "summary": "…Grounded-SAM localizes open-vocabulary targets, while camera projection geometry converts visual observations into navigation commands without requiring dense mapping. The VLM",
+   "authors": "Alperen Avan, \n      \n      Jordi Sanchez-Riera",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2608.23354",
+   "pdf_url": "https://arxiv.org/pdf/2608.23354"
+  },
+  {
+   "id": "2608.21928",
+   "title": "GuardianBench: A Same-Scene Instruction-Contrastive Benchmark for Latent Contextual Risk in Embodied AI",
+   "summary": "In embodied",
+   "authors": "Zhesheng Zhang, \n      \n      Jiahao Lu, \n      \n      Wei Liu, \n      \n      Cong Pan, \n      \n      Jianhua Yang, \n      \n      Yixiang Chen, \n      \n      Hongyuan Yu, \n      \n      Mengqi Zhang, \n      \n      Kailin Lyu, \n      \n      Zhumin Chen, \n      \n      Keji He",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2608.21928",
+   "pdf_url": "https://arxiv.org/pdf/2608.21928"
+  },
+  {
+   "id": "2608.18734",
+   "title": "CL4D: Contrastive Language-4D Pretraining for Vision-Language Reasoning in Dynamic Scenes",
+   "summary": "4D understanding and reasoning is a fundamental capability for embodied",
+   "authors": "Kumal Hewagamage, \n      \n      Isuranga Senavirathne, \n      \n      Sasika Amarasinghe, \n      \n      Hasitha Gallella, \n      \n      Dulanga Weerakoon, \n      \n      Vigneshwaran Subbaraju, \n      \n      Ranga Rodrigo",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2608.18734",
+   "pdf_url": "https://arxiv.org/pdf/2608.18734"
+  },
+  {
+   "id": "2608.18671",
+   "title": "Vision-Language Models for Egocentric Video: From Hand-Object Interaction to Embodied AI",
+   "summary": "…hand--object interaction, and goal-directed behavior. This perspective is increasingly important for wearable intelligence, assistive systems, human--robot interaction, and embodied",
+   "authors": "Mohammad Zamani, \n      \n      Fatemeh Ziaeetabar",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2608.18671",
+   "pdf_url": "https://arxiv.org/pdf/2608.18671"
+  },
+  {
+   "id": "2608.15605",
+   "title": "AlloEgo-VLM: Disambiguating Allocentric and Egocentric Reference Frames in Vision-Language Models",
+   "summary": "This study investigates the challenge of ambiguity faced by Vision-Language Models (VLMs",
+   "authors": "Kuan-Lin Chen, \n      \n      Tzu-Ti Wei, \n      \n      Chao-Chi Liao, \n      \n      Yu-Chee Tseng, \n      \n      Jen-Jee Chen",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2608.15605",
+   "pdf_url": "https://arxiv.org/pdf/2608.15605"
+  },
+  {
+   "id": "2608.12122",
+   "title": "HandEdit: A Unified Benchmark for Egocentric Human-to-Robot Dexterous Hand Image Editing",
+   "summary": "Robotic manipulation with dexterous hands is a cornerstone of Embodied",
+   "authors": "Zhenjie Yang, \n      \n      Xingyu Jiao, \n      \n      Guopeng Zhong, \n      \n      Shuzhe Yang, \n      \n      Shi Che, \n      \n      Chao Wu, \n      \n      Chenyu Jiang, \n      \n      Dongjie Zhang, \n      \n      Yideng Zhang, \n      \n      Zheng Zhang, \n      \n      Muyun Jiang, \n      \n      Haisheng Su, \n      \n      Shuang Jin, \n      \n      Donghang Zhang, \n      \n      Chao Yang, \n      \n      Li Chen, \n      \n      Hongyang Li, \n      \n      Zuxuan Wu, \n      \n      Yu-Gang Jiang, \n      \n      Xiaosong Jia, \n      \n      Junchi Yan",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2608.12122",
+   "pdf_url": "https://arxiv.org/pdf/2608.12122"
+  },
+  {
+   "id": "2608.11692",
+   "title": "HUGIN: Enhancing Vision-Language Planning for Autonomous Logistics Sorting",
+   "summary": "Autonomous logistics sorting systems (ALSS) are an important industrial application of embodied",
+   "authors": "Xikai Sun, \n      \n      Cangtian Zhou, \n      \n      Kebin Liu, \n      \n      Ke Ma, \n      \n      Xu Wang, \n      \n      Zaishu Chen, \n      \n      Haotian Wang, \n      \n      Li Liu, \n      \n      Yunhao Liu",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2608.11692",
+   "pdf_url": "https://arxiv.org/pdf/2608.11692"
+  },
+  {
+   "id": "2608.10864",
+   "title": "Multi-View Relational Distillation for Spatial Reasoning with Vision-Language Models",
+   "summary": "Vision-language models (VLMs",
+   "authors": "Kiet T. Nguyen, \n      \n      Hanbo Shim, \n      \n      Jinwoo Kim, \n      \n      Seunghoon Hong",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2608.10864",
+   "pdf_url": "https://arxiv.org/pdf/2608.10864"
+  },
+  {
+   "id": "2608.08491",
+   "title": "TrustRoboReward: Preference-Ordered Isotonic Score Editing for Multi-Paradigm Robot Reward Models",
+   "summary": "Reward models are a bottleneck for reinforcement learning in embodied",
+   "authors": "Yidong Wang, \n      \n      Yan Zhan, \n      \n      Ziteng Feng, \n      \n      Zhenyu Cui, \n      \n      Ziyi Zhou, \n      \n      Renzhao Liang, \n      \n      Jiaxuan Zhu, \n      \n      Zilei Yang, \n      \n      Yiran Zhao, \n      \n      Zhongkuan Mao, \n      \n      Bo Jia, \n      \n      Hanchu Ni, \n      \n      Chenggang Xie, \n      \n      Biao Liu, \n      \n      Yi Zhang, \n      \n      Yong Dai, \n      \n      Xiaozhu Ju, \n      \n      Wei Ye, \n      \n      Shikun Zhang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2608.08491",
+   "pdf_url": "https://arxiv.org/pdf/2608.08491"
+  },
+  {
+   "id": "2608.08077",
+   "title": "Explore, Map, Remember, Decide: Are Embodied VLMs Ready for Safety-Critical Scenarios?",
+   "summary": "Theory of Space framework (ToS) assesses the spatial understanding of curiosity-driven Vision-Language Models (VLMs",
+   "authors": "Gabriele La Malfa, \n      \n      Nitay Alon, \n      \n      Emanuele La Malfa, \n      \n      Reuth Mirsky, \n      \n      Stefan Sarkadi",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2608.08077",
+   "pdf_url": "https://arxiv.org/pdf/2608.08077"
+  },
+  {
+   "id": "2607.28442",
+   "title": "ViewMind3D: Modular View-Aware Inference for Training-Free 3D-QA",
+   "summary": "Recent advances in large language models (LLMs) and vision-language models (VLMs",
+   "authors": "Ping-Kun Chiang, \n      \n      Kun-Ru Wu, \n      \n      Po-han Li, \n      \n      Sandeep Chinchali, \n      \n      Ufuk Topcu, \n      \n      Yu-Chee Tseng",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2607.28442",
+   "pdf_url": "https://arxiv.org/pdf/2607.28442"
+  },
+  {
+   "id": "2607.22355",
+   "title": "SiPhy: Single-Image Physical Property Reasoning",
+   "summary": "Inferring physical properties such as mass, stiffness, and elasticity from a single image is essential for simulation and embodied",
+   "authors": "Hoang Le, \n      \n      Joonwoo Kwon, \n      \n      Elkhan Ismayilzada, \n      \n      Yufei Zhang, \n      \n      Zijun Cui",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2607.22355",
+   "pdf_url": "https://arxiv.org/pdf/2607.22355"
+  },
+  {
+   "id": "2607.10269",
+   "title": "Devil in the Lens: Analyzing and Defending Physical Prompt Injection Against Vision-Language Models on Wearable Devices",
+   "summary": "Vision-Language Models (VLMs",
+   "authors": "Yaxin Li, \n      \n      Hao Wang, \n      \n      Yanda Shao, \n      \n      Shuhao Zhang, \n      \n      Yan Long",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2607.10269",
+   "pdf_url": "https://arxiv.org/pdf/2607.10269"
+  },
+  {
+   "id": "2607.09520",
+   "title": "Seeing is Free, Speaking is Not: Uncovering the True Energy Bottleneck in Edge VLM Inference",
+   "summary": "Vision-Language Models (VLMs",
+   "authors": "Junfei Zhan, \n      \n      Haoxun Shen, \n      \n      Mingang Guo, \n      \n      Zixuan Huang, \n      \n      Tengjiao He",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2607.09520",
+   "pdf_url": "https://arxiv.org/pdf/2607.09520"
+  },
+  {
+   "id": "2607.02497",
+   "title": "Seek to Segment: Active Perception for Panoramic Referring Segmentation",
+   "summary": "Existing referring segmentation models passively process static images captured from fixed perspectives, limiting their applicability in Embodied",
+   "authors": "Song Tang, \n      \n      Shuming Hu, \n      \n      Xincheng Shuai, \n      \n      Henghui Ding, \n      \n      Yu-Gang Jiang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2607.02497",
+   "pdf_url": "https://arxiv.org/pdf/2607.02497"
+  },
+  {
+   "id": "2606.28215",
+   "title": "HAT-4D: Lifting Monocular Video for 4D Multi-Object Interactions via Human-Agent Collaboration",
+   "summary": "Extracting dynamic 4D object interactions from massive, in-the-wild monocular videos offers a highly efficient data collection pathway for scaling Embodied",
+   "authors": "Jiaxin Li, \n      \n      Yuxiang Wu, \n      \n      Zhenkai Zhang, \n      \n      Xinrui Shi, \n      \n      Haoyuan Wang, \n      \n      Yichen Zhao, \n      \n      Su Linxiang, \n      \n      Chenyang Yu, \n      \n      Mingyu Zhang, \n      \n      Yifan Ding, \n      \n      Boran Wen, \n      \n      Li Zhang, \n      \n      Ruiyang Liu, \n      \n      Yong-Lu Li",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2606.28215",
+   "pdf_url": "https://arxiv.org/pdf/2606.28215"
+  },
+  {
+   "id": "2606.19598",
+   "title": "Fail-RAG : A Retrieval Augmented Generation Informed Framework for Robot Failure Identification",
+   "summary": "Industry automation is witnessing an evolution in robotics driven by both technological breakthroughs and societal changes: progress towards generalist robots, embodied",
+   "authors": "Ameya Salvi, \n      \n      Jie Hu",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2606.19598",
+   "pdf_url": "https://arxiv.org/pdf/2606.19598"
+  },
+  {
+   "id": "2606.19253",
+   "title": "OneCanvas: 3D Scene Understanding via Panoramic Reprojection",
+   "summary": "Existing approaches to 3D scene understanding in Vision-Language Models (VLMs",
+   "authors": "Bartłomiej Baranowski, \n      \n      Dave Zhenyu Chen, \n      \n      Matthias Nießner",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2606.19253",
+   "pdf_url": "https://arxiv.org/pdf/2606.19253"
+  },
+  {
+   "id": "2606.15898",
+   "title": "VL2Spike: Spike-driven Distillation from VLMs for Low-Power Visual Perception in Embodied AI",
+   "summary": "…neural networks (SNNs) are brain-inspired, event-driven models that compute with sparse spikes, which enables highly efficient visual perception in resource-constrained embodied",
+   "authors": "Zinan Liu, \n      \n      Eric Zheng, \n      \n      Soumyaratna Debnath, \n      \n      Hao Shi, \n      \n      Ling Xiao, \n      \n      Lin Wang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2606.15898",
+   "pdf_url": "https://arxiv.org/pdf/2606.15898"
+  },
+  {
+   "id": "2606.13458",
+   "title": "From Traditional Automation to Embodied Wireless Intelligence: Vision-Language-Action Empowered Physics-Aware Communication Networks",
+   "summary": "…systems remain fundamentally disembodied. They act on performance indicators without perceiving the physical environment that governs radio propagation. We propose the embodied",
+   "authors": "Genze Jiang, \n      \n      Kezhi Wang, \n      \n      Xiaomin Chen, \n      \n      Yizhou Huang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2606.13458",
+   "pdf_url": "https://arxiv.org/pdf/2606.13458"
+  },
+  {
+   "id": "2606.09428",
+   "title": "Guide Me Out: A Framework to Benchmark VLM Operators Communication in Crisis Scenarios",
+   "summary": "…contexts. Yet, current NLP research in crisis communication remains mainly limited to static, text-only classification settings, overlooking the critical communicative role of AI",
+   "authors": "Giacomo Gonella, \n      \n      Stefano Menini, \n      \n      Marco Guerini",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2606.09428",
+   "pdf_url": "https://arxiv.org/pdf/2606.09428"
+  },
+  {
+   "id": "2606.06390",
+   "title": "HomeWorld: A Unified Floorplan-to-Furnished Framework for Generating Controllable, Densely Interactive Whole-Home Scenes",
+   "summary": "…from multi-level roaming viewpoints, and then generate the layouts of small manipulable objects on different supporting surfaces (e.g., cabinets, desks, and dining tables) for embodied",
+   "authors": "Wenbo Li, \n      \n      Xiaoliang Ju, \n      \n      Zipeng Qin, \n      \n      Rongyao Fang, \n      \n      Hongsheng Li",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2606.06390",
+   "pdf_url": "https://arxiv.org/pdf/2606.06390"
+  },
+  {
+   "id": "2606.04773",
+   "title": "NextMotionQA: Benchmarking and Judging Human Motion Understanding with Vision-Language Models",
+   "summary": "Reliable evaluation of human motion understanding is fundamental to advancing embodied",
+   "authors": "Yong Cao, \n      \n      Chuqiao Li, \n      \n      Xianghui Xie, \n      \n      Gerard Pons-Moll, \n      \n      Andreas Geiger",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2606.04773",
+   "pdf_url": "https://arxiv.org/pdf/2606.04773"
+  },
+  {
+   "id": "2606.04046",
+   "title": "Dive into the Scene: Breaking the Perceptual Bottleneck in Vision-Language Decision Making via Focus Plan Generation",
+   "summary": "In embodied",
+   "authors": "Boyuan Xiao, \n      \n      Bohong Chen, \n      \n      Yumeng Li, \n      \n      Ji Feng, \n      \n      Yao-Xiang Ding, \n      \n      Kun Zhou",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2606.04046",
+   "pdf_url": "https://arxiv.org/pdf/2606.04046"
+  },
+  {
+   "id": "2606.02742",
+   "title": "Consistent Yet Wrong: Evidence Insensitivity in Spatial Vision-Language Models",
+   "summary": "Spatial reasoning is fundamental to robotics, autonomy, and embodied",
+   "authors": "S Divakar Bhat, \n      \n      Toshihiko Yamasaki",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2606.02742",
+   "pdf_url": "https://arxiv.org/pdf/2606.02742"
+  },
+  {
+   "id": "2606.00828",
+   "title": "RoboStressBench: Benchmarking VLM Robustness to Physical Visual Stress in Embodied Scenes",
+   "summary": "Vision-Language Models (VLMs",
+   "authors": "Leyi Wu, \n      \n      Yifan Zhao, \n      \n      Jinjie Zhang, \n      \n      Suzeyu Chen, \n      \n      Wosong Chen, \n      \n      Zhifei Chen, \n      \n      Tianshuo Xu, \n      \n      Qingchun He, \n      \n      Hongxin Hu, \n      \n      Haojian Huang, \n      \n      Yangkai Wei, \n      \n      Wenqian Li, \n      \n      Yinchuan Li, \n      \n      Ying-Cong Chen",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2606.00828",
+   "pdf_url": "https://arxiv.org/pdf/2606.00828"
+  },
+  {
+   "id": "2605.23187",
+   "title": "IntentionNav: A Benchmark for Intent-Driven Object Navigation from Implicit Human Instruction",
+   "summary": "Existing object navigation benchmarks usually tell an embodied",
+   "authors": "Lin Qian, \n      \n      Shijie Li, \n      \n      Sihao Lin, \n      \n      Xuan Zhang, \n      \n      Bangya Liu, \n      \n      Yanran Li, \n      \n      Hujun Yin",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2605.23187",
+   "pdf_url": "https://arxiv.org/pdf/2605.23187"
+  },
+  {
+   "id": "2605.19328",
+   "title": "RoboJailBench: Benchmarking Adversarial Attacks and Defenses in Embodied Robotic Agents",
+   "summary": "Recent advances in Vision-Language Models (VLMs",
+   "authors": "Doguhuan Yeke, \n      \n      Yanming Zhou, \n      \n      Leo Y. Lin, \n      \n      Hongyu Cai, \n      \n      Antonio Bianchi, \n      \n      Z. Berkay Celik",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2605.19328",
+   "pdf_url": "https://arxiv.org/pdf/2605.19328"
+  },
+  {
+   "id": "2605.14504",
+   "title": "When Robots Do the Chores: A Benchmark and Agent for Long-Horizon Household Task Execution",
+   "summary": "Long-horizon household tasks demand robust high-level planning and sustained reasoning capabilities, which are largely overlooked by existing embodied",
+   "authors": "Zilin Zhu, \n      \n      Longteng Guo, \n      \n      Yanghong Mei, \n      \n      Bowen Pang, \n      \n      Zongxun Zhang, \n      \n      Xingjian He, \n      \n      Ruyi Ji, \n      \n      Jing Liu",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2605.14504",
+   "pdf_url": "https://arxiv.org/pdf/2605.14504"
+  },
+  {
+   "id": "2605.07306",
+   "title": "BioProVLA-Agent: An Affordable, Protocol-Driven, Vision-Enhanced VLA-Enabled Embodied Multi-Agent System with Closed-Loop-Capable Reasoning for Biological Laboratory Manipulation",
+   "summary": "Biological laboratory automation can reduce repetitive manual work and improve reproducibility, but reliable embodied",
+   "authors": "Zhaohui Du, \n      \n      Zhe Wang, \n      \n      Dongzhan Zhou, \n      \n      Minting Pan, \n      \n      Hongmei Fei, \n      \n      Xiwen Cao, \n      \n      Ting Xiao, \n      \n      Qi Wang, \n      \n      Huanbo Jin, \n      \n      Jiaming Gu, \n      \n      Quan Lu, \n      \n      Zhe Liu",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2605.07306",
+   "pdf_url": "https://arxiv.org/pdf/2605.07306"
+  },
+  {
+   "id": "2605.07088",
+   "title": "Membership Inference Attacks on Vision-Language-Action Models",
+   "summary": "Membership inference attacks (MIAs) have been extensively studied in large language models (LLMs) and vision-language models (VLMs",
+   "authors": "Yuefeng Peng, \n      \n      Mingzhe Li, \n      \n      Kejing Xia, \n      \n      Renhao Zhang, \n      \n      Amir Houmansadr",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2605.07088",
+   "pdf_url": "https://arxiv.org/pdf/2605.07088"
+  },
+  {
+   "id": "2605.05163",
+   "title": "PhysForge: Generating Physics-Grounded 3D Assets for Interactive Virtual World",
+   "summary": "Synthesizing physics-grounded 3D assets is a critical bottleneck for interactive virtual worlds and embodied",
+   "authors": "Yunhan Yang, \n      \n      Chunshi Wang, \n      \n      Junliang Ye, \n      \n      Yang Li, \n      \n      Zanxin Chen, \n      \n      Zehuan Huang, \n      \n      Yao Mu, \n      \n      Zhuo Chen, \n      \n      Chunchao Guo, \n      \n      Xihui Liu",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2605.05163",
+   "pdf_url": "https://arxiv.org/pdf/2605.05163"
+  },
+  {
+   "id": "2604.26261",
+   "title": "Multiple Consistent 2D-3D Mappings for Robust Zero-Shot 3D Visual Grounding",
+   "summary": "Zero-shot 3D Visual Grounding (3DVG) is a critical capability for open-world embodied",
+   "authors": "Yufei Yin, \n      \n      Jie Zheng, \n      \n      Qianke Meng, \n      \n      Zhou Yu, \n      \n      Minghao Chen, \n      \n      Jiajun Ding, \n      \n      Min Tan, \n      \n      Yuling Xi, \n      \n      Zhiwen Chen, \n      \n      Chengfei Lv",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2604.26261",
+   "pdf_url": "https://arxiv.org/pdf/2604.26261"
+  },
+  {
+   "id": "2604.22851",
+   "title": "EgoDyn-Bench: Evaluating Ego-Motion Understanding in Vision-Centric Foundation Models for Autonomous Driving",
+   "summary": "While Vision-Language Models (VLMs",
+   "authors": "Finn Rasmus Schäfer, \n      \n      Yuan Gao, \n      \n      Dingrui Wang, \n      \n      Thomas Stauner, \n      \n      Stephan Günnemann, \n      \n      Mattia Piccinini, \n      \n      Sebastian Schmidt, \n      \n      Johannes Betz",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2604.22851",
+   "pdf_url": "https://arxiv.org/pdf/2604.22851"
+  },
+  {
+   "id": "2610.22341",
+   "title": "3DCodeVerse: Exploring 3D Worlds as Code",
+   "summary": "We introduce 3DCodeVerse, a research ecosystem that enables coding agents to create editable and verifiable 3D",
+   "authors": "Yipeng Gao, \n      \n      Ziyao Zeng, \n      \n      Jinfa Huang, \n      \n      Yijiang Li, \n      \n      Haolin Xiong, \n      \n      Wang Qin, \n      \n      Xinlei Yu, \n      \n      Youheng Yao, \n      \n      Jie Zhang, \n      \n      Kun-Yu Lin, \n      \n      Rong Liu, \n      \n      Yinyuan Zhao, \n      \n      Yajie Zhao, \n      \n      Meiqi Guo, \n      \n      Jiebo Luo, \n      \n      Lei Shu, \n      \n      Yunhao Ge, \n      \n      Xinyu Hu, \n      \n      Laurent Itti",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.22341",
+   "pdf_url": "https://arxiv.org/pdf/2610.22341"
+  },
+  {
+   "id": "2610.20598",
+   "title": "DynThinker: Unifying Static 3D and Dynamic 4D Spatial Reasoning",
+   "summary": "Achieving general spatial",
+   "authors": "Qihang Cao, \n      \n      Haoyuan Li, \n      \n      Zihan Guo, \n      \n      Sensen Gao, \n      \n      Zihui Gao, \n      \n      Huixin Zhang, \n      \n      Fan He, \n      \n      Jianhua Han, \n      \n      Hang Xu, \n      \n      Xiaodan Liang, \n      \n      Jia-Wang Bian",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.20598",
+   "pdf_url": "https://arxiv.org/pdf/2610.20598"
+  },
+  {
+   "id": "2610.20592",
+   "title": "GeoThinker-$F$: Endogenous Predictive World Representations for Fast Spatial Intelligence",
+   "summary": "Existing geometry-aware Multimodal Large Language Models (MLLMs) increasingly rely on external 3D",
+   "authors": "Haoyuan Li, \n      \n      Qihang Cao, \n      \n      Huanyuan Zhou, \n      \n      Xin Hu, \n      \n      Sijia Chen, \n      \n      Zihan Guo, \n      \n      Kun Xiang, \n      \n      Yunshuang Nie, \n      \n      Tao Tang, \n      \n      Xinlong Zheng, \n      \n      Jia-Wang Bian, \n      \n      Xianming Liu, \n      \n      Xiaodan Liang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.20592",
+   "pdf_url": "https://arxiv.org/pdf/2610.20592"
+  },
+  {
+   "id": "2610.19795",
+   "title": "StateCraft: Augmenting Video World Models with Abstract-State Reasoning",
+   "summary": "…trajectories. Because the abstract state is explicit, it can be edited directly, and generation follows edits to states never observed in the data. Finally, a proof-of-concept 3D",
+   "authors": "Lorenzo Venturoli, \n      \n      Nedko Savov, \n      \n      Xi Wang, \n      \n      Marc Pollefeys, \n      \n      Luc Van Gool",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.19795",
+   "pdf_url": "https://arxiv.org/pdf/2610.19795"
+  },
+  {
+   "id": "2610.18478",
+   "title": "MemoryVLN: From Ego-Aware Memory Representation to Cross-Context Memory Reuse in Vision-Language Navigation",
+   "summary": "…vision-language navigation (VLN), yet their performance degrades on long-horizon trajectories due to context-length limits, redundant historical observations, and unstable spatial",
+   "authors": "Xueyao Wei, \n      \n      Yifei Wang, \n      \n      Delun Li, \n      \n      Shaoan Wang, \n      \n      Junzhi Yu, \n      \n      Wenjie Song, \n      \n      Xingyu Chen",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.18478",
+   "pdf_url": "https://arxiv.org/pdf/2610.18478"
+  },
+  {
+   "id": "2610.18356",
+   "title": "Urbex: Agentic Spatial Grounding for City-Scale 3D Scenes",
+   "summary": "City-scale 3D",
+   "authors": "Yu Wang, \n      \n      Rui Dai, \n      \n      Wei Chen, \n      \n      Yi Wang, \n      \n      Bo Dang, \n      \n      Kaikui Liu, \n      \n      Xiangxiang Chu, \n      \n      Yansheng Li",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.18356",
+   "pdf_url": "https://arxiv.org/pdf/2610.18356"
+  },
+  {
+   "id": "2610.18342",
+   "title": "CityCode: Building Agent-Operable 3D Cities from Sparse Aerial Observations",
+   "summary": "Urban spatial",
+   "authors": "Jiahui Sun, \n      \n      Ran Bi, \n      \n      Yifei Liu, \n      \n      Xiaolong Zhou, \n      \n      Yishuo Xu, \n      \n      Yuanqi Li, \n      \n      Congcong Zhu, \n      \n      Lei Yang, \n      \n      Yanwen Guo, \n      \n      Zhihang Zhong, \n      \n      Hongjie Zhang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.18342",
+   "pdf_url": "https://arxiv.org/pdf/2610.18342"
+  },
+  {
+   "id": "2610.17944",
+   "title": "AI-Enhanced Hyperspectral Imaging for Intraoperative Detection of Low-Grade Glioma: A Clinical Study",
+   "summary": "…showed consistently lower reflectance, which may be associated with differences in hemoglobin concentration and oxygenation. A range of classification models was evaluated. The 3D",
+   "authors": "Siri Willems, \n      \n      Ishika Jain, \n      \n      Jens De Winne, \n      \n      Siri Luthman, \n      \n      Hamed Zivari Adab, \n      \n      Roeland Vandebriel, \n      \n      Anna Alperovich, \n      \n      Xiaohan Zhang, \n      \n      Ben Stoffelen, \n      \n      Tom De Schepper, \n      \n      Lien Solie, \n      \n      Steven De Vleeschouwer",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.17944",
+   "pdf_url": "https://arxiv.org/pdf/2610.17944"
+  },
+  {
+   "id": "2610.17665",
+   "title": "RoTA-Bench: Evaluating 3D Spatial Reasoning through Interactive Projection Alignment",
+   "summary": "Can vision-language models turn 2D observations into 3D",
+   "authors": "Qingchuan Ma, \n      \n      Yuexiao Ma, \n      \n      Xiang Meng, \n      \n      Yixuan Zou, \n      \n      Tianyu Xie, \n      \n      Wang Chen, \n      \n      Yuhui Zeng, \n      \n      Yuhang Wu, \n      \n      Xiawu Zheng, \n      \n      Rongrong Ji",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.17665",
+   "pdf_url": "https://arxiv.org/pdf/2610.17665"
+  },
+  {
+   "id": "2610.16558",
+   "title": "G$^2$WAM: World Action Models for Efficient and Geometry Grounded Image-Goal Navigation",
+   "summary": "…In image-goal navigation, where the target often lies beyond the current field of view, the agent must not only model environmental dynamics but also maintain a persistent spatial",
+   "authors": "Ke Gui, \n      \n      Chenghao Shi, \n      \n      Ziyue Wang, \n      \n      Longwen Chen, \n      \n      Xieyuanli Chen, \n      \n      Huimin Lu",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.16558",
+   "pdf_url": "https://arxiv.org/pdf/2610.16558"
+  },
+  {
+   "id": "2610.16342",
+   "title": "Analysis of Integrated Communication and Sensing in Cylindrical Aerial Corridors",
+   "summary": "…station (BS) in a UAV network. A fixed number of UAV user equipment (UAVUEs) and UAV-BSs are deployed in an aerial corridor modeled as a finite cylinder. The three-dimensional (3D",
+   "authors": "Harris K. Armeniakos, \n      \n      Petros S. Bithas, \n      \n      Athanasios G. Kanatas, \n      \n      Harpreet S. Dhillon",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.16342",
+   "pdf_url": "https://arxiv.org/pdf/2610.16342"
+  },
+  {
+   "id": "2610.16337",
+   "title": "WorldRoPE: Probabilistic World-Centric Rotary Embedding for Multi-View Attention",
+   "summary": "…Embedding (RoPE) is widely used to encode relative positions in Transformers. In multi-view settings, however, patch coordinates are defined independently in each image: the same 3D",
+   "authors": "Mijeong Kim, \n      \n      Kyujin Lim, \n      \n      Bohyung Han",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.16337",
+   "pdf_url": "https://arxiv.org/pdf/2610.16337"
+  },
+  {
+   "id": "2610.16330",
+   "title": "BAT3R: Robust Online 3D Reconstruction with Bayesian Adaptive State Updates",
+   "summary": "Feed-forward transformer models have driven remarkable progress in 3D",
+   "authors": "Lijian Li, \n      \n      Yuanpeng He, \n      \n      Yudian Zheng, \n      \n      Chung-ju Huang, \n      \n      Linyu Li, \n      \n      Dongming Jin, \n      \n      Wenpin Jiao, \n      \n      Zhi Jin, \n      \n      Chi-Man Pun",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.16330",
+   "pdf_url": "https://arxiv.org/pdf/2610.16330"
+  },
+  {
+   "id": "2610.16146",
+   "title": "Unravel: Recovering an Interactive 3D Scene from a Single Image",
+   "summary": "We present Unravel, a training-free framework that turns a single image into an interactive 3D",
+   "authors": "Hui Shan, \n      \n      Keyang Luo, \n      \n      Binjia Zhou, \n      \n      Ming Li, \n      \n      Kai Li, \n      \n      Xin Wang, \n      \n      Zhenyang Li, \n      \n      Zesong Yang, \n      \n      Weikai Chen, \n      \n      Runze Zhang, \n      \n      Xin Wang, \n      \n      Yanwei Fu, \n      \n      Zhen Chen, \n      \n      Xiangru Huang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.16146",
+   "pdf_url": "https://arxiv.org/pdf/2610.16146"
+  },
+  {
+   "id": "2610.15900",
+   "title": "Gen Through the Lens: Camera-Controllable Video Generation via Cross-Coordinate Conditioning Fusion",
+   "summary": "…explicitly decomposes and fuses control signals across three coordinate spaces: the camera coordinate (modeled by intrinsic parameters), the world coordinate (represented by spatial",
+   "authors": "Shuai Li, \n      \n      Jinxu Xiang, \n      \n      Xinyuan Li, \n      \n      Hanlei Guo, \n      \n      Xiyang Tan, \n      \n      Alan Zhao, \n      \n      Xiaotong Zhao, \n      \n      Ran Zhang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.15900",
+   "pdf_url": "https://arxiv.org/pdf/2610.15900"
+  },
+  {
+   "id": "2610.14492",
+   "title": "Multi-modal Representation Fusion for Long-term Microsurgical Anastomosis Trajectory Anticipation",
+   "summary": "…multi-modal representations for complex surgical instrument-tissue interactions. In this work, we propose a cross-modal feature fusion framework for long-term 2D and 3D",
+   "authors": "Yuxuan Liu, \n      \n      Yating Luo, \n      \n      Yunfei Luan, \n      \n      Xinyao Zhou, \n      \n      Yuyang Zhuge, \n      \n      Yao Guo, \n      \n      Guang-Zhong Yang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.14492",
+   "pdf_url": "https://arxiv.org/pdf/2610.14492"
+  },
+  {
+   "id": "2610.13035",
+   "title": "GeoGR: Spatial-Semantic Token Compression and Group Routing for Efficient 3D VLMs",
+   "summary": "Multi-view representations enable pretrained image and video vision-language models to understand 3D",
+   "authors": "Yongxin Zheng, \n      \n      Hao Wu, \n      \n      Fang Li, \n      \n      Hu Fu, \n      \n      Peiran Yin, \n      \n      Xudong Wang, \n      \n      Haozhe Hu, \n      \n      Xinghao Chen, \n      \n      Yunpu Ma, \n      \n      Wei Zhang, \n      \n      Xiaoyu Shen",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.13035",
+   "pdf_url": "https://arxiv.org/pdf/2610.13035"
+  },
+  {
+   "id": "2610.12402",
+   "title": "SpaceCast-Bench: Evaluating Predictive Spatial Reasoning in Vision-Language Models",
+   "summary": "Existing spatial",
+   "authors": "Hongxing Li, \n      \n      Jinyue Su, \n      \n      Dingming Li, \n      \n      Wenqi Zhang, \n      \n      Weiming Lu, \n      \n      Jun Xiao, \n      \n      Yueting Zhuang, \n      \n      Yongliang Shen",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.12402",
+   "pdf_url": "https://arxiv.org/pdf/2610.12402"
+  },
+  {
+   "id": "2610.12399",
+   "title": "SpaceFlow: Locally Controllable 3D Generation",
+   "summary": "Current 3D",
+   "authors": "Neil De La Fuente, \n      \n      Joan Lafuente, \n      \n      Mukhammadali Sayfiddinov, \n      \n      Felicia Scharitzer, \n      \n      Marc Pollefeys, \n      \n      Ata Celen, \n      \n      Sayan Deb Sarkar, \n      \n      Elisabetta Fedele",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.12399",
+   "pdf_url": "https://arxiv.org/pdf/2610.12399"
+  },
+  {
+   "id": "2610.12355",
+   "title": "Distilling Routed 3D Privilege for Spatial Reasoning in Vision-Language Models",
+   "summary": "Spatial",
+   "authors": "Hongxing Li, \n      \n      Yixin Li, \n      \n      Dingming Li, \n      \n      Zixuan Wang, \n      \n      Yuchen Yan, \n      \n      Wenqi Zhang, \n      \n      Weiming Lu, \n      \n      Yongliang Shen",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.12355",
+   "pdf_url": "https://arxiv.org/pdf/2610.12355"
+  },
+  {
+   "id": "2610.12266",
+   "title": "DVD: Dynamic Vector Decoding for Efficient MLLM-based Perception",
+   "summary": "…text-based coordinate representation, which suffers from excessive token overhead, or fixed-range quantization, which suffers from range and precision constraints, especially for 3D",
+   "authors": "Jinghua Hou, \n      \n      Zhe Liu, \n      \n      Hengshuang Zhao",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.12266",
+   "pdf_url": "https://arxiv.org/pdf/2610.12266"
+  },
+  {
+   "id": "2610.12069",
+   "title": "LIVIN: Benchmarking Spatial and Embodied Intelligence in Digital Twins of Lived-In Homes",
+   "summary": "Realistic household simulation must capture not only diverse environments but also the lived-in object arrangements and spatial",
+   "authors": "Peijun Xu, \n      \n      Chuansen Nie, \n      \n      Yiyang He, \n      \n      Yinuo Bai, \n      \n      Jingyang Liu, \n      \n      Kuixiang Shao, \n      \n      Yuyang Jiao, \n      \n      Kuanhao Xia, \n      \n      Jiayi Zhu, \n      \n      Zitian Yang, \n      \n      Yanqi Zhang, \n      \n      Tianye Tan, \n      \n      Shuwei Di, \n      \n      Junyi Xu, \n      \n      Jingyi Yu, \n      \n      Jiayuan Gu",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.12069",
+   "pdf_url": "https://arxiv.org/pdf/2610.12069"
+  },
+  {
+   "id": "2610.11894",
+   "title": "STcubeOperator: A Framework for Analyzing Spatiotemporal Event Data",
+   "summary": "The analysis of spatiotemporal event data is essential for informed decision-making in domains such as disaster response, conflict analysis, or intelligence",
+   "authors": "Julius Rauscher, \n      \n      Lucas Joos, \n      \n      Mark Rohonyi, \n      \n      Daniel A. Keim, \n      \n      Maximilian T. Fischer",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.11894",
+   "pdf_url": "https://arxiv.org/pdf/2610.11894"
+  },
+  {
+   "id": "2610.11310",
+   "title": "FloorSAV: Elucidating Spatial Audio-Visual Context with 2D Floormap for AV-LLMs",
+   "summary": "While 3D",
+   "authors": "Kyeong-Rae Kim, \n      \n      Sungnyun Kim, \n      \n      Tae-Hyun Oh",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.11310",
+   "pdf_url": "https://arxiv.org/pdf/2610.11310"
+  },
+  {
+   "id": "2610.10538",
+   "title": "Never Look Back: Understanding Persistence in 3D Object Memory from Egocentric Videos",
+   "summary": "…Here, we study how an embodied assistant can build a similar memory from egocentric videos, by observing a person's day-to-day activities. We present Ledger, a persistent 3D",
+   "authors": "Shravan Chaudhari, \n      \n      William Paul, \n      \n      Suchi Saria, \n      \n      Rama Chellappa, \n      \n      Homanga Bharadhwaj",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.10538",
+   "pdf_url": "https://arxiv.org/pdf/2610.10538"
+  },
+  {
+   "id": "2610.09761",
+   "title": "PARC-Loc: Text-to-Point-Cloud Localization with Partial Assignment and Relational Consistency",
+   "summary": "Text-to-point-cloud localization estimates a position in a city-scale 3D",
+   "authors": "Shengkai Ma, \n      \n      Zhenyu Hou, \n      \n      Weihua Cao",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.09761",
+   "pdf_url": "https://arxiv.org/pdf/2610.09761"
+  },
+  {
+   "id": "2610.09335",
+   "title": "SearchWorld: Spatial Value-Grounded Imagination for UAV Object Search via World Models",
+   "summary": "…decision-making, and action under partial observability. Urban environments pose several challenges: large search areas and narrow egocentric views limit coverage, dense 3D",
+   "authors": "Yatai Ji, \n      \n      Zhengqiu Zhu, \n      \n      Yong Zhao, \n      \n      Yue Hu, \n      \n      Fanglong Yao, \n      \n      Chen Gao, \n      \n      Pengfei Zhu, \n      \n      Quanjun Yin",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.09335",
+   "pdf_url": "https://arxiv.org/pdf/2610.09335"
+  },
+  {
+   "id": "2610.08780",
+   "title": "DepthWorld: 3D World Model for Robot Manipulation",
+   "summary": "…a data-driven alternative to traditional simulators for robotics, with applications spanning policy evaluation, improvement, and planning. All of these uses depend on faithful 3D",
+   "authors": "Jai Bardhan, \n      \n      Josef Sivic, \n      \n      Vladimir Petrik",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.08780",
+   "pdf_url": "https://arxiv.org/pdf/2610.08780"
+  },
+  {
+   "id": "2610.08446",
+   "title": "AssemState: Manual and Physical-State-Guided Reasoning for Zero-shot Furniture Assembly",
+   "summary": "Multimodal large language models (MLLMs) have made significant progress in visual understanding, but precise 3D",
+   "authors": "Zhiyuan Qi, \n      \n      Jierui Li, \n      \n      Yifan Shen, \n      \n      Cheng Qian, \n      \n      Jiateng Liu",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.08446",
+   "pdf_url": "https://arxiv.org/pdf/2610.08446"
+  },
+  {
+   "id": "2610.07982",
+   "title": "M3SunAgent: Monocular 3D Spatial Understanding Agent for Metric Depth Estimation and 3D Visual Grounding",
+   "summary": "Monocular metric depth estimation and 3D",
+   "authors": "Jinsong Zhang, \n      \n      Kejun Wu, \n      \n      Ming Zhu, \n      \n      Renjie Qiao, \n      \n      Chengtao Cai, \n      \n      Zhengguo Li",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.07982",
+   "pdf_url": "https://arxiv.org/pdf/2610.07982"
+  },
+  {
+   "id": "2610.07460",
+   "title": "ElasticFit: Fit-Aware 3D Object Insertion via VLM Reasoning and Generative Adaptation",
+   "summary": "Inserting objects into existing 3D",
+   "authors": "Tzu-Hsin Hsieh, \n      \n      Ricardo Marroquim",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.07460",
+   "pdf_url": "https://arxiv.org/pdf/2610.07460"
+  },
+  {
+   "id": "2610.06571",
+   "title": "BrainTRACE: Tracing Longitudinal, Multimodal, and Volumetric Evidence in Brain MRI Clinical Reasoning",
+   "summary": "…integrate information across MRI sequences, localize findings within volumetric anatomy, and translate this evidence into report-grounded assessments. Existing medical VQA and 3D",
+   "authors": "Qizhen Lan, \n      \n      Mengchen Fan, \n      \n      Hang Zhang, \n      \n      Jingwei Duan, \n      \n      Moule Lin, \n      \n      Jialin Chen, \n      \n      Baocheng Geng, \n      \n      Xiaoqian Jiang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.06571",
+   "pdf_url": "https://arxiv.org/pdf/2610.06571"
+  },
+  {
+   "id": "2610.06052",
+   "title": "Local2Mesh: Spatially Localized Contour-to-Mesh for Left Ventricular Reconstruction from Sparse 2D Cardiac MRI",
+   "summary": "Three-dimensional (3D",
+   "authors": "Haoyu Wu, \n      \n      Ling Lin, \n      \n      Pascal Lefèvre, \n      \n      Ruizhe Li, \n      \n      Xiaowu Sun",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.06052",
+   "pdf_url": "https://arxiv.org/pdf/2610.06052"
+  },
+  {
+   "id": "2610.05526",
+   "title": "Have I Scene This Before? Spatially Grounded Conversational Memory for Complex Queries in Egocentric Assistants",
+   "summary": "Egocentric assistants must connect what users say with what they see across long interaction histories. We formalize this challenge as Spatially",
+   "authors": "Jiazhou Liang, \n      \n      Liam Gallagher, \n      \n      Kiko Chen, \n      \n      David Guo, \n      \n      Armin Toroghi, \n      \n      Yifan Simon Liu, \n      \n      Scott Sanner",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.05526",
+   "pdf_url": "https://arxiv.org/pdf/2610.05526"
+  },
+  {
+   "id": "2610.04206",
+   "title": "Fine-Tuning VLM for Enhancing AI's Spatial Intelligence: Understanding 3D and 2D Rotations",
+   "summary": "Spatial",
+   "authors": "Uttamasha Monjoree, \n      \n      Wei Yan",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.04206",
+   "pdf_url": "https://arxiv.org/pdf/2610.04206"
+  },
+  {
+   "id": "2610.04188",
+   "title": "Agentic AI with Structured CoT for Enhancing AI's Spatial Intelligence: Visualization and Reasoning of Rotation",
+   "summary": "Recent studies show that artificial intelligence",
+   "authors": "Uttamasha Monjoree, \n      \n      Wei Yan",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.04188",
+   "pdf_url": "https://arxiv.org/pdf/2610.04188"
+  },
+  {
+   "id": "2610.03873",
+   "title": "Streaming Multi-Track Timeline Control for 3D Human Motion Generation",
+   "summary": "…and temporal adherence over evaluated streaming baselines, including models retrained on the same data. Ablations and human evaluations validate our design, complemented by spatial",
+   "authors": "Yangsong Zhang, \n      \n      Anujith Muraleedharan, \n      \n      Rikhat Akizhanov, \n      \n      Gül Varol, \n      \n      Fabio Pizzati, \n      \n      Ivan Laptev",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.03873",
+   "pdf_url": "https://arxiv.org/pdf/2610.03873"
+  },
+  {
+   "id": "2610.03403",
+   "title": "ForestQuery: Boundary-Aware and Spatially Anchored Query Learning for Unified Forest Point Cloud Segmentation",
+   "summary": "Forest point cloud segmentation is fundamental for fine-grained 3D",
+   "authors": "Zhihao Zhan, \n      \n      Le Tao, \n      \n      Yifei Tian, \n      \n      Xin Liu, \n      \n      Jie Yuan",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.03403",
+   "pdf_url": "https://arxiv.org/pdf/2610.03403"
+  },
+  {
+   "id": "2610.03015",
+   "title": "OmniAct3D: Leveraging Foundation Geometry and Evidence-Grounded Reasoning for Panoramic 3D Detection",
+   "summary": "Accurate 3D",
+   "authors": "Runtong Wu, \n      \n      Fei Teng, \n      \n      Di Wen, \n      \n      Guoqiang Zhao, \n      \n      Kunyu Peng, \n      \n      Kailun Yang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.03015",
+   "pdf_url": "https://arxiv.org/pdf/2610.03015"
+  },
+  {
+   "id": "2610.02375",
+   "title": "EviDent-CBCT: Evidence-Bottlenecked Report Generation from Dental CBCT under Non-Exhaustive Report Supervision",
+   "summary": "Dento-maxillofacial cone-beam CT (CBCT) reports may contain dozens of tooth-specific, anatomical, and spatial",
+   "authors": "Ruiyang Hao, \n      \n      Zhi Qin Tan, \n      \n      Yulan He, \n      \n      Owen Addison, \n      \n      Yunpeng Li",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.02375",
+   "pdf_url": "https://arxiv.org/pdf/2610.02375"
+  },
+  {
+   "id": "2610.02091",
+   "title": "GeoLatent: Geometry-Guided Latent Structuring with Routed Optimization for 3D Reasoning",
+   "summary": "Despite progress in vision-language models, 3D",
+   "authors": "Yakun Zhu, \n      \n      Yi Bin, \n      \n      Yujuan Ding, \n      \n      Zheng Wang, \n      \n      Pengpeng Zeng, \n      \n      Duo Peng, \n      \n      Jingkuan Song, \n      \n      Heng Tao Shen",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.02091",
+   "pdf_url": "https://arxiv.org/pdf/2610.02091"
+  },
+  {
+   "id": "2610.02023",
+   "title": "SPHERE: Adaptive VR Indoor Scene Generation via LLM-Enhanced Spatial Preference Learning and Human-in-the-Loop RL",
+   "summary": "While Large Language Models (LLMs) advance 3D",
+   "authors": "Hyeonmin Lee, \n      \n      Zheng Wei, \n      \n      Kyungmin Kwon, \n      \n      Jumin Seo, \n      \n      Jiwon Park, \n      \n      Hayoung Oh",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.02023",
+   "pdf_url": "https://arxiv.org/pdf/2610.02023"
+  },
+  {
+   "id": "2610.01742",
+   "title": "World Motion Models: Flexible Sequence Modeling of SE(3) Trajectories",
+   "summary": "Equipping artificial agents with spatial",
+   "authors": "Jiahui Lei, \n      \n      Qianqian Wang, \n      \n      Trevor Darrell, \n      \n      Angjoo Kanazawa",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.01742",
+   "pdf_url": "https://arxiv.org/pdf/2610.01742"
+  },
+  {
+   "id": "2610.00970",
+   "title": "RelationVGGT: Visual Geometry Transformers for 3D Spatial Relation Segmentation",
+   "summary": "Recent advances in 3D",
+   "authors": "Minsu Kim, \n      \n      Jaesung Choe, \n      \n      Jiwoo Lee, \n      \n      Yu-Chiang Frank Wang, \n      \n      Seon Joo Kim",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.00970",
+   "pdf_url": "https://arxiv.org/pdf/2610.00970"
+  },
+  {
+   "id": "2610.00017",
+   "title": "Spatial Lifting for Dense Prediction",
+   "summary": "We present Spatial",
+   "authors": "Mingzhi Xu, \n      \n      Tao Zhou, \n      \n      Yong Li, \n      \n      Yizhe Zhang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.00017",
+   "pdf_url": "https://arxiv.org/pdf/2610.00017"
+  },
+  {
+   "id": "2609.40091",
+   "title": "GateSPINE: Gated Cross-View Fusion for Lumbar Spine MRI Report Generation",
+   "summary": "…propose GateSPINE, a vision-language framework that fuses sagittal T1 and T2 volumes with a training-free operator, encodes the fused sagittal and axial volumes with two parallel 3D",
+   "authors": "Hoang Nguyen Van, \n      \n      Cuong Vuong Tuan, \n      \n      Trang Mai Xuan, \n      \n      Bien Tran Van, \n      \n      Nam Tran Van, \n      \n      Thien Van Luong",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2609.40091",
+   "pdf_url": "https://arxiv.org/pdf/2609.40091"
+  },
+  {
+   "id": "2609.39323",
+   "title": "HiWE: Hierarchical World Knowledge Model with Visual Keypoint Enhancement for Zero-Shot 3D Path Planning",
+   "summary": "…a mixture of point annotations, segmentation-derived samples, robot observations, and visual question answering data. Depth measurements lift these predictions into a semantic 3D",
+   "authors": "Guoqing Ma, \n      \n      Mingqi Yuan, \n      \n      Chen Gao, \n      \n      Jiayu Chen, \n      \n      Shan Yu",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2609.39323",
+   "pdf_url": "https://arxiv.org/pdf/2609.39323"
+  },
+  {
+   "id": "2609.39195",
+   "title": "Uruqi: Learning Spatial Cognition from Visual Experience",
+   "summary": "Spatial",
+   "authors": "Shichao Li, \n      \n      Meiqi Wang, \n      \n      Fei Su, \n      \n      Zhicheng Zhao",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2609.39195",
+   "pdf_url": "https://arxiv.org/pdf/2609.39195"
+  },
+  {
+   "id": "2609.39166",
+   "title": "Beyond the Remembered World: Predictive 4D Belief for Persistent Navigation in Evolving Worlds",
+   "summary": "Persistent spatial",
+   "authors": "Mingjian Gao, \n      \n      Zhaocheng Li, \n      \n      Haoyang Huang, \n      \n      Wenqiao Zhang, \n      \n      Yingjie Niu, \n      \n      Hao Zhou, \n      \n      Chao Li, \n      \n      Juncheng Li, \n      \n      Siliang Tang, \n      \n      Yueting Zhuang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2609.39166",
+   "pdf_url": "https://arxiv.org/pdf/2609.39166"
+  },
+  {
+   "id": "2610.22356",
+   "title": "DK-VLM: Geometry as Position for Spatial Reasoning in Vision-Language Models",
+   "summary": "Vision-language models still struggle to understand",
+   "authors": "Han Su, \n      \n      Meng Tian, \n      \n      Tianyu Huang, \n      \n      Mingyu Gao, \n      \n      Lennox Wei, \n      \n      Dongxu Li, \n      \n      Jianhua Han, \n      \n      Hang Xu, \n      \n      Xiaohe Wu, \n      \n      Wangmeng Zuo",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.22356",
+   "pdf_url": "https://arxiv.org/pdf/2610.22356"
+  },
+  {
+   "id": "2610.20560",
+   "title": "PhySGA: A Physics-Space Grounded Agentic Framework for Generalizable and Interactive 3D Composition",
+   "summary": "3D",
+   "authors": "Weichen Lyu, \n      \n      Chong Xia, \n      \n      Mingyu Dong, \n      \n      Long Xu, \n      \n      Shengjun Zhang, \n      \n      Yueqi Duan",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.20560",
+   "pdf_url": "https://arxiv.org/pdf/2610.20560"
+  },
+  {
+   "id": "2610.19266",
+   "title": "LAMP: 3D Source-Aware Lighting Estimation at Multiple Points",
+   "summary": "…for rendering, but typically leave the contributions of individual physical light sources at specific scene locations implicit. We address this gap by leveraging the scene understanding",
+   "authors": "Yanqiao Wang, \n      \n      Jin Sun",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.19266",
+   "pdf_url": "https://arxiv.org/pdf/2610.19266"
+  },
+  {
+   "id": "2610.19234",
+   "title": "Write Once, Plan Many: Building Reusable Visual Planning Systems from One Scene",
+   "summary": "Vision-language models (VLMs",
+   "authors": "Ruixiao Yang, \n      \n      Yilun Hao, \n      \n      Mingxin Yu, \n      \n      Yang Zhang, \n      \n      Chuchu Fan",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.19234",
+   "pdf_url": "https://arxiv.org/pdf/2610.19234"
+  },
+  {
+   "id": "2610.11810",
+   "title": "Seek-and-View Reasoning for Multi-View Spatial Understanding",
+   "summary": "Existing approaches to multi-view spatial reasoning operate largely on sparse input views. Vision-language models (VLMs",
+   "authors": "Qixiang Chen, \n      \n      Cheng Zhang, \n      \n      Fucai Ke, \n      \n      Chi-Wing Fu, \n      \n      Jianfei Cai, \n      \n      Jingwen Ye",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.11810",
+   "pdf_url": "https://arxiv.org/pdf/2610.11810"
+  },
+  {
+   "id": "2610.06611",
+   "title": "Lens3D: Target-Conditioned Visual Foveation for Fine-Grained 3D Understanding",
+   "summary": "Existing 3D",
+   "authors": "Junming Huang, \n      \n      Zini Chen, \n      \n      Shuaiying Hou, \n      \n      Chi Wang, \n      \n      Qiang Dai, \n      \n      Weiwei Xu",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.06611",
+   "pdf_url": "https://arxiv.org/pdf/2610.06611"
+  },
+  {
+   "id": "2610.02021",
+   "title": "Task-Adaptive Grounded 3D-Programmers Using 2D VLMs",
+   "summary": "Recent vision-language models (VLMs",
+   "authors": "Arman Raayatsanati, \n      \n      Sombit Dey, \n      \n      Anna-Maria Halacheva, \n      \n      Jan-Nico Zaech, \n      \n      Luc Van Gool, \n      \n      Danda Pani Paudel",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2610.02021",
+   "pdf_url": "https://arxiv.org/pdf/2610.02021"
+  },
+  {
+   "id": "2609.40325",
+   "title": "WorldAuditBench: Interactive 3D World Auditing with Multimodal Agents",
+   "summary": "As interactive 3D",
+   "authors": "Ziyan Jiang, \n      \n      Jingbo Yang, \n      \n      Jiabao Ji, \n      \n      Yujian Liu, \n      \n      Qiucheng Wu, \n      \n      Tommi Jaakkola, \n      \n      Yang Zhang, \n      \n      Shiyu Chang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2609.40325",
+   "pdf_url": "https://arxiv.org/pdf/2609.40325"
+  },
+  {
+   "id": "2609.39238",
+   "title": "4MT-VLM: How Coarse Is a VLMs Cognitive Map?",
+   "summary": "An agent that moves must recognise a place from a viewpoint it has never seen. We introduce 4MT-VLM",
+   "authors": "Markus Frey",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2609.39238",
+   "pdf_url": "https://arxiv.org/pdf/2609.39238"
+  },
+  {
+   "id": "2609.37055",
+   "title": "Spatial-OPSD: Self-Improving Spatial Reasoning via Label-Free Self-Distillation",
+   "summary": "Vision-language models (VLMs",
+   "authors": "Zhenyu Liu, \n      \n      Zhangquan Chen, \n      \n      Keyi Chen, \n      \n      Mingze Sun, \n      \n      Xiang An, \n      \n      Haodong Jing, \n      \n      Ruqi Huang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2609.37055",
+   "pdf_url": "https://arxiv.org/pdf/2609.37055"
+  },
+  {
+   "id": "2609.34630",
+   "title": "Long Time No See: Benchmarking VLMs for Out-of-Sight Spatiotemporal Reasoning in Egocentric Videos",
+   "summary": "…that has been relocated and has since left the field of view. We create our questions from HD-EPIC annotations, building a visibility track for each dynamic object from its 3D",
+   "authors": "Fangzhou Ma, \n      \n      Ivo Alexander Ban, \n      \n      Eren Homburg, \n      \n      Gabriele Goletto, \n      \n      Rémi Pautrat, \n      \n      Mahdi Rad, \n      \n      Chiara Plizzari, \n      \n      Marc Pollefeys",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2609.34630",
+   "pdf_url": "https://arxiv.org/pdf/2609.34630"
+  },
+  {
+   "id": "2609.32156",
+   "title": "AquaBEV-Nav: Learned BEV Occupancy for Underwater Navigation and Exploration",
+   "summary": "Safe underwater exploration requires a robot to understand",
+   "authors": "Trung Tien Dong, \n      \n      Zhenqi Wu, \n      \n      Sahasra Kondapalli, \n      \n      Jiayi Wu, \n      \n      Yi Sheng, \n      \n      Xiaomin Lin",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2609.32156",
+   "pdf_url": "https://arxiv.org/pdf/2609.32156"
+  },
+  {
+   "id": "2609.29389",
+   "title": "Robo-Harness K1: Harnessing Robot-Use Agents via Perception Augmentation",
+   "summary": "Foundation vision-language models (VLMs",
+   "authors": "Zexi Li, \n      \n      Yehang Zhang, \n      \n      Wenqian Li, \n      \n      Haojian Huang, \n      \n      Chenxu Wang, \n      \n      Shiyuan Deng, \n      \n      Yangkai Wei, \n      \n      Tianyi Zhang, \n      \n      Binghui Xie, \n      \n      Bohan Zhou, \n      \n      Yifan Chang, \n      \n      Kaiwen Zhou, \n      \n      Ying-Cong Chen, \n      \n      James Cheng, \n      \n      Yinchuan Li",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2609.29389",
+   "pdf_url": "https://arxiv.org/pdf/2609.29389"
+  },
+  {
+   "id": "2609.26793",
+   "title": "HARMONY: Hierarchical Agentic Reasoning for MONocular Image-to-Scene Synthesis",
+   "summary": "Compositional 3D",
+   "authors": "Shufan Sun, \n      \n      Chen Wang, \n      \n      Enxin Song, \n      \n      Jiatao Gu, \n      \n      Lingjie Liu",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2609.26793",
+   "pdf_url": "https://arxiv.org/pdf/2609.26793"
+  },
+  {
+   "id": "2609.24995",
+   "title": "MIGU: Multimodal Instruction Grounding under Uncertainty for Manipulation Planning",
+   "summary": "Understanding",
+   "authors": "Mingke Lu, \n      \n      Anxing Xiao, \n      \n      David Hsu",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2609.24995",
+   "pdf_url": "https://arxiv.org/pdf/2609.24995"
+  },
+  {
+   "id": "2609.21323",
+   "title": "VeriFuse: Bounded Vision-Language Arbitration and Reason-Guided Refinement for Cooperative 3D Perception",
+   "summary": "Vision-language models (VLMs",
+   "authors": "Hongyi Lin, \n      \n      Yiyao Liu, \n      \n      Qi Kang, \n      \n      Heye Huang, \n      \n      Yang Liu, \n      \n      Haris Koutsopoulos, \n      \n      Jinhua Zhao",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2609.21323",
+   "pdf_url": "https://arxiv.org/pdf/2609.21323"
+  },
+  {
+   "id": "2609.20235",
+   "title": "Scene-Q: Confidence-Aware Coarse-to-Fine Querying of 3D Scenes with Selective VLM Reasoning",
+   "summary": "Indoor mobile robots require open-vocabulary scene understanding",
+   "authors": "Juno Kim, \n      \n      Yesol Park, \n      \n      Hye-Jung Yoon, \n      \n      Byoung-Tak Zhang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2609.20235",
+   "pdf_url": "https://arxiv.org/pdf/2609.20235"
+  },
+  {
+   "id": "2609.12747",
+   "title": "Assisted Spatial Cognition Through Vision-Language Models",
+   "summary": "Multimodal AI, powered by Large Language Models (LLMs) and Vision-Language Models (VLMs",
+   "authors": "H. Riaz, \n      \n      J. B. Fernandez, \n      \n      I. Mills, \n      \n      D. Hickey, \n      \n      F. Cleary, \n      \n      M. I. Ali",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2609.12747",
+   "pdf_url": "https://arxiv.org/pdf/2609.12747"
+  },
+  {
+   "id": "2609.10743",
+   "title": "MHE-Former: Multi-Hypothesis Transformers via Entropy Maximization for 3D Mesh Recovery",
+   "summary": "Monocular 3D",
+   "authors": "Boshu Jia, \n      \n      Rongyu Chen, \n      \n      Linlin Yang, \n      \n      Zihao Liu, \n      \n      Yingjie Chen, \n      \n      Zhongqun Zhang, \n      \n      Zhulin Tao, \n      \n      Shaohui Lin, \n      \n      Xiaoyu Wu, \n      \n      Libiao Jin, \n      \n      Baochang Zhang, \n      \n      Angela Yao",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2609.10743",
+   "pdf_url": "https://arxiv.org/pdf/2609.10743"
+  },
+  {
+   "id": "2609.06880",
+   "title": "Contextual Observer Grounding: Evaluating Situated Spatial Reasoning in Vision-Language Models",
+   "summary": "Reasoning over language instructions in embodied tasks such as robotics often requires understanding",
+   "authors": "Mimo Shirasaka, \n      \n      Haochen Zhang, \n      \n      Yonatan Bisk",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2609.06880",
+   "pdf_url": "https://arxiv.org/pdf/2609.06880"
+  },
+  {
+   "id": "2609.04607",
+   "title": "Open-Set 3D Scene Graphs for Field Robotics: An Outdoor Case Study",
+   "summary": "…robotic reasoning. However, the behavior of 3DSGs in real-world outdoor deployments remains poorly understood, particularly when combined with open-set vision-language models (VLMs",
+   "authors": "Chad R. Samuelson, \n      \n      Gabriel R. Slade, \n      \n      Joshua G. Mangelson",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2609.04607",
+   "pdf_url": "https://arxiv.org/pdf/2609.04607"
+  },
+  {
+   "id": "2609.01059",
+   "title": "Dyn-3D: Unveiling and Resolving Ego-Motion Ambiguity in Vision-Language Models",
+   "summary": "As Vision-Language Models (VLMs",
+   "authors": "Jiayu Ding, \n      \n      Zhuodong Liu, \n      \n      Lei Zhang, \n      \n      Manyu Xiong, \n      \n      Hongbo Jin, \n      \n      Haoran Tang, \n      \n      Hongbo Zhang, \n      \n      Changen Zhu, \n      \n      Wenbo Xing",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2609.01059",
+   "pdf_url": "https://arxiv.org/pdf/2609.01059"
+  },
+  {
+   "id": "2609.00111",
+   "title": "Qwen-Drive-1.0: An Initial Step towards a Vision-Language Foundation Model for Autonomous Driving",
+   "summary": "…0, an initial step towards a vision-language foundation model for autonomous driving. Qwen-Drive-1.0 retains the architecture of the pretrained vision-language model (VLM",
+   "authors": "Xin Zhou, \n      \n      Zongchuang Zhao, \n      \n      Zhibo Yang, \n      \n      Mingsheng Li, \n      \n      Humen Zhong, \n      \n      Shuai Bai, \n      \n      Du Chu, \n      \n      Ruizhe Chen, \n      \n      Zhaohai Li, \n      \n      Jun Tang, \n      \n      Qiuyue Wang, \n      \n      Mingkun Yang, \n      \n      Jiazhao Zhang, \n      \n      Dayiheng Liu, \n      \n      Dingkang Liang, \n      \n      Xiang Bai",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2609.00111",
+   "pdf_url": "https://arxiv.org/pdf/2609.00111"
+  },
+  {
+   "id": "2608.25308",
+   "title": "V-Link: Recovering Lost Visual Representations in Action DiT for Vision-Language-Action Models",
+   "summary": "Vision-language-action (VLA) models provide a scalable path toward generalist robotic manipulation by integrating visual perception, language understanding",
+   "authors": "Yehao Lu, \n      \n      Jiarui Yang, \n      \n      Yuning Su, \n      \n      Yufeng Xie, \n      \n      Yu Zhong, \n      \n      Yazhou Zhang, \n      \n      Haiyu Lan, \n      \n      Kaixiang Lu, \n      \n      Peiwen Lin, \n      \n      Chuang Wang, \n      \n      Zequn Qin, \n      \n      Enyu Li, \n      \n      Xi Li",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2608.25308",
+   "pdf_url": "https://arxiv.org/pdf/2608.25308"
+  },
+  {
+   "id": "2608.15710",
+   "title": "Beyond Single Object: Learning 3D Relations with Large Language Models",
+   "summary": "We address a fundamental gap in 3D",
+   "authors": "Kohsuke Ide, \n      \n      Ryousuke Yamada, \n      \n      Yue Qiu, \n      \n      Xianzheng Ma, \n      \n      Yoshihiro Fukuhara, \n      \n      Hirokatsu Kataoka, \n      \n      Yutaka Satoh",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2608.15710",
+   "pdf_url": "https://arxiv.org/pdf/2608.15710"
+  },
+  {
+   "id": "2608.12689",
+   "title": "Mr3D-VL: A generalist vision language foundation model for Multiparametric 3D Magnetic Resonance Imaging",
+   "summary": "…across modalities, spatial misalignment due to scan intervals, and the need for complex multi-feature interpretation in tasks like glioma grading. While visual-language models (VLMs",
+   "authors": "Zhi Qiao, \n      \n      Xintong Wu, \n      \n      Yichu He, \n      \n      Feng Shi",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2608.12689",
+   "pdf_url": "https://arxiv.org/pdf/2608.12689"
+  },
+  {
+   "id": "2608.12220",
+   "title": "SCOUT: Unlocking Enhanced Spatial Reasoning via Structured Chain-of-Thought and Multi-Objective Process Reward",
+   "summary": "Existing Vision-Language Models (VLMs",
+   "authors": "Zile Zhou, \n      \n      Huining Yuan, \n      \n      Weichen Zhang, \n      \n      Xinlei Chen, \n      \n      Xiao-ping Zhang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2608.12220",
+   "pdf_url": "https://arxiv.org/pdf/2608.12220"
+  },
+  {
+   "id": "2608.10278",
+   "title": "Chain of Spatial Thoughts: Modality-Agnostic Spatial Grounding for Vision Language Models",
+   "summary": "Spatial understanding",
+   "authors": "Hunter Schofield, \n      \n      Mohammed Elmahgiubi, \n      \n      Mohammad Mahdavian, \n      \n      Richard Shi, \n      \n      Jinjun Shan, \n      \n      Amir Rasouli, \n      \n      Dongfeng Bai",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2608.10278",
+   "pdf_url": "https://arxiv.org/pdf/2608.10278"
+  },
+  {
+   "id": "2608.02711",
+   "title": "Hunyuan3D-Buffalo 1.0: A Unified Multimodal Model for Scalable 3D Generation, Understanding, and Editing",
+   "summary": "Recent advances in image generation have demonstrated the potential of unified multimodal models that integrate understanding",
+   "authors": "Junliang Ye, \n      \n      Kenkun Liu, \n      \n      Guocun Wang, \n      \n      Yang Li, \n      \n      Yansong Qu, \n      \n      Chunshi Wang, \n      \n      Jingwei Xu, \n      \n      Yunhan Yang, \n      \n      Zibo Zhao, \n      \n      Jiachen Xu, \n      \n      Jiaao Yu, \n      \n      Lifu Wang, \n      \n      Zhihao Liang, \n      \n      Xin Huang, \n      \n      Zhuo Chen, \n      \n      Chunchao Guo",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2608.02711",
+   "pdf_url": "https://arxiv.org/pdf/2608.02711"
+  },
+  {
+   "id": "2608.01899",
+   "title": "SpatioLM: Towards General Physical Spatial Intelligence in Vision-Language Models",
+   "summary": "Vision-Language Models (VLMs",
+   "authors": "Jing Wu, \n      \n      Jianhua Wu, \n      \n      Jiayi Guan, \n      \n      Jiahong Chen, \n      \n      Jinghui Lu, \n      \n      Hangjun Ye, \n      \n      Bingzhao Gao, \n      \n      Long Chen",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2608.01899",
+   "pdf_url": "https://arxiv.org/pdf/2608.01899"
+  },
+  {
+   "id": "2608.00518",
+   "title": "GuideGround: VLM-guided Semantic Understanding and Viewpoint-aware Reasoning for 3D Visual Grounding",
+   "summary": "3D",
+   "authors": "Yiwen Wang, \n      \n      Yuyang Deng, \n      \n      Yihao Long, \n      \n      Xi Zhao",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2608.00518",
+   "pdf_url": "https://arxiv.org/pdf/2608.00518"
+  },
+  {
+   "id": "2608.00110",
+   "title": "Distill What RGB Can Recover: Privileged 3D Evidence for RGB-Only Vision-Language Models",
+   "summary": "3D",
+   "authors": "Yanbin Hu, \n      \n      Jin Cui, \n      \n      Jun Ye, \n      \n      Jiepeng Zhou, \n      \n      Jiangcheng Song, \n      \n      Boran Zhao, \n      \n      Pengju Ren",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2608.00110",
+   "pdf_url": "https://arxiv.org/pdf/2608.00110"
+  },
+  {
+   "id": "2607.24904",
+   "title": "Mage-VL: An Efficient Codec-Native Streaming Multimodal Foundation Model",
+   "summary": "Standard vision-language models (VLMs",
+   "authors": "Senqiao Yang, \n      \n      Kaichen Zhang, \n      \n      Zhaoyang Jia, \n      \n      Jinghao Guo, \n      \n      Yifei Shen, \n      \n      Xinjie Zhang, \n      \n      Xiaoyi Zhang, \n      \n      Haoqing Wang, \n      \n      Xiao Li, \n      \n      Peng Zhang, \n      \n      Xiang An, \n      \n      Yin Xie, \n      \n      Zhening Liu, \n      \n      Xun Guo, \n      \n      Jiahao Li, \n      \n      Shicheng Zheng, \n      \n      Jinglu Wang, \n      \n      Zongyu Guo, \n      \n      Wenxuan Xie, \n      \n      Zihan Zheng, \n      \n      Yuxuan Luo, \n      \n      Bin Li, \n      \n      Yan Lu",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2607.24904",
+   "pdf_url": "https://arxiv.org/pdf/2607.24904"
+  },
+  {
+   "id": "2607.21595",
+   "title": "3D-Aware VLMs with Implicit and Explicit Geometries",
+   "summary": "Despite rapid progress, most existing vision-language models (VLMs",
+   "authors": "Wenhao Li, \n      \n      Xueying Jiang, \n      \n      Quanhao Qian, \n      \n      Deli Zhao, \n      \n      Ran Xu, \n      \n      Shijian Lu, \n      \n      Gongjie Zhang",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2607.21595",
+   "pdf_url": "https://arxiv.org/pdf/2607.21595"
+  },
+  {
+   "id": "2607.18801",
+   "title": "ZeroSplat: Generalized Referring Segmentation in 3D Gaussian Splatting",
+   "summary": "Recent advancements in 3D",
+   "authors": "Jiayu Ding, \n      \n      Meilu Song, \n      \n      Xiaoyi Zhang, \n      \n      Hongbo Jin, \n      \n      Yichen Jin, \n      \n      Xiangtian Si",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2607.18801",
+   "pdf_url": "https://arxiv.org/pdf/2607.18801"
+  },
+  {
+   "id": "2607.14586",
+   "title": "SoftNav: Injecting 3D Scene Tokens into VLMs for Embodied Navigation",
+   "summary": "In goal-directed embodied navigation, where an agent must locate a specified target in an unseen environment, 3D",
+   "authors": "Yi Wu, \n      \n      Junjie An, \n      \n      Xiao Liu, \n      \n      Yiqun Zhou, \n      \n      Yuechen Wu, \n      \n      Xiaoqing Guan, \n      \n      Shuyang Yu, \n      \n      You Wang, \n      \n      Guang Li",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2607.14586",
+   "pdf_url": "https://arxiv.org/pdf/2607.14586"
+  },
+  {
+   "id": "2607.12319",
+   "title": "DM-KG: A Novel Method for Boosting Spatial Cognition of Vision-Language Models in Street View Imagery",
+   "summary": "As vision-language models (VLMs",
+   "authors": "Xinyue Xu, \n      \n      Zheng Zhang, \n      \n      Kunyang Ma, \n      \n      Ge Zhu, \n      \n      Lianshuai Cao, \n      \n      Lei Wang, \n      \n      Zixuan Li, \n      \n      Yi Cheng",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2607.12319",
+   "pdf_url": "https://arxiv.org/pdf/2607.12319"
+  },
+  {
+   "id": "2607.04637",
+   "title": "PixelPilot: Scalable Vision-Language-Action Models for End-to-End Autonomous Driving",
+   "summary": "Vision-Language-Action Models (VLAs), which leverage the advanced reasoning capabilities of Vision-Language Models (VLMs",
+   "authors": "Pin Tang, \n      \n      Guoqing Wang, \n      \n      Xiangxuan Ren, \n      \n      Zhongdao Wang, \n      \n      Guodongfang Zhao, \n      \n       Bailan, \n      \n      Chao Ma",
+   "published": "",
+   "arxiv_url": "https://arxiv.org/abs/2607.04637",
+   "pdf_url": "https://arxiv.org/pdf/2607.04637"
+  }
+ ]
+}
