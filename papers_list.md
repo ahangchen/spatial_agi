@@ -4775,3 +4775,35 @@
    - 关键词: RSSM世界模型, 显式空间认知记忆, 空间价值层, 价值引导想象, 认知-行动网络替代actor-critic, UAV-ON, NUDT
    - 文档: papers/2026-10-17_05_SearchWorld_Spatial_Value_Grounded_Imagination_UAV_Object_Search_World_Models.md
    - 亮点: 三层BEV记忆（探索/障碍几何构造+价值学习解码）分类空间信息本质；标量critic升级为空间价值场"回答在哪值而非值多少"；想象足迹池化评估动作、决策时零像素解码；UAV-ON SR 23.8%/OSR 35.5%全面超已发表最佳
+
+## 2026-10-18 研究的论文（精选5篇）
+
+1. **Holi-Spatial 360: Generative Reconstruction from Sparse Panoramas for Spatial Rendering and Intelligence** - arXiv:2610.19502
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Gaussian Splatting, Spatial Data Engine, Sparse Panoramas, VLM Spatial Reasoning, Generative Reconstruction
+   - 文档: papers/2026-10-18_01_Holi-Spatial_360_Sparse_Panorama_Multi_Room_3DGS.md
+   - NotebookLM: [notebook_id]
+
+2. **Demiurge: Forging Navigable 4D Worlds via Autoregressive Video Rerendering** - arXiv:2610.14685
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4D World Generation, Video Rerendering, 4D Point-Cloud Memory, Autoregressive Generation, Cross-Trajectory Consistency
+   - 文档: papers/2026-10-18_02_Demiurge_Navigable_4D_Worlds_Autoregressive_Video_Rerendering.md
+   - NotebookLM: [notebook_id]
+
+3. **Splat2Act: From Captured Scenes to Personalized VLA Manipulation** - arXiv:2610.13945
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Real-to-Sim-to-Real, VLA Personalization, 3DGS Digital Twin, Receptacle Discovery, Robot Manipulation
+   - 文档: papers/2026-10-18_03_Splat2Act_Captured_Scenes_Personalized_VLA_Manipulation.md
+   - NotebookLM: [notebook_id]
+
+4. **Physical AI: A Survey of Models, Learning, Systems, and Open Challenges** - arXiv:2610.21171
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Physical AI Survey, Closed-Loop Interaction, World Models, VLA, Evaluation and Safety, Systems
+   - 文档: papers/2026-10-18_04_Physical_AI_Survey_Models_Learning_Systems_Challenges.md
+   - NotebookLM: [notebook_id]
+
+5. **Grid or Nodes? Probing Object Memory in World Models Under Partial Observability** - arXiv:2610.18637
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Model Memory, Object Permanence, Probing, Grid vs Node Memory, Partial Observability, Evaluation Methodology
+   - 文档: papers/2026-10-18_05_Grid_or_Nodes_Probing_Object_Memory_World_Models.md
+   - NotebookLM: [notebook_id]
