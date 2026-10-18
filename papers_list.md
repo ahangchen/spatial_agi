@@ -4807,3 +4807,35 @@
    - 关键词: World Model Memory, Object Permanence, Probing, Grid vs Node Memory, Partial Observability, Evaluation Methodology
    - 文档: papers/2026-10-18_05_Grid_or_Nodes_Probing_Object_Memory_World_Models.md
    - NotebookLM: [notebook_id]
+
+## 2026-10-19 研究的论文（精选5篇）
+
+1. **WorldRoPE: Probabilistic World-Centric Rotary Embedding for Multi-View Attention** - arXiv:2610.16337
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 位置编码, 世界系RoPE, 概率化体积高斯, 跨视图注意力, 不确定性衰减, 多视图Transformer
+   - 文档: papers/2026-10-19_01_WorldRoPE_Probabilistic_World_Centric_Rotary_Embedding_Multi_View_Attention.md
+   - 亮点: 把3D几何塞进RoPE标配、闭式积分零采样开销；深度不确定性驱动注意力衰减（模型"知道自己不知道"）；点支撑坍缩严格退化为标准RoPE
+
+2. **Atomic-WAM: Execution-Grounded Atomic-Motion Reasoning for World Action Models** - arXiv:2610.20157
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Action Model, 原子运动, EG-GRPO, 执行接地, 任务欠规范, DROID自动标注
+   - 文档: papers/2026-10-19_02_Atomic-WAM_Execution_Grounded_Atomic_Motion_Reasoning_WAM.md
+   - 亮点: 原子运动描述弥合任务语义与动作生成鸿沟；冻结WAM、仅用执行成功率奖励RL优化推理器；real-to-sim默认/模糊指令39.6%/31.6%
+
+3. **StateCraft: Augmenting Video World Models with Abstract-State Reasoning** - arXiv:2610.19795
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 视频世界模型, 抽象状态, LM+扩散, 持久记忆, 可编辑状态, 生成式界面
+   - 文档: papers/2026-10-19_03_StateCraft_Video_World_Models_Abstract_State_Reasoning.md
+   - 亮点: 抽象状态与视觉状态解耦根治"看不见就忘"；显式状态可编辑且生成遵循分布外编辑；3D PoC——动作改变不可见房间光照
+
+4. **EgoJEPA: Beyond Retargeting for Dexterous Manipulation from Egocentric Videos** - arXiv:2610.20904
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 自中心视频, JEPA, 潜在动作, 具身无关, 效果感知, 轻量具身适配
+   - 文档: papers/2026-10-19_04_EgoJEPA_Beyond_Retargeting_Dexterous_Manipulation_Egocentric_Videos.md
+   - 亮点: 效果感知潜在动作替代规则化retargeting；三阶段解耦（人类先验/世界建模/具身适配）；3具身OOD 74% vs 65%，训练时间-47.2%
+
+5. **LTM: Latent Transition Based In-Context Memory for Vision-Language-Action Models** - arXiv:2610.21362
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA记忆, 潜在转移, KV缓存, 延迟记忆准入, 有界上下文, π0.5
+   - 文档: papers/2026-10-19_05_LTM_Latent_Transition_In_Context_Memory_VLA.md
+   - 亮点: "转移即记忆"——相邻观测变化替代帧历史；零标注零外挂，200 token预算84%成功率；真机计数11.25%→82.50%
