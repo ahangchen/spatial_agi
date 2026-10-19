@@ -4839,3 +4839,30 @@
    - 关键词: VLA记忆, 潜在转移, KV缓存, 延迟记忆准入, 有界上下文, π0.5
    - 文档: papers/2026-10-19_05_LTM_Latent_Transition_In_Context_Memory_VLA.md
    - 亮点: "转移即记忆"——相邻观测变化替代帧历史；零标注零外挂，200 token预算84%成功率；真机计数11.25%→82.50%
+
+## 2026-10-20 研究的论文（精选5篇）
+
+1. **DynThinker: Unifying Static 3D and Dynamic 4D Spatial Reasoning** - arXiv:2610.20598
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 空间推理, 3D/4D统一, D-EMA, 空间-动态干扰
+   - 文档: papers/2026-10-20_01_DynThinker_Unifying_Static_3D_Dynamic_4D_Spatial_Reasoning.md
+
+2. **T2-z: Test-Time Optimization of Environment Latents for Robotic World Models** - arXiv:2610.22364
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 测试时优化, 环境潜变量, 世界模型, 涌现式物理因素
+   - 文档: papers/2026-10-20_02_T2-z_Test-Time_Optimization_Environment_Latents_Robotic_World_Models.md
+
+3. **LAW: Unifying Language, Action, and World Modeling for Agentic Physical Intelligence** - arXiv:2610.23334
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLM-WAM闭环, 语义子任务进度, MoTE, 长时程操作
+   - 文档: papers/2026-10-20_03_LAW_Unifying_Language_action_World_Modeling_Agentic_Physical_Intelligence.md
+
+4. **GeoThinker-F: Endogenous Predictive World Representations for Fast Spatial Intelligence** - arXiv:2610.20592
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 内生几何先验, LFP, SGT-Fusion, 推理加速3.6×
+   - 文档: papers/2026-10-20_04_GeoThinker-F_Endogenous_Predictive_World_Representations_Fast_Spatial_Intelligence.md
+
+5. **ORD-WM: Learning Object-Centric Rigid Dynamics for 3D World Modeling in Robotic Manipulation** - arXiv:2610.23156
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 物体中心, SE(3)刚体动力学, SDF-VNVAE, MPC
+   - 文档: papers/2026-10-20_05_ORD-WM_Object-Centric_Rigid_Dynamics_3D_World_Modeling.md
