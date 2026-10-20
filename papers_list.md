@@ -4866,3 +4866,35 @@
    - 相关性: ⭐⭐⭐⭐⭐
    - 关键词: 物体中心, SE(3)刚体动力学, SDF-VNVAE, MPC
    - 文档: papers/2026-10-20_05_ORD-WM_Object-Centric_Rigid_Dynamics_3D_World_Modeling.md
+
+## 2026-10-21 研究的论文（精选5篇）
+
+1. **Ropedia W0: Scaling Loco-Manipulation World Models across Embodiments with Human Experience** - arXiv:2610.26855
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 跨具身世界模型, loco-manipulation, 统一运动学接口, 10k小时人类视频, scaling定律
+   - 文档: papers/2026-10-21_01_Ropedia_W0_Loco_Manipulation_World_Models_Cross_Embodiment.md
+   - 亮点: 首个跨具身loci-manipulation世界基础模型；相机位姿+投影骨架统一接口；人类预训练数据单调提升机器人迁移；Xp-Teleop零样本超基线全量后训练
+
+2. **Holi-World: Building Holistic World Intelligence from Human-Ego Experience** - arXiv:2610.26549
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 世界记录, 自动数据引擎, 静态3D+动态4D, grounded QA, 独立人工Bench
+   - 文档: papers/2026-10-21_02_Holi-World_Holistic_World_Intelligence_Human_Ego_Experience.md
+   - 亮点: 零标注ego视频→~80K可溯源QA；4B有据训练78.02 F1超零样本27B；ScanNet AP50 4.6×最强基线；身份持久性工程化
+
+3. **SpatialScout: Can VLM Agents Actively Explore and Map 3D Scenes?** - arXiv:2610.26659
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 主动探索, 3D建图评测, 空间智能基准, 几何工具使用, 行为诊断
+   - 文档: papers/2026-10-21_03_SpatialScout_VLM_Agents_Actively_Explore_Map_3D_Scenes.md
+   - 亮点: 首个主动物体级3D建图基准；最强模型IoU仅41.71%、精确匹配3.25%；三角化质量决定7cm vs 68cm；失败模式taxonomy即研发路线图
+
+4. **Fréchet Forcing: Training Long-Horizon Streaming World Models from Short Clips** - arXiv:2610.25666
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 长时程世界模型, Fréchet距离监督, 免教师蒸馏, 生成锚定, 漂移治理
+   - 文档: papers/2026-10-21_04_Frechet_Forcing_Long_Horizon_Streaming_World_Models_Short_Clips.md
+   - 亮点: 36 GPU小时把稳定rollout从253帧拉到4000+帧（16×）；DROID末段FVD降25×；四失败模式分类学+诊断探针方法论
+
+5. **Anvil: Scaling Embodied Spatial Intelligence through Knowledge Recirculation** - arXiv:2610.21882
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 知识再循环, Ground-Relation-Act接口, 多教师蒸馏, 数据飞轮, 链式监督
+   - 文档: papers/2026-10-21_05_Anvil_Scaling_Embodied_Spatial_Intelligence_Knowledge_Recirculation.md
+   - 亮点: 5.8M源接地记录+11形式统一接口；语义首发错误路由蒸馏（VQA保持99.83%）；命名反馈修复10.09×；链式监督69.86% vs 原子44.68%证明组合必须链式训练
