@@ -1,0 +1,39 @@
+{
+ "papers": [
+  {
+   "id": "2610.26554",
+   "title": "BetaMem: Learning to Remember a Changing World for Embodied Agents",
+   "summary": "Long-horizon embodied agents face temporal confusion and incomplete or distorted records, recurring errors from fixed memory rules, and growing storage and retrieval costs. We present BetaMem, a framework for building and evolving traceable long-term memory through six linked layers: working, spatial",
+   "date": "19 October, 2026",
+   "arxiv_url": "https://arxiv.org/abs/2610.26554"
+  },
+  {
+   "id": "2610.24767",
+   "title": "DialogMem: Evaluating Dialogue-Grounded Embodied Memory in 3D Environments",
+   "summary": "Embodied agents in human-centered environments require memory that integrates what they observe with what humans tell them over time. However, existing embodied memories are built primarily from visual experience, leaving open how dialogue with humans can be grounded in the objects encountered throughout that experience. We introduce DialogMem, a two-phase benchmark in which agents build memory from time-aligned streams of posed RGB-D observations and dialogue, and later use it for instance-level object navigation and question answering (QA). DialogMem provides 142 episodes across 27 real-world 3D scenes, with 14,193 QA pairs and 11,890 navigation instructions. We evaluate nine memory representations within a unified framework of memory formation, evidence retrieval, and reasoning for task outputs. In experiments, appending dialogue to visual memory at evaluation time substantially improves QA but yields negligible navigation gains, suggesting that relevant dialogue is present in memory but not grounded to specific objects. Controlled diagnostics show that navigation improves with link quality but falls short of ground-truth object-level memory even under perfect linking. Retrieving the correct object entry and recovering its spatial",
+   "date": "17 October, 2026",
+   "arxiv_url": "https://arxiv.org/abs/2610.24767"
+  },
+  {
+   "id": "2610.24676",
+   "title": "From Views to Worlds: Active Exploration over 3D Worlds for Vision-Language Models",
+   "summary": "Vision-language models (VLMs",
+   "date": "17 October, 2026",
+   "arxiv_url": "https://arxiv.org/abs/2610.24676"
+  },
+  {
+   "id": "2610.22276",
+   "title": "MJev-Spatial: System One Spatial Intelligence via Native Attention Matching",
+   "summary": "Spatial",
+   "date": "15 October, 2026",
+   "arxiv_url": "https://arxiv.org/abs/2610.22276"
+  },
+  {
+   "id": "2610.21910",
+   "title": "CoWorld Reasoner: Agentic Multimodal Reasoning with the Evolving Video World Model-Driven Harness",
+   "summary": "As Vision-Language Models (VLMs) advance, they are increasingly expected to perform spatiotemporal reasoning over motion, actions, and view changes beyond what the input images show. Video World Models (VWMs) provide a natural unified engine for visual imagination by generating task-relevant visual content as additional evidence. However, existing approaches typically invoke a VWM through fixed pipelines centered on a predefined form of visual imagination, such as novel-view synthesis. To support flexible visual imagination for diverse reasoning tasks, we introduce CoWorld Reasoner, an agentic framework that uses a VWM as a unified visual reasoning engine. Its Video World Model-Driven Harness exposes multiple visual operations through tools and uses skills to guide the VLM in deciding whether to imagine, selecting an operation, constructing a generation request, and interpreting the resulting visual evidence. We further introduce VLM-VWM Harness Co-Evolution, which jointly revises tools, skills, and execution code based on execution feedback while keeping both model weights fixed. Across seven benchmarks spanning spatial",
+   "date": "15 October, 2026",
+   "arxiv_url": "https://arxiv.org/abs/2610.21910"
+  }
+ ]
+}

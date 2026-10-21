@@ -4898,3 +4898,35 @@
    - 关键词: 知识再循环, Ground-Relation-Act接口, 多教师蒸馏, 数据飞轮, 链式监督
    - 文档: papers/2026-10-21_05_Anvil_Scaling_Embodied_Spatial_Intelligence_Knowledge_Recirculation.md
    - 亮点: 5.8M源接地记录+11形式统一接口；语义首发错误路由蒸馏（VQA保持99.83%）；命名反馈修复10.09×；链式监督69.86% vs 原子44.68%证明组合必须链式训练
+
+## 2026-10-22 研究的论文（精选5篇）
+
+1. **BetaMem: Learning to Remember a Changing World for Embodied Agents** - arXiv:2610.26554
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 六层长期记忆, 双层写契约, 教师验证RL, 失败驱动自改进, 预算化遗忘
+   - 文档: papers/2026-10-22_01_BetaMem_Learning_to_Remember_a_Changing_World_for_Embodied_Agents.md
+   - 亮点: 记忆写入契约通过率50.9%→86.2%且token省47.3%；错误复发率成为一等指标(24.9%)；9B开源底座四记忆基准同尺寸登顶；记忆写入质量首次可训练
+
+2. **DialogMem: Evaluating Dialogue-Grounded Embodied Memory in 3D Environments** - arXiv:2610.24767
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 对话接地记忆, 实例级导航, 三段诊断框架, oracle对照, 对象级条目
+   - 文档: papers/2026-10-22_02_DialogMem_Evaluating_Dialogue_Grounded_Embodied_Memory_in_3D_Environments.md
+   - 亮点: 首个对话作为具身记忆一等信息源的基准(142ep/14K QA/12K导航)；"QA涨导航不涨"确立记忆可行动性标准；三大瓶颈定位：接地/检索/定位
+
+3. **CoWorld Reasoner: Agentic Multimodal Reasoning with the Evolving Video World Model-Driven Harness** - arXiv:2610.21910
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 视频世界模型工具化, 想象决策链, Harness协同进化, 权重冻结, 空间Agent
+   - 文档: papers/2026-10-22_03_CoWorld_Reasoner_Agentic_Multimodal_Reasoning_Evolving_Video_World_Model.md
+   - 亮点: 世界模型从流水线组件升级为Agent想象引擎；权重全冻结仅进化工具/技能/代码；七基准全正收益(MMSI+11.8%/ERQA+13.0%)；"脚手架即能力"范式
+
+4. **MJev-Spatial: System One Spatial Intelligence via Native Attention Matching** - arXiv:2610.22276
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 判别式读出, 预训练QK匹配, 空间System1, 级联码本, 12基准SOTA
+   - 文档: papers/2026-10-22_04_MJev-Spatial_System_One_Spatial_Intelligence_Native_Attention_Matching.md
+   - 亮点: 零新参数用骨干Q/K投影做候选打分；12空间基准总分65.64%第一、12/12胜底座、2.5-5.6×加速；12.3M QA训练产线+吞吐30.8%；空间智能快档最强基线
+
+5. **From Views to Worlds: Active Exploration over 3D Worlds for Vision-Language Models** - arXiv:2610.24676
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 主动世界中心推理, 显式3D世界, 双接口, RL探索策略, training-free
+   - 文档: papers/2026-10-22_05_From_Views_to_Worlds_Active_Exploration_3D_Worlds_VLM.md
+   - 亮点: passive view-centric→active world-centric范式升级；视觉+语言双接口零改造复用VLM；training-free即跨档提升、RL探索达SOTA；补全三级主动性工具箱
