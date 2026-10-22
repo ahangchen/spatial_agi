@@ -4930,3 +4930,35 @@
    - 关键词: 主动世界中心推理, 显式3D世界, 双接口, RL探索策略, training-free
    - 文档: papers/2026-10-22_05_From_Views_to_Worlds_Active_Exploration_3D_Worlds_VLM.md
    - 亮点: passive view-centric→active world-centric范式升级；视觉+语言双接口零改造复用VLM；training-free即跨档提升、RL探索达SOTA；补全三级主动性工具箱
+
+## 2026-10-23 研究的论文（精选5篇）
+
+1. **Geospatial Vector Geometry as a Native Spatial Modality for Vision-Language Models (GeoVec-VLM)** - arXiv:2610.16769
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 原生空间模态, 矢量几何, RoPE_2D, 几何一致性, 地理尺度推理
+   - 文档: papers/2026-10-23_01_GeoVec-VLM_Geospatial_Vector_Geometry_Native_Spatial_Modality.md
+   - NotebookLM: N/A
+
+2. **DeSpatial: The Devil of Agentic Spatial Reasoning Lies in 3D Itself** - arXiv:2610.20990
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: oracle实验, 3D感知瓶颈, 实例融合, 同帧排斥, VSI-Bench 98.23%
+   - 文档: papers/2026-10-23_02_DeSpatial_Devil_of_Agentic_Spatial_Reasoning_Lies_in_3D_Itself.md
+   - NotebookLM: N/A
+
+3. **GeoMem-VLA: Internalizing 3D Scene Understanding into Temporal Memory for VLA Models** - arXiv:2610.29866
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 几何内化, GeoPlan token, VGGT教师, 情节记忆, 事件感知压缩
+   - 文档: papers/2026-10-23_03_GeoMem-VLA_Internalizing_3D_Scene_Understanding_into_Temporal_Memory.md
+   - NotebookLM: N/A
+
+4. **SpatialBrain: Spatial Intelligence Growing from Experience** - arXiv:2610.29317
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 证据/经验分离, 技能库, 任务签名, 无标签自演化, 资源决策
+   - 文档: papers/2026-10-23_04_SpatialBrain_Spatial_Intelligence_Growing_from_Experience.md
+   - NotebookLM: N/A
+
+5. **Rethinking Video Autoencoders for Interactive World Models (CADRE)** - arXiv:2610.30129
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 压缩设计空间, 动作延迟, ARR, 渐进自蒸馏, 域依赖压缩策略
+   - 文档: papers/2026-10-23_05_Rethinking_Video_Autoencoders_for_Interactive_World_Models_CADRE.md
+   - NotebookLM: N/A
