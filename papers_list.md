@@ -4962,3 +4962,40 @@
    - 关键词: 压缩设计空间, 动作延迟, ARR, 渐进自蒸馏, 域依赖压缩策略
    - 文档: papers/2026-10-23_05_Rethinking_Video_Autoencoders_for_Interactive_World_Models_CADRE.md
    - NotebookLM: N/A
+
+## 2026-10-24 研究的论文（精选5篇）
+
+1. **Think-Capture: Active 3D Geometry Acquisition for Spatial Reasoning in Vision-Language Models** - arXiv:2610.29232
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 查询条件式3D获取, 符号化3D状态, 分层GRPO, 工具容错, 分歧挖掘
+   - 文档: papers/2026-10-24_01_Think-Capture_Active_3D_Geometry_Acquisition_Spatial_Reasoning_VLM.md
+   - NotebookLM: N/A
+   - 亮点: Reason-then-Act主动感知范式；符号化物体流+相机流仅100 token（压缩51%）；负样本(工具误导)奖励+2训练元认知容错；MindCube-Tiny 54.4%(+21.5)，24GB真机部署
+
+2. **AEON: Unifying Video and 3D World Models** - arXiv:2610.28631
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4DGS世界表示, 域适配器, 视频DiT蒸馏, 4DRM四头解码, 持久4D环境
+   - 文档: papers/2026-10-24_02_AEON_Unifying_Video_and_3D_World_Models.md
+   - NotebookLM: N/A
+   - 亮点: 4DGS统一视频/3D世界模型两范式；域适配器把Wan2.2生成潜空间直通翻译为4D重建潜空间；文本/单图→持久4D世界，可渲染/可编辑/可仿真；四头解耦+深度锚定免SfM
+
+3. **RecallGS: Geometry-Grounded Recall for Online Semantic Gaussian Splatting** - arXiv:2610.31293
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 情景记忆, 非参数化先验, 渲染责任接地, 记忆路由, training-free
+   - 文档: papers/2026-10-24_03_RecallGS_Geometry_Grounded_Recall_Online_Semantic_Gaussian_Splatting.md
+   - NotebookLM: N/A
+   - 亮点: 观测历史作为免训练几何-语义先验；recall-ground-fuse记忆路由管线；alpha-compositing权重双重复用（验证+融合）；ScanNet/ScanNet++强分割@2.48FPS零附加训练
+
+4. **R4DGS: Referring Segmentation in 4D Gaussian Splatting (ReferGaussian)** - arXiv:2610.30326
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4D指代接地, EntityBank, 时变查询, 零目标拒绝, 免训练实体化
+   - 文档: papers/2026-10-24_04_R4DGS_Referring_Segmentation_in_4D_Gaussian_Splatting.md
+   - NotebookLM: N/A
+   - 亮点: 定义R4DGS新任务（时变/多目标/零目标）+首个基准R4D-Bench-QA(12场景89查询)；EntityBank把动态高斯重组为语言可寻址实体；MLLM约束分解+显式约束求解，ACM MM 2026
+
+5. **AirPlayground: Benchmarking Aerial Navigation across Diverse Reconstructed Environments** - arXiv:2610.29699
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 可执行3DGS世界, 分层几何栈, 自动专家采集, 跨策略API, 空间泛化扩展律
+   - 文档: papers/2026-10-24_05_AirPlayground_Benchmarking_Aerial_Navigation_Diverse_Reconstructed_Environments.md
+   - NotebookLM: N/A
+   - 亮点: 94可执行3DGS场景+94K闭环演示(50Hz/46.5M样本)；2D规划栅格+3D净空场分层几何；离线精度≠闭环表现的系统证据；ACT场景5→70未见成功率16.8%→29.4%
