@@ -4999,3 +4999,40 @@
    - 文档: papers/2026-10-24_05_AirPlayground_Benchmarking_Aerial_Navigation_Diverse_Reconstructed_Environments.md
    - NotebookLM: N/A
    - 亮点: 94可执行3DGS场景+94K闭环演示(50Hz/46.5M样本)；2D规划栅格+3D净空场分层几何；离线精度≠闭环表现的系统证据；ACT场景5→70未见成功率16.8%→29.4%
+
+## 2026-10-25 研究的论文（精选5篇）
+
+1. **SpatialBrain: Spatial Intelligence Growing from Experience** - arXiv:2610.29317
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 空间经验自演化, 3DFusionMemory, 技能库, 元认知路由, 无标签测试时自适应
+   - 文档: papers/2026-10-25_01_SpatialBrain_Spatial_Intelligence_Growing_from_Experience.md
+   - NotebookLM: N/A
+   - 亮点: 证据/计算/经验三层解耦；权重固定下5基准4升（平均67.5→72.6，MindCube+20.4）；经验不含答案与坐标，块间合并防泄漏；超所有agentic框架与训练式空间模型
+
+2. **From Views to Worlds: Active Exploration over 3D Worlds for VLMs (V2W)** - arXiv:2610.24676
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 主动探索, VLM兼容3D世界, 视觉/语言双接口, 探索策略RL, world-centric推理
+   - 文档: papers/2026-10-25_02_From_Views_to_Worlds_Active_Exploration_3D_Worlds_VLM.md
+   - NotebookLM: N/A
+   - 亮点: view-centric→world-centric概念升级；重建3D世界+双接口training-free提升VLM；小模型探索低效→SFT+RL训练探索策略；MindCube-Tiny超GPT-4o 48.5点
+
+3. **CoWorld Reasoner: Agentic Multimodal Reasoning with the Evolving Video World Model-Driven Harness** - arXiv:2610.21910
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 视频世界模型即想象引擎, 视觉想象元认知, 工具/技能/代码协同演化, 反事实生成, VLM-VWM分工
+   - 文档: papers/2026-10-25_03_CoWorld_Reasoner_Agentic_Multimodal_Reasoning_Video_World_Model.md
+   - NotebookLM: N/A
+   - 亮点: VWM多操作工具化（新视角/未来帧/反事实）统一想象引擎；是否想象/想象什么的元认知技能；权重固定harness协同演化；7基准全面超越，MMSI+11.8%/ERQA+13.0%
+
+4. **DynThinker: Unifying Static 3D and Dynamic 4D Spatial Reasoning** - arXiv:2610.20598
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 空间-动态干扰, D-EMA分组参数守恒, 语义门控先验融合, 单模型3D+4D统一, 能力保持
+   - 文档: papers/2026-10-25_04_DynThinker_Unifying_Static_3D_Dynamic_4D_Spatial_Reasoning.md
+   - NotebookLM: N/A
+   - 亮点: 首次系统诊断3D后训练损害动态4D能力（敏感区=晚层MLP）；D-EMA分组时域EMA解耦保持与增强；SDF双先验流门控融合；10指标平均60.5超GPT-5.6 Sol，开源SOTA
+
+5. **SkeLAM: Skeleton-Grounded Latent Action Model for Robot World Models** - arXiv:2610.31474
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 骨架接地潜在动作, 运动学/残差分解, 跨模态交换重建, 分支dropout因果性, 动作可控世界模型
+   - 文档: papers/2026-10-25_05_SkeLAM_Skeleton_Grounded_Latent_Action_Model_Robot_World_Models.md
+   - NotebookLM: N/A
+   - 亮点: 潜在动作分解为骨架接地运动学+残差场景响应；DROID上ADE-19.5%/LPIPS-11.1% vs DreamDojo；预测成功率≈真机执行；零样本人→机器人运动迁移
