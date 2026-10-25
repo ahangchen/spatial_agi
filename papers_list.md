@@ -5036,3 +5036,42 @@
    - 文档: papers/2026-10-25_05_SkeLAM_Skeleton_Grounded_Latent_Action_Model_Robot_World_Models.md
    - NotebookLM: N/A
    - 亮点: 潜在动作分解为骨架接地运动学+残差场景响应；DROID上ADE-19.5%/LPIPS-11.1% vs DreamDojo；预测成功率≈真机执行；零样本人→机器人运动迁移
+
+---
+
+## 2026-10-26 研究的论文（精选5篇）
+
+1. **GeoThinker-F: Endogenous Predictive World Representations for Fast Spatial Intelligence** - arXiv:2610.20592
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 内生预测世界表征, 潜在帧预测LFP, SGT融合, 教师内化, 推理加速
+   - 文档: papers/2026-10-26_01_GeoThinker-F_Endogenous_Predictive_World_Representations_Fast_Spatial_Intelligence.md
+   - NotebookLM: N/A
+   - 亮点: 把外部3D几何编码器从推理时移除，MLLM中间层LFP头从因果隐状态内生预测几何+未来语义表征；3.6×加速（1.45s→0.40s）性能无损（VSI-Bench 70.4）；空间智能"内化转向"代表作
+
+2. **SpatialScout: Can VLM Agents Actively Explore and Map 3D Scenes?** - arXiv:2610.26659
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 主动探索建图, 物体级度量地图, 跨视图关联, 持久身份, 空间基准
+   - 文档: papers/2026-10-26_02_SpatialScout_Can_VLM_Agents_Actively_Explore_and_Map_3D_Scenes.md
+   - NotebookLM: N/A
+   - 亮点: 首个主动物体级3D建图基准（80场景/3140目标/等价组防作弊）；最强Claude Opus 5.5仅41.71%重叠、3.25%达IoU>0.9；揭示被动QA高分与主动建构能力的数量级鸿沟
+
+3. **Agentic World Action Models (AW-0)** - arXiv:2610.30136
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 代码第三模态, 混合Transformer联合去噪, 技能库自动蒸馏, 预测接地规划, 混合执行仲裁
+   - 文档: papers/2026-10-26_03_Agentic_World_Action_Models_AW-0.md
+   - NotebookLM: N/A
+   - 亮点: 代码/视频/动作三流在MoT中联合去噪，代码双角色（WAM规划结构+可复用技能程序）；LLM代理自动标注3000h机器人+人类视频蒸馏50技能库；RoboTwin 2.0与真机双臂超VLA/WAM基线
+
+4. **Anvil: Scaling Embodied Spatial Intelligence through Knowledge Recirculation** - arXiv:2610.21882
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 知识再循环, Ground-Relation-Act本体, 跨形式校验数据飞轮, 首错路由蒸馏, 错误传播评测
+   - 文档: papers/2026-10-26_04_Anvil_Scaling_Embodied_Spatial_Intelligence_through_Knowledge_Recirculation.md
+   - NotebookLM: N/A
+   - 亮点: 11形式统一接口+三重准入校验的5.8M空间数据飞轮；语义首错路由多教师蒸馏精准命中失败阶段；学生协助验证但保留证据裁决权；7基准平均超Qwen3.5-9B 9.29点
+
+5. **PanoGraphGS: Unifying Panoptic Segmentation and Hierarchical 3D Scene Graphs with Gaussian Splatting** - arXiv:2610.27696
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 全景3D高斯, 层次场景图, 持久实例身份, 匈牙利关联, 免深度纯RGB
+   - 文档: papers/2026-10-26_05_PanoGraphGS_Unifying_Panoptic_Segmentation_and_Hierarchical_3D_Scene_Graphs.md
+   - NotebookLM: N/A
+   - 亮点: 首个端到端统一全景3DGS与floor-room-stuff-object四级场景图；SAM3伪标签匈牙利关联到持久身份；纯RGB免深度免训练恢复层级；物体节点精度超最强基线50+点，附NaviGS数据集
