@@ -5075,3 +5075,40 @@
    - 文档: papers/2026-10-26_05_PanoGraphGS_Unifying_Panoptic_Segmentation_and_Hierarchical_3D_Scene_Graphs.md
    - NotebookLM: N/A
    - 亮点: 首个端到端统一全景3DGS与floor-room-stuff-object四级场景图；SAM3伪标签匈牙利关联到持久身份；纯RGB免深度免训练恢复层级；物体节点精度超最强基线50+点，附NaviGS数据集
+
+## 2026-10-27 研究的论文（精选5篇）
+
+1. **Same Space or Not: Benchmarking Spatial Intelligence Through Cross-View Contradictions** - arXiv:2610.23959
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 跨视角矛盾归因, 场景状态一致性, 空间基准, True solve评估, 有效性约束发现
+   - 文档: papers/2026-10-27_01_same_space_or_not.md
+   - NotebookLM: N/A
+   - 亮点: 1000题四视角找"入侵者"+证据解释；人类83.3% vs 最强VLM 39.7%（True solve仅34.9%）；GT相机信息是最有效干预（61%）；rationale监督微调21.89%→41.79%
+
+2. **AutoPhyX: Automatic Text-Condition Physics Property Generation** - arXiv:2610.29517
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 文本条件物理属性, 体素参数场, 跨模态调制, FiLM, FEM/MPM仿真
+   - 文档: papers/2026-10-27_02_autophyx.md
+   - NotebookLM: N/A
+   - 亮点: 首个文本条件前馈3D物理属性预测（E/ν/ρ）；OpenCLIP对齐+FiLM调制解视觉歧义；Text2PhyX 1700资产×8标注；PSNR 23.42→26.01、ABO-500 ADE降20%；兼容mesh/点云/3DGS/NeRF
+
+3. **Reflect After Failure: Brain-Inspired Self-Evolving Agents for Embodied Spatial Intelligence (HiMeco)** - arXiv:2610.20312
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 失败归因, 元认知监控, 海马体记忆巩固, PEP诊断, 证据契约, 参数冻结自演化
+   - 文档: papers/2026-10-27_03_himeco_reflect_after_failure.md
+   - NotebookLM: N/A
+   - 亮点: 感知/探索/规划三维失败诊断+证据契约过滤"蒙对"经验；策略库+参数化技能库轮次间演化；VLM全程冻结；ESI-Bench SOTA、EmbSpatial +3.94pp
+
+4. **DRILL: Training World Models to Improve Policies, Not Predict Pixels** - arXiv:2610.30814
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 世界模型目标错配, 双层优化, 元梯度, GRPO, 访问率优势加权, PUR诊断
+   - 文档: papers/2026-10-27_04_drill_world_models.md
+   - NotebookLM: N/A
+   - 亮点: 像素MSE与策略改进方向实质错配（+17% MSE换+13.1点成功率）；DRILL-VWI闭式替代=DRILL-IMG元梯度一阶近似；5仿真器×2 VLA骨干验证；与RLVR预训练互补再+3.2；NeurIPS 2026
+
+5. **Thinker-WM: A Unified World Model with Shared Multimodal Representations for Embodied Intelligence** - arXiv:2610.18447
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 表征级多模态统一, Unified Dynamics Transformer, 深度原生模态, 世界-动作模型, 跨具身动作统一
+   - 文档: papers/2026-10-27_05_thinker_wm.md
+   - NotebookLM: N/A
+   - 亮点: RGB+度量深度+动作在UDT共享表示内联合演化；同一参数化支持6种功能；Motion Probe证明冻结视觉表示含可恢复运动信息；31K小时数据（20K自中心+10K真机+1K仿真）；EWMBench/WorldOlympiad/WorldArena三榜第一
