@@ -5112,3 +5112,40 @@
    - 文档: papers/2026-10-27_05_thinker_wm.md
    - NotebookLM: N/A
    - 亮点: RGB+度量深度+动作在UDT共享表示内联合演化；同一参数化支持6种功能；Motion Probe证明冻结视觉表示含可恢复运动信息；31K小时数据（20K自中心+10K真机+1K仿真）；EWMBench/WorldOlympiad/WorldArena三榜第一
+
+## 2026-10-28 研究的论文（精选5篇）
+
+1. **Robot-Aligned 3D Gaussian Splatting for Precise Reaching with Wrist-Camera VLA Policies (PrecisionReach-GS)** - arXiv:2610.35626
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS世界模型, VLA数据生成, 腕部相机精确触及, 子目标距离验证器, 电子废料拆解
+   - 文档: papers/2026-10-28_01_robot_aligned_3dgs_precise_reaching.md
+   - NotebookLM: N/A
+   - 亮点: 机器人对齐3DGS世界模型自动合成腕部视角训练数据+指令条件触及验证器；模拟80%精确触及率（基线5%）；拆解场景13.3→100%触及、56→97%指令遵从；静态世界假设与仿真域差距为主要局限
+
+2. **SG-Splat: Pose-Free 3D Gaussian Splatting under Pose Uncertainty** - arXiv:2610.35361
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 混合位姿训练, 双路径高斯配准, 位姿不确定性, 鲁棒优化, 轨迹误差缓解
+   - 文档: papers/2026-10-28_02_sg_splat_pose_free_3dgs.md
+   - NotebookLM: N/A
+   - 亮点: PKU团队；合成位姿扰动+真实位姿混合训练对位姿噪声免疫；双路径（直接预测+梯度配准）高斯精调；FGPR+RGC两阶段鲁棒优化显著超基线；直面"位姿误差污染3DGS"的核心痛点
+
+3. **SceneAgent: An Agentic Pipeline for Converting Real-World 3D/4D Captures into Simulation Environments** - arXiv:2610.34745
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 真实到仿真, 智能体转换管线, 仿真器渲染审查, 假设驱动修复, 任务性验证
+   - 文档: papers/2026-10-28_03_sceneagent_agentic_real_to_sim.md
+   - NotebookLM: N/A
+   - 亮点: Harvard团队；LLM智能体协调生成-审查循环，8隔离视图仿真器渲染对比+任务性验证（目标条件导航成功率）；60.75% F1@1cm vs SimFoundry 6.9%；验证器独立审查者设计防"自己改自己改错"
+
+4. **TrySee: Modular Perception-Enhanced VLM Grounding for Closed-Loop Robot Task Planning in Specialized Domains** - arXiv:2610.35687
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLM任务规划, 视觉预处理模块, 共享词汇表, 动态预处理选择, 规划-验证分离, brownfield部署
+   - 文档: papers/2026-10-28_04_trysee_vlm_grounding_task_planning.md
+   - NotebookLM: N/A
+   - 亮点: FZI/KIT；三函数视觉接口（find_objects/mask_objects/generate_pose）零VLM微调；规划准确率3.6%→83.6%、验证50.2%→91.2%、Overall 0→67.3%；掩码远胜语言描述（83.6% vs 20%）；181样本YOLOv9+SAM2零训练；真实UR10e电子废料拆解部署
+
+5. **Dream to Assist: Intent-Conditioned World Models for Shared Vehicle Control (Dream2Assist)** - arXiv:2610.34650
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 意图条件世界模型, RSSM, 共享车辆控制, 虚构共同博弈, sim-to-real-human gap, CBF安全层
+   - 文档: papers/2026-10-28_05_dream2assist_intent_world_model_shared_control.md
+   - NotebookLM: N/A
+   - 亮点: TRI+MIT；意图预测头嵌入RSSM+意图条件专家对齐奖励+L1-L2稀疏干预；双盲A/B意图条件化+52%扭矩对齐、碰撞率7.7%→2.7%；弯道失败根因=FCP模拟人类过于可重复（20%真实数据+平滑+奖励重构修复）；三阶段策略下选漏斗（1000→1）；GRIP实车零重训练迁移；"客观对齐≠主观偏好"评估警钟
