@@ -5113,6 +5113,38 @@
    - NotebookLM: N/A
    - 亮点: RGB+度量深度+动作在UDT共享表示内联合演化；同一参数化支持6种功能；Motion Probe证明冻结视觉表示含可恢复运动信息；31K小时数据（20K自中心+10K真机+1K仿真）；EWMBench/WorldOlympiad/WorldArena三榜第一
 
+## 2026-10-29 研究的论文（精选5篇）
+
+1. **DepthWorld: 3D World Model for Robot Manipulation** - arXiv:2610.08780
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: DROID-3D标定, 跨episode联合因子图, 手眼/关节偏置池化, SVD世界模型, spatial latent tiling, 机器人系点图监督, Stanford
+   - 文档: papers/2026-10-29_01_depthworld_3d_world_model_robot_manipulation.md
+   - 亮点: 7万+episode标定流水线使重投影误差比PointWorld基线好23×（外参4.9mm/0.39°）；零架构侵入的RGB+depth latent平铺（仅扩位置编码保留SVD先验）；深度监督同预算反哺RGB +1.48dB——几何与外观是互补目标
+
+2. **SG²SLAM: Spatial Geometry-Informed 3DGS SLAM for Monocular Outdoor Navigation** - arXiv:2610.36312
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 流式空间几何先验, chunk级米制尺度锚定, 射线条件化高斯核, Schur补条件统计, 有界衰减不透明度, Sim(3)全局融合, Skoltech+中科院计算所+清华苏研院
+   - 文档: papers/2026-10-29_02_sg2slam_spatial_geometry_informed_3dgs_slam_monocular_outdoor.md
+   - 亮点: 用块级3D-3D关联替代逐帧2D-3D关联打破级联漂移（消融ATE 2.65→1.49m）；高斯原语加视线条件子空间机制性消除掠射角漂浮原语（PSNR 22.12→23.41）；KITTI 11序列平均ATE 6.24m/PSNR 22.70dB全面第一
+
+3. **WorldSimProbe: Diagnosing Simulator Faithfulness in Action-Conditioned World Models** - arXiv:2608.09298
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 可观察仿真器契约, 动作实现-交互响应双链一致性, RMFA光流对齐, 接触幻觉诊断, 8交互原语, VLM裁判效度验证, 北大+EvoPhys+京东
+   - 文档: papers/2026-10-29_03_worldsimprobe_diagnosing_simulator_faithfulness_acwm.md
+   - 亮点: 5套件18,000实例体检6个ACWM：响应衰减普遍、假接触最难（38.6）、shake原语近乎缺失（0-1.2）；VLM/IDM评测OOD下效度崩塌（ρ=0.45/0.28）vs RMFA 0.75；诊断排序与下游OOD策略成功率闭环一致（53/34/21%）
+
+4. **CL4D: Contrastive Language–4D Pretraining for Vision-Language Reasoning in Dynamic Scenes** - arXiv:2608.18734 (ECCV 2026)
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 首个4D对比预训练, 动态点云流, 帧特征伪图像ViT时序编码, 对称InfoNCE, 4DVLM, DynAction4D, Moratuwa+SMART/MIT+A*STAR
+   - 文档: papers/2026-10-29_04_cl4d_contrastive_language_4d_pretraining.md
+   - 亮点: 语言对齐4D基础编码器填补"几何×时间"空白象限（检索R@1超先前~16.75%）；4DVLM不用图像/视频直接吃4D点云，BLEU超Gemini/GPT-5（即使多视角渲染）；点云统一表征覆盖人/物/机械臂（RH20T验证）
+
+5. **SpatioLM: Towards General Physical Spatial Intelligence in VLMs** - arXiv:2608.01899 (ICML 2026)
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 冻结VLM+旁路SV-Module, 中间层token激发, ControlNet式零投影注入, 帧内/全局交替注意力, 伪深度+射线图双重DPT监督, VSI-Bench首破70, 小米EV+同济
+   - 文档: papers/2026-10-29_05_spatiolm_general_physical_spatial_intelligence_vlm.md
+   - 亮点: 6×50M旁路模块激发VLM内在空间知识（无3D输入无外挂编码器）；VSI-Bench 71.6首破70且通用能力零损（对照Spatial-MLLM跌8-25%）；LIBERO 79.2→96.3，2B参数无机器人预训练超π0
+
 ## 2026-10-28 研究的论文（精选5篇）
 
 1. **Robot-Aligned 3D Gaussian Splatting for Precise Reaching with Wrist-Camera VLA Policies (PrecisionReach-GS)** - arXiv:2610.35626
