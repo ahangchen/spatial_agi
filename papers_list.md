@@ -5181,3 +5181,35 @@
    - 文档: papers/2026-10-28_05_dream2assist_intent_world_model_shared_control.md
    - NotebookLM: N/A
    - 亮点: TRI+MIT；意图预测头嵌入RSSM+意图条件专家对齐奖励+L1-L2稀疏干预；双盲A/B意图条件化+52%扭矩对齐、碰撞率7.7%→2.7%；弯道失败根因=FCP模拟人类过于可重复（20%真实数据+平滑+奖励重构修复）；三阶段策略下选漏斗（1000→1）；GRIP实车零重训练迁移；"客观对齐≠主观偏好"评估警钟
+
+## 2026-10-30 研究的论文（精选5篇）
+
+1. **Robot-Aligned 3D Gaussian Splatting for Precise Reaching with Wrist-Camera VLA Policies (PrecisionReach-GS)** - arXiv:2610.35626
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 机器人对齐3DGS世界模型, 腕部相机视角合成, VLA训练数据引擎, 指令条件触及验证器, 无物理仿真无网格, π0.5, 电子废料拆解
+   - 文档: papers/2026-10-30_01_robot_aligned_3dgs_wrist_camera_vla_precise_reaching.md
+   - 亮点: 3DGS数据引擎自动合成腕部视角训练数据（绕开真机演示瓶颈）；π0.5精确触及80% vs 遥操作数据58.7%；state-masking消融证明指令条件关键；拆解场景触及率13.3→100%、指令遵从56→97%
+
+2. **SceneAgent: An Agentic Pipeline for Converting Real-World 3D/4D Captures into Simulation Environments** - arXiv:2610.34745
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 真实到仿真智能体管线, 生成-审查循环, 仿真器渲染独立审查, 任务性验证(导航成功率), MPM/FLIP物理求解器选择, Harvard
+   - 文档: papers/2026-10-30_02_sceneagent_agentic_pipeline_3d_4d_captures_simulation.md
+   - 亮点: LLM多智能体真实扫描→可交互仿真；GraspClutter6D F1@1cm 9.51→60.75%（SimFoundry 6.9%）；4D IoU 0.86→99.09%；sim-only训练π0.5实机88%成功率；"验证器即质量上限"方法论
+
+3. **LingGS: Decoupling Feed-forward Geometry Prediction and Camera Tracking in Gaussian SLAM** - arXiv:2610.36853
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 冻结流式3D模型, 虚拟RGB-D传感器, ORB-SLAM3式几何位姿求解, 直接深度残差IRLS(ε=0.05), Laplacian引导高斯插入, 逆深度损失, 近实时7FPS
+   - 文档: papers/2026-10-30_03_linggs_decoupling_feedforward_geometry_prediction_camera_tracking_gaussian_slam.md
+   - 亮点: 前馈点云流+经典几何求解的免训练SLAM范式；4数据集PSNR全面第一且ATE同步领先；"学习管几何先验、几何管位姿"的接口化设计；开放世界在线空间记忆的现实路径
+
+4. **GaussianSpline: Adaptive Bézier Splines for Highly Dynamic 4D Gaussian Splatting** - arXiv:2610.35224
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 非均匀分段三次Bézier轨迹, 可学习时间分割(softmax单调), 反射式G¹连续性(可学习λ), 每高斯独立轨迹, 无辅助网络, Ben-Gurion
+   - 文档: papers/2026-10-30_04_gaussianspline_adaptive_bezier_splines_highly_dynamic_4d_gaussian_splatting.md
+   - 亮点: 时间容量按动态性自适应分配；flames PSNR +3.46dB全场最佳；消融证明K=2非均匀>K=4均匀（自适应分段>样条阶数）；自建碰撞合成场景+逐帧几何真值；静态区域零时间成本
+
+5. **DynThinker: Unifying Static 3D and Dynamic 4D Spatial Reasoning** - arXiv:2610.20598
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 空间-动态干扰诊断(深层MLP敏感), D-EMA参数组差异化EMA, SDF双流语义门控先验注入, VDPM动态几何编码器, 零token注入, 中山大学+NTU
+   - 文档: papers/2026-10-30_05_dynthinker_unifying_static_3d_dynamic_4d_spatial_reasoning.md
+   - 亮点: 9基准10指标AVG 60.5超GPT-5.6 Sol(59.5)；ReVSI 56.0/DSR 67.2/DSI 51.2&40.1四项开源SOTA；checkpoint插值+参数组还原定位干扰参数区；"能力保持"成为空间后训练一等公民问题
