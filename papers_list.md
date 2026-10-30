@@ -5213,3 +5213,39 @@
    - 关键词: 空间-动态干扰诊断(深层MLP敏感), D-EMA参数组差异化EMA, SDF双流语义门控先验注入, VDPM动态几何编码器, 零token注入, 中山大学+NTU
    - 文档: papers/2026-10-30_05_dynthinker_unifying_static_3d_dynamic_4d_spatial_reasoning.md
    - 亮点: 9基准10指标AVG 60.5超GPT-5.6 Sol(59.5)；ReVSI 56.0/DSR 67.2/DSI 51.2&40.1四项开源SOTA；checkpoint插值+参数组还原定位干扰参数区；"能力保持"成为空间后训练一等公民问题
+
+## 2026-10-31 研究的论文（精选5篇）
+
+1. **L3G-World: Real-Time Infinite World Generation with Latent 3D Gaussian Memory** - arXiv:2610.40614
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 潜在3D高斯记忆, O(S)记忆缩放, VAE潜特征直通渲染, spawn+残差refinement, 少步蒸馏DiT, 实时9.02FPS, KAIST
+   - 文档: papers/2026-10-31_01_l3g_world_latent_3d_gaussian_memory_realtime_infinite_world.md
+   - 亮点: 世界模型记忆按场景范围而非生成时长缩放（7.4GiB vs 基线11.7-66.7GiB）；每高斯携带VAE潜特征直接splatting到DiT潜空间（359×渲染加速）；前馈残差更新实现优化式修正能力（90×于ArtiFixer）；空间记忆设计公理："记忆规模应由世界大小而非经历时间决定"
+
+2. **Wizard: Manipulate Any World in Real Time via Agentic Control** - arXiv:2610.40339
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: agentic世界模型, 统一结构化视觉代理(R/B/G几何编码), 骨架+动作库检索重定向, slot动态绑定参考图, 自适应注意力掩码, 24FPS, 750场景178角色
+   - 文档: papers/2026-10-31_02_wizard_agentic_realtime_world_control.md
+   - 亮点: 关节级动作首次进入agentic世界模型；符号状态层+结构化代理+神经渲染三层解耦架构；50.3h四源对齐数据含物体恒存性课程设计（消失重现场景）；零样本泛化来自代理表示的转换普适性而非生成器规模
+
+3. **WorldFlow: Joint Video and 3D Motion Prediction via Large-Scale Pretraining** - arXiv:2610.39278
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 视频+查询条件3D flow联合生成, MoT共享RoPE时空约定, rectified flow, flow tokenization, 1.44M样本, WorldFlowBench, embodiment-free, RoboScience+NUS
+   - 文档: papers/2026-10-31_03_worldflow_joint_video_3d_motion_prediction.md
+   - 亮点: 联合视频生成使3D运动预测ADE降48-56%（视觉监督是几何预测的监督倍增器）；flow token与video token共享时空RoPE实现零参数跨模态对齐；激活预训练视频模型的物理常识为显式度量轨迹；SpatialCog ADE 0.060m超最强基线54.2%
+
+4. **Zhengrong-Spatial-Aware 1.0: Advancing 3D Multimodal Intelligence** - arXiv:2610.37216
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 度量点图注入, MoGe单目几何, HiSpatial-3B全量SFT, Qwen3-VL QLoRA混合域, 输出格式分布设计, 任务感知评测, 四级空间能力层次
+   - 文档: papers/2026-10-31_04_zhengrong_spatial_aware_3d_multimodal.md
+   - 亮点: 3B+度量点图79.89% vs 32B纯微调47.60%——度量空间推理上表示工程胜过规模堆叠；格式混合8:2教训（自由格式:选择题朴素混合致大跌）；风格化独立split 14.9%→55.1%证明迁移性；垂直空间领域适配施工图
+
+5. **Continuous-Action World Models: Learning Cross-Embodiment Spatiotemporal Dynamics Priors** - arXiv:2610.40401
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 连续动作函数, 物理时间接口, MoT三流编码(位置/姿态/夹爪), 独立时间查询解码, 锚定几何读出, 跨本体函数先验预训练, 同济大学
+   - 文档: papers/2026-10-31_05_coawm_continuous_action_world_models.md
+   - 亮点: "动作是函数不是序列"——执行频率成为推理时参数，一批执行时序工程问题(RTC/Legato/REMAC)被表示层消解；函数自编码器跨本体跨频率预训练扩大具身数据池；与3DGS空间场对称的运动时间场表示；先验学习与上下文选择两阶段解耦
+
+### 本日主线观察
+
+五篇论文拼出世界模型的完整架构图：L3G-World（记忆层：O(S)空间记忆）+ Wizard（状态层：符号化可编程代理）+ WorldFlow（动力学层：显式几何运动预测）+ CoAWM（动作层：连续函数化技能）+ Zhengrong（垂直适配：空间VLM工程方法）。共同趋势：表示决定上限——潜特征直通、结构化代理、共享时空RoPE、度量点图、连续函数，全部是把"空间/运动的正确表示"作为第一性设计对象。
