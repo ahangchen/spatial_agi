@@ -5249,3 +5249,35 @@
 ### 本日主线观察
 
 五篇论文拼出世界模型的完整架构图：L3G-World（记忆层：O(S)空间记忆）+ Wizard（状态层：符号化可编程代理）+ WorldFlow（动力学层：显式几何运动预测）+ CoAWM（动作层：连续函数化技能）+ Zhengrong（垂直适配：空间VLM工程方法）。共同趋势：表示决定上限——潜特征直通、结构化代理、共享时空RoPE、度量点图、连续函数，全部是把"空间/运动的正确表示"作为第一性设计对象。
+
+## 2026-11-01 研究的论文（精选5篇）
+
+1. **Video Generation Meets Agent Harness: Agentic Video Generation, Agentic World Modeling and Recursive Self-Improvement** - arXiv:2610.40191
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Agent Harness, Agentic视频生成, 世界状态外置, 递归自我改进RSI, 反馈三层分类, 程序化状态+神经渲染, NUS+NTU
+   - 文档: papers/2026-11-01_01_agent_harness_agentic_video_world_modeling.md
+   - 亮点: 以harness为分析单元统一生产/交互/开发三场景；L1-L4改进分层（输出/技能/模型/流程）澄清self-improvement概念混用；诚实结论——无系统完成视频RSI回路；"引擎持有状态+视频模型渲染"的混合架构对Spatial AGI路线图直接有用
+
+2. **PhysVLMM: Interaction-Conditioned Physical Belief Maps for Articulated Objects in Robot Scene Maps** - arXiv:2610.40539
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 物理信念地图, 可辨识性命题, 动力学第四层, effort证据共享, look-alike分组, 风险校准abstain, 闭式后验
+   - 文档: papers/2026-11-01_02_physvlmm_physical_belief_maps_articulated.md
+   - 亮点: 两条命题证明被动观察不能辨识动力学、单部件测量不迁移——交互是空间物理的必经通道；effort标量+组级共轭更新快可微仿真4个数量级且CRPS更低（0.323 vs 0.544）；86%关节辨识 vs 48%基线；风险水平δ全程校准
+
+3. **Probing Spatial State Representations in Visual Foundation Models** - arXiv:2610.40636
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 空间状态探测, 四层能力L1-L4, 物体持久性, 预测更新, actionability, 两条要素链, 十表征横评
+   - 文档: papers/2026-11-01_03_probing_spatial_state_representations_vfm.md
+   - 亮点: 空间能力是多维画像不是单标量——无表征全面领先；持久性/行动性依赖camera-pose读出而预测依赖场景读出（两条要素链）；更长前缀使所有模型持久性变差——论证显式空间记忆必要性；三个解耦（可解码≠输入使用≠功能效用）
+
+4. **Decoding Geometry, Not Tokens: Efficient VLMs for Robot Affordance and Trajectory Prediction** - arXiv:2610.39416
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 解码接口错配, 连续几何回归, DETR几何头, 指令条件化查询, 冻结VLM, 3.8×吞吐, QUT+CSIRO
+   - 文档: papers/2026-11-01_04_decoding_geometry_not_tokens_vlm_affordance.md
+   - 亮点: 证明0.5-2B紧凑VLM中间层已含丰富空间信息——瓶颈在token化解码接口不在表征容量；轨迹误差降60%+、affordance mAP+85%；2B+几何头≈RoboBrain精度×3.8吞吐；确立"空间输出的连续几何通道"原则
+
+5. **Ask to Evolve: A Unified Harness for Lifelong Embodied Navigation with Hybrid Action Space and Persistent Memory** - arXiv:2610.39446
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 终身导航harness, 混合动作空间, 主动交互提问, 持久空间记忆, place record对话绑定, 经验复用, 同济大学
+   - 文档: papers/2026-11-01_05_ask_to_evolve_lifelong_embodied_navigation.md
+   - 亮点: 感知/提问/记忆三信息源统一决策环；平均1.87次提问/回合达100% SR（四基准）；R2R重访SPL 82.23%→93.31%量化记忆价值；对话绑地点扩展空间记忆的社交维度；多天物理实验验证现实可行
