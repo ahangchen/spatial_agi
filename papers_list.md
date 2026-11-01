@@ -5281,3 +5281,35 @@
    - 关键词: 终身导航harness, 混合动作空间, 主动交互提问, 持久空间记忆, place record对话绑定, 经验复用, 同济大学
    - 文档: papers/2026-11-01_05_ask_to_evolve_lifelong_embodied_navigation.md
    - 亮点: 感知/提问/记忆三信息源统一决策环；平均1.87次提问/回合达100% SR（四基准）；R2R重访SPL 82.23%→93.31%量化记忆价值；对话绑地点扩展空间记忆的社交维度；多天物理实验验证现实可行
+
+## 2026-11-02 研究的论文（精选5篇）
+
+1. **E0.5: From Reconstructive to Future-Predictive 3D Foundations for Robotic World-Action Modeling** - arXiv:2610.36011
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 几何原生WAM, 未来3D预测, VGGT-Omega, Flow-Matching, OOD泛化
+   - 文档: papers/2026-11-02_01_e05_geometry_native_future_predictive_3d_wam.md
+   - NotebookLM: [notebook_id]
+
+2. **MemVLN: Streaming Episodic Memory for Vision-Language Navigation** - arXiv:2610.35066
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 情节记忆, VLN-CE, 航位推算位姿, 轨迹摘要监督, StreamVGGT
+   - 文档: papers/2026-11-02_02_memvln_streaming_episodic_memory_vln.md
+   - NotebookLM: [notebook_id]
+
+3. **P³-VLM: A Point-based Alternative for Grounded 3D Vision-Language Models** - arXiv:2610.28018
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 语义泄漏, 点接地, 3DGS, 三通路架构, 去捷径评测, NeurIPS 2026 Spotlight
+   - 文档: papers/2026-11-02_03_p3vlm_point_based_grounding_3d_vlm.md
+   - NotebookLM: [notebook_id]
+
+4. **HiFOR: Hierarchical Foresight with Action-Guided World Grounding for Vision-Language-Action Model** - arXiv:2610.40373
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 层次化前瞻, HDM, 因子化检索, 去噪感知, 里程碑自动标注
+   - 文档: papers/2026-11-02_04_hifor_hierarchical_foresight_action_guided_world_grounding.md
+   - NotebookLM: [notebook_id]
+
+5. **S-Agent 2.0: Spatial Reasoning with a General Coding Agent** - arXiv:2610.28354
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 通用编码智能体, 证据回路, 场景记忆, 到达即解释, 工具增益衰减
+   - 文档: papers/2026-11-02_05_sagent2_general_coding_agent_spatial_reasoning.md
+   - NotebookLM: [notebook_id]
