@@ -5313,3 +5313,35 @@
    - 关键词: 通用编码智能体, 证据回路, 场景记忆, 到达即解释, 工具增益衰减
    - 文档: papers/2026-11-02_05_sagent2_general_coding_agent_spatial_reasoning.md
    - NotebookLM: [notebook_id]
+
+## 2026-11-03 研究的论文（精选5篇）
+
+1. **SceneBloom: Agentic Indoor Environment Generation with Realistic and Diverse Layouts for Embodied Learning** - arXiv:2610.32978
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 室内环境生成, diffusion布局先验, 关系契约引导3D编译, 层次化功能区域采样, 物理合法场景, 零碰撞零越界, 生成数据>等量真实扫描
+   - 文档: papers/2026-11-03_01_scenebloom_agentic_indoor_environment_generation_embodied_learning.md
+   - 亮点: "神经提案+符号契约编译"架构同时拿到多样性/逼真度/物理完备性；生成场景训练的导航策略在真实扫描上超过等量真实数据——环境数据瓶颈被生产力解耦
+
+2. **GOFusion: Real-Time Gaussian-Occupancy Submap Fusion for Fisher-Informed Autonomous Robot Navigation** - arXiv:2610.25261
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS占据子图锚定, 活跃子图显存有界优化, 栅格化器内嵌Fisher信息, 逐基元在线敏感度, Fisher驱动剪枝与NBV, 真实无人机自主探索
+   - 文档: papers/2026-11-03_02_gofusion_realtime_gaussian_occupancy_submap_fusion_fisher_navigation.md
+   - 亮点: 不确定性成为渲染副产品——每帧免费产出决策信号；同一Fisher场既压缩地图又引导探索；"几何+外观+信息场"三层空间表征的直接实现
+
+3. **SpaceAct: Benchmarking 3D Spatial and Temporal Reasoning via Closed-Loop Action and Active Perception** - arXiv:2610.38405
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 闭环物理行动评测, 主动感知, 无特权坐标, 6-DoF位姿+扫掠碰撞检查, 分屏回滚纠错, SAPA框架, 诊断杠杆归因
+   - 文档: papers/2026-11-03_03_spaceact_benchmark_3d_spatial_temporal_reasoning_closed_loop_action.md
+   - 亮点: +plan仅关44%差距而+state关90%——瓶颈在3D视觉grounding不在规划；46%失败是碰撞/观察循环；空间智能评测从"说对"升级为"做到"
+
+4. **State World Models: Execute the Rules, Generate the Pixels** - arXiv:2610.26811
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 世界演化与渲染解耦, 符号状态机+冻结视频模型, 可编辑3D场景preview引导, 隐藏状态, WorldState-Bench反事实孪生, 规则遵循32%→92%
+   - 文档: papers/2026-11-03_04_state_world_models_execute_rules_generate_pixels.md
+   - 亮点: 规则不在像素里——纯视频模型隐藏状态任务最高仅32%；同一冻结模型加符号harness达92%；空间智能需要视角不变的持久状态层
+
+5. **A Sparse Topometric Graph for Scalable Cross-Session Indoor Navigation** - arXiv:2610.31432
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 稀疏拓扑度量图, 局部几何节点+距离加权可通行边, 几何-连通性双通道图匹配, 跨会话point-goal导航, 内存低两个数量级, 结构不变性
+   - 文档: papers/2026-11-03_05_sparse_topometric_graph_scalable_cross_session_indoor_navigation.md
+   - 亮点: 把空间记忆锚定在拓扑不变量上，内存降两个数量级且Gibson 77.1% SOTA；"表征的正确性>丰富性"；与MemVLN/DialogMem构成情节-语义-结构三层记忆谱系
