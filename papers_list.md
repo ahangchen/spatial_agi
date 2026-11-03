@@ -5345,3 +5345,35 @@
    - 关键词: 稀疏拓扑度量图, 局部几何节点+距离加权可通行边, 几何-连通性双通道图匹配, 跨会话point-goal导航, 内存低两个数量级, 结构不变性
    - 文档: papers/2026-11-03_05_sparse_topometric_graph_scalable_cross_session_indoor_navigation.md
    - 亮点: 把空间记忆锚定在拓扑不变量上，内存降两个数量级且Gibson 77.1% SOTA；"表征的正确性>丰富性"；与MemVLN/DialogMem构成情节-语义-结构三层记忆谱系
+
+## 2026-11-04 研究的论文（精选5篇）
+
+1. **Reconstruction as Spatial Evaluation: Diagnosing Cross-View Spatial Intelligence in Large Vision-Language Models (ReconSpatial)** - arXiv:2611.02026
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 重建即评估, 联合3D box预测, Structure/Metric双轴, 随机布局基线校正, Structure-Metric鸿沟, 度量深度干预, 地图注入导航, 空间微调迁移, CASIA+阿里Token Hub
+   - 文档: papers/2026-11-04_01_recons_spatial_eval_cross_view_spatial_intelligence.md
+   - 亮点: 首创联合多视角3D重建作为LVLM空间评估范式；18个前沿模型普遍"关系对、尺度错"（GPT-6-Astra Structure 81.4% vs Metric 58.7%）；GT地图注入导航+55-70pp证明感知是瓶颈；空间微调收益可迁移
+
+2. **VLSplat: Vision-Language Guided Object-Centric 3D Gaussian Splatting via Scene Graph** - arXiv:2611.01939
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 语言先验语义优化, 场景图训练脚手架, 组内去噪+组间补全, 合成物体视图CLIP门控, 混合SAM3/SAM2监督, 各向异性几何邻接, KAIST+SKKU
+   - 文档: papers/2026-11-04_02_vlsplat_vlm_guided_object_centric_3dgs_scene_graph.md
+   - 亮点: 把语言从"蒸馏对象"变为"分组修正的主动信号"；scene graph从输出抽象反转为优化脚手架；"合成视图+CLIP门控"形成生成式假设检验循环，修复mask过/欠分割
+
+3. **SCOUT: Planning under Occlusion via Object-Centric World Model Rollouts** - arXiv:2611.01600
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 遮挡感知规划, GHOST隐藏场景重建, 可见/隐藏槽联合精炼, blocker层级+可达走廊, LLM提议+MCTS裁决, 幻觉槽零位移监督, initial-view协议, GMU
+   - 文档: papers/2026-11-04_03_scout_planning_under_occlusion_object_centric_wm_rollouts.md
+   - 亮点: 物体级"幻觉"重建隐藏场景（槽+存在概率），确定性几何谓词做感知-规划接口；LLM只剪枝、世界模型MCTS拍板；真机杂乱货架验证，长视野遮挡任务超VLA与3D世界模型
+
+4. **WorldSketch: Sketching World Models for Zero-Shot Mobile Manipulation** - arXiv:2611.00513
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLM画世界模型, 最小运动学世界模型, 关节假设信念, 感知工具化点名测量, 渲染校验+执行反驳, 自改进免训练, RoboCasa 91%零样本, LIBERO-PRO 97%
+   - 文档: papers/2026-11-04_04_worldsketch_sketching_world_models_zero_shot_mobile_manipulation.md
+   - 亮点: VLM第三种角色——画任务最小充分的空间草图而非动作/代码；零样本91%/97%/76%且VLM token少10×；成功率对模型档位不敏感证明"架构功劳>模型功劳"；最小充分原则是空间表征设计新范式
+
+5. **AuroraWorld: Structured 4D World Modeling for Exo-to-Ego Video Generation in Robot Manipulation** - arXiv:2611.00177
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: exo→ego视频合成, 结构化4D世界推断, IDM轨迹推断8D末端, 运动稳定化时间锚, action/view-aware噪声先验, 世界模型数据引擎, 策略学习增广
+   - 文档: papers/2026-11-04_05_auroraworld_structured_4d_world_modeling_exo_to_ego.md
+   - 亮点: 把exo→ego重构为"稀疏观测下的隐藏4D具身状态推断"；几何/关键帧/轨迹三支柱先验优于表观条件化；η·ρ双评分抓住"关键状态在停稳处"的操作时序语义；世界模型作数据引擎再获仿真+真机实证
