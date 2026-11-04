@@ -5377,3 +5377,35 @@
    - 关键词: exo→ego视频合成, 结构化4D世界推断, IDM轨迹推断8D末端, 运动稳定化时间锚, action/view-aware噪声先验, 世界模型数据引擎, 策略学习增广
    - 文档: papers/2026-11-04_05_auroraworld_structured_4d_world_modeling_exo_to_ego.md
    - 亮点: 把exo→ego重构为"稀疏观测下的隐藏4D具身状态推断"；几何/关键帧/轨迹三支柱先验优于表观条件化；η·ρ双评分抓住"关键状态在停稳处"的操作时序语义；世界模型作数据引擎再获仿真+真机实证
+
+## 2026-11-05 研究的论文（精选5篇）
+
+1. **RoboWorM: Evaluating Movement Realism, Consistency and Acceleration Affects in Embodied Video World Models** - arXiv:2610.33807
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 视频世界模型评测, 确定性物理指标, KIVA运动学稳定性, RIGIS多视角一致性, 加速静默退化审计, 29000 rollouts, VLM-free评测
+   - 文档: papers/2026-11-05_01_roboworm_embodied_video_world_model_physical_eval.md
+   - 亮点: 用机器人硬件不变量替代VLM评判（KIVA幻觉检测对齐+25.8%、RIGIS相关+130%）；首次大规模揭示加速技术"保视觉、毁物理"的静默退化；空间评测应走确定性不变量路线
+
+2. **Trace4D: Grounded Spatiotemporal Reasoning via 4D State Sequences** - arXiv:2611.02759
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4D状态序列中间证据, 4D-grounded CoT, 600K野外4D感知样本, 几何感知GRPO, 零外部几何依赖, 视角变化推理, KAIST
+   - 文档: papers/2026-11-05_02_trace4d_4d_state_sequences_grounded_spatiotemporal_reasoning.md
+   - 亮点: 把几何放在推理链中间——4D状态既是推理工具又是监督对象；几何感知RL奖励防止CoT捷径退化；几何能力可完全内化进VLM权重
+
+3. **Caging Vision-Language Navigation for Legged Robots via Barrier-Certified Safety Architecture** - arXiv:2611.04972
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: caging围栏化架构, VLA语义+形式化安全分层, SDF物理接地, Bezier参数化MPPI, dEBF可证明避碰, 人形+四足真机验证
+   - 文档: papers/2026-11-05_03_caging_legged_vln_barrier_certified_safety.md
+   - 亮点: "增强并围栏而非抛弃"——VLA能力与形式化安全分治；空间安全走控制理论确定性路线；SDF作为语义-几何-控制通用接口
+
+4. **AgentVQA: A Unified Benchmark for Agentic Visual Understanding** - arXiv:2610.31494
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 五域统一智能体基准, 1000真实困难样本, 22模型评测, 离线排名追踪在线排名, 视觉状态接地瓶颈, 空间关系推断错误归因
+   - 文档: papers/2026-11-05_04_agentvqa_unified_agentic_visual_understanding_benchmark.md
+   - 亮点: 实证确认"视觉状态接地与维护失败"是VLM智能体第一瓶颈（最强仅58.5%）；错误不在任务理解/逻辑推理而在空间接地；为Spatial AGI资源投入指明最高杠杆方向
+
+5. **CLOSER: Evidence-Aware Active Visual Verification for Embodied Object-Goal Navigation** - arXiv:2610.28476
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 停止决策闭环证据获取, 三值校准判定(target/non-target/uncertain), 嵌入多样性视角门, mask+深度扩散主动接近, 即插即用验证层, Gibson/HM3D成功+3.6
+   - 文档: papers/2026-11-05_05_closer_evidence_aware_active_visual_verification_objectnav.md
+   - 亮点: "验证优先于承诺"——不确定标签成为主动感知触发器；主动证据采集只需mask+深度，无需重型世界模型；与AgentVQA构成诊断-处方配对
