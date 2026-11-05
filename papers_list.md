@@ -5409,3 +5409,35 @@
    - 关键词: 停止决策闭环证据获取, 三值校准判定(target/non-target/uncertain), 嵌入多样性视角门, mask+深度扩散主动接近, 即插即用验证层, Gibson/HM3D成功+3.6
    - 文档: papers/2026-11-05_05_closer_evidence_aware_active_visual_verification_objectnav.md
    - 亮点: "验证优先于承诺"——不确定标签成为主动感知触发器；主动证据采集只需mask+深度，无需重型世界模型；与AgentVQA构成诊断-处方配对
+
+## 2026-11-06 研究的论文（精选5篇）
+
+1. **PrimeSim: A Generalist World Model Simulator from Large-Scale Cross-Embodiment Demonstrations** - arXiv:2611.04870
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 世界模型模拟器, 30110小时跨具身数据, 22平台统一动作表示, 帧对齐双路径动作条件, fast-video/slow-memory后训练, 层次时间记忆, 105秒rollout, r=0.99策略相关性, GRPO
+   - 文档: papers/2026-11-06_01_primesim_generalist_world_model_simulator.md
+   - 亮点: 首次用策略成功率相关性(r=0.99)证明视频世界模型可替代物理仿真器做策略训练；分层KV记忆(初始场景/稀疏长程/稠密近期)支撑长时程空间一致性；开源权重+训练代码
+
+2. **Physical Diffusion Policy via MPM-Guided 3D Gaussian Simulation** - arXiv:2611.04493
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3DGS-MPM可微物理仿真, 视频反演材料参数, VLM物理先验+参数裁剪, 材料感知MoE扩散策略, 物理记忆库, 可变形物体操作, HKU
+   - 文档: papers/2026-11-06_02_physical_diffusion_policy_mpm_3dgs.md
+   - 亮点: 逆向使用3DGS+MPM——从演示视频反演物理参数(E/ν/τY/η)注入策略条件；"LLM给方向、梯度给数值"的物理常识落地范式；物理记忆库让部署零仿真成本
+
+3. **FloMo: 3D Scene Flow as a World Action Model Intermediate for Learning from Human Video** - arXiv:2611.05062
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D scene flow预测目标, 低熵动作中介, 冻结视频VAE复用, Wan2.2 5B+LoRA, 累积位移场, 人类视频迁移, 注意力归因容量审计, Georgia Tech
+   - 文档: papers/2026-11-06_03_flomo_3d_scene_flow_world_action_model.md
+   - 亮点: 干净消融证明WAM应预测运动而非视频——换视频目标伤OOD、加视频目标掉点、action注意力涌向motion；scene flow渲染成RGB复用冻结视频VAE，零新tokenizer
+
+4. **From Pixels to Actions: Towards Native Vision-Language-Action Policies (NEO-VLA)** - arXiv:2611.06918
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: encoder-free VLA, 原生骨干多深度读取, 层映射动作专家, flow-matching连续动作, 激活干预因果证据, 2B/40层三阶段训练, LIBERO-plus鲁棒性
+   - 文档: papers/2026-11-06_04_neo_vla_encoder_free_native_vla.md
+   - 亮点: 证明动作关键视觉信号峰值在早期层——单一视觉端点是控制的结构瓶颈；层映射对比+激活干预双重证据；原生骨干优于编码器骨干且分布偏移下更鲁棒
+
+5. **GaussianRenderFormer: Transformer-based Rendering of 3D Gaussian Splats** - arXiv:2611.05593
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 无光栅化器神经渲染, 高斯token化, 投影位置2D RoPE, 投影足迹keys, 4x4小patch, RenderFormer权重迁移, 可行性研究, Hebrew University
+   - 文档: papers/2026-11-06_05_gaussianrenderformer_transformer_rendering_3dgs.md
+   - 亮点: 首个无光栅化器的3DGS前馈神经渲染器(38.08dB vs 光栅化44.02dB)；"解析几何偏置+学习注意力"设计模式；6dB差距诊断为解码器瓶颈而非泛化问题
