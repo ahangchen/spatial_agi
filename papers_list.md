@@ -1,5 +1,37 @@
 # Spatial AGI Research Papers - Daily Analysis
 
+## 2026-11-07 研究的论文（精选5篇）
+
+1. **SLA: Scaling Spatial-Language-Action Model via Continual Pre-training** - arXiv:2611.08373
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA持续预训练, 隐式空间表征对齐, OmniVGGT教师蒸馏, 特征依赖门控层选择, 状态dropout, 零推理开销脚手架, HKUST(GZ)+BAAI
+   - 文档: papers/2026-11-07_01_sla_scaling_spatial_language_action_continual_pretraining.md
+   - 亮点: 空间对齐从post-training前移到continual pre-training成为基础模型能力；8个真实部署条件较π0.5平均+24.0pp；教师/投影器/门控仅训练期存在、推理架构零改动——"空间监督进入预训练目标函数"的标志性工作
+
+2. **FlowBench: Counterfactual Imagination Training for Spatial Intelligence** - arXiv:2611.03937
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 反事实空间想象CSI, imagination gap, 模拟器元数据确定性标注, 精确光流监督, text-to-flow, sim-to-real迁移, Stanford
+   - 文档: papers/2026-11-07_02_flowbench_counterfactual_imagination_training_spatial_intelligence.md
+   - 亮点: 428K样本同时训练VLM与世界模型；专有VLM超人类但存在3-5pp想象差距、开源接近随机；Sim微调Real+16.9pp；世界模型生成帧细节不足使"先想象再回答"暂时无效——CSI是空间感知与规划间的缺失环节
+
+3. **GPWM: Modeling the World as 3D Particle Motion** - arXiv:2611.08338
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 生成式粒子世界模型, 多分辨率时空transformer, flow matching+diffusion forcing, 流式rollout 55×外推, 噪声空间规划, 统一6物理域, CMU
+   - 文档: papers/2026-11-07_03_gpwm_modeling_world_as_3d_particle_motion.md
+   - 亮点: 单一权重覆盖刚/弹/塑/颗粒/布料且Unified在2域反超专家模型；预测误差6域平均-31%；生成先验内噪声搜索大幅优于动作空间搜索（picking上后者失败）——"生成先验即规划流形"
+
+4. **MoMaSplat: Dynamic Novel-View Demonstration Augmentation for Mobile Manipulation** - arXiv:2611.08372
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 动态新视角演示增广, 分解式3DGS(场景+物体), VGGT物体位姿跟踪, Sim(3)配准, 运动学动作重定向, 接触后交互阶段, UT Austin
+   - 文档: papers/2026-11-07_04_momasplat_dynamic_novel_view_demonstration_augmentation_mobile_manipulation.md
+   - 亮点: 首个覆盖接触后动态交互的移动操作NVS增广；导航轨迹即场景扫描、操作演示即物体扫描——数据采集免费产出3D资产；未见底盘位姿平均成功率翻倍以上，大位移下基线全败仍保持非平凡成功率
+
+5. **MKD2World: A Typed Spatial Markdown World Model For Web Agents** - arXiv:2611.06544
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Typed Spatial Markdown, GUI世界模型, 预注入标注管线, Base-Focus元素损失, 不确定性触发预演, digest推理, 跨域状态表示设计
+   - 文档: papers/2026-11-07_05_mkd2world_typed_spatial_markdown_world_model_web_agents.md
+   - 亮点: TSM同时编码类型/语义/位置/控件状态/层级；预注入DOM直读标注消除事后推断误差；域外EleF1超GPT-5.6达+11.52分、agent成功率+14.7pp——空间状态表示设计原则跨物理/数字域同构
+
 ## 2026-10-16 研究的论文（精选5篇）
 
 1. **GeoThinker-F: Endogenous Predictive World Representations for Fast Spatial Intelligence** - arXiv:2610.20592
