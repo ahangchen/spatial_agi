@@ -5473,3 +5473,30 @@
    - 关键词: 无光栅化器神经渲染, 高斯token化, 投影位置2D RoPE, 投影足迹keys, 4x4小patch, RenderFormer权重迁移, 可行性研究, Hebrew University
    - 文档: papers/2026-11-06_05_gaussianrenderformer_transformer_rendering_3dgs.md
    - 亮点: 首个无光栅化器的3DGS前馈神经渲染器(38.08dB vs 光栅化44.02dB)；"解析几何偏置+学习注意力"设计模式；6dB差距诊断为解码器瓶颈而非泛化问题
+
+## 2026-11-08 研究的论文（精选5篇）
+
+1. **PlayGen2: Learning Real-Time Playable Worlds with Explicit 3D State** - arXiv:2611.07867
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Model, Explicit 3D State, Occupancy Grid, Entity Table, Real-time Interaction
+   - 文档: papers/2026-11-08_01_playgen2_explicit_3d_state_playable_world.md
+
+2. **Physical Experience Builds Continual Spatial World Models** - arXiv:2611.04016
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Continual Learning, Spatial Change Memory, Physics-grounded Maze, Bayes Limit, Transfer
+   - 文档: papers/2026-11-08_02_physical_experience_continual_spatial_world_models.md
+
+3. **OpenNWM: A Generalist Navigation World Model with Latent Action Pretraining** - arXiv:2611.01844
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Navigation World Model, Latent Action, Action-free Video Pretraining, NavAnywhere 17.5M
+   - 文档: papers/2026-11-08_03_opennwm_latent_action_navigation_world_model.md
+
+4. **WorldFlow: Joint Video and 3D Motion Prediction via Large-Scale Pretraining** - arXiv:2610.39278
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Generative World Model, 3D Trajectory, Rectified Flow, MoT, Video-Geometry Coupling
+   - 文档: papers/2026-11-08_04_worldflow_joint_video_3d_motion_prediction.md
+
+5. **CST-Bench: Benchmarking Counterfactual Spatial Transition Reasoning with CT-OPSD** - arXiv:2611.07541
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Counterfactual Spatial Reasoning, Causal State Transition, Benchmark, Self-Distillation
+   - 文档: papers/2026-11-08_05_cst_bench_counterfactual_spatial_transition_reasoning.md
