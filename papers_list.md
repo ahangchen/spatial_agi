@@ -5500,3 +5500,35 @@
    - 相关性: ⭐⭐⭐⭐⭐
    - 关键词: Counterfactual Spatial Reasoning, Causal State Transition, Benchmark, Self-Distillation
    - 文档: papers/2026-11-08_05_cst_bench_counterfactual_spatial_transition_reasoning.md
+
+## 2026-11-09 研究的论文（精选5篇）
+
+1. **ReactWorld: Structuring Interaction Responses for Embodied Video Generation** - arXiv:2611.06120
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Embodied Video World Model, Interaction Response Field, Chain-of-Thought Generation
+   - 文档: papers/2026-11-09_01_reactworld_structured_interaction_responses_embodied_video.md
+   - NotebookLM: [notebook_id]
+
+2. **AgiWorld: An Agentic Video World Model for Building Persistent Worlds** - arXiv:2611.02341
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Agentic World Model, Spatial Memory, Persistent Worlds, Closed-Loop Generation
+   - 文档: papers/2026-11-09_02_agiworld_agentic_video_world_model_persistent_worlds.md
+   - NotebookLM: [notebook_id]
+
+3. **Concertina: Embodying Manipulation and Cognition in One Diffusion Vision-Language Model** - arXiv:2611.07513
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: eVLM, Continuous Latent Action, Diffusion VLM, Action Interface Audit
+   - 文档: papers/2026-11-09_03_concertina_evlm_diffusion_vlm_manipulation_cognition.md
+   - NotebookLM: [notebook_id]
+
+4. **TwinBridge: Digital Twin-Driven Policy and Reward Transfer for Real-World Reinforcement Learning** - arXiv:2611.06442
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Digital Twin, 3D Gaussian Splatting, Visual Process Rewards, Sim-to-Real RL
+   - 文档: papers/2026-11-09_04_twinbridge_digital_twin_policy_reward_transfer_real_world_rl.md
+   - NotebookLM: [notebook_id]
+
+5. **Where and Why is Grounded Reasoning Useful?** - arXiv:2611.08485
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Grounded Reasoning, Spatial Reasoning Benchmark, Undescribable References, BrickVision
+   - 文档: papers/2026-11-09_05_where_why_grounded_reasoning_useful.md
+   - NotebookLM: [notebook_id]
