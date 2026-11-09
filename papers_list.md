@@ -5532,3 +5532,30 @@
    - 关键词: Grounded Reasoning, Spatial Reasoning Benchmark, Undescribable References, BrickVision
    - 文档: papers/2026-11-09_05_where_why_grounded_reasoning_useful.md
    - NotebookLM: [notebook_id]
+
+## 2026-11-10 研究的论文（精选5篇）
+
+1. **MOMASPLAT: Dynamic Novel-View Demonstration Augmentation for Mobile Manipulation** - arXiv:2611.08372
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D Gaussian Splatting, Mobile Manipulation, Novel-View Synthesis, Demonstration Augmentation, Action Retargeting
+   - 文档: papers/2026-11-10_01_momasplat_dynamic_novel_view_demo_augmentation_mobile_manipulation.md
+
+2. **SURE: Spatiotemporal Uncertainty Representation for Efficient Vision-Language-Action Learning** - arXiv:2611.09684
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, Probabilistic Action Decoder, Soft-DTW, Data Efficiency, Spatial Uncertainty
+   - 文档: papers/2026-11-10_02_sure_spatiotemporal_uncertainty_vla_learning.md
+
+3. **Toward the Era of Agentic Embodied Intelligence (A2-MEAS/A2-WLA)** - arXiv:2611.09124
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Agentic Embodied AI, Multi-Agent Coordination, Long-Horizon Autonomy, Latent World Model, Failure Recovery, BEHAVIOR
+   - 文档: papers/2026-11-10_03_agentic_embodied_intelligence_a2meas.md
+
+4. **Interactive World Simulation with Cosmos for Physical AI** - arXiv:2611.06627
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Foundation Model, Real-Time Interactive Simulation, Physical AI, Multi-View AV Simulation, Controllable Video Transfer
+   - 文档: papers/2026-11-10_04_interactive_world_simulation_cosmos_physical_ai.md
+
+5. **BEV3SR: Evidence-Aware 3D Spatial Reasoning from Video** - arXiv:2611.09816
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: BEV Scene Memory, Spatial Reasoning, Reference Frame, Evidence Routing, Training-Free, VLM
+   - 文档: papers/2026-11-10_05_bev3sr_evidence_aware_3d_spatial_reasoning_video.md
