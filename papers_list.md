@@ -1,5 +1,37 @@
 # Spatial AGI Research Papers - Daily Analysis
 
+## 2026-11-11 研究的论文（精选5篇）
+
+1. **Spatial Harness: Grounding Spatial Reasoning in Executable World States with Physics Engines** - arXiv:2611.11344
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 可执行世界状态, 物理引擎接地, MuJoCo, Perceiver/Reasoner解耦, 语言约束布局编译, GT控制实验, NeurIPS 2026, HKBU+ByteDance Seed
+   - 文档: papers/2026-11-11_01_spatial_harness_executable_world_states_physics_engines.md
+   - 亮点: GT布局下Base仅71.81%而引擎执行达98.25%——"知道布局"与"正确使用布局"是两种能力；空间操作后果由引擎计算而非VLM想象；Qwen3.5-27B在MindCube +18.4pp超pySpatial 7.52pp
+
+2. **WorldMind: Test-Time Scaling for Visual Spatial Reasoning through Latent World Simulation** - arXiv:2611.10151
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 潜世界模拟, 测试时扩展, latent-to-pixel-to-latent瓶颈, 学习式潜特征选择(层×去噪步归因), 模态dropout, 过程可验证RL, Tsinghua+Pitt
+   - 文档: papers/2026-11-11_02_worldmind_latent_world_simulation_test_time_scaling.md
+   - 亮点: 绕过像素往返把世界模型潜特征直接回流VLM；先导实验显示小数据RGB赢、大数据潜赢——潜空间是更完整的空间信息源；平均比基础VLM +16.0%、比RGB世界模拟 +8.3%
+
+3. **WanderBench: Can World Models Explore Dynamic Worlds from Video?** - arXiv:2611.12557
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 视频条件化世界模型, 动态世界探索, 时间同步参照, 6维24子指标, 回访事件时效性, 无记忆回访, 证据有序条件化, HUST
+   - 文档: papers/2026-11-11_03_wanderbench_world_models_explore_dynamic_worlds_video.md
+   - 亮点: 745源视频首次度量"忠实探索动态世界"；8模型两大普适失败——长程控制/动态衰减、无一模型记住生成过的内容；WanderLand零训练全维度提升(源动态+8.3)；R.7指标识破"冻结旧状态"的伪一致性
+
+4. **PLS-GS: Probabilistic Lidar Scaffolds for Compact, Surface-Aligned Gaussian Splatting** - arXiv:2611.10699
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 概率LiDAR脚手架, 6D分层高斯混合, 表面框架解码, Mahalanobis支撑损失, 连续自适应支撑, 受限概率生长, 机器人建图, QUT
+   - 文档: papers/2026-11-11_04_pls_gs_probabilistic_lidar_scaffolds_surface_aligned_gaussian_splatting.md
+   - 亮点: 首次把HGMM从几何表示改造为渲染脚手架；表面对齐精度1.47×、模型缩小2.5×、渲染加速1.7×；"概率分量自带局部坐标系"——协方差特征向量是免费的表面几何
+
+5. **GeoMind: A Benchmark for Spatial Understanding in Robotic Manipulation** - arXiv:2611.12175
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 空间推理+空间记忆双维, 六任务族54变体, 抗线索设计(视觉相同物体), oracle对照归因, 身份跟踪, 约束到动作转换, Tsinghua SZIGS
+   - 文档: papers/2026-11-11_05_geomind_spatial_understanding_benchmark_robotic_manipulation.md
+   - 亮点: 首个推理(4族)+记忆(2族)全覆盖的操作空间诊断基准；两大系统性失败——跨变化身份跟踪失败、关系/几何约束到动作转换失败；oracle对照+受控扰动的归因方法论
+
 ## 2026-11-07 研究的论文（精选5篇）
 
 1. **SLA: Scaling Spatial-Language-Action Model via Continual Pre-training** - arXiv:2611.08373
