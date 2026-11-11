@@ -5591,3 +5591,30 @@
    - 相关性: ⭐⭐⭐⭐⭐
    - 关键词: BEV Scene Memory, Spatial Reasoning, Reference Frame, Evidence Routing, Training-Free, VLM
    - 文档: papers/2026-11-10_05_bev3sr_evidence_aware_3d_spatial_reasoning_video.md
+
+## 2026-11-12 研究的论文（精选5篇）
+
+1. **OnlyAct: Extracting Action Representations from Foundation Models for World Models** - arXiv:2611.14420
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Action Representation, V-JEPA 2, Contrastive Disentanglement, Video World Models, Label-free, Action Transfer
+   - 文档: papers/2026-11-12_01_onlyact_action_representations_foundation_models_world.md
+
+2. **LaST0.5: A Generalist World Action Model with Interaction-Centric Latent Reasoning** - arXiv:2611.14048
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Action Model, Interaction-Centric Latent Reasoning, Mixture-of-Transformers, Affordance Supervision, Adaptive Execution, LIBERO 99.5%
+   - 文档: papers/2026-11-12_02_last05_generalist_world_action_model_interaction_latent.md
+
+3. **Zero-Shot VLA Adaptation with Retrieved Guidance (RAGu)** - arXiv:2611.10894
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Retrieval-Augmented Guidance, VLA Adaptation, Trajectory Warping, Functional-role Correspondence, Flow Matching Steering, Zero-shot
+   - 文档: papers/2026-11-12_03_ragu_zero_shot_vla_adaptation_retrieved_guidance.md
+
+4. **Spaghetti Splatting: Differentiating Curvilinear Dirac Masses via Convolution** - arXiv:2611.12716
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Curvilinear Primitives, Differentiable Rendering, Convolution, 3DGS Superset, Anti-aliasing, Physics-ready Geometry
+   - 文档: papers/2026-11-12_04_spaghetti_splatting_curvilinear_dirac_convolution.md
+
+5. **GEMOR-GS: Global Extrinsic-calibration-refined Mapping and Online Relocalization for 3DGS SLAM** - arXiv:2611.13528
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3DGS SLAM, Extrinsic Calibration, Gated Joint Objective, Global Refinement, Re-localization, Re-enterable World Model
+   - 文档: papers/2026-11-12_05_gemor_gs_global_extrinsic_3dgs_slam_relocalization.md
