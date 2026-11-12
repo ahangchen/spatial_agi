@@ -5618,3 +5618,35 @@
    - 相关性: ⭐⭐⭐⭐
    - 关键词: 3DGS SLAM, Extrinsic Calibration, Gated Joint Objective, Global Refinement, Re-localization, Re-enterable World Model
    - 文档: papers/2026-11-12_05_gemor_gs_global_extrinsic_3dgs_slam_relocalization.md
+
+## 2026-11-13 研究的论文（精选5篇）
+
+1. **SWAM: Scaling World Action Models with Cross-Modal Alignment** - arXiv:2611.12870
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Action Model, 跨模态对齐保护, 47k小时多源数据, UMI演示, MoT双分支DiT, 单向注意力, Flow Matching, SJTU+Noematrix
+   - 文档: papers/2026-11-13_01_swam_scaling_world_action_models_cross_modal_alignment.md
+   - 亮点: 首次系统研究"动作学习如何损害语言-视频对齐"；真机SR 40% vs OpenWAM 23.33%；47k小时数据+代码+权重全开源；数据配方×架构×scaling的完整证据链
+
+2. **Compass 1: Towards Open-World and Persistent Embodied Navigation from Monocular RGB Videos** - arXiv:2611.12087
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 开放世界导航基础模型, History Representation Map, 记忆回溯, 结构化VQA监督, 跨本体zero-shot, Cosmos3-Edge, 异步双路由, Archon+港大+华为
+   - 文档: papers/2026-11-13_02_compass1_open_world_persistent_embodied_navigation_monocular_rgb.md
+   - 亮点: 320次真机试验总体SR 79.4% vs 基线17.8%；记忆回溯0%→58%证明持久性是监督设计问题；1m训练分布泛化0.35-1.5m四本体；2500+小时数据开源
+
+3. **ObjectWorld: Scaling Object-Centric World Models with A Large-Scale 3D Full-Object Flow Dataset** - arXiv:2611.11085
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D全物体流, 物体中心世界模型, 1210小时数据集, 自动标注管线, 采样流预测, 流条件动作优化, 跨本体, NUS
+   - 文档: papers/2026-11-13_03_objectworld_scaling_object_centric_world_models_3d_full_object_flow.md
+   - 亮点: 全物体流统一刚体/可形变物体（含遮挡表面）；62%监督来自野外视频自动标注；"可大规模监督+可执行"的表示设计判据
+
+4. **Trace4D: Grounded Spatiotemporal Reasoning via 4D State Sequences** - arXiv:2611.02759
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4D状态序列, Grounded CoT, 跨时步差分推理, 几何感知GRPO, 双坐标约定, 全合成数据引擎, 推理时零外部几何依赖
+   - 文档: papers/2026-11-13_04_trace4d_grounded_spatiotemporal_reasoning_4d_state_sequences.md
+   - 亮点: 多时步4D状态序列作为显式中间表示；几何过程奖励防语言捷径；推理时自预测4D状态无需外部模型；600K+70K全合成训练数据
+
+5. **Physical Diffusion Policy via MPM-Guided 3D Gaussian Simulation** - arXiv:2611.04493
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 可微仿真, 3DGS-MPM耦合, 材料参数反演, 物理感知MoE扩散策略, 物理记忆库, 策略平均化诊断, HKU
+   - 文档: papers/2026-11-13_05_physical_diffusion_policy_mpm_guided_3d_gaussian_simulation.md
+   - 亮点: 可微仿真逆向应用——从视频反演材料参数(E,ν,τ_Y,η)；MoE按物理regime路由解决异质物体策略平均化；3DGS作为几何-物理-渲染统一载体
