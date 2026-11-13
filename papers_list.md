@@ -1,5 +1,37 @@
 # Spatial AGI Research Papers - Daily Analysis
 
+## 2026-11-14 研究的论文（精选5篇）
+
+1. **Topology-Aware 4D Gaussian Splatting for Egocentric Videos (TopoEgo/Topo-4DGS)** - arXiv:2611.16012
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 拓扑变化4D重建, 自我中心视频, Motion Bifurcation, 事件门控软路由, 表面支撑增删, TopoEgo基准, TUM+Google
+   - 文档: papers/2026-11-14_01_topology_aware_4dgs_egocentric.md
+   - 亮点: 首个真实自我中心拓扑重建基准（24序列/34事件/四族事件）；Ego4D 68.8%、EPIC-KITCHENS >80%视频含拓扑变化；"运动分叉+事件条件表面支撑更新"解决固定拓扑4DGS事件后伪影；事件树是连续几何与符号推理的接口
+
+2. **Unfold The World: Factorize 4D Properties in Reinforcing Spatial Reasoning (FactoSR)** - arXiv:2609.03729
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 因子化空间RL, XY/Z/T三正交奖励, 重投影一致性, 时间可逆性, Anchor-Transfer-Verify CoT, GRPO, ECCV 2026, HKUST+MSRA
+   - 文档: papers/2026-11-14_02_unfold_the_world_factorosr.md
+   - 亮点: 把投影折叠的维度分解为XY对应/Z深度/T时间可逆三个可验证RL奖励；VSI-Bench +5.9%、All-Angles +4.5%；时间可逆性是"是否真构建3D世界模型"的对称性检验；物理定律作为免费奖励源
+
+3. **Think-Capture: Active 3D Geometry Acquisition for Spatial Reasoning in VLMs** - arXiv:2610.29232
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 查询条件主动3D获取, SAM3+π³工具链, 符号化3D状态抽象, 分层GRPO正负样本奖励, 分歧挖掘, 工具证据元认知, Agibot G1真机部署, CUHK-SZ
+   - 文档: papers/2026-11-14_03_think_capture_active_3d.md
+   - 亮点: 空间推理从被动全场景融合转为按需点名目标采集几何；符号3D状态100token(-51%)显著优于2D box对照(54.4 vs 36.9)；负样本+2分层奖励教模型"何时信任工具、何时回退"（噪声下领先zero-shot 19.5分）；24GB单卡部署真机器人
+
+4. **Kosmo-GFM: A Production-Ready Geometry Foundation Model** - arXiv:2611.16840
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 几何基础模型, 先验削减优化, PoseEngine场景级位姿优化, KosmoWorld数据飞轮, 3DGS/4DGS下游, scaling研究, 工业系统
+   - 文档: papers/2026-11-14_04_kosmo_gfm_geometry_foundation.md
+   - 亮点: GFM先验+位姿优化引擎：精度超GLUEMAP且runtime压至20%（Flash版4%）——"好先验数量级削减优化"的最强实证；重建数据飞轮反哺训练；几何重建符合数据/模型/算力scaling律；Spatial AGI感知地层的工业级底座
+
+5. **GaugeVLM: Structuring Spatial Supervision with Measured Geometric Interventions** - arXiv:2609.38285
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 测量化空间监督, GaugeDPO, 受控3D干预, 视角不变误差度量, 时钟方向+距离比, 跨视角一致性证书, 干预敏感性, CASIA
+   - 文档: papers/2026-11-14_05_gaugevlm_measured_interventions.md
+   - 亮点: "干预即测量，测量即监督"：DPO margin由3D干预精确测量的几何误差决定，25%数据胜全量DPO；Prop.1证明一致性≠正确性(max error≥½max disagreement)；10/10空间指标超SFT，QSpatial+ +18.9；跨视角自相矛盾与干预不敏感双失败模式的系统解法
+
 ## 2026-11-11 研究的论文（精选5篇）
 
 1. **Spatial Harness: Grounding Spatial Reasoning in Executable World States with Physics Engines** - arXiv:2611.11344
