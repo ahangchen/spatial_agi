@@ -5682,3 +5682,35 @@
    - 关键词: 可微仿真, 3DGS-MPM耦合, 材料参数反演, 物理感知MoE扩散策略, 物理记忆库, 策略平均化诊断, HKU
    - 文档: papers/2026-11-13_05_physical_diffusion_policy_mpm_guided_3d_gaussian_simulation.md
    - 亮点: 可微仿真逆向应用——从视频反演材料参数(E,ν,τ_Y,η)；MoE按物理regime路由解决异质物体策略平均化；3DGS作为几何-物理-渲染统一载体
+
+## 2026-11-15 研究的论文（精选5篇）
+
+1. **Spatial Foundry: A Multimodal Dataset for Spatial Intelligence** - arXiv:2611.17318
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 空间智能数据集, 5280可编辑场景, 多模态对齐, 观察变化/环境变化正交分解, 持久实例ID, 场景编辑记录, GPT-6布局生成
+   - 文档: papers/2026-11-15_01_spatial_foundry_multimodal_dataset_spatial_intelligence.md
+   - 亮点: 分离观察变化与环境变化的受控实验平台；数据链从2D户型图贯通4D时空+状态记录；多相机共享世界建模支持；空间智能研究从观察科学走向实验科学
+
+2. **ReCan-GS: Reconstruct What You Can - Distractor-free 4D Gaussian Splatting** - arXiv:2611.16259
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4DGS, 形变场雅可比不确定度, 干扰物分解, 免掩码免预训练, 烟雾雾气去除, CMU+Fujitsu
+   - 文档: papers/2026-11-15_02_recan_gs_distractor_free_4dgs.md
+   - 亮点: 干扰物=形变空间不稳定性的几何定义而非语义定义；首个全动态场景去干扰4DGS；解析自检信号"知道自己哪里重建不可靠"
+
+3. **DPGS-SLAM: Diffusion-Prior and Provenance-Aware Monocular Gaussian Splatting SLAM** - arXiv:2611.12038
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 动态SLAM, 扩散背景补全, provenance感知建图, 生成/观察分离, 自动交接, 单目RGB, 早稻田+华沙工大
+   - 文档: papers/2026-11-15_03_dpgs_slam_diffusion_prior_provenance_aware_3dgs_slam.md
+   - 亮点: 从"抑制动态"到"补全空洞"的范式推进；高斯原语带证据来源标签；ATE 1.2cm(TUM)/2.7cm(BONN)，StaDy4D PSNR超WildGS-SLAM 4.60dB；空间记忆"诚实地想象"工程模板
+
+4. **ActWorld-JEPA: Action-Conditioned JEPA World Models Meet Latent Planning** - arXiv:2611.16579
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: JEPA世界模型, 候选条件化rollout, PC-JEPA, 关系残差重排R³, 有界门控修正, 端到端驾驶, 开源
+   - 文档: papers/2026-11-15_04_actworld_jepa_action_conditioned_latent_planning_driving.md
+   - 亮点: "预测准≠决策好"的显式桥接；有界门控残差是想象辅助决策的安全接口；NAVSIM v1 94.1 PDMS / v2 91.6 EPDMS / nuScenes L2 1.20m
+
+5. **Driving World Models Move the Camera, Not the Scene** - arXiv:2611.15260
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 世界模型评估, 场景响应α, 反事实真值(重定时/立体), 计划-几何通道错配, ReTime-Compose免训练修复, 15模型审计
+   - 文档: papers/2026-11-15_05_driving_world_models_move_camera_not_scene.md
+   - 亮点: 已发布驾驶世界模型"动相机不动场景"（α≤0.23 vs 真实0.72）；scale-aligned ADE对执行与否失明；从真实日志提取未执行计划的反事实真值
