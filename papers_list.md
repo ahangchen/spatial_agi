@@ -5714,3 +5714,35 @@
    - 关键词: 世界模型评估, 场景响应α, 反事实真值(重定时/立体), 计划-几何通道错配, ReTime-Compose免训练修复, 15模型审计
    - 文档: papers/2026-11-15_05_driving_world_models_move_camera_not_scene.md
    - 亮点: 已发布驾驶世界模型"动相机不动场景"（α≤0.23 vs 真实0.72）；scale-aligned ADE对执行与否失明；从真实日志提取未执行计划的反事实真值
+
+## 2026-11-16 研究的论文（精选5篇）
+
+1. **WanderBench: Can World Models Explore Dynamic Worlds from Video?** - arXiv:2611.12557
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 视频条件化世界模型, 世界探索基准, 时间同步源参考, 动态重访一致性, 事件时效性, 免训练WanderLand, 证据有序条件化, 华中科技大学
+   - 文档: papers/2026-11-16_01_wanderbench_video_conditioned_world_exploration.md
+   - 亮点: 首个"以录制视频为锚、按时间同步源事件评分"的世界探索基准；745视频×6维×24子指标；诊断两大失败模式（长时序丢相机控制与源动态、重访无记忆）；WanderLand免训练全维涨分（源动态+8.3，重访+4.8）
+
+2. **PlayGen2: Learning Real-Time Playable Worlds with Explicit 3D State** - arXiv:2611.07867
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 显式3D世界状态, 体素占据+实体表, 状态-渲染解耦, 几何补全, 实体发现, 动作条件实体动力学, 持久世界记忆, 实时可玩, Doom, 腾讯+CUHK+NTU
+   - 文档: papers/2026-11-16_02_playgen2_explicit_3d_state_playable_worlds.md
+   - 亮点: 世界状态活在3D里、渲染只是投影——重访一致性在状态层面天然成立；"未知≠空"可用性掩码；生成帧永不回流状态预测；MacBook M4 Pro 160ms实时；零样本未见地图+多玩家组合+状态级可编程干预
+
+3. **ProtoVis-Nav: Prototypical Visual Imagination for Visual-Spatial Aligned UAV Navigation** - arXiv:2611.17330
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: UAV VLN, 原型化视觉想象PVI, 下一位置图像投影, 局部想象监督, softmax原型混合, 先想象后行动, Qwen3VL LoRA, 北京理工
+   - 文档: papers/2026-11-16_03_protovis_nav_prototypical_visual_imagination_uav.md
+   - 亮点: 把全局未来帧预测压缩为32×32投影区域的局部原型想象——"最小充分想象"原则；PVI token进上下文参与航点预测；运动主导性前视/下视自动选择；想象值密度集中在决策相关区域
+
+4. **STVLA: Spatial-aware and Temporal-memory for Vision-Language-Action Models** - arXiv:2611.16589
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA时序记忆, VGGT几何特征进记忆, 视觉-空间成对记忆, 相关性-非冗余性评分r×u, 跨模态检索, 块因果空间前缀段, 真实任务+30~58pt
+   - 文档: papers/2026-11-16_04_stvla_spatial_temporal_memory_vla.md
+   - 亮点: "场景空间表示应是记忆的一部分"——外观记忆恰在最需要时失效（遮挡/视角变化），几何键稳健；零参数r×u检索先验；4仿真基准全第一，真实世界较π0.5提升58.33/30.00/35.00pt
+
+5. **MatrixSplat: Matrix-Parallel and Feature-Scalable 3DGS Rendering on GPUs** - arXiv:2611.15153
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3DGS渲染加速, 阶数无关加权累加, Tensor Core MMA, 特征可扩展渲染, warp级高斯打包, 惰性通道分批取数, NeurIPS 2026, UT Arlington+Snap
+   - 文档: papers/2026-11-16_05_matrixsplat_matrix_parallel_feature_scalable_3dgs.md
+   - 亮点: 剖析证伪"排序是瓶颈"（RenderCUDA占77%、Tensor Core利用率0%）；阶数无关化把特征累加变稠密矩阵乘；高维特征kernel最高36.7×、端到端3.8×；原生维度语义渲染使压缩-解码不再是必需品
