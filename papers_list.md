@@ -5746,3 +5746,35 @@
    - 关键词: 3DGS渲染加速, 阶数无关加权累加, Tensor Core MMA, 特征可扩展渲染, warp级高斯打包, 惰性通道分批取数, NeurIPS 2026, UT Arlington+Snap
    - 文档: papers/2026-11-16_05_matrixsplat_matrix_parallel_feature_scalable_3dgs.md
    - 亮点: 剖析证伪"排序是瓶颈"（RenderCUDA占77%、Tensor Core利用率0%）；阶数无关化把特征累加变稠密矩阵乘；高维特征kernel最高36.7×、端到端3.8×；原生维度语义渲染使压缩-解码不再是必需品
+
+## 2026-11-17 研究的论文（精选5篇）
+
+1. **GeoGR: Spatial–Semantic Token Compression and Group Routing for Efficient 3D VLMs** - arXiv:2610.13035
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D VLM效率, 体素token压缩, 语义显著性+空间覆盖双预算, Morton序锚点采样, 可恢复分组跳过RGS, 层间排序稳定性, 压缩感知后训练, EIT-NLP
+   - 文档: papers/2026-11-17_01_geogr_spatial_semantic_token_compression_group_routing_3d_vlm.md
+   - 亮点: 两级压缩（GeoSemZip表示级+GroupRoute计算级）保留95.2/96.8%性能、prefill加速6.8/6.1×；"低相关token会变重要"——压缩决策必须可恢复；30%最不冗余数据即可支撑压缩感知后训练；"空间智能系统应用自己的空间理解管理自己的计算资源"
+
+2. **RigidGS: Geometry-Aware Object Decoupling for Rigid-Body Interaction in 3D Gaussian Splatting** - arXiv:2611.10199
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: object-aware 3DGS, mask精化, 深度分位数带重提示, COLMAP投影投票, 冻结物体身份, label-geometry解耦, 边界稳定正则, 免mesh刚体操纵, Quest 2, Wyoming
+   - 文档: papers/2026-11-17_02_rigidgs_geometry_aware_object_decoupling_rigid_body_3dgs.md
+   - 亮点: 诊断两大根因（SAM2 mask噪声、identity-geometry耦合）并给出"上游精化+一次性投票冻结+梯度隔离"构造性解法；LLFF/NVOS IoU+7.7、boundary IoU+14.5；耦合污染10次迭代即发生；干净分解+仿射+游戏引擎物理=消费级VR实时可交互
+
+3. **ESI: An Embodied Self-Improvement Flywheel for LLM–VLA Agents** - arXiv:2611.18176
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 系统级后训练, LLM-VLA协作, intent gap, handoff gap, 协作即监督, 共享技能目录, 交互接地具身蒸馏, 失败episode局部有效片段, USTC
+   - 文档: papers/2026-11-17_03_esi_embodied_self_improvement_flywheel_llm_vla.md
+   - 亮点: 把"协作接口"做成学习目标：提示P+技能目录S+VLA参数θ每轮共同更新再共同部署；RoboDojo 10任务62.03 Score/49.41%成功率超所有已发表混合系统；教师纠正+学生续写=动作级监督，失败episode的局部成功片段也有价值；无代码路线击败code-based方法
+
+4. **QCC-WM: Linking Macro-State Dynamics and Visual Generation via Quotient Causal Construction** - arXiv:2611.12353
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 动作条件世界模型, 商式因果构造QCC, 动作引导软商映射, 固定参考测量, 状态+增量双重监督, 运动引导参考搬运, 同测量readback空间修正, US-VLA超声预测, Information Fusion, UESTC
+   - 文档: papers/2026-11-17_04_qcc_wm_quotient_causal_construction_macro_state_world_model.md
+   - 亮点: 宏节点按动作响应构造而非外观相似；窗口内固定参考商测量保证跨时间步测量可比——递归预测误差抑制的关键；同一测量贯通构造/预测/生成/readback修正四环节；LPIPS较各步长最优基线降48.59/41.68/30.23%（4/8/16步）；"宏层可比微层更有效因果"（Hoel）的工程化落地
+
+5. **Is Your Robot's Memory Just a Clock? Temporal Shortcuts in Memory-Augmented VLA Policies** - arXiv:2611.14488
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 记忆VLA诊断, phantom progress, 空事件注入, 时间捷径, visible/hidden对照, 时间戳缩放干预, 捷径在索引不在编码, 回环式事件索引, RoboMME
+   - 文档: papers/2026-11-17_05_temporal_shortcuts_memory_augmented_vla_phantom_progress.md
+   - 亮点: 空事件使最强记忆VLA成功率47→16、44→10（全为early stop）；hidden对照证明损伤只经记忆传导；时间可预测性在真实遥操作数据>92%；删时间戳不治愈——捷径活在均匀时间采样索引里；暂停增强训练无效且有害，事件索引（SLAM回环思想）免重训恢复过半；"记忆该数事件，不该数钟摆"
