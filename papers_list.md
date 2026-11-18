@@ -1,5 +1,37 @@
 # Spatial AGI Research Papers - Daily Analysis
 
+## 2026-11-19 研究的论文（精选5篇）
+
+1. **Inertial Video World Models (InertialWorld)** - arXiv:2611.22314
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 惯性视频世界模型, carry-before-write, Eulerian网格+Lagrangian载体, 门控迁移, 长程一致性, 11-17发布
+   - 文档: papers/2026-11-19_01_inertial_video_world_models_inertial_memory.md
+   - 亮点: 用惯性记忆保证世界模型长程动态一致性；混合网格/载体状态表示；与 ResWAM/QCC-WM/GSExplorer 同谱系
+
+2. **GPWM: Modeling the World as 3D Particle Motion** - arXiv:2611.08338
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 粒子位移世界模型, 刚体pose token, 多分辨率DiT, 流匹配+diffusion forcing, 55×rollout, 噪声空间规划, ParticleWorlds 25.5M帧, CMU+NVIDIA
+   - 文档: papers/2026-11-19_02_gpwm_generative_particle_world_model_3d_motion.md
+   - 亮点: 以3D粒子运动统一刚体/铰接/流体/软体材料域；Unified模型>专家模型；55×rollout长度扩展；噪声采样即规划——世界模型直接用于操作的显式路线代表
+
+3. **DynThinker: Unifying Static 3D and Dynamic 4D Spatial Reasoning** - arXiv:2610.20598
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 空间-动态干扰, Decoupled EMA, Spatial-Dynamic Fusion, 语义门控双先验融合, 后层MLP敏感区, 9基准平均60.5>GPT-5.6 Sol, SYSU+NTU
+   - 文档: papers/2026-11-19_03_dynthinker_unified_static_3d_dynamic_4d_spatial_reasoning.md
+   - 亮点: 首次系统诊断"3D后训练侵蚀4D能力"并定位后层MLP；D-EMA分组差异化保护+语义门控几何/时序双先验融合；ReVSI 56.0/DSR-Bench 67.2等四项开源SOTA
+
+4. **CoSphere-SLAM: Multi-Agent Panoramic Gaussian Splatting SLAM with Spherical Loop Closure** - arXiv:2611.22235
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 多智能体全景SLAM, 球面FFT回环, tilt-yaw分解, 全局Sim(3)共识拒绝对称簇, 方向性全局优化, 全向高斯融合, 首个全景多agent 3DGS SLAM
+   - 文档: papers/2026-11-19_04_cosphere_slam_multiagent_panoramic_gaussian_splatting_slam.md
+   - 亮点: 环路一致性判别对称误回环（真相似复合=I，对称簇复合≠I）；O(N_Q·CHW·logW)实现任意朝向球面匹配；单/多agent轨迹+渲染双SOTA——群体空间共识的完整技术栈
+
+5. **DexForesight: Grounding Dexterous Policies with Implicit Spatial Foresight** - arXiv:2611.11166
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 隐式空间前瞻, query对齐蒸馏, 动作条件化空间世界模型, URDF手点流, DINOv3特征残差, 部署免世界模型推理, 370h演示, Sharpa+SJTU
+   - 文档: papers/2026-11-19_05_dexforesight_implicit_spatial_foresight_dexterous_policies.md
+   - 亮点: "训练时预见、部署时内化"：世界模型只在训练期存在，前瞻表征经query对齐进策略隐空间；DexJoCo 49.4%→60.5%、真机58.3% vs 50.0%；本体运动学免疫遮挡
+
 ## 2026-11-14 研究的论文（精选5篇）
 
 1. **Topology-Aware 4D Gaussian Splatting for Egocentric Videos (TopoEgo/Topo-4DGS)** - arXiv:2611.16012
@@ -5778,3 +5810,41 @@
    - 关键词: 记忆VLA诊断, phantom progress, 空事件注入, 时间捷径, visible/hidden对照, 时间戳缩放干预, 捷径在索引不在编码, 回环式事件索引, RoboMME
    - 文档: papers/2026-11-17_05_temporal_shortcuts_memory_augmented_vla_phantom_progress.md
    - 亮点: 空事件使最强记忆VLA成功率47→16、44→10（全为early stop）；hidden对照证明损伤只经记忆传导；时间可预测性在真实遥操作数据>92%；删时间戳不治愈——捷径活在均匀时间采样索引里；暂停增强训练无效且有害，事件索引（SLAM回环思想）免重训恢复过半；"记忆该数事件，不该数钟摆"
+
+## 2026-11-18 研究的论文（精选5篇）
+
+1. **ResWAM: Learning What Changes, Not What Stays, for World-Action Models** - arXiv:2611.19559
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 视觉残差学习, World-Action Model, 双分支DiT, Flow Matching, 冻结DINOv3残差, LIBERO-Plus 81.1%, 92.7ms闭环
+   - 文档: papers/2026-11-18_01_ResWAM_residual_world_action_models.md
+   - 亮点: 把WAM监督从"完整未来"换成"特征残差"——残差有效秩22.06 vs 未来15.22、自动聚焦机械臂与操作对象；0.5B双分支DiT实现三基准SOTA+真机超π0.5十个百分点；"预测变化优于预测状态"的世界建模新原则
+
+2. **GSExplorer: Interactive World Generation with a Persistent 3D Gaussian World State** - arXiv:2611.01543
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 持久3DGS世界状态, 生成-重建闭环, 不一致性过滤, 跨块Bundle Adjustment, 退化渲染条件, 293K训练对, HKUST-GZ+Horizon
+   - 文档: papers/2026-11-18_02_GSExplorer_persistent_3dgs_world_state.md
+   - 亮点: 持久3DGS世界状态+生成-重建闭环：WorldScore相机控制99.07、481帧leave-and-return回访一致；不一致性过滤是"记忆的免疫系统"；上下文受限退化数据管线实现训练-推理分布对齐
+
+3. **Xiaomi Auto World Model 2.0: Causal World Models for Real-World Driving and Embodied Intelligence** - arXiv:2611.01677
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 因果世界模型, VTA+Multi-view RoPE, WorldRec 2.0动态3DGS, GLA流式推理, 物理因果数据管线, 1-7视图统一, 三段训练
+   - 文档: papers/2026-11-18_03_Xiaomi_Auto_World_Model_2.0_causal_world_models.md
+   - 亮点: 工业级统一Physical AI世界模型：1-7视图/Cam-Action-Layout三控制/分钟级流式；WorldRec 2.0单次前向重建静态+动态3DGS锚定生成；反事实轨迹数据类确认"物理常识需主动干预数据"；世界模型作为仿真+训练+策略基础设施
+
+4. **PhysMoE: Fast Spatial Grounding with Single-Token Coordinate Representation in Modality-Decoupled VLMs** - arXiv:2611.13000
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 单token连续坐标, Semi-MoE模态路由, 视觉位置嵌入复用, 可微ESDF监督, 多峰可供性, 8.31x吞吐, NTU
+   - 文档: papers/2026-11-18_04_PhysMoE_single_token_spatial_grounding.md
+   - 亮点: 坐标单token化(8.31x加速)+复用ViT位置嵌入实现"看到的空间与说出的空间同坐标系"；顶层语言/空间专家路由消除梯度干扰；ESDF不对称损失优雅解决多峰可供性；+15.7%空间且11文本基准不掉点
+
+5. **Pros4D: Modeling Evolving 4D Worlds in Latent Space for Dynamic Spatial Reasoning** - arXiv:2611.19803
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4D潜状态推理, 观测/未来状态, 4DLA三路对齐, 几何数据引擎, Pros4D-Bench, 统一观测边界, 零工具调用
+   - 文档: papers/2026-11-18_05_Pros4D_evolving_4d_worlds_latent_space.md
+   - 亮点: 首次统一回溯理解与前瞻预测：潜观测状态自回归滚动为潜未来状态，held-out未来帧监督"越过观测边界"的想象力；Pros4D-8B零工具调用超越所有工具增强基线(VLM4D Syn 75.0%)；"观测边界"概念重定义动态空间智能评测
+
+## 2026-11-18 趋势速览
+
+- **世界模型三形态收敛**：ResWAM(策略内嵌残差前瞻)、GSExplorer(持久3DGS显式记忆)、XWM 2.0(平台级流式仿真)分别代表轻量闭环/显式记忆/重型平台三条路线，共同点都是"显式信号锚定+生成补全"混合架构
+- **模态/功能通路结构性分离成主流**：ResWAM(动作/残差分支)、GSExplorer(内容/几何条件)、PhysMoE(语言/空间专家)、Pros4D(观测/未来状态)——2026年具身模型统一范式：共享注意力+专用通路
+- **监督信号的信息论设计**：残差秩分析、ESDF场监督、几何对齐——监督目标正在从"完整观测"转向"信息密度最大且物理有效的目标"
