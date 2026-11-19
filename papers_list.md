@@ -5848,3 +5848,35 @@
 - **世界模型三形态收敛**：ResWAM(策略内嵌残差前瞻)、GSExplorer(持久3DGS显式记忆)、XWM 2.0(平台级流式仿真)分别代表轻量闭环/显式记忆/重型平台三条路线，共同点都是"显式信号锚定+生成补全"混合架构
 - **模态/功能通路结构性分离成主流**：ResWAM(动作/残差分支)、GSExplorer(内容/几何条件)、PhysMoE(语言/空间专家)、Pros4D(观测/未来状态)——2026年具身模型统一范式：共享注意力+专用通路
 - **监督信号的信息论设计**：残差秩分析、ESDF场监督、几何对齐——监督目标正在从"完整观测"转向"信息密度最大且物理有效的目标"
+
+## 2026-11-20 研究的论文（精选5篇）
+
+1. **WM^MLLM: Turning MLLMs into World Models** - arXiv:2611.24193
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Model, MLLM, Panorama State, Persistent Editing, Revision History
+   - 文档: papers/2026-11-20_01_wm_mllm_turning_mllms_into_world_models.md
+   - NotebookLM: [notebook_id]
+
+2. **$Z$-sight: Unifying Vision-Language-Action and Latent World Modeling** - arXiv:2611.24940
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: VLA, Latent World Model, Native Token Space, Joint Denoising, Humanoid
+   - 文档: papers/2026-11-20_02_zsight_unifying_vla_and_latent_world_modeling.md
+   - NotebookLM: [notebook_id]
+
+3. **Embodied Graph: A Relational World Model for Long-Horizon Tasks** - arXiv:2611.24115
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Relational World Model, Graph State Abstraction, Long-Horizon, Minecraft, Web Agents
+   - 文档: papers/2026-11-20_03_embodied_graph_relational_world_model_long_horizon.md
+   - NotebookLM: [notebook_id]
+
+4. **From Perception to Simulation: Unveiling and Empowering Mental Spatial Dynamics in MLLMs** - arXiv:2611.22541
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Spatial Simulation, Benchmark, Curriculum Learning, MLLM, Mental Grid
+   - 文档: papers/2026-11-20_04_from_perception_to_simulation_mental_spatial_dynamics.md
+   - NotebookLM: [notebook_id]
+
+5. **Facet-SLAM: Real-Time Triangle Splatting SLAM** - arXiv:2611.23935
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: Triangle Splatting, SLAM, Real-Time, GICP, Mesh Extraction, Jetson
+   - 文档: papers/2026-11-20_05_facetslam_realtime_triangle_splatting_slam.md
+   - NotebookLM: [notebook_id]
