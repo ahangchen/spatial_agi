@@ -5880,3 +5880,35 @@
    - 关键词: Triangle Splatting, SLAM, Real-Time, GICP, Mesh Extraction, Jetson
    - 文档: papers/2026-11-20_05_facetslam_realtime_triangle_splatting_slam.md
    - NotebookLM: [notebook_id]
+
+## 2026-11-21 研究的论文（精选5篇）
+
+1. **ScaleWorld: High-Resolution World Generation through Shared Prediction and Refinement** - arXiv:2611.26615v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 世界模型, 高分辨率生成, 共享骨干, 非对称因果记忆, TA-OPD蒸馏, 流式生成
+   - 文档: papers/2026-11-21_01_ScaleWorld_High_Resolution_World_Generation.md
+   - NotebookLM: [notebook_id]
+
+2. **Plan4D: Generative Plannable 4D Worlds** - arXiv:2611.26516v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4D世界模型, 可规划性, 模型缝合, 场景流, 几何critic, NeurIPS 2026
+   - 文档: papers/2026-11-21_02_Plan4D_Generative_Plannable_4D_Worlds.md
+   - NotebookLM: [notebook_id]
+
+3. **World Models Favor Learned Priors over Visual Evidence** - arXiv:2611.26366v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 视觉校准, 长尾动力学, TailWorld基准, RIFT, 规则推断, 证据-先验冲突
+   - 文档: papers/2026-11-21_03_World_Models_Favor_Learned_Priors_over_Visual_Evidence.md
+   - NotebookLM: [notebook_id]
+
+4. **Point Dynamics as Proxy for Robotic World Models** - arXiv:2611.25946v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 机器人世界模型, 3D点动力学, 模拟-渲染分离, 交互保真, PointWorld, DROID
+   - 文档: papers/2026-11-21_04_Point_Dynamics_as_Proxy_for_Robotic_World_Models.md
+   - NotebookLM: [notebook_id]
+
+5. **World-delta: Continually Integrating Observations for Incremental 3D Scene Generation** - arXiv:2611.25802v1
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 增量3D生成, 持久世界状态, 观测校准, delta引导扩散, 3D高斯, 不确定性感知
+   - 文档: papers/2026-11-21_05_World_delta_Incremental_3D_Scene_Generation.md
+   - NotebookLM: [notebook_id]
