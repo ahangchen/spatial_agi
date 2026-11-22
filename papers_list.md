@@ -5912,3 +5912,37 @@
    - 关键词: 增量3D生成, 持久世界状态, 观测校准, delta引导扩散, 3D高斯, 不确定性感知
    - 文档: papers/2026-11-21_05_World_delta_Incremental_3D_Scene_Generation.md
    - NotebookLM: [notebook_id]
+
+## 2026-11-23 研究的论文（精选5篇）
+
+> 基础日期: 2026-11-21（11-22 部分完成 4/5，本次正常执行）。搜索: arXiv API 限流 → web_fetch 降级，5 查询 243 篇候选。
+
+1. **CoT-WAM: Collaborative Training of VLMs and World-Action Models via Plan Latents** - arXiv:2611.23803
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: WAM, VLM联训, 可学习潜在接口, 目标图像接地, 文本+图像双重监督, 两阶段训练, LIBERO/CALVIN/RoboCasa SOTA, HIT-Shenzhen+Simple AI
+   - 文档: papers/2026-11-23_01_CoT-WAM_Collaborative_Training_of_VLM_and_World_Action_Models_via_Plan_Latents.md
+   - 亮点: 语义→空间预测→控制的异构思维链；目标图像把抽象意图接地到具体空间终态；掩码信息瓶颈设计；零样本泛化+长程规划双验证
+
+2. **TuringSpace: Grounding Spatial Intelligence in Action with Interactive CAPTCHAs** - arXiv:2611.25387
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 交互式空间CAPTCHA, 程序化任务生成, checker+oracle, Bench=Gym, CUA评测, 空间能力五分类, SFT迁移, Minnesota+USC等
+   - 文档: papers/2026-11-23_02_TuringSpace_Grounding_Spatial_Intelligence_in_Action_with_Interactive_CAPTCHAs.md
+   - 亮点: 人94.1% vs GPT-6 Astra 74.1%；最强模型失败源于感知误读；开源模型推理幻觉证据为错误信念辩护；合成屏幕训练迁移真实视频+9.9
+
+3. **Pros4D: Modeling Evolving 4D Worlds in Latent Space for Dynamic Spatial Reasoning** - arXiv:2611.19803
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 演化潜在状态, 4D潜在对齐, 观测/未来状态, 几何接地, 数据引擎, Pros4D-40K, SAM3+DA3管线, XMU+CUHK+THU+HIT
+   - 文档: papers/2026-11-23_03_Pros4D_Modeling_Evolving_4D_Worlds_in_Latent_Space_for_Dynamic_Spatial_Reasoning.md
+   - 亮点: 统一回顾理解与前瞻预测的单一状态链；几何推导答案+VLM只verbalize；3B模型+23.9点追平7B专用模型；Dyn-Bench 65.6/VLM4D合成75.0
+
+4. **Spatial Foundry: A Multimodal Dataset for Spatial Intelligence** - arXiv:2611.17318
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 受控场景数据基建, 5280住宅场景, 持久实例ID, 状态编辑记录, 变量分离, GPT-6布局生成, Infinigen+Blender, 多相机同状态
+   - 文档: papers/2026-11-23_04_Spatial_Foundry_A_Multimodal_Dataset_for_Spatial_Intelligence.md
+   - 亮点: 把实验设计（变量分离+干预记录）引入空间数据；世界模型监督从相关性升级为因果性；可编辑源场景=数据生成器；多相机-单状态序列独家支持共享世界建模
+
+5. **Xiaomi Auto World Model 2.0: Causal World Models for Real-World Driving and Embodied Intelligence** - arXiv:2611.01677
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 因果世界模型, WorldRec 2.0, 3DGS显式场景记忆, VTA+多视角RoPE, GLA流式推理, 物理因果数据, 三角色(模拟器/训练器/WAM内核), 1-7视角
+   - 文档: papers/2026-11-23_05_Xiaomi_Auto_World_Model_2.0_Causal_World_Models_for_Real-World_Driving_and_Embodied_Intelligence.md
+   - 亮点: 显式记忆+隐式补全分层硬解决长程漂移；分钟级多视角实时流式；物理因果数据从Pre-train混入；世界模型基础设施化（三角色）拐点示范
