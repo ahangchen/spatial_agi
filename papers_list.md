@@ -1,5 +1,37 @@
 # Spatial AGI Research Papers - Daily Analysis
 
+## 2026-11-24 研究的论文（精选5篇）
+
+1. **StereoVLM: Binocular Vision-Language Models for Metric 3D Spatial Reasoning** - arXiv:2611.27915
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 双目VLM, 度量3D空间推理, 标定几何接地, 视差监督泛化, 层级学习范式, Stereo3D-Bench, 干预实验, RoboCasa+4.3pp
+   - 文档: papers/2026-11-24_01_StereoVLM_Binocular_VLM_Metric_3D_Spatial_Reasoning.md
+   - 亮点: 首个几何感知双目VLM；δ1=95.17%；视差监督比深度监督泛化更强（中间几何量选择决定泛化）；干预实验证明接地性——感知侧几何接地的完整配方
+
+2. **Ego4Gen: Generating Geometry-Grounded Motion Tokens as a World-Action Interface** - arXiv:2611.27513
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 4D未来生成, 几何运动token, 世界-动作接口, 点图+场景流, Cosmos3-Nano, 模态路由LoRA, FlowInverse两阶段逆动力学, OOD泛化
+   - 文档: papers/2026-11-24_02_Ego4Gen_Geometry_Grounded_Motion_Tokens_World_Action_Interface.md
+   - 亮点: 单图+文本联合生成时间对齐的RGB/点图/场景流；几何接地运动token在OOD下胜过抽象latent；极少动作标注即可闭环控制——想象层与行动层的标准接口候选
+
+3. **MoRE: Mixture-of-Experts for Multi-Physics Robotic World Models** - arXiv:2611.25336
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 多物理regime专家, 刚体/形变/抓取专家, 3D世界模型, MoE路由, 仿真+真实混合训练, MPC集成, 混合物理操作
+   - 文档: papers/2026-11-24_03_MoRE_Mixture_of_Experts_Multi_Physics_Robotic_World_Models.md
+   - 亮点: 物理本身是模块化的所以专家有语义分工；各regime预测精度+真实MPC性能同步提升；专家分歧=免费不确定性信号——想象层的物理结构化模板
+
+4. **SpatialScout-V2: Can VLM Agents Actively Explore Real-World 3D Scenes and Localize Objects?** - arXiv:2611.26177
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 真实住宅主动探索, Realsee3D 100户, 3171物体, 预算受限建图, 物体中心地图, mean IoU 20%, Claude Opus 5.5 22.52%
+   - 文档: papers/2026-11-24_04_SpatialScout-V2_VLM_Agents_Active_Exploration_Real_3D_Scenes.md
+   - 亮点: 前沿VLM真实场景主动建图IoU仅~20%——L1-L2语义实例层的"腰部塌陷"被量化；覆盖-精度解耦；真实基准设计三公理
+
+5. **ViewDreamer: A Robot World Model beyond Fixed Camera Setups** - arXiv:2611.26981
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 可变相机布置, per-view生成+共享槽, Cross-View Slot Agreement, VFM槽分组, 视角数课程, RoboView-Bench, WAM超FastWAM-Joint, Franka真机
+   - 文档: papers/2026-11-24_05_ViewDreamer_Robot_World_Model_Beyond_Fixed_Camera_Setups.md
+   - 亮点: 多视角一致性与相机配置解耦；任意布置演示数据可汇入同一世界模型——传感配置异构的架构级吸收，异构数据联盟的技术前提
+
 ## 2026-11-19 研究的论文（精选5篇）
 
 1. **Inertial Video World Models (InertialWorld)** - arXiv:2611.22314
