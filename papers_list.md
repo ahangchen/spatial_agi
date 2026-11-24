@@ -5978,3 +5978,35 @@
    - 关键词: 因果世界模型, WorldRec 2.0, 3DGS显式场景记忆, VTA+多视角RoPE, GLA流式推理, 物理因果数据, 三角色(模拟器/训练器/WAM内核), 1-7视角
    - 文档: papers/2026-11-23_05_Xiaomi_Auto_World_Model_2.0_Causal_World_Models_for_Real-World_Driving_and_Embodied_Intelligence.md
    - 亮点: 显式记忆+隐式补全分层硬解决长程漂移；分钟级多视角实时流式；物理因果数据从Pre-train混入；世界模型基础设施化（三角色）拐点示范
+
+## 2026-11-25 研究的论文（精选5篇）
+
+1. **LatentParse: Parsing Visual Latents for Multimodal Spatial Reasoning** - arXiv:2611.31021
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 免训练, 潜特征解析, CLIP/DINOv3/VGGT, 基不变工具, 跨编码器共识, 照片盲分析师, MMSI-Bench, 相机推理+19.2pp
+   - 文档: papers/2026-11-25_01_LatentParse_Parsing_Visual_Latents_for_Multimodal_Spatial_Reasoning.md
+   - 亮点: 特征图直接输入VLM无效（-2.6~+0.6pp）但解析为关系证据有效——潜特征是空间知识仓库但需编译为命题；VLM空间瓶颈集中在相机/自我运动推理（31.4%→50.6%）
+
+2. **VeriWorld: A Verifiable Visual SWE-Bench for Spatial Reasoning in 3D Environments** - arXiv:2611.30226
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 交互式3D评测, 确定性验证, V/S/C匹配信息条件, 视觉-结构鸿沟, UE5, code-as-action, Lean4可解性证书, NeurIPS 2026 D&B
+   - 文档: papers/2026-11-25_02_VeriWorld_A_Verifiable_Visual_SWE-Bench_for_Spatial_Reasoning_in_3D_Environments.md
+   - 亮点: 证明视觉-结构鸿沟普遍存在（显式给信息远强于从画面读取）；交互协议是混淆变量——batch动作接口0.57→0.93；空间评测的SWE-Bench式黄金标准
+
+3. **SpatialDuet: Bayesian Task Routing Between a Metric Expert and a Geometry Expert** - arXiv:2611.29168
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 贝叶斯任务路由, 度量专家, 几何专家, 对数空间池化, MBR解码, 题型校准, 零训练, VSI-Bench+3.17%
+   - 文档: papers/2026-11-25_03_SpatialDuet_Bayesian_Task_Routing_Metric_Geometry_Experts.md
+   - 亮点: 小型空间VLM能力结构性互补，两个冻结专家+题型路由零训练超越最佳单模型——端侧Spatial AGI的"专家组合"路线实证
+
+4. **JEPA-Shield: Safe Diffusion Planning with Latent World Models via Conformal Shielding** - arXiv:2611.29609
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: JEPA世界模型, conformal prediction, 不确定性管道, backup shield, 扩散采样MPC, 动作块边界概率安全, VParkBench, 可编辑3DGS环境
+   - 文档: papers/2026-11-25_04_JEPA-Shield_Safe_Diffusion_Planning_Latent_World_Models_Conformal_Shielding.md
+   - 亮点: 潜世界模型想象不能直接证明安全——潜→任务空间翻译+conformal管道+backup shield三级处理；泊车84.4%/82.3%/99.0%零违规；"潜空间理解+显式空间验证"双层架构原则
+
+5. **ArgsWorld: Unifying 3DGS Scene Reconstruction, Generation and Extrapolation with Autoregressive Diffusion Transformer** - arXiv:2611.28792
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 自回归扩散世界模型, 显式3DGS输出, 场景修订机制, 3D Self-Forcing蒸馏, 分布匹配监督, 跨段外推, 世界模型持久空间记忆
+   - 文档: papers/2026-11-25_05_ArgsWorld_Unifying_3DGS_Reconstruction_Generation_Extrapolation_Autoregressive_Diffusion.md
+   - 亮点: 世界模型同步产出显式3DGS——从视频想象器升级为空间想象器；3DGS作为世界模型持久几何记忆；冻结历史+刷新场景特征=空间信念贝叶斯更新
