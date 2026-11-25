@@ -6010,3 +6010,30 @@
    - 关键词: 自回归扩散世界模型, 显式3DGS输出, 场景修订机制, 3D Self-Forcing蒸馏, 分布匹配监督, 跨段外推, 世界模型持久空间记忆
    - 文档: papers/2026-11-25_05_ArgsWorld_Unifying_3DGS_Reconstruction_Generation_Extrapolation_Autoregressive_Diffusion.md
    - 亮点: 世界模型同步产出显式3DGS——从视频想象器升级为空间想象器；3DGS作为世界模型持久几何记忆；冻结历史+刷新场景特征=空间信念贝叶斯更新
+
+## 2026-11-26 研究的论文（精选5篇）
+
+1. **Lost on Campus: Evaluating Embodied Spatial Reasoning of Vision-Language Models in the Wild** - arXiv:2611.33145
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: Embodied Spatial Reasoning, 3DGS Outdoor Environment, VLM Benchmark, RTK Calibration
+   - 文档: papers/2026-11-26_01_Lost_on_Campus_Evaluating_Embodied_Spatial_Reasoning_VLM_Outdoor_3DGS.md
+
+2. **RoboProbe: Benchmarking Physical Plausibility of Robot World Models** - arXiv:2611.32152
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: World Model Evaluation, Physical Plausibility, Geometric Evidence, Agentic Audit
+   - 文档: papers/2026-11-26_02_RoboProbe_Benchmarking_Physical_Plausibility_Robot_World_Models.md
+
+3. **AnyPrune: Optimization-Free Pruning for Any Feedforward 3D Gaussian Splatting Pipeline** - arXiv:2611.32735
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3DGS Pruning, Feedforward Pipeline, Importance Scoring, Deployment Efficiency
+   - 文档: papers/2026-11-26_03_AnyPrune_Optimization-Free_Pruning_Feedforward_3DGS.md
+
+4. **GOLD-SLAM: Gaussian-splatting Omnidirectional LiDAR-Depth SLAM** - arXiv:2611.32335
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3DGS SLAM, Panoramic Camera, LiDAR Fusion, UAV, Embedded Deployment
+   - 文档: papers/2026-11-26_04_GOLD-SLAM_Gaussian_Splatting_Omnidirectional_LiDAR_Depth_SLAM.md
+
+5. **SplatTok: Data-Driven Compression of 3D Gaussian Splats with Scene-Level Tokens** - arXiv:2611.32202
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 3DGS Compression, Scene Resynthesis Codec, Latent Search, Generative Prior
+   - 文档: papers/2026-11-26_05_SplatTok_Data-Driven_Compression_3DGS_Scene-Level_Tokens.md
