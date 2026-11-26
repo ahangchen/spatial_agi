@@ -6037,3 +6037,35 @@
    - 相关性: ⭐⭐⭐⭐
    - 关键词: 3DGS Compression, Scene Resynthesis Codec, Latent Search, Generative Prior
    - 文档: papers/2026-11-26_05_SplatTok_Data-Driven_Compression_3DGS_Scene-Level_Tokens.md
+
+## 2026-11-27 研究的论文（精选5篇）
+
+1. **SplatWAM: Splatting World Action Models for Real-Time 3D Imagination** - arXiv:2611.33467
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 高斯世界动作模型, 显式3D状态生成式动力学, 无解码器任意视角渲染, log-Euclidean协方差, diffusion/shortcut forcing, 高斯token策略, 80FPS, 1B打7B VLA
+   - 文档: papers/2026-11-27_01_SplatWAM_Splatting_World_Action_Models_Real-Time_3D_Imagination.md
+   - 亮点: 世界模型状态=显式高斯场——渲染快12×且策略+24.8pp；感知-想象-行动全链路共享高斯状态；"直接在3D中想象"的完整闭环原型
+
+2. **FOCI: Trajectory Optimization on Gaussian Splats for Gaussian Robots** - arXiv:2611.33380
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 高斯重叠积分碰撞度量, 全可微轨迹优化, 姿态感知规划, 任意机器人形态, 动态环境, ETH Hutter组, ANYmal实机
+   - 文档: papers/2026-11-27_02_FOCI_Trajectory_Optimization_on_Gaussian_Splats_for_Gaussian_Robots.md
+   - 亮点: 环境与机器人同为高斯场——碰撞检测退化为高斯求值；"高斯机器人"愿景：3DGS从看的表示变成动的表示；数十万高斯秒级规划
+
+3. **WorldExpand: Building Coherent 3D Worlds via Sparse Joint Panoramic Expansion** - arXiv:2611.34810
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 单全景世界扩展, 稀疏互补高分辨率全景, 覆盖率引导视角选择, 3DGS warp几何锚, 联合全景扩散, 诊断式全局-局部注意力, 8.6×加速
+   - 文档: papers/2026-11-27_03_WorldExpand_Building_Coherent_3D_Worlds_Sparse_Joint_Panoramic_Expansion.md
+   - 亮点: 中间表示的空间经济学——稀疏关键观测替代稠密视频；"在哪看"(覆盖引导)+"怎么看"(联合扩散)的分工设计；生成预算花在信息量最大的空间位置
+
+4. **ST-SfM: Spatio-Temporal Structure-from-Motion for Initialising 4D Gaussian Splatting** - arXiv:2611.32231
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 时空SfM, 4DGS初始化, STIP+HOG3D, 对极+时间双引导匹配, union-find一致轨迹, 亚帧时间戳4D点, N3DV
+   - 文档: papers/2026-11-27_04_ST-SfM_Spatio-Temporal_SfM_Initialising_4D_Gaussian_Splatting.md
+   - 亮点: 把"什么在动/哪里动/何时动"写进初始化点云；几何先验前置的匹配顺序几乎消除误匹配；经典时空特征在4D重建中的再定位
+
+5. **CoVeR: Coverage-Based Token Pruning for Multi-View 3D Reasoning in VLMs** - arXiv:2609.08345
+   - 相关性: ⭐⭐⭐⭐
+   - 关键词: 多视角token剪枝, 空间覆盖率, 离散k-center, 自适应体素+FPS, Hausdorff无盲区证书, 免训练确定性, 8% token保93.5%性能
+   - 文档: papers/2026-11-27_05_CoVeR_Coverage-Based_Token_Pruning_Multi-View_3D_Reasoning_VLMs.md
+   - 亮点: 纯几何坐标打败所有学习式剪枝——几何是第一等信号；体素饱和上限69%的诊断；覆盖率成为空间决策的统一货币（与WorldExpand呼应）
