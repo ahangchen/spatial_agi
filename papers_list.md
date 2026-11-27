@@ -6069,3 +6069,35 @@
    - 关键词: 多视角token剪枝, 空间覆盖率, 离散k-center, 自适应体素+FPS, Hausdorff无盲区证书, 免训练确定性, 8% token保93.5%性能
    - 文档: papers/2026-11-27_05_CoVeR_Coverage-Based_Token_Pruning_Multi-View_3D_Reasoning_VLMs.md
    - 亮点: 纯几何坐标打败所有学习式剪枝——几何是第一等信号；体素饱和上限69%的诊断；覆盖率成为空间决策的统一货币（与WorldExpand呼应）
+
+## 2026-11-28 研究的论文（精选5篇）
+
+1. **SpatialScout-V2: Can VLM Agents Actively Explore Real-World 3D Scenes and Localize Objects?** - arXiv:2611.26177
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 主动空间建构, 物体中心地图, 真实住宅场景, 录制视角交互探索, 三角化工具, 双轨评测(all/submitted), VLM元认知盲区
+   - 文档: papers/2026-11-28_01_SpatialScout-V2_VLM_Agents_Active_Exploration_Real_3D_Scenes.md
+   - 亮点: 前沿VLM主动建图最佳IoU仅22.52%——"建构型评测"暴露端到端VLM的几何硬墙；覆盖与精度解耦的诊断范式；"知道自己漏了什么"是缺失的元认知能力
+
+2. **ArgsWorld: Unifying 3DGS Scene Reconstruction, Generation and Extrapolation with Autoregressive Diffusion Transformer** - arXiv:2611.28792
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 自回归3DGS世界模型, chunk-wise修订, 历史latent锚定, 场景特征刷新, 渲染反馈回路, 3D Self-Forcing Distillation, 三分支DMD, 断点轨迹外推
+   - 文档: papers/2026-11-28_02_ArgsWorld_Unified_3DGS_Reconstruction_Generation_Extrapolation.md
+   - 亮点: 重建=生成=外推的统一——喂观测即感知、喂想象即规划；场景状态"活在"去噪过程中（渲染latent再进输入的隐马状态闭环）；novel-view渲染分支提供无真值几何监督
+
+3. **StereoVLM: Binocular Vision-Language Models for Metric 3D Spatial Reasoning** - arXiv:2611.27915
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 标定双目VLM, 分层几何监督, 跨视对应→视差→度量深度→语义grounding, 视差监督泛化性, 5条件干预实验, Stereo3D-Bench, RoboCasa +4.3pp
+   - 文档: papers/2026-11-28_03_StereoVLM_Binocular_VLM_Metric_3D_Spatial_Reasoning.md
+   - 亮点: "视差优于深度"——监督信号应接近观测不变量；干预式评测把"空间判断是否基于证据"变成可测实验；几何训练跨任务溢出(+3.54/+4.3pp)证明几何是地基投资
+
+4. **VivaWorld: Long-Horizon Video World Model With Compositional 3D Priors** - arXiv:2611.33591
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 长时程视频世界模型, 重建点云+生成网格组合表征, 网格种子连通域滤波, 物体锚定Plücker射线, 相机-物体关系, 生成帧回流更新3D记忆
+   - 文档: papers/2026-11-28_04_VivaWorld_Long_Horizon_Video_World_Model_Compositional_3D_Priors.md
+   - 亮点: 重建(保真)+生成(补全)互补覆盖已见/未见区域；相机运动的语义锚定(物体中心)抑制长时程漂移——空间坐标系的物体中心主义；感知与想象经显式3D状态滚动闭环
+
+5. **Rehearse in 3D, Render in 2D: Physically Consistent and Editable Robot World Models** - arXiv:2611.34288
+   - 相关性: ⭐⭐⭐⭐⭐
+   - 关键词: 3D交互预演3DIR, 响应感知物体分组, 持久抓取记忆, 接触结构精修, 预演对齐视频生成RAVG, 物理-视觉解耦, 材质/视角可编辑, 夹爪偏移-79~84%
+   - 文档: papers/2026-11-28_05_RehearsalWorld_Physically_Consistent_Editable_Robot_World_Models.md
+   - 亮点: 显式3D表示=可施加约束的状态空间；"共同运动"定义物体的动力学分组观；附着关系是需持久记忆的一等状态；反事实推演(改材质/视角)因解耦而廉价
